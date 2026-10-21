@@ -1,4 +1,16 @@
 import type { Campaign } from "./types";
+import C_tora_1 from "./campaigns/tora-1.json";
+import C_tora_2 from "./campaigns/tora-2.json";
+import C_tora_3 from "./campaigns/tora-3.json";
+import C_tora_4 from "./campaigns/tora-4.json";
+import C_tora_5 from "./campaigns/tora-5.json";
+import C_matthew from "./campaigns/matthew.json";
+import C_mark from "./campaigns/mark.json";
+import C_luke from "./campaigns/luke.json";
+import C_parables from "./campaigns/parables.json";
+import C_prophets from "./campaigns/prophets.json";
+import C_acts from "./campaigns/acts.json";
+import C_letters from "./campaigns/letters.json";
 
 // Lernkampagne: Das Evangelium nach Johannes (vollständig spielbar).
 // Bibeltexte werden NICHT hier gespeichert, sondern über die austauschbare
@@ -378,7 +390,17 @@ export const JOHN: Campaign = {
   ],
 };
 
-export const CAMPAIGNS: Record<string, typeof JOHN> = { john: JOHN };
+// Aus den HTML-Lernreisen importierte Kampagnen (Generator: /app/imports/convert.ts)
+const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C_mark, C_luke, C_parables, C_prophets, C_acts, C_letters] as unknown as Campaign[];
+
+export const CAMPAIGNS: Record<string, Campaign> = { john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])) };
+export const ALL_STATIONS = Object.values(CAMPAIGNS).flatMap((c) => c.stations);
+
+/** Anteil abgeschlossener Stationen über alle Kampagnen einer Lernwelt. */
+export function worldProgress(campaignIds: string[] | undefined, done: Record<string, unknown>) {
+  const st = (campaignIds ?? []).flatMap((id) => CAMPAIGNS[id]?.stations ?? []);
+  return st.length ? st.filter((s) => done[s.id]).length / st.length : 0;
+}
 
 export function findStation(id: string) {
   for (const c of Object.values(CAMPAIGNS)) {

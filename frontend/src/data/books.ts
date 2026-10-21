@@ -94,7 +94,7 @@ export function findBook(s: string): BookInfo | null {
 
 export type ParsedRef = { code: string; ch: number; v?: number; vEnd?: number; label: string };
 
-const REF_RE = /((?:[1-3]\.?\s?)?[A-Za-zÄÖÜäöüß]+\.?)\s*(\d+)(?:\s*[,:]\s*(\d+)(?:\s*[–-]\s*(\d+))?)?/;
+const REF_RE = /((?:[1-5]\.?\s?)?[A-Za-zÄÖÜäöüß]+\.?)\s*(\d+)(?:\s*[,:]\s*(\d+)(?:\s*[–-]\s*(\d+))?)?/;
 
 /** Zerlegt einen Stellenstring wie "Joh 7,50; 19,39" oder "4Mo 21,8–9" in einzelne Verweise. */
 export function parseRefs(text: string): { label: string; ref: ParsedRef | null }[] {

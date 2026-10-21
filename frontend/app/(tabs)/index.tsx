@@ -12,7 +12,7 @@ import { RefText } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
 import { Button, Chip } from "@/src/components/ui";
 import { ZoomableMap } from "@/src/components/ZoomableMap";
-import { CAMPAIGNS } from "@/src/data/john";
+import { worldProgress } from "@/src/data/john";
 import { CERTAINTY_META } from "@/src/data/meta";
 import { GeoPlace, GeoRoute, mapSize, THEME_MAPS } from "@/src/data/themeMaps";
 import { WORLDS } from "@/src/data/worlds";
@@ -46,10 +46,7 @@ export default function WorldMapScreen() {
   const world = journey ? undefined : WORLDS.find((w) => w.id === theme);
   const accent = world?.palette.base ?? colors.brandPrimary;
 
-  const progress = useMemo(() => {
-    const c = CAMPAIGNS.john;
-    return c.stations.filter((s) => state.stations[s.id]).length / c.stations.length;
-  }, [state.stations]);
+  const progress = useMemo(() => worldProgress(world?.campaignIds, state.stations), [world, state.stations]);
 
   return (
     <View style={styles.root} testID="world-map-screen">
@@ -124,7 +121,7 @@ export default function WorldMapScreen() {
         {world ? (
           <Button
             testID="world-enter-button"
-            label={world.status === "playable" ? `Johannes-Kampagne · ${Math.round(progress * 100)} %` : "Lernwelt-Vorschau"}
+            label={world.status === "playable" ? `Lernreise starten · ${Math.round(progress * 100)} %` : "Lernwelt-Vorschau"}
             icon={world.status === "playable" ? "play" : "eye"}
             variant={world.status === "playable" ? "primary" : "secondary"}
             style={{ marginTop: spacing.sm, minHeight: 46 }}

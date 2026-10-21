@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
 import { ProgressBar, SectionTitle } from "@/src/components/ui";
-import { JOHN } from "@/src/data/john";
+import { ALL_STATIONS, CAMPAIGNS } from "@/src/data/john";
 import { WORLDS } from "@/src/data/worlds";
 import { computeBadges, levelInfo, stationsThisWeek } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
@@ -22,8 +22,8 @@ export default function ProfileScreen() {
   const p = useProgress();
   const { state } = p;
   const lvl = levelInfo(state.xp);
-  const badges = computeBadges(state, JOHN.stations.map((s) => s.id));
-  const johnDone = JOHN.stations.filter((s) => state.stations[s.id]);
+  const badges = computeBadges(state, ALL_STATIONS.map((s) => s.id));
+  const johnDone = ALL_STATIONS.filter((s) => state.stations[s.id]);
   const acc = state.answered.total ? Math.round((state.answered.correct / state.answered.total) * 100) : 0;
   const week = stationsThisWeek(state);
   const wrongCount = Object.keys(state.wrong).length;
@@ -90,18 +90,16 @@ export default function ProfileScreen() {
 
         <SectionTitle>Fortschritt je Bibelbuch</SectionTitle>
         <View style={styles.card}>
-          <View style={styles.bookRow} testID="book-progress-john">
-            <Text style={styles.bookName}>Johannes</Text>
-            <View style={{ flex: 1 }}><ProgressBar value={johnDone.length / JOHN.stations.length} color={WORLDS.find((w) => w.id === "gospels")!.palette.base} /></View>
-            <Text style={styles.bookPct}>{Math.round((johnDone.length / JOHN.stations.length) * 100)} %</Text>
-          </View>
-          {["Genesis", "Exodus", "Jesaja", "Matthäus", "Apostelgeschichte", "Römer"].map((b) => (
-            <View key={b} style={styles.bookRow}>
-              <Text style={[styles.bookName, { color: colors.muted }]}>{b}</Text>
-              <View style={{ flex: 1 }}><ProgressBar value={0} /></View>
-              <Text style={styles.bookPct}>bald</Text>
-            </View>
-          ))}
+          {Object.values(CAMPAIGNS).map((c) => {
+            const d = c.stations.filter((s) => state.stations[s.id]).length / c.stations.length;
+            return (
+              <View key={c.id} style={styles.bookRow} testID={`book-progress-${c.id}`}>
+                <Text style={styles.bookName} numberOfLines={1}>{c.title.replace("Das Evangelium nach ", "").replace("Das Johannesevangelium", "Johannes")}</Text>
+                <View style={{ flex: 1 }}><ProgressBar value={d} color={WORLDS.find((w) => w.id === c.worldId)?.palette.base} /></View>
+                <Text style={styles.bookPct}>{Math.round(d * 100)} %</Text>
+              </View>
+            );
+          })}
         </View>
 
         <SectionTitle>Abzeichen</SectionTitle>
@@ -119,7 +117,7 @@ export default function ProfileScreen() {
 
         <SectionTitle>Gelernte Themen</SectionTitle>
         {johnDone.length === 0 ? (
-          <View style={styles.card}><Text style={styles.small}>Noch keine Station abgeschlossen. Deine Reise beginnt am Jordan.</Text></View>
+          <View style={styles.card}><Text style={styles.small}>Noch keine Station abgeschlossen. Wähle eine Lernwelt auf der Karte und beginne deine Reise.</Text></View>
         ) : johnDone.map((s) => (
           <View key={s.id} style={styles.topic} testID={`learned-topic-${s.id}`}>
             <Icon name="check-circle" size={18} color={colors.success} />

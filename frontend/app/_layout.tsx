@@ -3,13 +3,14 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { QueryClientProvider } from "@tanstack/react-query";
 import * as NavigationBar from "expo-navigation-bar";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator, LogBox, Platform, StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/src/components/error-boundary";
+import { IntroAnimation } from "@/src/components/IntroAnimation";
 import { ToastProvider } from "@/src/components/Toast";
 import { ProgressProvider, useProgress } from "@/src/lib/store";
 import { queryClient } from "@/src/query-client";
@@ -51,6 +52,8 @@ export default function RootLayout() {
     Fraunces: require("../assets/fonts/Fraunces.ttf"),
     Nunito: require("../assets/fonts/Nunito.ttf"),
   });
+  const [intro, setIntro] = useState(true);
+  const endIntro = useCallback(() => setIntro(false), []);
   return (
     <GestureHandlerRootView style={styles.root}>
       <ErrorBoundary>
@@ -58,7 +61,10 @@ export default function RootLayout() {
           <SafeAreaProvider>
             <KeyboardProvider>
               <ProgressProvider>
-                <ToastProvider>{fontsLoaded ? <AppStack /> : <View style={styles.root} />}</ToastProvider>
+                <ToastProvider>
+                  {fontsLoaded ? <AppStack /> : <View style={styles.root} />}
+                  {fontsLoaded && intro ? <IntroAnimation onDone={endIntro} /> : null}
+                </ToastProvider>
               </ProgressProvider>
             </KeyboardProvider>
           </SafeAreaProvider>

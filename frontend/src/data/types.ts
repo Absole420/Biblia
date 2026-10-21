@@ -91,7 +91,7 @@ export type World = {
   y: number;
   icon: string;
   status: "playable" | "preview";
-  campaignId?: string;
+  campaignIds?: string[];
   description: string;
   planned: string[];
 };

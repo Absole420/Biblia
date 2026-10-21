@@ -1,0 +1,1278 @@
+{
+ "books": [
+  {
+   "title": "Matthäus",
+   "short": "Mt",
+   "icon": "✧",
+   "stations": [
+    {
+     "title": "Der verheißene König",
+     "range": "Matthäus 1–4",
+     "icon": "👑",
+     "art": "light",
+     "theme": "Messias und Erfüllung",
+     "key": "Matthäus 1,22–23",
+     "quote": "Siehe, die Jungfrau wird schwanger sein und einen Sohn gebären.",
+     "lesson": "Matthäus rahmt Jesu Geschichte mit Abstammung, Verheißung und der Frage nach dem Königreich. Die Erzählung stellt Jesus in Israels Geschichte und verbindet seine Sendung mit Gottes Treue.",
+     "take": "Lies Matthäus 1–4 und markiere jedes Mal, wenn Matthäus ausdrücklich sagt, dass etwas „erfüllt“ wird. Frage dann: Zitiert der Text direkt, deutet er ein Motiv, oder zieht er eine typologische Verbindung?",
+     "questions": [
+      {
+       "q": "Warum beginnt Matthäus mit einem Stammbaum?",
+       "opts": [
+        "Um Jesu Einbindung in Israels Geschichte und die Linien Abraham und David zu zeigen.",
+        "Um zu beweisen, dass Genealogien das Evangelium ersetzen.",
+        "Nur um die Handlung zu verzögern.",
+        "Um Jesu Verbindung zu Israel zu verneinen."
+       ],
+       "a": 0,
+       "ref": "Matthäus 1,1–17",
+       "why": "Die Überschrift nennt Jesus Christus, Sohn Davids und Sohn Abrahams. Der Stammbaum stellt ihn in die Verheißungsgeschichte Israels.",
+       "ot": "Genesis 12,1–3 und 2. Samuel 7,12–16: Verheißungen an Abraham und David bilden einen Hintergrund. Matthäus präsentiert Jesus als Erben dieser Hoffnung."
+      },
+      {
+       "q": "Welche alttestamentliche Stelle zitiert Matthäus bei der Geburt Jesu ausdrücklich?",
+       "opts": [
+        "Jesaja 7,14",
+        "Daniel 7,13",
+        "Micha 6,8",
+        "Psalm 1,1"
+       ],
+       "a": 0,
+       "ref": "Matthäus 1,22–23",
+       "why": "Matthäus führt Jesaja als Schriftwort an und deutet Jesu Geburt im Licht von „Immanuel“, Gott mit uns.",
+       "ot": "Jesaja 7,14 steht ursprünglich im Zeichenkontext für König Ahas. Christliche Auslegung liest den Text messianisch auf Jesus hin. Historischer Kontext und spätere christliche Anwendung sollten gemeinsam betrachtet werden."
+      }
+     ]
+    },
+    {
+     "title": "Das Reich Gottes & die Bergpredigt",
+     "range": "Matthäus 5–7",
+     "icon": "⛰",
+     "art": "mountain",
+     "theme": "Gerechtigkeit des Reiches",
+     "key": "Matthäus 5,3–12",
+     "quote": "Selig sind, die da geistlich arm sind; denn ihrer ist das Himmelreich.",
+     "lesson": "Die Bergpredigt beschreibt eine Gerechtigkeit, die nicht bei äußerem Verhalten stehen bleibt. Jesus legt das Gesetz nicht als bloße Checkliste aus, sondern richtet Herz, Beziehungen, Gebet und Umgang mit Feinden auf Gottes Herrschaft aus.",
+     "take": "Lies Matthäus 5,17–48. Unterscheide zwischen Jesu Zitat einer bekannten Regel und seiner Vertiefung, die Motive und innere Haltung anspricht.",
+     "questions": [
+      {
+       "q": "Was bedeutet Jesu Aussage, er sei nicht gekommen, das Gesetz aufzulösen, sondern zu erfüllen?",
+       "opts": [
+        "Das Gesetz und die Propheten sind für Jesus bedeutungslos.",
+        "Jesus stellt seine Sendung in Kontinuität zu den Schriften und bringt deren Ziel zur Geltung.",
+        "Jede Auslegung des Gesetzes ist unnötig.",
+        "Jesus spricht ausschließlich über römisches Recht."
+       ],
+       "a": 1,
+       "ref": "Matthäus 5,17–20",
+       "why": "Jesus stellt sich nicht außerhalb der Schriften Israels. „Erfüllen“ wird unterschiedlich ausgelegt, doch der Abschnitt betont die bleibende Bedeutung der Schrift im Licht seiner Sendung.",
+       "ot": "Psalm 119,142 und Jesaja 42,1–4 bilden Hintergründe für Gottes Weisung und den Knecht, der Recht zu den Völkern bringt. Sie sind keine direkte Vorhersage jedes Satzes der Bergpredigt."
+      },
+      {
+       "q": "Was fordert die Feindesliebe in Matthäus 5,43–48?",
+       "opts": [
+        "Unrecht soll nie benannt werden.",
+        "Jünger sollen ihre Feinde lieben und für Verfolger beten, als Ausdruck der Barmherzigkeit des Vaters.",
+        "Feinde müssen zuerst alle Fehler eingestehen.",
+        "Liebe gilt nur innerhalb der eigenen Gruppe."
+       ],
+       "a": 1,
+       "ref": "Matthäus 5,43–48",
+       "why": "Jesus durchbricht die Begrenzung der Liebe auf die eigene Gruppe. Feindesliebe ist keine Billigung von Gewalt, sondern eine radikale Orientierung am großzügigen Handeln Gottes.",
+       "ot": "Levitikus 19,18 gebietet Nächstenliebe. Exodus 23,4–5 fordert Hilfe sogar für das Tier eines Feindes. Jesus erweitert die Reichweite der Liebe und fordert Gebet für Verfolger."
+      }
+     ]
+    },
+    {
+     "title": "Gleichnisse & das Himmelreich",
+     "range": "Matthäus 13",
+     "icon": "🌱",
+     "art": "seed",
+     "theme": "Das verborgene Wachstum",
+     "key": "Matthäus 13,31–33",
+     "quote": "Das Himmelreich gleicht einem Senfkorn …",
+     "lesson": "Die Gleichnisse machen das Reich Gottes durch vertraute Bilder verständlich und zugleich herausfordernd. Manche zeigen unscheinbare Anfänge, andere Entscheidung, Wachstum oder Gericht. Nicht jedes Detail eines Gleichnisses muss eine eigene symbolische Entsprechung besitzen.",
+     "take": "Vergleiche das Gleichnis vom Sämann mit Jesu eigener Erklärung. Die Erklärung im Text hat Vorrang vor späteren Spekulationen.",
+     "questions": [
+      {
+       "q": "Was zeigen Senfkorn und Sauerteig in Matthäus 13?",
+       "opts": [
+        "Das Reich Gottes beginnt unscheinbar und entfaltet eine überraschende Wirkung.",
+        "Das Reich Gottes wächst nur durch politische Gewalt.",
+        "Kleine Dinge sind grundsätzlich böse.",
+        "Beide Gleichnisse handeln ausschließlich von Landwirtschaft."
+       ],
+       "a": 0,
+       "ref": "Matthäus 13,31–33",
+       "why": "Die Bilder kontrastieren den kleinen Anfang mit der späteren Wirkung. Sie ermutigen, Gottes Wirken nicht allein an Größe oder sichtbarer Macht zu messen.",
+       "ot": "Hesekiel 17,22–24 nutzt den Zweig und Baum als Bild für Gottes Handeln und Völker, die Schutz finden. Das ist ein motivischer Vergleich, kein ausdrücklich zitiertes Erfüllungswort."
+      },
+      {
+       "q": "Warum ist die Deutung des Sämanns besonders gut abgesichert?",
+       "opts": [
+        "Weil jede spätere Auslegung gleichrangig ist.",
+        "Weil Jesus im selben Kapitel eine Erklärung zu den Böden gibt.",
+        "Weil das Gleichnis keinen Kontext hat.",
+        "Weil es ausschließlich im Alten Testament steht."
+       ],
+       "a": 1,
+       "ref": "Matthäus 13,18–23",
+       "why": "Jesus erklärt die verschiedenen Reaktionen auf das Wort. Die Textdeutung sollte sich zuerst an dieser Erläuterung orientieren.",
+       "ot": "Jesaja 55,10–11 vergleicht Gottes Wort mit Regen, der Frucht hervorbringt. Dieser Hintergrund passt zum Bild des ausgesäten Wortes, wird hier aber nicht als direkte Erfüllung zitiert."
+      }
+     ]
+    },
+    {
+     "title": "Jünger, Kreuz & Nachfolge",
+     "range": "Matthäus 16–18",
+     "icon": "✝",
+     "art": "cross",
+     "theme": "Der Weg des Messias",
+     "key": "Matthäus 16,24",
+     "quote": "Will mir jemand nachfolgen, der verleugne sich selbst und nehme sein Kreuz auf sich.",
+     "lesson": "Petrus bekennt Jesus als Christus, versteht aber zunächst nicht den Weg des leidenden Messias. Nachfolge bedeutet, Jesu Weg nicht auf Triumph ohne Hingabe zu verkürzen. Die Gemeinschaft der Jünger soll zugleich Demut, Vergebung und Sorge für die Kleinen lernen.",
+     "take": "Lies Matthäus 16,13–28. Beachte den Kontrast zwischen dem Bekenntnis des Petrus und seiner Zurückweisung der Leidensankündigung.",
+     "questions": [
+      {
+       "q": "Warum weist Jesus Petrus nach dessen Einwand gegen das Leiden scharf zurecht?",
+       "opts": [
+        "Weil Petrus Jesus nicht als Person kennt.",
+        "Weil Petrus eine Vorstellung von Messianität vertritt, die das Leiden und Gottes Weg ausschließt.",
+        "Weil Jesus nie von seinem Tod gesprochen hat.",
+        "Weil Leiden an sich immer gut ist."
+       ],
+       "a": 1,
+       "ref": "Matthäus 16,21–23",
+       "why": "Petrus bekennt den Messias, lehnt aber den angekündigten Leidensweg ab. Jesus zeigt, dass menschliche Machtvorstellungen Gottes Weg verfehlen können.",
+       "ot": "Jesaja 52,13–53,12 beschreibt den leidenden Knecht. Christliche Auslegung liest diesen Text auf Jesu Passion hin; Matthäus 16 zitiert ihn hier nicht ausdrücklich."
+      },
+      {
+       "q": "Welche Haltung hebt Matthäus 18 besonders hervor?",
+       "opts": [
+        "Status und Rang sind der Maßstab für Größe.",
+        "Demut, Sorge für die Kleinen und ernsthafte Bemühung um Versöhnung prägen die Gemeinschaft.",
+        "Konflikte sollen immer öffentlich eskalieren.",
+        "Vergebung ist auf genau einmal begrenzt."
+       ],
+       "a": 1,
+       "ref": "Matthäus 18,1–22",
+       "why": "Jesus stellt ein Kind in die Mitte, warnt vor dem Verführen der Kleinen und lehrt, den Bruder zu gewinnen und großzügig zu vergeben.",
+       "ot": "Levitikus 19,17–18 verbindet zurechtweisende Liebe mit dem Gebot, den Nächsten zu lieben. Matthäus 18 entfaltet Versöhnung als Praxis der Gemeinde."
+      }
+     ]
+    },
+    {
+     "title": "Passion, Auferstehung & Sendung",
+     "range": "Matthäus 21–28",
+     "icon": "☀",
+     "art": "sunrise",
+     "theme": "Der auferstandene König",
+     "key": "Matthäus 28,18–20",
+     "quote": "Mir ist gegeben alle Gewalt im Himmel und auf Erden.",
+     "lesson": "Matthäus verbindet Jesu demütigen Einzug, die Passion, die Auferstehung und den Auftrag an alle Völker. Der Auferstandene sendet seine Jünger, Menschen zu Jüngern zu machen und sie zu lehren, Jesu Gebote zu halten.",
+     "take": "Vergleiche Matthäus 21,4–5 und Sacharja 9,9 mit Matthäus 28,18–20. Der König, der demütig einzieht, sendet nun seine Jünger zu allen Völkern.",
+     "questions": [
+      {
+       "q": "Welche Schriftstelle nennt Matthäus beim Einzug Jesu auf einem Esel?",
+       "opts": [
+        "Sacharja 9,9",
+        "Jesaja 40,3",
+        "Psalm 110,1",
+        "Micha 5,1"
+       ],
+       "a": 0,
+       "ref": "Matthäus 21,4–5",
+       "why": "Matthäus deutet den Einzug ausdrücklich durch das Prophetenwort über den demütigen König.",
+       "ot": "Sacharja 9,9 verheißt Zion einen gerechten, demütigen König auf einem Esel. Matthäus zitiert den Text ausdrücklich und bezieht ihn auf Jesus."
+      },
+      {
+       "q": "Was ist der Umfang des Missionsauftrags am Ende von Matthäus?",
+       "opts": [
+        "Nur die Menschen in Galiläa zu unterrichten.",
+        "Alle Völker zu Jüngern zu machen, zu taufen und Jesu Lehre weiterzugeben.",
+        "Die Jünger sollen keine neuen Menschen mehr erreichen.",
+        "Der Auftrag gilt nur bis zur Kreuzigung."
+       ],
+       "a": 1,
+       "ref": "Matthäus 28,18–20",
+       "why": "Der Auftrag ist universal und wird durch Jesu Vollmacht sowie seine bleibende Gegenwart getragen.",
+       "ot": "Genesis 12,3 verheißt Segen für alle Geschlechter der Erde durch Abraham. Matthäus' weltweiter Auftrag steht im Horizont dieser Völkerverheißung; der Text zitiert Genesis hier nicht direkt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Markus",
+   "short": "Mk",
+   "icon": "➤",
+   "stations": [
+    {
+     "title": "Der Anfang des Evangeliums",
+     "range": "Markus 1–3",
+     "icon": "🌊",
+     "art": "water",
+     "theme": "Gottes Königreich bricht an",
+     "key": "Markus 1,15",
+     "quote": "Die Zeit ist erfüllt, und das Reich Gottes ist herbeigekommen.",
+     "lesson": "Markus beginnt schnell und unmittelbar. Johannes der Täufer, Jesu Taufe, Versuchung und erste Heilungen stellen Jesu Autorität und die Dringlichkeit der Umkehr heraus. Das Reich Gottes ist nahe, und Menschen werden zur Antwort gerufen.",
+     "take": "Beobachte Markuss wiederkehrendes Tempo: „sogleich“ und rasche Szenenwechsel. Frage, welche Wirkung diese Erzählweise auf dich als Leser hat.",
+     "questions": [
+      {
+       "q": "Welche Rolle spielt Jesaja 40,3 in Markus 1,2–3?",
+       "opts": [
+        "Es wird als Schriftbezug für die Stimme verwendet, die den Weg des Herrn bereitet.",
+        "Es handelt von der Zerstörung Roms.",
+        "Markus sagt ausdrücklich, es habe nichts mit Johannes zu tun.",
+        "Es ist ein Zitat aus dem Johannesevangelium."
+       ],
+       "a": 0,
+       "ref": "Markus 1,2–3",
+       "why": "Markus eröffnet mit einem Schriftkomplex, der die Vorbereitung des Weges des Herrn mit Johannes dem Täufer verbindet.",
+       "ot": "Jesaja 40,3 spricht von einem Weg für den Herrn in der Wüste. Markus wendet das Motiv auf die Vorbereitung von Jesu Auftreten an; im Zitat klingt auch Exodus-Sprache des Weges durch die Wüste an."
+      },
+      {
+       "q": "Was meint Jesu Ruf zur Umkehr in Markus 1,15?",
+       "opts": [
+        "Nur ein Gefühl von Reue ohne Veränderung.",
+        "Eine Neuorientierung angesichts der Nähe von Gottes Reich und der Einladung zum Glauben.",
+        "Die Flucht aus jeder Gemeinschaft.",
+        "Eine politische Wahlentscheidung."
+       ],
+       "a": 1,
+       "ref": "Markus 1,14–15",
+       "why": "Umkehr und Glaube gehören zusammen. Jesus verkündet Gottes Herrschaft als nahe Wirklichkeit, auf die Menschen antworten sollen.",
+       "ot": "Jesaja 52,7 beschreibt den Freudenboten, der Frieden und Gottes Königsherrschaft verkündet. Es ist ein thematischer Hintergrund der Reich-Gottes-Verkündigung."
+      }
+     ]
+    },
+    {
+     "title": "Gleichnisse & verborgene Macht",
+     "range": "Markus 4–6",
+     "icon": "🌱",
+     "art": "seed",
+     "theme": "Hören und Vertrauen",
+     "key": "Markus 4,26–29",
+     "quote": "Mit dem Reich Gottes ist es so, wie wenn ein Mensch Samen aufs Land wirft.",
+     "lesson": "Markus zeigt das Reich Gottes als Gottes Wirken, dessen Wachstum Menschen nicht vollständig kontrollieren. Zugleich fragen Sturmstillung, Heilungen und Speisung nach Jesu Autorität und nach dem Vertrauen seiner Jünger.",
+     "take": "Lies Markus 4,35–41 und notiere, welche Frage die Jünger am Ende stellen. Diese Frage treibt die Christologie des Evangeliums voran.",
+     "questions": [
+      {
+       "q": "Was betont das Gleichnis von der selbstwachsenden Saat?",
+       "opts": [
+        "Der Mensch kontrolliert jeden Schritt des Wachstums.",
+        "Das Reich Gottes wächst durch Gottes Wirken, auch wenn der Mensch nicht alles erklären oder steuern kann.",
+        "Wachstum ist immer sichtbar und sofort.",
+        "Der Bauer ist der einzige Retter."
+       ],
+       "a": 1,
+       "ref": "Markus 4,26–29",
+       "why": "Der Sämann sät und erntet, aber das Wachstum geschieht auf eine Weise, die er nicht kontrolliert. Das Gleichnis betont Gottes verborgene Wirksamkeit.",
+       "ot": "Jesaja 55,10–11 vergleicht Gottes Wort mit Regen und Schnee, die die Erde fruchtbar machen. Das ist ein passender Bildhintergrund, kein direktes Zitat in Markus 4."
+      },
+      {
+       "q": "Welche Frage stellt die Sturmstillung an die Leser?",
+       "opts": [
+        "Ob Jesus wirklich mit dem See vertraut ist.",
+        "Wer Jesus ist, dass sogar Wind und See ihm gehorchen.",
+        "Ob die Jünger ein Boot besitzen dürfen.",
+        "Ob Stürme immer mangelnden Glauben beweisen."
+       ],
+       "a": 1,
+       "ref": "Markus 4,35–41",
+       "why": "Die Jünger fragen nach Jesu Identität. Die Szene erinnert an biblische Darstellungen, in denen Gott Macht über das Meer hat; sie ist keine einfache Formel, dass Glaubende nie Angst haben dürften.",
+       "ot": "Psalm 107,23–30 schildert, wie Gott Sturm und Wellen stillt. Markus lässt Jesu Autorität in einem Motiv erscheinen, das im Alten Testament Gottes Macht kennzeichnet."
+      }
+     ]
+    },
+    {
+     "title": "Wer ist Jesus? Der leidende Messias",
+     "range": "Markus 7–10",
+     "icon": "✝",
+     "art": "cross",
+     "theme": "Sehen lernen",
+     "key": "Markus 8,34",
+     "quote": "Wer mir nachfolgen will, der verleugne sich selbst und nehme sein Kreuz auf sich.",
+     "lesson": "Die Mitte des Markusevangeliums stellt die Frage nach Jesu Identität. Petrus erkennt ihn als Christus, doch die Jünger müssen lernen, dass Messianität durch Leiden, Dienst und Hingabe geprägt ist.",
+     "take": "Verfolge die drei Leidensankündigungen in Markus 8,31; 9,31 und 10,33–34. Achte darauf, wie die Jünger jeweils reagieren.",
+     "questions": [
+      {
+       "q": "Warum ist Petrus' Bekenntnis in Markus 8 nicht das Ende des Lernens?",
+       "opts": [
+        "Weil die Bezeichnung Christus falsch ist.",
+        "Weil Petrus Jesu Leidensweg nicht versteht und Jesus Nachfolge mit dem Kreuz verbindet.",
+        "Weil Jesus danach nicht mehr spricht.",
+        "Weil Markus keine Jünger kennt."
+       ],
+       "a": 1,
+       "ref": "Markus 8,27–38",
+       "why": "Das richtige Wort allein bedeutet noch kein umfassendes Verständnis. Jesus korrigiert triumphalistische Erwartungen und beschreibt den Weg des Messias als Leiden und Hingabe.",
+       "ot": "Jesaja 53,3–12 ist ein wichtiger Hintergrund christlicher Deutung des leidenden Messias. Markus zitiert diesen Abschnitt hier nicht direkt."
+      },
+      {
+       "q": "Was zeigt Jesu Antwort auf die Bitte um Ehrenplätze in Markus 10?",
+       "opts": [
+        "Größe in Jesu Gemeinschaft bedeutet, Herrschaft durch Dienst zu ersetzen.",
+        "Die besten Plätze gehören immer den Reichsten.",
+        "Jesus bestätigt, dass Macht über andere das Ziel ist.",
+        "Dienst ist nur für Nichtjünger nötig."
+       ],
+       "a": 0,
+       "ref": "Markus 10,35–45",
+       "why": "Jesus stellt die Herrschaftslogik der Völker der dienenden Gemeinschaft gegenüber. Der Menschensohn gibt sein Leben als Lösegeld für viele.",
+       "ot": "Jesaja 53,10–12 beschreibt den Knecht, der sich hingibt und viele trägt. Markus 10,45 wird häufig mit diesem Knechtsmotiv verbunden."
+      }
+     ]
+    },
+    {
+     "title": "Jerusalem & die Tempelkonfrontation",
+     "range": "Markus 11–13",
+     "icon": "🏛",
+     "art": "temple",
+     "theme": "Frucht und Wachsamkeit",
+     "key": "Markus 12,29–31",
+     "quote": "Du sollst den Herrn, deinen Gott, lieben … und deinen Nächsten wie dich selbst.",
+     "lesson": "Jesu Handeln im Tempel und seine Auseinandersetzungen stellen religiöse Autorität, Fruchtbarkeit und Gottes Gerechtigkeit auf den Prüfstand. Markus 13 ruft zu Wachsamkeit auf, nicht zu leichtfertigen Berechnungen von Endzeitdaten.",
+     "take": "Lies Markus 12,28–34. Beachte, dass Jesus zwei Gebote aus der Tora miteinander verbindet.",
+     "questions": [
+      {
+       "q": "Welche Bedeutung hat Jesu Verbindung von Gottes- und Nächstenliebe?",
+       "opts": [
+        "Beide Gebote stammen aus dem Alten Testament und werden als Zentrum gelebter Treue verbunden.",
+        "Nächstenliebe ersetzt die Liebe zu Gott vollständig.",
+        "Die Tora verbietet Nächstenliebe.",
+        "Es handelt sich um ein römisches Gesetz."
+       ],
+       "a": 0,
+       "ref": "Markus 12,28–34",
+       "why": "Jesus zitiert das Glaubensbekenntnis Israels und das Gebot der Nächstenliebe. Er fasst die Tora nicht als abstrakte Regelmenge, sondern als Liebe zu Gott und Menschen zusammen.",
+       "ot": "Deuteronomium 6,4–5 gebietet die Liebe zu Gott; Levitikus 19,18 die Liebe zum Nächsten. Jesus verbindet beide Texte ausdrücklich."
+      },
+      {
+       "q": "Wie sollte Markus 13 verantwortungsvoll gelesen werden?",
+       "opts": [
+        "Als Kalender mit exakten Daten für das Weltende.",
+        "Als Aufruf zu Wachsamkeit und Treue inmitten von Bedrängnis, ohne vorschnelle Datumsberechnungen.",
+        "Als Aussage, dass Leiden nie vorkommt.",
+        "Als rein private Vision ohne Bezug auf Jünger."
+       ],
+       "a": 1,
+       "ref": "Markus 13,5–37",
+       "why": "Jesus warnt vor Verführung und ruft zur Wachsamkeit. Die genaue Deutung einzelner endzeitlicher Bilder wird diskutiert; der Text selbst betont Treue und Aufmerksamkeit.",
+       "ot": "Daniel 7 und 12 prägen die Bildwelt von Bedrängnis und Menschensohn. Diese apokalyptischen Texte liefern einen Deutungshorizont, keine Einladung zu beliebigen Datumsprognosen."
+      }
+     ]
+    },
+    {
+     "title": "Kreuz und leeres Grab",
+     "range": "Markus 14–16",
+     "icon": "☀",
+     "art": "sunrise",
+     "theme": "Der gekreuzigte Sohn Gottes",
+     "key": "Markus 15,39",
+     "quote": "Wahrlich, dieser Mensch ist Gottes Sohn gewesen!",
+     "lesson": "Markus führt zur Passion und lässt einen römischen Hauptmann unter dem Kreuz eine entscheidende Aussage machen. Die früheste überlieferte Textform von Markus endet in vielen modernen Bibelausgaben bei 16,8; längere Schlussabschnitte werden in den Handschriften unterschiedlich überliefert.",
+     "take": "Vergleiche Markus 15,33–39 mit Markus 1,1. Wie verändert das Kreuz das Verständnis von Jesu Identität?",
+     "questions": [
+      {
+       "q": "Welche Ironie liegt in der Inschrift „König der Juden“ und der Verspottung Jesu?",
+       "opts": [
+        "Die Gegner erkennen bewusst und vollständig Jesu Sendung an.",
+        "Die Bezeichnung als Spott trifft unbeabsichtigt eine zentrale Wahrheit über Jesus als König.",
+        "Markus sagt, Jesus sei nicht gekreuzigt worden.",
+        "Die Inschrift wird von den Jüngern geschrieben."
+       ],
+       "a": 1,
+       "ref": "Markus 15,16–39",
+       "why": "Markus zeigt, dass die Spötter Jesu Königswürde missverstehen. Gerade am Kreuz wird sichtbar, dass seine Herrschaft nicht den üblichen Machtmustern entspricht.",
+       "ot": "Psalm 22 beschreibt Spott und das Vertrauen des leidenden Gerechten. Christliche Leser sehen Parallelen zur Passion; Markus 15 gestaltet die Szene im weiteren biblischen Leidenshorizont."
+      },
+      {
+       "q": "Was sollte man über Markus 16,9–20 wissen?",
+       "opts": [
+        "Alle Handschriften enthalten exakt denselben Schluss.",
+        "Der längere Schluss fehlt in einigen der ältesten wichtigen Handschriften und wird in Bibelausgaben oft gekennzeichnet.",
+        "Er ist der Anfang des Markusevangeliums.",
+        "Er handelt nur vom Alten Testament."
+       ],
+       "a": 1,
+       "ref": "Markus 16,8–20",
+       "why": "Die Überlieferung des Markusschlusses ist textkritisch komplex. Viele Bibeln markieren 16,9–20 als längeren Schluss, der in einigen wichtigen frühen Handschriften fehlt. Das ist eine Frage der Textüberlieferung, nicht ein Grund, den Auferstehungsglauben auf einen Vers zu reduzieren.",
+       "ot": "Die Auferstehungshoffnung hat breite alttestamentliche Hintergründe, etwa Daniel 12,2. Markus 16 ist aber keine direkte Erfüllungsformel dieses Verses."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lukas",
+   "short": "Lk",
+   "icon": "♡",
+   "stations": [
+    {
+     "title": "Gute Nachricht für alle",
+     "range": "Lukas 1–2",
+     "icon": "⭐",
+     "art": "nativity",
+     "theme": "Gottes Barmherzigkeit",
+     "key": "Lukas 1,46–55",
+     "quote": "Er hat sich seines Knechtes Israel angenommen und gedacht an seine Barmherzigkeit.",
+     "lesson": "Lukas stellt die Geburt Jesu in den Zusammenhang von Israels Hoffnung und Gottes Barmherzigkeit. Marias Lobgesang spricht von der Umkehrung menschlicher Machtverhältnisse und von Gottes Treue zu Abraham.",
+     "take": "Vergleiche Marias Lobgesang mit Hannas Gebet in 1. Samuel 2. Achte auf gemeinsame Motive: Demütige werden erhoben, Mächtige gestürzt und Bedürftige versorgt.",
+     "questions": [
+      {
+       "q": "Welche Rolle spielt Marias Lobgesang (Magnificat)?",
+       "opts": [
+        "Er beschreibt Gottes Barmherzigkeit und die Umkehrung von Machtverhältnissen im Licht Israels Hoffnung.",
+        "Er lehnt Israel und seine Schriften ab.",
+        "Er sagt, dass Arme Gottes Aufmerksamkeit nicht erhalten.",
+        "Er ist ein römischer Siegesgesang."
+       ],
+       "a": 0,
+       "ref": "Lukas 1,46–55",
+       "why": "Der Lobgesang verbindet persönliche Freude mit Gottes Handeln an Israel und mit einer sozialen Umkehrung: Hochmütige werden zerstreut, Niedrige erhoben.",
+       "ot": "1. Samuel 2,1–10: Hannas Lied feiert Gottes Umkehrung menschlicher Macht und Schwäche. Lukas' Magnificat steht deutlich in dieser Gebetstradition."
+      },
+      {
+       "q": "Warum ist die Geburt Jesu in Lukas 2 mit David verbunden?",
+       "opts": [
+        "Weil Lukas Jesus von Israels Hoffnung trennt.",
+        "Weil die Davidstradition den erwarteten König und Gottes Verheißung an Israel aufruft.",
+        "Weil Bethlehem in Rom liegt.",
+        "Weil Lukas keine historischen Orte nennt."
+       ],
+       "a": 1,
+       "ref": "Lukas 1,32–33; 2,4–11",
+       "why": "Die Davidlinie verankert Jesu Sendung in Israels Königshoffnung. Lukas verbindet diese Hoffnung mit einem Retter, dessen Geburt zuerst einfachen Hirten verkündet wird.",
+       "ot": "2. Samuel 7,12–16 verheißt David eine bleibende Dynastie. Lukas greift die Hoffnung auf Davids Thron ausdrücklich auf."
+      }
+     ]
+    },
+    {
+     "title": "Umkehr, Gebet & der Geist",
+     "range": "Lukas 3–6",
+     "icon": "🕊",
+     "art": "water",
+     "theme": "Gottes Geist und neue Lebensrichtung",
+     "key": "Lukas 4,18–19",
+     "quote": "Der Geist des Herrn ist auf mir, weil er mich gesalbt hat.",
+     "lesson": "Lukas stellt Jesus als vom Geist erfüllten Gesandten dar. In Nazareth liest Jesus Jesaja und beschreibt eine Mission, die Armen, Gefangenen und Unterdrückten gute Nachricht bringt. Umkehr zeigt sich im konkreten Leben.",
+     "take": "Lies Lukas 4,16–30. Frage, warum Jesu Zuhörer zunächst staunen und dann zornig werden.",
+     "questions": [
+      {
+       "q": "Welche Schriftrolle liest Jesus in der Synagoge von Nazareth?",
+       "opts": [
+        "Jesaja 61 mit dem Motiv guter Nachricht und Befreiung.",
+        "Daniel 2 über das Standbild.",
+        "Genesis 22 über Isaak.",
+        "Psalm 150 über Musik."
+       ],
+       "a": 0,
+       "ref": "Lukas 4,16–21",
+       "why": "Jesus liest aus Jesaja und erklärt, dass sich die Schrift heute erfüllt. Seine Sendung wird als vom Geist getragene gute Nachricht beschrieben.",
+       "ot": "Jesaja 61,1–2 spricht vom Gesalbten, der Armen gute Nachricht bringt und Befreiung verkündet. Lukas zitiert diesen Text und verbindet ihn mit Jesu Mission; die genaue Zitatform verbindet auch Motive aus Jesaja 58."
+      },
+      {
+       "q": "Warum spielt Gebet bei Lukas eine besondere Rolle?",
+       "opts": [
+        "Jesus betet nur, wenn keine Menschen anwesend sind.",
+        "Gebet begleitet entscheidende Momente und zeigt Jesu Beziehung zum Vater.",
+        "Gebet ist für Jünger verboten.",
+        "Lukas erwähnt Gebet nie."
+       ],
+       "a": 1,
+       "ref": "Lukas 3,21; 5,16; 6,12",
+       "why": "Lukas zeigt Jesus wiederholt im Gebet, besonders vor wichtigen Entscheidungen. Das prägt auch das Leben der Jünger und der späteren Gemeinde.",
+       "ot": "Psalmen zeigen Gebet als Antwort Israels auf Gott. Lukas setzt Jesu Gebet in diese Tradition, ohne einen einzelnen Psalm als Vorhersage zu zitieren."
+      }
+     ]
+    },
+    {
+     "title": "Barmherzigkeit & die Verlorenen",
+     "range": "Lukas 7–15",
+     "icon": "♡",
+     "art": "shepherd",
+     "theme": "Gott sucht das Verlorene",
+     "key": "Lukas 15,20",
+     "quote": "Als er aber noch fern war, sah ihn sein Vater, und es jammerte ihn.",
+     "lesson": "Lukas erzählt von Menschen am Rand, von Mahlgemeinschaften und von Gottes Freude über Umkehr. Die Gleichnisse vom verlorenen Schaf, der verlorenen Münze und dem verlorenen Sohn stellen Gottes suchende und vergebende Barmherzigkeit ins Zentrum.",
+     "take": "Vergleiche die drei Gleichnisse in Lukas 15. Was wiederholt sich? Wer freut sich? Wer versteht die Freude nicht?",
+     "questions": [
+      {
+       "q": "Was verbindet die drei Gleichnisse in Lukas 15?",
+       "opts": [
+        "Die Freude, wenn Verlorenes gefunden wird, und die Einladung, diese Freude zu teilen.",
+        "Die Forderung, dass Verlorene niemals zurückkehren dürfen.",
+        "Sie erklären, dass Besitz wichtiger als Menschen ist.",
+        "Sie handeln alle von römischen Steuern."
+       ],
+       "a": 0,
+       "ref": "Lukas 15,1–32",
+       "why": "Die Gleichnisse antworten auf Kritik an Jesu Gemeinschaft mit Sündern. Suchen, Finden und Freude bilden die wiederkehrende Bewegung.",
+       "ot": "Hesekiel 34,11–16 beschreibt Gott als Hirten, der seine verstreuten Schafe sucht. Das ist ein starker alttestamentlicher Hintergrund für Lukas 15, besonders das verlorene Schaf."
+      },
+      {
+       "q": "Was zeigt der ältere Bruder im Gleichnis vom verlorenen Sohn?",
+       "opts": [
+        "Dass die Geschichte nur über Geld handelt.",
+        "Wie Selbstgerechtigkeit die Freude über die Wiederherstellung eines anderen Menschen blockieren kann.",
+        "Dass der Vater seinen jüngeren Sohn ablehnt.",
+        "Dass Vergebung in der Geschichte ausgeschlossen ist."
+       ],
+       "a": 1,
+       "ref": "Lukas 15,25–32",
+       "why": "Der ältere Bruder steht für die Empörung derer, die Jesu Barmherzigkeit gegenüber Außenseitern kritisieren. Der Vater lädt auch ihn in die Freude ein.",
+       "ot": "Jona 4 zeigt einen Propheten, der sich über Gottes Barmherzigkeit gegenüber Ninive ärgert. Der Vergleich ist thematisch: Gottes Erbarmen fordert die Haltung der Frommen heraus."
+      }
+     ]
+    },
+    {
+     "title": "Reichtum, Gerechtigkeit & Nachfolge",
+     "range": "Lukas 16–19",
+     "icon": "⚖",
+     "art": "road",
+     "theme": "Treue im Umgang mit Besitz",
+     "key": "Lukas 19,10",
+     "quote": "Denn der Menschensohn ist gekommen, zu suchen und selig zu machen, was verloren ist.",
+     "lesson": "Lukas stellt den Umgang mit Besitz, Macht und den Bedürftigen scharf ins Licht. Zachäus zeigt, dass Begegnung mit Jesus konkrete Umkehr und Wiedergutmachung bewirken kann.",
+     "take": "Lies Lukas 19,1–10. Was verändert sich bei Zachäus, nachdem Jesus ihn anspricht?",
+     "questions": [
+      {
+       "q": "Was zeigt Zachäus' Reaktion auf Jesus?",
+       "opts": [
+        "Dass Umkehr nur ein inneres Gefühl ohne Folgen ist.",
+        "Dass die Begegnung mit Jesus zu konkreter Wiedergutmachung und Großzügigkeit führen kann.",
+        "Dass Reichtum immer ein Zeichen göttlicher Gunst ist.",
+        "Dass Jesus ihn nicht beachtet."
+       ],
+       "a": 1,
+       "ref": "Lukas 19,1–10",
+       "why": "Zachäus antwortet auf Jesu Zuwendung mit konkreten Schritten: Er gibt den Armen und erstattet zu Unrecht Erpresstes zurück.",
+       "ot": "Levitikus 6,1–5 beschreibt Wiedergutmachung bei Betrug. Zachäus' Handeln erinnert an diese rechtliche und ethische Tradition."
+      },
+      {
+       "q": "Was ist die Pointe des Gleichnisses vom reichen Mann und Lazarus?",
+       "opts": [
+        "Armut garantiert automatisch jede Tugend.",
+        "Die Gleichgültigkeit gegenüber dem Bedürftigen ist ernst; Gottes Urteil kehrt menschliche Maßstäbe um.",
+        "Reiche Menschen können nie umkehren.",
+        "Das Gleichnis lehrt, dass die Tora keine Rolle spielt."
+       ],
+       "a": 1,
+       "ref": "Lukas 16,19–31",
+       "why": "Der reiche Mann sieht Lazarus täglich und bleibt gleichgültig. Die Erzählung warnt vor einem Leben, das Gottes Weisung und den Nächsten ignoriert.",
+       "ot": "Deuteronomium 15,7–11 fordert offene Hand gegenüber Armen. Die Erzählung steht in diesem biblischen Ethos sozialer Verantwortung."
+      }
+     ]
+    },
+    {
+     "title": "Jerusalem, Kreuz & Auferstehung",
+     "range": "Lukas 19–24",
+     "icon": "☀",
+     "art": "sunrise",
+     "theme": "Der Auferstandene öffnet die Schriften",
+     "key": "Lukas 24,27",
+     "quote": "Und er fing an bei Mose und allen Propheten und legte ihnen aus, was in allen Schriften von ihm gesagt war.",
+     "lesson": "Lukas endet mit dem Auferstandenen, der die Jünger lehrt, die Schriften neu zu lesen. Die Emmausgeschichte macht deutlich, dass Glaube, Schriftverständnis und die Erfahrung des Auferstandenen zusammengehören.",
+     "take": "Lies Lukas 24,13–35. Welche Schritte führen die beiden Jünger vom Nichtverstehen zum Erkennen?",
+     "questions": [
+      {
+       "q": "Warum ist die Emmausgeschichte für das Bibelverständnis wichtig?",
+       "opts": [
+        "Weil Jesus die Schriften als bedeutungslos erklärt.",
+        "Weil der Auferstandene die Schriften auslegt und das Leiden des Messias in Gottes Geschichte einordnet.",
+        "Weil die Jünger sofort alles verstanden hatten.",
+        "Weil Lukas die Auferstehung nicht erwähnt."
+       ],
+       "a": 1,
+       "ref": "Lukas 24,13–35",
+       "why": "Jesus führt die Jünger durch Mose und die Propheten. Der Text zeigt eine christliche Lesart der Schriften im Licht von Leiden und Herrlichkeit des Messias.",
+       "ot": "Lukas nennt keine einzelne Stelle als einzige Erfüllung. Der Abschnitt beschreibt eine umfassende Auslegung von Mose und Propheten, weshalb einzelne Bezüge sorgfältig geprüft werden müssen."
+      },
+      {
+       "q": "Was ist die Aufgabe der Jünger in Lukas 24,46–49?",
+       "opts": [
+        "Die Botschaft von Umkehr und Vergebung in Jesu Namen allen Völkern zu verkündigen und auf die Verheißung des Vaters zu warten.",
+        "Sich dauerhaft in Jerusalem einzuschließen.",
+        "Die Schriften nicht mehr zu lesen.",
+        "Eine politische Machtübernahme zu organisieren."
+       ],
+       "a": 0,
+       "ref": "Lukas 24,46–49",
+       "why": "Leiden und Auferstehung führen zur Verkündigung von Umkehr und Vergebung. Die Jünger sollen Zeugnis geben und auf die Kraft aus der Höhe warten.",
+       "ot": "Jesaja 49,6 spricht vom Licht für die Völker. Lukas und die Apostelgeschichte entwickeln die Ausweitung der Sendung von Jerusalem zu allen Völkern."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Johannes",
+   "short": "Joh",
+   "icon": "✦",
+   "stations": [
+    {
+     "title": "Das Wort wird Fleisch",
+     "range": "Johannes 1–2",
+     "icon": "✦",
+     "art": "light",
+     "theme": "Jesu Identität",
+     "key": "Johannes 1,14",
+     "quote": "Und das Wort ward Fleisch und wohnte unter uns.",
+     "lesson": "Johannes beginnt mit dem ewigen Wort, das bei Gott war und Gott war. Jesus wird als Gottes Offenbarung in menschlicher Wirklichkeit dargestellt. Die Zeichen offenbaren Herrlichkeit und laden zum Glauben ein.",
+     "take": "Lies Johannes 1,1–18. Markiere, was über das Wort gesagt wird, und vergleiche die Schöpfungssprache mit Genesis 1.",
+     "questions": [
+      {
+       "q": "Was sagt Johannes 1,1–3 über das Wort?",
+       "opts": [
+        "Es beginnt erst bei Jesu Taufe zu existieren.",
+        "Es war im Anfang bei Gott und war Gott; alles wurde durch es.",
+        "Es ist nur ein anderer Name für Johannes den Täufer.",
+        "Es ist von der Schöpfung ausgeschlossen."
+       ],
+       "a": 1,
+       "ref": "Johannes 1,1–3",
+       "why": "Der Prolog beschreibt das Wort als vor aller geschaffenen Wirklichkeit bestehend und in einzigartiger Beziehung zu Gott. Johannes 1,14 identifiziert es mit dem fleischgewordenen Jesus.",
+       "ot": "Genesis 1,1–3: Gott schafft durch sein Wort. Johannes greift die Schöpfungssprache auf. Das ist eine theologische Verbindung, keine direkte Vorhersage."
+      },
+      {
+       "q": "Was betont das Bild, dass das Wort unter uns „wohnte“?",
+       "opts": [
+        "Gottes Gegenwart wird in Jesus unter Menschen sichtbar.",
+        "Jesus war nur scheinbar Mensch.",
+        "Gott wohnt ausschließlich in einem Gebäude.",
+        "Der Prolog spricht nur über Engel."
+       ],
+       "a": 0,
+       "ref": "Johannes 1,14",
+       "why": "Das griechische Verb erinnert an das Zelten oder Wohnen. Johannes verbindet Gottes Herrlichkeit mit der Menschwerdung Jesu.",
+       "ot": "Exodus 40,34–38: Gottes Herrlichkeit erfüllt die Stiftshütte. Johannes verbindet diese Gegenwartsvorstellung mit Jesus; das ist eine Anspielung, keine wörtliche Prophezeiung."
+      }
+     ]
+    },
+    {
+     "title": "Neu geboren & lebendiges Wasser",
+     "range": "Johannes 3–4",
+     "icon": "≈",
+     "art": "water",
+     "theme": "Neues Leben aus Gott",
+     "key": "Johannes 3,5",
+     "quote": "Wenn jemand nicht geboren wird aus Wasser und Geist …",
+     "lesson": "Nikodemus und die Samariterin begegnen Jesus aus unterschiedlichen sozialen und religiösen Positionen. Beide Gespräche führen über vertraute Vorstellungen hinaus zu Gottes Geschenk von neuem Leben und wahrer Anbetung.",
+     "take": "Vergleiche Johannes 3,1–8 mit Hesekiel 36,25–27. Achte auf Wasser, Reinigung, neues Herz und Geist.",
+     "questions": [
+      {
+       "q": "Was meint Jesus mit Geburt „von oben“?",
+       "opts": [
+        "Eine zweite körperliche Geburt.",
+        "Das neue Leben, das Gottes Geist schenkt.",
+        "Eine geheime Lehre nur für Gelehrte.",
+        "Eine bestimmte Abstammung."
+       ],
+       "a": 1,
+       "ref": "Johannes 3,3–8",
+       "why": "Das griechische Wort kann „von neuem“ und „von oben“ bedeuten. Jesus verweist auf Gottes Geist als Quelle des neuen Lebens.",
+       "ot": "Hesekiel 36,25–27 verheißt reines Wasser, ein neues Herz und Gottes Geist. Dieser Abschnitt bildet einen engen theologischen Hintergrund."
+      },
+      {
+       "q": "Wie beschreibt Jesus wahre Anbetung in Johannes 4?",
+       "opts": [
+        "Sie ist ausschließlich an Jerusalem gebunden.",
+        "Sie geschieht im Geist und in Wahrheit.",
+        "Sie ist nur Samaritanern möglich.",
+        "Sie benötigt keine Wahrheit."
+       ],
+       "a": 1,
+       "ref": "Johannes 4,19–24",
+       "why": "Jesus verschiebt den Schwerpunkt von einem exklusiven Ort auf die vom Geist und von Wahrheit bestimmte Anbetung.",
+       "ot": "Maleachi 1,11 spricht von Gottes Namen unter den Völkern. Das ist ein thematischer Hintergrund, keine direkte Vorhersage des Gesprächs."
+      }
+     ]
+    },
+    {
+     "title": "Zeichen, Brot & guter Hirte",
+     "range": "Johannes 5–10",
+     "icon": "☼",
+     "art": "shepherd",
+     "theme": "Zeichen weisen auf Jesus",
+     "key": "Johannes 10,11",
+     "quote": "Ich bin der gute Hirte. Der gute Hirte lässt sein Leben für die Schafe.",
+     "lesson": "Heilungen, Speisung, Licht und Hirtenbilder offenbaren Jesu Identität. Die Zeichen fordern zu Glauben heraus; zugleich entstehen Konflikte über Jesu Autorität und seine Beziehung zum Vater.",
+     "take": "Lies Johannes 6,1–40. Verfolge den Wechsel von körperlichem Brot zum Brot des Lebens.",
+     "questions": [
+      {
+       "q": "Was bedeutet Jesu Aussage „Ich bin das Brot des Lebens“?",
+       "opts": [
+        "Er verspricht, dass Glaubende nie wieder körperlichen Hunger erleben.",
+        "Er beschreibt sich als Gottes lebenschenkende Gabe, der Menschen im Glauben vertrauen sollen.",
+        "Er fordert zur Verehrung von Brot auf.",
+        "Er beendet alle jüdischen Feste."
+       ],
+       "a": 1,
+       "ref": "Johannes 6,25–40",
+       "why": "Jesus lenkt von der Suche nach weiterer Nahrung auf sich selbst als Brot des Lebens. Das Bild steht im Zusammenhang von Vertrauen und ewigem Leben.",
+       "ot": "Exodus 16,4–15 erzählt vom Manna in der Wüste. Johannes greift den Manna-Hintergrund auf und stellt Jesus als das Brot des Lebens dar."
+      },
+      {
+       "q": "Welchen Hintergrund hat das Bild vom guten Hirten?",
+       "opts": [
+        "Es ist ausschließlich eine Metapher für römische Kaiser.",
+        "Gott wird in Israels Schriften als Hirte seines Volkes dargestellt und verheißt gute Führung.",
+        "Hirtenbilder kommen im Alten Testament nicht vor.",
+        "Jesus weist jede Verantwortung zurück."
+       ],
+       "a": 1,
+       "ref": "Johannes 10,1–18",
+       "why": "Jesus kennt die Seinen, ruft sie und gibt sein Leben für sie. Das Bild verbindet Beziehung, Schutz und Hingabe.",
+       "ot": "Hesekiel 34,11–16.23: Gott sucht die Schafe selbst und verheißt einen Hirten aus Davids Linie. Johannes 10 wird häufig vor diesem Hintergrund gelesen."
+      }
+     ]
+    },
+    {
+     "title": "Lazarus & der König",
+     "range": "Johannes 11–12",
+     "icon": "✧",
+     "art": "tomb",
+     "theme": "Leben durch Hingabe",
+     "key": "Johannes 11,25",
+     "quote": "Ich bin die Auferstehung und das Leben.",
+     "lesson": "Die Auferweckung des Lazarus stellt Jesus in Beziehung zu Tod und Leben. Der Einzug in Jerusalem verbindet königliche Hoffnung mit einem demütigen König, dessen „Stunde“ durch den Weg zum Kreuz bestimmt wird.",
+     "take": "Lies Johannes 12,12–26. Vergleiche den König auf dem Esel mit dem Weizenkorn, das stirbt und Frucht bringt.",
+     "questions": [
+      {
+       "q": "Welche Schriftstelle nennt Johannes beim Einzug in Jerusalem?",
+       "opts": [
+        "Sacharja 9,9",
+        "Jesaja 7,14",
+        "Daniel 2,44",
+        "Psalm 1,1"
+       ],
+       "a": 0,
+       "ref": "Johannes 12,14–15",
+       "why": "Johannes zitiert das Prophetenwort über den demütigen König ausdrücklich und deutet den Einzug dadurch.",
+       "ot": "Sacharja 9,9: Der König kommt demütig auf einem Esel. Johannes nennt die Stelle direkt als Deutung des Einzugs."
+      },
+      {
+       "q": "Was vermittelt das Bild des Weizenkorns in Johannes 12,24?",
+       "opts": [
+        "Leben entsteht durch Hingabe; Jesus deutet damit seinen bevorstehenden Tod und dessen Frucht.",
+        "Jesus will jede Landwirtschaft verbieten.",
+        "Der Tod Jesu ist ein Missverständnis ohne Bedeutung.",
+        "Das Bild handelt nur von den Jüngern, nicht von Jesus."
+       ],
+       "a": 0,
+       "ref": "Johannes 12,23–26",
+       "why": "Die Stunde der Verherrlichung umfasst Jesu Tod. Das Korn bringt Frucht, indem es in die Erde fällt und stirbt.",
+       "ot": "Jesaja 53,10–12 beschreibt den leidenden Knecht, dessen Leiden Frucht für viele bringt. Christen lesen diese Verbindung oft christologisch; Johannes zitiert Jesaja 53 hier nicht ausdrücklich."
+      }
+     ]
+    },
+    {
+     "title": "Abschied, Kreuz & Auferstehung",
+     "range": "Johannes 13–21",
+     "icon": "☀",
+     "art": "sunrise",
+     "theme": "Liebe, Geist und Leben",
+     "key": "Johannes 20,31",
+     "quote": "Diese aber sind geschrieben, damit ihr glaubt, dass Jesus der Christus ist.",
+     "lesson": "Die Abschiedsreden sprechen von Liebe, Geist, Wahrheit und Einheit. Die Passion wird als Vollendung der Sendung erzählt; die Auferstehungsbegegnungen führen zum Bekenntnis und zur Wiederherstellung der Jünger.",
+     "take": "Lies Johannes 19,28–37 und notiere, welche Stellen der Evangelist ausdrücklich als erfüllte Schrift bezeichnet.",
+     "questions": [
+      {
+       "q": "Welche alttestamentliche Stelle verbindet Johannes mit dem durchbohrten Jesus?",
+       "opts": [
+        "Sacharja 12,10",
+        "Micha 6,8",
+        "Psalm 1,1",
+        "Genesis 3,1"
+       ],
+       "a": 0,
+       "ref": "Johannes 19,34–37",
+       "why": "Johannes zitiert die Aussage über den Durchbohrten ausdrücklich und deutet die Szene als Schriftzeugnis.",
+       "ot": "Sacharja 12,10 spricht vom Blick auf den Durchbohrten. Johannes bezieht den Text ausdrücklich auf Jesus; der ursprüngliche Sacharja-Kontext und die christliche Anwendung sind beide zu beachten."
+      },
+      {
+       "q": "Was nennt Johannes 20,31 als Ziel des Evangeliums?",
+       "opts": [
+        "Eine lückenlose Chronologie aller Ereignisse.",
+        "Glaube an Jesus als Christus und Sohn Gottes und Leben in seinem Namen.",
+        "Das Ende jeder Schriftlektüre.",
+        "Eine geheime Lehre nur für Apostel."
+       ],
+       "a": 1,
+       "ref": "Johannes 20,30–31",
+       "why": "Johannes erklärt seinen Zweck selbst: Die ausgewählten Zeichen sollen Glauben und Leben wecken.",
+       "ot": "Deuteronomium 30,19–20 stellt Israel Leben und Tod vor. Das ist ein breiter Themenklang, keine direkte Zitation in Johannes 20."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Apostelgeschichte",
+   "short": "Apg",
+   "icon": "🕊",
+   "stations": [
+    {
+     "title": "Pfingsten & die erste Gemeinde",
+     "range": "Apostelgeschichte 1–4",
+     "icon": "🔥",
+     "art": "fire",
+     "theme": "Der Geist befähigt zum Zeugnis",
+     "key": "Apostelgeschichte 2,17",
+     "quote": "Ich will ausgießen von meinem Geist auf alles Fleisch.",
+     "lesson": "Apostelgeschichte erzählt, wie die Verheißung des Geistes die Jünger zu Zeugen macht. Pfingsten verbindet unterschiedliche Sprachen, prophetische Hoffnung und die Entstehung einer Gemeinschaft, die Lehre, Gebet und Teilen verbindet.",
+     "take": "Lies Apostelgeschichte 2,14–41 und vergleiche Petrus' Auslegung mit dem Joel-Zitat. Beachte, wie die Schrift als Deutungsrahmen für das Ereignis dient.",
+     "questions": [
+      {
+       "q": "Welche alttestamentliche Prophezeiung zitiert Petrus zu Pfingsten?",
+       "opts": [
+        "Joel 3,1–5 in vielen deutschen Zählungen; Joel 2,28–32 in anderen.",
+        "Jesaja 7,14",
+        "Micha 5,1",
+        "Psalm 1,1"
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 2,16–21",
+       "why": "Petrus erklärt das Ereignis mithilfe von Joel: Gottes Geist wird ausgegossen, und Menschen werden prophetisch reden.",
+       "ot": "Joel verheißt, dass Gott seinen Geist auf alle Arten von Menschen ausgießen wird. Petrus wendet die Verheißung auf Pfingsten an. Die Verszählung variiert zwischen Bibelausgaben."
+      },
+      {
+       "q": "Welche Kennzeichen prägen die erste Gemeinde in Apostelgeschichte 2,42–47?",
+       "opts": [
+        "Lehre der Apostel, Gemeinschaft, Brotbrechen, Gebet und großzügiges Teilen.",
+        "Abschottung von allen Bedürftigen.",
+        "Verzicht auf gemeinsames Gebet.",
+        "Politische Herrschaft als erstes Ziel."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 2,42–47",
+       "why": "Lukas beschreibt eine Gemeinschaft, deren Glauben in gemeinsamer Praxis, Fürsorge und Gebet sichtbar wird.",
+       "ot": "Deuteronomium 15,4–11 fordert Sorge für Bedürftige. Die Praxis der Gemeinde steht in der ethischen Tradition Israels, ohne dass Lukas hier einen einzelnen Erfüllungsvers zitiert."
+      }
+     ]
+    },
+    {
+     "title": "Verfolgung, Stephanus & Philippus",
+     "range": "Apostelgeschichte 5–8",
+     "icon": "🕯",
+     "art": "road",
+     "theme": "Zeugnis trotz Widerstand",
+     "key": "Apostelgeschichte 7,55–56",
+     "quote": "Ich sehe den Himmel offen und den Menschensohn zur Rechten Gottes stehen.",
+     "lesson": "Widerstand beendet das Zeugnis nicht, sondern führt zu seiner Ausbreitung. Stephanus liest Israels Geschichte als Geschichte von Gottes Treue und menschlicher Ablehnung. Philippus verkündet Jesus auch außerhalb Jerusalems.",
+     "take": "Lies Apostelgeschichte 7 und notiere, wie Stephanus Abraham, Mose, den Tempel und die Propheten miteinander verbindet.",
+     "questions": [
+      {
+       "q": "Warum ist Stephanus' Rede mehr als eine bloße Rückschau auf Israels Geschichte?",
+       "opts": [
+        "Sie zeigt wiederkehrende Muster von Gottes Treue und der Ablehnung seiner Gesandten.",
+        "Sie behauptet, Gott habe nie mit Israel gehandelt.",
+        "Sie erwähnt keine Schriftfiguren.",
+        "Sie ist eine Rede über römische Steuern."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 7,1–53",
+       "why": "Stephanus erzählt die Geschichte Israels als Zeugnis für Gottes Wirken und kritisiert, dass Gottes Gesandte immer wieder zurückgewiesen wurden.",
+       "ot": "1. Könige 8,27 sagt, dass selbst der Himmel Gott nicht fassen kann. Stephanus greift die Tempelthematik im Licht der biblischen Aussage auf, dass Gottes Gegenwart nicht auf ein Gebäude begrenzt ist."
+      },
+      {
+       "q": "Wie deutet der äthiopische Hofbeamte Jesaja 53 in Apostelgeschichte 8?",
+       "opts": [
+        "Philippus erklärt die Schrift im Zusammenhang mit Jesus.",
+        "Der Beamte verbietet jede Deutung.",
+        "Die Passage wird als Gesetz über den Tempel erklärt.",
+        "Sie wird mit dem Buch Jona verwechselt."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 8,26–35",
+       "why": "Der Beamte fragt, von wem der Prophet spricht. Philippus beginnt mit dieser Schrift und verkündet ihm Jesus. Lukas zeigt so die christologische Auslegung des leidenden Knechts.",
+       "ot": "Jesaja 53,7–8 beschreibt den leidenden Knecht. Apostelgeschichte 8 zeigt ausdrücklich, dass Philippus diesen Abschnitt auf Jesus hin auslegt; der historische Kontext Jesajas bleibt Teil der Auslegung."
+      }
+     ]
+    },
+    {
+     "title": "Saulus wird Paulus & die Völker",
+     "range": "Apostelgeschichte 9–12",
+     "icon": "✦",
+     "art": "light",
+     "theme": "Gnade und neue Berufung",
+     "key": "Apostelgeschichte 9,15",
+     "quote": "Dieser ist mir ein auserwähltes Werkzeug, dass er meinen Namen trage vor Heiden und Könige.",
+     "lesson": "Die Berufung des Saulus verändert die Richtung eines Verfolgers. Die Begegnung von Petrus und Kornelius stellt die Gemeinde vor die Frage, wie Gottes Geist Grenzen zwischen Völkern überschreitet.",
+     "take": "Vergleiche Apostelgeschichte 10 mit Apostelgeschichte 11. Warum muss Petrus seine Erfahrung vor der Gemeinde erklären?",
+     "questions": [
+      {
+       "q": "Was verändert sich in Petrus' Verständnis durch Kornelius?",
+       "opts": [
+        "Er erkennt, dass Gott Menschen aus den Völkern annimmt und der Geist nicht auf eine ethnische Gruppe begrenzt ist.",
+        "Er entscheidet, dass Jesus nur für Römer gekommen ist.",
+        "Er beendet die Verkündigung.",
+        "Er erklärt, dass Gebet bedeutungslos ist."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 10,34–48",
+       "why": "Petrus erkennt, dass Gott nicht auf äußere Zugehörigkeit sieht. Der Geist fällt auf Nichtjuden, bevor sie in die Gemeinschaft aufgenommen werden.",
+       "ot": "Jesaja 49,6 beschreibt den Knecht als Licht für die Völker. Die Aufnahme der Völker steht in diesem weiten Hoffnungshorizont; Lukas zitiert die Stelle in Apostelgeschichte 10 nicht direkt."
+      },
+      {
+       "q": "Welche Funktion hat Saulus' Berufungserzählung?",
+       "opts": [
+        "Sie macht deutlich, dass die Mission zu den Völkern durch Gottes Initiative und Gnade beginnt.",
+        "Sie beweist, dass Verfolger niemals verändert werden können.",
+        "Sie ersetzt alle weiteren Zeugnisse.",
+        "Sie ist nur eine politische Ernennung."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 9,1–19",
+       "why": "Der ehemalige Verfolger wird berufen, Jesu Namen zu tragen. Die Erzählung betont Gottes Initiative und die überraschende Veränderung des Zeugen.",
+       "ot": "Jeremia 1,5 schildert Berufung vor der Geburt. Der Vergleich ist motivisch; Apostelgeschichte 9 nennt Jeremia nicht als direkte Prophezeiung von Saulus' Berufung."
+      }
+     ]
+    },
+    {
+     "title": "Paulus auf Reisen & das Evangelium",
+     "range": "Apostelgeschichte 13–20",
+     "icon": "⛵",
+     "art": "road",
+     "theme": "Eine Botschaft über Grenzen hinweg",
+     "key": "Apostelgeschichte 17,24–28",
+     "quote": "Gott, der die Welt gemacht hat und alles, was darin ist …",
+     "lesson": "Paulus und seine Begleiter verkündigen in Synagogen und Städten. Die Reden passen sich dem jeweiligen Publikum an, ohne den Mittelpunkt aufzugeben: Gottes Handeln in Jesus, Umkehr und Auferstehung. Die Gemeinde ringt darum, wie Heidenchristen dazugehören.",
+     "take": "Vergleiche die Rede in der Synagoge von Antiochia (Apg 13) mit der Rede auf dem Areopag (Apg 17). Welche Gemeinsamkeiten und Unterschiede fallen dir auf?",
+     "questions": [
+      {
+       "q": "Was ist ein Schwerpunkt von Paulus' Rede auf dem Areopag?",
+       "opts": [
+        "Gott ist Schöpfer und Herr der Welt, nicht in von Menschen gemachten Tempeln eingeschlossen; die Auferstehung ruft zur Antwort.",
+        "Gott ist nur ein lokaler Stadtgott.",
+        "Paulus erklärt, dass Schöpfung nicht existiert.",
+        "Die Rede handelt nur von jüdischen Speisevorschriften."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 17,22–31",
+       "why": "Paulus beginnt beim religiösen Umfeld seiner Zuhörer und spricht von Schöpfer, Umkehr und Auferstehung. Er zitiert dabei auch griechische Dichter, ohne die biblische Botschaft aufzugeben.",
+       "ot": "Jesaja 42,5 und 1. Könige 8,27 betonen Gottes Schöpfermacht und dass Gott nicht auf Tempel begrenzt ist. Das ist ein theologischer Hintergrund, keine direkte Zitation in der Rede."
+      },
+      {
+       "q": "Warum war die Frage nach Heidenchristen in Apostelgeschichte 15 so wichtig?",
+       "opts": [
+        "Sie betraf, ob Menschen aus den Völkern zur Gemeinde gehören können, ohne zuerst vollständig jüdische Identitätsmarker zu übernehmen.",
+        "Sie betraf nur die Reihenfolge der Reisen.",
+        "Sie führte zur Abschaffung jedes moralischen Anspruchs.",
+        "Sie wurde nie diskutiert."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 15,1–29",
+       "why": "Die Gemeinde prüft, wie Gottes Handeln unter den Völkern zu verstehen ist. Der Beschluss verbindet die Aufnahme der Heiden mit konkreten gemeinschaftlichen Anforderungen.",
+       "ot": "Amos 9,11–12 wird in Apostelgeschichte 15,16–18 zitiert. Jakobus deutet die Wiederherstellung Davids und die Hinwendung der Völker im Licht der Aufnahme der Heiden."
+      }
+     ]
+    },
+    {
+     "title": "Zeugnis in Rom & offene Zukunft",
+     "range": "Apostelgeschichte 21–28",
+     "icon": "⚓",
+     "art": "sunrise",
+     "theme": "Das Evangelium erreicht Rom",
+     "key": "Apostelgeschichte 28,30–31",
+     "quote": "Er predigte das Reich Gottes und lehrte von dem Herrn Jesus Christus mit aller Freimütigkeit ungehindert.",
+     "lesson": "Apostelgeschichte endet nicht mit dem Tod des Paulus, sondern mit seiner Verkündigung in Rom. Die offene Schlussform lenkt den Blick auf die fortlaufende Mission des Wortes trotz Gefangenschaft und Widerstand.",
+     "take": "Lies Apostelgeschichte 28,17–31. Warum könnte Lukas sein Werk mit einer offenen, weiterführenden Szene enden lassen?",
+     "questions": [
+      {
+       "q": "Was bewirkt der offene Schluss der Apostelgeschichte?",
+       "opts": [
+        "Er zeigt, dass die Verkündigung in Rom weitergeht und die Geschichte des Zeugnisses nicht einfach abgeschlossen ist.",
+        "Er erklärt, dass Paulus nie nach Rom kam.",
+        "Er beendet jede Mission.",
+        "Er beweist, dass das Buch unvollständig kopiert wurde."
+       ],
+       "a": 0,
+       "ref": "Apostelgeschichte 28,30–31",
+       "why": "Lukas endet mit Paulus, der öffentlich und ungehindert vom Reich Gottes spricht. Die Erzählung schließt, während die Mission erzählerisch offen bleibt.",
+       "ot": "Jesaja 49,6 und 52,7 bieten Motive von Licht für die Völker und guter Nachricht. Sie helfen, die Bewegung von Jerusalem nach Rom als Teil einer größeren Hoffnung zu lesen."
+      },
+      {
+       "q": "Wie prägt das Thema „Zeugen sein“ die Apostelgeschichte?",
+       "opts": [
+        "Zeugnis ist nur für die Zwölf gedacht und endet in Jerusalem.",
+        "Der Geist befähigt die Gemeinde, Jesu Auferstehung über kulturelle und geografische Grenzen hinweg zu bezeugen.",
+        "Zeugnis bedeutet, jede Diskussion zu vermeiden.",
+        "Die Gemeinde soll sich von allen Völkern isolieren."
+       ],
+       "a": 1,
+       "ref": "Apostelgeschichte 1,8; 28,30–31",
+       "why": "Apostelgeschichte 1,8 skizziert die Bewegung von Jerusalem über Judäa und Samarien bis ans Ende der Erde. Das Schlussbild in Rom setzt diese Ausbreitung erzählerisch fort.",
+       "ot": "Jesaja 49,6: Gottes Heil soll bis an die Enden der Erde reichen. Apostelgeschichte steht im Horizont dieser universalen Hoffnung."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "atlas": [
+  {
+   "title": "Die Jungfrau / Immanuel",
+   "ot": "Jesaja 7,14",
+   "nt": "Matthäus 1,22–23",
+   "kind": "Ausdrückliches Zitat / christologische Anwendung",
+   "explain": "Matthäus führt Jesaja ausdrücklich als Schriftwort an und deutet Jesu Geburt mit dem Namen Immanuel. Jesaja 7 steht ursprünglich in der politischen Krise des Königs Ahas; die christliche Anwendung auf Jesus sollte zusammen mit diesem historischen Kontext gelesen werden."
+  },
+  {
+   "title": "Der Wegbereiter in der Wüste",
+   "ot": "Jesaja 40,3; Maleachi 3,1",
+   "nt": "Matthäus 3,3; Markus 1,2–3; Lukas 3,4–6",
+   "kind": "Ausdrücklicher Schriftbezug",
+   "explain": "Die Evangelien stellen Johannes den Täufer als Wegbereiter dar. Jesaja spricht von einem Weg für den Herrn; Maleachi vom Boten, der den Weg bereitet. Die Evangelisten wenden diese Texte auf die Vorbereitung von Jesu Auftreten an."
+  },
+  {
+   "title": "Der König auf dem Esel",
+   "ot": "Sacharja 9,9",
+   "nt": "Matthäus 21,4–5; Johannes 12,14–15",
+   "kind": "Ausdrückliches Zitat",
+   "explain": "Der demütige König kommt auf einem Esel. Die Evangelien verwenden den Text zur Deutung des Einzugs in Jerusalem. Die Königshoffnung wird mit einem nicht-militärischen Auftreten verbunden."
+  },
+  {
+   "title": "Der leidende Knecht",
+   "ot": "Jesaja 52,13–53,12",
+   "nt": "Lukas 22,37; Apostelgeschichte 8,32–35; vgl. Markus 10,45",
+   "kind": "Direkter Bezug und christologische Deutung",
+   "explain": "Apostelgeschichte 8 zeigt ausdrücklich, wie Philippus Jesaja 53 auf Jesus hin auslegt. Lukas 22,37 zitiert Jesaja 53,12. Weitere Passionsparallelen werden christlich typologisch gelesen, auch wenn nicht jede einzelne als Zitat markiert ist."
+  },
+  {
+   "title": "Das durchbohrte Gegenüber",
+   "ot": "Sacharja 12,10",
+   "nt": "Johannes 19,34–37",
+   "kind": "Ausdrückliches Zitat",
+   "explain": "Johannes nennt die Schrift im Zusammenhang mit Jesu durchbohrter Seite. Die christliche Anwendung des Textes auf Jesus ist explizit; der ursprüngliche Kontext Sacharjas bleibt ein wichtiger Teil sorgfältiger Auslegung."
+  },
+  {
+   "title": "Kein Knochen wird zerbrochen",
+   "ot": "Exodus 12,46; Numeri 9,12; Psalm 34,21",
+   "nt": "Johannes 19,31–36",
+   "kind": "Erfüllungsformel mit mehreren möglichen Hintergründen",
+   "explain": "Johannes sagt, die Schrift werde erfüllt. Die genaue Zuordnung wird diskutiert: Passahvorschriften verbieten das Zerbrechen der Knochen des Lammes; Psalm 34 spricht von den bewahrten Gebeinen des Gerechten. Das Passahmotiv ist im Johannesevangelium besonders wichtig."
+  },
+  {
+   "title": "Das Kind in Bethlehem",
+   "ot": "Micha 5,1–3",
+   "nt": "Matthäus 2,5–6",
+   "kind": "Ausdrücklicher Schriftbezug",
+   "explain": "Die Schriftgelehrten nennen Bethlehem als Ort des erwarteten Herrschers. Matthäus verbindet die Prophetenstelle mit der davidischen Königshoffnung und dem Hirtenmotiv."
+  },
+  {
+   "title": "Aus Ägypten gerufen",
+   "ot": "Hosea 11,1",
+   "nt": "Matthäus 2,15",
+   "kind": "Typologische Deutung",
+   "explain": "Hosea erinnert ursprünglich an Israels Exodus: „Als Israel jung war, gewann ich ihn lieb.“ Matthäus wendet das Motiv auf Jesus an, der Israels Geschichte repräsentativ durchlebt. Es ist keine Vorhersage im einfachen Sinn, sondern eine typologische Lesart."
+  },
+  {
+   "title": "Der Gerechte wird verspottet",
+   "ot": "Psalm 22",
+   "nt": "Matthäus 27,35–46; Markus 15,24–34; Johannes 19,23–24",
+   "kind": "Zitat und motivische Parallelen",
+   "explain": "Die Evangelien verwenden einzelne Worte und Motive des Psalms im Passionsbericht. Der Psalm selbst ist ein Gebet eines leidenden Gerechten, das von Klage zu Vertrauen und Lob führt. Christliche Auslegung liest die Passion im Licht dieses Psalms."
+  },
+  {
+   "title": "Der Hirte und die Schafe",
+   "ot": "Hesekiel 34,11–23; Sacharja 13,7",
+   "nt": "Johannes 10,11–18; Matthäus 26,31",
+   "kind": "Motivische Verbindung und Zitat",
+   "explain": "Hesekiel beschreibt Gott als Hirten und verheißt einen Hirten aus Davids Linie. Matthäus 26,31 zitiert Sacharja 13,7 über den geschlagenen Hirten; Johannes 10 entfaltet Jesus als den guten Hirten."
+  },
+  {
+   "title": "Das Ausgießen des Geistes",
+   "ot": "Joel 3,1–5 (abweichende Verszählung möglich)",
+   "nt": "Apostelgeschichte 2,16–21",
+   "kind": "Ausdrückliches Zitat und Deutung",
+   "explain": "Petrus erklärt Pfingsten mit Joels Verheißung, dass Gott seinen Geist auf alle Arten von Menschen ausgießt. Die Verszählung unterscheidet sich zwischen Bibelausgaben; in manchen steht die Passage als Joel 2,28–32."
+  },
+  {
+   "title": "Die Völker suchen den Herrn",
+   "ot": "Amos 9,11–12",
+   "nt": "Apostelgeschichte 15,15–18",
+   "kind": "Ausdrückliches Zitat / Textvariante",
+   "explain": "Jakobus deutet die Aufnahme der Nichtjuden mithilfe des Amos-Textes. Die Formulierung in Apostelgeschichte folgt einer griechischen Texttradition, die die Völker und Gottes Namen besonders hervorhebt."
+  },
+  {
+   "title": "Licht für die Völker",
+   "ot": "Jesaja 42,6; 49,6",
+   "nt": "Lukas 2,32; Apostelgeschichte 13,47; 26,23",
+   "kind": "Motivische Verbindung und Zitat",
+   "explain": "Jesaja spricht vom Auftrag, Gottes Heil bis an die Enden der Erde zu bringen. Lukas verbindet Jesus und die Mission der Gemeinde mit diesem universalen Horizont."
+  },
+  {
+   "title": "Der Menschensohn",
+   "ot": "Daniel 7,13–14",
+   "nt": "Markus 14,62; Matthäus 26,64",
+   "kind": "Deutliche Anspielung",
+   "explain": "Jesus verbindet den Menschensohn mit Macht und Kommen auf den Wolken. Daniel 7 beschreibt eine Gestalt, der Herrschaft gegeben wird. Die Identität und Symbolik der Gestalt wird in der Forschung diskutiert; die Evangelien lesen sie auf Jesu Autorität hin."
+  },
+  {
+   "title": "Das neue Herz und der Geist",
+   "ot": "Hesekiel 36,25–27; Jeremia 31,31–34",
+   "nt": "Johannes 3,5–8; 2. Korinther 3,3–6",
+   "kind": "Theologische Verbindung",
+   "explain": "Hesekiel verheißt Reinigung, neues Herz und Geist; Jeremia einen neuen Bund. Johannes 3 klingt mit Wasser und Geist eng an diese Erneuerung an, zitiert die Stellen aber nicht ausdrücklich."
+  }
+ ],
+ "glossary": [
+  [
+   "Messias / Christus",
+   "„Gesalbter“. Königliche und endzeitliche Hoffnung Israels; im Neuen Testament auf Jesus bezogen."
+  ],
+  [
+   "Reich Gottes / Himmelreich",
+   "Gottes wirksame Herrschaft. Matthäus verwendet häufig „Himmelreich“, wo andere Evangelien „Reich Gottes“ sagen."
+  ],
+  [
+   "Evangelium",
+   "Gute Nachricht. In den Evangelien die Botschaft von Jesus und Gottes Handeln durch ihn."
+  ],
+  [
+   "Gleichnis",
+   "Erzählung oder Bild, das eine geistliche Wahrheit erschließt und die Hörenden zur Antwort herausfordert."
+  ],
+  [
+   "Typologie",
+   "Eine spätere Person oder ein Ereignis wird als Entsprechung oder Vollendung eines früheren Musters gelesen, ohne dass der frühere Text zwingend eine direkte Vorhersage war."
+  ],
+  [
+   "Erfüllungszitat",
+   "Eine Stelle, die der Evangelist ausdrücklich als erfüllte Schrift anführt. Historischer Kontext und spätere Anwendung gehören beide zur Auslegung."
+  ],
+  [
+   "Paraklet",
+   "Bezeichnung in Johannes für den Beistand/Fürsprecher, der lehrt, erinnert und Zeugnis ablegt; meist auf den Heiligen Geist bezogen."
+  ],
+  [
+   "Auferstehung",
+   "Im christlichen Glauben Gottes Sieg über den Tod und die Hoffnung auf neues Leben, zentral für die Evangelien und Apostelgeschichte."
+  ],
+  [
+   "Jüngerschaft",
+   "Lernen und Leben in der Nachfolge Jesu, einschließlich Vertrauen, Praxis, Zeugnis und gemeinschaftlicher Verantwortung."
+  ],
+  [
+   "Textkritik",
+   "Untersuchung der handschriftlichen Überlieferung, um die früheste erreichbare Textform zu bestimmen, etwa bei Markus 16."
+  ],
+  [
+   "Bund",
+   "Beziehungs- und Verpflichtungsordnung zwischen Gott und seinem Volk; im Neuen Testament wird die Hoffnung auf einen neuen Bund aufgenommen."
+  ],
+  [
+   "Apostel",
+   "Gesandte Zeugen. In der Apostelgeschichte wird das Zeugnis über Jerusalem hinaus zu vielen Völkern getragen."
+  ]
+ ],
+ "examQuestions": [
+  {
+   "q": "Welche Aussage unterscheidet am besten direkte Prophezeiung von Typologie?",
+   "opts": [
+    "Jede Ähnlichkeit ist automatisch eine direkte Vorhersage.",
+    "Ein direktes Zitat wird als Schriftwort angeführt; Typologie liest ein früheres Muster als spätere Entsprechung.",
+    "Typologie bedeutet, dass der historische Kontext unwichtig ist.",
+    "Die Evangelisten beziehen sich nie auf das Alte Testament."
+   ],
+   "a": 1,
+   "ref": "Beispiele: Matthäus 2,15; Johannes 12,15",
+   "why": "Matthäus 2,15 wendet Hosea 11,1 typologisch auf Jesus an, obwohl Hosea ursprünglich Israels Exodus erinnert. Sacharja 9,9 wird beim Einzug dagegen ausdrücklich zitiert.",
+   "ot": "Hosea 11,1; Sacharja 9,9. Diese Beispiele zeigen, warum sorgfältige Auslegung die Art des Schriftbezugs benennen sollte."
+  },
+  {
+   "q": "Welche Verheißung erklärt Petrus in Apostelgeschichte 2 als am Pfingsttag erfüllt?",
+   "opts": [
+    "Joels Verheißung des ausgegossenen Geistes.",
+    "Micha über Bethlehem.",
+    "Sacharja über den Esel.",
+    "Jesaja über Immanuel."
+   ],
+   "a": 0,
+   "ref": "Apostelgeschichte 2,16–21",
+   "why": "Petrus zitiert Joel und deutet das Geistesereignis als Teil der prophetischen Verheißung.",
+   "ot": "Joel 3,1–5 in vielen deutschen Bibeln; Verszählung variiert. Petrus führt die Stelle ausdrücklich an."
+  },
+  {
+   "q": "Was ist ein zentrales gemeinsames Thema der vier Evangelien trotz ihrer Unterschiede?",
+   "opts": [
+    "Sie bieten identische Wortlaute und exakt dieselbe Reihenfolge.",
+    "Sie bezeugen Jesu Wirken, Lehre, Tod und Auferstehung mit jeweils eigenen erzählerischen und theologischen Schwerpunkten.",
+    "Sie vermeiden jede Verbindung zu Israels Schriften.",
+    "Sie erzählen ausschließlich von Paulus."
+   ],
+   "a": 1,
+   "ref": "Matthäus 28; Markus 16; Lukas 24; Johannes 20",
+   "why": "Die Evangelien teilen einen Mittelpunkt, setzen aber eigene Akzente und strukturieren das Material unterschiedlich.",
+   "ot": "Die Schriften Israels bilden einen wichtigen Hintergrund aller vier Evangelien, doch sie greifen sie auf unterschiedliche Weise auf."
+  },
+  {
+   "q": "Welche Aussage trifft Lukas' Darstellung der Mission am besten?",
+   "opts": [
+    "Sie bleibt ausschließlich in Jerusalem.",
+    "Sie bewegt sich vom Zeugnis in Jerusalem in Richtung der Völker und endet mit Paulus in Rom.",
+    "Sie beginnt erst nach dem Ende der Apostelgeschichte.",
+    "Sie schließt Menschen aus den Völkern grundsätzlich aus."
+   ],
+   "a": 1,
+   "ref": "Lukas 24,47–49; Apostelgeschichte 1,8; 28,30–31",
+   "why": "Lukas und Apostelgeschichte bilden einen erzählerischen Bogen: Vergebung wird allen Völkern verkündigt, und die Botschaft erreicht Rom.",
+   "ot": "Jesaja 49,6 spricht von Gottes Heil bis an die Enden der Erde. Dieses Motiv begleitet die Ausweitung der Mission."
+  },
+  {
+   "q": "Wie beschreibt Johannes das Ziel seines Evangeliums?",
+   "opts": [
+    "Ein lückenloses Tagebuch aller Taten Jesu.",
+    "Glaube an Jesus als Christus und Sohn Gottes, damit Menschen Leben in seinem Namen haben.",
+    "Die Abschaffung jeder Schriftlektüre.",
+    "Eine Anleitung zu politischen Ämtern."
+   ],
+   "a": 1,
+   "ref": "Johannes 20,30–31",
+   "why": "Johannes nennt sein Ziel explizit: Zeichen sollen zum Glauben und zu Leben führen.",
+   "ot": "Dies ist die programmatische Aussage des Evangeliums selbst; hier wird keine einzelne alttestamentliche Prophezeiung zitiert."
+  },
+  {
+   "q": "Welche Stelle steht hinter Jesu demütigem Einzug auf einem Esel?",
+   "opts": [
+    "Sacharja 9,9",
+    "Daniel 12,2",
+    "Genesis 1,1",
+    "Amos 5,24"
+   ],
+   "a": 0,
+   "ref": "Matthäus 21,4–5; Johannes 12,14–15",
+   "why": "Die Evangelisten verwenden Sacharjas Bild vom demütigen König zur Deutung des Einzugs.",
+   "ot": "Sacharja 9,9 wird ausdrücklich zitiert."
+  },
+  {
+   "q": "Was lehrt das Gleichnis vom verlorenen Sohn in Lukas 15 vor allem?",
+   "opts": [
+    "Gottes Barmherzigkeit und die Einladung, sich über Wiederherstellung zu freuen.",
+    "Dass Vergebung nie möglich ist.",
+    "Dass der ältere Bruder recht hat, jede Freude zu verweigern.",
+    "Dass Geld wichtiger als Beziehung ist."
+   ],
+   "a": 0,
+   "ref": "Lukas 15,11–32",
+   "why": "Der Vater nimmt den verlorenen Sohn auf und lädt auch den älteren Bruder ein, an der Freude teilzuhaben.",
+   "ot": "Hosea 11 zeigt Gottes väterliche Liebe zu Israel; Jona 4 stellt die Schwierigkeit dar, Gottes Barmherzigkeit gegenüber anderen zu akzeptieren."
+  },
+  {
+   "q": "Welche Formulierung fasst den Weg Jesu in Markus gut zusammen?",
+   "opts": [
+    "Herrschaft durch Selbsterhöhung.",
+    "Der Messias geht den Weg des Leidens und lehrt die Jünger dienende Nachfolge.",
+    "Jesus vermeidet jede Auseinandersetzung.",
+    "Kreuz und Auferstehung spielen keine Rolle."
+   ],
+   "a": 1,
+   "ref": "Markus 8,31–38; 10,42–45",
+   "why": "Markus verbindet die Identität Jesu mit Passion, Dienst und der Einladung, ihm nachzufolgen.",
+   "ot": "Jesaja 52,13–53,12 ist ein wichtiger Hintergrund für christliche Deutungen des leidenden Knechts."
+  }
+ ],
+ "pool": null
+}

@@ -1,0 +1,29 @@
+{
+  "summary": "RETEST of iteration-5 blocker (adventureNote overlay) + full 7-phase walkthrough for parables-1, tora-1-1, letters-1, prophets-1 — ALL PASSED. On viewport 390x844: adventureNote now renders with pointerEvents=none (confirmed via computed style), the first/next-available station node (station-node-parables-1 at y≈718, note at y≈780 pe=none) is tappable, station-sheet opens, and station-start-button navigates to station-screen. Full 7-phase flow walked end-to-end on each of the 4 target stations: (1) Entdecken → (2) Bibelstudium (verses load, no infinite spinner — bodyLen 4.7k–8.8k with Matthäus 13 / 1Mo 1 / Röm 1 / Jes verses rendered), (3) Hintergrund (phase-background visible, claim cards rendered), (4) Verstehen (task phase — match pairs i→i check correct, free-task show-model + self-rate works, mc-task options clickable with correct answer feedback), (5) Prüfung (exam mc questions answered with correct index from campaign JSON — 1/1, 2/2, 3/3 passes), (6) Reflexion (reflection-input-i editable), (7) Abschluss (complete-title='Station abgeschlossen!', complete-xp='+50 EP' on every run). Profile book-progress updated correctly after completion: parables 8% (1/12), 1. Mose Genesis 20% (1/5), Das Evangelium leben (letters) 7% (1/14), Die Propheten weisen auf Jesus (prophets) 9% (1/11). XP summed correctly: 3 completions in one session = 150 EP → Stufe 2 'Hörender'. Also verified: parables-2 unlocks after parables-1 (aria-label changes from 'gesperrt' to 'verfügbar'). Zero page errors; only the pre-existing shadow* -> boxShadow deprecation warning. Zoom buttons bbox issue from iter5 was flagged as secondary and did not block any flow. The i5 blocker is fully resolved.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": [
+      {"component": "JourneyLayer medal (styles.medal)", "issue": "React Native Web deprecation warning still logged: '\"shadow*\" style props are deprecated. Use \"boxShadow\".' Non-blocking cosmetic. Reference: /app/frontend/src/components/JourneyLayer.tsx (shadow* on medal)."}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "COSMETIC (optional, carried from i5): migrate shadow* -> boxShadow in /app/frontend/src/components/JourneyLayer.tsx to remove RN Web deprecation warning.",
+    "COSMETIC (optional, carried from i5): give ZoomableMap zoom-in/zoom-out Pressables explicit width/height ≥44 so testing/accessibility sees non-zero bbox (does not block gameplay)."
+  ],
+  "critical_code_review_comments": [
+    "Confirmed fix in /app/frontend/app/world/[id].tsx:220 — styles.adventureNote now includes `pointerEvents: 'none'`; styles.legend also has it. No further overlay interception observed.",
+    "Station flow (station/[id].tsx) correctly gates exam XP (completeStation only on passMark reached), reflection persists via onBlur save, and unlocks next station after completion (verified via aria-label change on station-node-parables-2).",
+    "ReadingVerses.tsx correctly uses getChapterSync+loadChapter — in web preview the chapters load within ~3s and the ActivityIndicator is replaced by verse text; no infinite spinner for Mt 13 / 1Mo 1 / Röm 1 / Jes 1."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a (frontend-only)", "frontend": "100% on requested scope (overlay fix + 4 full station walkthroughs + unlock + profile progress + XP)"},
+  "seed_data_creation": "Local Zustand store populated during tests: parables-1 (+50 EP in session A), tora-1-1 + letters-1 + prophets-1 (+150 EP in session B). All non-persistent across browser contexts.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Iteration 6 fully validated the i5 blocker fix. All 4 requested stations (parables-1, tora-1-1, letters-1, prophets-1) complete end-to-end with +50 EP each, book-progress rises accordingly (parables 8%, Genesis 20%, letters 7%, prophets 9%), and the next station unlocks (parables-2 'verfügbar'). The only remaining cosmetic items are the shadow* -> boxShadow deprecation in JourneyLayer and the 0x0 bbox on map-zoom-in/map-zoom-out (neither blocks UX or completion). No functional regressions observed. If/when touching this area again, consider: (a) persisting intro-skip across page reloads in web preview, (b) adding testID on JourneyLayer medal for tap testing.",
+  "rca_of_issue": "n/a — i5 RCA (adventureNote absorbing taps because pointerEvents defaulted to 'auto') was correctly resolved by main agent setting `pointerEvents: 'none'` on the adventureNote and legend container styles in /app/frontend/app/world/[id].tsx."
+}

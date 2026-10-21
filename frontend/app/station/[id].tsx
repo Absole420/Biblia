@@ -11,7 +11,8 @@ import { PlaceSheet } from "@/src/components/PlaceSheet";
 import { RefText } from "@/src/components/RefText";
 import { TaskView } from "@/src/components/TaskView";
 import { Button, ProgressBar } from "@/src/components/ui";
-import { formatRef, getVerses, TRANSLATIONS } from "@/src/data/bible";
+import { ReadingVerses } from "@/src/components/ReadingVerses";
+import { formatRef, TRANSLATIONS } from "@/src/data/bible";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { findStation } from "@/src/data/john";
 import { STATION_META } from "@/src/data/meta";
@@ -159,14 +160,7 @@ export default function StationScreen() {
             {station.readings.map((r) => (
               <View key={formatRef(r)} style={styles.reading}>
                 <Text style={styles.readingRef}>{formatRef(r)}</Text>
-                <Text style={[styles.verses, { fontSize: 17 * fontScale, lineHeight: 28 * fontScale }]}>
-                  {getVerses(state.settings.translation, r).map((v) => (
-                    <Text key={v.v}>
-                      <Text style={styles.vnum}>{v.v} </Text>
-                      {v.text}{" "}
-                    </Text>
-                  ))}
-                </Text>
+                <ReadingVerses r={r} style={[styles.verses, { fontSize: 17 * fontScale, lineHeight: 28 * fontScale }]} numStyle={styles.vnum} />
                 <Pressable testID={`open-reader-${r.ch}-${r.from}`} onPress={() => router.navigate({ pathname: "/bible", params: { b: r.book, ch: String(r.ch), v: String(r.from) } })} style={styles.linkRow}>
                   <Icon name="external-link" size={14} color={colors.brandPrimary} />
                   <Text style={styles.link}>Im Bibelleser öffnen (Notizen & Markierungen)</Text>

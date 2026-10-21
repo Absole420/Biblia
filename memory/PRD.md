@@ -44,7 +44,13 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Gilt für Übersicht (Orte + Figuren) und Studienreise (Themenfeld-Medaillons); Regionsnamen werden von Beschriftungen gemieden
 - Veraltete `pointerEvents`-Props auf `style.pointerEvents` umgestellt
 
+## Iteration 5 (2026-06)
+- 5 HTML-Lernreisen des Users übernommen (Generator `/app/imports/convert.ts` → `src/data/campaigns/*.json`): Tora (5 Kampagnen = 5 Bücher Mose), Matthäus/Markus/Lukas (Welt „Evangelien“ neben Johannes, Kampagnen-Chips), Gleichnisse, Propheten, Apostelgeschichte, NT-Briefe
+- Welten tora, prophets, parables, acts, letters, gospels spielbar (`World.campaignIds`); generische Abenteuerkarte in Weltfarben; historische Karte je Lernwelt
+- Bibeltexte in Stationen werden bei Bedarf geladen (`ReadingVerses`)
+- Intro-Animation beim Start (`IntroAnimation`): Weg Ägypten → Sinai → Jordan → Nazareth → Galiläa → Golgatha, Kreuz, Blick zum Himmel, Schriftrolle „BIBLIA“; überspringbar
+
 ## Backlog
-- P0: Übernahme der HTML-Vorlagen des Users (sobald hochgeladen)
+- P1: Lernwelten Geschichtsbücher, Psalmen, Offenbarung mit Inhalten füllen
 - P1: Builder-Modus (Karteneditor), weitere Lernwelten (Tora, Propheten, Evangelien, Apg, Briefe, Gleichnisse), weitere Aufgabentypen (Orte auf Karte zuordnen, Bilder zuordnen, Rätsel), Studienpläne
 - P2: Lizenz NeÜ, handgemalte Illustrationen, Tablet-Layouts, synoptischer Vergleich

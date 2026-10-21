@@ -11,7 +11,7 @@ import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
 import { Button, Chip } from "@/src/components/ui";
 import { getVerse, verseKeyLabel } from "@/src/data/bible";
-import { JOHN } from "@/src/data/john";
+import { ALL_STATIONS } from "@/src/data/john";
 import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -53,8 +53,8 @@ export default function LibraryScreen() {
     if (tab === "units") return state.units.filter((u) => match(u.title, u.description, ...u.questions.map((x) => x.q)));
     if (tab === "bookmarks") return state.bookmarks.filter((b) => { const [c, ch, v] = b.key.split(":"); return match(verseKeyLabel(b.key), getVerse(c, +ch, +v)); });
     if (tab === "highlights") return Object.entries(state.highlights).filter(([k]) => { const [c, ch, v] = k.split(":"); return match(verseKeyLabel(k), getVerse(c, +ch, +v)); });
-    if (tab === "journal") return JOHN.stations.filter((s) => (state.reflections[s.id] ?? []).some((t) => t.trim()) && match(s.title, ...(state.reflections[s.id] ?? [])));
-    return JOHN.stations.filter((s) => state.stations[s.id] || (state.phase[s.id] ?? 0) > 0).flatMap((s) => s.terms.map((t) => ({ ...t, station: s.title }))).filter((t) => match(t.term, t.explanation));
+    if (tab === "journal") return ALL_STATIONS.filter((s) => (state.reflections[s.id] ?? []).some((t) => t.trim()) && match(s.title, ...(state.reflections[s.id] ?? [])));
+    return ALL_STATIONS.filter((s) => state.stations[s.id] || (state.phase[s.id] ?? 0) > 0).flatMap((s) => s.terms.map((t) => ({ ...t, station: s.title }))).filter((t) => match(t.term, t.explanation));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab, state, ql]);
 
@@ -153,7 +153,7 @@ export default function LibraryScreen() {
             </View>
           );
         })}
-        {tab === "journal" && (items as typeof JOHN.stations).map((s) => (
+        {tab === "journal" && (items as typeof ALL_STATIONS).map((s) => (
           <View key={s.id} style={styles.card} testID={`journal-item-${s.id}`}>
             <View style={styles.cardHead}>
               <Icon name="edit-3" size={16} color={colors.brandPrimary} />

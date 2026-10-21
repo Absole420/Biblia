@@ -23,7 +23,7 @@ export default function WorldScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const world = WORLDS.find((w) => w.id === id);
   if (!world) return null;
-  if (world.status === "playable" && world.campaignId) return <CampaignScreen worldId={world.id} />;
+  if (world.status === "playable" && world.campaignIds?.length) return <CampaignScreen worldId={world.id} />;
   return <PreviewScreen worldId={world.id} />;
 }
 
@@ -53,15 +53,17 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const insets = useSafeAreaInsets();
   const { state } = useProgress();
   const world = WORLDS.find((w) => w.id === worldId)!;
-  const campaign = CAMPAIGNS[world.campaignId!];
+  const [campId, setCampId] = useState(world.campaignIds![0]);
+  const campaign = CAMPAIGNS[campId];
   const [mode, setMode] = useState<"adventure" | "history">("adventure");
+  const hMap = THEME_MAPS[world.id] ?? THEME_MAPS.gospels;
   const [sel, setSel] = useState<string | null>(null);
   const [place, setPlace] = useState<GeoPlace | null>(null);
   const done = campaign.stations.filter((s) => state.stations[s.id]).length;
   const station = campaign.stations.find((s) => s.id === sel);
   const nextAvail = campaign.stations.find((s) => stationStatus(s, state.stations) === "available") ?? campaign.stations[0];
   const { width: vw, height: vh } = useWindowDimensions();
-  const gSize = mapSize(THEME_MAPS.gospels);
+  const gSize = mapSize(hMap);
   const gK = Math.min(3, Math.max(0.8, 1 / Math.min(vw / gSize.width, vh / gSize.height)));
   const highlightPlaces = useMemo(() => campaign.stations.filter((s) => state.stations[s.id]).flatMap((s) => s.placeIds ?? []), [campaign, state.stations]);
 
@@ -72,19 +74,28 @@ function CampaignScreen({ worldId }: { worldId: string }) {
         <Chip testID="map-mode-adventure" label="Abenteuerkarte" selected={mode === "adventure"} onPress={() => setMode("adventure")} />
         <Chip testID="map-mode-history" label="Historische Karte" selected={mode === "history"} onPress={() => setMode("history")} />
       </View>
+      {world.campaignIds!.length > 1 ? (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.campRow} contentContainerStyle={styles.campContent}>
+          {world.campaignIds!.map((cid) => {
+            const c = CAMPAIGNS[cid];
+            const pct = Math.round((c.stations.filter((s) => state.stations[s.id]).length / c.stations.length) * 100);
+            return <Chip key={cid} testID={`campaign-chip-${cid}`} label={`${c.title.replace("Das Evangelium nach ", "")} · ${pct} %`} selected={campId === cid} color={world.palette.base} onPress={() => { setCampId(cid); setSel(null); }} />;
+          })}
+        </ScrollView>
+      ) : null}
       <View style={{ flex: 1 }}>
         {mode === "adventure" ? (
-          <ZoomableMap key="adv" width={campaign.mapW} height={campaign.mapH} focus={{ x: nextAvail.x, y: nextAvail.y }} controlsBottom={insets.bottom + 16} testID="campaign-map">
-            <CampaignMapContent campaign={campaign} progress={state.stations} onSelect={setSel} />
+          <ZoomableMap key={"adv" + campId} width={campaign.mapW} height={campaign.mapH} focus={{ x: nextAvail.x, y: nextAvail.y }} controlsBottom={insets.bottom + 16} testID="campaign-map">
+            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={setSel} />
           </ZoomableMap>
         ) : (
           <ZoomableMap key="hist" fit="contain" width={gSize.width} height={gSize.height} controlsBottom={insets.bottom + 120} maxZoom={5} testID="historical-map">
-            <GeoMap map={THEME_MAPS.gospels} k={gK} onSelect={setPlace} highlight={highlightPlaces} />
+            <GeoMap map={hMap} k={gK} onSelect={setPlace} highlight={highlightPlaces} />
           </ZoomableMap>
         )}
         {mode === "history" ? (
           <View style={[styles.legend, { bottom: insets.bottom + 12 }]} testID="historical-legend">
-            <Text style={styles.legendTitle}>{JOHN_HISTORICAL.era}</Text>
+            <Text style={styles.legendTitle}>{hMap.title} · {hMap.era}</Text>
             <View style={styles.legendRow}>
               {(["secure", "traditional", "disputed"] as const).map((k) => (
                 <View key={k} style={styles.legendItem}>
@@ -202,9 +213,11 @@ const useStyles = makeStyles((c) => ({
   back: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: c.surfaceSecondary },
   hTitle: { fontFamily: fonts.display, fontSize: 20, fontWeight: "700", color: c.onSurface },
   hSub: { fontFamily: fonts.text, fontSize: 13, color: c.muted, fontWeight: "700" },
+  campRow: { height: 52, flexGrow: 0, backgroundColor: c.surface },
+  campContent: { gap: spacing.sm, paddingHorizontal: spacing.lg, alignItems: "center" },
   toggleRow: { height: 56, flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.lg, backgroundColor: c.surface },
-  legend: { position: "absolute", left: spacing.lg, right: 80, backgroundColor: c.glass, borderRadius: radius.lg, padding: spacing.md, borderWidth: 1, borderColor: c.border },
-  adventureNote: { position: "absolute", left: spacing.lg, right: 80, backgroundColor: c.glass, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, borderColor: c.border },
+  legend: { pointerEvents: "none", position: "absolute", left: spacing.lg, right: 80, backgroundColor: c.glass, borderRadius: radius.lg, padding: spacing.md, borderWidth: 1, borderColor: c.border },
+  adventureNote: { pointerEvents: "none", position: "absolute", left: spacing.lg, right: 80, backgroundColor: c.glass, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, borderColor: c.border },
   legendTitle: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800", color: c.onSurface },
   legendRow: { flexDirection: "row", gap: spacing.md, marginTop: spacing.sm, flexWrap: "wrap" },
   legendItem: { flexDirection: "row", alignItems: "center", gap: 6 },

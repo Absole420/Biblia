@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
-import { CAMPAIGNS } from "@/src/data/john";
+import { worldProgress } from "@/src/data/john";
 import { mapSize, projectGeo, ThemeMap } from "@/src/data/themeMaps";
 import { WORLDS } from "@/src/data/worlds";
 import { LayoutItem, solveLayout, textWidth } from "@/src/lib/mapLayout";
@@ -67,8 +67,7 @@ export function JourneyLayer({ map, k, stations }: { map: ThemeMap; k: number; s
       {WORLDS.map((w) => {
         const pos = FIELD_POS[w.id];
         const c = projectGeo(map, pos.lat, pos.lon);
-        const camp = w.campaignId ? CAMPAIGNS[w.campaignId] : null;
-        const pct = camp ? camp.stations.filter((s) => stations[s.id]).length / camp.stations.length : 0;
+        const pct = worldProgress(w.campaignIds, stations);
         const lw = labelW(w);
         return (
           <AnchoredMarker

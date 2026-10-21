@@ -128,3 +128,14 @@ frontend:
 agent_communication:
   - agent: "main"
     message: "Test map collision layout and bible features E2E."
+  - task: "Imported HTML studies as playable worlds + intro animation"
+    implemented: true
+    working: "NA"
+    file: "src/data/campaigns/*.json, src/data/john.ts, app/world/[id].tsx, src/components/CampaignMap.tsx, src/components/ReadingVerses.tsx, src/components/IntroAnimation.tsx, app/_layout.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "5 HTML studies converted to 12 campaigns (Tora x5, Matthäus/Markus/Lukas, Gleichnisse, Propheten, Apg, Briefe). Intro animation ~10s with skip."

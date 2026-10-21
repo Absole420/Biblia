@@ -1,0 +1,333 @@
+{
+ "P": [
+  {
+   "id": "sower",
+   "title": "Der Sämann",
+   "ref": "Matthäus 13,1–23 · Markus 4,1–20 · Lukas 8,4–15",
+   "theme": "Hören und Frucht bringen",
+   "xy": [
+    420,
+    65
+   ],
+   "art": "🌾",
+   "intro": "Ein Sämann streut Saat aus. Sie fällt auf den Weg, auf felsigen Grund, unter Dornen und auf gutes Land.",
+   "text": "Lies Matthäus 13,1–9 und danach Jesu Erklärung in 13,18–23. Achte darauf: Die Saat ist dieselbe, aber die Böden unterscheiden sich.",
+   "meaning": "Jesus vergleicht das Wort vom Reich Gottes mit Saat. Entscheidend ist nicht nur, etwas zu hören, sondern wie das Gehörte aufgenommen wird und Frucht trägt.",
+   "cross": "Jesaja 55,10–11 · Jakobus 1,22–25 · Markus 4,24",
+   "practice": "Welche Ablenkung, Sorge oder innere Härte macht es dir schwer, Gottes Wort Raum zu geben? Welcher kleine Schritt könnte den Boden lockern?",
+   "q": "Wofür steht die Saat in Jesu Erklärung?",
+   "opts": [
+    "Für menschliche Leistung",
+    "Für das Wort vom Reich Gottes",
+    "Für Geld und Besitz"
+   ],
+   "correct": 1,
+   "why": "In Matthäus 13,19 erklärt Jesus, dass mit der Saat das Wort vom Reich gemeint ist.",
+   "kind": "sort",
+   "pairs": [
+    [
+     "Weg",
+     "Das Wort wird nicht verstanden und weggenommen"
+    ],
+    [
+     "Felsiger Boden",
+     "Freude ist da, aber ohne Wurzel hält sie nicht lange"
+    ],
+    [
+     "Dornen",
+     "Sorgen und Reichtum ersticken das Wort"
+    ],
+    [
+     "Gutes Land",
+     "Das Wort wird gehört, verstanden und bringt Frucht"
+    ]
+   ]
+  },
+  {
+   "id": "mustard",
+   "title": "Das Senfkorn",
+   "ref": "Matthäus 13,31–32 · Markus 4,30–32 · Lukas 13,18–19",
+   "theme": "Kleine Anfänge, Gottes Reich",
+   "xy": [
+    352,
+    170
+   ],
+   "art": "🌱",
+   "intro": "Ein winziges Samenkorn wächst zu einer großen Pflanze, in deren Zweigen Vögel Schutz finden.",
+   "text": "Lies Markus 4,30–32. Warum verbindet Jesus ein kleines Samenkorn mit auffälligem Wachstum?",
+   "meaning": "Gottes Reich kann unscheinbar beginnen und dennoch wachsen. Das Bild lädt dazu ein, Gottes Wirken nicht nach dem kleinen Anfang zu beurteilen. Es ist keine Garantie, dass jedes kleine Vorhaben automatisch Erfolg hat.",
+   "cross": "Daniel 4,7–9.17–19 · Hesekiel 17,22–24 · Sacharja 4,10",
+   "practice": "Welchen kleinen treuen Schritt kannst du heute tun, auch wenn seine Wirkung noch nicht sichtbar ist?",
+   "q": "Welchen Kontrast stellt Jesus heraus?",
+   "opts": [
+    "Kleiner Anfang und großes Wachstum",
+    "Zwei gleich große Bäume",
+    "Arbeit und Ruhe"
+   ],
+   "correct": 0,
+   "why": "Das Senfkorn ist ein Bild für einen unscheinbaren Anfang, aus dem etwas Großes wird.",
+   "kind": "write",
+   "prompt": "Notiere einen kleinen Schritt der Nachfolge, den du diese Woche tatsächlich gehen kannst."
+  },
+  {
+   "id": "leaven",
+   "title": "Der Sauerteig",
+   "ref": "Matthäus 13,33 · Lukas 13,20–21",
+   "theme": "Veränderung von innen",
+   "xy": [
+    270,
+    250
+   ],
+   "art": "🍞",
+   "intro": "Eine Frau mischt Sauerteig unter Mehl, bis der ganze Teig durchsäuert ist.",
+   "text": "Lies Lukas 13,20–21 zusammen mit dem Senfkorn-Gleichnis. Beide Bilder betonen zunächst unscheinbare Wirkung.",
+   "meaning": "Gottes Reich wirkt nicht immer laut und sofort sichtbar. In anderen biblischen Zusammenhängen kann Sauerteig negativ verwendet werden. Die Bedeutung ergibt sich aus dem jeweiligen Kontext.",
+   "cross": "Matthäus 13,31–33 · 1. Korinther 5,6–8 · Galater 5,9",
+   "practice": "Welche gute Veränderung darf Gott in dir langsam und gründlich wirken lassen?",
+   "q": "Was steht im Mittelpunkt?",
+   "opts": [
+    "Eine verborgene Wirkung, die den ganzen Teig durchdringt",
+    "Eine Markteröffnung",
+    "Eine Backanleitung"
+   ],
+   "correct": 0,
+   "why": "Der Sauerteig durchdringt den Teig. Das Bild betont die umfassende Wirkung des Reiches Gottes.",
+   "kind": "write",
+   "prompt": "Wo wünschst du dir eine Veränderung, die tiefer geht als ein äußerer Anschein?"
+  },
+  {
+   "id": "treasure",
+   "title": "Der Schatz im Acker",
+   "ref": "Matthäus 13,44",
+   "theme": "Der unschätzbare Wert des Reiches",
+   "xy": [
+    228,
+    345
+   ],
+   "art": "💎",
+   "intro": "Ein Mensch entdeckt einen Schatz im Acker. Voller Freude verkauft er alles, was er besitzt, und kauft den Acker.",
+   "text": "Lies Matthäus 13,44–46. Beachte die Freude des Finders und den Kaufmann, der eine kostbare Perle sucht.",
+   "meaning": "Das Reich Gottes ist von so großem Wert, dass Hingabe als Gewinn erscheint. Das Gleichnis lehrt nicht, dass man Gottes Gnade kaufen könnte, sondern zeigt die Priorität von Gottes Reich.",
+   "cross": "Matthäus 6,19–21.33 · Philipper 3,7–8 · Lukas 12,33–34",
+   "practice": "Was beansprucht in deinem Alltag den höchsten Platz? Welche Priorität müsste sich ändern, wenn Gottes Reich zuerst kommt?",
+   "q": "Was kennzeichnet die Reaktion des Finders?",
+   "opts": [
+    "Er ärgert sich über den Fund",
+    "Er erkennt voller Freude den Wert",
+    "Er vergisst den Schatz"
+   ],
+   "correct": 1,
+   "why": "Matthäus 13,44 betont ausdrücklich seine Freude und seine entschlossene Reaktion.",
+   "kind": "write",
+   "prompt": "Welche Priorität möchtest du neu ordnen? Formuliere eine konkrete, realistische Handlung."
+  },
+  {
+   "id": "sheep",
+   "title": "Das verlorene Schaf",
+   "ref": "Matthäus 18,10–14 · Lukas 15,3–7",
+   "theme": "Gottes Suche nach Verlorenen",
+   "xy": [
+    155,
+    435
+   ],
+   "art": "🐑",
+   "intro": "Ein Hirte sucht ein verlorenes Schaf und freut sich, als er es wiederfindet.",
+   "text": "Lies Lukas 15,1–7. Jesus antwortet auf das Murren darüber, dass er Sünder aufnimmt.",
+   "meaning": "Das Gleichnis zeigt Gottes Freude über die Umkehr eines Verlorenen und die Würde dessen, der leicht übersehen wird. Es lädt ein, Menschen nicht vorschnell abzuschreiben.",
+   "cross": "Hesekiel 34,11–16 · Lukas 19,10 · 2. Petrus 3,9",
+   "practice": "Wer wird in deinem Umfeld leicht übersehen oder abgeschrieben? Wie kannst du zeigen, dass die Person zählt?",
+   "q": "Worüber freut sich der Hirte?",
+   "opts": [
+    "Dass er keinen Aufwand hatte",
+    "Dass er das verlorene Schaf findet",
+    "Dass alle Schafe verschwinden"
+   ],
+   "correct": 1,
+   "why": "Die Freude entsteht darüber, dass das Verlorene gefunden wird. Lukas verbindet dies mit Freude über Umkehr.",
+   "kind": "write",
+   "prompt": "Wie könntest du jemanden respektvoll wahrnehmen oder unterstützen?"
+  },
+  {
+   "id": "prodigal",
+   "title": "Der verlorene Sohn",
+   "ref": "Lukas 15,11–32",
+   "theme": "Umkehr, Gnade und Selbstgerechtigkeit",
+   "xy": [
+    70,
+    550
+   ],
+   "art": "🏡",
+   "intro": "Ein jüngerer Sohn verschwendet sein Erbe und kehrt beschämt zurück. Der Vater läuft ihm entgegen. Der ältere Sohn ist zornig.",
+   "text": "Lies Lukas 15,11–32 vollständig. Die Geschichte handelt vom jüngeren Sohn, vom älteren Sohn und vom Vater.",
+   "meaning": "Der Vater empfängt den Umkehrenden mit Erbarmen. Zugleich legt das Gleichnis die Selbstgerechtigkeit des älteren Bruders offen. Beide Söhne sind auf unterschiedliche Weise entfremdet. Gnade bedeutet nicht, dass das Verlorene belanglos war, sondern dass der Vater den Heimkehrenden aufnimmt.",
+   "cross": "Hosea 11,1–9 · Psalm 103,8–13 · Epheser 2,4–10",
+   "practice": "Findest du dich eher im heimkehrenden jüngeren Sohn oder im älteren, der sich ungerecht behandelt fühlt? Was könnte der Vater dir sagen?",
+   "q": "Warum ist der ältere Sohn wichtig?",
+   "opts": [
+    "Er zeigt, dass nur Jüngere sündigen",
+    "Er macht sichtbar, wie Selbstgerechtigkeit die Freude über Gnade verhindert",
+    "Er beweist, dass der Vater den Jüngeren nicht liebt"
+   ],
+   "correct": 1,
+   "why": "Die Reaktion des älteren Sohnes zeigt die Gefahr, sich auf eigene Leistung zu berufen und anderen Gnade nicht zu gönnen.",
+   "kind": "write",
+   "prompt": "Welche Person fällt dir schwer zu lieben oder ihr Gutes zu gönnen? Was wäre ein erster Schritt zu einer ehrlichen Haltung?"
+  },
+  {
+   "id": "samaritan",
+   "title": "Der barmherzige Samariter",
+   "ref": "Lukas 10,25–37",
+   "theme": "Nächstenliebe über Grenzen hinweg",
+   "xy": [
+    105,
+    390
+   ],
+   "art": "🫶",
+   "intro": "Ein Überfallener liegt am Weg. Ein Priester und ein Levit gehen vorbei. Ein Samariter hält an, versorgt ihn und organisiert Hilfe.",
+   "text": "Lies Lukas 10,25–37. Jesus lenkt die Frage „Wer ist mein Nächster?“ darauf, wer sich als Nächster erweist.",
+   "meaning": "Nächstenliebe überschreitet religiöse und soziale Grenzen. Barmherzigkeit bleibt nicht bei Gefühlen stehen, sondern wird praktisch. Hilfe darf umsichtig sein und andere einbeziehen.",
+   "cross": "3. Mose 19,18.34 · Micha 6,8 · Jakobus 2,14–17",
+   "practice": "Wo kannst du heute konkret helfen? Denke daran, dass umsichtiges Helfen Grenzen und Sicherheit berücksichtigen darf.",
+   "q": "Wer erweist sich als Nächster?",
+   "opts": [
+    "Wer barmherzig handelt",
+    "Wer das höchste Amt hat",
+    "Wer die meisten Regeln kennt"
+   ],
+   "correct": 0,
+   "why": "Der Samariter erweist sich durch seine Barmherzigkeit als Nächster.",
+   "kind": "write",
+   "prompt": "Beschreibe eine konkrete Hilfe, die du leisten könntest, ohne dich oder andere unnötig zu gefährden."
+  },
+  {
+   "id": "prayer",
+   "title": "Pharisäer und Zöllner",
+   "ref": "Lukas 18,9–14",
+   "theme": "Demut statt Selbstgerechtigkeit",
+   "xy": [
+    138,
+    205
+   ],
+   "art": "🙏",
+   "intro": "Zwei Männer beten. Der eine rühmt seine Frömmigkeit und verachtet andere. Der andere bittet demütig um Erbarmen.",
+   "text": "Lies Lukas 18,9–14. Der Text richtet sich ausdrücklich gegen Selbstgerechtigkeit und Verachtung anderer.",
+   "meaning": "Vor Gott zählt nicht selbstzufriedener Vergleich, sondern ehrliche Umkehr und die Bitte um Erbarmen. Demut ist keine Selbstverachtung, sondern die Anerkennung, dass wir Gottes Gnade brauchen.",
+   "cross": "Psalm 51,3–19 · Jesaja 57,15 · Römer 3,23–24",
+   "practice": "Vergleichst du dich manchmal mit anderen, um dich besser zu fühlen? Wie könnte ein ehrliches Gebet aussehen?",
+   "q": "Wie geht der Zöllner aus dem Gleichnis hervor?",
+   "opts": [
+    "Als gerechtfertigt, weil er Gottes Erbarmen sucht",
+    "Als besser als alle anderen",
+    "Als jemand ohne Fehler"
+   ],
+   "correct": 0,
+   "why": "Jesus sagt, dass der demütige Zöllner gerechtfertigt nach Hause geht.",
+   "kind": "write",
+   "prompt": "Formuliere ein ehrliches Gebet, in dem du Gottes Erbarmen suchst, ohne dich mit anderen zu vergleichen."
+  },
+  {
+   "id": "talents",
+   "title": "Die anvertrauten Talente",
+   "ref": "Matthäus 25,14–30 · vgl. Lukas 19,11–27",
+   "theme": "Treue und Verantwortung",
+   "xy": [
+    235,
+    110
+   ],
+   "art": "🪙",
+   "intro": "Ein Herr vertraut seinen Dienern unterschiedlich viel an und fragt bei seiner Rückkehr, wie sie damit umgegangen sind.",
+   "text": "Lies Matthäus 25,14–30 im Zusammenhang mit Matthäus 24–25. Das Gleichnis gehört zu Jesu Lehre über Wachsamkeit und Treue.",
+   "meaning": "Jeder Diener erhält etwas anvertraut und ist verantwortlich. Das Gleichnis ruft zu treuem Handeln auf, nicht zu Angststarre. Talente sind im ursprünglichen Bild Geldsummen; die Anwendung auf Begabungen ist verbreitet, aber nicht die einzige Bedeutung.",
+   "cross": "1. Petrus 4,10 · Lukas 16,10 · 1. Korinther 4,1–2",
+   "practice": "Welche Verantwortung ist dir anvertraut? Was wäre ein kleiner, treuer nächster Schritt statt Aufschieben aus Angst?",
+   "q": "Was wird bei den treuen Dienern gelobt?",
+   "opts": [
+    "Dass sie gleich viel erhalten haben",
+    "Dass sie mit dem Anvertrauten treu umgehen",
+    "Dass sie jede Unsicherheit vermeiden"
+   ],
+   "correct": 1,
+   "why": "Der Herr lobt ihre Treue, obwohl die Beträge unterschiedlich waren.",
+   "kind": "write",
+   "prompt": "Nenne eine Verantwortung und einen nächsten Schritt, den du in den kommenden sieben Tagen umsetzen willst."
+  },
+  {
+   "id": "houses",
+   "title": "Die zwei Häuser",
+   "ref": "Matthäus 7,24–27 · Lukas 6,46–49",
+   "theme": "Jesu Worte hören und tun",
+   "xy": [
+    345,
+    92
+   ],
+   "art": "🏠",
+   "intro": "Ein Haus steht auf Fels, das andere auf Sand. Regen und Flut zeigen, wie tragfähig das Fundament ist.",
+   "text": "Lies Matthäus 7,24–27. Das Gleichnis schließt die Bergpredigt ab. Der Kontrast besteht zwischen Hören und Tun.",
+   "meaning": "Jesus ruft dazu auf, seine Worte nicht nur zu bewundern, sondern ihnen zu gehorchen. Ein tragfähiges Fundament zeigt sich besonders in Belastungen. Gehorsam ist Antwort auf Jesu Autorität, kein Kaufpreis für Gottes Liebe.",
+   "cross": "Jakobus 1,22–25 · Psalm 1,1–3 · Johannes 14,21",
+   "practice": "Welches Wort Jesu kennst du bereits, setzt es aber noch nicht um? Wähle einen konkreten kleinen Schritt.",
+   "q": "Was unterscheidet die Bauleute?",
+   "opts": [
+    "Die Farbe der Häuser",
+    "Einer hört Jesu Worte und tut sie, der andere tut sie nicht",
+    "Nur einer erlebt Regen"
+   ],
+   "correct": 1,
+   "why": "Jesu Pointe ist die Verbindung von Hören und Tun. Beide Häuser erleben den Sturm.",
+   "kind": "write",
+   "prompt": "Wähle eine Lehre Jesu und schreibe, wie du sie in einer konkreten Situation leben willst."
+  },
+  {
+   "id": "virgins",
+   "title": "Die zehn Jungfrauen",
+   "ref": "Matthäus 25,1–13",
+   "theme": "Wachsamkeit und Bereitschaft",
+   "xy": [
+    397,
+    315
+   ],
+   "art": "🪔",
+   "intro": "Zehn Jungfrauen warten auf den Bräutigam. Fünf haben zusätzliches Öl dabei, fünf nicht. Als er kommt, sind nicht alle bereit.",
+   "text": "Lies Matthäus 25,1–13. Jesus ruft zur Wachsamkeit, weil der Zeitpunkt nicht bekannt ist.",
+   "meaning": "Das Gleichnis fordert zu beständiger Bereitschaft auf. Es lädt nicht dazu ein, Termine für das Ende zu berechnen, sondern heute treu zu leben. Der Text erklärt nicht ausdrücklich jedes Detail als eigenes Symbol.",
+   "cross": "Matthäus 24,36–44 · 1. Thessalonicher 5,1–8 · Offenbarung 19,7–9",
+   "practice": "Was hilft dir, im Glauben wach und treu zu bleiben, auch wenn du auf Gottes Handeln wartest?",
+   "q": "Was ist die Hauptaufforderung?",
+   "opts": [
+    "Den Tag und die Stunde berechnen",
+    "Wachsam sein, weil der Zeitpunkt unbekannt ist",
+    "Andere beschuldigen"
+   ],
+   "correct": 1,
+   "why": "Matthäus 25,13 fasst das Gleichnis mit dem Aufruf zur Wachsamkeit zusammen.",
+   "kind": "write",
+   "prompt": "Welche einfache Gewohnheit könnte dir helfen, im Glauben wachsam zu bleiben?"
+  },
+  {
+   "id": "sheepgoats",
+   "title": "Schafe und Böcke",
+   "ref": "Matthäus 25,31–46",
+   "theme": "Liebe, die sichtbar wird",
+   "xy": [
+    437,
+    487
+   ],
+   "art": "🐑🐐",
+   "intro": "Der Menschensohn trennt die Völker wie ein Hirte Schafe von Böcken. Im Mittelpunkt stehen Taten der Barmherzigkeit gegenüber Bedürftigen.",
+   "text": "Lies Matthäus 25,31–46. Achte darauf, wie eng die Behandlung der Geringsten mit der Beziehung zum König verbunden wird.",
+   "meaning": "Jesus nimmt konkrete Barmherzigkeit ernst: Hungrige, Fremde, Kranke und Gefangene werden nicht übersehen. Werke kaufen Gottes Gnade nicht, aber sie zeigen, wie ernst Jesu Königsherrschaft und die Würde anderer genommen werden.",
+   "cross": "Sprüche 19,17 · Jesaja 58,6–10 · Jakobus 2,14–17 · 1. Johannes 3,16–18",
+   "practice": "Welche konkrete Tat der Barmherzigkeit ist in deiner Umgebung möglich? Wähle etwas realistisches, respektvolles und hilfreiches.",
+   "q": "Welche Bedürftigen nennt Jesus?",
+   "opts": [
+    "Nur Menschen aus der eigenen Gruppe",
+    "Hungrige, Fremde, Kranke und Gefangene",
+    "Nur Menschen, die sich bedanken"
+   ],
+   "correct": 1,
+   "why": "Jesus nennt Hungrige, Durstige, Fremde, Nackte, Kranke und Gefangene.",
+   "kind": "write",
+   "prompt": "Plane eine konkrete Handlung der Barmherzigkeit: Was wirst du tun, für wen und wann?"
+  }
+ ]
+}

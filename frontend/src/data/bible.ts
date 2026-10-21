@@ -71,6 +71,7 @@ export function getVerse(book: string, ch: number, v: number): string {
 
 export function formatRef(ref: VerseRef): string {
   const b = BOOK_BY_CODE[ref.book]?.name ?? ref.book;
+  if (ref.to && ref.to >= 200) return `${b} ${ref.ch}${ref.from > 1 ? "," + ref.from + "–Ende" : ""}`;
   return `${b} ${ref.ch},${ref.from}${ref.to && ref.to !== ref.from ? "–" + ref.to : ""}`;
 }
 

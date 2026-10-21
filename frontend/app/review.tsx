@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Icon } from "@/src/components/Icon";
 import { TaskView } from "@/src/components/TaskView";
 import { Button } from "@/src/components/ui";
-import { JOHN } from "@/src/data/john";
+import { ALL_STATIONS } from "@/src/data/john";
 import { Task } from "@/src/data/types";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, spacing, useTheme } from "@/src/theme";
@@ -20,7 +20,7 @@ export default function ReviewScreen() {
   // Snapshot beim Öffnen, damit die Liste während der Wiederholung stabil bleibt
   const queue = useMemo(() => {
     const all: { task: Task; station: string }[] = [];
-    for (const s of JOHN.stations) for (const t of [...s.tasks, ...s.exam]) if (p.state.wrong[t.id]) all.push({ task: t, station: s.title });
+    for (const s of ALL_STATIONS) for (const t of [...s.tasks, ...s.exam]) if (p.state.wrong[t.id]) all.push({ task: t, station: s.title });
     return all;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
