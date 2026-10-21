@@ -112,3 +112,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - 23 neue Artikel (src/data/articlesProphets.ts); 103/135 gesamt. 10 weitere KI-Illustrationen (gesamt 37). Hiob-Prompt wurde vom Sicherheitsfilter abgelehnt und entschärft neu erzeugt.
 - Bookshelf: Buch kippt beim Antippen aus dem Regal (~260ms, RN Animated, respektiert „Bewegung reduzieren“), danach Navigation; Doppeltipp-Schutz.
 - Testagent Iteration 17: alles grün. Offen: Evangelien, Apg, Briefe, Offb (32 Artikel).
+
+## Lexikon Etappe 5 – Evangelien + Zeitstrahl neu (Juni 2026)
+- 21 neue Artikel (src/data/articlesGospels.ts); 124/135 gesamt. 9 weitere KI-Illustrationen (gesamt 46).
+- Zeitstrahl neu (app/timeline.tsx, src/data/timelineData.ts): 8 Epochen als farbige Kapitelbänder mit Sprungchips, Filter (Personen/Ereignisse/Reiche & Begriffe), Bilder, 101 Einträge; Tippen öffnet Lexikonartikel (ältere Infotafeln → InfoSheet).
+- Artikel: Button „Im Zeitstrahl zeigen“ → /timeline?focus=id (hervorgehoben, eingescrollt).
+- Testagent Iteration 18: alles grün. Offen: Apg, Briefe, Offb (11 Artikel); Intro-Overlay erscheint mehrfach pro Sitzung (prüfen).

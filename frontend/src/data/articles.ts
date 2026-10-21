@@ -5,6 +5,7 @@ import { ARTICLES_EXO } from "./articlesTora2";
 import { ARTICLES_JOS } from "./articlesKings1";
 import { ARTICLES_KINGS } from "./articlesKings2";
 import { ARTICLES_PROPHETS } from "./articlesProphets";
+import { ARTICLES_GOSPELS } from "./articlesGospels";
 
 /** Etappe 1: je Artikeltyp ein Musterartikel. */
 const STAGE1: Article[] = [
@@ -225,6 +226,6 @@ const STAGE1: Article[] = [
 ];
 
 /** Vollständig ausgearbeitete Artikel (Etappe 1, 2: Tora, 3: Josua–Könige, 4: Esra–Propheten). */
-export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS, ...ARTICLES_PROPHETS];
+export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS, ...ARTICLES_PROPHETS, ...ARTICLES_GOSPELS];
 
 export const ARTICLE_BY_ID: Record<string, Article> = Object.fromEntries(ARTICLES.map((a) => [a.id, a]));

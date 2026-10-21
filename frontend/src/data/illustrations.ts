@@ -40,6 +40,15 @@ export const ILLUSTRATIONS: Record<string, ImageSourcePropType> = {
   ezechiel: require("../../assets/images/lexicon/ezechiel.jpg"),
   daniel: require("../../assets/images/lexicon/daniel.jpg"),
   jona: require("../../assets/images/lexicon/jona.jpg"),
+  "jesus": require("../../assets/images/lexicon/jesus.jpg"),
+  "petrus": require("../../assets/images/lexicon/petrus.jpg"),
+  "herodes-grosse": require("../../assets/images/lexicon/herodes-grosse.jpg"),
+  "johannes-markus": require("../../assets/images/lexicon/johannes-markus.jpg"),
+  "maria": require("../../assets/images/lexicon/maria.jpg"),
+  "johannes-taeufer": require("../../assets/images/lexicon/johannes-taeufer.jpg"),
+  "johannes-apostel": require("../../assets/images/lexicon/johannes-apostel.jpg"),
+  "nikodemus": require("../../assets/images/lexicon/nikodemus.jpg"),
+  "lazarus": require("../../assets/images/lexicon/lazarus.jpg"),
 };
 
 export const ILLUSTRATION_LABEL = "Künstlerische Rekonstruktion – Aussehen nicht überliefert";

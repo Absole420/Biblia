@@ -219,3 +219,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 18: Lexikon Etappe 5 (Evangelien, 21 Artikel, 9 KI-Bilder) + Zeitstrahl neu (Epochen, Filter, Bilder) + Verknüpfung Zeitstrahl↔Lexikon"
+    implemented: true
+    working: "NA"
+    file: "src/data/articlesGospels.ts, src/data/timelineData.ts, app/timeline.tsx, app/lexicon/[id].tsx, src/data/illustrations.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

@@ -63,6 +63,16 @@ PEOPLE = {
     "ezechiel": "A prophet standing in a wide valley full of scattered dry bones, wind blowing, a Mesopotamian river landscape in the distance.",
     "daniel": "A young Judean man praying at an open window facing west in a Babylonian house, glazed brick wall and palm trees outside.",
     "jona": "A man sitting under a leafy plant on a hill outside a large ancient walled city in the heat of the day, looking at the city, sulking.",
+    # Etappe 5: Evangelien
+    "jesus": "A Galilean Jewish teacher of the 1st century in a simple wool tunic and mantle, sitting on a hillside by the Sea of Galilee teaching a small crowd, warm evening light, no halo.",
+    "petrus": "A sturdy Galilean fisherman with a short beard pulling a full net into a wooden boat on the Sea of Galilee at dawn.",
+    "herodes-grosse": "A 1st-century BC client king in Roman-influenced royal dress standing on a terrace overlooking a vast temple construction site with cranes and scaffolding.",
+    "johannes-markus": "A young man in a simple tunic writing on a scroll by lamplight in a modest house, a travel bag beside him.",
+    "maria": "A young Jewish woman from Nazareth in a simple headscarf carrying a water jar at a village spring, thoughtful and calm, hills of Galilee behind.",
+    "johannes-taeufer": "A wild-looking prophet in a camel-hair garment with a leather belt standing waist-deep in the Jordan river, people waiting on the bank.",
+    "johannes-apostel": "A young Galilean fisherman mending nets with his brother beside a boat on the lakeshore, their father in the boat.",
+    "nikodemus": "An elderly Jewish scholar in a fine mantle walking at night through a narrow Jerusalem lane with an oil lamp, contemplative.",
+    "lazarus": "A man in white linen wrappings stepping out of a rock-cut tomb into the daylight in a village near Jerusalem, his sisters looking on in astonishment.",
 }
 
 
