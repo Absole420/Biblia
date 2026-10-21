@@ -48,7 +48,11 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   const entries = data?.key === key ? data.entries : null;
   if (!entries || !sources) return <ActivityIndicator color={colors.brandPrimary} />;
   const pref = state.study.prefSources;
-  const hits = entries.filter((e) => e.from <= v && e.to >= v && (!pref.length || pref.includes(e.source)));
+  // Deutschsprachige Auslegungen zuerst, danach die engere Passage
+  const lang = (id: string) => (sources?.find((x) => x.id === id)?.language === "de" ? 0 : 1);
+  const hits = entries
+    .filter((e) => e.from <= v && e.to >= v && (!pref.length || pref.includes(e.source)))
+    .sort((a, b) => lang(a.source) - lang(b.source) || (a.to - a.from) - (b.to - b.from));
   const commSources = sources.filter((s) => s.type === "commentary");
   return (
     <View testID="commentary-panel">
@@ -79,8 +83,8 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
                 <View style={styles.badge}><Icon name="book-open" size={12} color={colors.info} /><Text style={styles.badgeText}>Studienkommentar · {s?.historical ? "historische Auslegung" : "Auslegung"}</Text></View>
                 <Text style={styles.title}>{s?.author} – {s?.title}</Text>
                 <Text style={styles.meta} testID={`commentary-scope-${e.id}`}>Behandelt: {range} ({SCOPE[e.scope]}){e.scope !== "verse" ? " – keine Einzelerklärung zu V. " + v : ""}</Text>
-                <Text style={styles.meta}>Sprache: {s?.language === "en" ? "Englisch (Originaltext, nicht übersetzt)" : s?.language} · {s?.edition} · {s?.year}</Text>
-                <Text style={styles.body}>{e.text}</Text>
+                <Text style={styles.meta}>Sprache: {s?.language === "en" ? "Englisch (Originaltext, nicht übersetzt)" : s?.language === "de" ? "Deutsch" : s?.language} · {s?.edition} · {s?.year}</Text>
+                <LongText text={e.text} style={styles.body} more={styles.linkText} testID={`commentary-text-${e.id}`} />
                 <Text style={styles.meta}>Einordnung: {s?.perspective}</Text>
                 <Text style={styles.meta}>Rechte: {s?.license}</Text>
                 {s?.url ? <Pressable onPress={() => Linking.openURL(s.url)} accessibilityRole="link" style={styles.link}><Icon name="external-link" size={13} color={colors.brandPrimary} /><Text style={styles.linkText}>Quelle (externer Link)</Text></Pressable> : null}
@@ -167,3 +171,19 @@ const useStyles = makeStyles((c) => ({
   link: { flexDirection: "row", alignItems: "center", gap: 6, minHeight: 36 },
   linkText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800", color: c.brandPrimary },
 }));
+
+/** Lange Auslegungen zunächst gekürzt, auf Wunsch vollständig. */
+function LongText({ text, style, more, testID }: { text: string; style: object; more: object; testID: string }) {
+  const [open, setOpen] = useState(false);
+  const long = text.length > 700;
+  return (
+    <View>
+      <Text style={style} numberOfLines={long && !open ? 10 : undefined} testID={testID}>{text}</Text>
+      {long ? (
+        <Pressable onPress={() => setOpen(!open)} accessibilityRole="button" hitSlop={8} style={{ minHeight: 40, justifyContent: "center" }} testID={`${testID}-more`}>
+          <Text style={more}>{open ? "Weniger anzeigen" : "Ganze Auslegung lesen"}</Text>
+        </Pressable>
+      ) : null}
+    </View>
+  );
+}

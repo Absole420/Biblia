@@ -1,0 +1,39 @@
+{
+  "summary": "Iteration 10 — End-to-end validation of the new copyright-free German commentary source 'Calvin Kommentare' (source id calvin-de). BACKEND: 7/7 pytest cases pass in /app/backend/tests/test_study_api.py. GET /api/study/sources returns 7 sources (6 → 7); calvin-de is present with type=commentary, language=de, status=integrated, rights.fulltext=true and license text contains 'Gemeinfrei'. GET /api/study/commentary/43/3 (Joh 3) returns both mhcc (3 section entries over 1–8/9–21/22–36) AND calvin-de (33 verse-level entries). GET /api/study/commentary/45/8 (Röm 8) returns ≥10 calvin-de entries with correct book=45,chapter=8 shape. GET /api/study/commentary/43/1 (Joh 1) returns calvin-de only (no mhcc) — confirming the new source adds coverage where mhcc had none. GET /api/study/commentary/1/1 (Gen) returns {entries:[]}. FRONTEND (Expo web, 390x844): Bible tab → Johannes 3 → tap Vers 16 → Studienkommentare tab renders commentary-panel. Both source-filter-calvin-de and source-filter-mhcc chips render. ORDERING VERIFIED: the first card id is commentary-calvin-43-3-16-79 (Calvin, German), the second is commentary-mhcc-43-3 (MHCC, English) — Calvin appears FIRST because lang('de')=0 sorts before lang('en')=1 in VerseStudy.tsx:52-55. Calvin card content confirmed on screen: 'STUDIENKOMMENTAR · HISTORISCHE AUSLEGUNG', author 'Johannes Calvin (1509–1564) – Calvin Kommentare (deutsche Ausgabe)', 'Behandelt: Johannes 3,16 (Einzelvers)', 'Sprache: Deutsch · Deutsche Übersetzung aus der Sammlung „Lesekammer“ … (deuCalvinKommentare, Version 1.1, Alpha-Stand) · 1540–1564', the 'V. 16. Also hat Gott die Welt geliebt…' Calvin text, perspective line, 'Rechte: Gemeinfrei …' line and 'Quelle (externer Link)' pressable. LONG-TEXT TOGGLE: pressing the first commentary-text-<id>-more button switches label 'Ganze Auslegung lesen' → 'Weniger anzeigen' and back. SOURCE FILTER: clicking source-filter-calvin-de hides the calvin card (count 1→0) while source-filter-mhcc card stays (count 1); clicking again restores Calvin (0→1). COMPARE: commentary-compare toggles label 'Vergleichen' → 'Liste' and lays cards side-by-side. STUDY SOURCES SCREEN: /study/sources renders both 'Calvin Kommentare' and 'Matthew Henry' entries and surfaces the 'Gemeinfrei' license line. NO red screens, NO pageerror events, only the pre-existing React-Native-Web shadow* deprecation warning carried over from previous iterations.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": [
+      {"component": "shadow* style props (RN-Web)", "issue": "Pre-existing deprecation warning carried over from iters 5–9: '\"shadow*\" style props are deprecated. Use \"boxShadow\".' Non-blocking, not introduced by this iteration. Reference: /app/frontend/src/components/JourneyLayer.tsx (and similar components)."}
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_study_api.py",
+    "/app/test_reports/pytest/pytest_results.xml",
+    "/tmp/comm_john3_16.png",
+    "/tmp/sources_screen.png"
+  ],
+  "action_items": [
+    "COSMETIC (optional, carried over): migrate shadow* → boxShadow in JourneyLayer and similar files to clear the RN-Web deprecation warning. Not related to this iteration.",
+    "OPTIONAL — the commentary feature currently uses /api/study/sources on every verse open (via useSources); if a global sources cache is already in place this is fine, otherwise consider memoising at app root to avoid repeated requests when hopping between verses."
+  ],
+  "critical_code_review_comments": [
+    "backend/server.py:117-121 loads every *.json under /data/commentaries and spreads source id onto each entry — adding calvin_de.json auto-registers 2972 entries without any code change. Clean, extensible pattern.",
+    "backend/data/sources.json:3-22 the calvin-de entry has all required fields (id,type,title,author,language,edition,year,url,license,rights{fulltext,offline,edit,redistribute},perspective,historical,status,coverage). license and perspective are concrete, honest and include the ‚Alpha-Stand‘ caveat — this is good RGPD/copyright hygiene.",
+    "frontend/src/components/VerseStudy.tsx:52-55 'lang()' sort key (de=0,en=1) correctly places German commentary first and then tightens to the narrowest scope — exact behaviour requested.",
+    "VerseStudy.tsx:61-68 the source-filter chip logic: when all are 'on' (pref=[]) tapping a chip switches to the complement set; tapping again adds it back. The implementation keeps the UX intuitive (chip looks ON = will be shown).",
+    "VerseStudy.tsx:82 card testID is `commentary-${e.id}` → calvin ids are 'calvin-<book>-<ch>-<v>-<n>', so playbook selectors like [data-testid^=\"commentary-calvin-\"] work as advertised in the review spec.",
+    "VerseStudy.tsx:184 LongText uses the testID<...>-more pattern (`${testID}-more`) → stable selectors for toggle testing: commentary-text-<entryId>-more. Verified live."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_study_api.py (rewrote: now 7 cases covering calvin-de in sources, Joh 3 both sources, Röm 8 calvin, Joh 1 calvin-only, Gen 1 empty, xref unchanged)"
+  ],
+  "success_rate": {"backend": "100% (7/7 pytest)", "frontend": "100% on verified flows — Joh 3,16 Calvin-first ordering, source filter, long-text toggle, compare mode, study/sources screen, no console errors."},
+  "seed_data_creation": "None. All reads were against existing data (sources.json + commentaries/calvin_de.json + commentaries/mhcc.json). No DB writes.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "The frontend Bible book picker persists the last-selected book across reloads (progress store), so if a prior test left Joh selected, immediately opening the picker will not show 'Johannes' as a tappable text node — the picker will be in a different state. For deterministic multi-book navigation, either reset storage (clear localStorage before test) or navigate via the backend by directly calling /api/study/commentary/<book>/<chapter> — the UI only wraps that endpoint. For Rom 8,28 and Gen 1,1 I verified via backend; the UI itself uses the same CommentaryPanel component already exercised on Joh 3,16 so the rendering is covered.",
+  "rca_of_issue": "n/a — Calvin commentary integration meets every item of the review request. Only cosmetic shadow* deprecation (pre-existing)."
+}

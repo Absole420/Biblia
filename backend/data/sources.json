@@ -1,5 +1,26 @@
 [
  {
+  "id": "calvin-de",
+  "type": "commentary",
+  "title": "Calvin Kommentare (deutsche Ausgabe)",
+  "author": "Johannes Calvin (1509–1564)",
+  "language": "de",
+  "edition": "Deutsche Übersetzung aus der Sammlung „Lesekammer“, als SWORD-Modul aufbereitet vom Projekt GermanSwordModules (deuCalvinKommentare, Version 1.1, Alpha-Stand)",
+  "year": "1540–1564 (Original); Übersetzer im Modul nicht angegeben",
+  "url": "https://lesekammer.de/2023/06/09/jean-calvin/",
+  "license": "Gemeinfrei (laut GermanSwordModules, DistributionLicense=Gemeinfrei). Die Lesekammer erlaubt die Weitergabe ausdrücklich. Quelle: github.com/GermanSwordModules. Hinweis: Übersetzer und Jahr der deutschen Fassung sind nicht belegt; vor einer kommerziellen Veröffentlichung prüfen. Alpha-Stand: kleinere OCR-/Tippfehler möglich.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Reformatorische (reformiert-calvinistische) Auslegung des 16. Jahrhunderts. Historische Stimme, kein aktueller wissenschaftlicher Forschungsstand.",
+  "historical": true,
+  "status": "integrated",
+  "coverage": "Josua, Johannes, Apostelgeschichte, Römer, Galater, Epheser, Philipper, Titus, Philemon, Hebräer, Jakobus, 1./2. Petrus, 1. Johannes, Judas (2.972 Abschnitte)"
+ },
+ {
   "id": "mhcc",
   "type": "commentary",
   "title": "Concise Commentary on the Whole Bible",

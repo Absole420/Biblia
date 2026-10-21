@@ -172,3 +172,14 @@ agent_communication:
       - working: "NA"
         agent: "main"
         comment: "cover-fit statt contain, fitBox/reset/fit-all, keepVisible bei Panel, Marker fix an Koordinaten, Labels mit 16 Slots + Leader-Linie, Gruppen +n, Ausblenden nachrangiger Labels, Ortsliste."
+  - task: "Iteration 10: Deutscher gemeinfreier Kommentar Calvin (calvin-de) im Versstudium"
+    implemented: true
+    working: "NA"
+    file: "backend/data/commentaries/calvin_de.json, backend/data/sources.json, src/components/VerseStudy.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "2972 Abschnitte (Jos, Joh, Apg, Röm, Gal, Eph, Phil, Tit, Phlm, Hebr, Jak, 1/2Petr, 1Joh, Jud) aus GermanSwordModules deuCalvinKommentare (Gemeinfrei). Deutsch zuerst sortiert, lange Texte einklappbar."

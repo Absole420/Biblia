@@ -77,3 +77,8 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 ## Offen
 - Leseplan-Details (Ruhe-/Puffertage, verpasste Tage, Themenpläne) prüfen/ergänzen
 - Deutsche gemeinfreie Kommentarquelle; Elberfelder 2006 nur mit Lizenz
+
+## Iteration 10 – Deutscher Kommentar (agent-tested, iteration_10.json)
+- Calvin Kommentare (deutsch, gemeinfrei laut GermanSwordModules/Lesekammer) als Quelle `calvin-de`: 2.972 Abschnitte zu Jos, Joh, Apg, Röm, Gal, Eph, Phil, Tit, Phlm, Hebr, Jak, 1/2Petr, 1Joh, Jud
+- Versstudium: deutsche Auslegungen zuerst, lange Texte einklappbar, Sprache „Deutsch“
+- Offen: Übersetzer/Jahr der deutschen Fassung nicht belegt → vor kommerziellem Release prüfen; weitere Bücher (AT, Evangelien außer Joh) ohne deutschen Kommentar
