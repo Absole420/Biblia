@@ -82,3 +82,6 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Calvin Kommentare (deutsch, gemeinfrei laut GermanSwordModules/Lesekammer) als Quelle `calvin-de`: 2.972 Abschnitte zu Jos, Joh, Apg, Röm, Gal, Eph, Phil, Tit, Phlm, Hebr, Jak, 1/2Petr, 1Joh, Jud
 - Versstudium: deutsche Auslegungen zuerst, lange Texte einklappbar, Sprache „Deutsch“
 - Offen: Übersetzer/Jahr der deutschen Fassung nicht belegt → vor kommerziellem Release prüfen; weitere Bücher (AT, Evangelien außer Joh) ohne deutschen Kommentar
+
+## Iteration 11 – Bibel-Kopfbereich (agent-tested, iteration_11.json)
+- Zwei Buttons: Bibelbuch auswählen + Optionen ausklappen (Studium, Suche, Lesemodus, Zeilenabstand, Übersetzung)

@@ -1,0 +1,22 @@
+{
+  "summary": "Bible tab header rebuild verified. Across 360x740, 390x844 and 412x915 viewports the header now shows exactly two buttons on one row: bible-book-picker-button (showing 'Johannes 1' + 'Angezeigt: Elberfelder 1905' both on single lines, measured subHeight=16px with no vertical letter wrapping) and bible-options-toggle. Expanding bible-options-toggle reveals bible-options-panel with all 5 required items (bible-study-button, bible-search-button, bible-focus-toggle, bible-lineheight, bible-translation-toggle). Line-height cycles (1.6→1.8), focus toggle label switches (Lesemodus→Fokus aus), search sheet opens, collapse works. Chapter chips row (chapter-chip-1..7+) renders below header and is horizontally scrollable, verses render, tapping a verse opens verse-sheet. Book picker opens book-picker-sheet and tapping book-Röm navigates to Römer 1. No red screens; only pre-existing non-blocking 'shadow* style props deprecated' console warnings (not caused by this change).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "bible.tsx is 462 lines – still inside the 700-line threshold, but it is approaching the limit; consider splitting header + sheets into sub-components in a future refactor.",
+    "Pre-existing deprecation warning: 'shadow* style props are deprecated. Use boxShadow.' appears in console (unrelated to this iteration). Can be cleaned up in a future pass."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Bible tab header redesign (2 buttons: book-picker + options-toggle expanding a panel) is fully functional across narrow phone viewports. All required testIDs exist and behave correctly. The map intro overlay ('Überspringen') can appear on first visit – dismiss via get_by_text('Überspringen') before interacting with the bible header."
+}

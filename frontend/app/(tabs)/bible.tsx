@@ -51,6 +51,7 @@ export default function BibleScreen() {
   const pendingVerse = useRef<number | null>(null);
   const listRef = useRef<FlatList>(null);
   const chipsRef = useRef<ScrollView>(null);
+  const [optsOpen, setOptsOpen] = useState(false);
   const info = BOOK_BY_CODE[book];
   const chosen = TRANSLATIONS[state.settings.translation] ?? TRANSLATIONS.elb1905;
   const tr = displayedTranslation(state.settings.translation);
@@ -151,29 +152,35 @@ export default function BibleScreen() {
     <View style={styles.root} testID="bible-screen">
       <View style={[styles.header, { paddingTop: insets.top + spacing.sm }]}>
         <View style={styles.titleRow}>
-          <Pressable style={{ flex: 1 }} onPress={() => setPicker(true)} testID="bible-book-picker-button" accessibilityLabel="Buch wählen">
-            <View style={styles.bookBtn}>
+          <Pressable style={styles.bookBtn} onPress={() => setPicker(true)} testID="bible-book-picker-button" accessibilityRole="button" accessibilityLabel={`Bibelbuch auswählen, aktuell ${info.name} ${ch}`}>
+            <Icon name="book-open" size={18} color={colors.brandPrimary} />
+            <View style={{ flex: 1, minWidth: 0 }}>
               <Text style={styles.title} numberOfLines={1}>{info.name} {ch}</Text>
-              <Icon name="chevron-down" size={20} color={colors.onSurface} />
+              <Text style={styles.sub} numberOfLines={1} testID="bible-translation-label">{chosen.id === tr.id ? `Angezeigt: ${tr.name}` : `Angezeigt: ${tr.name} · ${chosen.short} nicht lizenziert`}</Text>
             </View>
-            <Text style={styles.sub} testID="bible-translation-label">{chosen.id === tr.id ? `Angezeigt: ${tr.name}` : `Angezeigt: ${tr.name} · ${chosen.short} nicht lizenziert`}</Text>
+            <Icon name="chevron-down" size={20} color={colors.onSurface} />
           </Pressable>
-          <Pressable testID="bible-study-button" style={styles.iconBtn} onPress={() => router.push("/study")} accessibilityLabel="Mein Studium öffnen">
-            <Icon name="layers" size={20} color={colors.onSurface} />
-          </Pressable>
-          <Pressable testID="bible-focus-toggle" style={styles.iconBtn} onPress={() => p.updateStudy((x) => ({ ...x, reading: { ...x.reading, focus: !x.reading.focus } }))} accessibilityLabel={focus ? "Ablenkungsarmen Modus beenden" : "Ablenkungsarmer Lesemodus"}>
-            <Icon name={focus ? "eye-off" : "eye"} size={20} color={colors.onSurface} />
-          </Pressable>
-          <Pressable testID="bible-lineheight" style={styles.iconBtn} onPress={() => p.updateStudy((x) => ({ ...x, reading: { ...x.reading, lineHeight: x.reading.lineHeight >= 2 ? 1.4 : Math.round((x.reading.lineHeight + 0.2) * 10) / 10 } }))} accessibilityLabel={`Zeilenabstand ändern, aktuell ${lh}`}>
-            <Icon name="align-justify" size={20} color={colors.onSurface} />
-          </Pressable>
-          <Pressable testID="bible-search-button" style={styles.iconBtn} onPress={() => setSearchOpen(true)} accessibilityLabel="Bibel durchsuchen">
-            <Icon name="search" size={18} color={colors.onSurface} />
-          </Pressable>
-          <Pressable testID="bible-translation-toggle" style={styles.trBtn} onPress={() => router.push("/settings")} accessibilityLabel="Übersetzung wechseln">
-            <Text style={styles.trText}>{tr.short}</Text>
+          <Pressable testID="bible-options-toggle" style={[styles.optBtn, optsOpen && { backgroundColor: colors.surfaceInverse }]} onPress={() => setOptsOpen((o) => !o)} accessibilityRole="button" accessibilityState={{ expanded: optsOpen }} accessibilityLabel={optsOpen ? "Optionen einklappen" : "Optionen ausklappen"}>
+            <Icon name="sliders" size={18} color={optsOpen ? colors.onSurfaceInverse : colors.onSurface} />
+            <Icon name={optsOpen ? "chevron-up" : "chevron-down"} size={18} color={optsOpen ? colors.onSurfaceInverse : colors.onSurface} />
           </Pressable>
         </View>
+        {optsOpen ? (
+          <View style={styles.opts} testID="bible-options-panel">
+            {[
+              { id: "bible-study-button", icon: "layers", label: "Mein Studium", on: () => router.push("/study") },
+              { id: "bible-search-button", icon: "search", label: "Suchen", on: () => setSearchOpen(true) },
+              { id: "bible-focus-toggle", icon: focus ? "eye-off" : "eye", label: focus ? "Fokus aus" : "Lesemodus", on: () => p.updateStudy((x) => ({ ...x, reading: { ...x.reading, focus: !x.reading.focus } })), active: focus },
+              { id: "bible-lineheight", icon: "align-justify", label: `Zeilen ${lh}`, on: () => p.updateStudy((x) => ({ ...x, reading: { ...x.reading, lineHeight: x.reading.lineHeight >= 2 ? 1.4 : Math.round((x.reading.lineHeight + 0.2) * 10) / 10 } })) },
+              { id: "bible-translation-toggle", icon: "globe", label: tr.short, on: () => router.push("/settings") },
+            ].map((o) => (
+              <Pressable key={o.id} testID={o.id} onPress={o.on} accessibilityRole="button" accessibilityLabel={o.label} style={({ pressed }) => [styles.optItem, o.active && { borderColor: colors.brandPrimary }, pressed && { opacity: 0.7 }]}>
+                <Icon name={o.icon} size={20} color={o.active ? colors.brandPrimary : colors.onSurface} />
+                <Text style={styles.optText} numberOfLines={1}>{o.label}</Text>
+              </Pressable>
+            ))}
+          </View>
+        ) : null}
         <ScrollView ref={chipsRef} horizontal showsHorizontalScrollIndicator={false} style={styles.chipRow} contentContainerStyle={styles.chipContent}>
           {Array.from({ length: info.chapters }).map((_, i) => (
             <Chip key={book + i} testID={`chapter-chip-${i + 1}`} label={String(i + 1)} selected={ch === i + 1} onPress={() => go(book, i + 1)} />
@@ -415,13 +422,14 @@ export default function BibleScreen() {
 const useStyles = makeStyles((c) => ({
   root: { flex: 1, backgroundColor: c.surface },
   header: { backgroundColor: c.surface, borderBottomWidth: 1, borderBottomColor: c.divider },
-  titleRow: { flexDirection: "row", alignItems: "center", paddingHorizontal: spacing.xl, gap: spacing.sm },
-  bookBtn: { flexDirection: "row", alignItems: "center", gap: 6 },
-  title: { fontFamily: fonts.display, fontSize: 26, fontWeight: "700", color: c.onSurface, flexShrink: 1 },
-  sub: { fontFamily: fonts.text, fontSize: 13, color: c.muted, fontWeight: "700", marginTop: spacing.xs },
-  iconBtn: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
-  trBtn: { height: 44, paddingHorizontal: spacing.md, borderRadius: radius.pill, justifyContent: "center", backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
-  trText: { fontFamily: fonts.text, fontWeight: "800", color: c.onSurface, fontSize: 13 },
+  titleRow: { flexDirection: "row", alignItems: "center", paddingHorizontal: spacing.lg, gap: spacing.sm },
+  bookBtn: { flex: 1, minWidth: 0, flexDirection: "row", alignItems: "center", gap: spacing.sm, minHeight: 56, paddingHorizontal: spacing.md, borderRadius: radius.lg, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
+  title: { fontFamily: fonts.display, fontSize: 22, fontWeight: "700", color: c.onSurface },
+  sub: { fontFamily: fonts.text, fontSize: 12, color: c.muted, fontWeight: "700" },
+  optBtn: { flexDirection: "row", alignItems: "center", gap: 2, height: 56, paddingHorizontal: spacing.md, borderRadius: radius.lg, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
+  opts: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingTop: spacing.md },
+  optItem: { flexGrow: 1, flexBasis: "30%", minWidth: 96, alignItems: "center", justifyContent: "center", gap: 4, minHeight: 60, paddingHorizontal: spacing.sm, borderRadius: radius.md, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
+  optText: { fontFamily: fonts.text, fontSize: 12.5, fontWeight: "800", color: c.onSurfaceSecondary },
   chipRow: { height: 56, flexGrow: 0 },
   chipContent: { gap: spacing.sm, paddingHorizontal: spacing.xl, alignItems: "center" },
   banner: { flexDirection: "row", gap: spacing.sm, padding: spacing.md, marginHorizontal: spacing.lg, marginTop: spacing.md, borderRadius: radius.md, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.warning },
