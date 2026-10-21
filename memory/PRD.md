@@ -25,6 +25,15 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Einstellungen: Hell/Dunkel/System, Schriftgröße, Übersetzung, Kategorien, JSON Export/Import mit Validierung, Reset
 - Automatisierte Logiktests (7 bestanden), Frontend-Testlauf bestanden
 
+## Iteration 2 (2026-06)
+- Hauptkarte: echte Landesform Israels (Natural Earth, gemeinfrei) mit Städten, Ereignissen, Personen
+- Themen-Chips passen die Karte an: Tora (Ur–Haran–Kanaan–Ägypten, Exodus als Hypothese), Geschichte (Stämme/Königreiche), Psalmen, Propheten (bis Babylon/Susa, Deportation/Rückkehr), Evangelien, Gleichnisse, Apg (Paulusreisen), Briefe, Offenbarung (7 Gemeinden)
+- Vollbild: Edge-to-Edge, Android-Navigationsleiste ausgeblendet
+- Ganze Bibel (ELB 1905) über /api/bible + Kapitel-Cache offline, Buchauswahl, Volltextsuche
+- In der Bibel: Markierungen, Kommentare, Querverweis-Verknüpfungen, eigene Lerneinheiten (/unit/[id] mit Lernkarten)
+- Bibelstellen in Lerneinheiten/Erklärungen/Orten sind antippbare Links in den Bibelleser
+- Schema v3 (links, units) mit Migration
+
 ## Backlog
 - P0: Übernahme der HTML-Vorlagen des Users (sobald hochgeladen)
 - P1: Builder-Modus (Karteneditor), weitere Lernwelten (Tora, Propheten, Evangelien, Apg, Briefe, Gleichnisse), weitere Aufgabentypen (Orte auf Karte zuordnen, Bilder zuordnen, Rätsel), Studienpläne

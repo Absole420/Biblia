@@ -7,6 +7,7 @@ import { Task } from "@/src/data/types";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 import { Icon } from "./Icon";
+import { RefText } from "./RefText";
 import { Button } from "./ui";
 
 function shuffle<T>(arr: T[]): T[] {
@@ -298,7 +299,7 @@ export function TaskView({ task, onAnswered, fontScale = 1, testPrefix = "task" 
               <View style={[styles.feedback, { borderColor: colors.info }]}>
                 <Text style={[styles.fbTitle, { color: colors.info }]}>Musterantwort</Text>
                 <Text style={[styles.fbText, { fontSize: fs(15) }]}>{task.model}</Text>
-                <Text style={styles.fbRef}>{task.ref}</Text>
+                <RefText text={task.ref} style={styles.fbRef} />
               </View>
               <Text style={styles.hint}>Wie gut passt deine Antwort? (Selbsteinschätzung – keine automatische Bewertung)</Text>
               <View style={styles.row}>
@@ -330,7 +331,7 @@ export function TaskView({ task, onAnswered, fontScale = 1, testPrefix = "task" 
           {!result && task.type === "gap" ? <Text style={styles.fbText}>Lösung: {task.blanks.join(", ")}</Text> : null}
           {!result && task.type === "verse" ? <Text style={styles.fbText}>Lösung: „{task.blank}“</Text> : null}
           <Text style={[styles.fbText, { fontSize: fs(15) }]}>{task.explain}</Text>
-          <Text style={styles.fbRef}>Bibelstelle: {task.ref}</Text>
+          <RefText text={task.ref} prefix="Bibelstelle: " style={styles.fbRef} />
         </Animated.View>
       ) : null}
     </Animated.View>

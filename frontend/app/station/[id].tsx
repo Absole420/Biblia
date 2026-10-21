@@ -8,12 +8,14 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ClaimCard } from "@/src/components/ClaimCard";
 import { Icon } from "@/src/components/Icon";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
+import { RefText } from "@/src/components/RefText";
 import { TaskView } from "@/src/components/TaskView";
 import { Button, ProgressBar } from "@/src/components/ui";
 import { formatRef, getVerses, TRANSLATIONS } from "@/src/data/bible";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { findStation } from "@/src/data/john";
 import { STATION_META } from "@/src/data/meta";
+import { THEME_MAPS } from "@/src/data/themeMaps";
 import { levelInfo, stationStatus } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -105,7 +107,7 @@ export default function StationScreen() {
       : { label: "Prüfung wiederholen", icon: "refresh-cw", onPress: retryExam };
   }
 
-  const placeObj = JOHN_HISTORICAL.places.find((x) => x.id === place) ?? null;
+  const placeObj = THEME_MAPS.gospels.places.find((x) => x.id === place) ?? null;
   const lvl = levelInfo(state.xp);
 
   return (
@@ -165,7 +167,7 @@ export default function StationScreen() {
                     </Text>
                   ))}
                 </Text>
-                <Pressable testID={`open-reader-${r.ch}-${r.from}`} onPress={() => router.navigate({ pathname: "/bible", params: { ch: String(r.ch), v: String(r.from) } })} style={styles.linkRow}>
+                <Pressable testID={`open-reader-${r.ch}-${r.from}`} onPress={() => router.navigate({ pathname: "/bible", params: { b: r.book, ch: String(r.ch), v: String(r.from) } })} style={styles.linkRow}>
                   <Icon name="external-link" size={14} color={colors.brandPrimary} />
                   <Text style={styles.link}>Im Bibelleser öffnen (Notizen & Markierungen)</Text>
                 </Pressable>
@@ -177,7 +179,7 @@ export default function StationScreen() {
                 {flipped[i] ? (
                   <Animated.View entering={FadeIn}>
                     <Text style={[styles.body, { fontSize: 15 * fontScale }]}>{t.explanation}</Text>
-                    {t.ref ? <Text style={styles.refSmall}>{t.ref}</Text> : null}
+                    {t.ref ? <RefText text={t.ref} style={styles.refSmall} /> : null}
                   </Animated.View>
                 ) : (
                   <View style={styles.termFront}>

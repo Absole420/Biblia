@@ -14,6 +14,7 @@ type Props = {
   children: React.ReactNode;
   controlsBottom?: number;
   maxZoom?: number;
+  fit?: "cover" | "contain";
   testID?: string;
 };
 
@@ -31,18 +32,22 @@ export function ZoomableMap(props: Props) {
   );
 }
 
-function Inner({ width, height, focus, children, vw, vh, controlsBottom = 16, maxZoom = 4 }: Props & { vw: number; vh: number }) {
+function Inner({ width, height, focus, children, vw, vh, controlsBottom = 16, maxZoom = 4, fit = "cover" }: Props & { vw: number; vh: number }) {
   const { colors } = useTheme();
-  const minS = Math.max(vw / width, vh / height);
+  const minS = fit === "contain" ? Math.min(vw / width, vh / height) : Math.max(vw / width, vh / height);
   const maxS = minS * maxZoom;
   const initS = minS;
   const clampX = (x: number, s: number) => {
     "worklet";
-    return Math.min(0, Math.max(vw - width * s, x));
+    const cw = width * s;
+    if (cw <= vw) return (vw - cw) / 2;
+    return Math.min(0, Math.max(vw - cw, x));
   };
   const clampY = (y: number, s: number) => {
     "worklet";
-    return Math.min(0, Math.max(vh - height * s, y));
+    const ch = height * s;
+    if (ch <= vh) return (vh - ch) / 2;
+    return Math.min(0, Math.max(vh - ch, y));
   };
   const fx = focus?.x ?? width / 2;
   const fy = focus?.y ?? height / 2;
@@ -75,8 +80,10 @@ function Inner({ width, height, focus, children, vw, vh, controlsBottom = 16, ma
     })
     .onEnd((e) => {
       const s = scale.value;
-      tx.value = withDecay({ velocity: e.velocityX, clamp: [Math.min(0, vw - width * s), 0] });
-      ty.value = withDecay({ velocity: e.velocityY, clamp: [Math.min(0, vh - height * s), 0] });
+      const cx = clampX(-1e9, s);
+      const cy = clampY(-1e9, s);
+      tx.value = withDecay({ velocity: e.velocityX, clamp: [cx, Math.max(cx, clampX(1e9, s))] });
+      ty.value = withDecay({ velocity: e.velocityY, clamp: [cy, Math.max(cy, clampY(1e9, s))] });
     });
 
   const doubleTap = Gesture.Tap()

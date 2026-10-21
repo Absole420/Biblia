@@ -6,6 +6,7 @@ import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
+import { VerseSnippet } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
 import { Button, Chip } from "@/src/components/ui";
@@ -15,9 +16,10 @@ import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
-type Tab = "notes" | "bookmarks" | "highlights" | "journal" | "lexicon";
+type Tab = "notes" | "units" | "bookmarks" | "highlights" | "journal" | "lexicon";
 const TABS: { id: Tab; label: string }[] = [
   { id: "notes", label: "Notizen" },
+  { id: "units", label: "Lerneinheiten" },
   { id: "bookmarks", label: "Lesezeichen" },
   { id: "highlights", label: "Markierungen" },
   { id: "journal", label: "Lernjournal" },
@@ -42,20 +44,22 @@ export default function LibraryScreen() {
   const match = (...s: (string | undefined)[]) => !ql || s.some((x) => x?.toLowerCase().includes(ql));
 
   const openVerse = (key: string) => {
-    const [, ch, v] = key.split(":");
-    router.navigate({ pathname: "/bible", params: { ch, v } });
+    const [b, ch, v] = key.split(":");
+    router.navigate({ pathname: "/bible", params: { b, ch, v } });
   };
 
   const items = useMemo(() => {
     if (tab === "notes") return state.notes.filter((n) => match(n.title, n.text));
-    if (tab === "bookmarks") return state.bookmarks.filter((b) => { const [, ch, v] = b.key.split(":"); return match(verseKeyLabel(b.key), getVerse("Joh", +ch, +v)); });
-    if (tab === "highlights") return Object.entries(state.highlights).filter(([k]) => { const [, ch, v] = k.split(":"); return match(verseKeyLabel(k), getVerse("Joh", +ch, +v)); });
+    if (tab === "units") return state.units.filter((u) => match(u.title, u.description, ...u.questions.map((x) => x.q)));
+    if (tab === "bookmarks") return state.bookmarks.filter((b) => { const [c, ch, v] = b.key.split(":"); return match(verseKeyLabel(b.key), getVerse(c, +ch, +v)); });
+    if (tab === "highlights") return Object.entries(state.highlights).filter(([k]) => { const [c, ch, v] = k.split(":"); return match(verseKeyLabel(k), getVerse(c, +ch, +v)); });
     if (tab === "journal") return JOHN.stations.filter((s) => (state.reflections[s.id] ?? []).some((t) => t.trim()) && match(s.title, ...(state.reflections[s.id] ?? [])));
     return JOHN.stations.filter((s) => state.stations[s.id] || (state.phase[s.id] ?? 0) > 0).flatMap((s) => s.terms.map((t) => ({ ...t, station: s.title }))).filter((t) => match(t.term, t.explanation));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab, state, ql]);
 
   const empty = {
+    units: "Noch keine eigenen Lerneinheiten. Tippe auf + oder im Bibelleser bei einem Vers auf „Neue Lerneinheit“.",
     notes: "Noch keine Notizen. Tippe im Bibelleser auf einen Vers oder lege hier eine freie Notiz an.",
     bookmarks: "Noch keine Lesezeichen. Tippe im Bibelleser auf einen Vers.",
     highlights: "Noch keine Markierungen. Markiere Verse im Bibelleser mit deinen Themenfarben.",
@@ -106,15 +110,25 @@ export default function LibraryScreen() {
             <Text style={styles.date}>{new Date(n.updatedAt).toLocaleDateString("de-DE")}</Text>
           </Pressable>
         ))}
+        {tab === "units" && (items as typeof state.units).map((u) => (
+          <Pressable key={u.id} testID={`unit-item-${u.id}`} style={styles.card} onPress={() => router.push({ pathname: "/unit/[id]", params: { id: u.id } })}>
+            <View style={styles.cardHead}>
+              <Icon name="layers" size={16} color={colors.stationChallenge} />
+              <Text style={styles.cardTitle} numberOfLines={1}>{u.title}</Text>
+              <Icon name="chevron-right" size={18} color={colors.muted} />
+            </View>
+            {u.description ? <Text style={styles.cardText} numberOfLines={2}>{u.description}</Text> : null}
+            <Text style={styles.date}>{u.refs.length} Bibelstellen · {u.questions.length} Fragen</Text>
+          </Pressable>
+        ))}
         {tab === "bookmarks" && (items as typeof state.bookmarks).map((b) => {
-          const [, ch, v] = b.key.split(":");
           return (
             <Pressable key={b.key} testID={`bookmark-item-${b.key}`} style={styles.card} onPress={() => openVerse(b.key)}>
               <View style={styles.cardHead}>
                 <Icon name="bookmark" size={16} color={colors.brandPrimary} />
                 <Text style={styles.cardTitle}>{verseKeyLabel(b.key)}</Text>
               </View>
-              <Text style={styles.verse} numberOfLines={3}>{getVerse("Joh", +ch, +v)}</Text>
+              <VerseSnippet k={b.key} style={styles.verse} />
             </Pressable>
           );
         })}
@@ -129,11 +143,10 @@ export default function LibraryScreen() {
                 <Text style={styles.date}>{list.length}</Text>
               </View>
               {list.map(([k]) => {
-                const [, ch, v] = k.split(":");
                 return (
                   <Pressable key={k} testID={`highlight-item-${k}`} style={[styles.card, { borderLeftWidth: 5, borderLeftColor: c.color }]} onPress={() => openVerse(k)}>
                     <Text style={styles.cardTitle}>{verseKeyLabel(k)}</Text>
-                    <Text style={styles.verse} numberOfLines={3}>{getVerse("Joh", +ch, +v)}</Text>
+                    <VerseSnippet k={k} style={styles.verse} />
                   </Pressable>
                 );
               })}
@@ -162,8 +175,8 @@ export default function LibraryScreen() {
           </View>
         ))}
       </ScrollView>
-      {tab === "notes" ? (
-        <Pressable testID="add-note-fab" style={[styles.fab, { bottom: bottomChrome + 16 }]} onPress={() => setEdit({ title: "", text: "" })} accessibilityLabel="Neue Notiz">
+      {tab === "notes" || tab === "units" ? (
+        <Pressable testID={tab === "notes" ? "add-note-fab" : "add-unit-fab"} style={[styles.fab, { bottom: bottomChrome + 16 }]} onPress={() => (tab === "notes" ? setEdit({ title: "", text: "" }) : router.push({ pathname: "/unit/[id]", params: { id: p.saveUnit({ title: "Neue Lerneinheit" }) } }))} accessibilityLabel={tab === "notes" ? "Neue Notiz" : "Neue Lerneinheit"}>
           <Icon name="plus" size={26} color={colors.onBrandPrimary} />
         </Pressable>
       ) : null}

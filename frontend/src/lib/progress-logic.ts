@@ -1,13 +1,17 @@
 // Reine (seiteneffektfreie) Fortschrittslogik – testbar ohne UI.
 import type { Station } from "../data/types";
 
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 export type StationProgress = { completedAt: string; examScore: number; examTotal: number; bestScore: number; attempts: number };
 export type Note = { id: string; title: string; text: string; ref?: string; createdAt: string; updatedAt: string };
 export type Bookmark = { key: string; createdAt: string };
 export type Category = { id: string; name: string; color: string };
 export type ThemePref = "system" | "light" | "dark";
+/** Verknüpfung zwischen einem Vers und einer anderen Bibelstelle. */
+export type VerseLink = { id: string; from: string; to: string; note?: string; createdAt: string };
+/** Eigene Lerneinheit aus Bibelstellen und selbst formulierten Fragen. */
+export type StudyUnit = { id: string; title: string; description: string; refs: string[]; questions: { id: string; q: string; a: string }[]; createdAt: string; updatedAt: string };
 
 export type AppState = {
   schemaVersion: number;
@@ -24,6 +28,8 @@ export type AppState = {
   goal: { weeklyStations: number };
   activity: { date: string; stationId: string }[];
   answered: { total: number; correct: number };
+  links: VerseLink[];
+  units: StudyUnit[];
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -54,6 +60,8 @@ export function defaultState(): AppState {
     goal: { weeklyStations: 3 },
     activity: [],
     answered: { total: 0, correct: 0 },
+    links: [],
+    units: [],
   };
 }
 
@@ -85,6 +93,9 @@ export function migrate(raw: unknown): AppState {
     goal: { ...base.goal, ...(isObj(r.goal) ? r.goal : {}) },
     activity: Array.isArray(r.activity) ? r.activity : [],
     answered: isObj(r.answered) ? { total: Number(r.answered.total) || 0, correct: Number(r.answered.correct) || 0 } : base.answered,
+    // v2 -> v3: Verknüpfungen und eigene Lerneinheiten
+    links: Array.isArray(r.links) ? r.links.filter((l: any) => isObj(l) && typeof l.from === "string" && typeof l.to === "string") : [],
+    units: Array.isArray(r.units) ? r.units.filter((u: any) => isObj(u) && typeof u.id === "string").map((u: any) => ({ description: "", refs: [], questions: [], ...u })) : [],
   };
 }
 

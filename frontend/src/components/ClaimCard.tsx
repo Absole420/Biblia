@@ -6,6 +6,7 @@ import { Claim } from "@/src/data/types";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 import { Icon } from "./Icon";
+import { RefText } from "./RefText";
 
 /** Gekennzeichnete fachliche Aussage (Bibeltext / Geschichte / Hypothese / Tradition). */
 export function ClaimCard({ claim, fontScale = 1, testID }: { claim: Claim; fontScale?: number; testID?: string }) {
@@ -23,7 +24,7 @@ export function ClaimCard({ claim, fontScale = 1, testID }: { claim: Claim; font
       </View>
       {claim.title ? <Text style={[styles.title, { fontSize: 18 * fontScale }]}>{claim.title}</Text> : null}
       <Text style={[styles.text, { fontSize: 15.5 * fontScale, lineHeight: 24 * fontScale }]}>{claim.text}</Text>
-      {claim.refs?.length ? <Text style={styles.refs}>Vgl. {claim.refs.join(" · ")}</Text> : null}
+      {claim.refs?.length ? <RefText text={claim.refs.join("; ")} prefix="Vgl. " style={styles.refs} /> : null}
     </View>
   );
 }

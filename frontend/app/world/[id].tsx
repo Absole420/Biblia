@@ -1,10 +1,10 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useMemo, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CampaignMapContent } from "@/src/components/CampaignMap";
-import { HistoricalMapContent } from "@/src/components/HistoricalMap";
+import { GeoMap } from "@/src/components/GeoMap";
 import { Icon } from "@/src/components/Icon";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
 import { Sheet } from "@/src/components/Sheet";
@@ -13,6 +13,7 @@ import { ZoomableMap } from "@/src/components/ZoomableMap";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { CAMPAIGNS } from "@/src/data/john";
 import { CERTAINTY_META, STATION_META } from "@/src/data/meta";
+import { GeoPlace, mapSize, THEME_MAPS } from "@/src/data/themeMaps";
 import { WORLDS } from "@/src/data/worlds";
 import { stationStatus } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
@@ -55,11 +56,13 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const campaign = CAMPAIGNS[world.campaignId!];
   const [mode, setMode] = useState<"adventure" | "history">("adventure");
   const [sel, setSel] = useState<string | null>(null);
-  const [place, setPlace] = useState<string | null>(null);
+  const [place, setPlace] = useState<GeoPlace | null>(null);
   const done = campaign.stations.filter((s) => state.stations[s.id]).length;
   const station = campaign.stations.find((s) => s.id === sel);
   const nextAvail = campaign.stations.find((s) => stationStatus(s, state.stations) === "available") ?? campaign.stations[0];
-  const placeObj = JOHN_HISTORICAL.places.find((p) => p.id === place) ?? null;
+  const { width: vw, height: vh } = useWindowDimensions();
+  const gSize = mapSize(THEME_MAPS.gospels);
+  const gK = Math.min(3, Math.max(0.8, 1 / Math.min(vw / gSize.width, vh / gSize.height)));
   const highlightPlaces = useMemo(() => campaign.stations.filter((s) => state.stations[s.id]).flatMap((s) => s.placeIds ?? []), [campaign, state.stations]);
 
   return (
@@ -75,8 +78,8 @@ function CampaignScreen({ worldId }: { worldId: string }) {
             <CampaignMapContent campaign={campaign} progress={state.stations} onSelect={setSel} />
           </ZoomableMap>
         ) : (
-          <ZoomableMap key="hist" width={JOHN_HISTORICAL.width} height={JOHN_HISTORICAL.height} focus={{ x: 450, y: 600 }} controlsBottom={insets.bottom + 120} maxZoom={5} testID="historical-map">
-            <HistoricalMapContent map={JOHN_HISTORICAL} onSelect={setPlace} highlight={highlightPlaces} />
+          <ZoomableMap key="hist" fit="contain" width={gSize.width} height={gSize.height} controlsBottom={insets.bottom + 120} maxZoom={5} testID="historical-map">
+            <GeoMap map={THEME_MAPS.gospels} k={gK} onSelect={setPlace} highlight={highlightPlaces} />
           </ZoomableMap>
         )}
         {mode === "history" ? (
@@ -152,7 +155,7 @@ function CampaignScreen({ worldId }: { worldId: string }) {
           );
         })() : null}
       </Sheet>
-      <PlaceSheet place={placeObj} onClose={() => setPlace(null)} />
+      <PlaceSheet place={place} onClose={() => setPlace(null)} />
     </View>
   );
 }

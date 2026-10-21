@@ -41,6 +41,37 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# ---- Bibel (Elberfelder 1905, gemeinfrei) ----
+import json as _json
+from fastapi import HTTPException, Query
+
+with open(ROOT_DIR / "data" / "elb1905.json", encoding="utf-8") as _f:
+    BIBLE = _json.load(_f)
+BOOKS = {b["nr"]: b for b in BIBLE["books"]}
+
+
+@api_router.get("/bible/{book}/{chapter}")
+async def bible_chapter(book: int, chapter: int):
+    b = BOOKS.get(book)
+    if not b or chapter < 1 or chapter > len(b["chapters"]):
+        raise HTTPException(status_code=404, detail="Kapitel nicht gefunden")
+    return {"book": book, "chapter": chapter, "translation": BIBLE["translation"], "verses": b["chapters"][chapter - 1]}
+
+
+@api_router.get("/bible/search")
+async def bible_search(q: str = Query(..., min_length=3), limit: int = 60):
+    ql = q.lower()
+    hits = []
+    for nr, b in BOOKS.items():
+        for ci, ch in enumerate(b["chapters"]):
+            for vi, text in enumerate(ch):
+                if ql in text.lower():
+                    hits.append({"book": nr, "chapter": ci + 1, "verse": vi + 1, "text": text})
+                    if len(hits) >= limit:
+                        return {"q": q, "results": hits, "truncated": True}
+    return {"q": q, "results": hits, "truncated": False}
+
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():

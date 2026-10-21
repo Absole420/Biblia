@@ -3,7 +3,7 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useR
 import { setColorScheme } from "@/src/theme";
 import { storage } from "@/src/utils/storage";
 
-import { AppState, Category, defaultState, migrate, Note, uid } from "./progress-logic";
+import { AppState, Category, defaultState, migrate, Note, StudyUnit, uid } from "./progress-logic";
 
 const KEY = "biblia_state";
 
@@ -22,6 +22,10 @@ type Ctx = {
   setCategories: (c: Category[]) => void;
   setSettings: (p: Partial<AppState["settings"]>) => void;
   setGoal: (n: number) => void;
+  addLink: (from: string, to: string, note?: string) => void;
+  deleteLink: (id: string) => void;
+  saveUnit: (u: Partial<StudyUnit> & { title: string }) => string;
+  deleteUnit: (id: string) => void;
   replaceState: (s: AppState) => void;
   reset: () => void;
 };
@@ -133,6 +137,21 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       setCategories: (categories) => update((s) => ({ ...s, categories })),
       setSettings: (p) => update((s) => ({ ...s, settings: { ...s.settings, ...p } })),
       setGoal: (n) => update((s) => ({ ...s, goal: { weeklyStations: Math.max(1, Math.min(14, n)) } })),
+      addLink: (from, to, note) => update((s) => ({ ...s, links: [...s.links, { id: uid(), from, to, note, createdAt: new Date().toISOString() }] })),
+      deleteLink: (id) => update((s) => ({ ...s, links: s.links.filter((l) => l.id !== id) })),
+      saveUnit: (u) => {
+        const id = u.id ?? uid();
+        update((s) => {
+          const now = new Date().toISOString();
+          const exists = s.units.some((x) => x.id === id);
+          const units = exists
+            ? s.units.map((x) => (x.id === id ? { ...x, ...u, id, updatedAt: now } : x))
+            : [{ id, title: u.title, description: u.description ?? "", refs: u.refs ?? [], questions: u.questions ?? [], createdAt: now, updatedAt: now }, ...s.units];
+          return { ...s, units };
+        });
+        return id;
+      },
+      deleteUnit: (id) => update((s) => ({ ...s, units: s.units.filter((x) => x.id !== id) })),
       replaceState: (ns) => setState(ns),
       reset: () => setState(defaultState()),
     }),

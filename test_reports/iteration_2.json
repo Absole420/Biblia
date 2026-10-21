@@ -1,0 +1,33 @@
+{
+  "summary": "Backend + Frontend iteration 2 for BIBLIA. Backend: 9/9 Bible pytest cases pass (Gen 1 = 31 verses with 'Anfang' validated, Rev 22 loads with >=20 verses, invalid book/chapter -> 404, Ps 119 >= 150 verses, search 'Gnade' returns results with text contains 'gnade', short query q='ab' -> 422, 'und' truncated to 60). The only failure is /health which is not routed through ingress to backend (expected behavior; only /api/* is proxied). Frontend (390x844): Karte renders real Israel geographic map with all 10 theme chips (overview/tora/history/psalms/prophets/gospels/parables/acts/letters/revelation); Tora theme shows 21 place-nodes incl. Jericho/Bethlehem/Hebron/Kadesch-Barnea; theme-card-toggle expands and route-exodus opens route-sheet containing 'HYPOTHESE – nicht historisch gesichert'; place-node tap opens place-sheet with place-refs; gospels world-enter-button navigates to campaign. Bibel: bible-book-picker-button opens book-picker-sheet, selecting 1Mo loads Genesis 1 with verse-1-31 present; verse-sheet enables bookmark, 7 highlight categories, verse-note-input + verse-note-save, invalid ref 'ZZZ 1,1' triggers 'Bibelstelle nicht erkannt' toast, valid 'Joh 1,1' link added, unit-new-from-verse creates unit and navigates to /unit/{id}. Unit screen has all testIDs (title/ref/q/a inputs + add buttons, unit-mode-learn, unit-delete-button); Ps picker works; bible-search-button + bible-search-input + bible-search-submit returns search-result-0 which navigates on tap. Bibliothek library-tab-units shows the newly created unit; add-unit-fab visible. Station /station/john-1 loads cleanly. Only console warnings are RN-Web deprecations (shadow*, pointerEvents) — informational, no red screens.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "/health", "issue": "Non-/api root path returns HTML (frontend) through ingress — the app-level /health is unreachable externally. If main agent wants external liveness, expose /api/health."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/backend/tests/test_bible_api.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Optional: expose /api/health for external liveness checks (current /health is behind frontend route and not reachable via ingress).",
+    "Optional: migrate remaining 'shadow*' and 'props.pointerEvents' to boxShadow / style.pointerEvents to silence RN-Web deprecation warnings (non-blocking)."
+  ],
+  "critical_code_review_comments": [
+    "server.py cleanly loads elb1905.json once at startup — fast O(verses) search, returns truncation flag; good.",
+    "No deprecated expo packages (expo-av/expo-barcode-scanner/expo-background-fetch) in package.json.",
+    "Bibel screen correctly scopes verse keys per book+chapter, honors font scale, and gracefully falls back to Elberfelder when 'neue' translation unavailable.",
+    "GeoMap/ThemeMaps approach provides real Israel shape with per-theme places/routes; certainty labels ('HYPOTHESE', 'Tradition', 'nach Bibeltext') are explicit — good scholarly honesty for a Bible-learning app."
+  ],
+  "updated_files": ["/app/backend/tests/test_bible_api.py", "/app/test_reports/iteration_2.json"],
+  "success_rate": {"backend": "100% (9/9 Bible endpoints; /health not applicable)", "frontend": "100%"},
+  "seed_data_creation": "One transient note on Gen 1,1, one link Gen 1,1 -> Joh 1,1, one bookmark+highlight on Gen 1,1, one unit 'Studie zu 1. Mose 1,1' with ref Jes 53,5 and one Q&A — all stored in localStorage of the test session only.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Viewport 390x844. Deep-link to /bible, /library, /station/john-1, /unit/{id}. Backend base: EXPO_PUBLIC_BACKEND_URL. All Bible APIs under /api/bible/*. Theme chips are theme-chip-<id>; map place-nodes are place-node-<id>; routes are route-<id>. New-unit creation increments localStorage units — if testing anew, delete localStorage to reset.",
+  "rca_of_issue": "No bugs reproduced."
+}
