@@ -15,6 +15,7 @@ import { CAMPAIGNS } from "@/src/data/john";
 import { CERTAINTY_META, STATION_META } from "@/src/data/meta";
 import { GeoPlace, mapSize, THEME_MAPS } from "@/src/data/themeMaps";
 import { WORLDS } from "@/src/data/worlds";
+import { INFO_BY_ID } from "@/src/data/lexicon";
 import { stationStatus } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -65,6 +66,13 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const { width: vw, height: vh } = useWindowDimensions();
   const gSize = mapSize(hMap);
   const gK = Math.min(3, Math.max(0.8, 1 / Math.min(vw / gSize.width, vh / gSize.height)));
+  // Persönliche Positionsmarkierung: Ort der aktuellen Station (sonst erster Ort der Karte)
+  const mePos = useMemo(() => {
+    if (!state.avatar) return null;
+    const ids = [...(nextAvail.placeIds ?? []), ...(nextAvail.info ?? []).map((i) => INFO_BY_ID[i]?.placeId).filter(Boolean) as string[]];
+    const pl = ids.map((id) => hMap.places.find((p) => p.id === id)).find(Boolean) ?? hMap.places[0];
+    return pl ? { lat: pl.lat, lon: pl.lon, avatar: state.avatar } : null;
+  }, [state.avatar, nextAvail, hMap]);
   const highlightPlaces = useMemo(() => campaign.stations.filter((s) => state.stations[s.id]).flatMap((s) => s.placeIds ?? []), [campaign, state.stations]);
 
   return (
@@ -86,11 +94,11 @@ function CampaignScreen({ worldId }: { worldId: string }) {
       <View style={{ flex: 1 }}>
         {mode === "adventure" ? (
           <ZoomableMap key={"adv" + campId} width={campaign.mapW} height={campaign.mapH} focus={{ x: nextAvail.x, y: nextAvail.y }} controlsBottom={insets.bottom + 16} testID="campaign-map">
-            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={setSel} />
+            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={setSel} avatar={state.avatar} />
           </ZoomableMap>
         ) : (
           <ZoomableMap key="hist" fit="contain" width={gSize.width} height={gSize.height} controlsBottom={insets.bottom + 120} maxZoom={5} testID="historical-map">
-            <GeoMap map={hMap} k={gK} onSelect={setPlace} highlight={highlightPlaces} />
+            <GeoMap map={hMap} k={gK} me={mePos} onSelect={setPlace} highlight={highlightPlaces} />
           </ZoomableMap>
         )}
         {mode === "history" ? (

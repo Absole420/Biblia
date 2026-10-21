@@ -11,6 +11,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/src/components/error-boundary";
 import { IntroAnimation } from "@/src/components/IntroAnimation";
+import { refreshTranslations } from "@/src/data/bible";
+import { InfoProvider } from "@/src/components/InfoSheet";
 import { ToastProvider } from "@/src/components/Toast";
 import { ProgressProvider, useProgress } from "@/src/lib/store";
 import { queryClient } from "@/src/query-client";
@@ -31,6 +33,7 @@ function AppStack() {
   return (
     <>
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
+      <InfoProvider>
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.surface } }}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="world/[id]" />
@@ -38,7 +41,10 @@ function AppStack() {
         <Stack.Screen name="review" />
         <Stack.Screen name="unit/[id]" />
         <Stack.Screen name="settings" />
+        <Stack.Screen name="timeline" />
+        <Stack.Screen name="avatar" options={{ gestureEnabled: false }} />
       </Stack>
+      </InfoProvider>
     </>
   );
 }
@@ -47,6 +53,7 @@ export default function RootLayout() {
   // Vollbild auf Android: Navigationsleiste ausblenden (Wischen vom Rand blendet sie ein)
   useEffect(() => {
     if (Platform.OS === "android") NavigationBar.setVisibilityAsync("hidden").catch(() => {});
+    refreshTranslations();
   }, []);
   const [fontsLoaded] = useFonts({
     Fraunces: require("../assets/fonts/Fraunces.ttf"),

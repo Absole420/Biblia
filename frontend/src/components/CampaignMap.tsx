@@ -5,14 +5,17 @@ import Svg, { Circle, Defs, G, LinearGradient, Path, Rect, Stop, Text as SvgText
 import { STATION_META } from "@/src/data/meta";
 import { Campaign, World } from "@/src/data/types";
 import { StationProgress, stationStatus } from "@/src/lib/progress-logic";
+import { Avatar } from "@/src/lib/avatar";
 import { fonts, useTheme } from "@/src/theme";
+
+import { AvatarView } from "./AvatarView";
 
 import { Cloud, Flame, Glow, Shimmer } from "./MapAnimations";
 import { MapNode } from "./MapNode";
 import { blob, curve, mountain, rng, smoothOpen } from "./mapShapes";
 
 /** Spielerische Abenteuerkarte der Johannes-Kampagne: vom Jordan nach Jerusalem. */
-export function CampaignMapContent({ campaign, palette, progress, onSelect }: { campaign: Campaign; palette: World["palette"]; progress: Record<string, StationProgress>; onSelect: (id: string) => void }) {
+export function CampaignMapContent({ campaign, palette, progress, onSelect, avatar }: { campaign: Campaign; palette: World["palette"]; progress: Record<string, StationProgress>; onSelect: (id: string) => void; avatar?: Avatar | null }) {
   const { colors } = useTheme();
   const W = campaign.mapW;
   const H = campaign.mapH;
@@ -159,6 +162,21 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect }: { 
           />
         );
       })}
+      {avatar ? <AvatarPin campaign={campaign} progress={progress} avatar={avatar} /> : null}
+    </View>
+  );
+}
+
+/** Persönliche Lernfigur an der aktuellen Station (oben rechts neben dem Medaillon, verdeckt keine Beschriftung). */
+function AvatarPin({ campaign, progress, avatar }: { campaign: Campaign; progress: Record<string, StationProgress>; avatar: Avatar }) {
+  const { colors } = useTheme();
+  const cur = campaign.stations.find((s) => stationStatus(s, progress) === "available") ?? campaign.stations[campaign.stations.length - 1];
+  return (
+    <View testID="campaign-avatar" style={{ position: "absolute", left: cur.x + 46, top: cur.y - 150, width: 96, alignItems: "center", pointerEvents: "none" }}>
+      <View style={{ width: 90, height: 90, borderRadius: 45, overflow: "hidden", backgroundColor: colors.mapLand, borderWidth: 4, borderColor: colors.brandPrimary }}>
+        <AvatarView a={avatar} size={90} mode="head" />
+      </View>
+      <View style={{ width: 0, height: 0, borderLeftWidth: 10, borderRightWidth: 10, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: colors.brandPrimary }} />
     </View>
   );
 }

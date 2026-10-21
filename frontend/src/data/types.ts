@@ -42,7 +42,15 @@ export type Station = {
   exam: Task[];
   reflection: string[];
   placeIds?: string[];
+  goal?: string; // Lernziel
+  summary?: string; // kurze Zusammenfassung
+  info?: string[]; // Infotafeln (src/data/lexicon.ts)
+  connections?: Connection[]; // Bezüge AT ↔ NT
 };
+
+/** Art des Bezugs zwischen Altem und Neuem Testament. */
+export type ConnectionKind = "quote" | "allusion" | "parallel" | "interpretation";
+export type Connection = { from: string; to: string; kind: ConnectionKind; note: string; jewish?: string };
 
 export type Campaign = {
   id: string;

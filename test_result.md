@@ -139,3 +139,14 @@ agent_communication:
       - working: "NA"
         agent: "main"
         comment: "5 HTML studies converted to 12 campaigns (Tora x5, Matthäus/Markus/Lukas, Gleichnisse, Propheten, Apg, Briefe). Intro animation ~10s with skip."
+  - task: "Iteration 6: translation manager (ELB 2006 prepared), lexicon/infotafeln/timeline, 6 new lessons, avatar editor + integration"
+    implemented: true
+    working: "NA"
+    file: "src/data/bible.ts, backend/server.py, src/data/lexicon.ts, src/data/lessonsExtra.ts, src/components/InfoSheet.tsx, app/timeline.tsx, app/avatar.tsx, src/components/AvatarView.tsx, src/lib/avatar.ts, src/components/StationExtras.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Schema v4 with avatar; migration tested via tsx."

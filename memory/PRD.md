@@ -50,6 +50,13 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Bibeltexte in Stationen werden bei Bedarf geladen (`ReadingVerses`)
 - Intro-Animation beim Start (`IntroAnimation`): Weg Ägypten → Sinai → Jordan → Nazareth → Galiläa → Golgatha, Kreuz, Blick zum Himmel, Schriftrolle „BIBLIA“; überspringbar
 
+## Iteration 6 (2026-06)
+- Übersetzungsverwaltung: ELB 2006 als lizenzpflichtig vorbereitet (backend/data/elb2006.json → automatisch verfügbar, /api/bible/translations, ?t=), Anzeige immer „Angezeigt: …“; Fallback ELB 1905 klar gekennzeichnet
+- Lexikon (src/data/lexicon.ts, 30 Infotafeln) mit Karte (Sprung via /?theme&place), Zeitstrahl (/timeline), Bibelstellen, Unsicherheiten; globale InfoSheet; auto-Verknüpfung aller Stationen + Zusatz-Zuordnungsaufgabe
+- 6 neue Lektionen (Jakob, Elia, Jona, Bartimäus, Emmaus, Athen) mit Lernziel, Bezügen AT/NT (Zitat/Anspielung/Parallele/Auslegung), jüdischer Perspektive, Zusammenfassung
+- Avatar (Schema v4): Editor /avatar, Anzeige in Profil, HUD, Abenteuerkarte, historische Karte („Du“, Kollisionslayout), Stationsstart/-abschluss; Export/Import mit Validierung
+- Intro: „by Absole“
+
 ## Backlog
 - P1: Lernwelten Geschichtsbücher, Psalmen, Offenbarung mit Inhalten füllen
 - P1: Builder-Modus (Karteneditor), weitere Lernwelten (Tora, Propheten, Evangelien, Apg, Briefe, Gleichnisse), weitere Aufgabentypen (Orte auf Karte zuordnen, Bilder zuordnen, Rätsel), Studienpläne

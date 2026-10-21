@@ -1,9 +1,10 @@
-import { useRouter } from "expo-router";
-import React, { useMemo, useState } from "react";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import React, { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
 import Animated, { FadeIn, FadeInDown } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { AvatarView } from "@/src/components/AvatarView";
 import { GeoMap } from "@/src/components/GeoMap";
 import { Icon } from "@/src/components/Icon";
 import { JourneyLayer } from "@/src/components/JourneyLayer";
@@ -30,11 +31,22 @@ export default function WorldMapScreen() {
   const router = useRouter();
   const { width: vw, height: vh } = useWindowDimensions();
   const { state } = useProgress();
+  const params = useLocalSearchParams<{ theme?: string; place?: string }>();
   const [theme, setTheme] = useState("overview");
   const [mode, setMode] = useState<"explore" | "journey">("explore");
   const [place, setPlace] = useState<GeoPlace | null>(null);
   const [route, setRoute] = useState<GeoRoute | null>(null);
   const [open, setOpen] = useState(false);
+  /* eslint-disable react-hooks/set-state-in-effect */
+  // Sprung aus einer Infotafel: passende Karte öffnen und den Ort anzeigen
+  useEffect(() => {
+    if (!params.theme || !THEME_MAPS[params.theme]) return;
+    setMode("explore");
+    setTheme(params.theme);
+    const pl = THEME_MAPS[params.theme].places.find((x) => x.id === params.place);
+    if (pl) setPlace(pl);
+  }, [params.theme, params.place]);
+  /* eslint-enable react-hooks/set-state-in-effect */
   const [cardH, setCardH] = useState(120);
   const bottomChrome = usesNativeTabs ? insets.bottom : 0;
   const lvl = levelInfo(state.xp);
@@ -62,6 +74,7 @@ export default function WorldMapScreen() {
       <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]}>
         <View style={styles.hud}>
           <Pressable style={styles.pill} testID="hud-level-pill" onPress={() => router.push("/profile")} accessibilityLabel={`Stufe ${lvl.level}, ${state.xp} Erfahrungspunkte`}>
+            {state.avatar ? <View style={styles.hudAvatar} testID="hud-avatar"><AvatarView a={state.avatar} size={38} mode="head" /></View> : null}
             <View style={styles.lvl}><Text style={styles.lvlText}>{lvl.level}</Text></View>
 
           </Pressable>
@@ -149,6 +162,7 @@ const useStyles = makeStyles((c) => ({
   top: { position: "absolute", left: 0, right: 0, top: 0, pointerEvents: "box-none" },
   hud: { pointerEvents: "box-none", flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: spacing.lg },
   pill: { flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: c.glass, borderRadius: radius.pill, padding: 4, borderWidth: 1, borderColor: c.border },
+  hudAvatar: { width: 38, height: 38, borderRadius: 19, overflow: "hidden", backgroundColor: c.mapLand, marginRight: -6 },
   lvl: { width: 38, height: 38, borderRadius: 19, backgroundColor: c.brandPrimary, alignItems: "center", justifyContent: "center" },
   lvlText: { fontFamily: fonts.display, fontSize: 18, fontWeight: "700", color: c.onBrandPrimary },
   pillTitle: { fontFamily: fonts.display, fontSize: 14, fontWeight: "700", color: c.onSurface, marginBottom: 3 },

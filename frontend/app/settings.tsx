@@ -72,7 +72,7 @@ export default function SettingsScreen() {
           <Pressable key={t.id} testID={`translation-${t.id}`} onPress={() => p.setSettings({ translation: t.id })} style={[styles.option, state.settings.translation === t.id && { borderColor: colors.brandPrimary }]}>
             <Icon name={state.settings.translation === t.id ? "check-circle" : "circle"} size={20} color={state.settings.translation === t.id ? colors.brandPrimary : colors.muted} />
             <View style={{ flex: 1 }}>
-              <Text style={styles.optTitle}>{t.name}{t.available ? "" : " · Platzhalter"}</Text>
+              <Text style={styles.optTitle}>{t.name}{t.available ? " · verfügbar" : " · nicht lizenziert – Anzeige: Elberfelder 1905"}</Text>
               <Text style={styles.small}>{t.license}</Text>
             </View>
           </Pressable>

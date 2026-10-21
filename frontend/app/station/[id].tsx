@@ -6,13 +6,14 @@ import Animated, { FadeIn, FadeInDown, ZoomIn } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ClaimCard } from "@/src/components/ClaimCard";
+import { AvatarCheer, Connections, GoalBox, InfoChips } from "@/src/components/StationExtras";
 import { Icon } from "@/src/components/Icon";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
 import { RefText } from "@/src/components/RefText";
 import { TaskView } from "@/src/components/TaskView";
 import { Button, ProgressBar } from "@/src/components/ui";
 import { ReadingVerses } from "@/src/components/ReadingVerses";
-import { formatRef, TRANSLATIONS } from "@/src/data/bible";
+import { displayedTranslation, formatRef } from "@/src/data/bible";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { findStation } from "@/src/data/john";
 import { STATION_META } from "@/src/data/meta";
@@ -145,18 +146,20 @@ export default function StationScreen() {
             </View>
             <Text style={styles.h1}>{station.title}</Text>
             <Text style={styles.sub}>{station.subtitle}</Text>
+            <AvatarCheer testID="avatar-station-start" text={`Auf geht’s zur Station „${station.title}“!`} />
+            <GoalBox goal={station.goal} />
             <Text style={[styles.body, { fontSize: 17 * fontScale, lineHeight: 27 * fontScale }]}>{station.discover}</Text>
             <Text style={styles.label}>Bibelstellen dieser Station</Text>
             {station.readings.map((r) => (
               <Text key={formatRef(r)} style={styles.refLine}>• {formatRef(r)}</Text>
             ))}
-            <Text style={styles.illuNote}>Illustration: Platzhalter-Grafik (lizenzierte Illustrationen folgen).</Text>
+            <InfoChips ids={station.info} />
           </Animated.View>
         ) : null}
 
         {phase === 1 ? (
           <Animated.View entering={FadeIn.duration(300)} testID="phase-study">
-            <Text style={styles.label}>Bibeltext · {TRANSLATIONS[state.settings.translation].available ? TRANSLATIONS[state.settings.translation].name : TRANSLATIONS.elb1905.name}</Text>
+            <Text style={styles.label}>Bibeltext · {displayedTranslation(state.settings.translation).name}</Text>
             {station.readings.map((r) => (
               <View key={formatRef(r)} style={styles.reading}>
                 <Text style={styles.readingRef}>{formatRef(r)}</Text>
@@ -200,6 +203,7 @@ export default function StationScreen() {
                 </View>
               </>
             ) : null}
+            <InfoChips ids={station.info} />
           </Animated.View>
         ) : null}
 
@@ -210,6 +214,8 @@ export default function StationScreen() {
             {station.background.map((c, i) => (
               <ClaimCard key={i} claim={c} fontScale={fontScale} testID={`claim-${i}`} />
             ))}
+            <Connections list={station.connections} />
+            <InfoChips ids={station.info} />
           </Animated.View>
         ) : null}
 
@@ -278,6 +284,8 @@ export default function StationScreen() {
             </Animated.View>
             <Text style={[styles.h1, { textAlign: "center" }]} testID="complete-title">{result.passed ? "Station abgeschlossen!" : "Noch nicht bestanden"}</Text>
             <Text style={[styles.body, { textAlign: "center" }]} testID="complete-score">Prüfung: {score} von {station.exam.length} richtig</Text>
+            <AvatarCheer testID="avatar-station-complete" text={result.passed ? "Geschafft! Schön, dass du drangeblieben bist." : "Kein Problem – beim nächsten Versuch klappt es."} />
+            {result.passed && station.summary ? <View style={styles.xpCard} testID="station-summary"><Text style={styles.small}>Zusammenfassung</Text><Text style={styles.body}>{station.summary}</Text></View> : null}
             {result.passed ? (
               <Animated.View entering={FadeInDown.delay(200)} style={styles.xpCard}>
                 <Text style={styles.xpBig} testID="complete-xp">{result.firstTime ? `+${station.xp} EP` : "Wiederholung"}</Text>

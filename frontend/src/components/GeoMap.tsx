@@ -7,7 +7,10 @@ import { GeoPlace, mapSize, projectGeo, ThemeMap } from "@/src/data/themeMaps";
 import { LayoutItem, Rect as Box, solveLayout, textWidth } from "@/src/lib/mapLayout";
 import { fonts, useTheme } from "@/src/theme";
 
+import { Avatar } from "@/src/lib/avatar";
+
 import { AnchoredMarker, useMapZoom } from "./AnchoredMarker";
+import { AvatarView } from "./AvatarView";
 import { Icon } from "./Icon";
 import { Cloud, Shimmer } from "./MapAnimations";
 import { decoFigures, MapDecor } from "./MapDecor";
@@ -16,7 +19,7 @@ type Ring = number[][];
 const G = geo as { land: Ring[]; rivers: { name: string; pts: Ring }[]; lakes: { name: string; pts: Ring }[] };
 
 /** Geografisch korrekte Themenkarte (Natural Earth, gemeinfrei) mit Orten, Ereignissen und Routen. */
-export function GeoMap({ map, k = 1, onSelect, highlight, children }: { map: ThemeMap; k?: number; onSelect: (p: GeoPlace) => void; highlight?: string[]; children?: React.ReactNode }) {
+export function GeoMap({ map, k = 1, onSelect, highlight, children, me }: { map: ThemeMap; k?: number; onSelect: (p: GeoPlace) => void; highlight?: string[]; children?: React.ReactNode; me?: { lat: number; lon: number; avatar: Avatar } | null }) {
   const { colors } = useTheme();
   const { width, height } = mapSize(map);
 
@@ -50,6 +53,7 @@ export function GeoMap({ map, k = 1, onSelect, highlight, children }: { map: The
   // Zoomabhängige Kollisionslage: Marker behalten ihre Bildschirmgröße, daher
   // schrumpft ihr Platzbedarf in Kartenpixeln mit 1/zoom.
   const figures = useMemo(() => decoFigures(map, k), [map, k]);
+  const meP = me ? projectGeo(map, me.lat, me.lon) : null;
   const obstacles = useMemo(() => regionLabelRects(map, k), [map, k]);
   const layout = useMemo(() => {
     const z = zoom;
@@ -59,10 +63,11 @@ export function GeoMap({ map, k = 1, onSelect, highlight, children }: { map: The
         return { id: "p" + i, ax: p.x, ay: p.y, size: marker / z, pad: 9 * k / z, weight: 1 + Math.min(2, pl.events?.length ?? 0) * 0.5, label: { w: labelW(pl.name) / z, h: labelH / z, prefer: pl.left ? ("left" as const) : ("right" as const) } };
       }),
       ...figures.map((f) => ({ id: f.id, ax: f.x, ay: f.y, size: f.r * 2, soft: true })),
+      ...(meP ? [{ id: "me", ax: meP.x, ay: meP.y - 34 * k, size: 40 * k / z, pad: 4 * k / z, weight: 0.6, label: { w: 34 * k / z, h: labelH / z, prefer: "below" as const } }] : []),
     ];
     return solveLayout(items, obstacles, { w: width, h: height }, 3 * k / z);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map, k, zoom, figures, obstacles, width, height]);
+  }, [map, k, zoom, figures, obstacles, width, height, meP?.x, meP?.y]);
   const shift = useMemo(() => Object.fromEntries(figures.map((f) => [f.id, { dx: layout[f.id].x - f.x, dy: layout[f.id].y - f.y }])), [figures, layout]);
 
   return (
@@ -139,6 +144,14 @@ export function GeoMap({ map, k = 1, onSelect, highlight, children }: { map: The
           </AnchoredMarker>
         );
       })}
+      {me && meP ? (
+        <AnchoredMarker ax={meP.x} ay={meP.y} p={layout.me} size={40 * k} labelW={34 * k} lineColor={colors.brandPrimary} dotSize={6 * k}
+          label={<Text style={[styles.labelText, { fontSize: labelFs, lineHeight: labelH - 2, paddingHorizontal: 5 * k, borderRadius: 6 * k, color: colors.onBrandPrimary, backgroundColor: colors.brandPrimary }]}>Du</Text>}>
+          <View testID="map-me-marker" accessibilityLabel={`Deine Position: ${me.avatar.name}`} style={{ width: 40 * k, height: 40 * k, borderRadius: 20 * k, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 2.5 * k, borderColor: colors.brandPrimary, borderStyle: "dashed", pointerEvents: "none" }}>
+            <AvatarView a={me.avatar} size={35 * k} mode="head" />
+          </View>
+        </AnchoredMarker>
+      ) : null}
       {children}
     </View>
   );

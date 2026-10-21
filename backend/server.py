@@ -50,12 +50,33 @@ with open(ROOT_DIR / "data" / "elb1905.json", encoding="utf-8") as _f:
 BOOKS = {b["nr"]: b for b in BIBLE["books"]}
 
 
+# Austauschbare Übersetzungen: weitere (lizenzierte) Texte im selben JSON-Format als
+# data/<id>.json ablegen, z. B. data/elb2006.json – sie werden dann automatisch angeboten.
+TRANSLATION_META = {
+    "elb1905": "Elberfelder 1905 (gemeinfrei)",
+    "elb2006": "Elberfelder Bibel, Edition 2006 (lizenzpflichtig, SCM R.Brockhaus)",
+}
+EXTRA = {}
+for _tid in TRANSLATION_META:
+    if _tid != "elb1905" and (ROOT_DIR / "data" / f"{_tid}.json").exists():
+        with open(ROOT_DIR / "data" / f"{_tid}.json", encoding="utf-8") as _f:
+            EXTRA[_tid] = {bk["nr"]: bk for bk in _json.load(_f)["books"]}
+
+
+@api_router.get("/bible/translations")
+async def bible_translations():
+    return {"translations": [{"id": t, "name": n, "available": t == "elb1905" or t in EXTRA} for t, n in TRANSLATION_META.items()]}
+
+
 @api_router.get("/bible/{book}/{chapter}")
-async def bible_chapter(book: int, chapter: int):
-    b = BOOKS.get(book)
+async def bible_chapter(book: int, chapter: int, t: str = "elb1905"):
+    books = BOOKS if t == "elb1905" else EXTRA.get(t)
+    if books is None:
+        raise HTTPException(status_code=404, detail=f"Übersetzung '{t}' nicht verfügbar (keine lizenzierten Daten)")
+    b = books.get(book)
     if not b or chapter < 1 or chapter > len(b["chapters"]):
         raise HTTPException(status_code=404, detail="Kapitel nicht gefunden")
-    return {"book": book, "chapter": chapter, "translation": BIBLE["translation"], "verses": b["chapters"][chapter - 1]}
+    return {"book": book, "chapter": chapter, "translation": t, "verses": b["chapters"][chapter - 1]}
 
 
 @api_router.get("/bible/search")

@@ -1,12 +1,14 @@
 import React from "react";
 import { Text, View } from "react-native";
 
+import { LEXICON } from "@/src/data/lexicon";
 import { CERTAINTY_META } from "@/src/data/meta";
 import { GeoPlace } from "@/src/data/themeMaps";
 import { Place } from "@/src/data/types";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 import { Icon } from "./Icon";
+import { InfoChip } from "./InfoSheet";
 import { RefText } from "./RefText";
 import { Sheet } from "./Sheet";
 
@@ -26,6 +28,11 @@ export function PlaceSheet({ place, onClose }: { place: (Place | GeoPlace) | nul
           </View>
           <Text style={styles.small}>{meta.desc}</Text>
           <Text style={styles.body}>{place.note}</Text>
+          {LEXICON.some((e) => e.placeId === place.id) ? (
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, marginTop: spacing.md }} testID="place-info-chips">
+              {LEXICON.filter((e) => e.placeId === place.id).map((e) => <InfoChip key={e.id} id={e.id} />)}
+            </View>
+          ) : null}
           {g?.events?.length ? (
             <>
               <Text style={styles.label}>Ereignisse</Text>

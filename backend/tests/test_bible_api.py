@@ -23,7 +23,7 @@ class TestBibleChapter:
         data = r.json()
         assert data["book"] == 1
         assert data["chapter"] == 1
-        assert data["translation"] == "Elberfelder 1905"
+        assert data["translation"] == "elb1905"
         assert isinstance(data["verses"], list)
         assert len(data["verses"]) == 31
         assert "Anfang" in data["verses"][0] or "anfang" in data["verses"][0].lower()
@@ -77,6 +77,44 @@ class TestBibleSearch:
         assert len(data["results"]) <= 60
         if data.get("truncated"):
             assert len(data["results"]) == 60
+
+
+# --- Translation manager (swappable translations) ---
+class TestBibleTranslations:
+    def test_translations_list_shape(self, api):
+        """GET /api/bible/translations returns elb1905 (available) and elb2006 (not licensed)."""
+        r = api.get(f"{BASE_URL}/api/bible/translations", timeout=15)
+        assert r.status_code == 200, r.text
+        data = r.json()
+        assert "translations" in data
+        tlist = data["translations"]
+        assert isinstance(tlist, list) and len(tlist) >= 2
+        by_id = {t["id"]: t for t in tlist}
+        assert "elb1905" in by_id and "elb2006" in by_id
+        assert by_id["elb1905"]["available"] is True
+        assert by_id["elb2006"]["available"] is False
+        # Name should mention license status for elb2006
+        assert "lizenzpflichtig" in by_id["elb2006"]["name"].lower()
+
+    def test_elb2006_chapter_returns_404(self, api):
+        """GET /api/bible/1/1?t=elb2006 → 404 because elb2006 data is not licensed/present."""
+        r = api.get(f"{BASE_URL}/api/bible/1/1", params={"t": "elb2006"}, timeout=15)
+        assert r.status_code == 404
+        # Error detail should mention the translation id
+        detail = r.json().get("detail", "")
+        assert "elb2006" in detail or "nicht verf" in detail.lower()
+
+    def test_elb1905_chapter_still_loads_with_t_param(self, api):
+        """Explicit ?t=elb1905 continues to return verses (regression)."""
+        r = api.get(f"{BASE_URL}/api/bible/1/1", params={"t": "elb1905"}, timeout=15)
+        assert r.status_code == 200
+        data = r.json()
+        assert data["translation"] == "elb1905"
+        assert len(data["verses"]) == 31
+
+    def test_unknown_translation_returns_404(self, api):
+        r = api.get(f"{BASE_URL}/api/bible/1/1", params={"t": "doesnotexist"}, timeout=15)
+        assert r.status_code == 404
 
 
 # --- Core health ---

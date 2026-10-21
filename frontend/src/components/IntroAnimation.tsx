@@ -344,6 +344,7 @@ function Sky({ vw, vh, t }: { vw: number; vh: number; t: SharedValue<number> }) 
             <Text style={styles.title}>BIBLIA</Text>
             <View style={styles.rule} />
             <Text style={styles.subtitle}>Die Reise durch Gottes Wort</Text>
+            <Text style={styles.by}>by Absole</Text>
           </Animated.View>
         </Animated.View>
         <Animated.View style={[styles.roller, rollL]}><View style={styles.knobTop} /><View style={styles.knobBottom} /></Animated.View>
@@ -372,6 +373,7 @@ const styles = StyleSheet.create({
   title: { fontFamily: fonts.display, fontSize: 44, fontWeight: "700", color: PAL.ink, letterSpacing: 8 },
   rule: { width: 120, height: 2, backgroundColor: PAL.gold, marginVertical: 6, borderRadius: 1 },
   subtitle: { fontFamily: fonts.text, fontSize: 14, fontWeight: "700", color: "#7A5A3A", letterSpacing: 1 },
+  by: { fontFamily: fonts.display, fontSize: 12, fontStyle: "italic", fontWeight: "600", color: "#9A7A52", marginTop: 4, letterSpacing: 1 },
   roller: { position: "absolute", width: 18, height: 150, borderRadius: 9, backgroundColor: PAL.roller, borderWidth: 2, borderColor: PAL.rollerDark, pointerEvents: "none" },
   knobTop: { position: "absolute", top: -8, left: 1, width: 12, height: 10, borderRadius: 5, backgroundColor: PAL.rollerDark },
   knobBottom: { position: "absolute", bottom: -8, left: 1, width: 12, height: 10, borderRadius: 5, backgroundColor: PAL.rollerDark },

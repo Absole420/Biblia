@@ -1,4 +1,6 @@
-import type { Campaign } from "./types";
+import type { Campaign, Station } from "./types";
+import { EXTRA_LESSONS } from "./lessonsExtra";
+import { findInfoIds, INFO_BY_ID } from "./lexicon";
 import C_tora_1 from "./campaigns/tora-1.json";
 import C_tora_2 from "./campaigns/tora-2.json";
 import C_tora_3 from "./campaigns/tora-3.json";
@@ -393,7 +395,7 @@ export const JOHN: Campaign = {
 // Aus den HTML-Lernreisen importierte Kampagnen (Generator: /app/imports/convert.ts)
 const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C_mark, C_luke, C_parables, C_prophets, C_acts, C_letters] as unknown as Campaign[];
 
-export const CAMPAIGNS: Record<string, Campaign> = { john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])) };
+export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])) });
 export const ALL_STATIONS = Object.values(CAMPAIGNS).flatMap((c) => c.stations);
 
 /** Anteil abgeschlossener Stationen über alle Kampagnen einer Lernwelt. */
@@ -408,4 +410,38 @@ export function findStation(id: string) {
     if (s) return { campaign: c, station: s };
   }
   return null;
+}
+
+/**
+ * Ergänzt Kampagnen um die Zusatzlektionen (am Ende des Weges) und verknüpft
+ * jede Station automatisch mit passenden Infotafeln. Stationen mit mindestens
+ * drei Infotafeln erhalten eine zusätzliche Zuordnungsaufgabe aus dem Lexikon.
+ */
+function enrich(all: Record<string, Campaign>): Record<string, Campaign> {
+  const out: Record<string, Campaign> = {};
+  for (const [id, c0] of Object.entries(all)) {
+    const extras = EXTRA_LESSONS.filter((e) => e.campaign === id);
+    const shift = extras.length * 230;
+    let stations: Station[] = c0.stations.map((s) => ({ ...s, y: s.y + shift }));
+    extras.forEach((e, i) => {
+      const prev = stations[stations.length - 1];
+      const { campaign: _c, ...rest } = e;
+      stations.push({ ...rest, x: 500 + Math.sin((stations.length + i) * 1.15) * 300, y: prev.y - 230, requires: [prev.id], xp: 60 });
+    });
+    stations = stations.map((s) => {
+      const text = [s.title, s.discover, ...s.background.map((b) => b.text), ...s.terms.map((t) => t.term)].join(" ");
+      const info = Array.from(new Set([...(s.info ?? []), ...findInfoIds(text)])).filter((x) => INFO_BY_ID[x]).slice(0, 8);
+      const tasks = [...s.tasks];
+      if (info.length >= 3 && !tasks.some((t) => t.id === `${s.id}-lex`)) {
+        tasks.push({
+          id: `${s.id}-lex`, type: "match", question: "Infotafeln: Ordne jeder Person, jedem Ort oder Begriff die passende Beschreibung zu.",
+          pairs: info.slice(0, 4).map((x) => [INFO_BY_ID[x].name, INFO_BY_ID[x].summary.split(/[;.]/)[0]] as [string, string]),
+          explain: "Die Beschreibungen stammen aus den verknüpften Infotafeln.", ref: INFO_BY_ID[info[0]].refs.split("; ")[0],
+        });
+      }
+      return { ...s, info, tasks };
+    });
+    out[id] = { ...c0, mapH: c0.mapH + shift, stations };
+  }
+  return out;
 }

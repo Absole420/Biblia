@@ -8,7 +8,7 @@ import { RefText } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
 import { Button, Chip } from "@/src/components/ui";
-import { getChapterSync, loadChapter, searchBible, TRANSLATIONS, verseKey } from "@/src/data/bible";
+import { displayedTranslation, getChapterSync, loadChapter, searchBible, TRANSLATIONS, verseKey } from "@/src/data/bible";
 import { BIBLE_BOOKS, BOOK_BY_CODE, parseRef } from "@/src/data/books";
 import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
@@ -42,7 +42,8 @@ export default function BibleScreen() {
   const listRef = useRef<FlatList>(null);
   const chipsRef = useRef<ScrollView>(null);
   const info = BOOK_BY_CODE[book];
-  const tr = TRANSLATIONS[state.settings.translation];
+  const chosen = TRANSLATIONS[state.settings.translation] ?? TRANSLATIONS.elb1905;
+  const tr = displayedTranslation(state.settings.translation);
   const fs = state.settings.fontScale;
   const bottomChrome = usesNativeTabs ? insets.bottom : 0;
 
@@ -111,12 +112,12 @@ export default function BibleScreen() {
               <Text style={styles.title} numberOfLines={1}>{info.name} {ch}</Text>
               <Icon name="chevron-down" size={20} color={colors.onSurface} />
             </View>
-            <Text style={styles.sub} testID="bible-translation-label">{tr.available ? tr.name : `${TRANSLATIONS.elb1905.name} (NeÜ: Platzhalter)`}</Text>
+            <Text style={styles.sub} testID="bible-translation-label">{chosen.id === tr.id ? `Angezeigt: ${tr.name}` : `Angezeigt: ${tr.name} · ${chosen.short} nicht lizenziert`}</Text>
           </Pressable>
           <Pressable testID="bible-search-button" style={styles.iconBtn} onPress={() => setSearchOpen(true)} accessibilityLabel="Bibel durchsuchen">
             <Icon name="search" size={18} color={colors.onSurface} />
           </Pressable>
-          <Pressable testID="bible-translation-toggle" style={styles.trBtn} onPress={() => p.setSettings({ translation: state.settings.translation === "elb1905" ? "neue" : "elb1905" })} accessibilityLabel="Übersetzung wechseln">
+          <Pressable testID="bible-translation-toggle" style={styles.trBtn} onPress={() => router.push("/settings")} accessibilityLabel="Übersetzung wechseln">
             <Text style={styles.trText}>{tr.short}</Text>
           </Pressable>
         </View>

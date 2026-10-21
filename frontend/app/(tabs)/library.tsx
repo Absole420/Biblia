@@ -11,7 +11,9 @@ import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
 import { Button, Chip } from "@/src/components/ui";
 import { getVerse, verseKeyLabel } from "@/src/data/bible";
+import { InfoChip } from "@/src/components/InfoSheet";
 import { ALL_STATIONS } from "@/src/data/john";
+import { LEXICON } from "@/src/data/lexicon";
 import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -167,6 +169,16 @@ export default function LibraryScreen() {
             ) : null))}
           </View>
         ))}
+        {tab === "lexicon" ? (
+          <View style={{ gap: spacing.sm, marginBottom: spacing.md }} testID="lexicon-infotafeln">
+            <Pressable testID="open-timeline" onPress={() => router.push("/timeline")} style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm }]}>
+              <Icon name="clock" size={18} color={colors.brandPrimary} /><Text style={[styles.cardTitle, { flex: 1 }]}>Zeitstrahl öffnen</Text><Icon name="chevron-right" size={18} color={colors.muted} />
+            </Pressable>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+              {LEXICON.filter((e) => !q || e.name.toLowerCase().includes(q.toLowerCase())).map((e) => <InfoChip key={e.id} id={e.id} />)}
+            </View>
+          </View>
+        ) : null}
         {tab === "lexicon" && (items as { term: string; explanation: string; ref?: string; station: string }[]).map((t) => (
           <View key={t.term + t.station} style={styles.card} testID={`lexicon-item-${t.term}`}>
             <Text style={styles.cardTitle}>{t.term}</Text>

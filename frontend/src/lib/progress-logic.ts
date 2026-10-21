@@ -1,7 +1,8 @@
 // Reine (seiteneffektfreie) Fortschrittslogik – testbar ohne UI.
 import type { Station } from "../data/types";
+import { Avatar, sanitizeAvatar } from "./avatar";
 
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 
 export type StationProgress = { completedAt: string; examScore: number; examTotal: number; bestScore: number; attempts: number };
 export type Note = { id: string; title: string; text: string; ref?: string; createdAt: string; updatedAt: string };
@@ -24,12 +25,13 @@ export type AppState = {
   bookmarks: Bookmark[];
   highlights: Record<string, string>; // verseKey -> categoryId
   categories: Category[];
-  settings: { theme: ThemePref; fontScale: number; translation: "elb1905" | "neue" };
+  settings: { theme: ThemePref; fontScale: number; translation: "elb1905" | "elb2006" | "neue" };
   goal: { weeklyStations: number };
   activity: { date: string; stationId: string }[];
   answered: { total: number; correct: number };
   links: VerseLink[];
   units: StudyUnit[];
+  avatar: Avatar | null; // v4: persönliche Lernfigur (beeinflusst den Lernfortschritt nicht)
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -62,6 +64,7 @@ export function defaultState(): AppState {
     answered: { total: 0, correct: 0 },
     links: [],
     units: [],
+    avatar: null,
   };
 }
 
@@ -96,6 +99,8 @@ export function migrate(raw: unknown): AppState {
     // v2 -> v3: Verknüpfungen und eigene Lerneinheiten
     links: Array.isArray(r.links) ? r.links.filter((l: any) => isObj(l) && typeof l.from === "string" && typeof l.to === "string") : [],
     units: Array.isArray(r.units) ? r.units.filter((u: any) => isObj(u) && typeof u.id === "string").map((u: any) => ({ description: "", refs: [], questions: [], ...u })) : [],
+    // v3 -> v4: Avatar
+    avatar: sanitizeAvatar(r.avatar),
   };
 }
 

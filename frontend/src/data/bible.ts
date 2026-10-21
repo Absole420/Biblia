@@ -7,7 +7,7 @@ import { BOOK_BY_CODE } from "./books";
 import johnElb from "./john-elb1905.json";
 import { VerseRef } from "./types";
 
-export type TranslationId = "elb1905" | "neue";
+export type TranslationId = "elb1905" | "elb2006" | "neue";
 
 export type Translation = { id: TranslationId; name: string; short: string; license: string; available: boolean };
 
@@ -15,6 +15,13 @@ const elbJohn = (johnElb as { chapters: Record<string, string[]> }).chapters;
 
 export const TRANSLATIONS: Record<TranslationId, Translation> = {
   elb1905: { id: "elb1905", name: "Elberfelder 1905", short: "ELB 1905", license: "Gemeinfrei (Public Domain). Quelle: getbible.net", available: true },
+  elb2006: {
+    id: "elb2006",
+    name: "Elberfelder Bibel, Edition 2006",
+    short: "ELB 2006",
+    license: "Urheberrechtlich geschützt (SCM R.Brockhaus). Technisch vorbereitet: Sobald lizenzierte Textdaten als backend/data/elb2006.json vorliegen, wird sie automatisch angeboten. Bis dahin wird die Elberfelder 1905 angezeigt und so gekennzeichnet.",
+    available: false,
+  },
   neue: {
     id: "neue",
     name: "NeÜ bibel.heute",
@@ -23,6 +30,24 @@ export const TRANSLATIONS: Record<TranslationId, Translation> = {
     available: false,
   },
 };
+
+/** Tatsächlich angezeigte Übersetzung: nicht verfügbare Übersetzungen fallen klar gekennzeichnet auf ELB 1905 zurück. */
+export function displayedTranslation(id: TranslationId): Translation {
+  const t = TRANSLATIONS[id] ?? TRANSLATIONS.elb1905;
+  return t.available ? t : TRANSLATIONS.elb1905;
+}
+
+/** Fragt beim Backend nach, welche lizenzierten Übersetzungen tatsächlich vorliegen. */
+export async function refreshTranslations() {
+  try {
+    const res = await fetch(`${API}/api/bible/translations`);
+    if (!res.ok) return;
+    const data = (await res.json()) as { translations: { id: TranslationId; available: boolean }[] };
+    for (const t of data.translations) if (TRANSLATIONS[t.id]) TRANSLATIONS[t.id].available = t.available;
+  } catch {
+    // offline: lokale Annahmen behalten
+  }
+}
 
 const mem = new Map<string, string[]>();
 const API = process.env.EXPO_PUBLIC_BACKEND_URL;

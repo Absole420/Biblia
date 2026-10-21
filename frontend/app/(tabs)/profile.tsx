@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
 import { ProgressBar, SectionTitle } from "@/src/components/ui";
+import { AvatarView } from "@/src/components/AvatarView";
 import { ALL_STATIONS, CAMPAIGNS } from "@/src/data/john";
 import { WORLDS } from "@/src/data/worlds";
 import { computeBadges, levelInfo, stationsThisWeek } from "@/src/lib/progress-logic";
@@ -50,6 +51,14 @@ export default function ProfileScreen() {
             <View style={styles.xpTrack}><View style={[styles.xpFill, { width: `${lvl.progress * 100}%` }]} /></View>
             <Text style={styles.levelHint}>Noch {lvl.needed - lvl.into} EP bis Stufe {lvl.level + 1}</Text>
           </LinearGradient>
+          <Pressable testID="profile-avatar-card" style={styles.avatarCard} onPress={() => router.push("/avatar")} accessibilityLabel="Avatar bearbeiten">
+            <View style={styles.avatarStage}>{state.avatar ? <AvatarView a={state.avatar} size={96} /> : <Icon name="user-plus" size={40} color={colors.brandPrimary} />}</View>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.cardTitle} testID="profile-avatar-name">{state.avatar?.name ?? "Lernfigur gestalten"}</Text>
+              <Text style={styles.small}>{state.avatar ? `Deine Lernfigur · Stufe ${lvl.level} · ${Object.keys(state.stations).length} Stationen geschafft` : "Erstelle deinen persönlichen Avatar – er begleitet dich auf der Reise."}</Text>
+            </View>
+            <Icon name="edit-2" size={20} color={colors.brandPrimary} />
+          </Pressable>
         </Animated.View>
 
         <View style={styles.statsRow}>
@@ -137,6 +146,8 @@ const useStyles = makeStyles((c) => ({
   topBar: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: spacing.xl, paddingBottom: spacing.sm, backgroundColor: c.surface },
   screenTitle: { fontFamily: fonts.display, fontSize: 26, fontWeight: "700", color: c.onSurface },
   round: { width: 44, height: 44, borderRadius: 22, backgroundColor: c.surfaceSecondary, alignItems: "center", justifyContent: "center" },
+  avatarCard: { flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: c.surfaceSecondary, borderRadius: radius.lg, padding: spacing.md, marginTop: spacing.md, borderWidth: 1, borderColor: c.border },
+  avatarStage: { width: 96, height: 96, borderRadius: 48, overflow: "hidden", backgroundColor: c.mapLand, alignItems: "center", justifyContent: "flex-end", borderWidth: 2, borderColor: c.brandPrimary },
   levelCard: { borderRadius: 28, padding: spacing.xl },
   levelRow: { flexDirection: "row", alignItems: "center", gap: spacing.lg },
   levelBadge: { width: 68, height: 68, borderRadius: 34, backgroundColor: "rgba(249,243,232,0.9)", alignItems: "center", justifyContent: "center" },
