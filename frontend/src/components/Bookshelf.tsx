@@ -1,5 +1,5 @@
-import React from "react";
-import { Pressable, Text, View } from "react-native";
+import React, { useRef, useState } from "react";
+import { AccessibilityInfo, Animated, Easing, Platform, Pressable, Text, View } from "react-native";
 
 import { fonts, makeStyles, radius, spacing } from "@/src/theme";
 
@@ -35,9 +35,30 @@ type BookProps = { title: string; subtitle?: string; icon: string; theme: BookTh
 export function Book({ title, subtitle, icon, theme, size, onPress, testID, badge }: BookProps) {
   const styles = useStyles();
   const large = size === "large";
+  const [pull] = useState(() => new Animated.Value(0));
+  const busy = useRef(false);
+  // Antippen: Buch kippt oben aus dem Regal und hebt sich leicht – danach öffnet es sich.
+  const open = async () => {
+    if (busy.current) return;
+    if (await AccessibilityInfo.isReduceMotionEnabled()) return onPress();
+    busy.current = true;
+    Animated.timing(pull, { toValue: 1, duration: 260, easing: Easing.out(Easing.cubic), useNativeDriver: Platform.OS !== "web" }).start(() => {
+      onPress();
+      setTimeout(() => { pull.setValue(0); busy.current = false; }, 350);
+    });
+  };
+  const anim = {
+    transformOrigin: "50% 100%",
+    transform: [
+      { translateY: pull.interpolate({ inputRange: [0, 1], outputRange: [0, -16] }) },
+      { rotate: pull.interpolate({ inputRange: [0, 1], outputRange: ["0deg", large ? "-5deg" : "-9deg"] }) },
+      { scale: pull.interpolate({ inputRange: [0, 1], outputRange: [1, 1.05] }) },
+    ],
+  };
   return (
-    <Pressable testID={testID} onPress={onPress} accessibilityRole="button" accessibilityLabel={`${title.replace(/-?\n/g, (m) => (m === "\n" ? " " : ""))}${subtitle ? ", " + subtitle : ""}`}
-      style={({ pressed }) => [styles.book, large ? styles.bookLarge : styles.bookSmall, { backgroundColor: theme.cover, transform: [{ translateY: pressed ? -6 : 0 }] }]}>
+    <Animated.View style={[styles.bookWrap, anim]}>
+    <Pressable testID={testID} onPress={open} accessibilityRole="button" accessibilityLabel={`${title.replace(/-?\n/g, (m) => (m === "\n" ? " " : ""))}${subtitle ? ", " + subtitle : ""}`}
+      style={({ pressed }) => [styles.book, large ? styles.bookLarge : styles.bookSmall, { backgroundColor: theme.cover, transform: [{ translateY: pressed ? -4 : 0 }] }]}>
       <View style={[styles.spine, { backgroundColor: theme.spine, width: large ? 16 : 10 }]}>
         <View style={[styles.band, { backgroundColor: theme.trim }]} />
         <View style={[styles.band, { backgroundColor: theme.trim }]} />
@@ -51,6 +72,7 @@ export function Book({ title, subtitle, icon, theme, size, onPress, testID, badg
       </View>
       {badge ? <View style={[styles.ribbon, { backgroundColor: theme.trim }]}><Text style={[styles.ribbonText, { color: theme.spine }]}>{badge}</Text></View> : null}
     </Pressable>
+    </Animated.View>
   );
 }
 
@@ -59,6 +81,7 @@ const useStyles = makeStyles(() => ({
   row: { flexDirection: "row", alignItems: "flex-end", gap: spacing.sm, paddingHorizontal: spacing.sm, paddingTop: spacing.md, backgroundColor: WOOD.back, borderTopLeftRadius: radius.md, borderTopRightRadius: radius.md },
   plank: { height: 14, backgroundColor: WOOD.plank, borderTopWidth: 2, borderTopColor: "#A87445" },
   plankEdge: { height: 6, backgroundColor: WOOD.edge, borderBottomLeftRadius: 4, borderBottomRightRadius: 4, boxShadow: "0px 4px 8px rgba(0,0,0,0.25)" },
+  bookWrap: { flex: 1 },
   book: { flex: 1, flexDirection: "row", borderTopRightRadius: 6, borderBottomRightRadius: 3, borderTopLeftRadius: 2, overflow: "hidden", boxShadow: "2px 2px 6px rgba(0,0,0,0.35)" },
   bookLarge: { minHeight: 210 },
   bookSmall: { minHeight: 150 },

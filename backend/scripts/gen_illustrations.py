@@ -52,6 +52,17 @@ PEOPLE = {
     "elisa": "A bald-headed prophet in a plain mantle picking up another fallen cloak beside the Jordan river, a whirlwind fading in the sky.",
     "hiskia": "A king kneeling in prayer in a temple court with an unrolled letter spread before him, worried but hopeful, Jerusalem walls behind.",
     "josia": "A young king tearing his royal robe in grief while a scribe reads from an old scroll found in the temple.",
+    # Etappe 4: Esra – Propheten
+    "kyros": "A Persian king of the 6th century BC in a long embroidered robe and a tall rounded cap, standing before a clay cylinder inscription on a table, Achaemenid palace columns behind.",
+    "esra": "A scribe and priest standing on a wooden platform reading aloud from an open scroll to a large crowd in a city square at morning, Jerusalem stones around.",
+    "nehemia": "A man in Persian court dress inspecting a ruined city wall by moonlight from a donkey, workers' tools lying around.",
+    "ester": "A young queen in elegant Persian robes standing at the entrance of a throne hall, hesitant but brave, a golden scepter held out from the shadow ahead.",
+    "hiob": "A thoughtful older man with a grey beard sitting quietly on a stone outside a village at sunset, looking up at a vast sky with gathering storm clouds, three friends standing at a distance.",
+    "jesaja": "A prophet with a scroll standing in the temple courts of Jerusalem, looking up as smoke and light fill the space, awe on his face.",
+    "jeremia": "A sorrowful prophet with a wooden yoke on his shoulders walking through a narrow street of ancient Jerusalem, people staring.",
+    "ezechiel": "A prophet standing in a wide valley full of scattered dry bones, wind blowing, a Mesopotamian river landscape in the distance.",
+    "daniel": "A young Judean man praying at an open window facing west in a Babylonian house, glazed brick wall and palm trees outside.",
+    "jona": "A man sitting under a leafy plant on a hill outside a large ancient walled city in the heat of the day, looking at the city, sulking.",
 }
 
 

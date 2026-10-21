@@ -107,3 +107,8 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Bibliothek-Tab: Bücherregal (src/components/Bookshelf.tsx) – große Bücher Lexikon & Zeitstrahl, kleine Bücher Meine Einträge, Favoriten Bibel, Favoriten Studienreise, Bilder, Lerneinheiten, Begriffe & Infotafeln; Abschnitte mit farbigem Kopf und Zurück zum Regal.
 - Testagent Iteration 16: alles grün.
 - Offen: Etappen Esra–Propheten, Evangelien, Apg/Briefe/Offb.
+
+## Lexikon Etappe 4 – Esra bis Propheten + Regal-Animation (Juni 2026)
+- 23 neue Artikel (src/data/articlesProphets.ts); 103/135 gesamt. 10 weitere KI-Illustrationen (gesamt 37). Hiob-Prompt wurde vom Sicherheitsfilter abgelehnt und entschärft neu erzeugt.
+- Bookshelf: Buch kippt beim Antippen aus dem Regal (~260ms, RN Animated, respektiert „Bewegung reduzieren“), danach Navigation; Doppeltipp-Schutz.
+- Testagent Iteration 17: alles grün. Offen: Evangelien, Apg, Briefe, Offb (32 Artikel).

@@ -212,3 +212,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 17: Lexikon Etappe 4 (Esra–Propheten, 23 Artikel, 10 neue KI-Bilder) + Regal-Animation (Buch kippt aus dem Regal)"
+    implemented: true
+    working: "NA"
+    file: "src/data/articlesProphets.ts, src/data/illustrations.ts, src/components/Bookshelf.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
