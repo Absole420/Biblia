@@ -6,10 +6,11 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { GeoMap } from "@/src/components/GeoMap";
 import { Icon } from "@/src/components/Icon";
+import { JourneyLayer } from "@/src/components/JourneyLayer";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
 import { RefText } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
-import { Button, Chip, ProgressBar } from "@/src/components/ui";
+import { Button, Chip } from "@/src/components/ui";
 import { ZoomableMap } from "@/src/components/ZoomableMap";
 import { CAMPAIGNS } from "@/src/data/john";
 import { CERTAINTY_META } from "@/src/data/meta";
@@ -30,6 +31,7 @@ export default function WorldMapScreen() {
   const { width: vw, height: vh } = useWindowDimensions();
   const { state } = useProgress();
   const [theme, setTheme] = useState("overview");
+  const [mode, setMode] = useState<"explore" | "journey">("explore");
   const [place, setPlace] = useState<GeoPlace | null>(null);
   const [route, setRoute] = useState<GeoRoute | null>(null);
   const [open, setOpen] = useState(false);
@@ -37,10 +39,11 @@ export default function WorldMapScreen() {
   const bottomChrome = usesNativeTabs ? insets.bottom : 0;
   const lvl = levelInfo(state.xp);
 
-  const map = THEME_MAPS[theme];
+  const journey = mode === "journey";
+  const map = journey ? THEME_MAPS.journey : THEME_MAPS[theme];
   const size = mapSize(map);
   const k = Math.min(3.2, Math.max(0.8, 1 / Math.min(vw / size.width, vh / size.height)));
-  const world = WORLDS.find((w) => w.id === theme);
+  const world = journey ? undefined : WORLDS.find((w) => w.id === theme);
   const accent = world?.palette.base ?? colors.brandPrimary;
 
   const progress = useMemo(() => {
@@ -50,35 +53,42 @@ export default function WorldMapScreen() {
 
   return (
     <View style={styles.root} testID="world-map-screen">
-      <Animated.View key={theme} entering={FadeIn.duration(500)} style={{ flex: 1 }}>
+      <Animated.View key={journey ? "journey" : theme} entering={FadeIn.duration(500)} style={{ flex: 1 }}>
         <ZoomableMap fit="contain" width={size.width} height={size.height} controlsBottom={bottomChrome + cardH + 24} maxZoom={5} testID="world-map">
-          <GeoMap map={map} k={k} onSelect={setPlace} />
+          <GeoMap map={map} k={k} onSelect={setPlace}>
+            {journey ? <JourneyLayer map={map} k={k} stations={state.stations} /> : null}
+          </GeoMap>
         </ZoomableMap>
       </Animated.View>
 
       {/* Sticky Kopfbereich: Stufe + Themen */}
-      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]} pointerEvents="box-none">
-        <View style={styles.hud} pointerEvents="box-none">
+      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]}>
+        <View style={styles.hud}>
           <Pressable style={styles.pill} testID="hud-level-pill" onPress={() => router.push("/profile")} accessibilityLabel={`Stufe ${lvl.level}, ${state.xp} Erfahrungspunkte`}>
             <View style={styles.lvl}><Text style={styles.lvlText}>{lvl.level}</Text></View>
-            <View style={{ width: 110 }}>
-              <Text style={styles.pillTitle} numberOfLines={1}>{lvl.name}</Text>
-              <ProgressBar value={lvl.progress} height={5} />
-            </View>
+
           </Pressable>
+          <View style={styles.modeSwitch}>
+            {([["explore", "Übersicht", "map"], ["journey", "Studienreise", "compass"]] as const).map(([m, l, ic]) => (
+              <Pressable key={m} testID={`map-mode-${m}`} onPress={() => { setMode(m); setOpen(false); }} style={[styles.modeBtn, mode === m && { backgroundColor: colors.surfaceInverse }]} accessibilityState={{ selected: mode === m }}>
+                <Icon name={ic} size={14} color={mode === m ? colors.onSurfaceInverse : colors.onSurface} />
+                <Text style={[styles.modeText, { color: mode === m ? colors.onSurfaceInverse : colors.onSurface }]}>{l}</Text>
+              </Pressable>
+            ))}
+          </View>
           <Pressable style={styles.round} testID="hud-settings-button" onPress={() => router.push("/settings")} accessibilityLabel="Einstellungen">
             <Icon name="settings" size={20} color={colors.onSurface} />
           </Pressable>
         </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.chipRow} contentContainerStyle={styles.chipContent}>
+        {journey ? <View style={styles.chipRow} /> : <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.chipRow} contentContainerStyle={styles.chipContent}>
           {THEMES.map((t) => (
             <Chip key={t.id} testID={`theme-chip-${t.id}`} label={t.title} selected={theme === t.id} color={WORLDS.find((w) => w.id === t.id)?.palette.base} onPress={() => { setTheme(t.id); setOpen(false); }} />
           ))}
-        </ScrollView>
+        </ScrollView>}
       </View>
 
       {/* Info-Karte zum Thema */}
-      <Animated.View key={"card" + theme} entering={FadeInDown.duration(350)} onLayout={(e) => setCardH(e.nativeEvent.layout.height)} style={[styles.card, { bottom: bottomChrome + 12, borderTopColor: accent }]} testID="theme-card">
+      <Animated.View key={"card" + (journey ? "journey" : theme)} entering={FadeInDown.duration(350)} onLayout={(e) => setCardH(e.nativeEvent.layout.height)} style={[styles.card, { bottom: bottomChrome + 12, borderTopColor: accent }]} testID="theme-card">
         <Pressable onPress={() => setOpen(!open)} style={styles.cardHead} testID="theme-card-toggle" accessibilityLabel="Details ein- oder ausblenden">
           <View style={{ flex: 1 }}>
             <Text style={styles.cardTitle} numberOfLines={1}>{map.title}</Text>
@@ -88,6 +98,7 @@ export default function WorldMapScreen() {
         </Pressable>
         {open ? (
           <ScrollView style={{ maxHeight: vh * 0.36 }} contentContainerStyle={{ gap: spacing.sm }}>
+            {journey ? <Text style={styles.noteText}>Jedes farbige Feld ist eine Lernwelt. Tippe darauf, um die Lektionen zu öffnen. Die Felder sind symbolisch platziert; die genauen Orte findest du in der Übersicht.</Text> : null}
             {map.note ? (
               <View style={styles.note}><Icon name="alert-triangle" size={14} color={colors.warning} /><Text style={styles.noteText}>{map.note}</Text></View>
             ) : null}
@@ -138,12 +149,15 @@ export default function WorldMapScreen() {
 
 const useStyles = makeStyles((c) => ({
   root: { flex: 1, backgroundColor: c.mapSea },
-  top: { position: "absolute", left: 0, right: 0, top: 0 },
-  hud: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: spacing.lg },
-  pill: { flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: c.glass, borderRadius: radius.pill, paddingVertical: 6, paddingLeft: 6, paddingRight: spacing.lg, borderWidth: 1, borderColor: c.border },
+  top: { position: "absolute", left: 0, right: 0, top: 0, pointerEvents: "box-none" },
+  hud: { pointerEvents: "box-none", flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: spacing.lg },
+  pill: { flexDirection: "row", alignItems: "center", gap: spacing.md, backgroundColor: c.glass, borderRadius: radius.pill, padding: 4, borderWidth: 1, borderColor: c.border },
   lvl: { width: 38, height: 38, borderRadius: 19, backgroundColor: c.brandPrimary, alignItems: "center", justifyContent: "center" },
   lvlText: { fontFamily: fonts.display, fontSize: 18, fontWeight: "700", color: c.onBrandPrimary },
   pillTitle: { fontFamily: fonts.display, fontSize: 14, fontWeight: "700", color: c.onSurface, marginBottom: 3 },
+  modeSwitch: { flexDirection: "row", backgroundColor: c.glass, borderRadius: radius.pill, padding: 3, borderWidth: 1, borderColor: c.border },
+  modeBtn: { flexDirection: "row", alignItems: "center", gap: 4, height: 38, paddingHorizontal: 10, borderRadius: radius.pill },
+  modeText: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800" },
   round: { width: 46, height: 46, borderRadius: 23, backgroundColor: c.glass, alignItems: "center", justifyContent: "center", borderWidth: 1, borderColor: c.border },
   chipRow: { height: 56, flexGrow: 0 },
   chipContent: { gap: spacing.sm, paddingHorizontal: spacing.lg, alignItems: "center" },

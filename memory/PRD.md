@@ -34,6 +34,16 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Bibelstellen in Lerneinheiten/Erklärungen/Orten sind antippbare Links in den Bibelleser
 - Schema v3 (links, units) mit Migration
 
+## Iteration 3 (2026-06)
+- Karten-Modi: „Übersicht“ (Orte, Personen, Ereignisse je Thema) und „Studienreise“ (farbige Themenfelder → Lektionen)
+- Illustrative Kartendetails: Berge, Wüsten, Gärten/fruchtbares Land, Palmen, Ölbäume, Hirte mit Schafen, Kamele, Boote, Häuser, antike Fernstraßen (Via Maris, Königsweg, Bergland – schematisch)
+
+## Iteration 4 (2026-06)
+- Zoomabhängige Kollisionserkennung (`src/lib/mapLayout.ts`): Marker, Beschriftungen und Kartenfiguren weichen sich aus (Mindestabstände inkl. Tippbereich), Neuberechnung je 25 % Zoomstufe
+- `AnchoredMarker`: konstante Bildschirmgröße, sanft animiertes Gleiten, Ankerpunkt + dezente Verbindungslinie bei Verschiebung; geografische Anker unverändert
+- Gilt für Übersicht (Orte + Figuren) und Studienreise (Themenfeld-Medaillons); Regionsnamen werden von Beschriftungen gemieden
+- Veraltete `pointerEvents`-Props auf `style.pointerEvents` umgestellt
+
 ## Backlog
 - P0: Übernahme der HTML-Vorlagen des Users (sobald hochgeladen)
 - P1: Builder-Modus (Karteneditor), weitere Lernwelten (Tora, Propheten, Evangelien, Apg, Briefe, Gleichnisse), weitere Aufgabentypen (Orte auf Karte zuordnen, Bilder zuordnen, Rätsel), Studienpläne

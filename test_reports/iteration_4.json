@@ -1,0 +1,29 @@
+{
+  "summary": "Frontend-only testing of new zoom-dependent collision layout (mapLayout.ts) + AnchoredMarker + Bible end-to-end on viewport 390x844. ALL critical features pass. Map overview explore: exactly 22 place-node-* markers render with 0 marker-marker overlaps at initial zoom. Tapping place-node-jerusalem, -bethlehem, -jericho, -qumran all open PlaceSheet correctly. Zoom-in x2 keeps markers at constant on-screen size (22px measured before and after zoom – counter-scale 1/zoom works) with still 0 overlaps; markers remain tappable after zoom (jerusalem opens sheet). Zoom-out works smoothly. Theme chips: tora shows 21 markers (0 overlap), acts shows 16 markers (0 overlap). Journey mode: all 9 journey-field-* medallions render (tora/history/psalms/prophets/gospels/parables/acts/letters/revelation) with 0 overlap; journey-field-gospels navigates to /world/gospels. Bible tab: Johannes 1 loads 51 verses via /api/bible/John/1; verse-sheet opens with 7 highlight chips; adding highlight, saving comment, adding cross-reference link (Röm 3,23) and creating a learning unit all succeed – new unit opens at /unit/<id> with 'Studie zu Johannes 1,3' and the Bibelstelle linked. After navigating back, note AND link persist on verse-1-3. Bible search 'Gnade' returns 60 results. 0 console errors; only pre-existing shadow* deprecation warning remains.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": [
+      {"component": "JourneyLayer medal (styles.medal)", "issue": "React Native Web deprecation warning: 'shadow*' style props are deprecated – use 'boxShadow'. Reference: /app/frontend/src/components/JourneyLayer.tsx:113 (shadowColor/shadowOpacity/shadowRadius/shadowOffset)."}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Non-blocking cosmetic: migrate shadow* style props to boxShadow in JourneyLayer.tsx:113 to silence RN Web deprecation warning. All other previously flagged pointerEvents warnings now appear resolved (none observed this run)."
+  ],
+  "critical_code_review_comments": [
+    "mapLayout.solveLayout correctly scales marker/label sizes by 1/zoom via items.size and label.w,h so collision resolution tightens with zoom – good design.",
+    "AnchoredMarker applies translate + counter-scale minS/scale to keep marker screen-size constant and animates p.x/p.y/p.lx/p.ly with withTiming (480ms cubic out) producing the required 'organic smooth' repositioning. Leader line and anchor dot fade in only when displaced (show.value = p.displaced?1:0).",
+    "ZoomableMap uses useAnimatedReaction + scheduleOnRN from react-native-worklets with ZOOM_STEP=1.25 to re-run layout only on step boundaries – avoids per-frame recomputation. Clean.",
+    "GeoMap passes k but divides size.pad/label by zoom in LayoutItem, so solver works in constant-screen-pixel space consistently.",
+    "Minor: PlaceSheet lacks an explicit place-sheet-title testID; title text is passed to Sheet but not individually test-tagged (not blocking; sheet visibility was verifiable)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a (bible API indirectly verified via UI: 51 verses + 60 search results loaded)", "frontend": "100%"},
+  "seed_data_creation": "Created a test comment ('TEST_Kommentar – Gnade und Wahrheit'), one cross-reference link (Röm 3,23) and one learning unit ('Studie zu Johannes 1,3') on Johannes 1,3 via normal UI flow (local storage).",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Iteration 4: Collision solver + AnchoredMarker verified. On viewport 390x844: overview=22 markers, tora=21, acts=16, journey=9 fields, Johannes 1=51 verses. 0 overlaps in any tested configuration (tolerance 2px). Zoom bucket Reanimated reaction fires correctly. PlaceSheet has no place-sheet-title testID; use place-sheet visibility only. Highlights pre-seeded = 7 chips. Only remaining warning: shadow* in JourneyLayer medal."
+}

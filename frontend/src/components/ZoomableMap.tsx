@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { LayoutChangeEvent, Pressable, StyleSheet, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
-import Animated, { useAnimatedStyle, useSharedValue, withDecay, withTiming } from "react-native-reanimated";
+import Animated, { useAnimatedReaction, useAnimatedStyle, useSharedValue, withDecay, withTiming } from "react-native-reanimated";
+import { scheduleOnRN } from "react-native-worklets";
 
 import { radius, spacing, useTheme } from "@/src/theme";
 
+import { MapZoomContext } from "./AnchoredMarker";
 import { Icon } from "./Icon";
+
+// Neuberechnung der Kollisionslage in Zoomstufen von je 25 %.
+const ZOOM_STEP = 1.25;
 
 type Props = {
   width: number;
@@ -55,6 +60,14 @@ function Inner({ width, height, focus, children, vw, vh, controlsBottom = 16, ma
   const tx = useSharedValue(clampX(vw / 2 - fx * initS, initS));
   const ty = useSharedValue(clampY(vh / 2 - fy * initS, initS));
   const start = useSharedValue({ s: initS, x: 0, y: 0, fx: 0, fy: 0 });
+  const [zoom, setZoom] = useState(1);
+  useAnimatedReaction(
+    () => Math.floor(Math.log(scale.value / minS) / Math.log(ZOOM_STEP) + 1e-3),
+    (b, prev) => {
+      if (b !== prev) scheduleOnRN(setZoom, Math.pow(ZOOM_STEP, Math.max(0, b)));
+    },
+  );
+  const zoomCtx = { scale, minS, zoom };
 
   const pinch = Gesture.Pinch()
     .onStart((e) => {
@@ -118,10 +131,12 @@ function Inner({ width, height, focus, children, vw, vh, controlsBottom = 16, ma
     <>
       <GestureDetector gesture={gesture}>
         <View style={StyleSheet.absoluteFill} collapsable={false}>
-          <Animated.View style={[{ width, height, transformOrigin: "left top" }, style]}>{children}</Animated.View>
+          <Animated.View style={[{ width, height, transformOrigin: "left top" }, style]}>
+            <MapZoomContext.Provider value={zoomCtx}>{children}</MapZoomContext.Provider>
+          </Animated.View>
         </View>
       </GestureDetector>
-      <View style={[styles.controls, { bottom: controlsBottom }]} pointerEvents="box-none">
+      <View style={[styles.controls, { bottom: controlsBottom }]}>
         {[
           { icon: "plus", f: 1.5, id: "map-zoom-in", label: "Hineinzoomen" },
           { icon: "minus", f: 1 / 1.5, id: "map-zoom-out", label: "Herauszoomen" },
@@ -143,6 +158,6 @@ function Inner({ width, height, focus, children, vw, vh, controlsBottom = 16, ma
 
 const styles = StyleSheet.create({
   root: { flex: 1, overflow: "hidden" },
-  controls: { position: "absolute", right: spacing.lg, gap: spacing.sm },
+  controls: { position: "absolute", right: spacing.lg, gap: spacing.sm, pointerEvents: "box-none" },
   btn: { width: 46, height: 46, borderRadius: radius.pill, alignItems: "center", justifyContent: "center", borderWidth: 1 },
 });

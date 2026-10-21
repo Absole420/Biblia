@@ -79,6 +79,16 @@ const ISRAEL_LABELS: GeoLabel[] = [
 
 // ---------------------------------------------------------------------------
 export const THEME_MAPS: Record<string, ThemeMap> = {
+  journey: {
+    id: "journey",
+    title: "Studienreise",
+    era: "Wähle ein Themenfeld und starte die Lektionen",
+    bounds: { latMin: 28.2, latMax: 33.8, lonMin: 32.3, lonMax: 37.0 },
+    pxPerDeg: 300,
+    labels: [...ISRAEL_LABELS, { name: "SINAI", lat: 29.9, lon: 33.6 }, { name: "→ Babylon", lat: 32.9, lon: 36.6, kind: "sea", size: 0.8 }, { name: "← Rom", lat: 33.6, lon: 33.0, kind: "sea", size: 0.8 }],
+    routes: [],
+    places: [],
+  },
   overview: {
     id: "overview",
     title: "Das Land der Bibel",

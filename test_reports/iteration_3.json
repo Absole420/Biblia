@@ -1,0 +1,28 @@
+{
+  "summary": "Frontend-only testing for new Übersicht/Studienreise toggle, 9 journey fields, decor rendering, and regressions. All features work: mode toggle hides/shows theme chips and place-node markers correctly; all 9 journey-field-<id> markers (tora, history, psalms, prophets, gospels, parables, acts, letters, revelation) are present and tappable; journey-field-gospels navigates to /world/gospels and renders campaign-screen; journey-field-tora navigates to /world/tora and renders preview-screen; switching back to explore restores 22 place-node-* markers and theme chips; decor (mountains, deserts, palms, camels, boats, houses, dotted ancient roads) renders without errors on overview/tora/acts maps. Regressions pass: hud-settings-button navigates to /settings, Bibel tab (testID tab-bible) loads bible-screen with Johannes 1 content, and /station/john-1 opens station-screen. Minor console warnings only.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": [
+      {"component": "map screen HUD + MapAnimations", "issue": "React Native Web deprecation warnings: 'shadow*' style props are deprecated – use 'boxShadow'. Likely from JourneyLayer medal shadow and other shadowed elements."},
+      {"component": "World map top overlay (/app/frontend/app/(tabs)/index.tsx)", "issue": "'props.pointerEvents is deprecated. Use style.pointerEvents' – `pointerEvents=\"box-none\"` is passed as prop on <View> instead of via style. Reference: /app/frontend/app/(tabs)/index.tsx:65,66 and JourneyLayer.tsx:35,44."}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Non-blocking: migrate shadow* style props (shadowColor/shadowOpacity/shadowRadius/shadowOffset) to boxShadow for react-native-web compatibility (JourneyLayer medal style, etc.).",
+    "Non-blocking: move pointerEvents from JSX prop to style.pointerEvents on <View> components in index.tsx and JourneyLayer.tsx to silence RN Web deprecation warning."
+  ],
+  "critical_code_review_comments": [
+    "JourneyLayer uses symbolic FIELD_POS inside map bounds (overview). Positions sit inside Judaea/Transjordanien region which may overlap with existing geography labels in explore mode – but journey layer only renders when mode==='journey' and uses THEME_MAPS.journey, so no overlap in practice. Looks good.",
+    "Mode state is local to WorldMapScreen; it correctly resets `open` sheet on switch and uses `journey ? THEME_MAPS.journey : THEME_MAPS[theme]` to pick map. Clean implementation."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a", "frontend": "100%"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Mode toggle (map-mode-explore / map-mode-journey) and JourneyLayer with 9 fields are fully functional on viewport 390x844. place-node-* count in overview explore = 22. Bibel tab testID is 'tab-bible' (not 'tab-bibel'). Station route is /station/<id>, world route is /world/<id>. Only RN Web deprecation warnings remain (shadow*, pointerEvents prop)."
+}

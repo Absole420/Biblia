@@ -26,7 +26,7 @@ export function MapNode({ x, y, size, color, iconColor, icon, label, sublabel, s
   const { colors } = useTheme();
   const locked = status === "locked";
   return (
-    <View pointerEvents="box-none" style={[styles.wrap, { left: x - 130, top: y - size / 2, width: 260 }]}>
+    <View style={[styles.wrap, { left: x - 130, top: y - size / 2, width: 260, pointerEvents: "box-none" }]}>
       <Pressable
         testID={testID}
         onPress={onPress}
@@ -58,7 +58,7 @@ export function MapNode({ x, y, size, color, iconColor, icon, label, sublabel, s
           </View>
         ) : null}
       </Pressable>
-      <View pointerEvents="none" style={[styles.label, { backgroundColor: colors.glass, borderColor: colors.border }]}>
+      <View style={[styles.label, { backgroundColor: colors.glass, borderColor: colors.border, pointerEvents: "none" }]}>
         <Text style={[styles.labelText, { fontSize: labelSize, color: locked ? colors.muted : colors.onSurface }]} numberOfLines={2}>
           {label}
         </Text>

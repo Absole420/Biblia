@@ -24,7 +24,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     <Ctx.Provider value={{ show }}>
       {children}
       {toast ? (
-        <View pointerEvents="none" style={[styles.wrap, { top: insets.top + spacing.sm }]}>
+        <View style={[styles.wrap, { top: insets.top + spacing.sm, pointerEvents: "none" }]}>
           <Animated.View
             key={toast.id}
             entering={FadeInUp}

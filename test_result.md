@@ -101,3 +101,30 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+user_problem_statement: "BIBLIA Bibel-App. Iteration 4: zoomabhängige Kollisionserkennung für Kartenmarker/Beschriftungen/Symbole mit sanfter Neupositionierung, Mindestabständen, unveränderten Ankern und Verbindungslinien."
+frontend:
+  - task: "Map collision layout (Übersicht + Studienreise)"
+    implemented: true
+    working: "NA"
+    file: "src/lib/mapLayout.ts, src/components/AnchoredMarker.tsx, src/components/GeoMap.tsx, src/components/JourneyLayer.tsx, src/components/ZoomableMap.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Implemented solver + animated anchored markers with leader lines; zoom bucket context in ZoomableMap."
+  - task: "Bible features E2E (highlight, comment, link, custom unit)"
+    implemented: true
+    working: "NA"
+    file: "app/(tabs)/bible.tsx, app/unit/[id].tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Needs full E2E verification."
+agent_communication:
+  - agent: "main"
+    message: "Test map collision layout and bible features E2E."
