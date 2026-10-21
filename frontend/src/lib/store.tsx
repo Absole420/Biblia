@@ -34,6 +34,7 @@ type Ctx = {
   toggleFavorite: (kind: "bible" | "lessons", key: string) => void;
   savePhoto: (p: Omit<Photo, "createdAt">) => void;
   deletePhoto: (id: string) => void;
+  updateLexicon: (fn: (l: AppState["lexicon"]) => AppState["lexicon"]) => void;
   reset: () => void;
 };
 
@@ -174,6 +175,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           return { ...s, photos: exists ? s.photos.map((x) => (x.id === ph.id ? { ...x, ...ph } : x)) : [{ ...ph, createdAt: new Date().toISOString() }, ...s.photos] };
         }),
       deletePhoto: (id) => update((s) => ({ ...s, photos: s.photos.filter((x) => x.id !== id) })),
+      updateLexicon: (fn) => update((s) => ({ ...s, lexicon: fn(s.lexicon) })),
       reset: () => setState(defaultState()),
     }),
     [ready, state, completeStation, update],

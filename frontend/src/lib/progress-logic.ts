@@ -40,6 +40,7 @@ export type AppState = {
   study: StudyState; // v5: Leseposition, Lesefortschritt, Lesepläne, Tags, Merkliste, Journal
   favorites: { bible: Favorite[]; lessons: Favorite[] }; // v6
   photos: Photo[]; // v6: nur lokal auf dem Gerät
+  lexicon: { favorites: string[]; recent: string[]; notes: Record<string, string> }; // v6: persönliche Lexikon-Daten (getrennt von Inhalten)
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -76,6 +77,7 @@ export function defaultState(): AppState {
     study: DEFAULT_STUDY,
     favorites: { bible: [], lessons: [] },
     photos: [],
+    lexicon: { favorites: [], recent: [], notes: {} },
   };
 }
 
@@ -118,6 +120,11 @@ export function migrate(raw: unknown): AppState {
     favorites: {
       bible: Array.isArray(r.favorites?.bible) ? r.favorites.bible.filter((f: any) => isObj(f) && typeof f.key === "string") : [],
       lessons: Array.isArray(r.favorites?.lessons) ? r.favorites.lessons.filter((f: any) => isObj(f) && typeof f.key === "string") : [],
+    },
+    lexicon: {
+      favorites: Array.isArray(r.lexicon?.favorites) ? r.lexicon.favorites.filter((x: any) => typeof x === "string") : [],
+      recent: Array.isArray(r.lexicon?.recent) ? r.lexicon.recent.filter((x: any) => typeof x === "string").slice(0, 20) : [],
+      notes: isObj(r.lexicon?.notes) ? r.lexicon.notes : {},
     },
     photos: Array.isArray(r.photos) ? r.photos.filter((x: any) => isObj(x) && typeof x.id === "string" && typeof x.uri === "string" && isObj(x.target)) : [],
   };

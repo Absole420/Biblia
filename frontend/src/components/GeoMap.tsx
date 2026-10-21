@@ -52,14 +52,16 @@ type Props = {
   selected?: string | null;
   children?: React.ReactNode;
   me?: { lat: number; lon: number; avatar: Avatar } | null;
+  /** Nur diese Routen zeigen (Standard: alle Routen der Karte) */
+  routeIds?: string[];
 };
 
 /** Geografisch korrekte Themenkarte (Natural Earth, gemeinfrei) mit Orten, Ereignissen und Routen. */
-export function GeoMap({ map, k: kProp, onSelect, onCluster, highlight, important, selected, children, me }: Props) {
+export function GeoMap({ map, k: kProp, onSelect, onCluster, highlight, important, selected, children, me, routeIds }: Props) {
   const { colors } = useTheme();
   const { width, height } = mapSize(map);
   const { zoom, minS, snap, vw, vh, reserved } = useMapZoom();
-  const k = kProp ?? 1 / minS;
+  const k = kProp ?? (minS > 0 && Number.isFinite(minS) ? 1 / minS : 1);
 
   const paths = useMemo(() => {
     const { latMin, latMax, lonMin, lonMax } = map.bounds;
@@ -178,7 +180,7 @@ export function GeoMap({ map, k: kProp, onSelect, onCluster, highlight, importan
           );
         })}
         {/* Routen: Linienart zeigt die Gewissheit (durchgezogen · gepunktet = Tradition · gestrichelt = hypothetisch) */}
-        {paths.routes.map((r) => (
+        {paths.routes.filter((r) => !routeIds || routeIds.includes(r.id)).map((r) => (
           <React.Fragment key={r.id}>
             <Path d={r.d} stroke={colors.surface} strokeOpacity={0.7} strokeWidth={7 * k} fill="none" strokeLinecap="round" strokeLinejoin="round" />
             <Path d={r.d} stroke={r.color} strokeWidth={4 * k} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={r.certainty === "hypothetical" || r.certainty === "disputed" ? `${10 * k} ${8 * k}` : r.certainty === "traditional" ? `${3 * k} ${6 * k}` : undefined} />

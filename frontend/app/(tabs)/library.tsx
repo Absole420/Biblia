@@ -361,6 +361,9 @@ export default function LibraryScreen() {
         {tab === "lexicon" ? (
           <>
             <View style={{ gap: spacing.sm, marginBottom: spacing.md }} testID="lexicon-infotafeln">
+              <Pressable testID="open-lexicon" onPress={() => router.push("/lexicon")} style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm, borderColor: colors.brandPrimary }]}>
+                <Icon name="book" size={18} color={colors.brandPrimary} /><Text style={[styles.cardTitle, { flex: 1 }]}>Lexikon öffnen – Artikel, Karten, Inhaltsplan</Text><Icon name="chevron-right" size={18} color={colors.muted} />
+              </Pressable>
               <Pressable testID="open-timeline" onPress={() => router.push("/timeline")} style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm }]}>
                 <Icon name="clock" size={18} color={colors.brandPrimary} /><Text style={[styles.cardTitle, { flex: 1 }]}>Zeitstrahl öffnen</Text><Icon name="chevron-right" size={18} color={colors.muted} />
               </Pressable>

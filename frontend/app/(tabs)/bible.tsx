@@ -11,7 +11,8 @@ import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
 import { Button, Chip } from "@/src/components/ui";
 import { displayedTranslation, getChapterSync, loadChapter, searchBible, TRANSLATIONS, verseKey } from "@/src/data/bible";
-import { BIBLE_BOOKS, BOOK_BY_CODE, parseRef } from "@/src/data/books";
+import { BIBLE_BOOKS, BOOK_BY_CODE, parseRef, parseRefs } from "@/src/data/books";
+import { ARTICLE_BY_ID, ARTICLES } from "@/src/data/articles";
 import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -22,7 +23,7 @@ export default function BibleScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const toast = useToast();
-  const params = useLocalSearchParams<{ b?: string; ch?: string; v?: string }>();
+  const params = useLocalSearchParams<{ b?: string; ch?: string; v?: string; lex?: string }>();
   const p = useProgress();
   const { state } = p;
   const [book, setBook] = useState("Joh");
@@ -149,6 +150,8 @@ export default function BibleScreen() {
     }
   };
 
+  // Lexikonartikel, deren Bibelstellen den gewählten Vers enthalten
+  const lexHits = sel ? ARTICLES.filter((a) => a.refs.some((r) => parseRefs(r).some(({ ref }) => ref && ref.code === book && ref.ch === ch && (!ref.v || (sel >= ref.v && sel <= (ref.vEnd ?? ref.v)))))) : [];
   const favBook = state.favorites.bible.some((f) => f.key === book);
   const favCh = state.favorites.bible.some((f) => f.key === `${book}:${ch}`);
 
@@ -194,6 +197,12 @@ export default function BibleScreen() {
           ))}
         </ScrollView>
       </View>
+      {params.lex && ARTICLE_BY_ID[params.lex] ? (
+        <Pressable testID="lexicon-return-button" style={styles.banner} onPress={() => { const id = params.lex!; router.setParams({ lex: undefined }); router.navigate({ pathname: "/lexicon/[id]", params: { id } }); }} accessibilityLabel="Zurück zum Lexikonartikel">
+          <Icon name="corner-up-left" size={16} color={colors.brandPrimary} />
+          <Text style={styles.bannerText}>Zurück zum Lexikon: {ARTICLE_BY_ID[params.lex].title}</Text>
+        </Pressable>
+      ) : null}
       {jumpFrom ? (
         <Pressable testID="xref-return-button" style={styles.banner} onPress={returnJump} accessibilityLabel="Zurück zur Ausgangsstelle">
           <Icon name="corner-up-left" size={16} color={colors.brandPrimary} />
@@ -307,6 +316,16 @@ export default function BibleScreen() {
               label={state.bookmarks.some((b) => b.key === key) ? "Lesezeichen entfernen" : "Lesezeichen setzen"}
               onPress={() => { p.toggleBookmark(key); toast.show("Lesezeichen aktualisiert"); }}
             />
+            {lexHits.length ? (
+              <>
+                <Text style={styles.label}>Im Lexikon</Text>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }} testID="verse-lexicon">
+                  {lexHits.map((a) => (
+                    <Chip key={a.id} testID={`verse-lex-${a.id}`} label={a.title} onPress={() => { setSel(null); router.push({ pathname: "/lexicon/[id]", params: { id: a.id } }); }} />
+                  ))}
+                </View>
+              </>
+            ) : null}
             <Text style={styles.label}>Farbige Markierung</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm }}>
               {state.categories.map((c) => (

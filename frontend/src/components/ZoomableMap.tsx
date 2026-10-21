@@ -59,7 +59,7 @@ export function ZoomableMap(props: Props) {
   };
   return (
     <View style={styles.root} onLayout={onLayout} testID={props.testID}>
-      {vp ? <Inner key={`${Math.round(vp.w)}x${Math.round(vp.h)}`} {...props} vw={vp.w} vh={vp.h} saved={saved} /> : null}
+      {vp && vp.w > 0 && vp.h > 0 ? <Inner key={`${Math.round(vp.w)}x${Math.round(vp.h)}`} {...props} vw={vp.w} vh={vp.h} saved={saved} /> : null}
     </View>
   );
 }

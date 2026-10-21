@@ -1,0 +1,23 @@
+{
+  "summary": "Retest of iteration 13 fixes on BIBLIA Lexikon stage 1 at 390x844 mobile viewport. BOTH FIXES VERIFIED GREEN. (1) Rel-navigation /lexicon/exil → tap rel-assyrien now navigates: URL changes to /lexicon/assyrien and article-title changes from 'Das Babylonische Exil' to 'Assyrien (Neuassyrisches Reich)'. article-back then returns correctly to /lexicon/exil with title 'Das Babylonische Exil'. Fixes confirmed in /app/frontend/app/lexicon/[id].tsx: outer ArticleRoute wraps ArticleScreen with key={id} (line 28), and openRel uses router.push(`/lexicon/${t}`) string path (line 68). (2) SVG NaN/Infinity console flood eliminated: 0 NaN/Infinity console errors on /lexicon/assyrien and /lexicon/abraham including after opening map-fullscreen modal and closing it. Fixes confirmed in /app/frontend/src/components/ZoomableMap.tsx (Inner now gated by vp && vp.w > 0 && vp.h > 0 with keyed remount on size change, line 62) and /app/frontend/src/components/GeoMap.tsx (k derived from minS with Number.isFinite guard, line 64). (3) Quick regression on /lexicon/passa: lexicon-search 'Pessach' returns lex-article-passa (1 Treffer). article-level-deep toggle expands article-toc from 5 → 8 chips. First ref chip 'ref-2Mo 12,1–14' opens ref-preview-sheet with 2172 chars Elberfelder 1905 text, ref-open-bible navigates to /bible?b=2Mo&ch=12&v=1&lex=passa, and lexicon-return-button returns to /lexicon/passa. 0 NaN/Infinity console errors across the regression flow. No PAGEERRORs. Both iteration-13 bugs are fully resolved — ready for sign-off.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Fix implementation looks clean: key={id} on the outer screen plus string path router.push correctly forces remount, which also incidentally fixes the stale-state concern raised in iteration 13 (level/note/scroll are now naturally reset per article).",
+    "ZoomableMap now re-mounts Inner on vp size change via `key=${w}x${h}`; this is a bigger hammer than strictly needed (saved zoom/pan is preserved via the saved ref so UX is unaffected), but it reliably prevents stale shared values when switching to/from fullscreen.",
+    "GeoMap k fallback uses Number.isFinite(minS) && minS > 0 — good defensive coding. Consider doing the same inside placesBox for ids producing a degenerate box, though no issue was observed in practice."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only retest; /api/bible returned happy-path text at 2172 chars during regression)", "frontend": "100% on scoped retest (3/3 flows green)"},
+  "seed_data_creation": "None — fresh browser context for every call; onboarding dismissed via 'Überspringen' when it appeared.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Note: because ArticleRoute now uses key={id} on ArticleScreen, during the brief router transition BOTH the old and new instances of [data-testid=\"article-title\"] and [data-testid=\"article-back\"] can appear in the DOM simultaneously (React mount of new before unmount of old). Playwright 'strict mode' matches multiple — use .last for the newly-rendered article or wait for the stale one to detach. Onboarding tutorial ('Überspringen' button) appears on first visit per fresh context and must be dismissed before interacting with content. ref-preview-sheet uses /api/bible and takes ~1.5–3s to resolve; wait at least 3s after tapping a ref chip before asserting the preview text."
+}

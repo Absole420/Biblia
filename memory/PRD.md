@@ -91,3 +91,13 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Favoriten Bibel (Buch/Kapitel über Herz im Kopf, Vers im Vers-Menü), Favoriten Studienreise (Herz in Lektion + Karten-Panel)
 - Lektionsnotizen; Bilder per Kamera/Galerie, nur lokal (expo-file-system), Titel+Notiz, Zuordnung Bibelstelle/Lektion
 - Schema v6 (favorites, photos)
+
+## Iteration 13 – Lexikon Etappe 1
+- Artikelmodell (articleTypes.ts), 8 Musterartikel, Inhaltsplan nach Büchern, /lexicon (Suche inkl. Alias, Filter Typ/Epoche/Region/Buch, Favoriten, Zuletzt), /lexicon/[id] (Überblick/Vertiefung, Ebenen-Kennzeichnung, Bibelvorschau ELB1905 + Rücksprung, Karte mit Zeitständen/Vollbild/Ortsliste, Verbindungen, Aus deinen Lernreisen, Notiz, Quellen); Versmenü „Im Lexikon“; state.lexicon
+- Übersicht: docs/LEXIKON_STAND.md
+
+## Lexikon Etappe 2 – Tora (Juni 2026)
+- 41 neue Artikel zu 1.–5. Mose (src/data/articlesTora1.ts, articlesTora2.ts); Tora-Inhaltsplan vollständig ausgearbeitet (49/135 gesamt).
+- 12 KI-Personenillustrationen (OpenAI GPT Image 1 via Emergent LLM Key), einmalig erzeugt mit backend/scripts/gen_illustrations.py, als JPEG gebündelt (assets/images/lexicon) → offline. Gekennzeichnet „Künstlerische Rekonstruktion – Aussehen nicht überliefert“.
+- Article.placeId verknüpft Kartenorte mit Artikeln. Testagent Iteration 15: alles grün.
+- Nächste Etappen: Josua–Könige, Propheten/Exil, Evangelien, Apg/Briefe; weitere Illustrationen.

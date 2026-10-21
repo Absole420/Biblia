@@ -191,3 +191,17 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 13: Lexikon Etappe 1"
+    implemented: true
+    working: "NA"
+    file: "app/lexicon/index.tsx, app/lexicon/[id].tsx, src/data/articles.ts, src/data/articleTypes.ts, src/data/lexiconPlan.ts, src/components/RefLinks.tsx, src/components/ArticleMap.tsx, app/(tabs)/bible.tsx, src/components/InfoSheet.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+  - task: "Iteration 14: Lexikon Etappe 2 (Tora, 41 neue Artikel) + KI-Personenillustrationen (GPT Image 1, 12 Bilder gebündelt)"
+    implemented: true
+    working: "NA"
+    file: "src/data/articlesTora1.ts, src/data/articlesTora2.ts, src/data/articleSources.ts, src/data/illustrations.ts, assets/images/lexicon/*.jpg, src/data/articles.ts, src/data/articleTypes.ts (placeId), app/lexicon/[id].tsx, app/lexicon/index.tsx, src/components/ArticleMap.tsx, backend/scripts/gen_illustrations.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

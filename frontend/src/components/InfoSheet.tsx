@@ -1,4 +1,6 @@
 import { useRouter } from "expo-router";
+
+import { ARTICLE_BY_ID } from "@/src/data/articles";
 import React, { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 
@@ -50,6 +52,11 @@ function InfoSheet({ id, onClose, onOpen }: { id: string | null; onClose: () => 
             {mapId ? (
               <Pressable testID="info-show-map" style={styles.btn} onPress={() => { onClose(); router.navigate({ pathname: "/", params: { theme: mapId, place: e.placeId } }); }}>
                 <Icon name="map-pin" size={15} color={colors.brandPrimary} /><Text style={styles.btnText}>Auf der Karte zeigen</Text>
+              </Pressable>
+            ) : null}
+            {ARTICLE_BY_ID[e.id] ? (
+              <Pressable testID="info-open-article" style={styles.btn} onPress={() => { onClose(); router.push({ pathname: "/lexicon/[id]", params: { id: e.id } }); }}>
+                <Icon name="book-open" size={15} color={colors.brandPrimary} /><Text style={styles.btnText}>Ganzen Artikel lesen</Text>
               </Pressable>
             ) : null}
             {e.year !== undefined ? (

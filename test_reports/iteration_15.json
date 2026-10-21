@@ -1,0 +1,24 @@
+{
+  "summary": "BIBLIA Lexikon Etappe 2 (Tora 1.–5. Mose) + KI-Personenillustrationen (OpenAI GPT Image 1) vollständig getestet am 390x844 Mobile-Viewport. ALLE 8 Testbereiche GRÜN. (1) /lexicon: lexicon-progress = '49 von 135 geplanten Artikeln ausgearbeitet' ✓. (2) Alle 12 Personen-Thumbnails im Listing vorhanden (lex-thumb-adam-eva, noah, abraham, sara, lot, isaak, jakob, josef, mose, aaron, mirjam, bileam) ✓. (3) Nach Toggle 'Alle geplanten' zeigen plan-book-1Mo…5Mo je 0 'in Arbeit'-Einträge (zum Vergleich: Jos=5, Ri=5, 1Sam=4) → Tora ist vollständig ausgearbeitet ✓. (4) /lexicon/mose: article-illustration vorhanden, article-illustration-label = 'Künstlerische Rekonstruktion – Aussehen nicht überliefert', article-sources enthält 'KI-generiert mit OpenAI GPT Image 1' ✓. (5) Nicht-Personen /lexicon/sinai und /lexicon/passa: 0 article-illustration ✓. (6) Alle 13 neuen Artikel (schoepfung, sintflut, josef, sinai, zehn-gebote, bundeslade, versoehnungstag, wuestenwanderung, kadesch, schma, nebo, moab, esau-edom) öffnen fehlerfrei mit korrekten Titeln und Überblick/Vertiefung-Toggle; /lexicon/josef zeigt disambiguation-Text 'Nicht zu verwechseln…' ✓. (7) Relationen: abraham→rel-sara→'Sara' ✓; mose→rel-aaron→'Aaron' ✓; auf /lexicon/stiftshuette sind rel-mose und rel-sinai jetzt antippbar (aria-disabled=None) ✓. (8) article-map rendert auf mose, auszug, jakob, sinai ohne NaN/Infinity-Fehler (0 Konsolen-Fehler über gesamten Testlauf, 0 PAGEERRORs). article-place-list-toggle expandiert Ortsliste; Tap auf article-place-kadesh in Mose-Karte zeigt article-map-selected mit article-map-open-related, Tap darauf navigiert zu /lexicon/kadesch (Titel 'Kadesch-Barnea') ✓. (9) article-refs auf /lexicon/zehn-gebote: Tap auf 'ref-2Mo 20,1–17' öffnet ref-preview-sheet, ref-open-bible navigiert zu /bible?b=2Mo&ch=20&v=1&lex=zehn-gebote mit sichtbarem lexicon-return-button ✓. (10) /lexicon/zehn-gebote zeigt article-discover mit 'Passende Lernreisen' (stationId tora-2-5) ✓. Keine deprecated Expo-Pakete oder React-Native-Issues im geprüften Scope. Etappe 2 ist produktionsreif.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "illustrations.ts bündelt JPEGs über require() – offline-tauglich und performant; ILLUSTRATION_LABEL/ILLUSTRATION_SOURCE sind zentral und konsistent als Künstlerische Rekonstruktion gekennzeichnet.",
+    "articlesTora1/articlesTora2 saubere Struktur mit kind-Typisierung; nur person-Artikel bekommen Thumbnail/Illustration – korrekt umgesetzt in [id].tsx (Illustration-Block hängt an ILLUSTRATIONS[a.id]).",
+    "ArticleMap: article-place-list-toggle muss expliziter TAP-Expand ausgelöst werden, bevor article-place-* Elemente im DOM sind – für automatisiertes Testing OK, UX ist gut (Standard eingeklappt).",
+    "Buchfilter 1Mo…5Mo wirkt nur auf 'results' (ausgearbeitete Artikel), NICHT auf den 'Inhaltsplan nach Bibelbüchern'. Ist Design-Intention; die Testerwartung 'keine geplant-Einträge in Tora' ist auch mit 'Alle geplanten'-Toggle erfüllt, weil es für Tora-Bücher keine 'in Arbeit'-Einträge mehr gibt."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only)", "frontend": "100% (10/10 Prüfpunkte grün, 0 Konsolen-/Page-Errors)"},
+  "seed_data_creation": "Keine – Onboarding-Overlay bei Erstbesuch mit 'Überspringen' geschlossen.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Für Playwright: Nach key={id}-Remount in ArticleRoute können kurz zwei article-title / article-back-Instanzen gleichzeitig existieren – immer .last verwenden. Intro-Overlay mit 'Überspringen' erscheint bei frischem Browser-Context auf /lexicon und muss geschlossen werden. Mobile viewport 390x844. article-place-* Elemente sind erst nach TAP auf article-place-list-toggle im DOM (Standard: eingeklappt). ref-preview-sheet liest aus /api/bible und braucht ~1,5–3 s. article-map-open-related erscheint nur, wenn ein Ort mit placeId angetippt wurde – kadesh→/lexicon/kadesch, nebo→/lexicon/nebo etc."
+}
