@@ -1,0 +1,111 @@
+import { World } from "./types";
+
+// Fantasievolle Abenteuer-Weltkarte (KEINE geografische Darstellung).
+// Farbwelten gemäß Auftrag Abschnitt 4 – identisch in Hell- und Dunkelmodus.
+export const WORLD_MAP_W = 1000;
+export const WORLD_MAP_H = 1400;
+
+export const WORLDS: World[] = [
+  {
+    id: "tora",
+    title: "Die Tora",
+    subtitle: "Wüste, Bund & Verheißung",
+    books: ["Genesis", "Exodus", "Levitikus", "Numeri", "Deuteronomium"],
+    palette: { base: "#E3C48A", accent: "#3FA7A0", glow: "#F2D27A", ink: "#5C4318" },
+    x: 230, y: 1180, icon: "sunrise", status: "preview",
+    description: "Die fünf Bücher Mose – zuerst in ihrem eigenen historischen und jüdischen Kontext gelesen, danach mit christlichen Auslegungsperspektiven.",
+    planned: ["Schöpfung und Urgeschichte", "Abraham, Isaak und Jakob", "Josef in Ägypten", "Mose und der Exodus", "Der Bund am Sinai", "Die Zehn Gebote", "Die Stiftshütte", "Opfer und Reinheit", "Wüstenwanderung", "Das verheißene Land"],
+  },
+  {
+    id: "history",
+    title: "Geschichtsbücher",
+    subtitle: "Land, Richter & Könige",
+    books: ["Josua", "Richter", "Rut", "1–2 Samuel", "1–2 Könige", "1–2 Chronik", "Esra", "Nehemia", "Ester"],
+    palette: { base: "#9BA77A", accent: "#A9793F", glow: "#C9B37A", ink: "#3B3F26" },
+    x: 640, y: 1150, icon: "shield", status: "preview",
+    description: "Israels Geschichte von der Landnahme bis nach dem Exil – mit historischen Karten der Stämme und der Königreiche Israel und Juda.",
+    planned: ["Die zwölf Stämme", "Die Richterzeit", "David und Salomo", "Das geteilte Reich", "Exil und Rückkehr"],
+  },
+  {
+    id: "psalms",
+    title: "Psalmen & Weisheit",
+    subtitle: "Lieder unter Sternenlicht",
+    books: ["Hiob", "Psalmen", "Sprüche", "Prediger", "Hoheslied"],
+    palette: { base: "#7E8FC8", accent: "#8E6BB8", glow: "#E8E3FF", ink: "#232A55" },
+    x: 820, y: 900, icon: "star", status: "preview",
+    description: "Gebete, Klagen, Lobpreis und Lebensweisheit Israels.",
+    planned: ["Die Psalmen als Gebetbuch", "Klage und Vertrauen", "Weisheit der Sprüche", "Hiob und das Leid"],
+  },
+  {
+    id: "prophets",
+    title: "Die großen Propheten",
+    subtitle: "Feuer, Gericht & Hoffnung",
+    books: ["Jesaja", "Jeremia", "Klagelieder", "Hesekiel", "Daniel"],
+    palette: { base: "#2F4A7A", accent: "#E0A93B", glow: "#F07A3A", ink: "#F6E6C0" },
+    x: 220, y: 850, icon: "zap", status: "preview",
+    description: "Historische Hintergründe, Visionen, Gericht und Wiederherstellung. Messianisch gedeutete Stellen werden mit jüdischen und christlichen Lesarten gekennzeichnet. Erweiterung um die zwölf kleinen Propheten vorgesehen.",
+    planned: ["Jesaja – der Heilige Israels", "Jeremia – Prophet in der Krise", "Klagelieder über Jerusalem", "Hesekiels Visionen", "Daniel im Exil", "Später: Die zwölf kleinen Propheten"],
+  },
+  {
+    id: "gospels",
+    title: "Die vier Evangelien",
+    subtitle: "Sonnenlicht über Galiläa",
+    books: ["Matthäus", "Markus", "Lukas", "Johannes"],
+    palette: { base: "#7FAF6A", accent: "#F2C14E", glow: "#FFE7A0", ink: "#24391B" },
+    x: 520, y: 640, icon: "sun", status: "playable", campaignId: "john",
+    description: "Jedes Evangelium erhält eine eigene Karte und Kampagne. Das Johannesevangelium ist bereits vollständig spielbar.",
+    planned: ["Johannes (spielbar)", "Matthäus", "Markus", "Lukas", "Synoptischer Vergleich"],
+  },
+  {
+    id: "parables",
+    title: "Gleichnisse Jesu",
+    subtitle: "Felder, Saat & Feste",
+    books: ["Matthäus", "Markus", "Lukas"],
+    palette: { base: "#B7C46A", accent: "#D97736", glow: "#F6E39A", ink: "#3A3F14" },
+    x: 800, y: 560, icon: "feather", status: "preview",
+    description: "Eine eigene Abenteuerkarte: jedes Gleichnis ist eine Station mit Text, Hintergrund, Kernaussage und Auslegungsfragen.",
+    planned: ["Der Sämann", "Der barmherzige Samariter", "Der verlorene Sohn", "Das Senfkorn", "Die anvertrauten Talente"],
+  },
+  {
+    id: "acts",
+    title: "Apostelgeschichte",
+    subtitle: "Segel über das Meer",
+    books: ["Apostelgeschichte"],
+    palette: { base: "#4F8FB5", accent: "#EAD9B0", glow: "#BFE3F2", ink: "#123247" },
+    x: 220, y: 470, icon: "anchor", status: "preview",
+    description: "Die Reisen und Missionsstationen der frühen Christen auf historisch fundierten Karten.",
+    planned: ["Pfingsten in Jerusalem", "Stephanus und die Zerstreuung", "Die Reisen des Paulus", "Rom"],
+  },
+  {
+    id: "letters",
+    title: "Die Briefe",
+    subtitle: "Pergament & Gemeinde",
+    books: ["Römer", "1–2 Korinther", "Galater", "Epheser", "Philipper", "Kolosser", "1–2 Thess.", "1–2 Timotheus", "Titus", "Philemon", "Hebräer", "Jakobus", "1–2 Petrus", "1–3 Johannes", "Judas"],
+    palette: { base: "#8A2F3C", accent: "#E9DFC6", glow: "#D9A54E", ink: "#F6EBD6" },
+    x: 600, y: 330, icon: "mail", status: "preview",
+    description: "Jeder Brief einzeln studierbar – mit den Bereichen „Bibelstudium“ und „Wirken und Verstehen“.",
+    planned: ["Römer", "Galater", "Epheser", "Philipper", "Hebräer", "Jakobus"],
+  },
+  {
+    id: "revelation",
+    title: "Offenbarung",
+    subtitle: "Licht über den sieben Gemeinden",
+    books: ["Offenbarung"],
+    palette: { base: "#6E4E9A", accent: "#FFFFFF", glow: "#E8C766", ink: "#F7F1FF" },
+    x: 400, y: 150, icon: "eye", status: "preview",
+    description: "Die Städte der sieben Gemeinden in Kleinasien und die Bildsprache der Apokalyptik.",
+    planned: ["Die sieben Sendschreiben", "Thronsaalvision", "Neues Jerusalem"],
+  },
+];
+
+export const WORLD_PATH: [string, string][] = [
+  ["tora", "history"],
+  ["history", "psalms"],
+  ["tora", "prophets"],
+  ["psalms", "gospels"],
+  ["prophets", "gospels"],
+  ["gospels", "parables"],
+  ["gospels", "acts"],
+  ["acts", "letters"],
+  ["letters", "revelation"],
+];

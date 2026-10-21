@@ -1,0 +1,160 @@
+{
+  "app_name": "BIBLIA \u2013 Die Reise durch Gottes Wort",
+  "personality": "8 Hand-Drawn / Journal structure with 6 Glass/Luxe premium lighting and finish (Cozy Fantasy)",
+  "personality_one_liner": "An immersive, warm, and highly tactile cozy fantasy experience blending hand-drawn parchment aesthetics with premium, glowing UI overlays.",
+  "color": {
+    "surface": "#F9F3E8",
+    "onSurface": "#2C2822",
+    "surfaceSecondary": "#F2E8D5",
+    "onSurfaceSecondary": "#3A352D",
+    "surfaceTertiary": "#E8DCC4",
+    "onSurfaceTertiary": "#4A443A",
+    "surfaceInverse": "#2C2822",
+    "onSurfaceInverse": "#F9F3E8",
+    "brand": "#C28E3A",
+    "onBrand": "#2C2822",
+    "brandPrimary": "#C28E3A",
+    "onBrandPrimary": "#2C2822",
+    "brandSecondary": "#8A9A7B",
+    "onBrandSecondary": "#1E2619",
+    "brandTertiary": "#E0D3BB",
+    "onBrandTertiary": "#3A352D",
+    "success": "#607D5B",
+    "onSuccess": "#F9F3E8",
+    "warning": "#D4A352",
+    "onWarning": "#2C2822",
+    "error": "#B05A4E",
+    "onError": "#F9F3E8",
+    "info": "#4A7A8C",
+    "onInfo": "#F9F3E8",
+    "border": "#D8C9AE",
+    "borderStrong": "#BFA882",
+    "divider": "#E8DCC4",
+    "muted": "#7A7061",
+    "stationEvent": "#F9F3E8",
+    "stationNarrative": "#D97736",
+    "stationStudy": "#4A7A8C",
+    "stationPractice": "#607D5B",
+    "stationExam": "#C28E3A",
+    "stationChallenge": "#7E5B82"
+  },
+  "typography": {
+    "displayFontFamily": "Fraunces",
+    "textFontFamily": "Nunito",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous, organic spacing that allows the UI to breathe. Avoid tight clustering; let elements feel softly placed on the page rather than rigidly locked into a grid.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": 1,
+  "navigation": "bottom_tabs",
+  "icon_set": "Feather",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use heavy glassmorphism with a warm `surfaceSecondary` tint underneath for floating map controls, bottom tabs, and pinned headers to keep the rich map visible.",
+      "Ensure text on glass uses `onSurface` and contrast is guaranteed by adjusting tint opacity."
+    ],
+    "dont's": [
+      "Don't use glass on standard list items or cards inside the library; keep those solid parchment (`surfaceSecondary`)."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Weltkarte",
+      "purpose": "The core interactive hub featuring a large, zoomable fantasy map with interactive nodes and floating UI overlays.",
+      "states": {
+        "loading": "A warm fading logo against a solid parchment background.",
+        "empty": "N/A - The map always has content.",
+        "error": "A torn parchment style error card overlay."
+      },
+      "layout": "Full-bleed map behind all UI. Floating, glassmorphic bottom tab bar. Top area contains a floating glass pill with player XP/Level on the left, and a settings/filter button on the right. Map POIs are rendered as custom interactive SVG nodes. Tap on a POI opens a `@gorhom/bottom-sheet` displaying the station details (using the station colors)."
+    },
+    {
+      "name": "Lernstation (7-Phase Flow)",
+      "purpose": "Guides the user through a sequence of study, reading, and quizzes.",
+      "states": {
+        "loading": "Centered loading spinner with 'Bereite Station vor...'",
+        "empty": "Illustration of an open journal indicating no active tasks.",
+        "error": "Torn page message with a 'Neu laden' button."
+      },
+      "layout": "A stacked card or pager layout (react-native-reanimated). A sticky progress bar at the top (golden accent). Content area scrolls within a safe container. A sticky primary CTA ('Weiter' / 'Abschließen') at the bottom."
+    },
+    {
+      "name": "Studienbibliothek",
+      "purpose": "A cozy, searchable archive of unlocked content, notes, and bookmarks.",
+      "states": {
+        "loading": "Skeleton rows shaped like journal entries.",
+        "empty": "Illustration of an empty vintage notebook with text 'Deine Bibliothek ist noch leer.'",
+        "error": "Error message styled as a faded ink blot."
+      },
+      "layout": "A list of large, tactile cards. Top hero section features a cozy library image with a gradient-to-dark scrim. Cards use `surfaceSecondary` with `md` margin, layered over a `surface` background."
+    },
+    {
+      "name": "Profil & Journal",
+      "purpose": "Shows the user's progress, XP, badges, and learning history.",
+      "states": {
+        "loading": "Spinner on a parchment surface.",
+        "empty": "A faded map illustration encouraging the user to start a journey.",
+        "error": "Standard error overlay with retry button."
+      },
+      "layout": "Scrollable dashboard. Top section: User's level and XP with a prominent, warm golden glow/gradient. Middle section: Grid of badges/achievements. Bottom section: List of recent journal entries (notes)."
+    }
+  ],
+  "images": {
+    "hero_map_background": {
+      "url": "https://images.pexels.com/photos/9494903/pexels-photo-9494903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Close-up of an antiqued map highlighting in a warm sepia tone."
+    },
+    "empty_state_journal": {
+      "url": "https://images.pexels.com/photos/4925676/pexels-photo-4925676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "A vintage-style flatlay with an open notebook, book, hourglass, and leather items."
+    },
+    "study_library_cover": {
+      "url": "https://images.unsplash.com/photo-1600181982553-ce7d36051c01?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHxvbGQlMjBib29rcyUyMGxpYnJhcnklMjBjb3p5JTIwd2FybSUyMGxpZ2h0fGVufDB8fHx8MTc5MjU3NjgyMXww&ixlib=rb-4.1.0&q=85",
+      "alt": "A cozy warm lit wooden library bookshelf."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the '8 Hand-Drawn / Journal' mixed with '6 Glass/Luxe' personality. The UI must feel warm, organic, and premium (Cozy Fantasy).",
+    "The primary interactive map must be full-bleed, using `react-native-svg` and `react-native-gesture-handler` for pinch-to-zoom and pan interactions.",
+    "Do NOT use pure white or solid blacks. The base surface is `#F9F3E8` (warm parchment), and ink text is `#2C2822`.",
+    "All text overlaid on images must use a 3-stop vertical `expo-linear-gradient` (transparent -> 20% surfaceInverse -> 70% surfaceInverse) to ensure text contrast.",
+    "Use heavy glassmorphism for floating overlays (like bottom tabs and map filter pills) to allow the map to show through with a rich blurred effect. Make sure to apply the `low_end_android_fallback`.",
+    "Implement the 7-phase learning flow as a smooth, animated pager or step sequence using `react-native-reanimated`.",
+    "Primary call-to-action buttons should be sticky at the bottom of scrolling forms/flows, avoiding the safe area notch.",
+    "Do not use default system alerts or plain blue standard iOS buttons. Style every component to fit the theme.",
+    "Incorporate the specified custom station colors (`stationEvent`, `stationNarrative`, etc.) into the map POI markers and bottom sheets."
+  ]
+}

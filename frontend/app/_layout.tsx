@@ -1,0 +1,64 @@
+import { useFonts } from "expo-font";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { ActivityIndicator, LogBox, StyleSheet, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { KeyboardProvider } from "react-native-keyboard-controller";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
+import { ErrorBoundary } from "@/src/components/error-boundary";
+import { ToastProvider } from "@/src/components/Toast";
+import { ProgressProvider, useProgress } from "@/src/lib/store";
+import { queryClient } from "@/src/query-client";
+import { useTheme } from "@/src/theme";
+
+LogBox.ignoreAllLogs(true);
+
+function AppStack() {
+  const { ready } = useProgress();
+  const { colors, scheme } = useTheme();
+  if (!ready) {
+    return (
+      <View style={[styles.root, { backgroundColor: colors.surface, alignItems: "center", justifyContent: "center" }]}>
+        <ActivityIndicator color={colors.brandPrimary} size="large" />
+      </View>
+    );
+  }
+  return (
+    <>
+      <StatusBar style={scheme === "dark" ? "light" : "dark"} />
+      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.surface } }}>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="world/[id]" />
+        <Stack.Screen name="station/[id]" options={{ gestureEnabled: false }} />
+        <Stack.Screen name="review" />
+        <Stack.Screen name="settings" />
+      </Stack>
+    </>
+  );
+}
+
+export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    Fraunces: require("../assets/fonts/Fraunces.ttf"),
+    Nunito: require("../assets/fonts/Nunito.ttf"),
+  });
+  return (
+    <GestureHandlerRootView style={styles.root}>
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <SafeAreaProvider>
+            <KeyboardProvider>
+              <ProgressProvider>
+                <ToastProvider>{fontsLoaded ? <AppStack /> : <View style={styles.root} />}</ToastProvider>
+              </ProgressProvider>
+            </KeyboardProvider>
+          </SafeAreaProvider>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </GestureHandlerRootView>
+  );
+}
+
+const styles = StyleSheet.create({ root: { flex: 1 } });
