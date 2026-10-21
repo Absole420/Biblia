@@ -36,6 +36,22 @@ PEOPLE = {
     "aaron": "A bearded man in simple priestly linen garments with a breastpiece, standing beside a desert tent sanctuary, holding a staff.",
     "mirjam": "A woman playing a frame drum and dancing with other women on a sandy shore by the sea, joyful, wind in her headscarf.",
     "bileam": "A man in a traveling cloak riding a donkey on a narrow path between vineyard walls, the donkey has stopped and turns its head, soft light on the path.",
+    # Etappe 3: Josua – Könige
+    "josua": "A strong middle-aged military leader in a simple cloak standing at the Jordan river ford, priests carrying a covered chest in the distance, morning mist.",
+    "rahab": "A woman leaning out of a window set into a mudbrick city wall at dusk, a scarlet cord hanging down the wall, palm trees of Jericho around.",
+    "debora": "A wise woman sitting under a large palm tree in hill country, people gathered before her seeking judgment, calm authority.",
+    "gideon": "A young farmer threshing wheat secretly in a stone winepress, looking up in surprise, olive trees around.",
+    "simson": "A very strong man with long braided hair standing between two massive stone pillars of a hall, pushing them apart, dust falling.",
+    "rut": "A young woman gleaning barley sheaves in a golden field at harvest time near Bethlehem, a basket at her side.",
+    "boas": "A dignified older landowner in a wool mantle standing in a barley field greeting reapers, friendly gesture.",
+    "samuel": "A boy lying awake on a mat in a dim lamp-lit sanctuary, listening attentively, oil lamp glowing.",
+    "saul": "A tall king with a simple bronze circlet and a spear, sitting troubled in a tent, a young musician with a lyre nearby.",
+    "david": "A young shepherd with a sling and a staff on a rocky hillside, sheep around him, a lyre slung on his back.",
+    "salomo": "A richly dressed young king standing in front of a cedar and stone temple under construction, craftsmen working, thoughtful expression.",
+    "elia": "A rugged prophet in a hair cloak with a leather belt standing on Mount Carmel beside a stone altar, flames rising, storm clouds over the sea.",
+    "elisa": "A bald-headed prophet in a plain mantle picking up another fallen cloak beside the Jordan river, a whirlwind fading in the sky.",
+    "hiskia": "A king kneeling in prayer in a temple court with an unrolled letter spread before him, worried but hopeful, Jerusalem walls behind.",
+    "josia": "A young king tearing his royal robe in grief while a scribe reads from an old scroll found in the temple.",
 }
 
 

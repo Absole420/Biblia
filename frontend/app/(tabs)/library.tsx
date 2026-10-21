@@ -5,6 +5,7 @@ import React, { useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { Book, BOOK_THEMES, BookTheme, Shelf } from "@/src/components/Bookshelf";
 import { FavHeart } from "@/src/components/FavHeart";
 import { Icon } from "@/src/components/Icon";
 import { InfoChip } from "@/src/components/InfoSheet";
@@ -12,7 +13,8 @@ import { PhotoAdd } from "@/src/components/PhotoAdd";
 import { VerseSnippet } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
-import { Button, Chip } from "@/src/components/ui";
+import { Button } from "@/src/components/ui";
+import { ARTICLES } from "@/src/data/articles";
 import { BOOK_BY_CODE } from "@/src/data/books";
 import { getVerse } from "@/src/data/bible";
 import { ALL_STATIONS } from "@/src/data/john";
@@ -24,15 +26,15 @@ import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
-type Tab = "mine" | "favBible" | "favLessons" | "photos" | "units" | "lexicon";
-const TABS: { id: Tab; label: string; icon: string }[] = [
-  { id: "mine", label: "Meine Einträge", icon: "edit-3" },
-  { id: "favBible", label: "Favoriten Bibel", icon: "heart" },
-  { id: "favLessons", label: "Favoriten Studienreise", icon: "heart" },
-  { id: "photos", label: "Bilder", icon: "image" },
-  { id: "units", label: "Lerneinheiten", icon: "layers" },
-  { id: "lexicon", label: "Lexikon", icon: "book" },
-];
+type Tab = "mine" | "favBible" | "favLessons" | "photos" | "units" | "terms";
+const TABS: Record<Tab, { label: string; spine: string; icon: string; theme: BookTheme }> = {
+  mine: { label: "Meine Einträge", spine: "Meine\nEinträge", icon: "edit-3", theme: BOOK_THEMES.mine },
+  favBible: { label: "Favoriten Bibel", spine: "Favoriten\nBibel", icon: "heart", theme: BOOK_THEMES.favBible },
+  favLessons: { label: "Favoriten Studienreise", spine: "Favoriten\nStudien-\nreise", icon: "compass", theme: BOOK_THEMES.favLessons },
+  photos: { label: "Bilder", spine: "Bilder", icon: "image", theme: BOOK_THEMES.photos },
+  units: { label: "Lerneinheiten", spine: "Lern-\neinheiten", icon: "layers", theme: BOOK_THEMES.units },
+  terms: { label: "Begriffe & Infotafeln", spine: "Begriffe &\nInfotafeln", icon: "bookmark", theme: BOOK_THEMES.lexicon },
+};
 
 const pl = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
@@ -50,7 +52,8 @@ export default function LibraryScreen() {
   const toast = useToast();
   const p = useProgress();
   const { state } = p;
-  const [tab, setTab] = useState<Tab>("mine");
+  const [tab, setTabState] = useState<Tab | null>(null);
+  const setTab = (t: Tab | null) => { setTabState(t); setQ(""); };
   const [area, setArea] = useState<"bible" | "journey">("bible");
   const [q, setQ] = useState("");
   const [edit, setEdit] = useState<{ id?: string; title: string; text: string } | null>(null);
@@ -136,24 +139,52 @@ export default function LibraryScreen() {
 
   return (
     <View style={styles.root} testID="library-screen">
-      <View>
-        <Image source={{ uri: COVER }} style={[styles.cover, { height: 130 + insets.top }]} contentFit="cover" />
-        <LinearGradient colors={["transparent", "rgba(44,40,34,0.2)", "rgba(44,40,34,0.75)"]} style={[styles.coverGrad, { height: 130 + insets.top }]} />
-        <View style={[styles.coverText, { top: insets.top + 48 }]}>
-          <Text style={styles.coverTitle}>Studienbibliothek</Text>
-          <Text style={styles.coverSub}>{pl(state.notes.length, "Notiz", "Notizen")} · {pl(Object.keys(state.highlights).length, "Markierung", "Markierungen")} · {pl(state.favorites.bible.length + state.favorites.lessons.length, "Favorit", "Favoriten")} · {pl(state.photos.length, "Bild", "Bilder")}</Text>
-        </View>
-      </View>
-      <View style={styles.searchWrap}>
-        <Icon name="search" size={18} color={colors.muted} />
-        <TextInput testID="library-search-input" value={q} onChangeText={setQ} placeholder="Suchen …" placeholderTextColor={colors.muted} style={styles.search} returnKeyType="search" />
-        {q ? <Pressable onPress={() => setQ("")} testID="library-search-clear" hitSlop={10}><Icon name="x-circle" size={18} color={colors.muted} /></Pressable> : null}
-      </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.chipRow} contentContainerStyle={styles.chipContent}>
-        {TABS.map((t) => <Chip key={t.id} testID={`library-tab-${t.id}`} label={t.label} selected={tab === t.id} onPress={() => setTab(t.id)} />)}
-      </ScrollView>
+      {tab === null ? (
+        <ScrollView contentContainerStyle={{ paddingBottom: bottomChrome + spacing.xxxl + 40 }} testID="library-shelf">
+          <View>
+            <Image source={{ uri: COVER }} style={[styles.cover, { height: 130 + insets.top }]} contentFit="cover" />
+            <LinearGradient colors={["transparent", "rgba(44,40,34,0.2)", "rgba(44,40,34,0.75)"]} style={[styles.coverGrad, { height: 130 + insets.top }]} />
+            <View style={[styles.coverText, { top: insets.top + 48 }]}>
+              <Text style={styles.coverTitle}>Studienbibliothek</Text>
+              <Text style={styles.coverSub}>{pl(state.notes.length, "Notiz", "Notizen")} · {pl(Object.keys(state.highlights).length, "Markierung", "Markierungen")} · {pl(state.favorites.bible.length + state.favorites.lessons.length, "Favorit", "Favoriten")} · {pl(state.photos.length, "Bild", "Bilder")}</Text>
+            </View>
+          </View>
+          <View style={{ padding: spacing.lg, maxWidth: 720, width: "100%", alignSelf: "center" }}>
+            <Text style={styles.shelfLabel}>Nachschlagewerke</Text>
+            <Shelf testID="shelf-reference">
+              <Book size="large" testID="open-lexicon" title="Lexikon" subtitle={`${ARTICLES.length} Artikel`} icon="book" theme={BOOK_THEMES.lexicon} onPress={() => router.push("/lexicon")} />
+              <Book size="large" testID="open-timeline" title="Zeitstrahl" subtitle="Urgeschichte bis Urkirche" icon="clock" theme={BOOK_THEMES.timeline} onPress={() => router.push("/timeline")} />
+            </Shelf>
+            <Text style={styles.shelfLabel}>Mein Studium</Text>
+            <Shelf testID="shelf-mine">
+              <SmallBook id="mine" count={state.notes.length + Object.keys(state.highlights).length + state.bookmarks.length} onOpen={setTab} />
+              <SmallBook id="favBible" count={state.favorites.bible.length} onOpen={setTab} />
+              <SmallBook id="favLessons" count={state.favorites.lessons.length} onOpen={setTab} />
+            </Shelf>
+            <Shelf testID="shelf-collection">
+              <SmallBook id="photos" count={state.photos.length} onOpen={setTab} />
+              <SmallBook id="units" count={state.units.length} onOpen={setTab} />
+              <SmallBook id="terms" count={terms.length} onOpen={setTab} />
+            </Shelf>
+          </View>
+        </ScrollView>
+      ) : (
+        <>
+          <View style={[styles.secHead, { paddingTop: insets.top + spacing.sm, backgroundColor: TABS[tab].theme.cover }]} testID={`library-section-${tab}`}>
+            <Pressable onPress={() => setTab(null)} testID="library-back-shelf" accessibilityLabel="Zurück zum Bücherregal" style={styles.secBack}>
+              <Icon name="arrow-left" size={22} color={TABS[tab].theme.ink} />
+            </Pressable>
+            <Icon name={TABS[tab].icon} size={20} color={TABS[tab].theme.trim} />
+            <Text style={[styles.secTitle, { color: TABS[tab].theme.ink }]} numberOfLines={1}>{TABS[tab].label}</Text>
+          </View>
+          <View style={[styles.secTrim, { backgroundColor: TABS[tab].theme.trim }]} />
+          <View style={styles.searchWrap}>
+            <Icon name="search" size={18} color={colors.muted} />
+            <TextInput testID="library-search-input" value={q} onChangeText={setQ} placeholder="Suchen …" placeholderTextColor={colors.muted} style={styles.search} returnKeyType="search" />
+            {q ? <Pressable onPress={() => setQ("")} testID="library-search-clear" hitSlop={10}><Icon name="x-circle" size={18} color={colors.muted} /></Pressable> : null}
+          </View>
 
-      <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingTop: spacing.sm, paddingBottom: bottomChrome + spacing.xxxl + 40 }} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingTop: spacing.md, paddingBottom: bottomChrome + spacing.xxxl + 40 }} keyboardShouldPersistTaps="handled">
         {tab === "mine" ? (
           <>
             <View style={styles.seg}>
@@ -358,15 +389,10 @@ export default function LibraryScreen() {
           </>
         ) : null}
 
-        {tab === "lexicon" ? (
+        {tab === "terms" ? (
           <>
             <View style={{ gap: spacing.sm, marginBottom: spacing.md }} testID="lexicon-infotafeln">
-              <Pressable testID="open-lexicon" onPress={() => router.push("/lexicon")} style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm, borderColor: colors.brandPrimary }]}>
-                <Icon name="book" size={18} color={colors.brandPrimary} /><Text style={[styles.cardTitle, { flex: 1 }]}>Lexikon öffnen – Artikel, Karten, Inhaltsplan</Text><Icon name="chevron-right" size={18} color={colors.muted} />
-              </Pressable>
-              <Pressable testID="open-timeline" onPress={() => router.push("/timeline")} style={[styles.card, { flexDirection: "row", alignItems: "center", gap: spacing.sm }]}>
-                <Icon name="clock" size={18} color={colors.brandPrimary} /><Text style={[styles.cardTitle, { flex: 1 }]}>Zeitstrahl öffnen</Text><Icon name="chevron-right" size={18} color={colors.muted} />
-              </Pressable>
+              <Text style={styles.date}>Infotafeln und Begriffe aus deinen begonnenen Lernreisen. Ausführliche Artikel findest du im Lexikon.</Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
                 {LEXICON.filter((e) => match(e.name)).map((e) => <InfoChip key={e.id} id={e.id} />)}
               </View>
@@ -381,6 +407,8 @@ export default function LibraryScreen() {
           </>
         ) : null}
       </ScrollView>
+        </>
+      )}
 
       {tab === "mine" || tab === "units" || tab === "photos" ? (
         <Pressable
@@ -421,6 +449,11 @@ export default function LibraryScreen() {
       </Sheet>
     </View>
   );
+}
+
+function SmallBook({ id, count, onOpen }: { id: Tab; count: number; onOpen: (t: Tab) => void }) {
+  const t = TABS[id];
+  return <Book size="small" testID={`library-tab-${id}`} title={t.spine} subtitle={count ? `${count}` : "leer"} badge={count || undefined} icon={t.icon} theme={t.theme} onPress={() => onOpen(id)} />;
 }
 
 function Empty({ text }: { text: string }) {
@@ -469,8 +502,11 @@ const useStyles = makeStyles((c) => ({
   coverSub: { fontFamily: fonts.text, fontSize: 13, fontWeight: "700", color: "#F2E8D5", marginTop: 4 },
   searchWrap: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginHorizontal: spacing.lg, marginTop: spacing.md, paddingHorizontal: spacing.lg, height: 48, borderRadius: radius.pill, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
   search: { flex: 1, fontFamily: fonts.text, fontSize: 16, color: c.onSurface, height: 48 },
-  chipRow: { height: 56, flexGrow: 0 },
-  chipContent: { gap: spacing.sm, paddingHorizontal: spacing.lg, alignItems: "center" },
+  shelfLabel: { fontFamily: fonts.display, fontSize: 19, fontWeight: "700", color: c.onSurface, marginBottom: spacing.sm },
+  secHead: { flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.md },
+  secBack: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(255,255,255,0.12)" },
+  secTitle: { flex: 1, fontFamily: fonts.display, fontSize: 22, fontWeight: "700" },
+  secTrim: { height: 3 },
   seg: { flexDirection: "row", backgroundColor: c.surfaceSecondary, borderRadius: radius.pill, padding: 3, borderWidth: 1, borderColor: c.border, marginBottom: spacing.md },
   segBtn: { flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, height: 42, borderRadius: radius.pill },
   segText: { fontFamily: fonts.text, fontWeight: "800", fontSize: 14 },

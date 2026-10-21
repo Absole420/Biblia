@@ -205,3 +205,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 16: Lexikon Etappe 3 (Josua–2. Könige, 31 Artikel, 15 neue KI-Bilder) + Bibliothek als Bücherregal"
+    implemented: true
+    working: "NA"
+    file: "src/data/articlesKings1.ts, src/data/articlesKings2.ts, src/data/illustrations.ts, src/components/Bookshelf.tsx, app/(tabs)/library.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

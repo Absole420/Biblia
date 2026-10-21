@@ -101,3 +101,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - 12 KI-Personenillustrationen (OpenAI GPT Image 1 via Emergent LLM Key), einmalig erzeugt mit backend/scripts/gen_illustrations.py, als JPEG gebündelt (assets/images/lexicon) → offline. Gekennzeichnet „Künstlerische Rekonstruktion – Aussehen nicht überliefert“.
 - Article.placeId verknüpft Kartenorte mit Artikeln. Testagent Iteration 15: alles grün.
 - Nächste Etappen: Josua–Könige, Propheten/Exil, Evangelien, Apg/Briefe; weitere Illustrationen.
+
+## Lexikon Etappe 3 – Josua bis 2. Könige + Bibliothek als Bücherregal (Juni 2026)
+- 31 neue Artikel (src/data/articlesKings1.ts, articlesKings2.ts); 80/135 gesamt. 15 weitere KI-Illustrationen (gesamt 27).
+- Bibliothek-Tab: Bücherregal (src/components/Bookshelf.tsx) – große Bücher Lexikon & Zeitstrahl, kleine Bücher Meine Einträge, Favoriten Bibel, Favoriten Studienreise, Bilder, Lerneinheiten, Begriffe & Infotafeln; Abschnitte mit farbigem Kopf und Zurück zum Regal.
+- Testagent Iteration 16: alles grün.
+- Offen: Etappen Esra–Propheten, Evangelien, Apg/Briefe/Offb.

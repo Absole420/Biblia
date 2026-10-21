@@ -2,6 +2,8 @@ import { Article } from "./articleTypes";
 import { SRC_BIBLE, SRC_GEO } from "./articleSources";
 import { ARTICLES_GEN } from "./articlesTora1";
 import { ARTICLES_EXO } from "./articlesTora2";
+import { ARTICLES_JOS } from "./articlesKings1";
+import { ARTICLES_KINGS } from "./articlesKings2";
 
 /** Etappe 1: je Artikeltyp ein Musterartikel. */
 const STAGE1: Article[] = [
@@ -221,7 +223,7 @@ const STAGE1: Article[] = [
   },
 ];
 
-/** Vollständig ausgearbeitete Artikel (Etappe 1 + Etappe 2: Tora). */
-export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO];
+/** Vollständig ausgearbeitete Artikel (Etappe 1, Etappe 2: Tora, Etappe 3: Josua–Könige). */
+export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS];
 
 export const ARTICLE_BY_ID: Record<string, Article> = Object.fromEntries(ARTICLES.map((a) => [a.id, a]));

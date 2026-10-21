@@ -15,6 +15,21 @@ export const ILLUSTRATIONS: Record<string, ImageSourcePropType> = {
   aaron: require("../../assets/images/lexicon/aaron.jpg"),
   mirjam: require("../../assets/images/lexicon/mirjam.jpg"),
   bileam: require("../../assets/images/lexicon/bileam.jpg"),
+  josua: require("../../assets/images/lexicon/josua.jpg"),
+  rahab: require("../../assets/images/lexicon/rahab.jpg"),
+  debora: require("../../assets/images/lexicon/debora.jpg"),
+  gideon: require("../../assets/images/lexicon/gideon.jpg"),
+  simson: require("../../assets/images/lexicon/simson.jpg"),
+  rut: require("../../assets/images/lexicon/rut.jpg"),
+  boas: require("../../assets/images/lexicon/boas.jpg"),
+  samuel: require("../../assets/images/lexicon/samuel.jpg"),
+  saul: require("../../assets/images/lexicon/saul.jpg"),
+  david: require("../../assets/images/lexicon/david.jpg"),
+  salomo: require("../../assets/images/lexicon/salomo.jpg"),
+  elia: require("../../assets/images/lexicon/elia.jpg"),
+  elisa: require("../../assets/images/lexicon/elisa.jpg"),
+  hiskia: require("../../assets/images/lexicon/hiskia.jpg"),
+  josia: require("../../assets/images/lexicon/josia.jpg"),
 };
 
 export const ILLUSTRATION_LABEL = "Künstlerische Rekonstruktion – Aussehen nicht überliefert";
