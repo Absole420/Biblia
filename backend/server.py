@@ -111,6 +111,36 @@ async def get_status_checks():
     return [StatusCheck(**status_check) for status_check in status_checks]
 
 # Include the router in the main app
+# ---- Studieninhalte (getrennt von Bibeltext und persönlichen Daten)
+with open(ROOT_DIR / "data" / "sources.json", encoding="utf-8") as _f:
+    SOURCES = _json.load(_f)
+COMMENTARIES = []
+for _p in (ROOT_DIR / "data" / "commentaries").glob("*.json"):
+    with open(_p, encoding="utf-8") as _f:
+        _d = _json.load(_f)
+    COMMENTARIES += [{**e, "source": _d["source"]} for e in _d["entries"]]
+
+
+@api_router.get("/study/sources")
+async def study_sources():
+    return {"sources": SOURCES}
+
+
+@api_router.get("/study/commentary/{book}/{chapter}")
+async def study_commentary(book: int, chapter: int):
+    return {"entries": [e for e in COMMENTARIES if e["book"] == book and e["chapter"] == chapter]}
+
+
+@api_router.get("/study/xref/{book}/{chapter}")
+async def study_xref(book: int, chapter: int):
+    p = ROOT_DIR / "data" / "xref" / f"{book}.json"
+    if not p.exists():
+        return {"refs": []}
+    with open(p, encoding="utf-8") as f:
+        rows = _json.load(f).get(str(chapter), [])
+    return {"refs": rows, "format": "verse,toBook,toCh,toV,toCh2,toV2,votes,versificationUncertain"}
+
+
 app.include_router(api_router)
 
 app.add_middleware(

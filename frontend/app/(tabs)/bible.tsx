@@ -4,6 +4,8 @@ import { ActivityIndicator, FlatList, Pressable, ScrollView, Text, TextInput, Vi
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
+import { CommentaryPanel, XrefPanel } from "@/src/components/VerseStudy";
+import { chapterState, markRead, REVIEW_INTERVALS, today, unmarkRead } from "@/src/lib/study";
 import { RefText } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
 import { useToast } from "@/src/components/Toast";
@@ -38,6 +40,14 @@ export default function BibleScreen() {
   const [results, setResults] = useState<{ book: number; chapter: number; verse: number; text: string }[] | null>(null);
   const [searching, setSearching] = useState(false);
   const [reload, setReload] = useState(0);
+  const [vtab, setVtab] = useState<"me" | "comm" | "xref">("me");
+  const [rangeTo, setRangeTo] = useState<number | null>(null);
+  const [jumpFrom, setJumpFrom] = useState<{ book: string; ch: number; v: number } | null>(null);
+  const [tagText, setTagText] = useState("");
+  const st = state.study;
+  const lh = st.reading.lineHeight;
+  const focus = st.reading.focus;
+  const restored = useRef(false);
   const pendingVerse = useRef<number | null>(null);
   const listRef = useRef<FlatList>(null);
   const chipsRef = useRef<ScrollView>(null);
@@ -53,6 +63,32 @@ export default function BibleScreen() {
     pendingVerse.current = v ?? null;
     setTimeout(() => chipsRef.current?.scrollTo({ x: Math.max(0, (c - 3) * 52), animated: true }), 250);
   }, []);
+
+  /* eslint-disable react-hooks/set-state-in-effect -- Navigation/Laden aus Parametern und Speicher */
+  useEffect(() => {
+    if (restored.current || params.ch) return;
+    restored.current = true;
+    if (st.lastPos) go(st.lastPos.book, st.lastPos.ch, st.lastPos.v);
+  }, [st.lastPos, params.ch, go]);
+
+  // Leseposition speichern (nicht während eines Sprungs zu einem Querverweis)
+  const savePos = useCallback((v: number) => {
+    if (jumpFrom) return;
+    p.updateStudy((x) => (x.lastPos?.book === book && x.lastPos?.ch === ch && x.lastPos?.v === v ? x : { ...x, lastPos: { book, ch, v, at: new Date().toISOString() } }));
+  }, [book, ch, jumpFrom, p]);
+  const posRef = useRef<((v: number) => void) | null>(null);
+  useEffect(() => { posRef.current = savePos; }, [savePos]);
+  const [onViewable] = useState(() => ({ viewableItems }: { viewableItems: { index: number | null }[] }) => {
+    const i = viewableItems[0]?.index;
+    if (i !== null && i !== undefined) posRef.current?.(i + 1);
+  });
+  const jumpTo = (b: string, c: number, v: number) => {
+    if (!jumpFrom) setJumpFrom({ book, ch, v: sel ?? 1 });
+    setSel(null);
+    go(b, c, v);
+  };
+  const returnJump = () => { const j = jumpFrom!; setJumpFrom(null); go(j.book, j.ch, j.v); };
+  const chState = chapterState(st.read, book, ch);
 
   useEffect(() => {
     if (params.ch) go(params.b && BOOK_BY_CODE[params.b] ? params.b : "Joh", Math.max(1, parseInt(params.ch, 10) || 1), parseInt(params.v ?? "1", 10) || 1);
@@ -78,13 +114,21 @@ export default function BibleScreen() {
       alive = false;
     };
   }, [book, ch, reload]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const key = sel ? verseKey(book, ch, sel) : "";
-  const label = sel ? `${info.name} ${ch},${sel}` : "";
+  const to = sel && rangeTo && rangeTo > sel ? Math.min(rangeTo, verses.length) : null;
+  const key = sel ? (to ? `${book}:${ch}:${sel}-${to}` : verseKey(book, ch, sel)) : "";
+  const label = sel ? `${info.name} ${ch},${sel}${to ? "–" + to : ""}` : "";
+  const rangeVerses = sel ? Array.from({ length: (to ?? sel) - sel + 1 }, (_, i) => sel + i) : [];
+  const isRead = rangeVerses.length > 0 && rangeVerses.every((v) => st.read[`${book}:${ch}`]?.includes(v));
+  const tagsOf = st.verseTags[key] ?? [];
   const existingNote = state.notes.find((n) => n.ref === key);
   const links = useMemo(() => state.links.filter((l) => l.from === key), [state.links, key]);
   const openVerse = (v: number) => {
     setSel(v);
+    setRangeTo(null);
+    setVtab("me");
+    savePos(v);
     setLinkText("");
     setNoteText(state.notes.find((n) => n.ref === verseKey(book, ch, v))?.text ?? "");
   };
@@ -114,6 +158,15 @@ export default function BibleScreen() {
             </View>
             <Text style={styles.sub} testID="bible-translation-label">{chosen.id === tr.id ? `Angezeigt: ${tr.name}` : `Angezeigt: ${tr.name} · ${chosen.short} nicht lizenziert`}</Text>
           </Pressable>
+          <Pressable testID="bible-study-button" style={styles.iconBtn} onPress={() => router.push("/study")} accessibilityLabel="Mein Studium öffnen">
+            <Icon name="layers" size={20} color={colors.onSurface} />
+          </Pressable>
+          <Pressable testID="bible-focus-toggle" style={styles.iconBtn} onPress={() => p.updateStudy((x) => ({ ...x, reading: { ...x.reading, focus: !x.reading.focus } }))} accessibilityLabel={focus ? "Ablenkungsarmen Modus beenden" : "Ablenkungsarmer Lesemodus"}>
+            <Icon name={focus ? "eye-off" : "eye"} size={20} color={colors.onSurface} />
+          </Pressable>
+          <Pressable testID="bible-lineheight" style={styles.iconBtn} onPress={() => p.updateStudy((x) => ({ ...x, reading: { ...x.reading, lineHeight: x.reading.lineHeight >= 2 ? 1.4 : Math.round((x.reading.lineHeight + 0.2) * 10) / 10 } }))} accessibilityLabel={`Zeilenabstand ändern, aktuell ${lh}`}>
+            <Icon name="align-justify" size={20} color={colors.onSurface} />
+          </Pressable>
           <Pressable testID="bible-search-button" style={styles.iconBtn} onPress={() => setSearchOpen(true)} accessibilityLabel="Bibel durchsuchen">
             <Icon name="search" size={18} color={colors.onSurface} />
           </Pressable>
@@ -127,7 +180,13 @@ export default function BibleScreen() {
           ))}
         </ScrollView>
       </View>
-      {!tr.available ? (
+      {jumpFrom ? (
+        <Pressable testID="xref-return-button" style={styles.banner} onPress={returnJump} accessibilityLabel="Zurück zur Ausgangsstelle">
+          <Icon name="corner-up-left" size={16} color={colors.brandPrimary} />
+          <Text style={styles.bannerText}>Zurück zu {BOOK_BY_CODE[jumpFrom.book].name} {jumpFrom.ch},{jumpFrom.v} (Leseposition bleibt dort gespeichert)</Text>
+        </Pressable>
+      ) : null}
+      {!tr.available && !focus ? (
         <View style={styles.banner} testID="neue-placeholder-banner">
           <Icon name="alert-triangle" size={16} color={colors.warning} />
           <Text style={styles.bannerText}>{tr.license} Angezeigt wird ersatzweise die Elberfelder 1905.</Text>
@@ -147,11 +206,22 @@ export default function BibleScreen() {
           data={verses}
           keyExtractor={(_, i) => `${book}-${ch}-${i}`}
           contentContainerStyle={{ padding: spacing.xl, paddingBottom: bottomChrome + spacing.xl }}
+          onViewableItemsChanged={onViewable}
+          viewabilityConfig={{ itemVisiblePercentThreshold: 60, minimumViewTime: 800 }}
           onScrollToIndexFailed={(i) => setTimeout(() => listRef.current?.scrollToOffset({ offset: i.averageItemLength * i.index, animated: true }), 100)}
           ListFooterComponent={
+            <View>
+            <Button
+              testID="chapter-mark-read"
+              icon={chState === "read" ? "check-circle" : "circle"}
+              variant={chState === "read" ? "secondary" : "ghost"}
+              label={chState === "read" ? "Kapitel gelesen – rückgängig" : chState === "partial" ? "Teilweise gelesen – ganz markieren" : "Kapitel als gelesen markieren"}
+              onPress={() => p.updateStudy((x) => ({ ...x, read: chState === "read" ? unmarkRead(x.read, book, ch) : markRead(x.read, book, ch), readLog: chState === "read" ? x.readLog : [...x.readLog, { date: today(), book, ch }] }))}
+            />
             <View style={styles.footerNav}>
               {ch > 1 ? <Button testID="bible-prev-chapter" label={`Kapitel ${ch - 1}`} icon="chevron-left" variant="ghost" onPress={() => go(book, ch - 1)} /> : <View />}
               {ch < info.chapters ? <Button testID="bible-next-chapter" label={`Kapitel ${ch + 1}`} icon="chevron-right" variant="ghost" onPress={() => go(book, ch + 1)} /> : null}
+            </View>
             </View>
           }
           renderItem={({ item, index }) => {
@@ -164,11 +234,11 @@ export default function BibleScreen() {
             const inUnit = state.units.some((u) => u.refs.includes(k));
             return (
               <Pressable testID={`verse-${ch}-${v}`} onPress={() => openVerse(v)} style={[styles.verse, col ? { backgroundColor: col + "33", borderLeftColor: col } : null]} accessibilityHint="Öffnet Lesezeichen, Markierung, Kommentar, Verknüpfung und Lerneinheit">
-                <Text style={[styles.verseText, { fontSize: 18 * fs, lineHeight: 30 * fs }]}>
+                <Text style={[styles.verseText, { fontSize: 18 * fs, lineHeight: 18 * fs * lh }]}>
                   <Text style={styles.vnum}>{v}  </Text>
                   {item}
                 </Text>
-                {marked || hasNote || hasLink || inUnit ? (
+                {!focus && (marked || hasNote || hasLink || inUnit) ? (
                   <View style={styles.icons}>
                     {marked ? <Icon name="bookmark" size={14} color={colors.brandPrimary} /> : null}
                     {hasNote ? <Icon name="message-square" size={14} color={colors.info} /> : null}
@@ -187,6 +257,28 @@ export default function BibleScreen() {
         {sel ? (
           <View>
             <Text style={styles.sheetVerse}>{verses[sel - 1]}</Text>
+            <View style={styles.tabRow} accessibilityRole="tablist">
+              {([["me", "Persönlich"], ["comm", "Studienkommentare"], ["xref", "Querverweise"]] as const).map(([id, l]) => (
+                <Pressable key={id} testID={`verse-tab-${id}`} accessibilityRole="tab" accessibilityState={{ selected: vtab === id }} onPress={() => setVtab(id)} style={[styles.tabBtn, vtab === id && { borderBottomColor: colors.brandPrimary }]}>
+                  <Text style={[styles.tabText, vtab === id && { color: colors.brandPrimary }]}>{l}</Text>
+                </Pressable>
+              ))}
+            </View>
+            {vtab === "comm" ? <CommentaryPanel book={book} ch={ch} v={sel} /> : null}
+            {vtab === "xref" ? <XrefPanel book={book} ch={ch} v={sel} onJump={jumpTo} /> : null}
+            {vtab === "me" ? (<>
+            <Text style={styles.label}>Bereich</Text>
+            <View style={styles.inlineRow}>
+              <Text style={styles.rangeText}>V. {sel} bis</Text>
+              <Pressable testID="range-minus" style={styles.addBtn} onPress={() => setRangeTo((r) => (r && r > sel + 1 ? r - 1 : null))} accessibilityLabel="Bereich verkleinern"><Icon name="minus" size={18} color={colors.onBrandPrimary} /></Pressable>
+              <Text style={styles.rangeText} testID="range-to">{to ?? sel}</Text>
+              <Pressable testID="range-plus" style={styles.addBtn} onPress={() => setRangeTo((r) => Math.min(verses.length, (r ?? sel) + 1))} accessibilityLabel="Bereich vergrößern"><Icon name="plus" size={18} color={colors.onBrandPrimary} /></Pressable>
+            </View>
+            <View style={[styles.inlineRow, { flexWrap: "wrap" }]}>
+              <Button testID="verse-mark-read" icon={isRead ? "check-circle" : "circle"} variant={isRead ? "secondary" : "ghost"} label={isRead ? "Gelesen – rückgängig" : "Als gelesen markieren"} onPress={() => p.updateStudy((x) => ({ ...x, read: isRead ? unmarkRead(x.read, book, ch, rangeVerses) : markRead(x.read, book, ch, rangeVerses) }))} />
+              <Button testID="verse-review-add" icon="repeat" variant="ghost" label={st.review.some((r) => r.key === key) ? "In Merkliste" : "Zur Merkliste"} onPress={() => { if (!st.review.some((r) => r.key === key)) p.updateStudy((x) => ({ ...x, review: [...x.review, { key, addedAt: new Date().toISOString(), due: today(), step: 0, intervals: REVIEW_INTERVALS }] })); toast.show("Zur Merkliste hinzugefügt"); }} />
+              <Button testID="verse-journal" icon="edit-3" variant="ghost" label="Journal" onPress={() => { setSel(null); router.push({ pathname: "/study/journal", params: { ref: key } }); }} />
+            </View>
             <Button
               testID="verse-bookmark-button"
               variant={state.bookmarks.some((b) => b.key === key) ? "secondary" : "ghost"}
@@ -197,11 +289,21 @@ export default function BibleScreen() {
             <Text style={styles.label}>Farbige Markierung</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm }}>
               {state.categories.map((c) => (
-                <Chip key={c.id} testID={`highlight-${c.id}`} label={c.name} color={c.color} selected={state.highlights[key] === c.id} onPress={() => p.setHighlight(key, state.highlights[key] === c.id ? null : c.id)} />
+                <Chip key={c.id} testID={`highlight-${c.id}`} label={c.name} color={c.color} selected={state.highlights[verseKey(book, ch, sel)] === c.id} onPress={() => { const off = state.highlights[verseKey(book, ch, sel)] === c.id; rangeVerses.forEach((v) => p.setHighlight(verseKey(book, ch, v), off ? null : c.id)); }} />
               ))}
             </ScrollView>
 
-            <Text style={styles.label}>Kommentar</Text>
+            <Text style={styles.label}>Themen & Tags</Text>
+            <View style={[styles.inlineRow, { flexWrap: "wrap" }]}>
+              {st.tags.map((t) => (
+                <Chip key={t} testID={`tag-${t}`} label={t} selected={tagsOf.includes(t)} onPress={() => p.updateStudy((x) => ({ ...x, verseTags: { ...x.verseTags, [key]: tagsOf.includes(t) ? tagsOf.filter((y) => y !== t) : [...tagsOf, t] } }))} />
+              ))}
+            </View>
+            <View style={styles.inlineRow}>
+              <TextInput testID="tag-new-input" value={tagText} onChangeText={setTagText} placeholder="Neues Thema/Tag" placeholderTextColor={colors.muted} style={[styles.inputSm, { flex: 1 }]} />
+              <Pressable testID="tag-new-add" style={styles.addBtn} accessibilityLabel="Tag anlegen" onPress={() => { const t = tagText.trim(); if (!t) return; p.updateStudy((x) => ({ ...x, tags: x.tags.includes(t) ? x.tags : [...x.tags, t], verseTags: { ...x.verseTags, [key]: [...new Set([...(x.verseTags[key] ?? []), t])] } })); setTagText(""); }}><Icon name="plus" size={20} color={colors.onBrandPrimary} /></Pressable>
+            </View>
+            <Text style={styles.label}>Eigener Kommentar / Notiz (nur für dich)</Text>
             <TextInput testID="verse-note-input" value={noteText} onChangeText={setNoteText} multiline placeholder="Gedanken, Fragen, Wortstudie …" placeholderTextColor={colors.muted} style={styles.input} />
             <Button
               testID="verse-note-save"
@@ -262,6 +364,7 @@ export default function BibleScreen() {
                 />
               ))}
             </ScrollView>
+            </>) : null}
           </View>
         ) : null}
       </Sheet>
@@ -330,6 +433,10 @@ const useStyles = makeStyles((c) => ({
   icons: { flexDirection: "row", gap: 8, marginTop: 4 },
   footerNav: { flexDirection: "row", justifyContent: "space-between", marginTop: spacing.xl, gap: spacing.sm },
   sheetVerse: { fontFamily: fonts.display, fontSize: 18, lineHeight: 28, color: c.onSurface, marginBottom: spacing.lg },
+  tabRow: { flexDirection: "row", borderBottomWidth: 1, borderBottomColor: c.divider, marginTop: spacing.md, marginBottom: spacing.sm },
+  tabBtn: { flex: 1, minHeight: 44, alignItems: "center", justifyContent: "center", borderBottomWidth: 3, borderBottomColor: "transparent" },
+  tabText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800", color: c.muted },
+  rangeText: { fontFamily: fonts.text, fontSize: 15, fontWeight: "700", color: c.onSurface },
   label: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800", letterSpacing: 1, textTransform: "uppercase", color: c.brandPrimary, marginTop: spacing.xl, marginBottom: spacing.sm },
   input: { minHeight: 90, textAlignVertical: "top", backgroundColor: c.surfaceSecondary, borderRadius: radius.md, borderWidth: 1, borderColor: c.border, padding: spacing.lg, fontFamily: fonts.text, color: c.onSurface, fontSize: 16 },
   inputSm: { height: 48, backgroundColor: c.surfaceSecondary, borderRadius: radius.md, borderWidth: 1, borderColor: c.border, paddingHorizontal: spacing.lg, fontFamily: fonts.text, color: c.onSurface, fontSize: 16 },

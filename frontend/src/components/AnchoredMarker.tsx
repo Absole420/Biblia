@@ -5,7 +5,17 @@ import Animated, { Easing, SharedValue, useAnimatedStyle, useSharedValue, withTi
 import { Placed } from "@/src/lib/mapLayout";
 
 // Zoomzustand der umgebenden Karte (wird von ZoomableMap bereitgestellt).
-export type MapZoom = { scale: SharedValue<number>; minS: number; zoom: number };
+export type MapRect = { x: number; y: number; w: number; h: number };
+export type MapZoom = {
+  scale: SharedValue<number>;
+  minS: number;
+  zoom: number;
+  // Zuletzt ruhende Transformation + sichtbare Fläche (Bildschirmpixel) und fest eingeblendete Bedienelemente
+  snap?: { tx: number; ty: number; s: number };
+  vw?: number;
+  vh?: number;
+  reserved?: MapRect[];
+};
 export const MapZoomContext = createContext<MapZoom | null>(null);
 
 export function useMapZoom(): MapZoom {

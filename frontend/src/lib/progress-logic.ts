@@ -1,8 +1,9 @@
 // Reine (seiteneffektfreie) Fortschrittslogik – testbar ohne UI.
 import type { Station } from "../data/types";
 import { Avatar, sanitizeAvatar } from "./avatar";
+import { DEFAULT_STUDY, sanitizeStudy, StudyState } from "./study";
 
-export const SCHEMA_VERSION = 4;
+export const SCHEMA_VERSION = 5;
 
 export type StationProgress = { completedAt: string; examScore: number; examTotal: number; bestScore: number; attempts: number };
 export type Note = { id: string; title: string; text: string; ref?: string; createdAt: string; updatedAt: string };
@@ -32,6 +33,7 @@ export type AppState = {
   links: VerseLink[];
   units: StudyUnit[];
   avatar: Avatar | null; // v4: persönliche Lernfigur (beeinflusst den Lernfortschritt nicht)
+  study: StudyState; // v5: Leseposition, Lesefortschritt, Lesepläne, Tags, Merkliste, Journal
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -65,6 +67,7 @@ export function defaultState(): AppState {
     links: [],
     units: [],
     avatar: null,
+    study: DEFAULT_STUDY,
   };
 }
 
@@ -101,6 +104,8 @@ export function migrate(raw: unknown): AppState {
     units: Array.isArray(r.units) ? r.units.filter((u: any) => isObj(u) && typeof u.id === "string").map((u: any) => ({ description: "", refs: [], questions: [], ...u })) : [],
     // v3 -> v4: Avatar
     avatar: sanitizeAvatar(r.avatar),
+    // v4 -> v5: persönlicher Studienbereich
+    study: sanitizeStudy(r.study),
   };
 }
 

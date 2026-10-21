@@ -137,5 +137,98 @@ export function solveLayout(items: LayoutItem[], obstacles: Rect[], bounds: { w:
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// Beschriftungslayout für Karten mit festen Markern (historische Orte).
+// Marker bleiben exakt an ihren Koordinaten; verschoben werden nur Beschriftungen.
+// Alle Werte im „Layoutraum“ = Bildschirmpixel der aktuellen Zoomstufe.
+
+export type LabelItem = {
+  id: string;
+  x: number;
+  y: number;
+  r: number; // Marker-Radius inkl. Antippfläche
+  w: number; // Beschriftungsbreite
+  h: number; // Beschriftungshöhe
+  priority: number; // höher = zuerst platziert, nie gruppiert
+  pinned?: boolean; // ausgewählt / lektionsrelevant: wird nicht in Gruppen aufgenommen
+};
+export type LabelPlaced = {
+  head: boolean; // Marker sichtbar (eigenständig oder als Gruppenkopf)
+  members: string[]; // ids der zusammengefassten Orte (inkl. Kopf)
+  label: { dx: number; dy: number; slot: number } | null; // null = Beschriftung ausgeblendet
+};
+
+const inter = (a: Rect, b: Rect) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+const inside = (a: Rect, b: Rect) => a.x >= b.x && a.y >= b.y && a.x + a.w <= b.x + b.w && a.y + a.h <= b.y + b.h;
+
+/** 8 nahe Positionen direkt am Marker, danach 8 entfernte (mit Verbindungslinie). */
+export function labelSlots(r: number, w: number, h: number, g: number): [number, number][] {
+  const out: [number, number][] = [];
+  for (const far of [0, h * 1.5 + 8]) {
+    const d = r + g + far;
+    const dd = (r + far) * 0.72 + g;
+    out.push(
+      [d, -h / 2], [-d - w, -h / 2], [-w / 2, -d - h], [-w / 2, d],
+      [dd, -dd - h], [dd, dd], [-dd - w, -dd - h], [-dd - w, dd],
+    );
+  }
+  return out;
+}
+export const FAR_SLOT = 8;
+
+export function solveLabels(
+  items: LabelItem[],
+  opts: { view: Rect; reserved: Rect[]; obstacles: Rect[]; prev?: Record<string, LabelPlaced>; gap: number; clusterGap: number },
+): Record<string, LabelPlaced> {
+  const order = [...items].sort((a, b) => b.priority - a.priority || (a.id < b.id ? -1 : 1));
+  const out: Record<string, LabelPlaced> = {};
+  // 1) Gruppieren: dicht beieinanderliegende Marker werden vom wichtigsten Ort angeführt.
+  const heads: LabelItem[] = [];
+  for (const it of order) {
+    const h = !it.pinned && heads.find((hd) => Math.hypot(hd.x - it.x, hd.y - it.y) < hd.r + it.r + opts.clusterGap);
+    if (h) out[h.id].members.push(it.id);
+    else {
+      heads.push(it);
+      out[it.id] = { head: true, members: [it.id], label: null };
+    }
+    if (h) out[it.id] = { head: false, members: [], label: null };
+  }
+  // 2) Beschriftungen in Prioritätsreihenfolge platzieren.
+  const markers = heads.map((h) => ({ id: h.id, b: { x: h.x - h.r, y: h.y - h.r, w: h.r * 2, h: h.r * 2 } }));
+  const placed: Rect[] = [];
+  const m = opts.gap;
+  for (const it of heads) {
+    const anchorIn = inside({ x: it.x, y: it.y, w: 0, h: 0 }, opts.view);
+    const slots = labelSlots(it.r, it.w, it.h, opts.gap);
+    const prevSlot = opts.prev?.[it.id]?.label?.slot;
+    let best = -1;
+    let bestCost = Infinity;
+    let soft = -1;
+    let softCost = Infinity;
+    slots.forEach(([dx, dy], si) => {
+      const r = { x: it.x + dx, y: it.y + dy, w: it.w, h: it.h };
+      const rm = { x: r.x - m, y: r.y - m, w: r.w + 2 * m, h: r.h + 2 * m };
+      let hard = 0;
+      if (anchorIn && !inside(r, opts.view)) hard++;
+      for (const p of placed) if (inter(rm, p)) hard++;
+      for (const mk of markers) if (mk.id !== it.id && inter(r, mk.b)) hard++;
+      for (const o of opts.reserved) if (inter(r, o)) hard++;
+      let cost = si * 1 + (si >= FAR_SLOT ? 6 : 0);
+      for (const o of opts.obstacles) if (inter(r, o)) cost += 4;
+      if (si === prevSlot) cost -= 5; // Hysterese gegen Springen
+      if (hard === 0 && cost < bestCost) { bestCost = cost; best = si; }
+      const sc = cost + hard * 100;
+      if (sc < softCost) { softCost = sc; soft = si; }
+    });
+    const pick = best >= 0 ? best : it.pinned ? soft : -1;
+    if (pick >= 0) {
+      const [dx, dy] = slots[pick];
+      out[it.id].label = { dx, dy, slot: pick };
+      placed.push({ x: it.x + dx, y: it.y + dy, w: it.w, h: it.h });
+    }
+  }
+  return out;
+}
+
 /** Grobe Textbreite für Kollisionsboxen (fette Schrift). */
 export const textWidth = (text: string, fontSize: number) => text.length * fontSize * 0.62;

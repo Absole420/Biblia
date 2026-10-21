@@ -57,7 +57,23 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Avatar (Schema v4): Editor /avatar, Anzeige in Profil, HUD, Abenteuerkarte, historische Karte („Du“, Kollisionslayout), Stationsstart/-abschluss; Export/Import mit Validierung
 - Intro: „by Absole“
 
+## Iteration 7 (2026-06)
+- Persönlicher Studienbereich (/study): Weiterlesen, Heute lesen, Lesepläne (Vorlagen + Editor + Vorschau + Umplanen), Lesefortschritt je Buch (eindeutige Verse), Suche & Sammlung mit Tags/Filtern, Merkliste (1/3/7/14/30 Tage), Studienjournal, Quellenübersicht
+- Bibel: Leseposition wird gespeichert/wiederhergestellt; Querverweis-Sprung mit Rückkehr (überschreibt Position nicht); Versmenü-Reiter Persönlich/Studienkommentare/Querverweise; Versbereiche; als gelesen markieren; Fokusmodus; Zeilenabstand
+- Inhalte getrennt im Backend: /api/study/sources, /api/study/commentary, /api/study/xref (OpenBible CC BY, ≥8 Stimmen; KJV-Verszählung markiert), Matthew Henry Concise (gemeinfrei, englisch) Beispielbestand Joh 3
+- Schema v5 (study)
+- Offen: Erinnerungen (Benachrichtigungen), Tablet-Split-View, deutschsprachiger gemeinfreier Kommentar (Bengel/Werner) – Textquelle fehlt
+
 ## Backlog
 - P1: Lernwelten Geschichtsbücher, Psalmen, Offenbarung mit Inhalten füllen
 - P1: Builder-Modus (Karteneditor), weitere Lernwelten (Tora, Propheten, Evangelien, Apg, Briefe, Gleichnisse), weitere Aufgabentypen (Orte auf Karte zuordnen, Bilder zuordnen, Rätsel), Studienpläne
 - P2: Lizenz NeÜ, handgemalte Illustrationen, Tablet-Layouts, synoptischer Vergleich
+
+## Iteration 9 – Karten-Layout in allen Lernwelten (agent-tested, iteration_9.json)
+- ZoomableMap: cover-fit (kein Leerraum), Startausschnitt aus lektionsrelevanten Orten, Buttons Zoom/Alle relevanten Orte/Ansicht zurücksetzen/Vollbild, Position bleibt bei Größenwechsel, keepVisible bei offener Infotafel
+- GeoMap: Marker fix an Koordinaten, solveLabels (16 Slots, Leader-Linien, Hysterese, Gruppen +n, Ausblenden nachrangiger Labels, reservierte Bedienflächen)
+- MapPanel (nicht-modal, unten/seitlich ab 720px), MapLegend (Legende, Linienarten, Quellen, Ortsliste)
+- Lint/Typecheck projektweit sauber
+## Offen
+- Leseplan-Details (Ruhe-/Puffertage, verpasste Tage, Themenpläne) prüfen/ergänzen
+- Deutsche gemeinfreie Kommentarquelle; Elberfelder 2006 nur mit Lizenz

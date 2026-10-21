@@ -1,19 +1,22 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import React, { useMemo, useState } from "react";
-import { Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { BackHandler, Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CampaignMapContent } from "@/src/components/CampaignMap";
-import { GeoMap } from "@/src/components/GeoMap";
+import { MapRect } from "@/src/components/AnchoredMarker";
+import { GeoMap, placesBox } from "@/src/components/GeoMap";
 import { Icon } from "@/src/components/Icon";
-import { PlaceSheet } from "@/src/components/PlaceSheet";
-import { Sheet } from "@/src/components/Sheet";
+import { MapLegend } from "@/src/components/MapLegend";
+import { MapPanel } from "@/src/components/MapPanel";
+import { PlaceDot } from "@/src/components/MapPlaceMarker";
+import { CertaintyBadge, certaintyColor, PlaceDetails } from "@/src/components/PlaceSheet";
 import { Button, Chip, ProgressBar } from "@/src/components/ui";
-import { ZoomableMap } from "@/src/components/ZoomableMap";
+import { MapHandle, ZoomableMap } from "@/src/components/ZoomableMap";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { CAMPAIGNS } from "@/src/data/john";
-import { CERTAINTY_META, STATION_META } from "@/src/data/meta";
-import { GeoPlace, mapSize, THEME_MAPS } from "@/src/data/themeMaps";
+import { STATION_META } from "@/src/data/meta";
+import { GeoPlace, mapSize, projectGeo, THEME_MAPS } from "@/src/data/themeMaps";
 import { WORLDS } from "@/src/data/worlds";
 import { INFO_BY_ID } from "@/src/data/lexicon";
 import { stationStatus } from "@/src/lib/progress-logic";
@@ -34,8 +37,8 @@ function Header({ title, subtitle, right }: { title: string; subtitle?: string; 
   const router = useRouter();
   const insets = useSafeAreaInsets();
   return (
-    <View style={[styles.header, { paddingTop: insets.top + spacing.sm }]}>
-      <Pressable style={styles.back} onPress={() => router.back()} testID="world-back-button" accessibilityLabel="Zurück">
+    <View style={[styles.header, { paddingTop: insets.top + spacing.xs }]}>
+      <Pressable style={styles.back} onPress={() => (router.canGoBack() ? router.back() : router.replace("/"))} testID="world-back-button" accessibilityLabel="Zurück">
         <Icon name="arrow-left" size={22} color={colors.onSurface} />
       </Pressable>
       <View style={{ flex: 1 }}>
@@ -46,6 +49,8 @@ function Header({ title, subtitle, right }: { title: string; subtitle?: string; 
     </View>
   );
 }
+
+const pad = (b: { x: number; y: number; w: number; h: number }, m: number) => ({ x: b.x - m, y: b.y - m, w: b.w + 2 * m, h: b.h + 2 * m });
 
 function CampaignScreen({ worldId }: { worldId: string }) {
   const styles = useStyles();
@@ -60,96 +65,185 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const hMap = THEME_MAPS[world.id] ?? THEME_MAPS.gospels;
   const [sel, setSel] = useState<string | null>(null);
   const [place, setPlace] = useState<GeoPlace | null>(null);
+  const [listOpen, setListOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [full, setFull] = useState(false);
+  const [panelSize, setPanelSize] = useState(0);
+  const [legendRect, setLegendRect] = useState<MapRect | null>(null);
+  const [area, setArea] = useState({ w: 0, h: 0 });
+  const mapRef = useRef<MapHandle>(null);
   const done = campaign.stations.filter((s) => state.stations[s.id]).length;
   const station = campaign.stations.find((s) => s.id === sel);
   const nextAvail = campaign.stations.find((s) => stationStatus(s, state.stations) === "available") ?? campaign.stations[0];
-  const { width: vw, height: vh } = useWindowDimensions();
-  const gSize = mapSize(hMap);
-  const gK = Math.min(3, Math.max(0.8, 1 / Math.min(vw / gSize.width, vh / gSize.height)));
+  const { width: vw } = useWindowDimensions();
+  const side = vw >= 720;
+  const history = mode === "history";
+
+  // Vollbild: Android-Zurück beendet zuerst das Vollbild
+  useEffect(() => {
+    if (!full) return;
+    const sub = BackHandler.addEventListener("hardwareBackPress", () => { setFull(false); return true; });
+    return () => sub.remove();
+  }, [full]);
+
+  // Lektionsrelevante Orte: Orte der Stationen + Orte verknüpfter Lexikon-Einträge
+  const stationPlaces = (s: (typeof campaign.stations)[number]) =>
+    [...(s.placeIds ?? []), ...((s.info ?? []).map((i) => INFO_BY_ID[i]?.placeId).filter(Boolean) as string[])].filter((id) => hMap.places.some((p) => p.id === id));
+  const curIds = useMemo(() => stationPlaces(nextAvail), [nextAvail, hMap]); // eslint-disable-line react-hooks/exhaustive-deps
+  const relIds = useMemo(() => [...new Set(campaign.stations.flatMap(stationPlaces))], [campaign, hMap]); // eslint-disable-line react-hooks/exhaustive-deps
+  const gInitial = useMemo(() => placesBox(hMap, curIds.length ? curIds : relIds.length ? relIds : null), [hMap, curIds, relIds]);
+  const gAll = useMemo(() => placesBox(hMap, relIds.length ? relIds : null, 0.08), [hMap, relIds]);
+  const aInitial = useMemo(() => ({ x: nextAvail.x - 380, y: nextAvail.y - 380, w: 760, h: 760 }), [nextAvail]);
+  const aAll = useMemo(() => {
+    const xs = campaign.stations.map((s) => s.x);
+    const ys = campaign.stations.map((s) => s.y);
+    return pad({ x: Math.min(...xs), y: Math.min(...ys), w: Math.max(...xs) - Math.min(...xs), h: Math.max(...ys) - Math.min(...ys) }, 120);
+  }, [campaign]);
+
   // Persönliche Positionsmarkierung: Ort der aktuellen Station (sonst erster Ort der Karte)
   const mePos = useMemo(() => {
     if (!state.avatar) return null;
-    const ids = [...(nextAvail.placeIds ?? []), ...(nextAvail.info ?? []).map((i) => INFO_BY_ID[i]?.placeId).filter(Boolean) as string[]];
-    const pl = ids.map((id) => hMap.places.find((p) => p.id === id)).find(Boolean) ?? hMap.places[0];
+    const pl = hMap.places.find((p) => p.id === curIds[0]) ?? hMap.places[0];
     return pl ? { lat: pl.lat, lon: pl.lon, avatar: state.avatar } : null;
-  }, [state.avatar, nextAvail, hMap]);
+  }, [state.avatar, curIds, hMap]);
   const highlightPlaces = useMemo(() => campaign.stations.filter((s) => state.stations[s.id]).flatMap((s) => s.placeIds ?? []), [campaign, state.stations]);
+  const gSize = mapSize(hMap);
+
+  const panelOpen = history ? !!place || listOpen : !!station;
+  const padBottom = panelOpen && !side ? panelSize : 0;
+  const padRight = panelOpen && side ? panelSize : 0;
+  const ctrlTop = (full ? insets.top : 0) + spacing.sm;
+  const keep = history
+    ? place ? projectGeo(hMap, place.lat, place.lon) : null
+    : station ? { x: station.x, y: station.y } : null;
+  const reserved = useMemo(() => (legendRect ? [legendRect] : []), [legendRect]);
+
+  const openPlace = (p: GeoPlace) => { setListOpen(false); setExpanded(false); setPlace(p); };
+  const closePanel = () => { setPlace(null); setSel(null); setListOpen(false); setExpanded(false); setPanelSize(0); };
+  const switchMode = (m: "adventure" | "history") => { closePanel(); setMode(m); };
+
+  const modeToggle = (
+    <View style={styles.seg}>
+      {([["adventure", "compass", "Abenteuer", "Abenteuerkarte"], ["history", "map", "Historisch", "Historische Karte"]] as const).map(([m, ic, l, a11y]) => (
+        <Pressable key={m} testID={`map-mode-${m}`} accessibilityRole="button" accessibilityLabel={a11y} accessibilityState={{ selected: mode === m }} onPress={() => switchMode(m)}
+          style={[styles.segBtn, mode === m && { backgroundColor: colors.surfaceInverse }]}>
+          <Icon name={ic} size={15} color={mode === m ? colors.onSurfaceInverse : colors.onSurfaceSecondary} />
+          <Text style={[styles.segText, { color: mode === m ? colors.onSurfaceInverse : colors.onSurfaceSecondary }]}>{l}</Text>
+        </Pressable>
+      ))}
+    </View>
+  );
 
   return (
     <View style={styles.root} testID="campaign-screen">
-      <Header title={campaign.title} subtitle={`${done} / ${campaign.stations.length} Stationen · ${Math.round((done / campaign.stations.length) * 100)} %`} />
-      <View style={styles.toggleRow}>
-        <Chip testID="map-mode-adventure" label="Abenteuerkarte" selected={mode === "adventure"} onPress={() => setMode("adventure")} />
-        <Chip testID="map-mode-history" label="Historische Karte" selected={mode === "history"} onPress={() => setMode("history")} />
-      </View>
-      {world.campaignIds!.length > 1 ? (
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.campRow} contentContainerStyle={styles.campContent}>
-          {world.campaignIds!.map((cid) => {
-            const c = CAMPAIGNS[cid];
-            const pct = Math.round((c.stations.filter((s) => state.stations[s.id]).length / c.stations.length) * 100);
-            return <Chip key={cid} testID={`campaign-chip-${cid}`} label={`${c.title.replace("Das Evangelium nach ", "")} · ${pct} %`} selected={campId === cid} color={world.palette.base} onPress={() => { setCampId(cid); setSel(null); }} />;
-          })}
-        </ScrollView>
+      {!full ? (
+        <>
+          <Header title={campaign.title} subtitle={`${done} / ${campaign.stations.length} Stationen · ${Math.round((done / campaign.stations.length) * 100)} %`} right={vw >= 400 ? modeToggle : undefined} />
+          {vw < 400 ? <View style={styles.toggleRow}>{modeToggle}</View> : null}
+          {world.campaignIds!.length > 1 ? (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.campRow} contentContainerStyle={styles.campContent}>
+              {world.campaignIds!.map((cid) => {
+                const c = CAMPAIGNS[cid];
+                const pct = Math.round((c.stations.filter((s) => state.stations[s.id]).length / c.stations.length) * 100);
+                return <Chip key={cid} testID={`campaign-chip-${cid}`} label={`${c.title.replace("Das Evangelium nach ", "")} · ${pct} %`} selected={campId === cid} color={world.palette.base} onPress={() => { setCampId(cid); closePanel(); }} />;
+              })}
+            </ScrollView>
+          ) : null}
+        </>
       ) : null}
-      <View style={{ flex: 1 }}>
-        {mode === "adventure" ? (
-          <ZoomableMap key={"adv" + campId} width={campaign.mapW} height={campaign.mapH} focus={{ x: nextAvail.x, y: nextAvail.y }} controlsBottom={insets.bottom + 16} testID="campaign-map">
-            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={setSel} avatar={state.avatar} />
+      <View style={styles.mapArea} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })} testID="map-area">
+        {!history ? (
+          <ZoomableMap ref={mapRef} key={"adv" + campId} width={campaign.mapW} height={campaign.mapH} initial={aInitial} allBox={aAll}
+            controlsTop={ctrlTop} padTop={ctrlTop + 52} padBottom={padBottom} padRight={padRight} reserved={reserved} keepVisible={keep}
+            fullscreen={full} onToggleFullscreen={() => setFull(!full)} testID="campaign-map">
+            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={(id) => { setPlace(null); setListOpen(false); setExpanded(false); setSel(id); }} avatar={state.avatar} />
           </ZoomableMap>
         ) : (
-          <ZoomableMap key="hist" fit="contain" width={gSize.width} height={gSize.height} controlsBottom={insets.bottom + 120} maxZoom={5} testID="historical-map">
-            <GeoMap map={hMap} k={gK} me={mePos} onSelect={setPlace} highlight={highlightPlaces} />
+          <ZoomableMap ref={mapRef} key={"hist" + campId} width={gSize.width} height={gSize.height} initial={gInitial} allBox={gAll} maxZoom={6}
+            controlsTop={ctrlTop} padTop={ctrlTop + 52} padBottom={padBottom} padRight={padRight} reserved={reserved} keepVisible={keep}
+            fullscreen={full} onToggleFullscreen={() => setFull(!full)} testID="historical-map">
+            <GeoMap map={hMap} me={mePos} onSelect={openPlace} onCluster={(b) => mapRef.current?.fitBox(b)} highlight={highlightPlaces} important={curIds} selected={place?.id ?? null} />
           </ZoomableMap>
         )}
-        {mode === "history" ? (
-          <View style={[styles.legend, { bottom: insets.bottom + 12 }]} testID="historical-legend">
-            <Text style={styles.legendTitle}>{hMap.title} · {hMap.era}</Text>
-            <View style={styles.legendRow}>
-              {(["secure", "traditional", "disputed"] as const).map((k) => (
-                <View key={k} style={styles.legendItem}>
-                  <View style={[styles.legendDot, { backgroundColor: k === "secure" ? colors.mapInk : k === "traditional" ? colors.brandPrimary : colors.surface, borderStyle: k === "disputed" ? "dashed" : "solid" }]} />
-                  <Text style={styles.legendText}>{CERTAINTY_META[k].label}</Text>
-                </View>
-              ))}
-            </View>
-            <Text style={styles.legendSrc} numberOfLines={2}>Quellen: {JOHN_HISTORICAL.sources.slice(0, 2).join("; ")}</Text>
-          </View>
-        ) : (
-          <View style={[styles.adventureNote, { bottom: insets.bottom + 12 }]}>
-            <Text style={styles.legendSrc}>Abenteuerkarte – Stationen sind Lernabschnitte, keine geografischen Orte.</Text>
-          </View>
-        )}
-      </View>
+        <MapLegend
+          key={mode}
+          top={ctrlTop}
+          maxWidth={Math.max(200, area.w - 84 - padRight)}
+          maxHeight={Math.max(160, area.h - ctrlTop - 64 - padBottom)}
+          kind={mode}
+          title={history ? `${hMap.title} · ${hMap.era}` : "Abenteuerkarte"}
+          sources={history ? [...JOHN_HISTORICAL.sources, ...(hMap.note ? [hMap.note] : [])] : undefined}
+          placeCount={hMap.places.length}
+          onPlaces={history ? () => { setPlace(null); setExpanded(true); setListOpen(true); } : undefined}
+          onRect={setLegendRect}
+        />
 
-      <Sheet
-        visible={!!station}
-        onClose={() => setSel(null)}
-        title={station?.title}
-        accent={station ? colors[STATION_META[station.type].color] : undefined}
-        testID="station-sheet"
-      >
-        {station ? (() => {
+        {history && place ? (
+          <MapPanel key={"p" + place.id} side={side} title={place.name} accent={certaintyColor(place.certainty, colors)} expanded={expanded} onToggle={() => setExpanded(!expanded)} onClose={closePanel} onSize={setPanelSize} testID="place-sheet"
+            summary={
+              <View style={styles.sumRow}>
+                <CertaintyBadge place={place} />
+                {place.events?.length ? <Text style={styles.sumMeta}>{place.events.length} Ereignisse</Text> : null}
+                {!expanded && !side ? <Text style={styles.sumText} numberOfLines={2}>{place.note}</Text> : null}
+              </View>
+            }>
+            <PlaceDetails place={place} />
+          </MapPanel>
+        ) : null}
+
+        {history && listOpen ? (
+          <MapPanel side={side} title="Orte dieser Karte" expanded onToggle={() => setListOpen(false)} onClose={closePanel} onSize={setPanelSize} testID="map-place-list"
+            summary={<Text style={styles.sumMeta}>Antippen zeigt den Ort auf der Karte. Orte der aktuellen Lektion stehen oben.</Text>}>
+            {[...hMap.places].sort((a, b) => Number(curIds.includes(b.id)) - Number(curIds.includes(a.id)) || a.name.localeCompare(b.name, "de")).map((p) => (
+              <Pressable key={p.id} testID={`map-place-item-${p.id}`} onPress={() => openPlace(p)} style={({ pressed }) => [styles.listItem, pressed && { backgroundColor: colors.surfaceSecondary }]}>
+                <PlaceDot certainty={p.certainty} size={20} events={!!p.events?.length} />
+                <Text style={styles.listText} numberOfLines={1}>{p.name}</Text>
+                {curIds.includes(p.id) ? <Text style={styles.listTag}>Lektion</Text> : null}
+                <Icon name="chevron-right" size={16} color={colors.muted} />
+              </Pressable>
+            ))}
+          </MapPanel>
+        ) : null}
+
+        {!history && station ? (() => {
           const st = stationStatus(station, state.stations);
           const prog = state.stations[station.id];
           const meta = STATION_META[station.type];
           const missing = station.requires.filter((r) => !state.stations[r]).map((r) => campaign.stations.find((s) => s.id === r)?.title);
           return (
-            <View>
-              <View style={[styles.typeBadge, { backgroundColor: colors[meta.color], borderColor: colors.border }]}>
-                <Text style={[styles.typeText, { color: meta.ink === "dark" ? colors.mapInk : colors.surface }]}>{meta.label}</Text>
-              </View>
-              <Text style={styles.sSub}>{station.subtitle}</Text>
+            <MapPanel key={"s" + station.id} side={side} title={station.title} accent={colors[meta.color]} expanded={expanded} onToggle={() => setExpanded(!expanded)} onClose={closePanel} onSize={setPanelSize} testID="station-sheet"
+              summary={
+                <View>
+                  <View style={styles.sumRow}>
+                    <View style={[styles.typeBadge, { backgroundColor: colors[meta.color], borderColor: colors.border }]}>
+                      <Text style={[styles.typeText, { color: meta.ink === "dark" ? colors.mapInk : colors.surface }]}>{meta.label}</Text>
+                    </View>
+                    <Text style={styles.sumMeta}>{station.xp} EP · {station.tasks.length} Aufgaben</Text>
+                  </View>
+                  <Text style={styles.sSub} numberOfLines={2}>{station.subtitle}</Text>
+                  {st === "locked" ? (
+                    <View style={styles.locked} testID="station-locked-info">
+                      <Icon name="lock" size={16} color={colors.muted} />
+                      <Text style={styles.lockedText}>Schließe zuerst ab: {missing.join(", ")}</Text>
+                    </View>
+                  ) : null}
+                  <Button
+                    testID="station-start-button"
+                    label={st === "locked" ? "Noch gesperrt" : prog ? "Station wiederholen" : (state.phase[station.id] ?? 0) > 0 ? "Fortsetzen" : "Station starten"}
+                    icon={st === "locked" ? "lock" : "play"}
+                    disabled={st === "locked"}
+                    style={{ marginTop: spacing.md }}
+                    onPress={() => {
+                      closePanel();
+                      router.push({ pathname: "/station/[id]", params: { id: station.id } });
+                    }}
+                  />
+                </View>
+              }>
               <Text style={styles.sBody}>{station.discover}</Text>
               <View style={styles.infoRow}>
-                <View style={styles.info}><Icon name="star" size={16} color={colors.brandPrimary} /><Text style={styles.infoText}>{station.xp} EP</Text></View>
                 <View style={styles.info}><Icon name="list" size={16} color={colors.brandPrimary} /><Text style={styles.infoText}>{station.tasks.length} Aufgaben · {station.exam.length} Prüfungsfragen</Text></View>
               </View>
-              {st === "locked" ? (
-                <View style={styles.locked} testID="station-locked-info">
-                  <Icon name="lock" size={16} color={colors.muted} />
-                  <Text style={styles.lockedText}>Schließe zuerst ab: {missing.join(", ")}</Text>
-                </View>
-              ) : null}
               {prog ? (
                 <View style={styles.locked}>
                   <Icon name="check-circle" size={16} color={colors.success} />
@@ -159,22 +253,10 @@ function CampaignScreen({ worldId }: { worldId: string }) {
               {st !== "locked" && !prog && (state.phase[station.id] ?? 0) > 0 ? (
                 <Text style={styles.resume}>Fortsetzen ab Phase {(state.phase[station.id] ?? 0) + 1} von 7</Text>
               ) : null}
-              <Button
-                testID="station-start-button"
-                label={st === "locked" ? "Noch gesperrt" : prog ? "Station wiederholen" : (state.phase[station.id] ?? 0) > 0 ? "Fortsetzen" : "Station starten"}
-                icon={st === "locked" ? "lock" : "play"}
-                disabled={st === "locked"}
-                style={{ marginTop: spacing.xl }}
-                onPress={() => {
-                  setSel(null);
-                  router.push({ pathname: "/station/[id]", params: { id: station.id } });
-                }}
-              />
-            </View>
+            </MapPanel>
           );
         })() : null}
-      </Sheet>
-      <PlaceSheet place={place} onClose={() => setPlace(null)} />
+      </View>
     </View>
   );
 }
@@ -217,21 +299,23 @@ function PreviewScreen({ worldId }: { worldId: string }) {
 
 const useStyles = makeStyles((c) => ({
   root: { flex: 1, backgroundColor: c.surface },
-  header: { flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm, backgroundColor: c.surface, borderBottomWidth: 1, borderBottomColor: c.divider },
+  header: { flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingBottom: spacing.xs, backgroundColor: c.surface, borderBottomWidth: 1, borderBottomColor: c.divider },
   back: { width: 44, height: 44, borderRadius: 22, alignItems: "center", justifyContent: "center", backgroundColor: c.surfaceSecondary },
   hTitle: { fontFamily: fonts.display, fontSize: 20, fontWeight: "700", color: c.onSurface },
   hSub: { fontFamily: fonts.text, fontSize: 13, color: c.muted, fontWeight: "700" },
-  campRow: { height: 52, flexGrow: 0, backgroundColor: c.surface },
+  campRow: { height: 48, flexGrow: 0, flexShrink: 0, backgroundColor: c.surface, borderBottomWidth: 1, borderBottomColor: c.divider },
   campContent: { gap: spacing.sm, paddingHorizontal: spacing.lg, alignItems: "center" },
-  toggleRow: { height: 56, flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.lg, backgroundColor: c.surface },
-  legend: { pointerEvents: "none", position: "absolute", left: spacing.lg, right: 80, backgroundColor: c.glass, borderRadius: radius.lg, padding: spacing.md, borderWidth: 1, borderColor: c.border },
-  adventureNote: { pointerEvents: "none", position: "absolute", left: spacing.lg, right: 80, backgroundColor: c.glass, borderRadius: radius.md, padding: spacing.sm, borderWidth: 1, borderColor: c.border },
-  legendTitle: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800", color: c.onSurface },
-  legendRow: { flexDirection: "row", gap: spacing.md, marginTop: spacing.sm, flexWrap: "wrap" },
-  legendItem: { flexDirection: "row", alignItems: "center", gap: 6 },
-  legendDot: { width: 14, height: 14, borderRadius: 7, borderWidth: 2, borderColor: c.mapInk },
-  legendText: { fontFamily: fonts.text, fontSize: 12, fontWeight: "700", color: c.onSurfaceSecondary },
-  legendSrc: { fontFamily: fonts.text, fontSize: 11, color: c.muted, marginTop: 4 },
+  toggleRow: { paddingHorizontal: spacing.lg, paddingVertical: spacing.xs, backgroundColor: c.surface, alignItems: "flex-start" },
+  mapArea: { flex: 1, overflow: "hidden" },
+  seg: { flexDirection: "row", backgroundColor: c.surfaceSecondary, borderRadius: radius.pill, padding: 3, borderWidth: 1, borderColor: c.border },
+  segBtn: { flexDirection: "row", alignItems: "center", gap: 5, height: 38, paddingHorizontal: spacing.md, borderRadius: radius.pill },
+  segText: { fontFamily: fonts.text, fontWeight: "800", fontSize: 13 },
+  sumRow: { flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: spacing.sm },
+  sumMeta: { fontFamily: fonts.text, fontSize: 13, fontWeight: "700", color: c.muted },
+  sumText: { width: "100%", fontFamily: fonts.text, fontSize: 14.5, lineHeight: 21, color: c.onSurfaceSecondary, marginTop: 2 },
+  listItem: { flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 48, paddingHorizontal: spacing.sm, borderRadius: radius.md },
+  listText: { flex: 1, fontFamily: fonts.text, fontSize: 15, fontWeight: "700", color: c.onSurface },
+  listTag: { fontFamily: fonts.text, fontSize: 11, fontWeight: "800", color: c.brandPrimary, textTransform: "uppercase" },
   typeBadge: { alignSelf: "flex-start", paddingHorizontal: spacing.md, paddingVertical: 4, borderRadius: radius.pill, borderWidth: 1 },
   typeText: { fontFamily: fonts.text, fontWeight: "800", fontSize: 12 },
   sSub: { fontFamily: fonts.text, color: c.muted, fontWeight: "700", fontSize: 14, marginTop: spacing.sm },

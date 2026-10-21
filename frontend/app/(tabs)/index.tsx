@@ -47,8 +47,12 @@ export default function WorldMapScreen() {
     if (pl) setPlace(pl);
   }, [params.theme, params.place]);
   /* eslint-enable react-hooks/set-state-in-effect */
-  const [cardH, setCardH] = useState(120);
   const bottomChrome = usesNativeTabs ? insets.bottom : 0;
+  const [cardH, setCardH] = useState(120);
+  const [topH, setTopH] = useState(120);
+  const [mapH, setMapH] = useState(0);
+  // Fest eingeblendete Bereiche: dort darf keine Beschriftung liegen
+  const reserved = useMemo(() => [{ x: 0, y: 0, w: vw, h: topH }, { x: 0, y: mapH - bottomChrome - cardH - 16, w: vw, h: cardH + 16 + bottomChrome }], [vw, topH, mapH, cardH, bottomChrome]);
   const lvl = levelInfo(state.xp);
 
   const journey = mode === "journey";
@@ -62,8 +66,8 @@ export default function WorldMapScreen() {
 
   return (
     <View style={styles.root} testID="world-map-screen">
-      <Animated.View key={journey ? "journey" : theme} entering={FadeIn.duration(500)} style={{ flex: 1 }}>
-        <ZoomableMap fit="contain" width={size.width} height={size.height} controlsBottom={bottomChrome + cardH + 24} maxZoom={5} testID="world-map">
+      <Animated.View key={journey ? "journey" : theme} entering={FadeIn.duration(500)} style={{ flex: 1 }} onLayout={(e) => setMapH(e.nativeEvent.layout.height)}>
+        <ZoomableMap fit="contain" width={size.width} height={size.height} controlsBottom={bottomChrome + cardH + 24} maxZoom={5} reserved={reserved} testID="world-map">
           <GeoMap map={map} k={k} onSelect={setPlace}>
             {journey ? <JourneyLayer map={map} k={k} stations={state.stations} /> : null}
           </GeoMap>
@@ -71,7 +75,7 @@ export default function WorldMapScreen() {
       </Animated.View>
 
       {/* Sticky Kopfbereich: Stufe + Themen */}
-      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]}>
+      <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]} onLayout={(e) => setTopH(e.nativeEvent.layout.height)}>
         <View style={styles.hud}>
           <Pressable style={styles.pill} testID="hud-level-pill" onPress={() => router.push("/profile")} accessibilityLabel={`Stufe ${lvl.level}, ${state.xp} Erfahrungspunkte`}>
             {state.avatar ? <View style={styles.hudAvatar} testID="hud-avatar"><AvatarView a={state.avatar} size={38} mode="head" /></View> : null}

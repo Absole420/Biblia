@@ -150,3 +150,25 @@ agent_communication:
       - working: "NA"
         agent: "main"
         comment: "Schema v4 with avatar; migration tested via tsx."
+  - task: "Iteration 7: Studienbereich (Leseposition, Lesefortschritt, Lesepläne, Kommentare, Querverweise, Sammlung, Merkliste, Journal)"
+    implemented: true
+    working: "NA"
+    file: "src/lib/study.ts, app/study/*, src/components/VerseStudy.tsx, app/(tabs)/bible.tsx, backend/server.py (/api/study/*)"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Schema v5 (study). Plan engine unit-checked via tsx (leap year 366 days, redistribute/shift)."
+  - task: "Iteration 8: Karten-Layout in allen Lernwelten (Vollflächen-Karte, Startausschnitt, Label-Kollisionen/Gruppen, Infotafel/Legende, Vollbild)"
+    implemented: true
+    working: "NA"
+    file: "src/components/ZoomableMap.tsx, src/components/GeoMap.tsx, src/components/MapPlaceMarker.tsx, src/components/MapPanel.tsx, src/components/MapLegend.tsx, src/lib/mapLayout.ts (solveLabels), app/world/[id].tsx, app/(tabs)/index.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "cover-fit statt contain, fitBox/reset/fit-all, keepVisible bei Panel, Marker fix an Koordinaten, Labels mit 16 Slots + Leader-Linie, Gruppen +n, Ausblenden nachrangiger Labels, Ortsliste."

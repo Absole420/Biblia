@@ -4,6 +4,7 @@ import { setColorScheme } from "@/src/theme";
 import { storage } from "@/src/utils/storage";
 
 import type { Avatar } from "./avatar";
+import type { StudyState } from "./study";
 import { AppState, Category, defaultState, migrate, Note, StudyUnit, uid } from "./progress-logic";
 
 const KEY = "biblia_state";
@@ -29,6 +30,7 @@ type Ctx = {
   deleteUnit: (id: string) => void;
   replaceState: (s: AppState) => void;
   setAvatar: (a: Avatar) => void;
+  updateStudy: (fn: (s: StudyState) => StudyState) => void;
   reset: () => void;
 };
 
@@ -156,6 +158,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       deleteUnit: (id) => update((s) => ({ ...s, units: s.units.filter((x) => x.id !== id) })),
       replaceState: (ns) => setState(ns),
       setAvatar: (avatar) => update((s) => ({ ...s, avatar })),
+      updateStudy: (fn) => update((s) => ({ ...s, study: fn(s.study) })),
       reset: () => setState(defaultState()),
     }),
     [ready, state, completeStation, update],

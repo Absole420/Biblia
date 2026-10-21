@@ -1,0 +1,124 @@
+[
+ {
+  "id": "mhcc",
+  "type": "commentary",
+  "title": "Concise Commentary on the Whole Bible",
+  "author": "Matthew Henry (1662–1714)",
+  "language": "en",
+  "edition": "Kurzfassung des Kommentars von 1706–1721 (gemeinfreier Text)",
+  "year": "1706–1721",
+  "url": "https://www.biblestudytools.com/commentaries/matthew-henry-concise/",
+  "license": "Gemeinfrei (Autor † 1714; Original englisch, keine moderne Übersetzung). Text aus öffentlich zugänglicher gemeinfreier Fassung übernommen; Gestaltung der Website nicht übernommen.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Historische, puritanisch-reformierte Erbauungsauslegung (frühes 18. Jh.). Kein aktueller wissenschaftlicher Forschungsstand.",
+  "historical": true,
+  "status": "integrated",
+  "coverage": "Beispielbestand: Johannes 3"
+ },
+ {
+  "id": "openbible-xref",
+  "type": "crossref",
+  "title": "OpenBible.info Cross References",
+  "author": "OpenBible.info (auf Basis von Treasury of Scripture Knowledge u. a.)",
+  "language": "–",
+  "edition": "Stand 2026, Filter: ≥ 8 Stimmen",
+  "year": "2026",
+  "url": "https://www.openbible.info/labs/cross-references/",
+  "license": "CC BY (Namensnennung) – Einbindung, Offline-Nutzung, Bearbeitung und Weitergabe mit Namensnennung erlaubt.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Automatisch/gemeinschaftlich gesammelte Querverweise; nicht nach Art des Bezugs klassifiziert. Verszählung nach KJV.",
+  "historical": false,
+  "status": "integrated",
+  "coverage": "ca. 61 000 Verweise"
+ },
+ {
+  "id": "bibelkommentare-de",
+  "type": "commentary",
+  "title": "bibelkommentare.de",
+  "author": "verschiedene Autoren",
+  "language": "de",
+  "edition": "online",
+  "year": "–",
+  "url": "https://www.bibelkommentare.de/",
+  "license": "Urheberrechtlich geschützt; keine Einbindungserlaubnis – nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Überwiegend brüdergemeindlich-konservative Auslegungen.",
+  "historical": false,
+  "status": "link"
+ },
+ {
+  "id": "bengel-gnomon",
+  "type": "commentary",
+  "title": "Gnomon Novi Testamenti (dt. Übers. C. F. Werner, 1853)",
+  "author": "Johann Albrecht Bengel (1687–1752)",
+  "language": "de",
+  "edition": "Werner-Übersetzung 1853 (vermutlich gemeinfrei)",
+  "year": "1742 / 1853",
+  "url": "https://de.wikisource.org/wiki/Johann_Albrecht_Bengel",
+  "license": "Original und Übersetzung voraussichtlich gemeinfrei, aber in dieser Sitzung keine geprüfte digitale Textfassung gefunden – noch nicht eingebunden.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Pietistisch-philologische Auslegung (18. Jh.), historisch.",
+  "historical": true,
+  "status": "pending"
+ },
+ {
+  "id": "oeab-plan",
+  "type": "plan",
+  "title": "Ökumenischer Bibelleseplan",
+  "author": "Ökumenische Arbeitsgemeinschaft für Bibellesen (ÖAB)",
+  "language": "de",
+  "edition": "jährlich",
+  "year": "jährlich",
+  "url": "https://www.oeab.de/",
+  "license": "Keine Einbindungserlaubnis – nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Ökumenisch, kirchenjahresorientiert.",
+  "historical": false,
+  "status": "link"
+ },
+ {
+  "id": "losungen",
+  "type": "plan",
+  "title": "Herrnhuter Losungen & Bibelleseplan",
+  "author": "Herrnhuter Brüdergemeine",
+  "language": "de",
+  "edition": "jährlich",
+  "year": "jährlich",
+  "url": "https://www.losungen.de/",
+  "license": "Urheberrechtlich geschützt – nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Herrnhuter Tradition.",
+  "historical": false,
+  "status": "link"
+ }
+]

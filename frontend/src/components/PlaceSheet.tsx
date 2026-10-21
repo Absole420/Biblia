@@ -12,20 +12,44 @@ import { InfoChip } from "./InfoSheet";
 import { RefText } from "./RefText";
 import { Sheet } from "./Sheet";
 
+export const certaintyColor = (c: string, colors: ReturnType<typeof useTheme>["colors"]) =>
+  c === "secure" ? colors.success : c === "traditional" ? colors.brandPrimary : colors.warning;
+
 export function PlaceSheet({ place, onClose }: { place: (Place | GeoPlace) | null; onClose: () => void }) {
+  const { colors } = useTheme();
+  return (
+    <Sheet visible={!!place} onClose={onClose} title={place?.name} accent={place ? certaintyColor(place.certainty, colors) : undefined} testID="place-sheet">
+      {place ? (
+        <View>
+          <CertaintyBadge place={place} />
+          <PlaceDetails place={place} />
+        </View>
+      ) : null}
+    </Sheet>
+  );
+}
+
+/** Gewissheits-Kennzeichnung mit Symbol (gesichert · Tradition · umstritten). */
+export function CertaintyBadge({ place }: { place: Place | GeoPlace }) {
   const styles = useStyles();
   const { colors } = useTheme();
-  const meta = place ? CERTAINTY_META[place.certainty] : null;
-  const col = place?.certainty === "secure" ? colors.success : place?.certainty === "traditional" ? colors.brandPrimary : colors.warning;
-  const g = place as GeoPlace | null;
+  const col = certaintyColor(place.certainty, colors);
   return (
-    <Sheet visible={!!place} onClose={onClose} title={place?.name} accent={col} testID="place-sheet">
-      {place && meta ? (
+    <View style={[styles.badge, { backgroundColor: col }]} testID="place-certainty">
+      <Icon name={place.certainty === "disputed" ? "help-circle" : place.certainty === "traditional" ? "bookmark" : "check-circle"} size={14} color={colors.surface} />
+      <Text style={[styles.badgeText, { color: colors.surface }]}>{CERTAINTY_META[place.certainty].label}</Text>
+    </View>
+  );
+}
+
+/** Ausführliche Ortsinformationen (ohne Kopf). */
+export function PlaceDetails({ place }: { place: Place | GeoPlace }) {
+  const styles = useStyles();
+  const { colors } = useTheme();
+  const meta = CERTAINTY_META[place.certainty];
+  const g = place as GeoPlace;
+  return (
         <View>
-          <View style={[styles.badge, { backgroundColor: col }]} testID="place-certainty">
-            <Icon name={place.certainty === "disputed" ? "help-circle" : "map-pin"} size={14} color={colors.surface} />
-            <Text style={[styles.badgeText, { color: colors.surface }]}>{meta.label}</Text>
-          </View>
           <Text style={styles.small}>{meta.desc}</Text>
           <Text style={styles.body}>{place.note}</Text>
           {LEXICON.some((e) => e.placeId === place.id) ? (
@@ -66,8 +90,6 @@ export function PlaceSheet({ place, onClose }: { place: (Place | GeoPlace) | nul
           <Text style={styles.label}>Koordinaten (Näherung)</Text>
           <Text style={styles.small}>{place.lat.toFixed(3)}° N, {place.lon.toFixed(3)}° O</Text>
         </View>
-      ) : null}
-    </Sheet>
   );
 }
 
