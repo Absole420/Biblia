@@ -6,6 +6,7 @@ import { ARTICLES_JOS } from "./articlesKings1";
 import { ARTICLES_KINGS } from "./articlesKings2";
 import { ARTICLES_PROPHETS } from "./articlesProphets";
 import { ARTICLES_GOSPELS } from "./articlesGospels";
+import { ARTICLES_CHURCH } from "./articlesChurch";
 
 /** Etappe 1: je Artikeltyp ein Musterartikel. */
 const STAGE1: Article[] = [
@@ -62,7 +63,7 @@ const STAGE1: Article[] = [
     relations: [
       { type: "participated", target: "jesus", label: "Jesus von Nazareth" },
       { type: "participated", target: "maria", label: "Maria" },
-      { type: "tookPlace", target: "cana", label: "Kana in Galiläa", uncertain: true },
+      { type: "tookPlace", target: "nazareth", label: "Kana bei Nazareth", uncertain: true },
       { type: "related", target: "passa", label: "Passa (folgt in Joh 2,13)" },
     ],
     stationIds: ["john-3"],
@@ -135,7 +136,7 @@ const STAGE1: Article[] = [
     timeframe: "Geologisch alt; im NT 1. Jh. n. Chr.",
     epoch: "jesus", region: "galilaea", books: ["4Mo", "Jos", "Mt", "Mk", "Lk", "Joh"],
     relations: [
-      { type: "related", target: "capernaum", label: "Kapernaum" },
+      { type: "related", target: "kapernaum", label: "Kapernaum" },
       { type: "related", target: "jesus", label: "Wirkungsgebiet Jesu" },
       { type: "related", target: "hochzeit-kana", label: "Kana (westlich im Bergland)" },
     ],
@@ -226,6 +227,6 @@ const STAGE1: Article[] = [
 ];
 
 /** Vollständig ausgearbeitete Artikel (Etappe 1, 2: Tora, 3: Josua–Könige, 4: Esra–Propheten). */
-export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS, ...ARTICLES_PROPHETS, ...ARTICLES_GOSPELS];
+export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS, ...ARTICLES_PROPHETS, ...ARTICLES_GOSPELS, ...ARTICLES_CHURCH];
 
 export const ARTICLE_BY_ID: Record<string, Article> = Object.fromEntries(ARTICLES.map((a) => [a.id, a]));

@@ -13,7 +13,8 @@ export const TIMELINE_YEAR: Record<string, number> = {
   "zweiter-tempel": -515, hiob: -500, ester: -480, purim: -479, esra: -458, nehemia: -445, "stadtmauer-jerusalem": -444,
   pharisaeer: -150, rom: -63, "herodes-grosse": -37, "tempel-herodes": -20, maria: -7, "geburt-jesu": -6, jesus: -5,
   "johannes-taeufer": 28, "johannes-apostel": 28.4, petrus: 28.5, "hochzeit-kana": 28.8, bergpredigt: 29, sturmstillung: 29.2,
-  nikodemus: 29.5, "barmherziger-samariter": 29.6, "verlorener-sohn": 29.7, lazarus: 29.9, kreuzigung: 30, auferstehung: 30.1, "johannes-markus": 45,
+  nikodemus: 29.5, "barmherziger-samariter": 29.6, "verlorener-sohn": 29.7, lazarus: 29.9, abendmahl: 29.95, kreuzigung: 30, auferstehung: 30.1,
+  pfingsten: 30.2, paulus: 34, barnabas: 35, "johannes-markus": 45, missionsreisen: 47, "sieben-gemeinden": 95, "neues-jerusalem": 96,
 };
 
 export const EPOCH_ORDER = ["urgeschichte", "erzvaeter", "exodus", "koenigszeit", "exil", "nachexil", "jesus", "urkirche"] as const;
@@ -32,3 +33,6 @@ export const EPOCH_STYLE: Record<Epoch, { color: string; span: string; icon: str
 };
 
 export const epochOfYear = (y: number): Epoch => (y >= 31 ? "urkirche" : y >= -63 ? "jesus" : y >= -539 ? "nachexil" : y >= -597 ? "exil" : y >= -1050 ? "koenigszeit" : y >= -1500 ? "exodus" : y >= -2100 ? "erzvaeter" : "urgeschichte");
+
+/** Grobe Sortierjahre je Epoche für Artikel ohne eigenes Jahr (z. B. Orte). */
+export const EPOCH_FALLBACK: Record<Epoch, number> = { urgeschichte: -4000, erzvaeter: -1800, exodus: -1250, koenigszeit: -900, exil: -570, nachexil: -400, jesus: 28, urkirche: 60 };

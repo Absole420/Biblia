@@ -73,6 +73,9 @@ PEOPLE = {
     "johannes-apostel": "A young Galilean fisherman mending nets with his brother beside a boat on the lakeshore, their father in the boat.",
     "nikodemus": "An elderly Jewish scholar in a fine mantle walking at night through a narrow Jerusalem lane with an oil lamp, contemplative.",
     "lazarus": "A man in white linen wrappings stepping out of a rock-cut tomb into the daylight in a village near Jerusalem, his sisters looking on in astonishment.",
+    # Etappe 6: Urkirche
+    "paulus": "A 1st-century Jewish traveler and tentmaker with a short dark beard, writing a letter on papyrus by lamplight in a workshop, a travel cloak and staff nearby, a harbor visible through the doorway.",
+    "barnabas": "A warm, broad-shouldered 1st-century man from Cyprus placing a bag of coins at the feet of a group of people in a Jerusalem courtyard, friendly smile.",
 }
 
 

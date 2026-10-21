@@ -4,16 +4,26 @@ import { Image, Pressable, ScrollView, Text, TextInput, View } from "react-nativ
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
+import { Sheet } from "@/src/components/Sheet";
 import { Chip } from "@/src/components/ui";
 import { ARTICLE_BY_ID, ARTICLES } from "@/src/data/articles";
-import { ArticleKind, EPOCH_LABEL, KIND_LABEL, REGION_LABEL } from "@/src/data/articleTypes";
+import { Article, ArticleKind, EPOCH_LABEL, KIND_LABEL, REGION_LABEL } from "@/src/data/articleTypes";
 import { BOOK_BY_CODE } from "@/src/data/books";
 import { ILLUSTRATION_LABEL, ILLUSTRATIONS } from "@/src/data/illustrations";
 import { LEXICON_PLAN, PLAN_COUNT } from "@/src/data/lexiconPlan";
+import { EPOCH_FALLBACK, TIMELINE_YEAR } from "@/src/data/timelineData";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ß/g, "ss");
+
+type Sort = "alpha" | "time";
+const SORTS: { id: Sort; label: string; icon: string }[] = [{ id: "alpha", label: "A–Z", icon: "type" }, { id: "time", label: "Zeitlich", icon: "clock" }];
+const timeKey = (a: Article) => TIMELINE_YEAR[a.id] ?? EPOCH_FALLBACK[a.epoch];
+const SORTERS: Record<Sort, (a: Article, b: Article) => number> = {
+  alpha: (a, b) => a.title.localeCompare(b.title, "de"),
+  time: (a, b) => timeKey(a) - timeKey(b) || a.title.localeCompare(b.title, "de"),
+};
 
 /** Lexikon: Suche (inkl. alternativer Schreibweisen), Filter, Favoriten, Zuletzt gelesen, Inhaltsplan nach Bibelbüchern. */
 export default function LexiconIndex() {
@@ -28,11 +38,15 @@ export default function LexiconIndex() {
   const [region, setRegion] = useState<string | null>(null);
   const [book, setBook] = useState<string | null>(null);
   const [showPlanned, setShowPlanned] = useState(false);
+  const [sort, setSort] = useState<Sort>("alpha");
+  const [sheet, setSheet] = useState(false);
+  const active = [kind, epoch, region, book].filter(Boolean).length;
   const nq = norm(q.trim());
   const results = useMemo(() => ARTICLES.filter((a) =>
     (!nq || [a.title, ...a.aliases, a.category].some((x) => norm(x).includes(nq))) &&
     (!kind || a.kind === kind) && (!epoch || a.epoch === epoch) && (!region || a.region === region) && (!book || a.books.includes(book)),
-  ), [nq, kind, epoch, region, book]);
+  ).sort(SORTERS[sort]), [nq, kind, epoch, region, book, sort]);
+  const all = useMemo(() => [...ARTICLES].sort(SORTERS[sort]), [sort]);
   const open = (id: string) => router.push({ pathname: "/lexicon/[id]", params: { id } });
   const filters = !!(nq || kind || epoch || region || book);
 
@@ -50,18 +64,42 @@ export default function LexiconIndex() {
           <Icon name="search" size={18} color={colors.muted} />
           <TextInput testID="lexicon-search" value={q} onChangeText={setQ} placeholder="Suchen, z. B. Pessach, Kinneret, Abram …" placeholderTextColor={colors.muted} style={styles.input} />
         </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-          {(Object.keys(KIND_LABEL) as ArticleKind[]).map((k) => <Chip key={k} testID={`lex-kind-${k}`} label={KIND_LABEL[k].label} selected={kind === k} onPress={() => setKind(kind === k ? null : k)} />)}
-        </ScrollView>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-          {Object.entries(EPOCH_LABEL).map(([k, l]) => <Chip key={k} testID={`lex-epoch-${k}`} label={l} selected={epoch === k} onPress={() => setEpoch(epoch === k ? null : k)} />)}
-        </ScrollView>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-          {Object.entries(REGION_LABEL).map(([k, l]) => <Chip key={k} testID={`lex-region-${k}`} label={l} selected={region === k} onPress={() => setRegion(region === k ? null : k)} />)}
-        </ScrollView>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-          {LEXICON_PLAN.map((b) => <Chip key={b.book} testID={`lex-book-${b.book}`} label={b.book} selected={book === b.book} onPress={() => setBook(book === b.book ? null : b.book)} />)}
-        </ScrollView>
+        <View style={styles.toolbar}>
+          <Pressable testID="lexicon-filter-open" onPress={() => setSheet(true)} style={[styles.tool, active ? { borderColor: colors.brandPrimary, backgroundColor: colors.brandPrimary } : null]} accessibilityRole="button" accessibilityLabel={`Filter${active ? `, ${active} aktiv` : ""}`}>
+            <Icon name="sliders" size={16} color={active ? colors.onBrandPrimary : colors.onSurface} />
+            <Text style={[styles.toolText, active ? { color: colors.onBrandPrimary } : null]}>Filter{active ? ` · ${active}` : ""}</Text>
+          </Pressable>
+          <View style={styles.segment} accessibilityRole="tablist">
+            {SORTS.map((o) => (
+              <Pressable key={o.id} testID={`lexicon-sort-${o.id}`} onPress={() => setSort(o.id)} style={[styles.segBtn, sort === o.id && { backgroundColor: colors.brandPrimary }]} accessibilityRole="tab" accessibilityState={{ selected: sort === o.id }}>
+                <Icon name={o.icon} size={14} color={sort === o.id ? colors.onBrandPrimary : colors.onSurfaceSecondary} />
+                <Text style={[styles.segText, sort === o.id && { color: colors.onBrandPrimary }]}>{o.label}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+        {active ? (
+          <View style={styles.activeRow} testID="lexicon-active-filters">
+            {kind ? <Chip testID="lex-active-kind" label={`${KIND_LABEL[kind].label} ✕`} selected onPress={() => setKind(null)} /> : null}
+            {epoch ? <Chip testID="lex-active-epoch" label={`${EPOCH_LABEL[epoch as keyof typeof EPOCH_LABEL]} ✕`} selected onPress={() => setEpoch(null)} /> : null}
+            {region ? <Chip testID="lex-active-region" label={`${REGION_LABEL[region as keyof typeof REGION_LABEL]} ✕`} selected onPress={() => setRegion(null)} /> : null}
+            {book ? <Chip testID="lex-active-book" label={`${book} ✕`} selected onPress={() => setBook(null)} /> : null}
+          </View>
+        ) : null}
+        <Sheet visible={sheet} onClose={() => setSheet(false)} title="Filter" testID="lexicon-filter-sheet"
+          footer={<View style={{ flexDirection: "row", gap: spacing.sm }}>
+            <Pressable testID="lexicon-filter-reset" onPress={() => { setKind(null); setEpoch(null); setRegion(null); setBook(null); }} style={[styles.sheetBtn, { borderColor: colors.border }]}><Text style={styles.toolText}>Zurücksetzen</Text></Pressable>
+            <Pressable testID="lexicon-filter-apply" onPress={() => setSheet(false)} style={[styles.sheetBtn, { backgroundColor: colors.brandPrimary, borderColor: colors.brandPrimary }]}><Text style={[styles.toolText, { color: colors.onBrandPrimary }]}>{results.length} Treffer anzeigen</Text></Pressable>
+          </View>}>
+          <Text style={styles.fh}>Art</Text>
+          <View style={styles.wrap}>{(Object.keys(KIND_LABEL) as ArticleKind[]).map((k) => <Chip key={k} testID={`lex-kind-${k}`} label={KIND_LABEL[k].label} selected={kind === k} onPress={() => setKind(kind === k ? null : k)} />)}</View>
+          <Text style={styles.fh}>Epoche</Text>
+          <View style={styles.wrap}>{Object.entries(EPOCH_LABEL).map(([k, l]) => <Chip key={k} testID={`lex-epoch-${k}`} label={l} selected={epoch === k} onPress={() => setEpoch(epoch === k ? null : k)} />)}</View>
+          <Text style={styles.fh}>Region</Text>
+          <View style={styles.wrap}>{Object.entries(REGION_LABEL).map(([k, l]) => <Chip key={k} testID={`lex-region-${k}`} label={l} selected={region === k} onPress={() => setRegion(region === k ? null : k)} />)}</View>
+          <Text style={styles.fh}>Bibelbuch</Text>
+          <View style={styles.wrap}>{LEXICON_PLAN.map((b) => <Chip key={b.book} testID={`lex-book-${b.book}`} label={b.book} selected={book === b.book} onPress={() => setBook(book === b.book ? null : b.book)} />)}</View>
+        </Sheet>
 
         {filters ? (
           <View testID="lexicon-results">
@@ -74,7 +112,8 @@ export default function LexiconIndex() {
             {state.lexicon.favorites.length ? <><Text style={styles.h2}>Favoriten</Text>{state.lexicon.favorites.map((id) => <ArticleRow onOpen={open} key={id} id={id} />)}</> : null}
             {state.lexicon.recent.length ? <><Text style={styles.h2}>Zuletzt gelesen</Text>{state.lexicon.recent.slice(0, 5).map((id) => <ArticleRow onOpen={open} key={id} id={id} />)}</> : null}
             <Text style={styles.h2}>Ausgearbeitete Artikel</Text>
-            {ARTICLES.map((a) => <ArticleRow onOpen={open} key={a.id} id={a.id} />)}
+            <Text style={styles.small} testID="lexicon-sort-note">{sort === "alpha" ? "Alphabetisch sortiert" : "Zeitlich sortiert – Jahresangaben sind Näherungen"}</Text>
+            {all.map((a) => <ArticleRow onOpen={open} key={a.id} id={a.id} />)}
           </>
         )}
 
@@ -136,7 +175,16 @@ const useStyles = makeStyles((c) => ({
   small: { fontFamily: fonts.text, fontSize: 12.5, color: c.muted, fontWeight: "600" },
   search: { flexDirection: "row", alignItems: "center", gap: spacing.sm, height: 48, paddingHorizontal: spacing.lg, borderRadius: radius.pill, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
   input: { flex: 1, height: 48, fontFamily: fonts.text, fontSize: 16, color: c.onSurface },
-  chips: { gap: spacing.sm, paddingVertical: 6 },
+  toolbar: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md, flexWrap: "wrap" },
+  tool: { flexDirection: "row", alignItems: "center", gap: 6, minHeight: 44, paddingHorizontal: spacing.md, borderRadius: radius.pill, borderWidth: 1, borderColor: c.border, backgroundColor: c.surfaceSecondary },
+  toolText: { fontFamily: fonts.text, fontSize: 14, fontWeight: "800", color: c.onSurface },
+  segment: { flexDirection: "row", marginLeft: "auto", borderRadius: radius.pill, borderWidth: 1, borderColor: c.border, backgroundColor: c.surfaceSecondary, padding: 3 },
+  segBtn: { flexDirection: "row", alignItems: "center", gap: 5, minHeight: 38, paddingHorizontal: spacing.md, borderRadius: radius.pill },
+  segText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800", color: c.onSurfaceSecondary },
+  activeRow: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, marginTop: spacing.sm },
+  fh: { fontFamily: fonts.text, fontSize: 13, fontWeight: "900", color: c.muted, textTransform: "uppercase", letterSpacing: 0.6, marginTop: spacing.md, marginBottom: spacing.sm },
+  wrap: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
+  sheetBtn: { flex: 1, minHeight: 48, borderRadius: radius.pill, borderWidth: 1, alignItems: "center", justifyContent: "center" },
   h2: { fontFamily: fonts.display, fontSize: 20, fontWeight: "700", color: c.onSurface, marginTop: spacing.lg, marginBottom: spacing.sm },
   row: { flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 60, padding: spacing.md, borderRadius: radius.lg, backgroundColor: c.surfaceSecondary, marginBottom: spacing.sm, borderWidth: 1, borderColor: c.border },
   icon: { width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center" },

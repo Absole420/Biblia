@@ -226,3 +226,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 19: Lexikon Etappe 6 (Urkirche, 11 Artikel, 2 KI-Bilder) – Inhaltsplan 135/135 vollständig + Lexikon: Sortierung (A–Z/Zeitlich) und alle Filter in einem Filter-Sheet"
+    implemented: true
+    working: "NA"
+    file: "src/data/articlesChurch.ts, app/lexicon/index.tsx, src/data/timelineData.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

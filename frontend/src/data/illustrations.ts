@@ -49,6 +49,8 @@ export const ILLUSTRATIONS: Record<string, ImageSourcePropType> = {
   "johannes-apostel": require("../../assets/images/lexicon/johannes-apostel.jpg"),
   "nikodemus": require("../../assets/images/lexicon/nikodemus.jpg"),
   "lazarus": require("../../assets/images/lexicon/lazarus.jpg"),
+  paulus: require("../../assets/images/lexicon/paulus.jpg"),
+  barnabas: require("../../assets/images/lexicon/barnabas.jpg"),
 };
 
 export const ILLUSTRATION_LABEL = "Künstlerische Rekonstruktion – Aussehen nicht überliefert";

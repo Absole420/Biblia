@@ -118,3 +118,10 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Zeitstrahl neu (app/timeline.tsx, src/data/timelineData.ts): 8 Epochen als farbige Kapitelbänder mit Sprungchips, Filter (Personen/Ereignisse/Reiche & Begriffe), Bilder, 101 Einträge; Tippen öffnet Lexikonartikel (ältere Infotafeln → InfoSheet).
 - Artikel: Button „Im Zeitstrahl zeigen“ → /timeline?focus=id (hervorgehoben, eingescrollt).
 - Testagent Iteration 18: alles grün. Offen: Apg, Briefe, Offb (11 Artikel); Intro-Overlay erscheint mehrfach pro Sitzung (prüfen).
+
+## Lexikon Etappe 6 – Urkirche + Sortierung/Filter-Sheet (Juni 2026)
+- 11 neue Artikel (src/data/articlesChurch.ts) → Inhaltsplan 135/135 vollständig ausgearbeitet. 2 weitere KI-Bilder (gesamt 48).
+- Lexikon-Index: ein „Filter“-Button öffnet Sheet (Art, Epoche, Region, Bibelbuch, kombinierbar, Zurücksetzen, „N Treffer anzeigen“); aktive Filter als entfernbare Chips; Sortierung A–Z / Zeitlich (TIMELINE_YEAR, sonst EPOCH_FALLBACK) für alle Listen.
+- Relationen geprüft: keine ungültigen Ziele mehr (cana→nazareth, capernaum→kapernaum).
+- Testagent Iteration 19: 21/23 grün; die 2 Datenfehler waren bereits behoben (Bundle-Cache), per Screenshot verifiziert.
+- Hinweis: Intro-Overlay erscheint mehrfach pro Sitzung (offen).
