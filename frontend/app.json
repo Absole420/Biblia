@@ -9,7 +9,11 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.emergent.gotteswortapp.nia5as"
+      "bundleIdentifier": "com.emergent.gotteswortapp.nia5as",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Fotos zu Bibelstellen und Lektionen aufnehmen",
+        "NSPhotoLibraryUsageDescription": "Fotos zu Bibelstellen und Lektionen speichern"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +21,10 @@
         "backgroundColor": "#F9F3E8"
       },
       "package": "com.emergent.gotteswortapp.nia5as",
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.CAMERA"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -41,7 +48,15 @@
       "expo-web-browser",
       "expo-status-bar",
       "@react-native-vector-icons/feather",
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Fotos zu Bibelstellen und Lektionen speichern",
+          "cameraPermission": "Fotos zu Bibelstellen und Lektionen aufnehmen",
+          "microphonePermission": false
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

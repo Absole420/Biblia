@@ -183,3 +183,11 @@ agent_communication:
       - working: "NA"
         agent: "main"
         comment: "2972 Abschnitte (Jos, Joh, Apg, Röm, Gal, Eph, Phil, Tit, Phlm, Hebr, Jak, 1/2Petr, 1Joh, Jud) aus GermanSwordModules deuCalvinKommentare (Gemeinfrei). Deutsch zuerst sortiert, lange Texte einklappbar."
+
+  - task: "Iteration 12: Bibliothek – Meine Einträge (Bibel/Studienreise sortiert, farbig), Favoriten Bibel (Buch/Kapitel/Vers), Favoriten Studienreise (Herz in Lektion + Karten-Panel), Bilder (Kamera/Upload, lokal, Zuordnung Bibelstelle/Lektion, Titel+Notiz)"
+    implemented: true
+    working: "NA"
+    file: "app/(tabs)/library.tsx, src/components/PhotoAdd.tsx, src/components/FavHeart.tsx, src/components/LessonActions.tsx, src/lib/libraryIndex.ts, src/lib/photos.ts, src/lib/progress-logic.ts (schema v6), src/lib/store.tsx, app/(tabs)/bible.tsx, app/station/[id].tsx, app/world/[id].tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

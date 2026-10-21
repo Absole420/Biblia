@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { CampaignMapContent } from "@/src/components/CampaignMap";
 import { MapRect } from "@/src/components/AnchoredMarker";
+import { FavHeart } from "@/src/components/FavHeart";
 import { GeoMap, placesBox } from "@/src/components/GeoMap";
 import { Icon } from "@/src/components/Icon";
 import { MapLegend } from "@/src/components/MapLegend";
@@ -57,7 +58,7 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const { colors } = useTheme();
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { state } = useProgress();
+  const { state, toggleFavorite } = useProgress();
   const world = WORLDS.find((w) => w.id === worldId)!;
   const [campId, setCampId] = useState(world.campaignIds![0]);
   const campaign = CAMPAIGNS[campId];
@@ -218,7 +219,8 @@ function CampaignScreen({ worldId }: { worldId: string }) {
                     <View style={[styles.typeBadge, { backgroundColor: colors[meta.color], borderColor: colors.border }]}>
                       <Text style={[styles.typeText, { color: meta.ink === "dark" ? colors.mapInk : colors.surface }]}>{meta.label}</Text>
                     </View>
-                    <Text style={styles.sumMeta}>{station.xp} EP · {station.tasks.length} Aufgaben</Text>
+                    <Text style={[styles.sumMeta, { flex: 1 }]}>{station.xp} EP · {station.tasks.length} Aufgaben</Text>
+                    <FavHeart testID="station-fav-button" size={40} active={state.favorites.lessons.some((f) => f.key === station.id)} label={station.title} onPress={() => toggleFavorite("lessons", station.id)} />
                   </View>
                   <Text style={styles.sSub} numberOfLines={2}>{station.subtitle}</Text>
                   {st === "locked" ? (

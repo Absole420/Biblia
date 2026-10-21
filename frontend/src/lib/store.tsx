@@ -5,7 +5,7 @@ import { storage } from "@/src/utils/storage";
 
 import type { Avatar } from "./avatar";
 import type { StudyState } from "./study";
-import { AppState, Category, defaultState, migrate, Note, StudyUnit, uid } from "./progress-logic";
+import { AppState, Category, defaultState, migrate, Note, Photo, StudyUnit, uid } from "./progress-logic";
 
 const KEY = "biblia_state";
 
@@ -31,6 +31,9 @@ type Ctx = {
   replaceState: (s: AppState) => void;
   setAvatar: (a: Avatar) => void;
   updateStudy: (fn: (s: StudyState) => StudyState) => void;
+  toggleFavorite: (kind: "bible" | "lessons", key: string) => void;
+  savePhoto: (p: Omit<Photo, "createdAt">) => void;
+  deletePhoto: (id: string) => void;
   reset: () => void;
 };
 
@@ -121,7 +124,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           if (n.id && s.notes.some((x) => x.id === n.id)) {
             return { ...s, notes: s.notes.map((x) => (x.id === n.id ? { ...x, ...n, updatedAt: now } as Note : x)) };
           }
-          return { ...s, notes: [{ id: uid(), title: n.title, text: n.text, ref: n.ref, createdAt: now, updatedAt: now }, ...s.notes] };
+          return { ...s, notes: [{ id: uid(), title: n.title, text: n.text, ref: n.ref, stationId: n.stationId, createdAt: now, updatedAt: now }, ...s.notes] };
         }),
       deleteNote: (id) => update((s) => ({ ...s, notes: s.notes.filter((n) => n.id !== id) })),
       toggleBookmark: (key) =>
@@ -159,6 +162,18 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       replaceState: (ns) => setState(ns),
       setAvatar: (avatar) => update((s) => ({ ...s, avatar })),
       updateStudy: (fn) => update((s) => ({ ...s, study: fn(s.study) })),
+      toggleFavorite: (kind, key) =>
+        update((s) => {
+          const list = s.favorites[kind];
+          const next = list.some((f) => f.key === key) ? list.filter((f) => f.key !== key) : [{ key, createdAt: new Date().toISOString() }, ...list];
+          return { ...s, favorites: { ...s.favorites, [kind]: next } };
+        }),
+      savePhoto: (ph) =>
+        update((s) => {
+          const exists = s.photos.find((x) => x.id === ph.id);
+          return { ...s, photos: exists ? s.photos.map((x) => (x.id === ph.id ? { ...x, ...ph } : x)) : [{ ...ph, createdAt: new Date().toISOString() }, ...s.photos] };
+        }),
+      deletePhoto: (id) => update((s) => ({ ...s, photos: s.photos.filter((x) => x.id !== id) })),
       reset: () => setState(defaultState()),
     }),
     [ready, state, completeStation, update],

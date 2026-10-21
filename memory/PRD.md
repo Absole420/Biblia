@@ -85,3 +85,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 
 ## Iteration 11 – Bibel-Kopfbereich (agent-tested, iteration_11.json)
 - Zwei Buttons: Bibelbuch auswählen + Optionen ausklappen (Studium, Suche, Lesemodus, Zeilenabstand, Übersetzung)
+
+## Iteration 12 – Bibliothek (agent-tested, iteration_12.json)
+- Meine Einträge: Bibel (Buch→Kapitel→Vers, farbig nach Markierung/Typ) und Studienreise (Lernwelt→Lektion); freie Notizen
+- Favoriten Bibel (Buch/Kapitel über Herz im Kopf, Vers im Vers-Menü), Favoriten Studienreise (Herz in Lektion + Karten-Panel)
+- Lektionsnotizen; Bilder per Kamera/Galerie, nur lokal (expo-file-system), Titel+Notiz, Zuordnung Bibelstelle/Lektion
+- Schema v6 (favorites, photos)

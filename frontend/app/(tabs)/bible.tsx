@@ -52,6 +52,7 @@ export default function BibleScreen() {
   const listRef = useRef<FlatList>(null);
   const chipsRef = useRef<ScrollView>(null);
   const [optsOpen, setOptsOpen] = useState(false);
+  const [favOpen, setFavOpen] = useState(false);
   const info = BOOK_BY_CODE[book];
   const chosen = TRANSLATIONS[state.settings.translation] ?? TRANSLATIONS.elb1905;
   const tr = displayedTranslation(state.settings.translation);
@@ -148,6 +149,9 @@ export default function BibleScreen() {
     }
   };
 
+  const favBook = state.favorites.bible.some((f) => f.key === book);
+  const favCh = state.favorites.bible.some((f) => f.key === `${book}:${ch}`);
+
   return (
     <View style={styles.root} testID="bible-screen">
       <View style={[styles.header, { paddingTop: insets.top + spacing.sm }]}>
@@ -159,6 +163,9 @@ export default function BibleScreen() {
               <Text style={styles.sub} numberOfLines={1} testID="bible-translation-label">{chosen.id === tr.id ? `Angezeigt: ${tr.name}` : `Angezeigt: ${tr.name} · ${chosen.short} nicht lizenziert`}</Text>
             </View>
             <Icon name="chevron-down" size={20} color={colors.onSurface} />
+          </Pressable>
+          <Pressable testID="bible-fav-toggle" style={[styles.optBtn, (favBook || favCh) && { backgroundColor: colors.error, borderColor: colors.error }]} onPress={() => setFavOpen(true)} accessibilityRole="button" accessibilityLabel="Buch oder Kapitel als Favorit merken">
+            <Icon name="heart" size={18} color={favBook || favCh ? colors.surface : colors.onSurface} />
           </Pressable>
           <Pressable testID="bible-options-toggle" style={[styles.optBtn, optsOpen && { backgroundColor: colors.surfaceInverse }]} onPress={() => setOptsOpen((o) => !o)} accessibilityRole="button" accessibilityState={{ expanded: optsOpen }} accessibilityLabel={optsOpen ? "Optionen einklappen" : "Optionen ausklappen"}>
             <Icon name="sliders" size={18} color={optsOpen ? colors.onSurfaceInverse : colors.onSurface} />
@@ -287,6 +294,13 @@ export default function BibleScreen() {
               <Button testID="verse-journal" icon="edit-3" variant="ghost" label="Journal" onPress={() => { setSel(null); router.push({ pathname: "/study/journal", params: { ref: key } }); }} />
             </View>
             <Button
+              testID="verse-fav-button"
+              variant={state.favorites.bible.some((f) => f.key === verseKey(book, ch, sel)) ? "secondary" : "ghost"}
+              icon="heart"
+              label={state.favorites.bible.some((f) => f.key === verseKey(book, ch, sel)) ? "Favorit entfernen" : "Als Favorit merken"}
+              onPress={() => { const k = verseKey(book, ch, sel); const on = state.favorites.bible.some((f) => f.key === k); p.toggleFavorite("bible", k); toast.show(on ? "Aus Favoriten entfernt" : "Vers als Favorit gemerkt"); }}
+            />
+            <Button
               testID="verse-bookmark-button"
               variant={state.bookmarks.some((b) => b.key === key) ? "secondary" : "ghost"}
               icon="bookmark"
@@ -377,6 +391,14 @@ export default function BibleScreen() {
       </Sheet>
 
       {/* Buchauswahl */}
+      <Sheet visible={favOpen} onClose={() => setFavOpen(false)} title="Als Favorit merken" testID="bible-fav-sheet">
+        <View style={{ gap: spacing.sm }}>
+          {([[`${book}:${ch}`, `Kapitel: ${info.name} ${ch}`, favCh, "bible-fav-chapter"], [book, `Buch: ${info.name}`, favBook, "bible-fav-book"]] as const).map(([k, l, on, id]) => (
+            <Button key={id} testID={id} icon="heart" variant={on ? "secondary" : "ghost"} label={on ? `${l} – entfernen` : l} onPress={() => { p.toggleFavorite("bible", k); toast.show(on ? "Aus Favoriten entfernt" : "Als Favorit gemerkt"); }} />
+          ))}
+          <Text style={styles.sub}>Einzelne Verse merkst du über das Vers-Menü (Vers antippen → „Als Favorit merken“).</Text>
+        </View>
+      </Sheet>
       <Sheet visible={picker} onClose={() => setPicker(false)} title="Buch wählen" testID="book-picker-sheet">
         <TextInput testID="book-filter-input" value={bookFilter} onChangeText={setBookFilter} placeholder="Buch suchen …" placeholderTextColor={colors.muted} style={styles.inputSm} />
         {[["Altes Testament", books.filter((b) => b.nr <= 39)], ["Neues Testament", books.filter((b) => b.nr > 39)]].map(([t, list]) =>

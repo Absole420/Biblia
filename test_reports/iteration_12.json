@@ -1,0 +1,27 @@
+{
+  "summary": "Full end-to-end validation of the new Studienbibliothek features on mobile viewport 390x844. All 6 library tabs render (library-tab-mine/favBible/favLessons/photos/units/lexicon). (1) Meine Einträge: segmented library-area-bible/journey works. Creating comment+highlight+bookmark+fav at Joh 3,16 and highlights at Röm 8,28 and 1Mo 1,1 produces three library-book-* groups in correct CANONICAL order [1Mo, Joh, Röm] and verse-entry-* cards show the correct badges (Kommentar, Gottes Wesen, Lesezeichen, 1 Bild) with a left color strip matching the highlight. note-delete-* icon present. Free note via add-note-fab -> note-sheet -> note-title-input + note-text-input + note-save-button appears under 'Freie Notizen'. (2) Studienreise: /station/john-1 header shows lesson-note-button and lesson-fav-button; saving note persists under library-world-gospels -> lesson-entry-john-1 (world group 'Die vier Evangelien' with green strip and Notiz badge). station-fav-button on /world/gospels station-sheet panel works and the fav shows up in library-tab-favLessons as fav-lesson-john-1 with fav-lesson-remove-john-1. (3) Favoriten Bibel: bible-fav-toggle opens bible-fav-sheet with bible-fav-chapter and bible-fav-book; verse-fav-button marks verse favs. Library favBible renders three sections Bücher/Kapitel/Verse with fav-bible-<key> items; fav-bible-remove-<key> correctly removes an item (e.g. removing 'Joh' leaves only chapter+verse favs). (4) Bilder: add-photo-fab opens photo-sheet with photo-camera + photo-gallery; expo-image-picker on web triggers a native file-chooser dialog which Playwright handles via expect_file_chooser.set_files(). photo-preview renders, photo-title-input + photo-note-input accept text, photo-target-verse with photo-ref-input='Joh 3,16' produces photo-ref-status '✓ Joh 3,16', photo-save enabled, saves successfully. The tile photo-item-<id> shows the Johannes 3,16 tag; tapping opens photo-view-sheet with photo-open-target, photo-edit, photo-delete. The same photo also appears as entry-photo-<id> thumbnail inside the Joh 3,16 verse-entry card with a '1 Bild' badge. (5) Persistence: localStorage key 'biblia_state' (~1.3 KB) is written and after a hard page.reload() the bookmark/highlight/favorite created at Joh 1,1 is still present in both Meine Einträge and Favoriten Bibel. No red screens, no console errors observed in any run.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "LibraryScreen cover stats", "issue": "Pluralization bug: label always reads 'X Bilder' including for X=1 (should be '1 Bild'). Reference: /app/frontend/app/(tabs)/library.tsx:142", "testID": "library-screen", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional cosmetic fix: pluralize 'Bild/Bilder' (and ideally 'Notiz/Notizen', 'Markierung/Markierungen', 'Favorit/Favoriten') in the Studienbibliothek cover subtitle in /app/frontend/app/(tabs)/library.tsx:142."
+  ],
+  "critical_code_review_comments": [
+    "library.tsx is 503 lines – approaching the 700-line soft limit. Consider extracting MineBible / MineJourney / FavBible / FavLessons / PhotosGrid into separate components in a future refactor.",
+    "fav-bible-* testIDs include ':' characters (e.g. fav-bible-Joh:3:16). Direct CSS attribute selectors with ':' work in Playwright via quoted attribute selectors; just a note for future test authors."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "In-session seed only (localStorage): comment+highlight+bookmark+fav on Joh 3,16; highlight on Röm 8,28; highlight+bookmark on 1Mo 1,1; book/chapter favs on Johannes; a free note; a lesson note + fav on station john-1; one photo assigned to Joh 3,16. Everything was wiped by starting a fresh browser context in each tool call.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Important: each mcp_browser_automation call starts a brand-new browser context so localStorage is empty. Always seed data within the SAME tool call that validates it. Within a single call, state does persist across page.goto / page.reload (verified with localStorage key 'biblia_state'). Verse testIDs are 'verse-<ch>-<v>' (e.g. verse-3-16). The verse-sheet is a bottom-sheet whose content frequently sits below the mobile viewport – use el.scrollIntoView+el.click() via page.evaluate instead of Playwright click to interact with verse-note-*, verse-bookmark-button, verse-fav-button, highlight-* chips, verse-tab-me. On /library and /world/* an intro overlay 'Überspringen' can appear on first visit; dismiss it with page.get_by_text('Überspringen'). For photos on web use async with page.expect_file_chooser(): click 'photo-gallery' and then file_chooser.set_files('/path/to.png') – that is how expo-image-picker surfaces the gallery picker. All 6 library tabs, canonical book sorting, badges with color strip, free notes, lesson notes/favs, Favoriten Bibel sections (Bücher/Kapitel/Verse), fav removal, photos pipeline, photo thumbnails on bible cards, and localStorage persistence are all verified green.",
+  "rca_of_issue": "N/A – no functional issues found. Only one cosmetic pluralization in library header stats."
+}

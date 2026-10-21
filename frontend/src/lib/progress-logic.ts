@@ -3,10 +3,14 @@ import type { Station } from "../data/types";
 import { Avatar, sanitizeAvatar } from "./avatar";
 import { DEFAULT_STUDY, sanitizeStudy, StudyState } from "./study";
 
-export const SCHEMA_VERSION = 5;
+export const SCHEMA_VERSION = 6;
 
 export type StationProgress = { completedAt: string; examScore: number; examTotal: number; bestScore: number; attempts: number };
-export type Note = { id: string; title: string; text: string; ref?: string; createdAt: string; updatedAt: string };
+export type Note = { id: string; title: string; text: string; ref?: string; stationId?: string; createdAt: string; updatedAt: string };
+/** Favorit: Bibel ("Joh" = Buch, "Joh:3" = Kapitel, "Joh:3:16" = Vers) oder Lektion (Stations-ID). */
+export type Favorite = { key: string; createdAt: string };
+/** Lokal gespeichertes Foto, einer Bibelstelle oder Lektion zugeordnet. */
+export type Photo = { id: string; uri: string; title: string; note: string; target: { kind: "verse"; ref: string } | { kind: "station"; id: string }; createdAt: string };
 export type Bookmark = { key: string; createdAt: string };
 export type Category = { id: string; name: string; color: string };
 export type ThemePref = "system" | "light" | "dark";
@@ -34,6 +38,8 @@ export type AppState = {
   units: StudyUnit[];
   avatar: Avatar | null; // v4: persönliche Lernfigur (beeinflusst den Lernfortschritt nicht)
   study: StudyState; // v5: Leseposition, Lesefortschritt, Lesepläne, Tags, Merkliste, Journal
+  favorites: { bible: Favorite[]; lessons: Favorite[] }; // v6
+  photos: Photo[]; // v6: nur lokal auf dem Gerät
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -68,6 +74,8 @@ export function defaultState(): AppState {
     units: [],
     avatar: null,
     study: DEFAULT_STUDY,
+    favorites: { bible: [], lessons: [] },
+    photos: [],
   };
 }
 
@@ -106,6 +114,12 @@ export function migrate(raw: unknown): AppState {
     avatar: sanitizeAvatar(r.avatar),
     // v4 -> v5: persönlicher Studienbereich
     study: sanitizeStudy(r.study),
+    // v5 -> v6: Favoriten und Fotos
+    favorites: {
+      bible: Array.isArray(r.favorites?.bible) ? r.favorites.bible.filter((f: any) => isObj(f) && typeof f.key === "string") : [],
+      lessons: Array.isArray(r.favorites?.lessons) ? r.favorites.lessons.filter((f: any) => isObj(f) && typeof f.key === "string") : [],
+    },
+    photos: Array.isArray(r.photos) ? r.photos.filter((x: any) => isObj(x) && typeof x.id === "string" && typeof x.uri === "string" && isObj(x.target)) : [],
   };
 }
 

@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ClaimCard } from "@/src/components/ClaimCard";
 import { AvatarCheer, Connections, GoalBox, InfoChips } from "@/src/components/StationExtras";
 import { Icon } from "@/src/components/Icon";
+import { LessonActions } from "@/src/components/LessonActions";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
 import { RefText } from "@/src/components/RefText";
 import { TaskView } from "@/src/components/TaskView";
@@ -124,6 +125,7 @@ export default function StationScreen() {
             <Text style={styles.hTitle} numberOfLines={1}>{station.title}</Text>
             <Text style={styles.hSub} testID="station-phase-label">Phase {phase + 1}/7 · {PHASES[phase]}</Text>
           </View>
+          <LessonActions stationId={station.id} title={station.title} />
         </View>
         <View style={styles.dots}>
           {PHASES.map((ph, i) => (
