@@ -261,3 +261,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 25: Psalmen & Weisheit Station 3 (psalms-3, ps3-1..ps3-10 + psalms-3-exam, Lebenskompass in ps3-10) und Station 4 (psalms-4, ps4-1..ps4-10 + psalms-4-exam, Leitfaden in ps4-10), Bilder ps3-*/ps4-*"
+    implemented: true
+    working: "NA"
+    file: "src/data/psalms3.ts, src/data/psalms4.ts, src/data/john.ts, src/data/worlds.ts, src/data/stationImages.ts, src/data/psalmsKit.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

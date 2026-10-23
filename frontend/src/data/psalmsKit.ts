@@ -47,6 +47,10 @@ const LEX: Record<string, string[]> = {
   "ps2-1": ["psalmen", "david"], "ps2-2": ["kreuzigung", "jesus", "david"], "ps2-3": ["paulus", "abraham", "david"], "ps2-4": ["david", "jerusalem", "zion"],
   "ps2-5": ["jerusalem", "david"], "ps2-6": ["jesus", "tempel-herodes"], "ps2-7": ["psalmen", "versoehnungstag", "jerusalem"], "ps2-8": ["hermon", "jordan", "tempel-salomo"],
   "ps2-9": ["psalmen", "hiob"], "ps2-10": ["auferstehung", "pfingsten", "petrus", "abraham", "kreuzigung"],
+  "ps3-1": ["salomo"], "ps3-2": ["hiob"], "ps3-3": ["salomo"], "ps3-4": ["jesus"], "ps3-5": ["salomo"],
+  "ps3-6": ["salomo"], "ps3-7": ["salomo"], "ps3-8": ["salomo", "rut"], "ps3-9": ["salomo"], "ps3-10": ["bergpredigt", "barmherziger-samariter", "jesus"],
+  "ps4-1": ["hiob"], "ps4-2": ["hiob"], "ps4-3": ["hiob"], "ps4-4": ["hiob"], "ps4-5": ["hiob", "psalmen"], "ps4-6": ["hiob"],
+  "ps4-7": ["hiob"], "ps4-8": ["hiob", "rut", "auferstehung"], "ps4-9": ["hiob", "schoepfung"], "ps4-10": ["hiob", "barmherziger-samariter", "jesus"],
 };
 
 const claim = (kind: Claim["kind"]) => ([title, text, refs]: [string, string, string[]?]): Claim => ({ kind, title, text, refs });
