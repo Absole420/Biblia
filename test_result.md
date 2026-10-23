@@ -268,3 +268,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 26: Lexikon Weisheit (sprueche, buch-hiob, gottesfurcht, herz) mit Links in alle Sprüche-/Hiob-Einheiten + passende Psalm-Einheiten; Vers des Tages auf Startseite (verse-of-day, Rubrikwahl votd-cat-*, settings.votdCat)"
+    implemented: true
+    working: "NA"
+    file: "src/data/articlesWisdom.ts, src/data/articles.ts, src/data/lexiconPlan.ts, src/data/psalmsKit.ts, src/components/VerseOfDay.tsx, app/(tabs)/index.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

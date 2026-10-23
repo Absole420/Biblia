@@ -1,0 +1,28 @@
+{
+  "summary": "Iteration 26 - Lexikon Weisheit (4 new articles) + Vers des Tages on home — fully validated end-to-end via mobile Playwright at 390x844. All 4 new lexicon articles render with correct article-title: sprueche→'Das Buch der Sprüche', buch-hiob→'Das Buch Hiob', gottesfurcht→'Gottesfurcht', herz→'Das Herz in der Bibel'. Relation navigation herz → sprueche verified via testID 'rel-sprueche' (clicking opens 'Das Buch der Sprüche'). Lexicon index search for 'Gottesfurcht' returns 2 matches. Station lexicon links verified: /station/ps3-1 shows lexicon-link-sprueche + lexicon-link-gottesfurcht (both present); /station/ps4-1 shows lexicon-link-buch-hiob; /station/ps3-4 shows lexicon-link-herz; each link navigates to the correct /lexicon/<id> page. Vers des Tages: empty-state text 'Lege Verse in dein Gebetsheft – hier erscheint dann täglich einer davon.' visible on home. After adding Ps 121,2 via verse-121-2 → verse-prayer-button → prayer-add-hoffnung, and Ps 23,4 via verse-23-4 → verse-prayer-button → prayer-add-angst, home verse-of-day-text shows the Ps 23,4 verse ('Auch wenn ich wanderte im Tale des Todesschattens...'). verse-of-day-toggle expands and renders chips votd-cat-all + votd-cat-<cat> (angst/dank verified). Selecting votd-cat-angst still shows Ps 23,4 verse; votd-cat-dank shows hint 'In dieser Rubrik ist noch kein Vers. Wähle eine andere Rubrik.'. Choice (dank) persists after full page reload (label still reads 'VERS DES TAGES · DANK'). verse-of-day-open navigates to /bible?b=Ps&ch=23&v=4; verse-of-day-prayerbook navigates to /library. Layout at both 390x844 and 360x780 OK — collapsed Vers-des-Tages (y≈120, h=84) does NOT overlap theme-card (y≈695/631, h=73); screenshots confirm clean layout above the map with map and theme-card fully visible. 0 page errors, only pre-existing React Native Web 'shadow* style props deprecated' warnings (unrelated to this iteration).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iter26_playwright.py"],
+  "action_items": [
+    "No fixes required; both features (Lexikon Weisheit articles + Vers des Tages) are feature-complete per spec."
+  ],
+  "critical_code_review_comments": [
+    "articlesWisdom.ts (106 LOC) is well-structured: 4 articles with proper Article shape (overview[], deep[], refs, relations, stationIds via PS3/PS4 constants). Relations are reciprocal (sprueche↔gottesfurcht↔herz↔buch-hiob). References use Elberfelder-1905 book codes. Content is theologically careful (e.g. Spr 8 wisdom→Christ marked as 'spätere Deutung'; Hi 19,25 marked as christliche Vorausdeutung).",
+    "VerseOfDay.tsx (74 LOC) is clean, uses deterministic daily rotation via dayIndex() % pool.length. Correct empty-state branching: no prayers vs. empty category. Persists choice via progress store setSettings({ votdCat }). Minimum 44px touch target on head Pressable. All interactive elements have testIDs (verse-of-day, verse-of-day-toggle, verse-of-day-text, verse-of-day-note, votd-cat-all, votd-cat-<id>, verse-of-day-open, verse-of-day-prayerbook).",
+    "Minor code-review note (not a bug): In VerseOfDay.tsx line 49, `entry.ref.split('-')[0].split(':')` extracts b/ch/v assuming single-verse refs like 'Ps:23:4'. For verse-range refs like 'Ps:23:1-3' it would still produce 'Ps:23:1' which is a reasonable fallback (opens at the first verse). Behavior is correct.",
+    "No deprecated expo packages (expo-av/expo-barcode-scanner/expo-background-fetch) in touched files. No raw HTML elements, all text in <Text>, styles via StyleSheet.",
+    "Home layout: VerseOfDay is placed inside the sticky `top` container above the map, below the chip row. It sits at y≈120 with h=84 collapsed; theme-card is positioned absolute at bottom (y≈695 at 390x844, y≈631 at 360x780). No overlap in either tested viewport."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "100% - all 6 spec items (lexicon pages render, lexicon index search, station lexicon-link testIDs + navigation, Vers des Tages empty+filled+categories+persistence, verse-of-day navigation to bible/library, layout at 390x844 & 360x780) verified via Playwright."},
+  "seed_data_creation": "Added 2 prayers to the IndexedDB-backed store during the test run: Ps 121,2 (hoffnung) and Ps 23,4 (angst). Lives only in the Playwright browser context, not persisted across test agents.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Lexicon relation chips use testID pattern 'rel-<target>' (not 'relation-<target>'). article-title can appear multiple times after cross-navigation if the previous page is kept in DOM — use .first or scope by testID='article-screen'. Prayer refs are stored in format 'Ps:23:4' (colon-separated); verse-of-day-open parses this via split('-')[0].split(':'). Setting votdCat='dank' persists in IndexedDB (biblia_state key) across reload. The 'biblia.introJourney.done'='1' localStorage flag + 'Überspringen' button combo is still required to bypass intro before each navigation.",
+  "rca_of_issue": "N/A (feature validation, not a bug)"
+}

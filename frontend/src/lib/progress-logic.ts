@@ -41,7 +41,7 @@ export type AppState = {
   bookmarks: Bookmark[];
   highlights: Record<string, string>; // verseKey -> categoryId
   categories: Category[];
-  settings: { theme: ThemePref; fontScale: number; translation: "elb1905" | "elb2006" | "neue" };
+  settings: { theme: ThemePref; fontScale: number; translation: "elb1905" | "elb2006" | "neue"; votdCat?: PrayerCat | "all" };
   goal: { weeklyStations: number };
   activity: { date: string; stationId: string }[];
   answered: { total: number; correct: number };

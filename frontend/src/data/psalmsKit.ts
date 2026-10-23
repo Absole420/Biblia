@@ -41,16 +41,16 @@ export type Unit = {
 
 // Verknüpfte Lexikonartikel je Einheit (nur vorhandene Artikel-IDs)
 const LEX: Record<string, string[]> = {
-  "ps1-1": ["psalmen", "david", "salomo", "mose", "tempel-salomo"], "ps1-2": ["psalmen", "zehn-gebote"], "ps1-3": ["david", "davidsbund", "zion", "jerusalem", "jesus", "paulus"],
-  "ps1-4": ["david", "jesus", "bethlehem"], "ps1-5": ["mose", "sinai"], "ps1-6": ["jerusalem", "zion", "tempel-salomo", "passa"], "ps1-7": ["psalmen", "david"],
+  "ps1-1": ["psalmen", "david", "salomo", "mose", "tempel-salomo"], "ps1-2": ["gottesfurcht", "psalmen", "zehn-gebote"], "ps1-3": ["david", "davidsbund", "zion", "jerusalem", "jesus", "paulus"],
+  "ps1-4": ["david", "jesus", "bethlehem"], "ps1-5": ["mose", "sinai"], "ps1-6": ["jerusalem", "zion", "tempel-salomo", "passa"], "ps1-7": ["herz", "psalmen", "david"],
   "ps1-8": ["jerusalem", "tempel-herodes", "jesus", "petrus", "passa"], "ps1-9": ["psalmen", "zehn-gebote", "sinai"], "ps1-10": ["schoepfung", "adam-eva", "jesus"],
-  "ps2-1": ["psalmen", "david"], "ps2-2": ["kreuzigung", "jesus", "david"], "ps2-3": ["paulus", "abraham", "david"], "ps2-4": ["david", "jerusalem", "zion"],
-  "ps2-5": ["jerusalem", "david"], "ps2-6": ["jesus", "tempel-herodes"], "ps2-7": ["psalmen", "versoehnungstag", "jerusalem"], "ps2-8": ["hermon", "jordan", "tempel-salomo"],
+  "ps2-1": ["psalmen", "david"], "ps2-2": ["kreuzigung", "jesus", "david"], "ps2-3": ["paulus", "abraham", "david"], "ps2-4": ["herz", "david", "jerusalem", "zion"],
+  "ps2-5": ["jerusalem", "david"], "ps2-6": ["jesus", "tempel-herodes"], "ps2-7": ["gottesfurcht", "psalmen", "versoehnungstag", "jerusalem"], "ps2-8": ["herz", "hermon", "jordan", "tempel-salomo"],
   "ps2-9": ["psalmen", "hiob"], "ps2-10": ["auferstehung", "pfingsten", "petrus", "abraham", "kreuzigung"],
-  "ps3-1": ["salomo"], "ps3-2": ["hiob"], "ps3-3": ["salomo"], "ps3-4": ["jesus"], "ps3-5": ["salomo"],
-  "ps3-6": ["salomo"], "ps3-7": ["salomo"], "ps3-8": ["salomo", "rut"], "ps3-9": ["salomo"], "ps3-10": ["bergpredigt", "barmherziger-samariter", "jesus"],
-  "ps4-1": ["hiob"], "ps4-2": ["hiob"], "ps4-3": ["hiob"], "ps4-4": ["hiob"], "ps4-5": ["hiob", "psalmen"], "ps4-6": ["hiob"],
-  "ps4-7": ["hiob"], "ps4-8": ["hiob", "rut", "auferstehung"], "ps4-9": ["hiob", "schoepfung"], "ps4-10": ["hiob", "barmherziger-samariter", "jesus"],
+  "ps3-1": ["gottesfurcht", "sprueche", "salomo"], "ps3-2": ["sprueche", "hiob"], "ps3-3": ["herz", "sprueche", "salomo"], "ps3-4": ["herz", "sprueche", "jesus"], "ps3-5": ["sprueche", "salomo"],
+  "ps3-6": ["sprueche", "salomo"], "ps3-7": ["sprueche", "salomo"], "ps3-8": ["sprueche", "salomo", "rut"], "ps3-9": ["sprueche", "salomo"], "ps3-10": ["gottesfurcht", "sprueche", "bergpredigt", "barmherziger-samariter", "jesus"],
+  "ps4-1": ["gottesfurcht", "buch-hiob", "hiob"], "ps4-2": ["buch-hiob", "hiob"], "ps4-3": ["buch-hiob", "hiob"], "ps4-4": ["buch-hiob", "hiob"], "ps4-5": ["buch-hiob", "hiob", "psalmen"], "ps4-6": ["buch-hiob", "hiob"],
+  "ps4-7": ["gottesfurcht", "buch-hiob", "hiob"], "ps4-8": ["buch-hiob", "hiob", "rut", "auferstehung"], "ps4-9": ["buch-hiob", "hiob", "schoepfung"], "ps4-10": ["buch-hiob", "hiob", "barmherziger-samariter", "jesus"],
 };
 
 const claim = (kind: Claim["kind"]) => ([title, text, refs]: [string, string, string[]?]): Claim => ({ kind, title, text, refs });

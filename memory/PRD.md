@@ -150,3 +150,7 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Lokales Gebetsheft (state.prayers, Schema v7, migriert verlustfrei): Rubriken Dank, Orientierung, Angst, Hoffnung, Klage, Vergebung
 - Hinzufügen: Bibelleser → Vers antippen → „Ins Gebetsheft“ → Rubrik (auch Versbereiche); Psalm-Einheit 1.10 → Schritt Reflexion → Vorschläge übernehmen
 - Bibliothek: neues Buch „Gebetsheft“ (Regal 4) mit Filter, Suche, Verstext, Gebetsnotiz, Umsortieren innerhalb der Rubrik, Löschen mit Bestätigung, Sprung in den Bibelleser
+
+## Iteration 26 – Lexikon Weisheit + Vers des Tages
+- Neue Lexikonartikel: sprueche, buch-hiob, gottesfurcht, herz (articlesWisdom.ts, 139 Artikel gesamt); verknüpft mit allen ps3-*/ps4-* sowie ps1-2, ps1-7, ps2-4, ps2-7, ps2-8
+- Startseite: „Vers des Tages“ aus dem Gebetsheft, täglich wechselnd, Rubrik wählbar (settings.votdCat), Sprung in Bibelleser/Gebetsheft

@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AvatarView } from "@/src/components/AvatarView";
 import { GeoMap } from "@/src/components/GeoMap";
+import { VerseOfDay } from "@/src/components/VerseOfDay";
 import { Icon } from "@/src/components/Icon";
 import { JourneyLayer } from "@/src/components/JourneyLayer";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
@@ -99,6 +100,7 @@ export default function WorldMapScreen() {
             <Chip key={t.id} testID={`theme-chip-${t.id}`} label={t.title} selected={theme === t.id} color={WORLDS.find((w) => w.id === t.id)?.palette.base} onPress={() => { setTheme(t.id); setOpen(false); }} />
           ))}
         </ScrollView>}
+        <VerseOfDay />
       </View>
 
       {/* Info-Karte zum Thema */}
