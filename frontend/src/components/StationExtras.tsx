@@ -1,7 +1,9 @@
+import { useRouter } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
+import { ARTICLE_BY_ID } from "@/src/data/articles";
 import { Connection, ConnectionKind } from "@/src/data/types";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -16,6 +18,9 @@ export const CONNECTION_META: Record<ConnectionKind, { label: string; icon: stri
   allusion: { label: "Erkennbare Anspielung", icon: "corner-down-right", desc: "Wörter oder Bilder werden deutlich aufgegriffen, ohne Zitat." },
   parallel: { label: "Thematische Parallele", icon: "git-merge", desc: "Ähnliches Motiv oder Muster, keine direkte Abhängigkeit." },
   interpretation: { label: "Spätere Auslegung", icon: "book-open", desc: "Deutung durch spätere Texte oder Traditionen." },
+  nt: { label: "Im Neuen Testament auf Jesus bezogen", icon: "check-square", desc: "Das NT bezieht die Stelle ausdrücklich auf Jesus (konkrete Stelle genannt)." },
+  foreshadow: { label: "Christliche Vorausdeutung", icon: "sunrise", desc: "Christliche Auslegung über den ursprünglichen Zusammenhang hinaus." },
+  theme: { label: "Thematische Verbindung zu Jesus", icon: "git-merge", desc: "Gemeinsames Motiv, keine Prophetie-Behauptung." },
 };
 
 export function GoalBox({ goal }: { goal?: string }) {
@@ -41,6 +46,28 @@ export function InfoChips({ ids }: { ids?: string[] }) {
   );
 }
 
+/** Links zu ausgearbeiteten Lexikonartikeln. */
+export function LexiconLinks({ ids }: { ids?: string[] }) {
+  const styles = useStyles();
+  const { colors } = useTheme();
+  const router = useRouter();
+  const list = (ids ?? []).filter((id) => ARTICLE_BY_ID[id]);
+  if (!list.length) return null;
+  return (
+    <View testID="station-lexicon-links">
+      <Text style={styles.label}>Im Lexikon nachlesen</Text>
+      <View style={styles.wrap}>
+        {list.map((id) => (
+          <Pressable key={id} testID={`lexicon-link-${id}`} accessibilityRole="link" onPress={() => router.push({ pathname: "/lexicon/[id]", params: { id } })} style={styles.lexChip}>
+            <Icon name="book" size={14} color={colors.brandPrimary} />
+            <Text style={styles.lexText}>{ARTICLE_BY_ID[id].title}</Text>
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
+}
+
 export function Connections({ list }: { list?: Connection[] }) {
   const styles = useStyles();
   const { colors } = useTheme();
@@ -59,7 +86,7 @@ export function Connections({ list }: { list?: Connection[] }) {
           </View>
         );
       })}
-      <Text style={styles.legend}>{Object.values(CONNECTION_META).map((m) => `${m.label}: ${m.desc}`).join("  ·  ")}</Text>
+      <Text style={styles.legend}>{[...new Set(list.map((c) => c.kind))].map((k) => `${CONNECTION_META[k].label}: ${CONNECTION_META[k].desc}`).join("  ·  ")}</Text>
     </View>
   );
 }
@@ -84,6 +111,8 @@ const useStyles = makeStyles((c) => ({
   label: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800", color: c.muted, marginTop: spacing.lg, marginBottom: spacing.sm },
   wrap: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm },
   h2: { fontFamily: fonts.display, fontSize: 20, fontWeight: "700", color: c.onSurface, marginBottom: spacing.sm },
+  lexChip: { flexDirection: "row", alignItems: "center", gap: 6, minHeight: 40, paddingHorizontal: spacing.md, borderRadius: radius.pill, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
+  lexText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "700", color: c.onSurface },
   conn: { padding: spacing.md, borderRadius: radius.lg, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border, marginBottom: spacing.sm, gap: 4 },
   connHead: { flexDirection: "row", alignItems: "center", gap: 6 },
   connKind: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800", color: c.info, textTransform: "uppercase" },

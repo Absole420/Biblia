@@ -18,6 +18,8 @@ export const CLAIM_META: Record<ClaimKind, { label: string; icon: string; color:
   jewish: { label: "Jüdische Tradition", icon: "star", color: "info" },
   christian: { label: "Christliche Auslegung", icon: "plus", color: "stationChallenge" },
   reflection: { label: "Persönliche Reflexion", icon: "edit-3", color: "brandSecondary" },
+  teach: { label: "Lehrtext", icon: "book-open", color: "brandPrimary" },
+  info: { label: "Infotafel", icon: "info", color: "info" },
 };
 
 export const CERTAINTY_META = {

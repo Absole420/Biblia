@@ -1,12 +1,12 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Image, Pressable, Text, TextInput, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import Animated, { FadeIn, FadeInDown, ZoomIn } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ClaimCard } from "@/src/components/ClaimCard";
-import { AvatarCheer, Connections, GoalBox, InfoChips } from "@/src/components/StationExtras";
+import { AvatarCheer, Connections, GoalBox, InfoChips, LexiconLinks } from "@/src/components/StationExtras";
 import { Icon } from "@/src/components/Icon";
 import { LessonActions } from "@/src/components/LessonActions";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
@@ -18,6 +18,7 @@ import { displayedTranslation, formatRef } from "@/src/data/bible";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { findStation } from "@/src/data/john";
 import { STATION_META } from "@/src/data/meta";
+import { STATION_IMAGES } from "@/src/data/stationImages";
 import { THEME_MAPS } from "@/src/data/themeMaps";
 import { levelInfo, stationStatus } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
@@ -137,6 +138,12 @@ export default function StationScreen() {
       <KeyboardAwareScrollView ref={scrollRef} bottomOffset={96} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         {phase === 0 ? (
           <Animated.View entering={FadeIn.duration(400)} testID="phase-discover">
+            {station.image && STATION_IMAGES[station.image] ? (
+              <View style={styles.heroImgWrap} testID="station-illustration">
+                <Image source={STATION_IMAGES[station.image]} style={styles.heroImg} resizeMode="cover" accessibilityLabel={`Illustration: ${station.title}`} />
+                <Text style={styles.heroCaption}>KI-generierte künstlerische Darstellung – kein historisches Bild</Text>
+              </View>
+            ) : (
             <View style={[styles.hero, { backgroundColor: accent }]}>
               <View style={[styles.heroSun, { backgroundColor: colors.warning }]} />
               <View style={[styles.heroHill, { backgroundColor: colors.mapForest }]} />
@@ -146,6 +153,7 @@ export default function StationScreen() {
               </View>
               <Text style={[styles.heroType, { color: accentInk }]}>{meta.label}</Text>
             </View>
+            )}
             <Text style={styles.h1}>{station.title}</Text>
             <Text style={styles.sub}>{station.subtitle}</Text>
             <AvatarCheer testID="avatar-station-start" text={`Auf geht’s zur Station „${station.title}“!`} />
@@ -156,12 +164,16 @@ export default function StationScreen() {
               <Text key={formatRef(r)} style={styles.refLine}>• {formatRef(r)}</Text>
             ))}
             <InfoChips ids={station.info} />
+            <LexiconLinks ids={station.lexicon} />
           </Animated.View>
         ) : null}
 
         {phase === 1 ? (
           <Animated.View entering={FadeIn.duration(300)} testID="phase-study">
             <Text style={styles.label}>Bibeltext · {displayedTranslation(state.settings.translation).name}</Text>
+            {station.readings.some((r) => r.book === "Ps") ? (
+              <Text style={styles.small} testID="psalm-numbering-note">Verszählung nach den Elberfelder-1905-Daten dieser App: Die Psalmüberschrift ist in Vers 1 enthalten. In gedruckten Elberfelder-Ausgaben, die Überschriften eigens zählen, liegen manche Versnummern um 1–2 höher.</Text>
+            ) : null}
             {station.readings.map((r) => (
               <View key={formatRef(r)} style={styles.reading}>
                 <Text style={styles.readingRef}>{formatRef(r)}</Text>
@@ -211,13 +223,14 @@ export default function StationScreen() {
 
         {phase === 2 ? (
           <Animated.View entering={FadeIn.duration(300)} testID="phase-background">
-            <Text style={styles.h2}>Historischer Hintergrund</Text>
-            <Text style={styles.sub}>Jede Aussage ist gekennzeichnet: Bibeltext, gesicherte Geschichte, Hypothese oder Auslegungstradition.</Text>
+            <Text style={styles.h2}>{station.background.some((c) => c.kind === "teach") ? "Lehrtext & Infotafeln" : "Historischer Hintergrund"}</Text>
+            <Text style={styles.sub}>Jede Aussage ist gekennzeichnet: Lehrtext, Infotafel, Bibeltext, Hypothese oder Auslegungstradition.</Text>
             {station.background.map((c, i) => (
               <ClaimCard key={i} claim={c} fontScale={fontScale} testID={`claim-${i}`} />
             ))}
             <Connections list={station.connections} />
             <InfoChips ids={station.info} />
+            <LexiconLinks ids={station.lexicon} />
           </Animated.View>
         ) : null}
 
@@ -330,6 +343,9 @@ const useStyles = makeStyles((c) => ({
   dots: { flexDirection: "row", gap: 6, marginTop: spacing.md },
   dot: { flex: 1, height: 6, borderRadius: 3 },
   content: { padding: spacing.xl, paddingBottom: spacing.xxxl },
+  heroImgWrap: { borderRadius: 28, overflow: "hidden", marginBottom: spacing.xl, backgroundColor: c.surfaceSecondary },
+  heroImg: { width: "100%", aspectRatio: 1.6 },
+  heroCaption: { fontFamily: fonts.text, fontSize: 11, color: c.muted, paddingHorizontal: spacing.md, paddingVertical: 6 },
   hero: { height: 190, borderRadius: 28, overflow: "hidden", alignItems: "center", justifyContent: "center", marginBottom: spacing.xl },
   heroSun: { position: "absolute", width: 120, height: 120, borderRadius: 60, top: -30, right: 30, opacity: 0.55 },
   heroHill: { position: "absolute", width: 420, height: 200, borderRadius: 200, bottom: -150, left: -80, opacity: 0.6 },

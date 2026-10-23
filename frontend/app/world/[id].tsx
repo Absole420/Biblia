@@ -172,6 +172,7 @@ function CampaignScreen({ worldId }: { worldId: string }) {
                 const pct = Math.round((c.stations.filter((s) => state.stations[s.id]).length / c.stations.length) * 100);
                 return <Chip key={cid} testID={`campaign-chip-${cid}`} label={`${c.title.replace("Das Evangelium nach ", "")} · ${pct} %`} selected={campId === cid} color={world.palette.base} onPress={() => { setCampId(cid); closePanel(); }} />;
               })}
+              {worldId === "psalms" ? <Chip testID="jesus-psalms-chip" label="Jesus in den Psalmen" selected={false} color={world.palette.accent} onPress={() => router.push("/psalms-jesus")} /> : null}
             </ScrollView>
           ) : null}
         </>

@@ -5,7 +5,7 @@
 export type StationType = "event" | "narrative" | "study" | "practice" | "exam" | "challenge";
 
 /** Kennzeichnung der fachlichen Aussageart (Abschnitt 11 des Auftrags). */
-export type ClaimKind = "text" | "history" | "hypothesis" | "jewish" | "christian" | "reflection";
+export type ClaimKind = "text" | "history" | "hypothesis" | "jewish" | "christian" | "reflection" | "teach" | "info";
 
 export type VerseRef = { book: string; ch: number; from: number; to?: number };
 
@@ -46,10 +46,13 @@ export type Station = {
   summary?: string; // kurze Zusammenfassung
   info?: string[]; // Infotafeln (src/data/lexicon.ts)
   connections?: Connection[]; // Bezüge AT ↔ NT
+  image?: string; // Schlüssel in STATION_IMAGES (KI-Illustration)
+  lexicon?: string[]; // verknüpfte Lexikonartikel (ARTICLE_BY_ID)
 };
 
 /** Art des Bezugs zwischen Altem und Neuem Testament. */
-export type ConnectionKind = "quote" | "allusion" | "parallel" | "interpretation";
+/** nt/foreshadow/theme: Kennzeichnung messianischer Bezüge (Psalmen & Weisheit) */
+export type ConnectionKind = "quote" | "allusion" | "parallel" | "interpretation" | "nt" | "foreshadow" | "theme";
 export type Connection = { from: string; to: string; kind: ConnectionKind; note: string; jewish?: string };
 
 export type Campaign = {

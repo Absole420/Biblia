@@ -247,3 +247,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 23: Lernwelt Psalmen & Weisheit – Station 1 (psalms-1) und 2 (psalms-2) mit je 10 Einheiten + Stationsprüfung (12 Fragen), KI-Bild je Einheit, Lehrtext/Infotafeln (ClaimKind teach/info), Kennzeichnung messianischer Bezüge (ConnectionKind nt/foreshadow/theme), Lexikon-Links, Verszählungs-Hinweis, Sammlung /psalms-jesus"
+    implemented: true
+    working: "NA"
+    file: "src/data/psalms1.ts, src/data/psalms2.ts, src/data/psalmsKit.ts, src/data/stationImages.ts, app/psalms-jesus.tsx, app/station/[id].tsx, app/world/[id].tsx, src/components/StationExtras.tsx, src/data/worlds.ts, src/data/john.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

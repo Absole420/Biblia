@@ -32,8 +32,8 @@ export const WORLDS: World[] = [
     subtitle: "Lieder unter Sternenlicht",
     books: ["Hiob", "Psalmen", "Sprüche", "Prediger", "Hoheslied"],
     palette: { base: "#7E8FC8", accent: "#8E6BB8", glow: "#E8E3FF", ink: "#232A55" },
-    x: 820, y: 900, icon: "star", status: "preview",
-    description: "Gebete, Klagen, Lobpreis und Lebensweisheit Israels.",
+    x: 820, y: 900, icon: "star", status: "playable", campaignIds: ["psalms-1", "psalms-2"],
+    description: "Gebete, Klagen, Lobpreis und Lebensweisheit Israels. Spielbar: Station 1 und 2. In Vorbereitung: Weisheit der Sprüche, Hiob und das Leid.",
     planned: ["Die Psalmen als Gebetbuch", "Klage und Vertrauen", "Weisheit der Sprüche", "Hiob und das Leid"],
   },
   {
