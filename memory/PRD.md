@@ -125,3 +125,17 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Relationen geprüft: keine ungültigen Ziele mehr (cana→nazareth, capernaum→kapernaum).
 - Testagent Iteration 19: 21/23 grün; die 2 Datenfehler waren bereits behoben (Bundle-Cache), per Screenshot verifiziert.
 - Hinweis: Intro-Overlay erscheint mehrfach pro Sitzung (offen).
+
+## Intro „Reise bis zum Kreuz“ + Karten-Feinschliff (Juni 2026)
+- IntroJourney (src/components/IntroJourney.tsx, Daten src/data/introScenes.ts): Titelkarte + 15 Szenen (Geburt → Auferstehung) mit KI-Bildern (assets/images/intro, gen_intro.py), Nacherzählung ohne Zitate, Bibelstellen, Hinweise zu abweichender Reihenfolge der Evangelien. Steuerung: zurück/pausieren/weiter/überspringen, Auto-Weiter 11 s, Ken-Burns-Kamerafahrt (aus bei reduzierter Bewegung/alten Android-Geräten), Farbstimmung je Szene, Vorladen ±1 Szene, Fortsetzen nach Unterbrechung (AsyncStorage), Pause bei App im Hintergrund.
+- Erststart: nach Logo-Animation automatisch; danach nur noch über Einstellungen → „Intro erneut ansehen“ (/intro).
+- Karte: neue Palette (Türkis-Meer, Sand, Olive, warmer Stein) in theme.ts; neuer Button „Zur aktuellen Lernstation“ in ZoomableMap.
+- Testagent Iteration 20/21: grün nach Fixes (Resume, testID).
+- Nicht umgesetzt (offen): zoomabhängige zusätzliche Landschafts-Illustrationen (Städte, Pflanzen, Bauwerke), Marker-Clustering-Überarbeitung, kompakte Stationsvorschau mit einklappbarem Detailbereich und alternative Stationsliste – bestehende Kartenlösung (Iteration 9) bleibt aktiv.
+
+## Iteration 22 – Karten-Überarbeitung (agent-tested, nicht nutzerbestätigt)
+- Abenteuerkarte: Stationsliste (Status, „Aktuell“), Legende mit Stationszuständen, ländliche Details (Dörfer, Weinberge, Felder, Herden, Palmen, Zelte, Zypressen) weichen Stationen/Wegen aus
+- Historische Karte: reich illustrierte Deko mit Detailstufen je Zoom (Gebirgszüge, Dörfer, Weinberge, Kornfelder, Zedern, Papyrus, Brunnen, Zelte, ummauerte Städte, Fische, Wellen); Symbole wachsen beim Zoomen gedämpft
+- Button „Aktuelle Station“ in beiden Kartenarten; Zoom/Ausschnitt sowie Kartenart/Kampagne bleiben beim Zurückkehren erhalten (Sitzung)
+- Kartenanimationen respektieren „Bewegung reduzieren“; Bedienknöpfe brechen im Querformat in zwei Spalten um
+- Fallback-Seite für unbekannte Lernwelt

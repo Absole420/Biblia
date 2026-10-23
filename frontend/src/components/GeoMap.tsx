@@ -89,7 +89,9 @@ export function GeoMap({ map, k: kProp, onSelect, onCluster, highlight, importan
   const labelH = Math.round(fs * 1.45) + 2;
   const labelW = (name: string) => textWidth(name, fs) + 14;
 
-  const figures = useMemo(() => decoFigures(map, k), [map, k]);
+  // Symbole wachsen beim Zoomen gedämpft mit (bleiben erkennbar, ohne die Karte zu überfrachten)
+  const kd = k / Math.sqrt(zoom);
+  const figures = useMemo(() => decoFigures(map, kd, zoom), [map, kd, zoom]);
   const meP = me ? projectGeo(map, me.lat, me.lon) : null;
   const obstacles = useMemo(() => regionLabelRects(map, k), [map, k]);
 
@@ -165,7 +167,7 @@ export function GeoMap({ map, k: kProp, onSelect, onCluster, highlight, importan
         <Path d={paths.land} fill={colors.mapLand} stroke={colors.mapMountain} strokeOpacity={0.35} strokeWidth={0} />
         <Path d={paths.rivers} stroke={colors.mapRiver} strokeWidth={2.5 * k} fill="none" strokeLinecap="round" strokeLinejoin="round" />
         <Path d={paths.lakes} fill={colors.mapSea} stroke={colors.mapRiver} strokeWidth={1.5 * k} />
-        <MapDecor map={map} k={k} colors={colors} shift={shift} />
+        <MapDecor map={map} k={kd} colors={colors} shift={shift} zoom={zoom} />
         {/* Beschriftungen von Regionen, Meeren, Stämmen */}
         {map.labels.map((l) => {
           const p = P(l.lat, l.lon);

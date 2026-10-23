@@ -106,8 +106,14 @@ export default function SettingsScreen() {
           <Button testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
         </View>
 
+        <SectionTitle>Intro</SectionTitle>
+        <Text style={styles.small}>Die Reise bis zum Kreuz – 15 Szenen aus dem Leben Jesu nach den Evangelien.</Text>
+        <View style={{ marginTop: spacing.md }}>
+          <Button testID="settings-replay-intro" label="Intro erneut ansehen" icon="play-circle" variant="secondary" onPress={() => router.push("/intro")} />
+        </View>
+
         <SectionTitle>Über BIBLIA</SectionTitle>
-        <Text style={styles.small}>Version 0.1 · Bibeltext: Elberfelder 1905 (gemeinfrei). Karten-Koordinaten: OpenBible.info (CC BY 4.0), Pleiades (CC BY 3.0). Illustrationen sind Platzhalter-Vektorgrafiken.</Text>
+        <Text style={styles.small}>Version 0.1 · Bibeltext: Elberfelder 1905 (gemeinfrei). Karten-Koordinaten: OpenBible.info (CC BY 4.0), Pleiades (CC BY 3.0). Intro- und Personenbilder: KI-generiert (OpenAI GPT Image 1), künstlerische Rekonstruktion.</Text>
       </KeyboardAwareScrollView>
 
       <Sheet visible={!!colorFor} onClose={() => setColorFor(null)} title="Farbe wählen" testID="color-sheet">

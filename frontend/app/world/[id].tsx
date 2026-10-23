@@ -27,7 +27,7 @@ import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 export default function WorldScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const world = WORLDS.find((w) => w.id === id);
-  if (!world) return null;
+  if (!world) return <NotFound />;
   if (world.status === "playable" && world.campaignIds?.length) return <CampaignScreen worldId={world.id} />;
   return <PreviewScreen worldId={world.id} />;
 }
@@ -51,6 +51,25 @@ function Header({ title, subtitle, right }: { title: string; subtitle?: string; 
   );
 }
 
+// Zuletzt gewählte Ansicht je Lernwelt (Kampagne + Kartenart) bleibt beim Zurückkehren erhalten
+const WORLD_VIEW = new Map<string, { campId: string; mode: "adventure" | "history" }>();
+
+function NotFound() {
+  const styles = useStyles();
+  const { colors } = useTheme();
+  const router = useRouter();
+  return (
+    <View style={styles.root} testID="world-not-found">
+      <Header title="Lernwelt nicht gefunden" />
+      <View style={styles.nf}>
+        <Icon name="map" size={40} color={colors.muted} />
+        <Text style={styles.sBody}>Diese Lernwelt gibt es nicht (mehr). Bitte wähle eine Lernwelt auf der Startseite.</Text>
+        <Button testID="world-not-found-home" label="Zur Startseite" icon="home" onPress={() => router.replace("/")} />
+      </View>
+    </View>
+  );
+}
+
 const pad = (b: { x: number; y: number; w: number; h: number }, m: number) => ({ x: b.x - m, y: b.y - m, w: b.w + 2 * m, h: b.h + 2 * m });
 
 function CampaignScreen({ worldId }: { worldId: string }) {
@@ -60,9 +79,11 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const insets = useSafeAreaInsets();
   const { state, toggleFavorite } = useProgress();
   const world = WORLDS.find((w) => w.id === worldId)!;
-  const [campId, setCampId] = useState(world.campaignIds![0]);
+  const remembered = WORLD_VIEW.get(worldId);
+  const [campId, setCampId] = useState(remembered && CAMPAIGNS[remembered.campId] ? remembered.campId : world.campaignIds![0]);
   const campaign = CAMPAIGNS[campId];
-  const [mode, setMode] = useState<"adventure" | "history">("adventure");
+  const [mode, setMode] = useState<"adventure" | "history">(remembered?.mode ?? "adventure");
+  useEffect(() => { WORLD_VIEW.set(worldId, { campId, mode }); }, [worldId, campId, mode]);
   const hMap = THEME_MAPS[world.id] ?? THEME_MAPS.gospels;
   const [sel, setSel] = useState<string | null>(null);
   const [place, setPlace] = useState<GeoPlace | null>(null);
@@ -110,7 +131,9 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const highlightPlaces = useMemo(() => campaign.stations.filter((s) => state.stations[s.id]).flatMap((s) => s.placeIds ?? []), [campaign, state.stations]);
   const gSize = mapSize(hMap);
 
-  const panelOpen = history ? !!place || listOpen : !!station;
+  const curPlace = hMap.places.find((p) => p.id === curIds[0]);
+  const focus = history ? (curPlace ? projectGeo(hMap, curPlace.lat, curPlace.lon) : undefined) : { x: nextAvail.x, y: nextAvail.y };
+  const panelOpen = !!place || listOpen || !!station;
   const padBottom = panelOpen && !side ? panelSize : 0;
   const padRight = panelOpen && side ? panelSize : 0;
   const ctrlTop = (full ? insets.top : 0) + spacing.sm;
@@ -120,6 +143,7 @@ function CampaignScreen({ worldId }: { worldId: string }) {
   const reserved = useMemo(() => (legendRect ? [legendRect] : []), [legendRect]);
 
   const openPlace = (p: GeoPlace) => { setListOpen(false); setExpanded(false); setPlace(p); };
+  const openStation = (id: string) => { setPlace(null); setListOpen(false); setExpanded(false); setSel(id); };
   const closePanel = () => { setPlace(null); setSel(null); setListOpen(false); setExpanded(false); setPanelSize(0); };
   const switchMode = (m: "adventure" | "history") => { closePanel(); setMode(m); };
 
@@ -154,13 +178,13 @@ function CampaignScreen({ worldId }: { worldId: string }) {
       ) : null}
       <View style={styles.mapArea} onLayout={(e) => setArea({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })} testID="map-area">
         {!history ? (
-          <ZoomableMap ref={mapRef} key={"adv" + campId} width={campaign.mapW} height={campaign.mapH} initial={aInitial} allBox={aAll}
+          <ZoomableMap ref={mapRef} key={"adv" + campId} width={campaign.mapW} height={campaign.mapH} initial={aInitial} allBox={aAll} focus={focus} persistKey={`${worldId}:adv:${campId}`}
             controlsTop={ctrlTop} padTop={ctrlTop + 52} padBottom={padBottom} padRight={padRight} reserved={reserved} keepVisible={keep}
             fullscreen={full} onToggleFullscreen={() => setFull(!full)} testID="campaign-map">
-            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={(id) => { setPlace(null); setListOpen(false); setExpanded(false); setSel(id); }} avatar={state.avatar} />
+            <CampaignMapContent campaign={campaign} palette={world.palette} progress={state.stations} onSelect={openStation} avatar={state.avatar} />
           </ZoomableMap>
         ) : (
-          <ZoomableMap ref={mapRef} key={"hist" + campId} width={gSize.width} height={gSize.height} initial={gInitial} allBox={gAll} maxZoom={6}
+          <ZoomableMap ref={mapRef} key={"hist" + campId} width={gSize.width} height={gSize.height} initial={gInitial} allBox={gAll} focus={focus} persistKey={`${worldId}:hist:${campId}`} maxZoom={6}
             controlsTop={ctrlTop} padTop={ctrlTop + 52} padBottom={padBottom} padRight={padRight} reserved={reserved} keepVisible={keep}
             fullscreen={full} onToggleFullscreen={() => setFull(!full)} testID="historical-map">
             <GeoMap map={hMap} me={mePos} onSelect={openPlace} onCluster={(b) => mapRef.current?.fitBox(b)} highlight={highlightPlaces} important={curIds} selected={place?.id ?? null} />
@@ -174,8 +198,9 @@ function CampaignScreen({ worldId }: { worldId: string }) {
           kind={mode}
           title={history ? `${hMap.title} · ${hMap.era}` : "Abenteuerkarte"}
           sources={history ? [...JOHN_HISTORICAL.sources, ...(hMap.note ? [hMap.note] : [])] : undefined}
-          placeCount={hMap.places.length}
-          onPlaces={history ? () => { setPlace(null); setExpanded(true); setListOpen(true); } : undefined}
+          placeCount={history ? hMap.places.length : campaign.stations.length}
+          placesLabel={history ? "Orte" : "Stationen"}
+          onPlaces={() => { setPlace(null); setSel(null); setExpanded(true); setListOpen(true); }}
           onRect={setLegendRect}
         />
 
@@ -203,6 +228,30 @@ function CampaignScreen({ worldId }: { worldId: string }) {
                 <Icon name="chevron-right" size={16} color={colors.muted} />
               </Pressable>
             ))}
+          </MapPanel>
+        ) : null}
+
+        {!history && listOpen ? (
+          <MapPanel side={side} title="Stationen dieser Reise" expanded onToggle={() => setListOpen(false)} onClose={closePanel} onSize={setPanelSize} testID="map-station-list"
+            summary={<Text style={styles.sumMeta}>{done} von {campaign.stations.length} abgeschlossen · Antippen zeigt die Station auf der Karte.</Text>}>
+            {campaign.stations.map((s, i) => {
+              const st = stationStatus(s, state.stations);
+              const ic = st === "completed" ? "check-circle" : st === "locked" ? "lock" : "play-circle";
+              const col = st === "completed" ? colors.success : st === "locked" ? colors.muted : colors.brandPrimary;
+              return (
+                <Pressable key={s.id} testID={`map-station-item-${s.id}`} accessibilityRole="button"
+                  accessibilityLabel={`${i + 1}. ${s.title}, ${st === "completed" ? "abgeschlossen" : st === "locked" ? "gesperrt" : "verfügbar"}`}
+                  onPress={() => openStation(s.id)} style={({ pressed }) => [styles.listItem, pressed && { backgroundColor: colors.surfaceSecondary }]}>
+                  <Icon name={ic} size={20} color={col} />
+                  <View style={{ flex: 1 }}>
+                    <Text style={[styles.listText, st === "locked" && { color: colors.muted }]} numberOfLines={2}>{i + 1}. {s.title}</Text>
+                    <Text style={styles.listSub} numberOfLines={1}>{STATION_META[s.type].label} · {s.xp} EP</Text>
+                  </View>
+                  {s.id === nextAvail.id && st !== "completed" ? <Text style={styles.listTag}>Aktuell</Text> : null}
+                  <Icon name="chevron-right" size={16} color={colors.muted} />
+                </Pressable>
+              );
+            })}
           </MapPanel>
         ) : null}
 
@@ -316,6 +365,8 @@ const useStyles = makeStyles((c) => ({
   sumMeta: { fontFamily: fonts.text, fontSize: 13, fontWeight: "700", color: c.muted },
   sumText: { width: "100%", fontFamily: fonts.text, fontSize: 14.5, lineHeight: 21, color: c.onSurfaceSecondary, marginTop: 2 },
   listItem: { flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 48, paddingHorizontal: spacing.sm, borderRadius: radius.md },
+  listSub: { fontFamily: fonts.text, fontSize: 12, fontWeight: "600", color: c.muted },
+  nf: { flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl },
   listText: { flex: 1, fontFamily: fonts.text, fontSize: 15, fontWeight: "700", color: c.onSurface },
   listTag: { fontFamily: fonts.text, fontSize: 11, fontWeight: "800", color: c.brandPrimary, textTransform: "uppercase" },
   typeBadge: { alignSelf: "flex-start", paddingHorizontal: spacing.md, paddingVertical: 4, borderRadius: radius.pill, borderWidth: 1 },

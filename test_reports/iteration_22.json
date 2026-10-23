@@ -1,0 +1,35 @@
+{
+  "summary": "BIBLIA Iteration 22 — Overhaul interaktiver Karten validiert auf /world/gospels mit 5 Viewports (390x844, 360x780, 412x915, 820x1180, 844x390 landscape). ERGEBNISSE: (1) Fallback /world/doesnotexist zeigt 'world-not-found' + Button 'world-not-found-home' GRÜN (Iteration-21-Issue behoben). (2) /world/gospels rendert campaign-screen + campaign-map mit 10 station-node-<id>. (3) Pille 'map-places-toggle' Label 'Stationen · 10' öffnet 'map-station-list' mit 10 items (map-station-item-john-1..john-10). AKTUELL-Tag (textTransform:uppercase) korrekt NUR auf john-1 (nextAvail). Tap auf item öffnet 'station-sheet'. 'map-station-list-close' schließt. (4) Alle 6 Kartenkontrollen in BEIDEN Modi vorhanden: map-zoom-in, map-zoom-out, map-current-station (crosshair, auch in Abenteuer+Historisch), map-fit-all, map-reset-view, map-fullscreen. Fullscreen-Toggle funktioniert (ein/aus). Keine NaN, keine PAGEERRORS, keine Console-Errors. (5) map-mode-history schaltet um; 'historical-map' rendert, 'Orte · 17' auf map-places-toggle, map-place-list mit 17 map-place-item-<id>, Tap öffnet 'place-sheet'. (6) Adventure-Legende (map-legend-toggle) enthält KORREKT Verfügbar/Abgeschlossen/Gesperrt + WEGE Begangener/Noch offener (laut Anforderung). Historische Legende enthält Gesichert/Tradition/Umstritten (?) + Ort mit biblischen Ereignissen + Quellen inkl. hMap.note. (7) Persistenz: Mode-adventure gewählt + 3x Zoom-in → Station john-1 geöffnet → station-start-button (Label 'Station starten', NICHT disabled) → /station/john-1 → Browser-Zurück → campaign-screen weiterhin da, Modus adventure erhalten (WORLD_VIEW Map). (8) Dekorationen: Historische Karte zeigt deutlich illustrierte Dörfer (ummauerte Städte), Bauernhöfe, Palmen, Bergkämme (Dreiecke), Wellen, Boot auf See Genezareth, Weinberge, Weizenfelder, Zelt+Schafe bei 'Änon bei Salim'. Beim Zoom-in erscheinen feinere Details (Level-of-Detail). Marker/Labels bleiben lesbar; keine sichtbaren Überlappungen mit Controls/Legende/Panels in getesteten Zoomstufen. (9) Abenteuerkarte zeigt Bergkämme, Dörfer, See, Weinreben, Schafe – keine Überdeckung von station-nodes/labels. (10) Responsive: Panel erscheint seitlich (rechts) bei Breite >=720 (820x1180 panel.x=440; 844x390 panel.x=464); unten/vollbreit bei <720 (390/360/412 panel.x=0). FUND: 844x390 Querformat – map-fullscreen Button y=371 h=44 (bottom=415) ragt ~25px unter Viewport (h=390) → letzter von 6 Controls knapp abgeschnitten. Minor UX-Issue nur im Landscape auf extrem flachen Geräten.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "ZoomableMap controls (adventure + historical) im Landscape 844x390", "issues": [
+        "Letzter Control-Button 'map-fullscreen' positioniert bei y=371 h=44 → unterer Rand y=415 > Viewporthöhe 390 (ca. 25px abgeschnitten). Controls-Stapel zu lang für sehr flaches Querformat. Mögliche Lösung: Controls horizontal gruppieren oder Reihenabstand im Landscape reduzieren, oder Fullscreen auf anderer Position."
+      ]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iteration_22.json", "/app/test_reports/iteration_21.json"],
+  "action_items": [
+    "LOW: ZoomableMap Controls bei sehr flachen Landscape-Viewports (<=400px Höhe) kompakter stapeln oder horizontal legen, damit map-fullscreen nicht unterhalb des Viewports endet. Nur kosmetisch – alle Controls bleiben einzeln aufrufbar/scrollbar."
+  ],
+  "critical_code_review_comments": [
+    "world/[id].tsx:30 – NotFound jetzt sauber in WorldScreen() statt Non-Null-Assertion (Iteration-21-Minor behoben). ✓",
+    "world/[id].tsx:55 WORLD_VIEW Map persistiert campId + mode pro Lernwelt in Modulscope; nach Rückkehr aus /station/[id] korrekt wiederhergestellt. ✓",
+    "world/[id].tsx:99 nextAvail = find(status==='available') ?? stations[0] – AKTUELL-Tag auf erstem verfügbarem Element korrekt. ✓",
+    "ZoomableMap.tsx:237-245 Controls-Array mit optionalen Items (focus/allBox/onToggleFullscreen) – alle 6 Controls erscheinen auf Adventure+Historical. ✓",
+    "MapLegend.tsx:42 map-places-toggle rendert außerhalb der historical-legend Card → immer sichtbar (sowohl bei geöffneter als auch geschlossener Legende). ✓",
+    "MapPanel.tsx:47/58 side vs bottom Rendering abhängig von side-Prop (vw>=720 in world/[id].tsx:101). Panels auf Tablet/Querformat rechts eingeblendet (empirisch bestätigt). ✓",
+    "Dekorationen (MapDecor) überlagern geprüfte Marker/Labels nicht – LoD arbeitet bei zunehmendem Zoom (zusätzliche Details sichtbar). ✓",
+    "Keine deprecated-API-Warnungen für shadow*/pointerEvents in Konsole während Kartenflow beobachtet (nur Intro-Pfad hat sie laut Iteration 21)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "~100% – alle 11 Testpunkte des Review-Requests GRÜN. Einziges Minor: Fullscreen-Button im 844x390 Landscape knapp abgeschnitten."},
+  "seed_data_creation": "localStorage: biblia.introJourney.done='1', biblia.intro.done='1', biblia.introAnimation.done='1' auf Origin gesetzt vor jeder Navigation (verhindert Intro-Overlay).",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "(A) Intro-Overlay IMMER vor Interaktion dismissen: localStorage auf Origin setzen UND zusätzlich 'intro-skip-button' klicken falls vorhanden – sonst blockiert IntroAnimation die ersten ~5s Klicks auf map-mode-* und map-places-toggle (reproduziert in erstem Testlauf). (B) AKTUELL-Tag hat textTransform:'uppercase' – String-Match in Tests case-insensitive durchführen (toLowerCase().includes('aktuell')). (C) ZoomableMap child-transform ist nicht als inline style.transform(matrix) auslesbar – stattdessen via mapRef.current State prüfen, falls quantitative Zoom-Persistenz zu testen. Qualitativ reicht WORLD_VIEW Map + Modus-aria-selected Check. (D) Screenshots für alle 4 Viewports + Mobile+Zoomed liegen in /app/test_reports/screenshots/.",
+  "rca_of_issue": "Minor Landscape-Clipping: ZoomableMap controls-container stackt 6 Buttons vertikal mit festem gap. Bei viewport.height=390 und controlsTop ca. 60-111 + 6*52 ≈ 423 → >390. Reproduktion: viewport 844x390 → querySelector('[data-testid=\"map-fullscreen\"]').getBoundingClientRect().bottom > 390. Mitigation: Breakpoint im ZoomableMap-Styles für kleine Höhen (<420) → kleinere gap oder horizontale Reihe für sekundäre Controls."
+}

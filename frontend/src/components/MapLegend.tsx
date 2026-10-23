@@ -16,12 +16,13 @@ type Props = {
   title: string;
   sources?: string[];
   placeCount?: number;
+  placesLabel?: string;
   onPlaces?: () => void;
   onRect: (r: MapRect) => void;
 };
 
 /** Aufklappbare Legende + Quellen + Ortsliste oben links auf der Karte. */
-export function MapLegend({ top, maxWidth, maxHeight, kind, title, sources, placeCount, onPlaces, onRect }: Props) {
+export function MapLegend({ top, maxWidth, maxHeight, kind, title, sources, placeCount, placesLabel = "Orte", onPlaces, onRect }: Props) {
   const styles = useStyles();
   const { colors } = useTheme();
   const [open, setOpen] = useState(false);
@@ -38,9 +39,9 @@ export function MapLegend({ top, maxWidth, maxHeight, kind, title, sources, plac
           <Text style={[styles.pillText, open && { color: colors.onSurfaceInverse }]}>Legende</Text>
         </Pressable>
         {onPlaces ? (
-          <Pressable testID="map-places-toggle" accessibilityRole="button" accessibilityLabel={`Ortsliste, ${placeCount} Orte`} onPress={onPlaces} style={styles.pill}>
+          <Pressable testID="map-places-toggle" accessibilityRole="button" accessibilityLabel={`${placesLabel}: Liste, ${placeCount} Einträge`} onPress={onPlaces} style={styles.pill}>
             <Icon name="list" size={16} color={colors.onSurface} />
-            <Text style={styles.pillText}>Orte · {placeCount}</Text>
+            <Text style={styles.pillText}>{placesLabel} · {placeCount}</Text>
           </Pressable>
         ) : null}
       </View>
@@ -78,7 +79,23 @@ export function MapLegend({ top, maxWidth, maxHeight, kind, title, sources, plac
                 <Text style={styles.small}>Nicht jeder Name ist bei jeder Zoomstufe beschriftet. Alle Orte bleiben über Antippen oder die Ortsliste erreichbar.</Text>
               </>
             ) : (
-              <Text style={styles.small}>Abenteuerkarte – Stationen sind Lernabschnitte, keine geografischen Orte. Die historische Karte zeigt die tatsächlichen Schauplätze.</Text>
+              <>
+                <Text style={styles.section}>Stationen</Text>
+                {([["play", colors.brandPrimary, "Verfügbar – pulsierender Ring = als Nächstes"], ["check", colors.success, "Abgeschlossen"], ["lock", colors.mapLocked, "Gesperrt – erst vorherige Station abschließen"]] as const).map(([ic, col, l]) => (
+                  <View key={ic} style={styles.item}>
+                    <View style={[styles.stDot, { backgroundColor: col }]}><Icon name={ic} size={11} color={colors.surface} /></View>
+                    <Text style={[styles.itemText, { flex: 1 }]}>{l}</Text>
+                  </View>
+                ))}
+                <Text style={styles.section}>Wege</Text>
+                {([["solid", "Begangener Weg"], ["dashed", "Noch offener Weg"]] as const).map(([st, l]) => (
+                  <View key={st} style={styles.item}>
+                    <View style={[styles.line, { borderColor: colors.mapInk, borderStyle: st }]} />
+                    <Text style={styles.itemText}>{l}</Text>
+                  </View>
+                ))}
+                <Text style={styles.small}>Abenteuerkarte – Stationen sind Lernabschnitte, keine geografischen Orte. Die historische Karte zeigt die tatsächlichen Schauplätze.</Text>
+              </>
             )}
             {sources?.length ? (
               <>
@@ -111,6 +128,7 @@ const useStyles = makeStyles((c) => ({
   line: { width: 28, borderTopWidth: 3 },
   badge: { minWidth: 22, height: 18, borderRadius: 9, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 },
   badgeText: { fontFamily: fonts.text, fontWeight: "900", fontSize: 10 },
+  stDot: { width: 20, height: 20, borderRadius: 10, alignItems: "center", justifyContent: "center" },
   srcBtn: { flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.md, height: 36 },
   srcText: { fontFamily: fonts.text, fontWeight: "800", fontSize: 13, color: c.brandPrimary },
 }));

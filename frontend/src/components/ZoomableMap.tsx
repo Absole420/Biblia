@@ -43,16 +43,20 @@ type Props = {
   fullscreen?: boolean;
   onToggleFullscreen?: () => void;
   testID?: string;
+  /** Ausschnitt und Zoom bleiben unter diesem Schlüssel erhalten (z. B. beim Zurückkehren von einer Station) */
+  persistKey?: string;
   ref?: React.Ref<MapHandle>;
 };
 
 type Saved = { cx: number; cy: number; rel: number };
+// Zuletzt genutzter Kartenausschnitt je Karte (bleibt während der App-Sitzung erhalten)
+const VIEWS = new Map<string, Saved>();
 
 /** Zoom- und verschiebbare Kartenfläche: Pinch-to-Zoom, Wischen mit Schwung, Doppeltipp, Bedienknöpfe. */
 export function ZoomableMap(props: Props) {
   const [vp, setVp] = useState<{ w: number; h: number } | null>(null);
   // Position und Zoom bleiben bei Größenänderung (Drehen, Vollbild) erhalten.
-  const saved = useRef<Saved | null>(null);
+  const saved = useRef<Saved | null>(props.persistKey ? VIEWS.get(props.persistKey) ?? null : null);
   const onLayout = (e: LayoutChangeEvent) => {
     const { width, height } = e.nativeEvent.layout;
     if (!vp || Math.abs(vp.w - width) > 1 || Math.abs(vp.h - height) > 1) setVp({ w: width, h: height });
@@ -66,7 +70,7 @@ export function ZoomableMap(props: Props) {
 
 function Inner({
   width, height, focus, children, vw, vh, saved, initial, allBox, controlsTop, controlsBottom = 16, maxZoom = 4, fit = "cover",
-  padBottom = 0, padRight = 0, padTop = 8, reserved, keepVisible, fullscreen, onToggleFullscreen, ref,
+  padBottom = 0, padRight = 0, padTop = 8, reserved, keepVisible, fullscreen, onToggleFullscreen, persistKey, ref,
 }: Props & { vw: number; vh: number; saved: React.RefObject<Saved | null> }) {
   const { colors } = useTheme();
   // „cover“: Karte füllt die gesamte verfügbare Fläche, ohne Leerraum.
@@ -121,6 +125,7 @@ function Inner({
   const commit = (x: number, y: number, s: number) => {
     setSnap((p) => (Math.abs(p.tx - x) < 0.5 && Math.abs(p.ty - y) < 0.5 && Math.abs(p.s - s) < 1e-4 ? p : { tx: x, ty: y, s }));
     saved.current = { cx: (vw / 2 - x) / s, cy: (vh / 2 - y) / s, rel: s / minS };
+    if (persistKey) VIEWS.set(persistKey, saved.current);
   };
   useEffect(() => {
     saved.current = { cx: (vw / 2 - init.x) / init.s, cy: (vh / 2 - init.y) / init.s, rel: init.s / minS };
@@ -231,18 +236,27 @@ function Inner({
   const buttons = [
     { icon: "plus", id: "map-zoom-in", label: "Hineinzoomen", on: () => zoomBy(1.5) },
     { icon: "minus", id: "map-zoom-out", label: "Herauszoomen", on: () => zoomBy(1 / 1.5) },
+    ...(focus ? [{ icon: "crosshair", id: "map-current-station", label: "Zur aktuellen Lernstation", on: () => {
+      const s = clampS(minS * 2.2);
+      animateTo({ s, x: clampX(vw / 2 - focus.x * s, s), y: clampY((vh - pB.value) / 2 - focus.y * s, s) });
+    } }] : []),
     ...(allBox ? [{ icon: "map", id: "map-fit-all", label: "Alle relevanten Orte anzeigen", on: () => animateTo(fitT(allBox)) }] : []),
     { icon: "rotate-ccw", id: "map-reset-view", label: "Ansicht zurücksetzen", on: () => animateTo(homeT()) },
     ...(onToggleFullscreen ? [{ icon: fullscreen ? "minimize-2" : "maximize-2", id: "map-fullscreen", label: fullscreen ? "Vollbild verlassen" : "Karte im Vollbild", on: onToggleFullscreen }] : []),
   ];
-  const ctrlH = buttons.length * (BTN + BTN_GAP);
+  // Sehr flache Ansichten (Querformat): Bedienknöpfe in mehrere Spalten umbrechen
+  const fitRows = Math.max(1, Math.floor((vh - (controlsTop ?? spacing.sm) - spacing.sm + BTN_GAP) / (BTN + BTN_GAP)));
+  const cols = Math.ceil(buttons.length / fitRows);
+  const rows = Math.ceil(buttons.length / cols);
+  const ctrlH = rows * (BTN + BTN_GAP);
+  const ctrlW = cols * BTN + (cols - 1) * BTN_GAP;
   const ctrlY = controlsTop ?? vh - controlsBottom - ctrlH;
   const ctx = useMemo(() => {
-    const r: MapRect[] = [{ x: vw - CTRL_W, y: ctrlY - 4, w: CTRL_W, h: ctrlH + 8 }, ...(reserved ?? [])];
+    const r: MapRect[] = [{ x: vw - CTRL_W - ctrlW + BTN, y: ctrlY - 4, w: CTRL_W + ctrlW - BTN, h: ctrlH + 8 }, ...(reserved ?? [])];
     if (padBottom) r.push({ x: 0, y: vh - padBottom, w: vw, h: padBottom });
     if (padRight) r.push({ x: vw - padRight, y: 0, w: padRight, h: vh });
     return { scale, minS, zoom, snap, vw, vh, reserved: r };
-  }, [scale, minS, zoom, snap, vw, vh, ctrlY, ctrlH, reserved, padBottom, padRight]);
+  }, [scale, minS, zoom, snap, vw, vh, ctrlY, ctrlH, ctrlW, reserved, padBottom, padRight]);
 
   return (
     <>
@@ -253,7 +267,7 @@ function Inner({
           </Animated.View>
         </View>
       </GestureDetector>
-      <View style={[styles.controls, { top: ctrlY, right: padRight + spacing.md }]}>
+      <View style={[styles.controls, { top: ctrlY, right: padRight + spacing.md, width: ctrlW, flexDirection: cols > 1 ? "row" : "column", flexWrap: "wrap" }]}>
         {buttons.map((b) => (
           <Pressable
             key={b.id}

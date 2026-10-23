@@ -1,0 +1,41 @@
+{
+  "summary": "BIBLIA Iteration 21 (Retest nach Iteration-20-Fixes) – Intro Journey und Karten erfolgreich validiert auf Mobile 390x844 + 4 weiteren Viewports. ERGEBNISSE: (1) FIX 1 testID-Rename GRÜN – scene-title-text existiert, keine Prefix-Kollision mit intro-scene-<id>; alle 15 Scene-Container eindeutig matchbar. (2) FIX 2 Resume GRÜN – nach localStorage pos='4' + done='' + reload startet Journey eindeutig bei intro-scene-berufung (5/15). (3) Vollständiger 15-Szenen-Durchlauf GRÜN – geburt→kindheit→taufe→wueste→berufung→verkuendigung→begegnungen→wunder→bekenntnis→einzug→abendmahl→gethsemane→verhaftung→kreuz→auferstehung in korrekter Reihenfolge; jede Szene zeigt Titel, Text und Bibelstellen; Abschließen auf Scene 15 schließt Journey und setzt done='1'. (4) intro-prev navigiert korrekt rückwärts (taufe→kindheit). (5) intro-play Pause gehalten – nach Klick 13s gewartet, keine Weiterschaltung. (6) 4 Viewports (360x780, 412x915, 820x1180, 844x390 Querformat) – Panel, intro-next, intro-journey-skip in ALLEN Viewports sichtbar. (7) Settings-Replay GRÜN – settings-replay-intro öffnet /intro mit intro-title-card; intro-journey-skip führt zurück zu settings-screen. (8) /world/tora GRÜN – map-zoom-in/out, map-reset-view funktionieren; keine NaN. (9) /world/gospels GRÜN (korrekte ID; Problem-Statement nennt irrtümlich 'gospel' – siehe context_for_next_testing_agent). (10) Lernfortschrift unverändert – p.reset wird nirgends im Intro-Pfad getriggert. Keine PAGEERRORs. Nur Deprecation-Warnings in Konsole: 'shadow*' style props (verwende boxShadow) + props.pointerEvents (verwende style.pointerEvents) – siehe react_native_issues.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "app/world/[id].tsx – ungültige World-IDs",
+        "issue": "Beim Aufruf /world/gospel (ohne 's', ungültige ID) rendert die Seite komplett blank (nur Hintergrundfarbe), keine Fehlermeldung, kein 404. Reference: /app/frontend/app/world/[id].tsx:62 verwendet 'WORLDS.find((w) => w.id === worldId)!' mit Non-Null-Assertion. Bei Miss greift die Non-Null-Assertion → stilles Fail. Problem-Statement sprach von /world/gospel; korrekte ID ist 'gospels'. Empfehlung: Fallback-UI mit 'World nicht gefunden' + Zurück-Button.",
+        "testID": "",
+        "priority": "LOW"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [],
+    "react_native_issues": [
+      {"component": "IntroAnimation.tsx styles.medal, styles.paper", "issue": "'shadow*' style props sind deprecated – auf 'boxShadow' umstellen (CSS-Shorthand) für react-native-web Kompatibilität. Referenz: /app/frontend/src/components/IntroAnimation.tsx:363 (medal boxShadow bereits korrekt), aber weitere styles verwenden alte Form. Konsolen-Warnung wiederholt sich bei jedem Mount."},
+      {"component": "IntroJourney.tsx:38,86 pointerEvents prop", "issue": "props.pointerEvents ist deprecated – stattdessen style.pointerEvents verwenden. Reference: /app/frontend/src/components/IntroJourney.tsx:38 (<Animated.View … pointerEvents='none'>) und :86 (<LinearGradient … pointerEvents='none'>). Umstellen auf style={{ pointerEvents: 'none' }} (RN 0.74+ Konvention)."}
+    ]
+  },
+  "test_report_links": ["/app/test_reports/iteration_21.json", "/app/test_reports/iter21_playwright.py", "/app/test_reports/iteration_20.json"],
+  "action_items": [
+    "OPTIONAL (LOW): /app/frontend/app/world/[id].tsx – Non-Null-Assertion ('WORLDS.find(...)!') durch Fallback-UI ersetzen, damit falsche IDs (z.B. 'gospel' statt 'gospels') nicht blank rendern. Aktuell silent fail.",
+    "OPTIONAL: Deprecation-Warnings beheben – 'shadow*' → 'boxShadow' in IntroAnimation.tsx styles; pointerEvents als style-prop statt direct prop in IntroJourney.tsx (Zeilen 38, 86). Reine Konsolen-Warnungen, kein Funktionsproblem.",
+    "Beide HIGH-Priority-Fixes aus Iteration 20 (testID-Rename, Resume) sind erfolgreich validiert – keine weitere Aktion nötig."
+  ],
+  "critical_code_review_comments": [
+    "IntroJourney.tsx:103 – testID='scene-title-text' korrekt umbenannt, kein 'intro-scene-' Prefix mehr → eindeutige Scene-ID-Selektoren möglich. ✓",
+    "IntroJourney.tsx:60 – AsyncStorage.getItem(POS_KEY) + setI(n) wenn n>=0 && n<N: funktioniert korrekt. Resume bei pos=4 → Scene 5 (berufung). ✓",
+    "_layout.tsx:68-70 – AsyncStorage.getItem(INTRO_DONE_KEY) nach IntroAnimation.onDone funktioniert jetzt zuverlässig (in Iteration 20 noch flaky). ✓",
+    "introScenes.ts – alle 15 IDs korrekt in Reihenfolge geburt→auferstehung; moods warm/passion/dawn konsistent. ✓",
+    "ZoomableMap – map-current-station Button nur gerendert bei vorhandener focus-prop. Da Lernfortschritt=0 im Preview, Button fehlt auf beiden Maps – OK per Iteration-20-Anmerkung.",
+    "world/[id].tsx:62 – Non-Null-Assertion bei WORLDS.find kann bei ungültigen IDs stillen Blank-Screen verursachen. Minor Code Quality."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "~100% der Retest-Kriterien – FIX 1 ✓, FIX 2 ✓, 15 Szenen ✓, Prev ✓, Pause ✓, 4 Viewports ✓, Settings-Replay ✓, Karten-Buttons (tora + gospels) ✓, keine NaN, keine PAGEERRORs."},
+  "seed_data_creation": "Keine. localStorage-Keys biblia.introJourney.done/pos wurden pro Phase gezielt gesetzt bzw. gelöscht.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Alle Retest-Kriterien grün. Beachten: (A) Problem-Statement sagt '/world/gospel' aber tatsächliche World-ID ist 'gospels' (siehe /app/frontend/src/data/worlds.ts). Für Kartentests immer /world/gospels verwenden. (B) IntroAnimation (Logo) rendert bei jedem page.goto neu und blockiert visuell ~10s; immer intro-skip-button klicken vor UI-Interaktionen. (C) Resume-Testablauf: localStorage.setItem('biblia.introJourney.pos','4'); localStorage.removeItem('biblia.introJourney.done'); reload; skip IntroAnimation; → intro-scene-berufung sollte sofort sichtbar sein. (D) Scene-ID-Selektor für Tests: filter 'intro-scene-' Prefix exkl. 'intro-scene-title' NICHT mehr nötig (testID jetzt 'scene-title-text'); `document.querySelectorAll('[data-testid^=\"intro-scene-\"]')` liefert nur Scene-Container.",
+  "rca_of_issue": "N/A – alle Iteration-20-Bugs sind behoben. Nur ein kleines Code-Quality-Thema (silent fail bei ungültiger World-ID in world/[id].tsx:62) sowie zwei React-Native-Web Deprecation-Warnings dokumentiert."
+}

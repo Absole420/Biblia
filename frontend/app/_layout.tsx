@@ -11,6 +11,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/src/components/error-boundary";
 import { IntroAnimation } from "@/src/components/IntroAnimation";
+import { INTRO_DONE_KEY, IntroJourney } from "@/src/components/IntroJourney";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { refreshTranslations } from "@/src/data/bible";
 import { InfoProvider } from "@/src/components/InfoSheet";
 import { ToastProvider } from "@/src/components/Toast";
@@ -42,6 +44,7 @@ function AppStack() {
         <Stack.Screen name="unit/[id]" />
         <Stack.Screen name="settings" />
         <Stack.Screen name="timeline" />
+        <Stack.Screen name="intro" options={{ presentation: "fullScreenModal", animation: "fade", gestureEnabled: false }} />
         <Stack.Screen name="avatar" options={{ gestureEnabled: false }} />
       </Stack>
       </InfoProvider>
@@ -60,7 +63,13 @@ export default function RootLayout() {
     Nunito: require("../assets/fonts/Nunito.ttf"),
   });
   const [intro, setIntro] = useState(true);
+  const [journey, setJourney] = useState(false);
+  // Beim ersten Start (oder bei unterbrochener Reise) nach der kurzen Logo-Animation die Reise zeigen.
+  useEffect(() => {
+    AsyncStorage.getItem(INTRO_DONE_KEY).then((v) => { if (!v) setJourney(true); }).catch(() => {});
+  }, []);
   const endIntro = useCallback(() => setIntro(false), []);
+  const endJourney = useCallback(() => setJourney(false), []);
   return (
     <GestureHandlerRootView style={styles.root}>
       <ErrorBoundary>
@@ -71,6 +80,7 @@ export default function RootLayout() {
                 <ToastProvider>
                   {fontsLoaded ? <AppStack /> : <View style={styles.root} />}
                   {fontsLoaded && intro ? <IntroAnimation onDone={endIntro} /> : null}
+                  {fontsLoaded && !intro && journey ? <IntroJourney onClose={endJourney} /> : null}
                 </ToastProvider>
               </ProgressProvider>
             </KeyboardProvider>

@@ -90,6 +90,7 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect, avat
         ) : (
           <GenericScenery W={W} H={H} palette={palette} seed={campaign.id.length * 7 + campaign.stations.length} />
         )}
+        <Countryside campaign={campaign} seed={campaign.id.length * 13 + campaign.stations.length} accent={palette.accent} />
         {/* Wege zwischen Stationen */}
         {edges.map(([a, b]) => {
           const A = byId[a];
@@ -178,6 +179,120 @@ function AvatarPin({ campaign, progress, avatar }: { campaign: Campaign; progres
       </View>
       <View style={{ width: 0, height: 0, borderLeftWidth: 10, borderRightWidth: 10, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: colors.brandPrimary }} />
     </View>
+  );
+}
+
+const segDist = (px: number, py: number, a: { x: number; y: number }, b: { x: number; y: number }) => {
+  const vx = b.x - a.x;
+  const vy = b.y - a.y;
+  const t = Math.max(0, Math.min(1, ((px - a.x) * vx + (py - a.y) * vy) / (vx * vx + vy * vy || 1)));
+  return Math.hypot(px - a.x - t * vx, py - a.y - t * vy);
+};
+
+type Bit = { k: "village" | "vine" | "wheat" | "well" | "sheep" | "palm" | "tent" | "cypress"; x: number; y: number };
+
+/** Ländliche Details (Dörfer, Weinberge, Felder, Brunnen, Herden) – weichen Stationen und Wegen aus. */
+function Countryside({ campaign, seed, accent }: { campaign: Campaign; seed: number; accent: string }) {
+  const { colors } = useTheme();
+  const bits = useMemo(() => {
+    const r = rng(seed);
+    const W = campaign.mapW;
+    const H = campaign.mapH;
+    const kinds: Bit["k"][] = ["village", "vine", "wheat", "sheep", "palm", "cypress", "village", "wheat", "well", "tent", "vine", "sheep"];
+    const edges = campaign.stations.flatMap((s) => s.requires.map((q) => [campaign.stations.find((t) => t.id === q)!, s] as const)).filter(([a]) => a);
+    const out: Bit[] = [];
+    const n = Math.round((W * H) / 52000);
+    for (let i = 0; i < n * 4 && out.length < n; i++) {
+      const x = 60 + r() * (W - 120);
+      const y = 120 + r() * (H - 240);
+      if (campaign.stations.some((s) => Math.hypot(s.x - x, s.y + 60 - y) < 180 || (Math.abs(s.x - x) < 190 && y > s.y && y - s.y < 200))) continue;
+      if (edges.some(([a, b]) => segDist(x, y, a, b) < 60)) continue;
+      // Feste Landschaftsteile frei halten (See, Brunnen, Jerusalem, Fluss)
+      if (campaign.id === "john" ? y < 280 || Math.hypot(x - 800, y - 820) < 200 || Math.hypot(x - 860, y - 1150) < 100 || (x < 320 && y > 1180) : x < 250) continue;
+      if (out.some((b) => Math.hypot(b.x - x, b.y - y) < 110)) continue;
+      out.push({ k: kinds[out.length % kinds.length], x, y });
+    }
+    return out;
+  }, [campaign, seed]);
+  const ink = colors.mapInk;
+  return (
+    <G>
+      {bits.map((b, i) => {
+        const { x, y } = b;
+        switch (b.k) {
+          case "village":
+            return (
+              <G key={i}>
+                {[[-34, 6, 26, 22], [-6, -4, 32, 30], [28, 8, 22, 18]].map(([dx, dy, w, h], j) => (
+                  <G key={j}>
+                    <Rect x={x + dx} y={y + dy - h} width={w} height={h} fill={colors.surfaceTertiary} stroke={ink} strokeWidth={2} />
+                    <Rect x={x + dx - 2} y={y + dy - h - 4} width={w + 4} height={5} fill={colors.mapMountain} />
+                    <Rect x={x + dx + w * 0.38} y={y + dy - h * 0.5} width={w * 0.26} height={h * 0.5} fill={ink} fillOpacity={0.55} />
+                  </G>
+                ))}
+              </G>
+            );
+          case "vine":
+            return (
+              <G key={i}>
+                {[0, 1, 2, 3].map((row) => (
+                  <G key={row}>
+                    <Path d={`M${x - 50} ${y + row * 16 - 24} L${x + 50} ${y + row * 16 - 24}`} stroke={ink} strokeOpacity={0.35} strokeWidth={2} />
+                    {[-40, -20, 0, 20, 40].map((c) => <Circle key={c} cx={x + c} cy={y + row * 16 - 24} r={6} fill={row % 2 ? colors.mapForest : accent} fillOpacity={0.9} />)}
+                  </G>
+                ))}
+              </G>
+            );
+          case "wheat":
+            return (
+              <G key={i}>
+                <Path d={blob(x, y, 64, 38, seed + i, 8, 0.15)} fill={colors.warning} fillOpacity={0.35} stroke={colors.mapMountain} strokeWidth={2} />
+                {[-36, -18, 0, 18, 36].map((o) => <Path key={o} d={`M${x + o} ${y + 22} L${x + o + 8} ${y - 22}`} stroke={colors.mapMountain} strokeWidth={3} strokeLinecap="round" />)}
+              </G>
+            );
+          case "well":
+            return (
+              <G key={i}>
+                <Path d={`M${x - 20} ${y} L${x - 20} ${y - 34} L${x + 20} ${y - 34} L${x + 20} ${y}`} stroke={ink} strokeWidth={3} fill="none" />
+                <Circle cx={x} cy={y} r={22} fill={colors.mapMountain} stroke={ink} strokeWidth={2.5} />
+                <Circle cx={x} cy={y} r={11} fill={colors.mapSeaDeep} />
+              </G>
+            );
+          case "sheep":
+            return (
+              <G key={i}>
+                {[[-22, 0], [0, -10], [20, 4], [6, 14]].map(([dx, dy], j) => (
+                  <G key={j}>
+                    <Circle cx={x + dx} cy={y + dy} r={10} fill={colors.surface} stroke={ink} strokeWidth={1.5} />
+                    <Circle cx={x + dx + 9} cy={y + dy - 3} r={4} fill={ink} />
+                  </G>
+                ))}
+              </G>
+            );
+          case "palm":
+            return (
+              <G key={i}>
+                <Path d={`M${x} ${y} q8 -26 0 -52`} stroke={ink} strokeWidth={5} fill="none" />
+                {[-1, -0.4, 0.4, 1].map((a) => <Path key={a} d={`M${x} ${y - 52} q${a * 16} -16 ${a * 34} 6`} stroke={colors.success} strokeWidth={6} fill="none" strokeLinecap="round" />)}
+              </G>
+            );
+          case "cypress":
+            return (
+              <G key={i}>
+                {[-22, 0, 22].map((dx, j) => <Path key={j} d={`M${x + dx} ${y - 60 + j * 6} Q${x + dx + 12} ${y - 20} ${x + dx} ${y} Q${x + dx - 12} ${y - 20} ${x + dx} ${y - 60 + j * 6} Z`} fill={colors.mapForest} stroke={ink} strokeOpacity={0.4} strokeWidth={2} />)}
+              </G>
+            );
+          case "tent":
+            return (
+              <G key={i}>
+                <Path d={`M${x - 36} ${y} L${x - 16} ${y - 30} L${x + 18} ${y - 30} L${x + 36} ${y} Z`} fill={ink} fillOpacity={0.7} />
+                <Path d={`M${x - 7} ${y} L${x} ${y - 20} L${x + 7} ${y} Z`} fill={colors.warning} />
+              </G>
+            );
+        }
+        return null;
+      })}
+    </G>
   );
 }
 

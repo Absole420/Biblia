@@ -233,3 +233,17 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 20: Intro 'Reise bis zum Kreuz' (15 Szenen, KI-Bilder, Steuerung, Fortsetzen, Wiederholung in Einstellungen) + Karte: neue Farbpalette, Button 'Zur aktuellen Lernstation'"
+    implemented: true
+    working: "NA"
+    file: "src/components/IntroJourney.tsx, src/data/introScenes.ts, app/intro.tsx, app/_layout.tsx, app/settings.tsx, src/components/ZoomableMap.tsx, src/theme.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+  - task: "Iteration 22: Karten – Stationsliste (Abenteuer), Button 'Aktuelle Station' in beiden Kartenarten, Zoom/Ausschnitt + Kartenart/Kampagne bleiben beim Zurückkehren erhalten, reich illustrierte Kartendeko mit Detailstufen (Gebirgszüge, Dörfer, Weinberge, Kornfelder, Zedern, Brunnen, Zelte, ummauerte Städte, Wellen), Landschaftsdetails Abenteuerkarte, reduzierte Bewegung für Kartenanimationen, Legende Abenteuer (Stationszustände), Fallback für unbekannte Lernwelt"
+    implemented: true
+    working: "NA"
+    file: "app/world/[id].tsx, src/components/ZoomableMap.tsx, src/components/MapDecor.tsx, src/components/GeoMap.tsx, src/components/CampaignMap.tsx, src/components/MapLegend.tsx, src/components/MapAnimations.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
