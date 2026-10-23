@@ -5,7 +5,7 @@ import { storage } from "@/src/utils/storage";
 
 import type { Avatar } from "./avatar";
 import type { StudyState } from "./study";
-import { AppState, Category, defaultState, migrate, Note, Photo, StudyUnit, uid } from "./progress-logic";
+import { AppState, Category, defaultState, migrate, Note, Photo, PrayerEntry, StudyUnit, uid } from "./progress-logic";
 
 const KEY = "biblia_state";
 
@@ -35,6 +35,10 @@ type Ctx = {
   savePhoto: (p: Omit<Photo, "createdAt">) => void;
   deletePhoto: (id: string) => void;
   updateLexicon: (fn: (l: AppState["lexicon"]) => AppState["lexicon"]) => void;
+  addPrayer: (e: Omit<PrayerEntry, "id" | "createdAt">) => void;
+  updatePrayer: (id: string, patch: Partial<Pick<PrayerEntry, "note" | "cat">>) => void;
+  deletePrayer: (id: string) => void;
+  movePrayer: (id: string, dir: -1 | 1) => void;
   reset: () => void;
 };
 
@@ -176,6 +180,21 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         }),
       deletePhoto: (id) => update((s) => ({ ...s, photos: s.photos.filter((x) => x.id !== id) })),
       updateLexicon: (fn) => update((s) => ({ ...s, lexicon: fn(s.lexicon) })),
+      addPrayer: (e) => update((s) => (s.prayers.some((x) => x.ref === e.ref && x.cat === e.cat) ? s : { ...s, prayers: [...s.prayers, { ...e, id: uid(), createdAt: new Date().toISOString() }] })),
+      updatePrayer: (id, patch) => update((s) => ({ ...s, prayers: s.prayers.map((x) => (x.id === id ? { ...x, ...patch } : x)) })),
+      deletePrayer: (id) => update((s) => ({ ...s, prayers: s.prayers.filter((x) => x.id !== id) })),
+      movePrayer: (id, dir) =>
+        update((s) => {
+          // innerhalb derselben Rubrik mit dem Nachbarn tauschen
+          const list = [...s.prayers];
+          const i = list.findIndex((x) => x.id === id);
+          if (i < 0) return s;
+          let j = i + dir;
+          while (j >= 0 && j < list.length && list[j].cat !== list[i].cat) j += dir;
+          if (j < 0 || j >= list.length) return s;
+          [list[i], list[j]] = [list[j], list[i]];
+          return { ...s, prayers: list };
+        }),
       reset: () => setState(defaultState()),
     }),
     [ready, state, completeStation, update],

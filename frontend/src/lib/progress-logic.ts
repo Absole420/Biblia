@@ -3,7 +3,7 @@ import type { Station } from "../data/types";
 import { Avatar, sanitizeAvatar } from "./avatar";
 import { DEFAULT_STUDY, sanitizeStudy, StudyState } from "./study";
 
-export const SCHEMA_VERSION = 6;
+export const SCHEMA_VERSION = 7;
 
 export type StationProgress = { completedAt: string; examScore: number; examTotal: number; bestScore: number; attempts: number };
 export type Note = { id: string; title: string; text: string; ref?: string; stationId?: string; createdAt: string; updatedAt: string };
@@ -14,6 +14,17 @@ export type Photo = { id: string; uri: string; title: string; note: string; targ
 export type Bookmark = { key: string; createdAt: string };
 export type Category = { id: string; name: string; color: string };
 export type ThemePref = "system" | "light" | "dark";
+/** Eintrag im persönlichen Gebetsheft (Vers-Schlüssel "Ps:23:4" oder "Ps:23:1-3", Textkopie, Rubrik, Gebetsnotiz). */
+export type PrayerCat = "dank" | "orientierung" | "angst" | "hoffnung" | "klage" | "vergebung";
+export type PrayerEntry = { id: string; ref: string; text: string; cat: PrayerCat; note: string; createdAt: string };
+export const PRAYER_CATS: { id: PrayerCat; label: string; icon: string }[] = [
+  { id: "dank", label: "Dank", icon: "sun" },
+  { id: "orientierung", label: "Orientierung", icon: "compass" },
+  { id: "angst", label: "Angst", icon: "shield" },
+  { id: "hoffnung", label: "Hoffnung", icon: "sunrise" },
+  { id: "klage", label: "Klage", icon: "cloud-drizzle" },
+  { id: "vergebung", label: "Vergebung", icon: "unlock" },
+];
 /** Verknüpfung zwischen einem Vers und einer anderen Bibelstelle. */
 export type VerseLink = { id: string; from: string; to: string; note?: string; createdAt: string };
 /** Eigene Lerneinheit aus Bibelstellen und selbst formulierten Fragen. */
@@ -41,6 +52,7 @@ export type AppState = {
   favorites: { bible: Favorite[]; lessons: Favorite[] }; // v6
   photos: Photo[]; // v6: nur lokal auf dem Gerät
   lexicon: { favorites: string[]; recent: string[]; notes: Record<string, string> }; // v6: persönliche Lexikon-Daten (getrennt von Inhalten)
+  prayers: PrayerEntry[]; // v7: persönliches Gebetsheft (Reihenfolge = Anzeige)
 };
 
 export const DEFAULT_CATEGORIES: Category[] = [
@@ -78,6 +90,7 @@ export function defaultState(): AppState {
     favorites: { bible: [], lessons: [] },
     photos: [],
     lexicon: { favorites: [], recent: [], notes: {} },
+    prayers: [],
   };
 }
 
@@ -126,6 +139,8 @@ export function migrate(raw: unknown): AppState {
       recent: Array.isArray(r.lexicon?.recent) ? r.lexicon.recent.filter((x: any) => typeof x === "string").slice(0, 20) : [],
       notes: isObj(r.lexicon?.notes) ? r.lexicon.notes : {},
     },
+    // v6 -> v7: Gebetsheft
+    prayers: Array.isArray(r.prayers) ? r.prayers.filter((x: any) => isObj(x) && typeof x.id === "string" && typeof x.ref === "string" && PRAYER_CATS.some((c) => c.id === x.cat)).map((x: any) => ({ text: "", note: "", ...x })) : [],
     photos: Array.isArray(r.photos) ? r.photos.filter((x: any) => isObj(x) && typeof x.id === "string" && typeof x.uri === "string" && isObj(x.target)) : [],
   };
 }

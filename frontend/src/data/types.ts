@@ -48,6 +48,7 @@ export type Station = {
   connections?: Connection[]; // Bezüge AT ↔ NT
   image?: string; // Schlüssel in STATION_IMAGES (KI-Illustration)
   lexicon?: string[]; // verknüpfte Lexikonartikel (ARTICLE_BY_ID)
+  prayerSuggestions?: { ref: string; cat: "dank" | "orientierung" | "angst" | "hoffnung" | "klage" | "vergebung" }[]; // Vorschläge fürs Gebetsheft
 };
 
 /** Art des Bezugs zwischen Altem und Neuem Testament. */

@@ -6,6 +6,7 @@ import Animated, { FadeIn, FadeInDown, ZoomIn } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ClaimCard } from "@/src/components/ClaimCard";
+import { PrayerSuggestions } from "@/src/components/PrayerBook";
 import { AvatarCheer, Connections, GoalBox, InfoChips, LexiconLinks } from "@/src/components/StationExtras";
 import { Icon } from "@/src/components/Icon";
 import { LessonActions } from "@/src/components/LessonActions";
@@ -269,6 +270,7 @@ export default function StationScreen() {
 
         {phase === 5 ? (
           <Animated.View entering={FadeIn.duration(300)} testID="phase-reflection">
+            <PrayerSuggestions items={station.prayerSuggestions} />
             <Text style={styles.h2}>Reflexion</Text>
             <View style={styles.reflNote}>
               <Icon name="lock" size={14} color={colors.muted} />

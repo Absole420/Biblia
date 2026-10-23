@@ -254,3 +254,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 24: Gebetsheft – Rubriken Dank/Orientierung/Angst/Hoffnung/Klage/Vergebung; Bibelleser-Button verse-prayer-button + prayer-add-<cat>; Vorschläge in Einheit ps1-10 Phase Reflexion (prayer-suggestions); Bibliothek Buch library-tab-prayer mit Filter, Notiz, Umsortieren, Löschen; Schema v7 (prayers) verlustfreie Migration"
+    implemented: true
+    working: "NA"
+    file: "src/components/PrayerBook.tsx, app/(tabs)/library.tsx, app/(tabs)/bible.tsx, app/station/[id].tsx, src/lib/store.tsx, src/lib/progress-logic.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

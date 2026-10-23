@@ -277,10 +277,14 @@ const UNITS: Unit[] = [
       mc("Wovon spricht Ps 8,4 mit „Menschensohn“ ursprünglich?", ["Vom Menschen allgemein (Parallelismus)", "Von einem Engel", "Nur vom König", "Von Mose"], 0, "„Was ist der Mensch … und des Menschen Sohn“ – beide Halbverse meinen den Menschen.", "Ps 8,4"),
       tf("Ps 8 begründet, dass der Mensch die Schöpfung rücksichtslos ausbeuten darf.", false, "Herrschaft ist anvertraute, verantwortliche Fürsorge im Rahmen von Gottes Herrlichkeit (Ps 8,1.9; 1Mo 1,28).", "Ps 8,6"),
       multi("Was sagt Ps 145 über Gottes Güte? (mehrere)", ["Er ist gut gegen alle", "Er stützt alle Fallenden", "Er gibt allen ihre Speise zur rechten Zeit", "Er liebt nur die Starken"], [0, 1, 2], "Ps 145,9.14.15.", "Ps 145,9–16"),
-      free("Abschluss: Lege deine kleine Psalmensammlung an – je ein Psalmvers für Dank, Orientierung, Angst und Hoffnung (mit Stelle).", "Beispiel: Dank – Ps 103,2; Orientierung – Ps 119,105; Angst – Ps 23,4; Hoffnung – Ps 121,2. Tipp: Speichere die Verse im Bibelleser als Favoriten.", "Ps 103,2; Ps 119,105; Ps 23,4; Ps 121,2"),
+      free("Abschluss: Lege deine kleine Psalmensammlung an – je ein Psalmvers für Dank, Orientierung, Angst und Hoffnung (mit Stelle).", "Beispiel: Dank – Ps 103,2; Orientierung – Ps 119,105; Angst – Ps 23,4; Hoffnung – Ps 121,2. Tipp: Im Schritt „Reflexion“ kannst du Vorschläge direkt in dein Gebetsheft (Bibliothek) übernehmen.", "Ps 103,2; Ps 119,105; Ps 23,4; Ps 121,2"),
     ],
     review: mc("Welche NT-Stelle nimmt Ps 8 auf?", ["Hebr 2,6–9", "Joh 10,11", "Apg 2,25", "Mt 4,6"], 0, "Hebr 2 verbindet die menschliche Berufung mit Jesus.", "Hebr 2,6–9"),
     reflection: ["Wann hast du zuletzt gestaunt – und was hat das in dir ausgelöst?"],
+    prayerSuggestions: [
+      { ref: "Ps:103:2", cat: "dank" }, { ref: "Ps:119:105", cat: "orientierung" }, { ref: "Ps:23:4", cat: "angst" }, { ref: "Ps:121:2", cat: "hoffnung" },
+      { ref: "Ps:13:1", cat: "klage" }, { ref: "Ps:103:12", cat: "vergebung" }, { ref: "Ps:8:4", cat: "dank" }, { ref: "Ps:139:23-24", cat: "orientierung" },
+    ],
     summary: "Psalm 8 verbindet Staunen über die Schöpfung mit der geschenkten Würde und Verantwortung des Menschen; Psalm 145 preist Gottes Güte für alle. Hebräer 2 bezieht Ps 8 auf Jesus, in dem die menschliche Berufung zum Ziel kommt.",
   },
 ];

@@ -36,6 +36,7 @@ export type Unit = {
   reflection: string[];
   summary: string;
   xp?: number;
+  prayerSuggestions?: Station["prayerSuggestions"];
 };
 
 // Verknüpfte Lexikonartikel je Einheit (nur vorhandene Artikel-IDs)
@@ -81,6 +82,7 @@ export function buildCampaign(c: { id: string; worldId: string; title: string; b
     summary: u.summary,
     image: u.id,
     lexicon: LEX[u.id],
+    prayerSuggestions: u.prayerSuggestions,
   }));
   const last = c.units[c.units.length - 1];
   stations.push({

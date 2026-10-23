@@ -6,6 +6,7 @@ import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Book, BOOK_THEMES, BookTheme, Shelf } from "@/src/components/Bookshelf";
+import { PrayerBookList } from "@/src/components/PrayerBook";
 import { FavHeart } from "@/src/components/FavHeart";
 import { Icon } from "@/src/components/Icon";
 import { InfoChip } from "@/src/components/InfoSheet";
@@ -26,7 +27,7 @@ import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
-type Tab = "mine" | "favBible" | "favLessons" | "photos" | "units" | "terms";
+type Tab = "mine" | "favBible" | "favLessons" | "photos" | "units" | "terms" | "prayer";
 const TABS: Record<Tab, { label: string; spine: string; icon: string; theme: BookTheme }> = {
   mine: { label: "Meine Einträge", spine: "Meine\nEinträge", icon: "edit-3", theme: BOOK_THEMES.mine },
   favBible: { label: "Favoriten Bibel", spine: "Favoriten\nBibel", icon: "heart", theme: BOOK_THEMES.favBible },
@@ -34,6 +35,7 @@ const TABS: Record<Tab, { label: string; spine: string; icon: string; theme: Boo
   photos: { label: "Bilder", spine: "Bilder", icon: "image", theme: BOOK_THEMES.photos },
   units: { label: "Lerneinheiten", spine: "Lern-\neinheiten", icon: "layers", theme: BOOK_THEMES.units },
   terms: { label: "Begriffe & Infotafeln", spine: "Begriffe &\nInfotafeln", icon: "bookmark", theme: BOOK_THEMES.lexicon },
+  prayer: { label: "Mein Gebetsheft", spine: "Gebets-\nheft", icon: "feather", theme: BOOK_THEMES.prayer },
 };
 
 const pl = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
@@ -164,6 +166,9 @@ export default function LibraryScreen() {
             <Shelf testID="shelf-collection">
               <SmallBook id="photos" count={state.photos.length} onOpen={setTab} />
               <SmallBook id="units" count={state.units.length} onOpen={setTab} />
+            </Shelf>
+            <Shelf testID="shelf-prayer">
+              <SmallBook id="prayer" count={state.prayers.length} onOpen={setTab} />
               <SmallBook id="terms" count={terms.length} onOpen={setTab} />
             </Shelf>
           </View>
@@ -185,6 +190,8 @@ export default function LibraryScreen() {
           </View>
 
       <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingTop: spacing.md, paddingBottom: bottomChrome + spacing.xxxl + 40 }} keyboardShouldPersistTaps="handled">
+        {tab === "prayer" ? <PrayerBookList query={q} onOpenVerse={openVerse} /> : null}
+
         {tab === "mine" ? (
           <>
             <View style={styles.seg}>

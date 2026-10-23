@@ -145,3 +145,8 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Jede Einheit: Lernziel, KI-Bild (assets/images/psalms, gen_psalms.py), Einführung, Bibeltexte (Elb 1905, Zählung der App-Daten – Überschrift in V. 1), Begriffskarten, Lehrtext (3–4 Abschnitte), Infotafel(n), 4–5 Aufgaben mit Begründung + Stelle, Freitext mit Musterantwort/Selbsteinschätzung, Reflexion (unbewertet), Wiederholungsfrage, Zusammenfassung, Lexikon-Links, Bibelleser-Link (Notizen/Markierungen)
 - Messianische Kennzeichnung: „Im NT auf Jesus bezogen“ / „Christliche Vorausdeutung“ / „Thematische Verbindung“; Sammlung „Jesus in den Psalmen“ (/psalms-jesus; Ps 2, 8, 16, 22, 23, 69, 110, 118), Einträge nach Abschluss der Einheit freigeschaltet
 - OFFEN: Station 3 „Weisheit der Sprüche“ (3.1–3.10) und Station 4 „Hiob und das Leid“ (4.1–4.10) – noch nicht umgesetzt
+
+## Iteration 24 – Mein Gebetsheft
+- Lokales Gebetsheft (state.prayers, Schema v7, migriert verlustfrei): Rubriken Dank, Orientierung, Angst, Hoffnung, Klage, Vergebung
+- Hinzufügen: Bibelleser → Vers antippen → „Ins Gebetsheft“ → Rubrik (auch Versbereiche); Psalm-Einheit 1.10 → Schritt Reflexion → Vorschläge übernehmen
+- Bibliothek: neues Buch „Gebetsheft“ (Regal 4) mit Filter, Suche, Verstext, Gebetsnotiz, Umsortieren innerhalb der Rubrik, Löschen mit Bestätigung, Sprung in den Bibelleser

@@ -4,6 +4,7 @@ import { ActivityIndicator, FlatList, Pressable, ScrollView, Text, TextInput, Vi
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
+import { AddToPrayerBook } from "@/src/components/PrayerBook";
 import { CommentaryPanel, XrefPanel } from "@/src/components/VerseStudy";
 import { chapterState, markRead, REVIEW_INTERVALS, today, unmarkRead } from "@/src/lib/study";
 import { RefText } from "@/src/components/RefText";
@@ -120,6 +121,7 @@ export default function BibleScreen() {
   /* eslint-enable react-hooks/set-state-in-effect */
 
   const to = sel && rangeTo && rangeTo > sel ? Math.min(rangeTo, verses.length) : null;
+  const [prayerOpen, setPrayerOpen] = useState(false);
   const key = sel ? (to ? `${book}:${ch}:${sel}-${to}` : verseKey(book, ch, sel)) : "";
   const label = sel ? `${info.name} ${ch},${sel}${to ? "–" + to : ""}` : "";
   const rangeVerses = sel ? Array.from({ length: (to ?? sel) - sel + 1 }, (_, i) => sel + i) : [];
@@ -297,6 +299,8 @@ export default function BibleScreen() {
               <Text style={styles.rangeText} testID="range-to">{to ?? sel}</Text>
               <Pressable testID="range-plus" style={styles.addBtn} onPress={() => setRangeTo((r) => Math.min(verses.length, (r ?? sel) + 1))} accessibilityLabel="Bereich vergrößern"><Icon name="plus" size={18} color={colors.onBrandPrimary} /></Pressable>
             </View>
+            <Button testID="verse-prayer-button" variant={prayerOpen ? "secondary" : "ghost"} icon="feather" label="Ins Gebetsheft" onPress={() => setPrayerOpen((o) => !o)} />
+            {prayerOpen ? <AddToPrayerBook refKey={key} text={rangeVerses.length > 1 ? rangeVerses.map((v) => `${v} ${verses[v - 1]}`).join(" ") : verses[sel - 1]} onDone={() => setPrayerOpen(false)} /> : null}
             <View style={[styles.inlineRow, { flexWrap: "wrap" }]}>
               <Button testID="verse-mark-read" icon={isRead ? "check-circle" : "circle"} variant={isRead ? "secondary" : "ghost"} label={isRead ? "Gelesen – rückgängig" : "Als gelesen markieren"} onPress={() => p.updateStudy((x) => ({ ...x, read: isRead ? unmarkRead(x.read, book, ch, rangeVerses) : markRead(x.read, book, ch, rangeVerses) }))} />
               <Button testID="verse-review-add" icon="repeat" variant="ghost" label={st.review.some((r) => r.key === key) ? "In Merkliste" : "Zur Merkliste"} onPress={() => { if (!st.review.some((r) => r.key === key)) p.updateStudy((x) => ({ ...x, review: [...x.review, { key, addedAt: new Date().toISOString(), due: today(), step: 0, intervals: REVIEW_INTERVALS }] })); toast.show("Zur Merkliste hinzugefügt"); }} />

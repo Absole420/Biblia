@@ -1,0 +1,34 @@
+{
+  "summary": "Iteration 24 - 'Meine Psalmensammlung' / Gebetsheft feature validated. Core flow works: Bible reader → verse sheet → 'Ins Gebetsheft' button opens picker with all 6 categories (dank, orientierung, angst, hoffnung, klage, vergebung); adding a verse under 'angst' persisted, chip label changed to '✓ Angst' on reopen, and toast 'Im Gebetsheft unter „Angst\" gespeichert' appeared. Library tab shows new shelf-prayer with library-tab-prayer AND library-tab-terms visible; opening prayer book exposes library-section-prayer + prayer-book list with prayer-section-{cat} groups, all 7 filter chips (all + 6 cats), filter chip hides other sections, and prayer-empty state renders when list is empty. Shelf layout OK at 390×844 and 360×780 (both books on the shelf readable).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Bible reader verse sheet (390×844)", "issues": ["verse-prayer-button and range-plus controls sit below the fold in the bottom Sheet on 390×844. Users can scroll, but Playwright's auto-scroll into view fails because the sheet has its own scroll container – consider ensuring the sheet opens with the action buttons initially visible or shows the 'Ins Gebetsheft' CTA near the top." ]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iter24_playwright.py", "/app/test_reports/screenshots/iter24_shelf_390.png", "/app/test_reports/screenshots/iter24_shelf_360.png"],
+  "action_items": [
+    "Validated manually by main agent (self-test) or re-run: range-add via range-plus (needs sheet scroll in automated test), note persistence after reload, prayer-up/down reorder within category, prayer-delete + prayer-delete-confirm removes entry, prayer-open-<id> navigates to /bible, PrayerSuggestions in /station/ps1-10 phase 5 (set biblia_state.phase['ps1-10']=5 – note: web storage uses IndexedDB via AsyncStorage shim, NOT localStorage, so injecting state via localStorage won't work; must drive via UI or AsyncStorage/IDB), and no-duplicate behavior when tapping the same prayer-suggest twice.",
+    "Consider surfacing the 'Ins Gebetsheft' button higher in the verse Sheet so it is reachable without scrolling on 390×844 mobile viewport."
+  ],
+  "critical_code_review_comments": [
+    "PrayerBook.tsx (189 LOC) is well-structured; uses async loadRefText fallback when text not provided – good.",
+    "store.tsx addPrayer de-duplicates by (ref, cat) via early-return, matching 'no duplicates' requirement.",
+    "movePrayer correctly swaps with the next item in the SAME category (skips entries of other cats), preserving per-section ordering.",
+    "SCHEMA_VERSION bumped to 7 and migrate() handles prayers field defensively (filters invalid entries, defaults text/note).",
+    "Chip label switches to '✓ Angst' via `has ? \"✓ ${label}\" : label` – validated at runtime.",
+    "AddToPrayerBook/PrayerSuggestions and PrayerBookList all have testIDs matching the spec (prayer-add-picker, prayer-add-<cat>, prayer-suggestions, prayer-suggest-<ref>-<cat>, prayer-book, prayer-section-<cat>, prayer-filter-<cat|all>, prayer-entry-<id>, prayer-note-<id>, prayer-up/down/delete/delete-confirm-<id>, prayer-open-<id>, prayer-empty).",
+    "No deprecated expo packages detected in these files; no SafeAreaView misuse.",
+    "Minor: In station/[id].tsx, directly deep-linking to /station/ps1-10 clamps phase to 0 if station already completed (`!state.stations[found.station.id]`). For a station not yet completed and with no stored phase, phase starts at 0 – test setup needs to prime biblia_state.phase['ps1-10']=5 via AsyncStorage/IDB (not localStorage)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "~85% of core flows automatically verified; remaining items require main-agent self-test or storage-driver-aware automation"},
+  "seed_data_creation": "None persisted. During automated testing, 1 angst entry was added via UI (confirmed via '✓ Angst' and toast) in the browser session; IndexedDB-backed persistence belongs to that browser context only.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Frontend persistence is via AsyncStorage web shim which uses IndexedDB, not localStorage. The key is 'biblia_state'. To prime state in Playwright, drive the UI (recommended) OR use `await page.evaluate` with the AsyncStorage API, e.g. `await window.indexedDB.open(...)` – NOT `localStorage.setItem`. Logo intro overlay has button text 'Überspringen'; dismiss it after each goto (loop 2–3 times, waiting up to ~7s). All intended testIDs are present and verified: shelf-prayer, library-tab-prayer, library-tab-terms, library-section-prayer, prayer-book, prayer-add-picker, prayer-add-<cat> for all 6 cats, prayer-filter-all + prayer-filter-<cat>, prayer-section-<cat>, prayer-empty. Verse sheet opens correctly after tapping verse-23-4; verse-prayer-button opens the picker as 'AddToPrayerBook' inline.",
+  "rca_of_issue": "N/A (feature validation, not a bug)"
+}
