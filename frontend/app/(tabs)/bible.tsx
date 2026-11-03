@@ -14,6 +14,7 @@ import { Button, Chip } from "@/src/components/ui";
 import { displayedTranslation, getChapterSync, loadChapter, searchBible, TRANSLATIONS, verseKey } from "@/src/data/bible";
 import { BIBLE_BOOKS, BOOK_BY_CODE, parseRef, parseRefs } from "@/src/data/books";
 import { ARTICLE_BY_ID, ARTICLES } from "@/src/data/articles";
+import { TOPIC_BY_ID, topicsForVerse } from "@/src/data/way";
 import { useProgress } from "@/src/lib/store";
 import { usesNativeTabs } from "@/src/navigation";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -24,7 +25,7 @@ export default function BibleScreen() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const toast = useToast();
-  const params = useLocalSearchParams<{ b?: string; ch?: string; v?: string; lex?: string }>();
+  const params = useLocalSearchParams<{ b?: string; ch?: string; v?: string; lex?: string; way?: string }>();
   const p = useProgress();
   const { state } = p;
   const [book, setBook] = useState("Joh");
@@ -154,6 +155,7 @@ export default function BibleScreen() {
 
   // Lexikonartikel, deren Bibelstellen den gewählten Vers enthalten
   const lexHits = sel ? ARTICLES.filter((a) => a.refs.some((r) => parseRefs(r).some(({ ref }) => ref && ref.code === book && ref.ch === ch && (!ref.v || (sel >= ref.v && sel <= (ref.vEnd ?? ref.v)))))) : [];
+  const wayHits = sel ? topicsForVerse(book, ch, sel) : [];
   const favBook = state.favorites.bible.some((f) => f.key === book);
   const favCh = state.favorites.bible.some((f) => f.key === `${book}:${ch}`);
 
@@ -199,6 +201,12 @@ export default function BibleScreen() {
           ))}
         </ScrollView>
       </View>
+      {params.way && TOPIC_BY_ID[params.way] ? (
+        <Pressable testID="way-return-button" style={styles.banner} onPress={() => { const id = params.way!; router.setParams({ way: undefined }); router.dismissTo({ pathname: "/way/topic/[id]", params: { id } }); }} accessibilityLabel="Zurück zum Thema in Mein geistlicher Weg">
+          <Icon name="corner-up-left" size={16} color={colors.brandPrimary} />
+          <Text style={styles.bannerText}>Zurück zum Thema: {TOPIC_BY_ID[params.way].title}</Text>
+        </Pressable>
+      ) : null}
       {params.lex && ARTICLE_BY_ID[params.lex] ? (
         <Pressable testID="lexicon-return-button" style={styles.banner} onPress={() => { const id = params.lex!; router.setParams({ lex: undefined }); router.navigate({ pathname: "/lexicon/[id]", params: { id } }); }} accessibilityLabel="Zurück zum Lexikonartikel">
           <Icon name="corner-up-left" size={16} color={colors.brandPrimary} />
@@ -305,7 +313,18 @@ export default function BibleScreen() {
               <Button testID="verse-mark-read" icon={isRead ? "check-circle" : "circle"} variant={isRead ? "secondary" : "ghost"} label={isRead ? "Gelesen – rückgängig" : "Als gelesen markieren"} onPress={() => p.updateStudy((x) => ({ ...x, read: isRead ? unmarkRead(x.read, book, ch, rangeVerses) : markRead(x.read, book, ch, rangeVerses) }))} />
               <Button testID="verse-review-add" icon="repeat" variant="ghost" label={st.review.some((r) => r.key === key) ? "In Merkliste" : "Zur Merkliste"} onPress={() => { if (!st.review.some((r) => r.key === key)) p.updateStudy((x) => ({ ...x, review: [...x.review, { key, addedAt: new Date().toISOString(), due: today(), step: 0, intervals: REVIEW_INTERVALS }] })); toast.show("Zur Merkliste hinzugefügt"); }} />
               <Button testID="verse-journal" icon="edit-3" variant="ghost" label="Journal" onPress={() => { setSel(null); router.push({ pathname: "/study/journal", params: { ref: key } }); }} />
+              <Button testID="verse-way-diary" icon="lock" variant="ghost" label="Ins Tagebuch" onPress={() => { setSel(null); router.push({ pathname: "/way/entry", params: { kind: "checkin", ref: key } }); }} />
             </View>
+            {wayHits.length ? (
+              <>
+                <Text style={styles.label}>Im Register „Mein geistlicher Weg“</Text>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }} testID="verse-way-topics">
+                  {wayHits.map((t) => (
+                    <Chip key={t.id} testID={`verse-way-${t.id}`} label={t.title} onPress={() => { setSel(null); router.push({ pathname: "/way/topic/[id]", params: { id: t.id } }); }} />
+                  ))}
+                </View>
+              </>
+            ) : null}
             <Button
               testID="verse-fav-button"
               variant={state.favorites.bible.some((f) => f.key === verseKey(book, ch, sel)) ? "secondary" : "ghost"}

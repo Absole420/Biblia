@@ -275,3 +275,10 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 27: Mein geistlicher Weg – Bibliothek Buch open-way → /way; Allgemeines Register (12 Themen, Suche way-search, Filter way-cat-*, offene Themen way-open-topics, Themenseite /way/topic/[id] mit Kurz erklärt, Bibelstellen (KindBadge), Personen, Jesus (Wort/Verhalten/Deutung), Orientierung, Spannungen, Fragen, Gebetsimpuls, Schritte, Hilfe-Hinweis, Verwandte/Lexikon/Lerneinheiten, Kontext-Sheet way-context-sheet); Persönliches Register (Datenschutz-Intro diary-intro-accept, Check-in /way/entry mit Gefühlen feeling-*, Stärke, Vertiefung, Verknüpfungen, Bearbeiten/Löschen), Weg-Ansicht diary-entry-*, Rückblick /way/review, Daten & Sicherung /way/data (Export JSON/Text, Wiederherstellen, vollständig löschen), Krisenhinweis (crisis-card) bei Gefahrwörtern; Bibelleser: verse-way-diary, verse-way-topics, Rücksprung way-return-button. Tagebuch separat in AsyncStorage-Key biblia_way_v1, AES-GCM (expo-crypto)"
+    implemented: true
+    working: "NA"
+    file: "app/way/index.tsx, app/way/topic/[id].tsx, app/way/entry.tsx, app/way/review.tsx, app/way/data.tsx, src/components/way/WayUI.tsx, src/components/way/DiaryHome.tsx, src/lib/way.ts, src/lib/wayText.ts, src/data/way/*, app/(tabs)/library.tsx, app/(tabs)/bible.tsx, src/lib/backup.ts"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

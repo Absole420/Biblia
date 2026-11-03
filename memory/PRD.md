@@ -154,3 +154,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 ## Iteration 26 – Lexikon Weisheit + Vers des Tages
 - Neue Lexikonartikel: sprueche, buch-hiob, gottesfurcht, herz (articlesWisdom.ts, 139 Artikel gesamt); verknüpft mit allen ps3-*/ps4-* sowie ps1-2, ps1-7, ps2-4, ps2-7, ps2-8
 - Startseite: „Vers des Tages“ aus dem Gebetsheft, täglich wechselnd, Rubrik wählbar (settings.votdCat), Sprung in Bibelleser/Gebetsheft
+
+## Mein geistlicher Weg (Iteration 27, agent-tested, nicht nutzerbestätigt)
+- Bibliothek → Buch „Mein geistlicher Weg“ (/way) mit zwei klar getrennten Bereichen.
+- Allgemeines Register: 12 ausführliche Themen (src/data/way/topics1.ts, topics2.ts), Bibelstellen gegen ELB 1905 (KJV-Verszählung der Datendatei!) geprüft; 12 weitere Themen als „offen“ markiert.
+- Persönliches Register: Check-in + Erkenntnis/Frage/Gebet/Schritt, Weg-Ansicht, neutraler Rückblick (7/30 Tage/frei), Export (JSON + Text), Wiederherstellen, vollständiges Löschen. Speicher: AsyncStorage `biblia_way_v1`, AES-256-GCM via expo-crypto, Schlüssel `biblia_way_key` im SecureStore; nicht im Lernstand-Export enthalten.
+- Keine App-Sperre (Nutzerwahl), Krisennummern nur Deutschland, keine Push-Nachrichten, keine Sync.

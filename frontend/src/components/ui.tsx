@@ -80,7 +80,7 @@ const useStyles = makeStyles((c) => ({
   btn: { minHeight: 52, borderRadius: radius.pill, paddingHorizontal: spacing.xl, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm },
   glow: { shadowColor: c.brandPrimary, shadowOpacity: 0.35, shadowRadius: 12, shadowOffset: { width: 0, height: 4 }, elevation: 3 },
   btnText: { fontFamily: fonts.text, fontSize: 16, fontWeight: "700" },
-  chip: { height: 36, flexShrink: 0, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: spacing.lg, borderRadius: radius.pill, borderWidth: 1 },
+  chip: { minHeight: 44, flexShrink: 0, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: spacing.lg, borderRadius: radius.pill, borderWidth: 1 },
   chipText: { fontFamily: fonts.text, fontSize: 14, fontWeight: "600" },
   dot: { width: 10, height: 10, borderRadius: 5 },
   sectionRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.xl, marginBottom: spacing.md },

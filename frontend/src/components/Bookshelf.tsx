@@ -15,6 +15,7 @@ export const BOOK_THEMES = {
   favLessons: { cover: "#2F6F6A", spine: "#21504C", ink: "#E6F5F3", trim: "#E8C77A" }, // Petrol, Kompass
   photos: { cover: "#B9802F", spine: "#8E6020", ink: "#FFF6E6", trim: "#5A3E14" }, // Fotoalbum, Ocker
   prayer: { cover: "#3F5E8C", spine: "#2C4466", ink: "#EEF3FA", trim: "#E2C08A" }, // Gebetsheft, Taubenblau
+  way: { cover: "#6B5A3E", spine: "#4E412B", ink: "#FBF3E4", trim: "#9FC2B4" }, // Mein geistlicher Weg, Sand/Salbei
   units: { cover: "#5B4372", spine: "#432F56", ink: "#F1E9F8", trim: "#D9B45A" }, // Lila, Lernheft
 } satisfies Record<string, BookTheme>;
 

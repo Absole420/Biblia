@@ -1,0 +1,34 @@
+{
+  "summary": "Frontend-only retest of the iteration-27 fixes for 'Mein geistlicher Weg' at 390x844, plus a quick regression. Every listed fix passed. Crisis detection fired for all 5 required phrases. 'er hat mich geschlagen' showed the abuse variant, and the two harmless phrases caused no alert. The date 31.02.2026 and an empty entry were both rejected with an error toast. Search for traurig, wütend, ängstlich and besorgt found the right topics. The path topic -> context sheet -> Bible reader -> way-return-button -> topic-back ended on the /way register. The privacy intro gate appeared on first use for both topic-to-diary and verse-way-diary. Entries prefilled with a ref or topic showed the deeper fields straight away. The leave sheet offered save and discard. The review sentence for a single question was correct. Chips were 44px tall with no layout breakage. The data screen mentioned Browser-Speicher. Regression passed: create, encrypted storage (enc1:), persistence after reload, edit, export of backup JSON and text, delete, and wipe (storage keys removed, intro shown again). There were no page errors. No deprecated Expo packages were found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "safetyCheck patterns (src/lib/way.ts:220-226)", "issue": "Remaining minor gaps in the keyword matching. Missed (no alert): 'Ich würde am liebsten sterben', 'Ich hab keine Kraft mehr zu leben', 'Ich mache Schluss'. Wrong alerts: 'Bring mich um 8 zum Bahnhof' (danger), 'nicht mehr da sein, wo es laut ist' (danger), 'Gewalt in der Bibel' (abuse). A wrong alert has little cost here because the entry is still saved.", "testID": "entry-safety", "priority": "LOW"},
+      {"component": "entry-back on existing entry (app/way/entry.tsx:132)", "issue": "The leave confirmation only appears for new entries (hasContent && !existing). If you change an existing entry and tap X, the changes are discarded without asking.", "testID": "entry-back", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "entry-safety", "issues": ["There is no header or back control at the top. The only way out ('Zurück zum Tagebuch') is below the long crisis list, so on 390x844 you have to scroll to reach it."]},
+      {"screen": "global", "issues": ["The logo/map IntroAnimation overlay ('Überspringen') still appears for a few seconds on every full page load, even with biblia.introJourney.done=true (known from iteration 27)."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": [".screenshots/intro_gate.png", ".screenshots/leave_sheet.png", ".screenshots/empty_toast.png", ".screenshots/abuse.png", ".screenshots/reader.png"],
+  "action_items": [
+    "LOW: Optionally broaden DANGER to cover 'am liebsten sterben' and 'keine Kraft mehr zu leben', and anchor /bringe? mich um/ so it does not fire on 'bring mich um 8' (e.g. a negative lookahead for a digit).",
+    "LOW: Show the leave confirmation when an existing entry has unsaved changes (compare the draft with the stored entry).",
+    "LOW: Add a top back/close control on the entry-safety screen."
+  ],
+  "critical_code_review_comments": [
+    "toISO now checks real calendar dates and hasContent blocks empty saves. Both verified.",
+    "readData now throws on decrypt failure, and the broken flag stops writeData. This is the right guard against overwriting entries.",
+    "way-return-button uses dismissTo, so no duplicate topic screen is pushed onto the stack."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100% of requested retests (23/23 checks)"},
+  "seed_data_creation": "None. TEST_ entries were created only in isolated browser contexts (localStorage); the wipe test removed them.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Each browser_automation call is a fresh context: accept diary-intro-accept first. Use normal clicks. To reach the reader from a topic: topic-passage-0-context -> way-context-open-reader -> way-return-button. Chapter chips use the testID chapter-chip-N. Toast text checks: 'Der Eintrag ist noch leer' and 'gültiges Datum'. Exports on web trigger downloads, which expect_download captures.",
+  "rca_of_issue": ""
+}

@@ -1,0 +1,54 @@
+{
+  "summary": "Frontend-only test of 'Mein geistlicher Weg' (Expo web, 390x844). Core flows WORK: library shelf-way/open-way -> /way; register shows all 12 topic cards; search 'müde'->erschoepfung, 'Sorge'/'Angst'->angst-sorge; 7 category chips filter correctly; 12 open topics with 'offen' tags. Topic page: passages with Elberfelder text, persons, Jesus cards labelled 'Jesu Worte'/'Jesu Verhalten', prayer marked 'Vorschlag:', care hint; context sheet shows full chapter (Jesaja 40); open-reader -> /bible?b=Jes&ch=40&v=28&way=... with way-return-button returning to topic; related/lexicon/station chips navigate; topic-to-diary preselects topic. Diary: intro -> accept persists; all home buttons present; crisis sheet with 7 German numbers. Entry: feeling-only save works; all deep fields keep focus while typing; custom feeling, intensity, talk, refs (Ps 23,1 -> 'Psalmen 23,1', invalid ref toast), topics; edit+save updates; delete with confirm works; entries persist after reload; localStorage 'biblia_way_v1' starts with 'enc1:' and no plaintext. Safety: 'Ich will nicht mehr leben' -> entry-safety + crisis-card + crisis-call-112; 'er schlägt mich' -> abuse variant (no pressure to reconcile). Review week/month/custom neutral sentences ('Besorgt' zweimal, Psalmen 23,1 einmal), no streak/score words. Data: encryption state shown; backup JSON + readable TXT downloads; wipe 3-step removes biblia_way_v1 + key, other localStorage untouched; restore (replace) restores 2 entries and survives reload; invalid file -> error toast. Bible verse sheet Ps 23,1 shows verse-way-diary + verse-way-erschoepfung; Ps 23,6 shows no topic chips. Issues found: safety-word false negatives/positives (HIGH), impossible dates accepted, search misses adjective feelings, return-button stack duplication, privacy intro bypass, hidden prefilled ref, silent overwrite risk on decrypt error, plus minor UI items. No deprecated packages (expo-av/barcode-scanner/background-fetch) found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "safetyCheck DANGER regex", "issue": "Common German suicidal phrasings NOT detected (verified via node with the exact regexes): 'Ich bringe mich um', 'Ich will tot sein', 'Ich möchte nicht mehr da sein' (pattern only matches '... sein will' order), 'Ich will einfach nur sterben' / 'Ich möchte am liebsten sterben' (pattern needs adjacency), 'Ich tu mir was an' (needs contiguous 'mir was antun'), 'Schluss machen'. Reference: /app/frontend/src/lib/way.ts:215-219", "testID": "entry-safety", "priority": "HIGH"},
+      {"component": "safetyCheck ABUSE/DANGER regex false positives", "issue": "/gewalt/i matches 'gewaltig' (Bible language: 'Gottes gewaltige Macht' -> abuse crisis card shown, verified in UI); /geschlagen/ matches 'Gott hat Jesus nicht geschlagen'; /ritze/ matches 'ich ritze nichts'; /angefasst/ very broad. Reference: /app/frontend/src/lib/way.ts:220", "testID": "entry-safety", "priority": "MEDIUM"},
+      {"component": "Entry date validation", "issue": "entry-date accepts impossible dates (31.02.2026) -> stored as 2026-02-31, shown 'Di, 31.02.2026' grouped under 'Februar 2026'. toISO only checks regex. Reference: /app/frontend/app/way/entry.tsx:23", "testID": "entry-date", "priority": "MEDIUM"},
+      {"component": "Register search", "issue": "Adjective feeling words return 'Kein Thema gefunden': 'traurig', 'wütend', 'ängstlich', 'besorgt' (the same labels used by the diary feeling chips). Search only matches title/summary/aka nouns. Reference: /app/frontend/app/way/index.tsx:62 + aka arrays in src/data/way/topics1.ts/topics2.ts", "testID": "way-search", "priority": "MEDIUM"},
+      {"component": "Review summary grammar", "issue": "'Du hast 1 Frage festgehalten, davon sind einige noch offen.' – wrong for count 1. Reference: /app/frontend/src/lib/wayText.ts:84", "testID": "review-summary", "priority": "LOW"},
+      {"component": "Toast", "issue": "Error toast 'Bibelstelle nicht erkannt …' shows a success check icon", "testID": "entry-ref-add", "priority": "LOW"},
+      {"component": "Empty entry", "issue": "Saving with no content at all creates an empty path card (only date). Consider requiring at least one field or confirming.", "testID": "entry-save", "priority": "LOW"},
+      {"component": "Entry discard", "issue": "entry-back (X) discards typed text without confirmation – accidental data loss in a diary", "testID": "entry-back", "priority": "LOW"}
+    ],
+    "integration_issues": [
+      {"flow": "Reader -> way-return-button -> topic -> back", "issue": "way-return-button uses router.push, duplicating the topic screen; after returning, topic-back goes to /bible?b=Jes&ch=40&v=28 instead of the Register. Use router.back()/dismissTo when the topic is already in the stack. Reference: /app/frontend/app/(tabs)/bible.tsx:205", "affected_testIDs": ["way-return-button", "topic-back"]},
+      {"flow": "Privacy intro bypass", "issue": "topic-to-diary and verse-way-diary open /way/entry directly; a first-time user (fresh storage) saves diary entries without ever seeing diary-intro (privacy explanation). Show intro in entry screen when introSeenAt is missing.", "affected_testIDs": ["topic-to-diary", "verse-way-diary", "diary-intro"]},
+      {"flow": "Verse -> Ins Tagebuch", "issue": "Prefilled ref (Ps:23:1) is in state but invisible: refs section only renders after tapping 'Vertiefen' (entry-more), so user can't see the verse is linked. Show refs (or a 'Verknüpft: Psalmen 23,1' line) when prefilled. Reference: /app/frontend/app/way/entry.tsx:47,151-188", "affected_testIDs": ["verse-way-diary", "entry-ref-open-Ps:23:1", "entry-more"]},
+      {"flow": "Data restore picker", "issue": "In 2 of 3 Playwright runs the first tap on way-restore did not open the file chooser; second tap did. Possibly expo-document-picker web quirk – verify manually.", "affected_testIDs": ["way-restore"]},
+      {"flow": "Entry opened via deep link", "issue": "After save with no navigation history router.back() is a no-op – user stays on entry screen (risk of double save). Fallback to router.replace('/way?tab=diary') when !router.canGoBack().", "affected_testIDs": ["entry-save", "entry-safety-done"]}
+    ],
+    "design_issues": [
+      {"screen": "Entry / Topic / Register", "issues": ["Chip height 36px < 44px touch target (entry-kind-*, entry-intensity-* 42x36, entry-talk-*, entry-topic-*, entry-lex-*, topic-related-*, topic-lex-*, way-cat-*)", "way-search-clear and entry-ref-remove-* icons are 18x20px (hitSlop ineffective on web; ~38x40 on native)", "'Uhrzeit (optional)' label wraps to two lines at 390px, misaligning date/time inputs"]},
+      {"screen": "Review custom range", "issues": ["Invalid review-to/review-from input silently falls back to previous range without any hint"]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iter27_playwright.py"],
+  "action_items": [
+    "HIGH: Broaden DANGER patterns in src/lib/way.ts (e.g. /bring\\w* mich um/, /(will|möchte)\\b.{0,20}\\b(tot|sterben)/, /nicht mehr (da )?sein/, /mir\\s+(etwas|was)\\s+an(tun|tue)|tu\\w* mir (etwas|was) an/, /schluss machen/) and test with a phrase list",
+    "MEDIUM: Tighten ABUSE patterns (/\\bgewalt(?!ig)/, avoid bare /geschlagen/ and /ritze/ false positives)",
+    "MEDIUM: Validate entry-date as a real calendar date (new Date check) in entry.tsx toISO",
+    "MEDIUM: Make register search match feeling adjectives (traurig, wütend, ängstlich, besorgt…) e.g. by mapping FEELINGS labels -> topicsForFeeling",
+    "MEDIUM: way-return-button should go back to the existing topic screen instead of pushing a duplicate",
+    "MEDIUM: Show diary privacy intro (or mark it) when entering /way/entry directly via topic-to-diary/verse-way-diary on first use",
+    "MEDIUM: Show prefilled refs/topics on entry screen without requiring 'Vertiefen'",
+    "MEDIUM: In way.ts readData, on decrypt/parse failure do not return empty() silently – keep the raw blob and block overwriting (otherwise next save destroys all entries)",
+    "LOW: Fix review question sentence for count 1; error toast icon; confirm discard on entry-back; prevent completely empty entries; 44px chip/icon touch targets; date/time label wrap"
+  ],
+  "critical_code_review_comments": [
+    "way.ts:76-87 readData returns empty() on any error (missing key, decrypt failure, JSON error); ensureLoaded/saveEntry then writeData() overwrites the stored ciphertext -> irreversible silent data loss",
+    "way.ts:61-71 on web storage.secureGet/secureSet fall back to localStorage: biblia_way_key sits next to biblia_way_v1, so encryption is cosmetic in web preview while UI says 'Schlüssel im geschützten Speicher'. Fine on native (SecureStore) – consider wording for web",
+    "way.ts:182-187 wipe(): an in-flight writeData from a preceding set() could re-create biblia_way_v1 after removeItem; also 'encrypted' flag not reset",
+    "entry.tsx:35-42 useMemo with eslint-disable on deps; works because of the follow-up effect, but fragile",
+    "No deprecated Expo packages found (expo-av / expo-barcode-scanner / expo-background-fetch not in package.json)"
+  ],
+  "updated_files": ["/app/test_reports/iteration_27.json", "/app/test_reports/iter27_playwright.py"],
+  "success_rate": {"backend": "N/A (not requested)", "frontend": "88%"},
+  "seed_data_creation": "Only TEST_-prefixed diary entries inside isolated Playwright browser contexts (localStorage); nothing persisted server-side.",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Use normal clicks (not force=True) on RN-web Pressables – force clicks on open-way did not navigate. Each browser_automation call is a fresh context: accept diary-intro (diary-intro-accept) and create entries inside the same script. Expo may restart mid-run (502) – wait ~45s. A logo IntroAnimation overlay (map + 'Überspringen') can still appear for a few seconds on first load even with biblia.introJourney.done set. Bible reader deep link: /bible?b=Ps&ch=23, verse testIDs verse-<ch>-<v>. Restore test: expect_file_chooser + set_files, retry click once.",
+  "rca_of_issue": "Safety gaps: regex list in way.ts requires exact word order/adjacency. Impossible dates: toISO only regex-checks. Search misses: aka lists contain nouns only. Return stack: bible.tsx:205 router.push. Intro bypass: diary-intro only rendered in DiaryHome."
+}
