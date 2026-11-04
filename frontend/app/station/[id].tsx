@@ -16,7 +16,6 @@ import { TaskView } from "@/src/components/TaskView";
 import { Button, ProgressBar } from "@/src/components/ui";
 import { ReadingVerses } from "@/src/components/ReadingVerses";
 import { displayedTranslation, formatRef } from "@/src/data/bible";
-import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { findStation } from "@/src/data/john";
 import { STATION_META } from "@/src/data/meta";
 import { STATION_IMAGES } from "@/src/data/stationImages";
@@ -112,7 +111,8 @@ export default function StationScreen() {
       : { label: "Prüfung wiederholen", icon: "refresh-cw", onPress: retryExam };
   }
 
-  const placeObj = THEME_MAPS.gospels.places.find((x) => x.id === place) ?? null;
+  const lessonMap = THEME_MAPS[campaign.worldId] ?? THEME_MAPS.gospels;
+  const placeObj = lessonMap.places.find((x) => x.id === place) ?? null;
   const lvl = levelInfo(state.xp);
 
   return (
@@ -206,7 +206,7 @@ export default function StationScreen() {
                 <Text style={styles.label}>Orte</Text>
                 <View style={styles.wrap}>
                   {station.placeIds.map((pid) => {
-                    const pl = JOHN_HISTORICAL.places.find((x) => x.id === pid);
+                    const pl = lessonMap.places.find((x) => x.id === pid);
                     if (!pl) return null;
                     return (
                       <Pressable key={pid} testID={`place-chip-${pid}`} onPress={() => setPlace(pid)} style={styles.placeChip}>
