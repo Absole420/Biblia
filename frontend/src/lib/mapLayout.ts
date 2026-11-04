@@ -213,8 +213,13 @@ export function solveLabels(
       for (const p of placed) if (inter(rm, p)) hard++;
       for (const mk of markers) if (mk.id !== it.id && inter(r, mk.b)) hard++;
       for (const o of opts.reserved) if (inter(r, o)) hard++;
-      let cost = si * 1 + (si >= FAR_SLOT ? 6 : 0);
-      for (const o of opts.obstacles) if (inter(r, o)) cost += 4;
+      let obstacleArea = 0;
+      for (const o of opts.obstacles) {
+        const area = overlap(r, o);
+        if (area > 0) hard++;
+        obstacleArea += area;
+      }
+      let cost = si * 1 + (si >= FAR_SLOT ? 6 : 0) + obstacleArea * 0.6;
       if (si === prevSlot) cost -= 5; // Hysterese gegen Springen
       if (hard === 0 && cost < bestCost) { bestCost = cost; best = si; }
       const sc = cost + hard * 100;
