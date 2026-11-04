@@ -58,7 +58,26 @@ const DECO: Deco[] = [
 ];
 
 // Ab dieser Zoomstufe erscheinen feine Details (Dörfer, Felder …) – hält die Übersicht ruhig.
-const MIN_ZOOM: Partial<Record<Kind, number>> = { village: 1.5, vine: 1.5, wheat: 1.2, well: 1.9, tent: 1.2, papyrus: 1.2, fish: 1.9, cedar: 1.2 };
+const MIN_ZOOM: Partial<Record<Kind, number>> = {
+  mount: 1.15,
+  ridge: 1.35,
+  palm: 1.3,
+  olive: 1.3,
+  cedar: 1.35,
+  village: 1.65,
+  vine: 1.6,
+  wheat: 1.4,
+  well: 1.9,
+  tent: 1.45,
+  papyrus: 1.45,
+  fish: 2.1,
+  shepherd: 1.8,
+  camel: 1.7,
+  boat: 1.6,
+  wave: 1.35,
+  houses: 1.6,
+  city: 1.4,
+};
 
 const visibleDeco = (map: ThemeMap, zoom: number) => {
   const { latMin, latMax, lonMin, lonMax } = map.bounds;
