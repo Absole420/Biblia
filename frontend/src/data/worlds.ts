@@ -1,4 +1,4 @@
-import { World } from "./types";
+import type { World } from "./types";
 
 // Fantasievolle Abenteuer-Weltkarte (KEINE geografische Darstellung).
 // Farbwelten gemäß Auftrag Abschnitt 4 – identisch in Hell- und Dunkelmodus.
