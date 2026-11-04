@@ -4,7 +4,6 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { fonts, useTheme } from "@/src/theme";
 
 import { Icon } from "./Icon";
-import { PulseRing } from "./MapAnimations";
 
 type Props = {
   x: number;
@@ -35,7 +34,9 @@ export function MapNode({ x, y, size, color, iconColor, icon, label, sublabel, s
         hitSlop={10}
         style={({ pressed }) => [{ width: size, height: size, transform: [{ scale: pressed ? 0.92 : 1 }] }]}
       >
-        {status === "available" ? <PulseRing size={size} color={colors.brandPrimary} /> : null}
+        {status === "available" ? (
+          <View style={[styles.availableHalo, { width: size + 14, height: size + 14, borderRadius: (size + 14) / 2, borderColor: colors.brandPrimary }]} />
+        ) : null}
         <View
           style={[
             styles.medal,
@@ -70,10 +71,11 @@ export function MapNode({ x, y, size, color, iconColor, icon, label, sublabel, s
 
 const styles = StyleSheet.create({
   wrap: { position: "absolute", alignItems: "center" },
-  medal: { alignItems: "center", justifyContent: "center", shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 6 },
-  inner: { position: "absolute", top: 6, left: 6, right: 6, bottom: 6, borderWidth: 2 },
-  check: { position: "absolute", right: -4, bottom: -4, alignItems: "center", justifyContent: "center", borderWidth: 3 },
-  label: { marginTop: 8, paddingHorizontal: 14, paddingVertical: 6, borderRadius: 18, borderWidth: 1, alignItems: "center", maxWidth: 260 },
+  medal: { alignItems: "center", justifyContent: "center", shadowColor: "#17221d", shadowOpacity: 0.16, shadowRadius: 5, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
+  availableHalo: { position: "absolute", top: -7, left: -7, borderWidth: 2, opacity: 0.45 },
+  inner: { position: "absolute", top: 5, left: 5, right: 5, bottom: 5, borderWidth: 1.5 },
+  check: { position: "absolute", right: -3, bottom: -3, alignItems: "center", justifyContent: "center", borderWidth: 2 },
+  label: { marginTop: 7, paddingHorizontal: 12, paddingVertical: 6, borderRadius: 14, borderWidth: 1, alignItems: "center", maxWidth: 232 },
   labelText: { fontFamily: fonts.display, fontWeight: "700", textAlign: "center" },
   sub: { fontFamily: fonts.text, fontWeight: "600", textAlign: "center" },
 });
