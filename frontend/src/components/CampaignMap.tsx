@@ -10,19 +10,18 @@ import { fonts, useTheme } from "@/src/theme";
 
 import { AvatarView } from "./AvatarView";
 
-import { Cloud, Flame, Glow, Shimmer } from "./MapAnimations";
 import { MapNode } from "./MapNode";
 import { blob, curve, mountain, rng, smoothOpen } from "./mapShapes";
 
 /** Spielerische Abenteuerkarte der Johannes-Kampagne: vom Jordan nach Jerusalem. */
-export function CampaignMapContent({ campaign, palette, progress, onSelect, avatar }: { campaign: Campaign; palette: World["palette"]; progress: Record<string, StationProgress>; onSelect: (id: string) => void; avatar?: Avatar | null }) {
+function CampaignMapContentView({ campaign, palette, progress, onSelect, avatar }: { campaign: Campaign; palette: World["palette"]; progress: Record<string, StationProgress>; onSelect: (id: string) => void; avatar?: Avatar | null }) {
   const { colors } = useTheme();
   const W = campaign.mapW;
   const H = campaign.mapH;
   const byId = useMemo(() => Object.fromEntries(campaign.stations.map((s) => [s.id, s])), [campaign]);
   const edges = useMemo(() => campaign.stations.flatMap((s) => s.requires.map((r) => [r, s.id] as const)), [campaign]);
-  const hills = [[120, 1250, 160, 120], [860, 1420, 150, 120], [900, 700, 160, 140], [110, 560, 150, 130], [820, 300, 140, 110], [180, 300, 130, 100]].map(([x, y, w, h]) => mountain(x, y, w, h));
-  const olives = [[200, 1000], [240, 1040], [160, 1060], [820, 980], [860, 1010], [420, 640], [460, 660], [760, 460], [720, 500], [140, 820], [880, 1580], [120, 1600]];
+  const hills = [[120, 1250, 160, 120], [860, 1420, 150, 120], [900, 700, 160, 140], [110, 560, 150, 130]].map(([x, y, w, h]) => mountain(x, y, w, h));
+  const olives = [[200, 1000], [160, 1060], [820, 980], [420, 640], [760, 460], [140, 820]];
   const river: [number, number][] = [[120, 1800], [170, 1700], [140, 1600], [190, 1480], [150, 1380], [200, 1290], [260, 1240]];
 
   return (
@@ -90,7 +89,7 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect, avat
         ) : (
           <GenericScenery W={W} H={H} palette={palette} seed={campaign.id.length * 7 + campaign.stations.length} />
         )}
-        <Countryside campaign={campaign} seed={campaign.id.length * 13 + campaign.stations.length} accent={palette.accent} />
+        {campaign.id === "john" ? <Countryside campaign={campaign} seed={campaign.id.length * 13 + campaign.stations.length} accent={palette.accent} /> : null}
         {/* Wege zwischen Stationen */}
         {edges.map(([a, b]) => {
           const A = byId[a];
@@ -99,12 +98,12 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect, avat
           const open = !!progress[a];
           return (
             <G key={a + b}>
-              <Path d={curve(A, B, 0.2)} stroke={colors.mapInk} strokeOpacity={0.25} strokeWidth={22} fill="none" strokeLinecap="round" />
+              <Path d={curve(A, B, 0.2)} stroke={colors.mapInk} strokeOpacity={0.12} strokeWidth={16} fill="none" strokeLinecap="round" />
               <Path
                 d={curve(A, B, 0.2)}
-                stroke={done ? colors.brandPrimary : open ? colors.surface : colors.mapLocked}
-                strokeWidth={done ? 12 : 9}
-                strokeDasharray={done ? undefined : "4 18"}
+                stroke={done ? colors.brandPrimary : open ? colors.mapRiver : colors.mapLocked}
+                strokeWidth={done ? 7 : 5}
+                strokeDasharray={done ? undefined : open ? "10 9" : "2 12"}
                 fill="none"
                 strokeLinecap="round"
               />
@@ -114,32 +113,23 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect, avat
         {campaign.id === "john" ? (
           <>
         {/* Start- & Zielmarken */}
-        <SvgText x={500} y={1770} fontSize={26} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>START · Am Jordan</SvgText>
-        <SvgText x={560} y={40} fontSize={26} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>ZIEL · Jerusalem</SvgText>
+        <SvgText x={500} y={1770} fontSize={19} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>START · Am Jordan</SvgText>
+        <SvgText x={560} y={40} fontSize={19} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>ZIEL · Jerusalem</SvgText>
           </>
         ) : (
           <>
-            <SvgText x={W / 2} y={H - 40} fontSize={26} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>START</SvgText>
-            <SvgText x={W / 2} y={60} fontSize={26} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>ZIEL · {campaign.title}</SvgText>
+            <SvgText x={W / 2} y={H - 40} fontSize={19} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>START</SvgText>
+            <SvgText x={W / 2} y={60} fontSize={19} fontWeight="700" textAnchor="middle" fill={colors.mapInk} fontFamily={fonts.display}>ZIEL · {campaign.title}</SvgText>
           </>
         )}
       </Svg>
       {campaign.id === "john" ? (
         <>
-      <Shimmer x={720} y={800} w={150} color={colors.surface} />
-      <Shimmer x={130} y={1560} w={70} color={colors.surface} />
-      <Flame x={520} y={140} size={30} color={colors.stationNarrative} core={colors.warning} />
-      <Flame x={600} y={140} size={30} color={colors.stationNarrative} core={colors.warning} />
-      <Glow x={560} y={60} r={170} color={colors.warning} />
-      <Cloud x={80} y={900} w={220} color={colors.surface} duration={28000} drift={180} />
-      <Cloud x={640} y={1380} w={200} color={colors.surface} duration={24000} drift={-150} opacity={0.6} />
-      <Cloud x={300} y={300} w={180} color={colors.surface} duration={22000} drift={140} opacity={0.6} />
+
         </>
       ) : (
         <>
-          <Cloud x={80} y={H * 0.5} w={220} color={colors.surface} duration={28000} drift={180} />
-          <Cloud x={600} y={H * 0.2} w={200} color={colors.surface} duration={24000} drift={-150} opacity={0.6} />
-          <Glow x={W / 2} y={70} r={160} color={palette.glow} />
+
         </>
       )}
       {campaign.stations.map((s, i) => {
@@ -151,14 +141,14 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect, avat
             testID={`station-node-${s.id}`}
             x={s.x}
             y={s.y}
-            size={104}
+            size={82}
             color={colors[meta.color]}
             iconColor={meta.ink === "dark" ? colors.mapInk : colors.surface}
             icon={s.icon}
             label={`${i + 1}. ${s.title}`}
             sublabel={meta.label}
             status={st}
-            labelSize={23}
+            labelSize={18}
             onPress={() => onSelect(s.id)}
           />
         );
@@ -167,6 +157,8 @@ export function CampaignMapContent({ campaign, palette, progress, onSelect, avat
     </View>
   );
 }
+
+export const CampaignMapContent = React.memo(CampaignMapContentView);
 
 /** Persönliche Lernfigur an der aktuellen Station (oben rechts neben dem Medaillon, verdeckt keine Beschriftung). */
 function AvatarPin({ campaign, progress, avatar }: { campaign: Campaign; progress: Record<string, StationProgress>; avatar: Avatar }) {
@@ -201,7 +193,7 @@ function Countryside({ campaign, seed, accent }: { campaign: Campaign; seed: num
     const kinds: Bit["k"][] = ["village", "vine", "wheat", "sheep", "palm", "cypress", "village", "wheat", "well", "tent", "vine", "sheep"];
     const edges = campaign.stations.flatMap((s) => s.requires.map((q) => [campaign.stations.find((t) => t.id === q)!, s] as const)).filter(([a]) => a);
     const out: Bit[] = [];
-    const n = Math.round((W * H) / 52000);
+    const n = Math.max(8, Math.round((W * H) / 190000));
     for (let i = 0; i < n * 4 && out.length < n; i++) {
       const x = 60 + r() * (W - 120);
       const y = 120 + r() * (H - 240);
@@ -300,10 +292,10 @@ function Countryside({ campaign, seed, accent }: { campaign: Campaign; seed: num
 function GenericScenery({ W, H, palette, seed }: { W: number; H: number; palette: World["palette"]; seed: number }) {
   const { colors } = useTheme();
   const r = rng(seed);
-  const n = Math.round(H / 320);
+  const n = Math.max(3, Math.round(H / 760));
   const river: [number, number][] = Array.from({ length: n + 2 }, (_, i) => [i % 2 ? 140 : 90 + r() * 60, H - (i * H) / (n + 1)]);
   const hills = Array.from({ length: n }, (_, i) => mountain(i % 2 ? 120 + r() * 60 : 860 - r() * 60, 200 + (i * (H - 300)) / n, 150, 120));
-  const trees = Array.from({ length: n * 3 }, (_, i) => [i % 3 === 0 ? 180 + r() * 80 : 760 + r() * 120, 150 + r() * (H - 250)]);
+  const trees = Array.from({ length: n * 2 }, (_, i) => [i % 3 === 0 ? 180 + r() * 80 : 760 + r() * 120, 150 + r() * (H - 250)]);
   return (
     <G>
       {Array.from({ length: n }, (_, i) => (
