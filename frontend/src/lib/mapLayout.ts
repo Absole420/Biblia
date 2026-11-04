@@ -215,7 +215,7 @@ export function solveLabels(
       for (const o of opts.reserved) if (inter(r, o)) hard++;
       let obstacleArea = 0;
       for (const o of opts.obstacles) {
-        const area = inter(r, o) ? Math.max(0, Math.min(r.x + r.w, o.x + o.w) - Math.max(r.x, o.x)) * Math.max(0, Math.min(r.y + r.h, o.y + o.h) - Math.max(r.y, o.y)) : 0;
+        const area = overlap(r, o);
         if (area > 0) hard++;
         obstacleArea += area;
       }
