@@ -17,6 +17,7 @@ import { PSALMS_1 } from "./psalms1";
 import { PSALMS_2 } from "./psalms2";
 import { PSALMS_3 } from "./psalms3";
 import { PSALMS_4 } from "./psalms4";
+import { HISTORY } from "./history";
 
 // Lernkampagne: Das Evangelium nach Johannes (vollständig spielbar).
 // Bibeltexte werden NICHT hier gespeichert, sondern über die austauschbare
@@ -399,7 +400,7 @@ export const JOHN: Campaign = {
 // Aus den HTML-Lernreisen importierte Kampagnen (Generator: /app/imports/convert.ts)
 const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C_mark, C_luke, C_parables, C_prophets, C_acts, C_letters] as unknown as Campaign[];
 
-export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])), "psalms-1": PSALMS_1, "psalms-2": PSALMS_2, "psalms-3": PSALMS_3, "psalms-4": PSALMS_4 });
+export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])), "psalms-1": PSALMS_1, "psalms-2": PSALMS_2, "psalms-3": PSALMS_3, "psalms-4": PSALMS_4, history: HISTORY });
 export const ALL_STATIONS = Object.values(CAMPAIGNS).flatMap((c) => c.stations);
 
 /** Anteil abgeschlossener Stationen über alle Kampagnen einer Lernwelt. */
