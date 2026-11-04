@@ -123,15 +123,6 @@ function CampaignMapContentView({ campaign, palette, progress, onSelect, avatar 
           </>
         )}
       </Svg>
-      {campaign.id === "john" ? (
-        <>
-
-        </>
-      ) : (
-        <>
-
-        </>
-      )}
       {campaign.stations.map((s, i) => {
         const meta = STATION_META[s.type];
         const st = stationStatus(s, progress);
