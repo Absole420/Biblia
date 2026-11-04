@@ -14,6 +14,7 @@ const stations: Station[] = [
     goal: "Du kannst die großen Abschnitte der Geschichtsbücher zeitlich einordnen und unterscheiden, was der Text erzählt, was historisch gut belegt ist und wo Forschung diskutiert.",
     discover: "Die Geschichtsbücher erzählen keine einzige, neutrale Chronik. Sie erinnern Israels Weg mit Gott: vom Leben im Land über Richter und Könige bis zu Eroberung, Exil und Rückkehr. Josua, Richter, Rut, Samuel, Könige, Chronik, Esra, Nehemia und Ester setzen dabei unterschiedliche Schwerpunkte. Besonders Könige und Chronik erzählen teilweise dieselben Zeiten, aber aus verschiedenen Blickwinkeln. Wir lesen zuerst aufmerksam, was der jeweilige Text sagt; danach fragen wir nach seinem geschichtlichen Umfeld und seiner theologischen Aussage.",
     readings: [{ book: "Jos", ch: 24, from: 1, to: 28 }, { book: "2Kö", ch: 25, from: 1, to: 30 }, { book: "2Chr", ch: 36, from: 15, to: 23 }],
+    connections: [{"from":"2Kö 25,27–30","to":"Mt 1,11–17","kind":"allusion","note":"Matthäus nennt das Exil als Zäsur in Jesu Genealogie."}],
     terms: [
       { term: "Bund", explanation: "Verbindliche Beziehung, die in den biblischen Texten Gottes Zusage und Israels Verantwortung miteinander verbindet.", ref: "Jos 24,25" },
       { term: "Exil", explanation: "Die Deportation von Teilen der Bevölkerung Judas nach Babylon nach der Eroberung Jerusalems 587/586 v. Chr.; Datierung und Einzelheiten werden historisch eingeordnet.", ref: "2Kö 25,8–21" },
@@ -42,6 +43,7 @@ const stations: Station[] = [
     goal: "Du kannst die Landverheißung im Buch Josua beschreiben und die Erneuerung des Bundes in Sichem erklären.",
     discover: "Josua erzählt von Israels Eintritt ins Land und von der Verteilung des Landes an die Stämme. Das Buch verbindet die Erzählung mit der Verheißung an die Vorfahren und mit der Verpflichtung, dem HERRN treu zu bleiben. Die Texte über Eroberung und Bann sind schwierig und dürfen nicht als zeitlose Erlaubnis zu religiöser Gewalt gelesen werden. Wir untersuchen ihre literarische und historische Einordnung, beachten die Spannung zu anderen biblischen Texten und sprechen offen über die ethischen Fragen.",
     readings: [{ book: "Jos", ch: 1, from: 1, to: 9 }, { book: "Jos", ch: 23, from: 1, to: 16 }, { book: "Jos", ch: 24, from: 1, to: 28 }],
+    connections: [{"from":"Jos 21,43–45","to":"Heb 4,8–10","kind":"interpretation","note":"Der Hebräerbrief nimmt Josua ausdrücklich auf und deutet die Ruhe weiter."}],
     terms: [
       { term: "Landverheißung", explanation: "Die Zusage des Landes an die Vorfahren wird im Buch Josua als erfüllte Gabe Gottes erzählt und zugleich mit Verantwortung verbunden.", ref: "Jos 21,43–45" },
       { term: "Bundeserneuerung", explanation: "Erneute öffentliche Verpflichtung auf den Bund; Josua 24 verortet sie in Sichem.", ref: "Jos 24,25" },
@@ -70,6 +72,7 @@ const stations: Station[] = [
     goal: "Du kannst das wiederkehrende Muster im Richterbuch erklären und seine kritische Sicht auf fehlende gemeinsame Orientierung beschreiben.",
     discover: "Das Richterbuch erzählt eine Zeit ohne dauerhaftes Königtum. Wiederholt wendet sich Israel von Gott ab, gerät unter Druck, ruft um Hilfe und erlebt Rettung durch eine Richtergestalt. Das Muster ist keine einfache Formel, mit der jedes Leid erklärt werden kann. Die Geschichten zeigen zugleich Mut, Schwäche, politische Zersplitterung und zunehmende Gewalt. Der wiederkehrende Schlusssatz, dass jeder tat, was in seinen Augen recht war, lädt zur Frage ein, was einer Gemeinschaft Orientierung geben kann.",
     readings: [{ book: "Ri", ch: 2, from: 6, to: 19 }, { book: "Ri", ch: 6, from: 11, to: 24 }, { book: "Ri", ch: 21, from: 25, to: 25 }],
+    connections: [{"from":"Ri 2,16–19","to":"Apg 13,19–23","kind":"parallel","note":"Die Apostelgeschichte blickt auf die Richterzeit und Gottes Rettung zurück."}],
     terms: [
       { term: "Richter", explanation: "Von Gott berufene Führungspersonen, die in Krisen Rettung bringen; nicht einfach Richter im heutigen Gerichtsberuf.", ref: "Ri 2,16" },
       { term: "Zyklus", explanation: "Bezeichnung für das wiederkehrende Erzählmuster aus Abwendung, Bedrängnis, Hilferuf und Rettung.", ref: "Ri 2,11–19" },
@@ -98,6 +101,7 @@ const stations: Station[] = [
     goal: "Du kannst Ruts Entscheidung, die Rolle des Lösers und die Verbindung zur David-Linie erklären.",
     discover: "Rut spielt in der Zeit der Richter, erzählt aber eine stille Familiengeschichte. Nach dem Tod ihres Mannes bleibt Rut bei Noomi und zieht mit ihr nach Bethlehem. Als Moabiterin gehört sie nicht selbstverständlich zur Gemeinschaft Judas. Boas schützt sie auf dem Feld, handelt als Löser und ermöglicht eine Zukunft für die Familie. Das Buch endet mit einer Genealogie bis zu David. Im Neuen Testament erscheint Rut in Jesu Stammbaum; das ist ein konkreter genealogischer Bezug und nicht bloß eine allgemeine Ähnlichkeit.",
     readings: [{ book: "Rut", ch: 1, from: 1, to: 18 }, { book: "Rut", ch: 2, from: 8, to: 16 }, { book: "Rut", ch: 4, from: 9, to: 22 }, { book: "Mt", ch: 1, from: 1, to: 6 }],
+    connections: [{"from":"Rut 4,18–22","to":"Mt 1,5–6","kind":"nt","note":"Matthäus nennt Rut ausdrücklich in Jesu Genealogie."}],
     terms: [
       { term: "Löser (Go'el)", explanation: "Ein naher Verwandter, der familiäre Rechte und Pflichten wahrnehmen kann; Rut 4 erzählt Boas' öffentliches Handeln.", ref: "Rut 4,1–10" },
       { term: "Hesed", explanation: "Hebräischer Begriff für treue Güte und verlässliche Zuwendung; Noomi verwendet ihn in ihrem Segenswunsch.", ref: "Rut 1,8" },
@@ -126,6 +130,7 @@ const stations: Station[] = [
     goal: "Du kannst den Übergang zur Monarchie und die Bedeutung des Davidbundes erklären.",
     discover: "Samuel erzählt vom Wunsch nach einem König, von Saul und von Davids Aufstieg. Die Königsherrschaft wird weder einfach abgelehnt noch unkritisch gefeiert: Sie kann Schutz und Einheit geben, aber auch Machtmissbrauch ermöglichen. In 2. Samuel 7 verheißt Gott David ein beständiges Haus. Der Text meint zunächst Davids Dynastie; spätere biblische Texte und das Neue Testament lesen die Hoffnung auf einen bleibenden König weiter. Wir trennen den ursprünglichen Zusammenhang von der späteren messianischen Deutung.",
     readings: [{ book: "1Sam", ch: 8, from: 1, to: 22 }, { book: "1Sam", ch: 16, from: 1, to: 13 }, { book: "2Sam", ch: 7, from: 1, to: 17 }, { book: "Lk", ch: 1, from: 32, to: 33 }],
+    connections: [{"from":"2Sam 7,11–16","to":"Lk 1,32–33","kind":"interpretation","note":"Lukas deutet die Davidverheißung messianisch auf Jesus."}],
     terms: [
       { term: "Monarchie", explanation: "Staatsform mit einem König an der Spitze; die Samuelbücher erzählen ihre Einführung ambivalent.", ref: "1Sam 8,4–22" },
       { term: "Davidbund", explanation: "Gottes Verheißung an David, ihm ein Haus beziehungsweise eine Dynastie aufzurichten.", ref: "2Sam 7,11–16" },
@@ -153,6 +158,7 @@ const stations: Station[] = [
     goal: "Du kannst Salomos Aufstieg, den Tempelbau und die Spannung zwischen Weisheit und späterem Machtversagen erläutern.",
     discover: "Das erste Buch Könige beginnt mit der Sicherung von Salomos Thron und erzählt von seiner Bitte um Weisheit. Der Tempel in Jerusalem wird zum Zentrum des Gottesdienstes und der Bundeserinnerung. Salomos Gebet in 1. Könige 8 bittet darum, dass Gott auch Gebete von Fremden hört. Zugleich schildert das Buch Reichtum, politische Bündnisse und Frondienst. Am Ende wird Salomos Abwendung als Wendepunkt erzählt: Die Einheit des Reiches zerbricht nach seinem Tod. Könige hält Glanz und Kritik zusammen.",
     readings: [{ book: "1Kö", ch: 3, from: 4, to: 15 }, { book: "1Kö", ch: 8, from: 22, to: 53 }, { book: "1Kö", ch: 9, from: 1, to: 9 }, { book: "1Kö", ch: 11, from: 1, to: 13 }],
+    connections: [{"from":"1Kö 8,27","to":"Joh 2,19–21","kind":"interpretation","note":"Johannes deutet Jesu Leib als Tempel; das ist eine spätere NT-Auslegung."}],
     terms: [
       { term: "Weisheit", explanation: "Gabe, die Salomo erbittet, um gerecht zu urteilen und das Volk zu führen.", ref: "1Kö 3,9–12" },
       { term: "Tempel", explanation: "Heiligtum in Jerusalem; Salomos Gebet betont, dass Gott nicht auf ein Gebäude begrenzt ist.", ref: "1Kö 8,27–30" },
@@ -181,6 +187,7 @@ const stations: Station[] = [
     goal: "Du kannst die Reichsteilung erklären und die prophetische Kritik an Götzendienst und Machtmissbrauch an Beispielen zeigen.",
     discover: "Nach Salomos Tod zerfällt das Reich. Rehabeam lehnt die Bitte um Entlastung ab; Jerobeam richtet im Nordreich eigene Heiligtümer ein. Die Königsbücher beurteilen die Herrscher wiederholt daran, ob sie dem HERRN treu sind. Elia widerspricht Ahab und Isebel, besonders beim Baalskult und beim Mord an Nabot. Elisa führt die prophetische Arbeit fort und wirkt in Krisen für Einzelne und Gemeinschaften. Die Geschichten zeigen Propheten als unbequeme Stimmen gegen religiöse und politische Selbstsicherheit.",
     readings: [{ book: "1Kö", ch: 12, from: 1, to: 24 }, { book: "1Kö", ch: 18, from: 17, to: 40 }, { book: "1Kö", ch: 21, from: 1, to: 24 }, { book: "2Kö", ch: 5, from: 1, to: 19 }],
+    connections: [{"from":"1Kö 19,9–18","to":"Mk 9,2–8","kind":"theme","note":"Elia erscheint in der Verklärungserzählung; die Texte verbinden die Gestalten, setzen sie aber nicht gleich."}],
     terms: [
       { term: "Nordreich Israel", explanation: "Das größere Reich nördlich von Juda nach der Teilung; Samaria wird später seine Hauptstadt.", ref: "1Kö 12,16–20" },
       { term: "Südreich Juda", explanation: "Das Reich um Jerusalem und die David-Dynastie nach der Teilung.", ref: "1Kö 12,20–24" },
@@ -237,6 +244,7 @@ const stations: Station[] = [
     goal: "Du kannst die Reform Josias, Jerusalems Fall und die Hoffnungsszene am Ende von 2. Könige erklären.",
     discover: "Josia führt eine Reform durch, nachdem im Tempel ein Gesetzbuch gefunden wird. Das Königsbuch würdigt ihn besonders, erzählt aber, dass das Gericht über Juda dennoch nicht abgewendet wird. Babylon erobert Jerusalem, zerstört den Tempel und deportiert Teile der Bevölkerung. Das Buch endet nicht mit einer Rückkehr, sondern damit, dass der babylonische König Jojachin begnadigt und an seinen Tisch lässt. Diese kleine Szene löscht das Exil nicht aus; sie hält aber die David-Dynastie und Hoffnung im Blick.",
     readings: [{ book: "2Kö", ch: 22, from: 1, to: 20 }, { book: "2Kö", ch: 23, from: 1, to: 25 }, { book: "2Kö", ch: 24, from: 10, to: 17 }, { book: "2Kö", ch: 25, from: 1, to: 30 }],
+    connections: [{"from":"2Kö 24–25","to":"Mt 1,11–17","kind":"allusion","note":"Matthäus markiert das Babylonische Exil als Abschnitt in der Geschichte Jesu."}],
     terms: [
       { term: "Reform", explanation: "Eine Veränderung von Gottesdienst und öffentlicher Praxis; im Josia-Bericht wird sie durch das gefundene Gesetzbuch ausgelöst.", ref: "2Kö 22,8–13" },
       { term: "Babylonisches Exil", explanation: "Zeit der Deportation nach der Eroberung Jerusalems durch Babylon; verschiedene Deportationswellen werden erzählt.", ref: "2Kö 24,10–17; 25,8–21" },
@@ -265,6 +273,7 @@ const stations: Station[] = [
     goal: "Du kannst erklären, warum Chronik mit Genealogien beginnt und wie Erinnerung nach dem Exil Gemeinschaft stiftet.",
     discover: "Chronik beginnt mit langen Stammbäumen, die von Adam bis zu den Stämmen Israels führen. Das wirkt zunächst trocken, beantwortet aber eine zentrale Frage: Wie gehört die Gemeinschaft nach Krieg und Exil zu Israels Geschichte? Danach wird der Tod Sauls erzählt und der Weg für David geöffnet. Chronik ist keine bloße Wiederholung von Samuel und Könige. Das Buch richtet sich an eine spätere Leserschaft und wählt Stoff neu aus. Die genaue Entstehungszeit und die verwendeten Quellen sind Forschungsfragen; der Text selbst macht seine Perspektive durch Auswahl und Gewichtung sichtbar.",
     readings: [{ book: "1Chr", ch: 1, from: 1, to: 4 }, { book: "1Chr", ch: 9, from: 1, to: 34 }, { book: "1Chr", ch: 10, from: 1, to: 14 }],
+    connections: [{"from":"1Chr 1–9","to":"Mt 1,1–17","kind":"theme","note":"Beide Genealogien ordnen Herkunft und Erinnerung; Matthäus hebt Abraham und David hervor."}],
     terms: [
       { term: "Genealogie", explanation: "Abstammungs- oder Familienliste, die Zugehörigkeit, Erinnerung und Aufgaben in einer Gemeinschaft ordnet.", ref: "1Chr 1–9" },
       { term: "Chronist", explanation: "Arbeitsbegriff für die Erzähler- oder Redaktionsstimme des Chronikbuches; eine konkrete Person ist nicht sicher identifiziert.", ref: "1Chr 1–9" },
@@ -293,6 +302,7 @@ const stations: Station[] = [
     goal: "Du kannst die Daviddarstellung in Chronik mit Samuel vergleichen und den Bund Davids in seinem Zusammenhang erklären.",
     discover: "Chronik erzählt Davids Aufstieg, seine Eroberung Jerusalems und die Vorbereitung des Tempelbaus. Die Bundesverheißung an David in 1. Chronik 17 steht nahe bei 2. Samuel 7, wird aber in einer neuen Buchperspektive gelesen. David wird als König und Organisator des Gottesdienstes gezeigt. Chronik erzählt zugleich auch schwierige Szenen, etwa die Volkszählung und die Plage. Der Tempel wird von Salomo gebaut, doch David sammelt Material und übergibt Aufgaben. So verbindet das Buch Davidverheißung, Tempel und die Gemeinschaft der Rückkehrenden.",
     readings: [{ book: "1Chr", ch: 11, from: 1, to: 9 }, { book: "1Chr", ch: 17, from: 1, to: 15 }, { book: "1Chr", ch: 21, from: 1, to: 17 }, { book: "2Sam", ch: 7, from: 1, to: 17 }],
+    connections: [{"from":"1Chr 17,11–14","to":"Lk 1,32–33","kind":"interpretation","note":"Lukas bezieht die Hoffnung auf Davids Thron ausdrücklich auf Jesus."}],
     terms: [
       { term: "Davidbund", explanation: "Gottes Verheißung, Davids Haus und Königtum zu begründen; Chronik erzählt sie parallel zu 2. Samuel 7.", ref: "1Chr 17,11–14" },
       { term: "Tempelvorbereitung", explanation: "Davids Planung und Bereitstellung von Material; nach Chronik soll Salomo den Tempel errichten.", ref: "1Chr 22,1–19" },
@@ -321,6 +331,7 @@ const stations: Station[] = [
     goal: "Du kannst die Tempelweihe in Chronik beschreiben und ihre Verbindung zu Gebet, Gerechtigkeit und Gottes Gegenwart erklären.",
     discover: "Chronik erzählt Salomos Bitte um Weisheit, den Bau des Tempels und seine Einweihung. Salomos Gebet bittet Gott, Gebete aus dem Tempel zu hören, aber auch Gebete von Fremden. Es umfasst Schuld, Niederlage, Dürre und Exil – Erfahrungen, die für die spätere Leserschaft des Buches bedeutsam sind. Gottes Gegenwart wird gefeiert, doch der Tempel ist kein magischer Schutz. Die Zusage in 2. Chronik 7 verbindet Gebet und Vergebung mit der Verantwortung des Volkes.",
     readings: [{ book: "2Chr", ch: 1, from: 7, to: 12 }, { book: "2Chr", ch: 6, from: 12, to: 42 }, { book: "2Chr", ch: 7, from: 11, to: 22 }, { book: "1Kö", ch: 8, from: 22, to: 53 }],
+    connections: [{"from":"2Chr 6,18–21","to":"Joh 2,19–21","kind":"interpretation","note":"Johannes deutet Jesu Leib als Tempel; die christologische Lesart wird vom ursprünglichen Tempeltext unterschieden."}],
     terms: [
       { term: "Tempelweihe", explanation: "Feierliche Einweihung des Tempels und Gebet um Gottes Gegenwart und Erhörung.", ref: "2Chr 6,12–42" },
       { term: "Fremder", explanation: "Nichtisraelit, der zum Gott Israels betet; Salomos Gebet bittet um Gottes Erhörung auch für ihn.", ref: "2Chr 6,32–33" },
@@ -349,6 +360,7 @@ const stations: Station[] = [
     goal: "Du kannst Chroniks Darstellung der Könige Judas mit Könige vergleichen und den Schluss mit Kyrus erklären.",
     discover: "Nach der Reichsteilung konzentriert sich Chronik vor allem auf Juda und Jerusalem. Das Buch erzählt von Königen, die den Gottesdienst erneuern, aber auch von Herrschern, die Unrecht tun. Hiskia und Josia erhalten ausführliche Reformberichte. Im Vergleich zu Könige fällt auf, welche Episoden Chronik ergänzt, auslässt oder anders gewichtet. Am Ende stehen Tempelzerstörung, Exil und der Erlass des Kyrus, der die Rückkehr und den Wiederaufbau ermöglicht. Chronik schließt damit anders als Könige – nicht mit einer Begnadigung in Babylon, sondern mit einem offenen Aufruf zur Rückkehr.",
     readings: [{ book: "2Chr", ch: 10, from: 1, to: 19 }, { book: "2Chr", ch: 29, from: 1, to: 19 }, { book: "2Chr", ch: 34, from: 1, to: 33 }, { book: "2Chr", ch: 36, from: 15, to: 23 }, { book: "2Kö", ch: 22, from: 1, to: 20 }],
+    connections: [{"from":"2Chr 6,16","to":"Lk 1,32–33","kind":"theme","note":"Die Davidverheißung wird im NT mit Jesus verbunden; Chronik selbst erzählt zunächst Israels Königsgeschichte."}],
     terms: [
       { term: "Reform", explanation: "Erneuerung des Gottesdienstes und der Gemeinschaft; Chronik erzählt besonders ausführlich von Hiskia und Josia.", ref: "2Chr 29–31; 34–35" },
       { term: "Kyrus", explanation: "Persischer König, dessen Erlass im Schluss von Chronik zur Rückkehr und zum Wiederaufbau des Tempels aufruft.", ref: "2Chr 36,22–23" },
@@ -405,6 +417,7 @@ const stations: Station[] = [
     goal: "Du kannst den Wiederaufbau Jerusalems mit Gebet, gemeinschaftlicher Arbeit und sozialer Gerechtigkeit verbinden.",
     discover: "Nehemia hört von den zerstörten Mauern Jerusalems, betet und bittet den persischen König um Erlaubnis zum Wiederaufbau. Die Arbeit wird von Widerstand begleitet. Zugleich zeigt Nehemia 5, dass die Gemeinschaft auch unter innerer Ausbeutung leidet: Arme verpfänden Land und Kinder, während andere Zinsen verlangen. Der Wiederaufbau der Stadt reicht also nicht. Nehemia fordert, Schuldenlasten zu beenden. In Nehemia 8 wird die Tora vorgelesen und erklärt; in Kapitel 9–10 antwortet die Gemeinschaft mit Erinnerung und Bund.",
     readings: [{ book: "Neh", ch: 1, from: 1, to: 11 }, { book: "Neh", ch: 2, from: 1, to: 20 }, { book: "Neh", ch: 5, from: 1, to: 13 }, { book: "Neh", ch: 8, from: 1, to: 12 }, { book: "Neh", ch: 9, from: 1, to: 15 }],
+    connections: [{"from":"Neh 5,1–13","to":"Lk 4,18–19","kind":"theme","note":"Beide Texte sprechen soziale Not an; Nehemia ist dabei keine direkte Jesusprophezeiung."}],
     terms: [
       { term: "Statthalter", explanation: "Verwalter einer persischen Provinz; Nehemia dient zeitweise als Statthalter in Juda.", ref: "Neh 5,14" },
       { term: "Tora-Lesung", explanation: "Öffentliche Lesung und Erklärung der Weisung, auf die das Volk mit Verständnis und Erneuerung antwortet.", ref: "Neh 8,1–8" },
