@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BackHandler, Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -142,8 +142,9 @@ function CampaignScreen({ worldId }: { worldId: string }) {
     : station ? { x: station.x, y: station.y } : null;
   const reserved = useMemo(() => (legendRect ? [legendRect] : []), [legendRect]);
 
-  const openPlace = (p: GeoPlace) => { setListOpen(false); setExpanded(false); setPlace(p); };
-  const openStation = (id: string) => { setPlace(null); setListOpen(false); setExpanded(false); setSel(id); };
+  const openPlace = useCallback((p: GeoPlace) => { setListOpen(false); setExpanded(false); setPlace(p); }, []);
+  const openStation = useCallback((id: string) => { setPlace(null); setListOpen(false); setExpanded(false); setSel(id); }, []);
+  const fitCluster = useCallback((b: MapRect) => mapRef.current?.fitBox(b), []);
   const closePanel = () => { setPlace(null); setSel(null); setListOpen(false); setExpanded(false); setPanelSize(0); };
   const switchMode = (m: "adventure" | "history") => { closePanel(); setMode(m); };
 
@@ -188,7 +189,7 @@ function CampaignScreen({ worldId }: { worldId: string }) {
           <ZoomableMap ref={mapRef} key={"hist" + campId} width={gSize.width} height={gSize.height} initial={gInitial} allBox={gAll} focus={focus} persistKey={`${worldId}:hist:${campId}`} maxZoom={6}
             controlsTop={ctrlTop} padTop={ctrlTop + 52} padBottom={padBottom} padRight={padRight} reserved={reserved} keepVisible={keep}
             fullscreen={full} onToggleFullscreen={() => setFull(!full)} testID="historical-map">
-            <GeoMap map={hMap} me={mePos} onSelect={openPlace} onCluster={(b) => mapRef.current?.fitBox(b)} highlight={highlightPlaces} important={curIds} selected={place?.id ?? null} />
+            <GeoMap map={hMap} me={mePos} onSelect={openPlace} onCluster={fitCluster} highlight={highlightPlaces} important={curIds} selected={place?.id ?? null} />
           </ZoomableMap>
         )}
         <MapLegend

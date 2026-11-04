@@ -11,7 +11,6 @@ import { fonts, useTheme } from "@/src/theme";
 
 import { MapRect, useMapZoom } from "./AnchoredMarker";
 import { AvatarView } from "./AvatarView";
-import { Cloud, Shimmer } from "./MapAnimations";
 import { decoFigures, MapDecor } from "./MapDecor";
 import { MapPlaceMarker, PlaceDot } from "./MapPlaceMarker";
 
@@ -190,9 +189,6 @@ export function GeoMap({ map, k: kProp, onSelect, onCluster, highlight, importan
         ))}
         <Rect width={width} height={height} fill="url(#vig)" />
       </Svg>
-      <Shimmer x={width * 0.08} y={height * 0.4} w={80 * k} color={colors.surface} />
-      <Cloud x={width * 0.1} y={height * 0.15} w={150 * k} color={colors.surface} duration={30000} drift={120 * k} opacity={0.45} />
-      <Cloud x={width * 0.55} y={height * 0.7} w={170 * k} color={colors.surface} duration={26000} drift={-120 * k} opacity={0.4} />
       {map.places.map((pl) => {
         const a = P(pl.lat, pl.lon);
         const lay = layout[pl.id];
