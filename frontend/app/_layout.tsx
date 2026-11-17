@@ -39,6 +39,7 @@ function AppStack() {
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.surface } }}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="world/[id]" />
+        <Stack.Screen name="journey/[id]" />
         <Stack.Screen name="station/[id]" options={{ gestureEnabled: false }} />
         <Stack.Screen name="review" />
         <Stack.Screen name="unit/[id]" />
