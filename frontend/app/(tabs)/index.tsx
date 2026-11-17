@@ -28,7 +28,7 @@ const THEMES = [{ id: "overview", title: "Übersicht", icon: "map" }, ...WORLDS.
 
 export default function WorldMapScreen() {
   const styles = useStyles();
-  const { colors } = useTheme();
+  const { colors, scheme } = useTheme();
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const { width: vw, height: vh } = useWindowDimensions();
@@ -79,16 +79,16 @@ export default function WorldMapScreen() {
       </Animated.View>}
 
       {/* Sticky Kopfbereich: Stufe + Themen */}
-      <View style={[styles.top, cards && { position: "relative", paddingBottom: spacing.sm, backgroundColor: colors.surface }, { paddingTop: insets.top + spacing.sm }]} onLayout={(e) => setTopH(e.nativeEvent.layout.height)}>
-        <View style={styles.hud}>
+      <View style={[styles.top, cards && { position: "relative", paddingBottom: spacing.sm, backgroundColor: scheme === "dark" ? "#194144" : colors.surface }, { paddingTop: insets.top + spacing.sm }]} onLayout={(e) => setTopH(e.nativeEvent.layout.height)}>
+        <View style={[styles.hud,cards&&vw<390&&{paddingHorizontal:8}]}>
           <Pressable style={styles.pill} testID="hud-level-pill" onPress={() => router.push("/profile")} accessibilityLabel={`Stufe ${lvl.level}, ${state.xp} Erfahrungspunkte`}>
-            {state.avatar ? <View style={styles.hudAvatar} testID="hud-avatar"><AvatarView a={state.avatar} size={38} mode="head" /></View> : null}
+            {state.avatar && !(cards&&vw<420) ? <View style={styles.hudAvatar} testID="hud-avatar"><AvatarView a={state.avatar} size={38} mode="head" /></View> : null}
             <View style={styles.lvl}><Text style={styles.lvlText}>{lvl.level}</Text></View>
 
           </Pressable>
           <View style={styles.modeSwitch}>
             {([["explore", "Übersicht", "map"], ["journey", "Studienreise", "compass"]] as const).map(([m, l, ic]) => (
-              <Pressable key={m} testID={`map-mode-${m}`} onPress={() => { setMode(m); setJourneyMap(false); setOpen(false); setPlace(null); setRoute(null); }} style={[styles.modeBtn, mode === m && { backgroundColor: colors.surfaceInverse }]} accessibilityState={{ selected: mode === m }}>
+              <Pressable key={m} testID={`map-mode-${m}`} onPress={() => { setMode(m); setJourneyMap(false); setOpen(false); setPlace(null); setRoute(null); }} style={[styles.modeBtn, cards&&vw<390&&{paddingHorizontal:6}, mode === m && { backgroundColor: colors.surfaceInverse }]} accessibilityState={{ selected: mode === m }}>
                 <Icon name={ic} size={14} color={mode === m ? colors.onSurfaceInverse : colors.onSurface} />
                 <Text style={[styles.modeText, { color: mode === m ? colors.onSurfaceInverse : colors.onSurface }]}>{l}</Text>
               </Pressable>
