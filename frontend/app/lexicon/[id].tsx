@@ -89,7 +89,7 @@ function ArticleScreen({ id }: { id: string }) {
       <ScrollView ref={scrollRef} onScroll={onScroll} scrollEventThrottle={100} onContentSizeChange={restore} contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxxl }} keyboardShouldPersistTaps="handled">
         {illu ? (
           <View style={styles.illu} testID="article-illustration">
-            <Image source={illu} style={styles.illuImg} resizeMode="cover" accessibilityLabel={`${a.title} – ${ILLUSTRATION_LABEL}`} />
+            <Image source={illu} style={[styles.illuImg, {aspectRatio: (()=>{const a=Image.resolveAssetSource(illu);return a?.width && a?.height ? a.width/a.height : 4/3;})()}]} resizeMode="contain" accessibilityLabel={`${a.title} – ${ILLUSTRATION_LABEL}`} />
             <View style={[styles.illuTag, { backgroundColor: colors.surfaceInverse }]}>
               <Icon name="feather" size={12} color={colors.onSurfaceInverse} />
               <Text style={[styles.illuTagText, { color: colors.onSurfaceInverse }]} testID="article-illustration-label">{ILLUSTRATION_LABEL}</Text>
