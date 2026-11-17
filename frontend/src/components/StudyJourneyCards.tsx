@@ -23,7 +23,7 @@ const getCampaigns = (w:World) => (w.campaignIds ?? []).map(id=>CAMPAIGNS[id]).f
 
 function Art({source, icon, large=false}: {source?:ImageSourcePropType;icon:string;large?:boolean}) {
   const s=useStyles(); const {colors}=useTheme();
-  const resolved=source ? Image.resolveAssetSource(source) : undefined;
+  const resolved=source && typeof Image.resolveAssetSource === "function" ? Image.resolveAssetSource(source) : undefined;
   const ratio=resolved?.width && resolved?.height ? resolved.width/resolved.height : 1.5;
   return <View style={[s.art,large?{width:"100%",aspectRatio:ratio,maxHeight:340}:s.thumb]}>
     {source ? <Image source={source} style={{width:"100%",height:"100%"}} resizeMode="contain" accessibilityIgnoresInvertColors/> : <Icon name={icon} color={colors.brandPrimary} size={large?64:36}/>}
@@ -31,10 +31,10 @@ function Art({source, icon, large=false}: {source?:ImageSourcePropType;icon:stri
 }
 
 export function StudyJourneyCards({onMap}:{onMap:()=>void}) {
-  const s=useStyles(); const {colors}=useTheme(); const {state}=useProgress(); const router=useRouter();
+  const s=useStyles(); const {colors,scheme}=useTheme(); const {state}=useProgress(); const router=useRouter();
   const insets=useSafeAreaInsets();
-  return <ScrollView testID="study-journey-cards" style={s.scroll} contentContainerStyle={[s.content,{paddingBottom:insets.bottom+24}]} showsVerticalScrollIndicator={false}>
-    <View style={s.banner}><Text style={s.heroTitle}>Studienreise</Text><Text style={s.subtitle}>Wähle ein Themenfeld und starte deine Lernreise.</Text><Pressable accessibilityRole="button" onPress={onMap} style={s.mapLink}><Icon name="map" size={16} color={colors.brandPrimary}/><Text style={s.link}>Abenteuerkarte ansehen</Text></Pressable></View>
+  return <ScrollView testID="study-journey-cards" style={[s.scroll,scheme==="dark"&&{backgroundColor:"#102E30"}]} contentContainerStyle={[s.content,{paddingBottom:insets.bottom+24}]} showsVerticalScrollIndicator={false}>
+    <View style={[s.banner,scheme==="dark"&&{backgroundColor:"#194144",borderColor:"#345457"}]}><Text style={s.heroTitle}>Studienreise</Text><Text style={s.subtitle}>Wähle ein Themenfeld und starte deine Lernreise.</Text><Pressable accessibilityRole="button" onPress={onMap} style={s.mapLink}><Icon name="map" size={16} color={colors.brandPrimary}/><Text style={s.link}>Abenteuerkarte ansehen</Text></Pressable></View>
     {WORLDS.map(w=>{
       const stations=getCampaigns(w).flatMap(c=>c.stations);
       const done=stations.filter(st=>state.stations[st.id]).length;
@@ -61,7 +61,7 @@ export function StudyWorldDetail({world}:{world:World}) {
       <Text style={s.description}>{world.description}</Text><Text style={s.meta}>{world.books.join(" · ")}</Text>
       {world.status==="playable"&&stations.length>0?<><Text style={s.meta}>{done} von {stations.length} Stationen abgeschlossen</Text><View style={s.track}><View style={[s.fill,{width:`${done/stations.length*100}%`}]}/></View>
       {next&&<Pressable accessibilityRole="button" style={s.cta} onPress={()=>open(next.id)}><Text style={s.ctaText}>Weiterlernen: {next.title}</Text></Pressable>}
-      <Pressable accessibilityRole="button" style={s.mapLink} onPress={()=>router.push({pathname:"/world/[id]",params:{id:world.id}})}><Icon name="map" size={18} color={colors.brandPrimary}/><Text style={s.link}>Abenteuerkarte und historische Karte</Text></Pressable>
+      <Pressable accessibilityRole="button" style={s.mapLink} onPress={()=>router.push({pathname:"/world/[id]",params:{id:world.id,view:"map"}})}><Icon name="map" size={18} color={colors.brandPrimary}/><Text style={s.link}>Abenteuerkarte und historische Karte</Text></Pressable>
       {campaigns.map(c=><View key={c.id} style={{gap:10}}><Text style={s.section}>{c.title}</Text>{c.stations.map((st,i)=>{const status=stationStatus(st,state.stations); const missing=st.requires.filter(id=>!state.stations[id]).map(id=>stations.find(x=>x.id===id)?.title??id);return <Pressable key={st.id} testID={"study-station-"+st.id} disabled={status==="locked"} accessibilityRole="button" accessibilityState={{disabled:status==="locked"}} onPress={()=>open(st.id)} style={[s.station,status==="locked"&&{opacity:.72}]}>{st.image&&STATION_IMAGES[st.image]?<Art source={STATION_IMAGES[st.image]} icon={st.icon}/>:<View style={s.stationNum}><Text style={s.meta}>{i+1}</Text></View>}<View style={s.cardBody}><Text style={s.title}>{st.title}</Text><Text style={s.subtitle}>{st.subtitle}</Text><Text style={s.meta}>{status==="locked"?"Zuerst: "+missing.join(", "):status==="completed"?"Abgeschlossen · Wiederholen":st.tasks.length+" Aufgaben · "+st.exam.length+" Prüfungsfragen"}</Text></View><Icon name={status==="locked"?"lock":status==="completed"?"check-circle":"chevron-right"} size={20} color={status==="completed"?colors.success:colors.brandPrimary}/></Pressable>})}</View>)}</>:<><Text style={s.section}>Geplante Stationen</Text>{world.planned.map(p=><Text key={p} style={s.description}>{p}</Text>)}</>}
     </ScrollView>
   </View>;
