@@ -9,6 +9,7 @@ import { GeoMap } from "@/src/components/GeoMap";
 import { VerseOfDay } from "@/src/components/VerseOfDay";
 import { Icon } from "@/src/components/Icon";
 import { JourneyLayer } from "@/src/components/JourneyLayer";
+import { StudyJourney } from "@/src/components/StudyJourney";
 import { PlaceSheet } from "@/src/components/PlaceSheet";
 import { RefText } from "@/src/components/RefText";
 import { Sheet } from "@/src/components/Sheet";
@@ -35,6 +36,7 @@ export default function WorldMapScreen() {
   const params = useLocalSearchParams<{ theme?: string; place?: string }>();
   const [theme, setTheme] = useState("overview");
   const [mode, setMode] = useState<"explore" | "journey">("explore");
+  const [journeyMap, setJourneyMap] = useState(false);
   const [place, setPlace] = useState<GeoPlace | null>(null);
   const [route, setRoute] = useState<GeoRoute | null>(null);
   const [open, setOpen] = useState(false);
@@ -65,8 +67,11 @@ export default function WorldMapScreen() {
 
   const progress = useMemo(() => worldProgress(world?.campaignIds, state.stations), [world, state.stations]);
 
+  const cardMode = journey && !journeyMap;
   return (
     <View style={styles.root} testID="world-map-screen">
+      {cardMode ? <View style={{flex:1,paddingTop:Math.max(topH,insets.top+60),backgroundColor:"#102D30"}}><StudyJourney bottom={bottomChrome} onMap={()=>{setJourneyMap(true);setOpen(false);}} /></View> : null}
+      {!cardMode ? (
       <Animated.View key={journey ? "journey" : theme} entering={FadeIn.duration(500)} style={{ flex: 1 }} onLayout={(e) => setMapH(e.nativeEvent.layout.height)}>
         <ZoomableMap fit="contain" width={size.width} height={size.height} controlsBottom={bottomChrome + cardH + 24} maxZoom={5} reserved={reserved} testID="world-map">
           <GeoMap map={map} k={k} onSelect={setPlace}>
@@ -74,6 +79,7 @@ export default function WorldMapScreen() {
           </GeoMap>
         </ZoomableMap>
       </Animated.View>
+      ) : null}
 
       {/* Sticky Kopfbereich: Stufe + Themen */}
       <View style={[styles.top, { paddingTop: insets.top + spacing.sm }]} onLayout={(e) => setTopH(e.nativeEvent.layout.height)}>
@@ -85,7 +91,7 @@ export default function WorldMapScreen() {
           </Pressable>
           <View style={styles.modeSwitch}>
             {([["explore", "Übersicht", "map"], ["journey", "Studienreise", "compass"]] as const).map(([m, l, ic]) => (
-              <Pressable key={m} testID={`map-mode-${m}`} onPress={() => { setMode(m); setOpen(false); }} style={[styles.modeBtn, mode === m && { backgroundColor: colors.surfaceInverse }]} accessibilityState={{ selected: mode === m }}>
+              <Pressable key={m} testID={`map-mode-${m}`} onPress={() => { setMode(m); setOpen(false); setJourneyMap(false); setPlace(null); setRoute(null); }} style={[styles.modeBtn, mode === m && { backgroundColor: colors.surfaceInverse }]} accessibilityState={{ selected: mode === m }}>
                 <Icon name={ic} size={14} color={mode === m ? colors.onSurfaceInverse : colors.onSurface} />
                 <Text style={[styles.modeText, { color: mode === m ? colors.onSurfaceInverse : colors.onSurface }]}>{l}</Text>
               </Pressable>
@@ -95,16 +101,16 @@ export default function WorldMapScreen() {
             <Icon name="settings" size={20} color={colors.onSurface} />
           </Pressable>
         </View>
-        {journey ? <View style={styles.chipRow} /> : <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.chipRow} contentContainerStyle={styles.chipContent}>
+        {journey ? (journeyMap ? <Pressable testID="journey-back-to-cards" accessibilityRole="button" onPress={()=>setJourneyMap(false)} style={[styles.round,{width:180,marginTop:8,alignSelf:"center",flexDirection:"row",gap:8}]}><Icon name="list" size={16} color={colors.onSurface}/><Text style={[styles.modeText,{color:colors.onSurface}]}>Zur Themenübersicht</Text></Pressable> : null) : <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.chipRow} contentContainerStyle={styles.chipContent}>
           {THEMES.map((t) => (
             <Chip key={t.id} testID={`theme-chip-${t.id}`} label={t.title} selected={theme === t.id} color={WORLDS.find((w) => w.id === t.id)?.palette.base} onPress={() => { setTheme(t.id); setOpen(false); }} />
           ))}
         </ScrollView>}
-        <VerseOfDay />
+        {!cardMode ? <VerseOfDay /> : null}
       </View>
 
       {/* Info-Karte zum Thema */}
-      <Animated.View key={"card" + (journey ? "journey" : theme)} entering={FadeInDown.duration(350)} onLayout={(e) => setCardH(e.nativeEvent.layout.height)} style={[styles.card, { bottom: bottomChrome + 12, borderTopColor: accent }]} testID="theme-card">
+      {!cardMode ? <Animated.View key={"card" + (journey ? "journey" : theme)} entering={FadeInDown.duration(350)} onLayout={(e) => setCardH(e.nativeEvent.layout.height)} style={[styles.card, { bottom: bottomChrome + 12, borderTopColor: accent }]} testID="theme-card">
         <Pressable onPress={() => setOpen(!open)} style={styles.cardHead} testID="theme-card-toggle" accessibilityLabel="Details ein- oder ausblenden">
           <View style={{ flex: 1 }}>
             <Text style={styles.cardTitle} numberOfLines={1}>{map.title}</Text>
@@ -147,7 +153,7 @@ export default function WorldMapScreen() {
             onPress={() => router.push({ pathname: "/world/[id]", params: { id: world.id } })}
           />
         ) : null}
-      </Animated.View>
+      </Animated.View> : null}
 
       <PlaceSheet place={place} onClose={() => setPlace(null)} />
       <Sheet visible={!!route} onClose={() => setRoute(null)} title={route?.name} accent={route?.color} testID="route-sheet">
