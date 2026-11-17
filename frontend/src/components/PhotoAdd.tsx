@@ -107,7 +107,7 @@ export function PhotoAdd({ visible, onClose, edit }: { visible: boolean; onClose
         </View>
       ) : (
         <View style={{ gap: spacing.md }}>
-          <Image source={{ uri: draft.base64 ? `data:image/jpeg;base64,${draft.base64}` : draft.uri }} style={styles.preview} contentFit="cover" testID="photo-preview" />
+          <Image source={{ uri: draft.base64 ? `data:image/jpeg;base64,${draft.base64}` : draft.uri }} style={styles.preview} contentFit="contain" testID="photo-preview" />
           <TextInput testID="photo-title-input" value={draft.title} onChangeText={(t) => setDraft({ ...draft, title: t })} placeholder="Titel (optional)" placeholderTextColor={colors.muted} style={styles.input} />
           <TextInput testID="photo-note-input" value={draft.note} onChangeText={(t) => setDraft({ ...draft, note: t })} placeholder="Notiz (optional)" placeholderTextColor={colors.muted} multiline style={[styles.input, { minHeight: 80, paddingTop: spacing.md, textAlignVertical: "top" }]} />
           <Text style={styles.label}>Zuordnen zu</Text>

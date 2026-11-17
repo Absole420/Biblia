@@ -47,7 +47,7 @@ export default function SettingsScreen() {
   return (
     <View style={styles.root} testID="settings-screen">
       <View style={[styles.header, { paddingTop: insets.top + spacing.sm }]}>
-        <Pressable style={styles.back} onPress={() => router.back()} testID="settings-back-button" accessibilityLabel="Zurück">
+        <Pressable style={styles.back} onPress={() => (router.canGoBack() ? router.back() : router.replace("/"))} testID="settings-back-button" accessibilityLabel="Zurück">
           <Icon name="arrow-left" size={22} color={colors.onSurface} />
         </Pressable>
         <Text style={styles.title}>Einstellungen</Text>
@@ -66,6 +66,12 @@ export default function SettingsScreen() {
           ))}
         </View>
         <Text style={[styles.preview, { fontSize: 17 * state.settings.fontScale }]}>Im Anfang war das Wort … (Vorschau)</Text>
+        <Text style={styles.label}>Kartenanimationen (Wellen, Schiffe, Bäume)</Text>
+        <View style={styles.row}>
+          {([[true, "An"], [false, "Aus"]] as const).map(([k, l]) => (
+            <Chip key={l} testID={`map-motion-${l}`} label={l} selected={(state.settings.mapMotion !== false) === k} onPress={() => p.setSettings({ mapMotion: k })} />
+          ))}
+        </View>
 
         <SectionTitle>Bibelübersetzung</SectionTitle>
         {Object.values(TRANSLATIONS).map((t) => (

@@ -372,7 +372,7 @@ export default function LibraryScreen() {
             <View style={styles.grid}>
               {photos.map((ph) => (
                 <Pressable key={ph.id} testID={`photo-item-${ph.id}`} style={styles.tile} onPress={() => setViewPhoto(ph)}>
-                  <Image source={{ uri: ph.uri }} style={styles.tileImg} contentFit="cover" />
+                  <Image source={{ uri: ph.uri }} style={styles.tileImg} contentFit="contain" />
                   <View style={[styles.tileTag, { backgroundColor: ph.target.kind === "verse" ? colors.info : STATION_INFO[ph.target.id]?.world.palette.base ?? colors.stationNarrative }]}>
                     <Icon name={ph.target.kind === "verse" ? "book-open" : "compass"} size={11} color={colors.surface} />
                     <Text style={[styles.tileTagText, { color: colors.surface }]} numberOfLines={1}>{targetLabel(ph)}</Text>
@@ -487,7 +487,7 @@ function Thumbs({ list, onOpen }: { list: Photo[]; onOpen: (p: Photo) => void })
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, marginTop: spacing.sm }}>
       {list.map((ph) => (
         <Pressable key={ph.id} onPress={() => onOpen(ph)} testID={`entry-photo-${ph.id}`} accessibilityLabel={`Foto ${ph.title || ""}`}>
-          <Image source={{ uri: ph.uri }} style={styles.thumb} contentFit="cover" />
+          <Image source={{ uri: ph.uri }} style={styles.thumb} contentFit="contain" />
         </Pressable>
       ))}
     </ScrollView>

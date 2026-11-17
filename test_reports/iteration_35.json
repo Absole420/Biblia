@@ -1,0 +1,29 @@
+{
+  "summary": "Frontend-only retest (Playwright at 390x844 and 360x640; map not in scope). FIXED: the topic-image works for all 12 new topics. The image box is 358x267 at 390 and 328x245 at 360, which is width/1.339. The wrapper View and the Image have the same height, the natural size is 1000x747 and the image loaded, so there is no empty space and no distortion (screenshot of frieden-stille and gebet-schwer checked). FIXED: station links. arbeit-sinn -> ps3-6 + parables-9 (Die anvertrauten Talente). geld-sorge -> ps3-7 + parables-4 (Schatz im Acker) + parables-9. familie -> parables-6 (Der verlorene Sohn). liebe-partnerschaft -> ps3-8. mut-neuanfang -> ps1-6. All render with a 'Lerneinheiten' label, and tapping them opens /station/<id> with the correct title. The Lexikon and Lerneinheiten labels are now conditional in the code. No topic has an empty list, so the hidden state could only be checked by code review. Check-in: with no feeling, all 24 chips show under 'Themen aus dem Register' and there is no toggle. With 'neidisch', the label is 'Passende Themen zu deinen Gefühlen' and only zorn-kraenkung + neid-vergleich show. entry-topics-toggle switches to 'Alle 24 Themen zeigen' (24 chips) and back with 'Nur passende Themen zeigen'. A selected non-matching topic (familie) stays visible when filtered. neidisch+gottfern adds zweifel-gottferne + gebet-schwer. Removing all feelings shows all 24 again. Register /way: 24 topic-card-* entries and no way-open-topics. The search shows only matching topics (Neid -> 2, Stille -> 1, Geld -> 1, Tod -> 2, nonsense -> way-search-empty). Bible regression: Ps 131,2 shows verse-way-frieden-stille and it navigates to the topic. There are no page errors. No deprecated Expo packages were found in the reviewed files.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "/way/entry", "issues": ["The entry-topics-toggle (and the entry-topic-open-* links, styles.openLink minHeight 36) are 36px tall, under the 44px touch target. Reference: app/way/entry.tsx:287"]},
+      {"screen": "/way/topic/arbeit-sinn & geld-sorge", "issues": ["The Psalms/wisdom stations look swapped by title. arbeit-sinn links ps3-6 'Wahrheit, Gerechtigkeit und Geld', and geld-sorge links ps3-7 'Arbeit, Planung und Vorsorge'. Consider swapping them, or linking both to both topics. Reference: src/data/way/topics3.ts:120,154"]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/backend/tests/check_way_topics_static.py"],
+  "action_items": [
+    "LOW: app/way/entry.tsx:287: raise styles.openLink minHeight to 44 (entry-topics-toggle and the topic-open links).",
+    "LOW: src/data/way/topics3.ts: consider swapping ps3-6 and ps3-7 between arbeit-sinn and geld-sorge, because the station titles fit the other topic better.",
+    "LOW: /app/backend/tests/check_way_topics_static.py: also read src/data/campaigns/parables.json so that parables-* ids are not flagged as unknown."
+  ],
+  "critical_code_review_comments": [
+    "topic/[id].tsx: the aspectRatio wrapper plus a 100%/100% Image with contain is correct. Because the box ratio equals the source ratio, contain gives no letterbox.",
+    "entry.tsx: topicPool ordering puts the selected topics first and then the suggestions. Filtered mode is only on when suggestions exist, so feelings without a mapped topic correctly show all topics."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None. The check-in draft was discarded and not saved. The diary intro was accepted in the test browser only.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Use https://gottes-wort-app.preview.emergentagent.com. Close the app intro with 'Überspringen' then 'Bibel entdecken'. /way/entry first shows entry-intro-gate: tap 'Verstanden – Tagebuch öffnen'. The register cards are topic-card-<id>. The feeling chips are feeling-<id>. The verse sheet chips are verse-way-<id> (open /bible?b=Ps&ch=131&v=2). The splash overlay shows for about 2-3s after each page.goto, so wait before taking screenshots."
+}

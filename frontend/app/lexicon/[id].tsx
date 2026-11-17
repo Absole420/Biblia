@@ -1,10 +1,11 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect, useRef, useState } from "react";
-import { Image, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ArticleMap } from "@/src/components/ArticleMap";
 import { FavHeart } from "@/src/components/FavHeart";
+import { ZoomableImage } from "@/src/components/ZoomableImage";
 import { Icon } from "@/src/components/Icon";
 import { useInfo } from "@/src/components/InfoSheet";
 import { RefLinks } from "@/src/components/RefLinks";
@@ -89,7 +90,7 @@ function ArticleScreen({ id }: { id: string }) {
       <ScrollView ref={scrollRef} onScroll={onScroll} scrollEventThrottle={100} onContentSizeChange={restore} contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxxl }} keyboardShouldPersistTaps="handled">
         {illu ? (
           <View style={styles.illu} testID="article-illustration">
-            <Image source={illu} style={styles.illuImg} resizeMode="cover" accessibilityLabel={`${a.title} – ${ILLUSTRATION_LABEL}`} />
+            <ZoomableImage source={illu} style={styles.illuImg} label={`${a.title} – ${ILLUSTRATION_LABEL}`} testID="article-illustration-img" maxHeight={420} />
             <View style={[styles.illuTag, { backgroundColor: colors.surfaceInverse }]}>
               <Icon name="feather" size={12} color={colors.onSurfaceInverse} />
               <Text style={[styles.illuTagText, { color: colors.onSurfaceInverse }]} testID="article-illustration-label">{ILLUSTRATION_LABEL}</Text>
@@ -208,7 +209,7 @@ const useStyles = makeStyles((c) => ({
   title: { fontFamily: fonts.display, fontSize: 30, fontWeight: "700", color: c.onSurface, marginTop: spacing.md },
   meta: { fontFamily: fonts.text, fontSize: 13, color: c.muted, fontWeight: "700", marginTop: 2 },
   illu: { borderRadius: radius.lg, overflow: "hidden", marginBottom: spacing.lg, backgroundColor: c.surfaceSecondary },
-  illuImg: { width: "100%", aspectRatio: 4 / 3, maxHeight: 420 },
+  illuImg: { width: "100%" },
   illuTag: { flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: spacing.md, paddingVertical: spacing.sm },
   illuTagText: { flex: 1, fontFamily: fonts.text, fontSize: 12, fontWeight: "700" },
   summary: { fontFamily: fonts.display, fontSize: 18, lineHeight: 27, color: c.onSurface },

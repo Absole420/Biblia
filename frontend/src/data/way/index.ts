@@ -1,10 +1,12 @@
 import { TOPICS_1 } from "./topics1";
 import { TOPICS_2 } from "./topics2";
+import { TOPICS_3 } from "./topics3";
+import { TOPICS_4 } from "./topics4";
 import type { Topic, TopicCat } from "./types";
 
 export * from "./types";
 
-export const TOPICS: Topic[] = [...TOPICS_1, ...TOPICS_2];
+export const TOPICS: Topic[] = [...TOPICS_1, ...TOPICS_2, ...TOPICS_3, ...TOPICS_4];
 export const TOPIC_BY_ID: Record<string, Topic> = Object.fromEntries(TOPICS.map((t) => [t.id, t]));
 
 export const TOPIC_CATS: { id: TopicCat; label: string; icon: string }[] = [
@@ -18,20 +20,7 @@ export const TOPIC_CATS: { id: TopicCat; label: string; icon: string }[] = [
 ];
 
 /** Geplante, noch nicht ausgearbeitete Themen – ehrlich als „offen“ gekennzeichnet. */
-export const OPEN_TOPICS: { title: string; cat: TopicCat }[] = [
-  { title: "Eifersucht und Vergleich", cat: "guilt" },
-  { title: "Entscheidungen treffen", cat: "strength" },
-  { title: "Arbeit, Beruf und Sinn", cat: "strength" },
-  { title: "Geld, Mangel und Sorge um das Auskommen", cat: "heavy" },
-  { title: "Liebe, Partnerschaft und Sehnsucht", cat: "others" },
-  { title: "Familie, Eltern und Kinder", cat: "others" },
-  { title: "Älterwerden und Abschied vom Gewohnten", cat: "suffering" },
-  { title: "Sterben, Tod und Ewigkeit", cat: "suffering" },
-  { title: "Frieden, Gelassenheit und Stille", cat: "light" },
-  { title: "Mut, Aufbruch und Neuanfang", cat: "light" },
-  { title: "Ungerechtigkeit und Ohnmacht", cat: "heavy" },
-  { title: "Gebet, das schwerfällt", cat: "faith" },
-];
+export const OPEN_TOPICS: { title: string; cat: TopicCat }[] = [];
 
 /**
  * Gefühlsauswahl für den Check-in. Symbol + Text tragen die Bedeutung;

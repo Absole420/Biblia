@@ -25,9 +25,21 @@ export function VerseOfDay() {
   const catLabel = cat === "all" ? "Alle Rubriken" : PRAYER_CATS.find((c) => c.id === cat)?.label;
   const setCat = (c: PrayerCat | "all") => p.setSettings({ votdCat: c });
 
+  if (p.state.settings.votdHidden) {
+    return (
+      <Pressable onPress={() => p.setSettings({ votdHidden: false })} style={styles.mini} testID="verse-of-day-show" accessibilityRole="button" accessibilityLabel="Vers des Tages einblenden">
+        <Icon name="sun" size={15} color={colors.brandPrimary} />
+        <Text style={styles.miniText}>Vers des Tages</Text>
+      </Pressable>
+    );
+  }
+
   return (
     <View style={styles.box} testID="verse-of-day">
-      <Pressable onPress={() => setOpen(!open)} style={styles.head} testID="verse-of-day-toggle" accessibilityRole="button" accessibilityLabel={`Vers des Tages${entry ? ", " + prayerRefLabel(entry.ref) : ""}. Antippen für mehr`}>
+      <Pressable onPress={() => p.setSettings({ votdHidden: true })} style={styles.hide} testID="verse-of-day-hide" accessibilityRole="button" accessibilityLabel="Vers des Tages einklappen" hitSlop={8}>
+        <Icon name="minus" size={16} color={colors.muted} />
+      </Pressable>
+      <Pressable onPress={() => setOpen(!open)} style={[styles.head, { paddingRight: 34 }]} testID="verse-of-day-toggle" accessibilityRole="button" accessibilityLabel={`Vers des Tages${entry ? ", " + prayerRefLabel(entry.ref) : ""}. Antippen für mehr`}>
         <Icon name="sun" size={16} color={colors.brandPrimary} />
         <View style={{ flex: 1 }}>
           <Text style={styles.label} numberOfLines={1}>Vers des Tages · {catLabel}{entry ? ` · ${prayerRefLabel(entry.ref)}` : ""}</Text>
@@ -61,7 +73,10 @@ export function VerseOfDay() {
 }
 
 const useStyles = makeStyles((c) => ({
-  box: { marginHorizontal: spacing.lg, marginTop: spacing.sm, padding: spacing.md, borderRadius: radius.lg, backgroundColor: c.surface, borderWidth: 1, borderColor: c.border, gap: spacing.sm },
+  box: { marginHorizontal: spacing.lg, marginTop: spacing.sm, padding: spacing.md, borderRadius: 22, backgroundColor: c.surface, borderWidth: 1, borderColor: c.borderStrong, gap: spacing.sm, shadowColor: "#000", shadowOpacity: 0.12, shadowRadius: 10, shadowOffset: { width: 0, height: 3 }, elevation: 3 },
+  hide: { position: "absolute", right: 8, top: 8, width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: c.surfaceSecondary, zIndex: 2 },
+  mini: { alignSelf: "flex-start", marginLeft: spacing.lg, marginTop: spacing.sm, flexDirection: "row", alignItems: "center", gap: 6, minHeight: 44, paddingHorizontal: spacing.md, borderRadius: radius.pill, backgroundColor: c.surface, borderWidth: 1, borderColor: c.borderStrong, shadowColor: "#000", shadowOpacity: 0.12, shadowRadius: 8, shadowOffset: { width: 0, height: 2 }, elevation: 3 },
+  miniText: { fontFamily: fonts.text, fontSize: 12.5, fontWeight: "800", color: c.onSurface },
   head: { flexDirection: "row", alignItems: "center", gap: spacing.sm, minHeight: 44 },
   label: { fontFamily: fonts.text, fontSize: 11.5, fontWeight: "800", color: c.brandPrimary, textTransform: "uppercase", letterSpacing: 0.5 },
   text: { fontFamily: fonts.display, fontSize: 15, lineHeight: 21, color: c.onSurface },

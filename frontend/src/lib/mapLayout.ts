@@ -151,6 +151,7 @@ export type LabelItem = {
   h: number; // Beschriftungshöhe
   priority: number; // höher = zuerst platziert, nie gruppiert
   pinned?: boolean; // ausgewählt / lektionsrelevant: wird nicht in Gruppen aufgenommen
+  noLabel?: boolean; // Marker ohne Beschriftung (geringe Zoomstufe)
 };
 export type LabelPlaced = {
   head: boolean; // Marker sichtbar (eigenständig oder als Gruppenkopf)
@@ -198,6 +199,7 @@ export function solveLabels(
   const placed: Rect[] = [];
   const m = opts.gap;
   for (const it of heads) {
+    if (it.noLabel) continue;
     const anchorIn = inside({ x: it.x, y: it.y, w: 0, h: 0 }, opts.view);
     const slots = labelSlots(it.r, it.w, it.h, opts.gap);
     const prevSlot = opts.prev?.[it.id]?.label?.slot;

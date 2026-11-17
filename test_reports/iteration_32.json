@@ -1,0 +1,54 @@
+{
+  "summary": "Frontend-only test of the Living Atlas map redesign (Playwright, 390x844 + 360x640, light/dark). Most of it works: the relief (atlas-relief) renders under the SVG on all 10 maps; the Jordan, the Dead Sea and the region labels show; the header items are there (BIBLIA wordmark, level pill, explore/journey switch, settings, theme chips); the verse of the day collapses and restores and stays collapsed after reload; place-art and place-label taps open the PlaceSheet with events and refs; zoom in/out works and tier-3 places appear on zoom; place labels never overlapped each other or the HUD at any tested zoom level or viewport (no label/label or label/HUD collisions); all 7 layer filters filter markers correctly; map-filter-routes shows and hides routes (tora); route rows open route-sheet; world-enter works (/world/gospels); map-motion Aus stops ship/cloud/tree animation; the system dark mode night overlay is readable; Studienreise cards and study-open-map work. No page errors on any screen. CRITICAL BUG: many visible place markers cannot be tapped. Their dot container keeps a stale inline 'pointer-events: none', so taps go to the SVG or to a neighbouring illustration (tapping Bethel's dot opens Jerusalem). This hits every place that only appears after the first render or on zoom, and every place on the revelation map. HIGH: the revelation map shows no place markers at all at the start, because all 7 churches have no events and so count as tier 3. Selecting Dunkel in settings does nothing on web (Appearance.setColorScheme does nothing there); only the system dark mode was verified. No deprecated Expo packages found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "MapPlaceMarker (dot hit area)", "issue": "Visible markers cannot be tapped. At start (overview, 390x844), the markers for megiddo, carmel, shiloh, bethel and jericho have computed pointer-events:none on the Animated.View and the button. At zoom 4 the list grows to dan, hazor, megiddo, carmel, samaria, shiloh, bethel, jericho, bethlehem, qumran, beersheba and kadesh. On the revelation map all 8 places are dead after zooming in. elementsFromPoint at the Silo dot returns the SVG rect (url(#vig)), so the tap does nothing. At the Bethel dot it returns place-art-jerusalem, so the Jerusalem sheet opens instead of Bethel. Labels (place-label-*) still work.", "testID": "place-node-shiloh, place-node-bethel, place-node-jericho, place-node-ephesus", "priority": "CRITICAL"},
+      {"component": "Revelation map (theme-chip-revelation)", "issue": "On first load, 0 of 8 place markers or labels are visible. Only the route and the relief show. placeTier() gives tier 3 to places without events, and tier-3 places are only shown at zoom >= 1.6. The map of the seven churches therefore looks empty until the user zooms twice.", "testID": "place-node-ephesus", "priority": "HIGH"},
+      {"component": "Settings theme-dark (web)", "issue": "Choosing Dunkel highlights the chip but the UI stays light, on both the settings screen and the map. setColorScheme() calls Appearance.setColorScheme, which does nothing on react-native-web, and useTheme() only reads useColorScheme(). Dark mode only works when the operating system is in dark mode. Possibly an older issue.", "testID": "theme-dark", "priority": "MEDIUM"},
+      {"component": "Settings back button", "issue": "When /settings is opened directly (no history), tapping settings-back-button shows the dev error 'The action GO_BACK was not handled'. Fall back to router.replace('/') when router.canGoBack() is false.", "testID": "settings-back-button", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Karte overview", "issues": [
+        "The Jericho and Jerusalem illustrations overlap at start, and at higher zoom they also overlap Bethel and Bethlehem. Place labels are drawn on top of the illustrations (Sichem, Bethel, Jericho and Jerusalem at zoom 4) and hide them. The label solver does not treat the illustrations as obstacles.",
+        "At start the Capernaum and Nazareth illustrations sit under the theme chips and the verse-of-day card. When the verse card is open, the Galilee area is covered.",
+        "The region labels 'S A M A R I E N' and 'G I L E A D' are letter-spaced so wide that they read as one line. 'MOAB' is cut off by the zoom buttons.",
+        "The clouds (MapAnimations Cloud, flat bottom, opacity 0.3-0.35) look like pale translucent rectangles over the relief, e.g. over EDOM and on the revelation map.",
+        "When the theme card is expanded, the zoom controls move up and map-zoom-in ends up partly under the verse-of-day card (390x844).",
+        "Dark mode: the illustrations stay in full daylight colours (no night tint), and the region labels (JUDÄA, SAMARIEN) have low contrast."
+      ]},
+      {"screen": "Wide theme maps (tora, acts, prophets, letters, revelation)", "issues": [
+        "In portrait the default fit letterboxes the map to about 270px high, leaving large empty teal bands above and below.",
+        "Tora: the illustrations and ships cluster around Egypt and the Sinai.",
+        "Acts: the label for Rome is cut to 'R...' at the left edge, and the ships pile up near Greece."
+      ]}
+    ],
+    "react_native_issues": [
+      {"component": "Reanimated Animated.View + dynamic style.pointerEvents (web)", "issue": "MapPlaceMarker puts style pointerEvents: shown ? 'box-none' : 'none' on a Reanimated Animated.View. On web, the inline 'pointer-events: none' from the first render is never removed after the value changes to 'box-none', which RNW does not write inline. Observed inline style: 'position:absolute;...;pointer-events:none;opacity:1;transform:scale(1.555)'. Reference: /app/frontend/src/components/MapPlaceMarker.tsx:120. The label (line 103) uses 'auto'/'none' and works, because 'auto' is written explicitly. PlaceArtView (AtlasLayers.tsx:93) uses 'auto'/'none' and was not affected."}
+    ]
+  },
+  "test_report_links": ["/app/.screenshots/ (Playwright screenshots via browser_automation)"],
+  "action_items": [
+    "CRITICAL: Fix the dead markers in MapPlaceMarker.tsx:120. Either use pointerEvents: shown ? 'auto' : 'none' (the hit view is the button itself), or move pointerEvents to a plain non-animated wrapper View as a prop, or keep 'box-none' fixed and gate the Pressable with disabled={!shown}. Then check that place-node-shiloh, place-node-bethel and place-node-jericho open their own sheets at start and after zoom, and that the revelation places can be tapped.",
+    "HIGH: Revelation and similar maps without events should show their main places at start. Base the tier on the map (e.g. if a map has no tier 1/2 places, promote its places to tier 2), or pass the places as 'important'.",
+    "Add the illustration rectangles as obstacles in solveLabels, or offset labels below the art, so labels do not cover the place illustrations. Reduce overlap between the Jerusalem, Jericho and Bethel illustrations (smaller ART_W for tier 1 next to another tier 1, or priority hiding).",
+    "Fix the theme-dark/theme-light override on web: keep a manual scheme in the store/context and use it in useTheme() instead of relying on Appearance.setColorScheme.",
+    "Optional polish: fill portrait screens for wide maps (cover-style initial zoom), reduce letter-spacing on region labels, soften or blur the cloud shapes, tint the illustrations in dark mode, and stop the zoom buttons ending up under the verse card when the theme card is expanded.",
+    "Settings back button: fall back to router.replace('/') when there is no history."
+  ],
+  "critical_code_review_comments": [
+    "MapPlaceMarker.tsx: dynamic pointerEvents in an Animated.View style is fragile on web with Reanimated. Prefer the prop on a plain View, or values that RNW always writes inline.",
+    "placeKinds.placeTier() is global and does not depend on the map. Maps whose places have no events (revelation) end up with no visible places at overview zoom.",
+    "GeoMap.tsx: the label layout memo has boolean expressions in its dependency list (zoom >= ZOOM_TIER3) with the exhaustive-deps lint disabled. It works, but it is easy to break.",
+    "The place illustrations are palette PNGs with real transparency (corner alpha 0, 22-35% transparent pixels), so there are no white boxes. Some have a cream ground patch that reads as a halo on darker relief.",
+    "No deprecated packages (expo-av, expo-barcode-scanner, expo-background-fetch) in package.json."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not requested)", "frontend": "~80% – 14 of 18 checked flows pass; failing: marker taps (critical), revelation markers, theme-dark override on web, settings back without history"},
+  "seed_data_creation": "None. Only local app settings were changed in the test browser (verse collapsed, motion Aus/An, theme set back to system).",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Onboarding: click 'Überspringen' then 'Bibel entdecken'. Silo's id is 'shiloh'. There is no map-zoom-reset testID. To find dead markers, check getComputedStyle(place-node-*).pointerEvents === 'none' on elements whose opacity is > 0.5, or use document.elementsFromPoint at the dot centre. Test dark mode with page.emulate_media(color_scheme='dark') and theme 'system'. Playwright's locator.click on markers is blocked by the SVG vignette rect for dead markers, so use mouse.click at the coordinates to reproduce what a user's tap does.",
+  "rca_of_issue": "Dead markers: the first render gives shown=false for places whose layout is not resolved yet (snap/viewport still unknown), or for tier-3 places before zoom. The style is {pointerEvents:'none'} on a Reanimated Animated.View, written inline. When shown becomes true the style becomes 'box-none', which RNW does not write inline, so the stale inline 'pointer-events:none' stays. The node cannot be tapped and taps fall through to the SVG or to the illustration underneath. Reproduce: open /, skip onboarding, mouse.click at the centre of place-node-shiloh: no sheet opens. Click at place-node-bethel: the Jerusalem sheet opens."
+}

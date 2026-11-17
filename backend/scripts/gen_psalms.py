@@ -71,6 +71,15 @@ SCENES = {
     "kp-7": "A quiet ruined city at dawn with broken stone walls, a lone woman in a mourning garment sitting by the gate, the first golden rays of morning light touching the stones, sorrow and faint hope.",
     "syn-1": "Three ancient scrolls lying open side by side on a wooden table, a scribe comparing their lines by the light of an oil lamp, ink pots and a reed pen, calm scholarly atmosphere.",
     "syn-2": "Three winding footpaths through the green hills of Galilee converging at the shore of the Sea of Galilee, where a teacher seen from behind speaks to a crowd, fishing boats on the water, golden light.",
+    "world-tora": "An ancient Torah scroll partly unrolled on a rock in a vast golden desert of Sinai at dawn, distant tents and mountains, wind-swept sand.",
+    "world-history": "Panoramic view of ancient Jerusalem on its hills with city walls, the temple and royal palace in warm evening light, olive trees in the foreground.",
+    "world-psalms": "An ancient wooden lyre harp resting on a hillside rock at sunset, golden sky, a shepherd's staff beside it, peaceful pastures below.",
+    "world-prophets": "A prophet in a simple mantle seen from behind standing on a mountain ridge looking out over the land of Israel with valleys, villages and the sea in the distance, dramatic clouds and light.",
+    "world-gospels": "Jesus seen from behind in a simple robe standing on the shore of the Sea of Galilee at morning, fishing boats and nets, gentle hills across the water, soft golden light, no halo.",
+    "world-parables": "A sower scattering seed by hand across a wide field at sunrise, birds above, rocky patches and thorns at the edge, rich soil, Galilean hills.",
+    "world-acts": "An ancient wooden sailing ship with a large square sail on the blue Mediterranean Sea, a harbour town with columns on the coast, bright sky.",
+    "world-letters": "An open parchment letter with Greek script, a reed pen and ink pot on a wooden table by a window, oil lamp, soft daylight.",
+    "world-revelation": "The New Jerusalem descending from the sky, a radiant city of gold and precious stones with twelve gates and a river of clear water and trees, luminous clouds.",
 }
 
 

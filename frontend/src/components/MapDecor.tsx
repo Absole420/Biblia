@@ -60,10 +60,17 @@ const DECO: Deco[] = [
 // Ab dieser Zoomstufe erscheinen feine Details (Dörfer, Felder …) – hält die Übersicht ruhig.
 const MIN_ZOOM: Partial<Record<Kind, number>> = { village: 1.5, vine: 1.5, wheat: 1.2, well: 1.9, tent: 1.2, papyrus: 1.2, fish: 1.9, cedar: 1.2 };
 
-const visibleDeco = (map: ThemeMap, zoom: number) => {
+// Mit Reliefebene übernimmt das Höhenmodell Gebirge, Wüsten und Grünflächen; Bäume und Schiffe
+// kommen als gemalte Sprites (AtlasLife). Geometrische Ersatzsymbole entfallen dann.
+const ATLAS_SKIP = new Set<Kind>(["desert", "green", "mount", "ridge", "wave", "palm", "olive", "cedar", "boat", "city", "houses", "village", "vine", "wheat", "shepherd", "camel"]);
+
+const visibleDeco = (map: ThemeMap, zoom: number, relief = false) => {
   const { latMin, latMax, lonMin, lonMax } = map.bounds;
   return DECO.map((d, i) => [d, i] as const).filter(([d]) => {
+    if (relief && ATLAS_SKIP.has(d.k)) return false;
     if ((MIN_ZOOM[d.k] ?? 0) > zoom + 1e-3) return false;
+    // Siedlungssymbole nicht doppelt neben einem echten Ortsmarker zeigen
+    if ((d.k === "city" || d.k === "houses") && map.places.some((p) => Math.abs(p.lat - d.lat) < 0.12 && Math.abs(p.lon - d.lon) < 0.12)) return false;
     const pad = (d.s ?? 0) + 0.5;
     const inside = (la: number, lo: number) => la > latMin - pad && la < latMax + pad && lo > lonMin - pad && lo < lonMax + pad;
     return inside(d.lat, d.lon) || (d.lat2 != null && inside(d.lat2, d.lon2!));
@@ -77,14 +84,25 @@ const FIG_BOX: Partial<Record<Kind, [number, number, number]>> = {
 };
 
 /** Bewegliche Kartensymbole (Figuren, Bäume, Boote, Siedlungen) mit Kollisionskreis in Kartenpixeln. */
-export function decoFigures(map: ThemeMap, k: number, zoom = 1) {
+export function decoFigures(map: ThemeMap, k: number, zoom = 1, relief = false) {
   const u = 10 * k;
-  return visibleDeco(map, zoom).flatMap(([d, i]) => {
+  return visibleDeco(map, zoom, relief).flatMap(([d, i]) => {
     const b = FIG_BOX[d.k];
     if (!b) return [];
     const p = projectGeo(map, d.lat, d.lon);
     return [{ id: "d" + i, x: p.x + b[0] * u, y: p.y + b[1] * u, r: b[2] * u }];
   });
+}
+
+/** Gemalte Vegetations- und Schiffspositionen für die Atlas-Ebene (lat/lon, innerhalb der Karte). */
+export function atlasSpots(map: ThemeMap) {
+  const { latMin, latMax, lonMin, lonMax } = map.bounds;
+  const inside = (d: Deco) => d.lat > latMin && d.lat < latMax && d.lon > lonMin && d.lon < lonMax;
+  const near = (d: Deco) => map.places.some((p) => Math.abs(p.lat - d.lat) < 0.06 && Math.abs(p.lon - d.lon) < 0.06);
+  return {
+    trees: DECO.filter((d) => (d.k === "olive" || d.k === "palm" || d.k === "cedar") && inside(d) && !near(d)).map((d) => ({ lat: d.lat, lon: d.lon, palm: d.k === "palm" })),
+    ships: DECO.filter((d) => d.k === "boat" && inside(d)).map((d) => ({ lat: d.lat, lon: d.lon })),
+  };
 }
 
 // Antike Fernstraßen (Verlauf schematisch)
@@ -96,7 +114,7 @@ const ROADS: [number, number][][] = [
 
 type P = { x: number; y: number };
 
-export function MapDecor({ map, k, colors, shift, zoom = 1 }: { map: ThemeMap; k: number; colors: ThemeColors; shift?: Record<string, { dx: number; dy: number }>; zoom?: number }) {
+export function MapDecor({ map, k, colors, shift, zoom = 1, relief = false }: { map: ThemeMap; k: number; colors: ThemeColors; shift?: Record<string, { dx: number; dy: number }>; zoom?: number; relief?: boolean }) {
   const deg = map.pxPerDeg;
   const Pg = (lat: number, lon: number) => projectGeo(map, lat, lon);
   const u = 10 * k; // Grundgröße der Figuren
@@ -114,9 +132,9 @@ export function MapDecor({ map, k, colors, shift, zoom = 1 }: { map: ThemeMap; k
     <G>
       {ROADS.map((r, i) => {
         const d = r.map(([la, lo], j) => { const p = Pg(la, lo); return `${j ? "L" : "M"}${p.x.toFixed(1)} ${p.y.toFixed(1)}`; }).join("");
-        return <Path key={"r" + i} d={d} stroke={colors.mapMountain} strokeWidth={sw(3)} strokeDasharray={`${sw(2)} ${sw(5)}`} strokeLinecap="round" fill="none" />;
+        return <Path key={"r" + i} d={d} stroke={relief ? colors.mapInk : colors.mapMountain} strokeOpacity={relief ? 0.55 : 1} strokeWidth={sw(relief ? 2 : 3)} strokeDasharray={`${sw(relief ? 0.5 : 2)} ${sw(relief ? 5 : 5)}`} strokeLinecap="round" fill="none" />;
       })}
-      {visibleDeco(map, zoom).map(([d, i]) => {
+      {visibleDeco(map, zoom, relief).map(([d, i]) => {
         const p0 = Pg(d.lat, d.lon);
         const sh = shift?.["d" + i];
         const p = sh ? { x: p0.x + sh.dx, y: p0.y + sh.dy } : p0;

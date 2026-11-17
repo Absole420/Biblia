@@ -1,6 +1,7 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Image, Pressable, Text, TextInput, View } from "react-native";
+import { Pressable, Text, TextInput, View } from "react-native";
+import { ZoomableImage } from "@/src/components/ZoomableImage";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import Animated, { FadeIn, FadeInDown, ZoomIn } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -141,7 +142,7 @@ export default function StationScreen() {
           <Animated.View entering={FadeIn.duration(400)} testID="phase-discover">
             {station.image && STATION_IMAGES[station.image] ? (
               <View style={styles.heroImgWrap} testID="station-illustration">
-                <Image source={STATION_IMAGES[station.image]} style={styles.heroImg} resizeMode="cover" accessibilityLabel={`Illustration: ${station.title}`} />
+                <ZoomableImage source={STATION_IMAGES[station.image]} style={styles.heroImg} label={`Illustration: ${station.title}`} testID="station-illustration-img" />
                 <Text style={styles.heroCaption}>KI-generierte künstlerische Darstellung – kein historisches Bild</Text>
               </View>
             ) : (
@@ -346,7 +347,7 @@ const useStyles = makeStyles((c) => ({
   dot: { flex: 1, height: 6, borderRadius: 3 },
   content: { padding: spacing.xl, paddingBottom: spacing.xxxl },
   heroImgWrap: { borderRadius: 28, overflow: "hidden", marginBottom: spacing.xl, backgroundColor: c.surfaceSecondary },
-  heroImg: { width: "100%", aspectRatio: 1.6 },
+  heroImg: { width: "100%" },
   heroCaption: { fontFamily: fonts.text, fontSize: 11, color: c.muted, paddingHorizontal: spacing.md, paddingVertical: 6 },
   hero: { height: 190, borderRadius: 28, overflow: "hidden", alignItems: "center", justifyContent: "center", marginBottom: spacing.xl },
   heroSun: { position: "absolute", width: 120, height: 120, borderRadius: 60, top: -30, right: 30, opacity: 0.55 },

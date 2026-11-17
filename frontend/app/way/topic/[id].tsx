@@ -1,6 +1,6 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
@@ -8,6 +8,7 @@ import { Button, Chip } from "@/src/components/ui";
 import { KindBadge, PassageCard, regColor, SectionHead, useWayStyles } from "@/src/components/way/WayUI";
 import { ARTICLE_BY_ID } from "@/src/data/articles";
 import { JESUS_KIND_LABEL, TOPIC_BY_ID, TOPIC_CATS } from "@/src/data/way";
+import { WAY_IMAGES } from "@/src/data/way/images";
 import { STATION_INFO } from "@/src/lib/libraryIndex";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
@@ -49,6 +50,11 @@ export default function TopicScreen() {
         </View>
       </View>
       <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxxl, maxWidth: 760, width: "100%", alignSelf: "center" }}>
+        {WAY_IMAGES[t.id] ? (
+          <View style={{ width: "100%", aspectRatio: WAY_IMAGES[t.id].ratio, borderRadius: radius.lg, overflow: "hidden", marginBottom: spacing.md }}>
+            <Image source={WAY_IMAGES[t.id].src} style={{ width: "100%", height: "100%" }} resizeMode="contain" testID="topic-image" accessibilityLabel={`Illustration: ${t.title}`} />
+          </View>
+        ) : null}
         <Text style={styles.lead}>{t.summary}</Text>
 
         <SectionHead icon="info" title="Kurz erklärt" color={accent} />
@@ -92,11 +98,11 @@ export default function TopicScreen() {
         <View style={w.wrap}>
           {t.related.map((r) => TOPIC_BY_ID[r] ? <Chip key={r} testID={`topic-related-${r}`} label={TOPIC_BY_ID[r].title} onPress={() => router.push({ pathname: "/way/topic/[id]", params: { id: r } })} /> : null)}
         </View>
-        <Text style={w.label}>Lexikon</Text>
+        {t.lexicon.some((l) => ARTICLE_BY_ID[l]) ? <Text style={w.label}>Lexikon</Text> : null}
         <View style={w.wrap}>
           {t.lexicon.map((l) => ARTICLE_BY_ID[l] ? <Chip key={l} testID={`topic-lex-${l}`} label={ARTICLE_BY_ID[l].title} onPress={() => router.push({ pathname: "/lexicon/[id]", params: { id: l } })} /> : null)}
         </View>
-        <Text style={w.label}>Lerneinheiten</Text>
+        {t.stations.some((s) => STATION_INFO[s]) ? <Text style={w.label}>Lerneinheiten</Text> : null}
         <View style={{ gap: spacing.sm }}>
           {t.stations.map((s) => STATION_INFO[s] ? (
             <Pressable key={s} testID={`topic-station-${s}`} onPress={() => router.push({ pathname: "/station/[id]", params: { id: s } })} style={styles.station} accessibilityRole="button">

@@ -169,3 +169,15 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - IntroAnimation.tsx (9 s Erststart: Wort → leuchtendes Kreuz → BIBLIA-Logo; Überspringen; Folgestarts ~1 s Logo, sanftes Ausblenden), _layout.tsx (Willkommen-Modal, Key biblia.cinematic.seen, dunkle Abdeckung während des Ladens).
 - „Auf den Spuren Jesu“ (IntroJourney, /intro) nicht mehr automatisch; Zugang: Bibliothek-Buch, Einstellungen, Willkommen.
 - TaskView mischt MC/Multi-Optionen.
+
+## Studienreise 2.0 (Iteration 31, aus PR #6)
+- Modus „Studienreise“ auf der Startseite: Themenkarten (StudyJourneyCards) statt Karte; Detail /world/[id]?view=study; Karte über view=map bzw. „Abenteuerkarte ansehen“.
+- 9 Themenbilder assets/images/worlds/world-*.jpg (Gemini, 900×900).
+- Bilder app-weit „contain“ (Ausnahme dekorative Hintergründe); ZoomableImage (Vollbild) für Stations- und Lexikonillustrationen.
+
+## Update (Iteration 35) – Geistlicher Weg: 12 neue Themen abgeschlossen
+- 24 Themen im Allgemeinen Register, keine offenen Themen mehr; je eine lokale Illustration (contain, korrektes Seitenverhältnis)
+- Check-in: bei gewählten Gefühlen nur passende Themen, Umschalter „Alle 24 Themen zeigen“
+- Lerneinheiten-Verknüpfungen korrigiert; leere Lexikon/Lerneinheiten-Labels ausgeblendet
+- Status: agent-tested (Iteration 35), Nutzerbestätigung ausstehend
+- Offen (nächste Phase): Atlas – breite Karten starten auf leeren Flächen, Ortsbilder überdecken Punkte (Shiloh/Jericho), Vers-des-Tages-Karte verdeckt nördliche Punkte

@@ -1,0 +1,35 @@
+{
+  "summary": "Frontend-only test of 'Studienreise 2.0' (PR #6) on the Expo web preview at 360x640, 390x844 and 1280x800. Home -> map-mode-journey shows all 9 study-world-<id> cards with image, title and subtitle. The 7 playable worlds show station counts, % and a progress bar (tora 26, psalms 44, prophets 21, gospels 31, parables 12, acts 6, letters 15). history and revelation show 'Vorschau · in Arbeit'. Seeding tora-1-1, tora-1-2 and acts-1 updated the cards to Tora 8 % / 2 completed and Acts 17 %. The detail then showed completed rows ('Abgeschlossen · Wiederholen' + check icon), study-continue moved to 'Noah und der Bund', and tora-1-4 stayed locked (aria-disabled). Tapping a locked row does not navigate. study-continue opens /station/tora-1-1. study-detail-map opens /world/<id>?view=map (campaign-screen), and the Abenteuer/Historisch toggle shows historical-map. world-back returns to the detail and study-detail-back returns to the cards; a deep-linked detail goes back to '/'. study-open-map shows the journey map, 'Zur Themenübersicht' goes back to the cards, and map-mode-explore shows the explore map + VerseOfDay. Psalms has 4 campaigns, prophets 2 (incl. 'Kleine Propheten & Klagelieder'), gospels 5 (incl. 'Synoptischer Vergleich'). Fullscreen open/close works for station-illustration-img (kp-3) and article-illustration-img (mose). The cinematic intro (fresh storage) works: skip button, then welcome-screen. Dark mode (system prefers-color-scheme) is readable. No clipped titles on cards. No page errors. FOUND AND FIXED 2 image-sizing bugs on web; details in rca_of_issue. No deprecated Expo packages (expo-av, expo-barcode-scanner, expo-background-fetch) detected.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "StudyWorldDetail hero image", "issue": "FIXED by testing agent. On web the hero <Image style={{width:'100%',aspectRatio:1}}> rendered 356x900, because react-native-web applies the asset's intrinsic height (900) and that overrides aspectRatio. Result: large empty bands above and below the picture. It is now wrapped in a View with aspectRatio 1 and the Image fills it at 100%/100% (verified 356x356 and 418x418 on desktop).", "testID": "study-world-detail", "priority": "HIGH"},
+      {"component": "ZoomableImage (station + lexicon illustrations)", "issue": "FIXED by testing agent. Same RNW intrinsic-height issue: kp-3 rendered 342x480 (capped by maxHeight) for a 900x900 image, so it was letterboxed. The onLoad ratio detection also never worked on web: nativeEvent is a DOM event with no .source, so the ratio stayed at 4/3. Now the ratio comes from the require() object {uri,width,height} on web, and the image sits inside a wrapper View that carries aspectRatio/maxHeight. Verified kp-3 at 342x342 and mose at 358x358; fullscreen open/close still works.", "testID": "station-illustration-img / article-illustration-img", "priority": "HIGH"},
+      {"component": "Settings theme toggle (web only, pre-existing)", "issue": "theme-dark saves settings.theme='dark', but the web UI stays light. setColorScheme() calls Appearance.setColorScheme, which react-native-web 0.21 does not implement (it only has getColorScheme). Dark mode works only through the OS/browser prefers-color-scheme setting on web. It should work on native. Reference: /app/frontend/src/theme.ts:128", "testID": "theme-dark", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Home journey-map 'Zur Themenübersicht' button", "issues": ["Inline-styled Pressable (index.tsx:101) with no minHeight 44 and no accessibilityRole originally; the testing agent added testID 'study-back-to-cards' + accessibilityRole. Consider moving it to the StyleSheet with minHeight 44."]},
+      {"screen": "Prophets detail", "issues": ["The book chips list only Jesaja, Jeremia, Klagelieder, Hesekiel, Daniel, but the second campaign covers six minor prophets that are missing from the chips (Jona, Amos, etc.)."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iteration_31.json"],
+  "action_items": [
+    "Review the testing agent's fixes in ZoomableImage.tsx (wrapper View + web ratio from require() dims) and StudyJourneyCards.tsx hero wrapper. Also check them on native (Expo Go).",
+    "Optional: make the settings theme toggle work on web (e.g. keep an in-app scheme override in context instead of Appearance.setColorScheme, which RNW does not implement).",
+    "Optional: add the minor-prophet books to the prophets world 'books' chips; give the 'Zur Themenübersicht' button a 44px minHeight."
+  ],
+  "critical_code_review_comments": [
+    "RNW <Image> with a required asset gets an intrinsic width/height default style, so aspectRatio on the Image itself is ignored when only width is set. Always put aspectRatio on a wrapper View, or set an explicit height.",
+    "ZoomableImage keeps the ratio in useState(initial). If the same instance ever receives a different source, the ratio will be stale (fine today, because routes remount).",
+    "In StudyWorldDetail, useWorldProgress recomputes the station flatMap on every render (cheap, no issue)."
+  ],
+  "updated_files": ["/app/frontend/src/components/ZoomableImage.tsx", "/app/frontend/src/components/StudyJourneyCards.tsx", "/app/frontend/app/(tabs)/index.tsx (testID study-back-to-cards only)"],
+  "success_rate": {"backend": "N/A", "frontend": "95% (all requested flows pass after the 2 image fixes; web theme toggle is a pre-existing limitation)"},
+  "seed_data_creation": "Progress was seeded only in browser localStorage 'biblia_state' (double-JSON-encoded string) of throwaway Playwright contexts: stations tora-1-1, tora-1-2, acts-1. No server data was touched.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Skip the intro with add_init_script localStorage.setItem('biblia.cinematic.seen','1'). To seed progress, open /settings and click a theme chip (this forces a save), then parse localStorage 'biblia_state' (it is a JSON string inside JSON), add stations[id]={completedAt,examScore,examTotal,bestScore,attempts}, write it back and reload. The settings dark toggle has no effect on web, so use page.emulate_media(color_scheme='dark'). The RN stack keeps hidden screens: use the ':visible' suffix, and after a viewport change + goto use .first.",
+  "rca_of_issue": "Image distortion/letterboxing on web: react-native-web's Image resolves the asset dimensions (900x900) as a default style. With style {width:'100%', aspectRatio:1} the intrinsic height (900) overrides aspectRatio, so the box was 356x900 with resizeMode contain, which gives huge empty bands. In ZoomableImage, the onLoad handler read e.nativeEvent.source.width, which does not exist in RNW (nativeEvent is the DOM load Event), so the ratio stayed at 4/3, and maxHeight=480 capped a 342x900 box. Fix: the wrapper View carries aspectRatio/maxHeight and the inner Image is 100%/100%; on web the initial ratio comes from the source object's width/height."
+}

@@ -29,15 +29,15 @@ function SceneImage({ index, active, motion, topPad }: { index: number; active: 
     else if (!active) { cancelAnimation(k); }
   }, [active, motion, op, k]);
   const dir = index % 2 === 0 ? 1 : -1;
-  const st = useAnimatedStyle(() => ({
-    opacity: op.value,
+  const st = useAnimatedStyle(() => ({ opacity: op.value }));
+  const backdrop = useAnimatedStyle(() => ({
     transform: motion ? [{ scale: 1.04 + 0.06 * k.value }, { translateX: dir * (10 - 20 * k.value) }] : [{ scale: 1.04 }],
   }));
   const sc = INTRO_SCENES[index];
   return (
     <Animated.View style={[StyleSheet.absoluteFill, st, { pointerEvents: "none" }]}>
       {/* Hintergrund: dasselbe Bild weichgezeichnet füllt den Bildschirm; Vordergrund zeigt die volle Komposition ohne Beschnitt */}
-      <Image source={sc.image} style={StyleSheet.absoluteFill} contentFit="cover" blurRadius={18} transition={0} />
+      <Animated.View style={[StyleSheet.absoluteFill, backdrop]}><Image source={sc.image} style={StyleSheet.absoluteFill} contentFit="cover" blurRadius={18} transition={0} /></Animated.View>
       <View style={[StyleSheet.absoluteFill, { backgroundColor: "rgba(20,14,8,0.35)" }]} />
       <Image source={sc.image} style={[StyleSheet.absoluteFill, { top: topPad }]} contentFit="contain" contentPosition="top" transition={0} priority={active ? "high" : "normal"} />
       <View style={[StyleSheet.absoluteFill, { backgroundColor: MOOD_STYLE[sc.mood].veil }]} />

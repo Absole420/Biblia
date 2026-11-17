@@ -296,3 +296,24 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 31: Studienreise 2.0 aus PR #6 – Startseite Modus map-mode-journey zeigt Themenkarten study-journey-cards (study-world-<id>, Bild, Titel, Untertitel, Stationen, %, Balken), study-open-map zeigt alte Karte; Detail /world/<id>?view=study (study-world-detail, Themenbild, Beschreibung, Bücher, Fortschritt, study-continue, study-detail-map -> /world/<id>?view=map, study-station-<id>); neue Themenbilder assets/images/worlds; app-weit contain statt cover, ZoomableImage-Vollbild in Station (station-illustration-img) und Lexikon (article-illustration-img)"
+    implemented: true
+    working: "NA"
+    file: "src/components/StudyJourneyCards.tsx, src/components/ZoomableImage.tsx, app/(tabs)/index.tsx, app/world/[id].tsx, app/station/[id].tsx, app/lexicon/[id].tsx, app/lexicon/index.tsx, app/timeline.tsx, app/(tabs)/library.tsx, src/components/PhotoAdd.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+  - task: "Iteration 32: BIBLIA Living Atlas – GeoMap mit Reliefebene aus echten Höhendaten (assets/images/relief/<mapId>.jpg, testID atlas-relief), Ortsillustrationen (place-art-<id>, PNG mit Alpha, assets/images/places), Ankerpunkte place-node-<id>, Beschriftungen place-label-<id> (Hierarchie: Hauptorte immer, weitere ab Zoom), gemalte Bäume/segelnde Schiffe (AtlasLife), Windrose, Atlasrahmen, Nachtvariante im Dunkelmodus; Kopf: BIBLIA-Schriftzug biblia-wordmark; Vers des Tages einklappbar (verse-of-day-hide / verse-of-day-show); Themenkarte theme-card mit Ebenenfilter map-filter-all/at/nt/cities/sacred/mounts/events (+ map-filter-routes) und Zeichenlegende; Einstellungen: Kartenanimationen map-motion-An / map-motion-Aus; Überblick startet auf Kernland (Zurücksetzen = ganze Karte)"
+    implemented: true
+    working: "NA"
+    file: "src/components/GeoMap.tsx, src/components/AtlasLayers.tsx, src/components/MapPlaceMarker.tsx, src/components/PlaceGlyph.tsx, src/components/MapDecor.tsx, src/data/atlasAssets.ts, src/data/placeKinds.ts, src/lib/mapLayout.ts, app/(tabs)/index.tsx, src/components/VerseOfDay.tsx, app/settings.tsx, backend/scripts/gen_relief.py, backend/scripts/gen_places.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+  - task: "Iteration 34: Mein geistlicher Weg – 12 neue Themen (topics3.ts/topics4.ts: neid-vergleich, entscheidungen, arbeit-sinn, geld-sorge, liebe-partnerschaft, familie, aelterwerden, sterben-tod, frieden-stille, mut-neuanfang, ungerechtigkeit, gebet-schwer) mit Themenbild (topic-image, assets/images/way), OPEN_TOPICS leer; Karten-Fixes: versteckte Marker pointerEvents none, Startausschnitt für alle Themenkarten, Namen auf kleinen Karten (Offenbarung) sichtbar"
+    implemented: true
+    working: "NA"
+    file: "src/data/way/topics3.ts, src/data/way/topics4.ts, src/data/way/index.ts, src/data/way/images.ts, app/way/topic/[id].tsx, src/components/MapPlaceMarker.tsx, src/components/GeoMap.tsx, app/(tabs)/index.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

@@ -57,6 +57,7 @@ export default function EntryScreen() {
   const [custom, setCustom] = useState("");
   const [refText, setRefText] = useState("");
   const [more, setMore] = useState(!!existing || initial.kind !== "checkin" || !!params.ref || !!params.topic);
+  const [allTopics, setAllTopics] = useState(false);
   const [confirmDel, setConfirmDel] = useState(false);
   const [confirmLeave, setConfirmLeave] = useState(false);
   const [safety, setSafety] = useState<{ danger: boolean; abuse: boolean } | null>(null);
@@ -90,7 +91,8 @@ export default function EntryScreen() {
   }
 
   const suggestedTopics = [...new Set(d.feelings.flatMap((f) => topicsForFeeling(f).map((t) => t.id)))];
-  const topicPool = [...new Set([...d.topics, ...suggestedTopics, ...TOPICS.map((t) => t.id)])];
+  const filtered = suggestedTopics.length > 0 && !allTopics;
+  const topicPool = [...new Set([...d.topics, ...suggestedTopics, ...(filtered ? [] : TOPICS.map((t) => t.id))])];
   const stationPool = [...new Set([...d.stations, ...d.topics.flatMap((t) => TOPIC_BY_ID[t]?.stations ?? [])])].filter((s) => STATION_INFO[s]);
   const lexPool = [...new Set([...d.lexicon, ...d.topics.flatMap((t) => TOPIC_BY_ID[t]?.lexicon ?? [])])].filter((l) => ARTICLE_BY_ID[l]);
   const toggle = (key: "topics" | "stations" | "lexicon", v: string) => set({ [key]: d[key].includes(v) ? d[key].filter((x) => x !== v) : [...d[key], v] } as Partial<Draft>);
@@ -212,8 +214,14 @@ export default function EntryScreen() {
                 })}
               </View>
             ) : null}
-            <Text style={w.label}>Themen aus dem Register{suggestedTopics.length ? " (passende zuerst)" : ""}</Text>
+            <Text style={w.label}>{filtered ? "Passende Themen zu deinen Gefühlen" : "Themen aus dem Register"}</Text>
             <View style={w.wrap}>{topicPool.map((t) => <Chip key={t} testID={`entry-topic-${t}`} label={TOPIC_BY_ID[t].title} selected={d.topics.includes(t)} onPress={() => toggle("topics", t)} />)}</View>
+            {suggestedTopics.length ? (
+              <Pressable testID="entry-topics-toggle" onPress={() => setAllTopics(!allTopics)} style={styles.openLink} accessibilityRole="button">
+                <Icon name={allTopics ? "filter" : "list"} size={13} color={colors.info} />
+                <Text style={[styles.openText, { color: colors.info }]}>{allTopics ? "Nur passende Themen zeigen" : `Alle ${TOPICS.length} Themen zeigen`}</Text>
+              </Pressable>
+            ) : null}
             {d.topics.length ? (
               <View style={[w.wrap, { marginTop: spacing.sm }]}>
                 {d.topics.map((t) => <Pressable key={t} testID={`entry-topic-open-${t}`} onPress={() => router.push({ pathname: "/way/topic/[id]", params: { id: t } })} style={styles.openLink}><Icon name="book" size={13} color={colors.info} /><Text style={[styles.openText, { color: colors.info }]}>{TOPIC_BY_ID[t].title} öffnen</Text></Pressable>)}
@@ -276,6 +284,6 @@ const useStyles = makeStyles((c) => ({
   over: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800", opacity: 0.9 },
   round: { width: 48, height: 48, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: c.brandPrimary },
   linkRow: { flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radius.md, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
-  openLink: { flexDirection: "row", alignItems: "center", gap: 4, minHeight: 36 },
+  openLink: { flexDirection: "row", alignItems: "center", gap: 4, minHeight: 44 },
   openText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800" },
 }));

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, { Easing, useAnimatedStyle, useSharedValue, withRepeat, withTiming } from "react-native-reanimated";
 
 import { Certainty } from "@/src/data/types";
 import { FAR_SLOT } from "@/src/lib/mapLayout";
@@ -49,6 +49,8 @@ type Props = {
   name: string;
   fontSize: number;
   selected?: boolean;
+  /** Atlas-Schrift: 1 = Hauptort (Serif, kräftig) · 2 = Serif · 3 = ruhige Kursive */
+  tier?: 1 | 2 | 3;
   onPress: () => void;
   testID: string;
   a11y: string;
@@ -59,9 +61,15 @@ type Props = {
  * Marker mit konstanter Bildschirmgröße exakt am geografischen Ort. Marker, Beschriftung und
  * Antippfläche nutzen dieselbe Transformation (1/scale), daher laufen sie beim Zoomen nie auseinander.
  */
-export function MapPlaceMarker({ ax, ay, hit, shown, count, label, labelW, labelH, markerR, name, fontSize, selected, onPress, testID, a11y, children }: Props) {
+export function MapPlaceMarker({ ax, ay, hit, shown, count, label, labelW, labelH, markerR, name, fontSize, selected, tier = 2, onPress, testID, a11y, children }: Props) {
   const { colors } = useTheme();
   const { scale } = useMapZoom();
+  // Sanftes Pulsieren des Auswahlrings
+  const pulse = useSharedValue(0);
+  useEffect(() => {
+    pulse.value = selected ? withRepeat(withTiming(1, { duration: 1400, easing: Easing.inOut(Easing.quad) }), -1, true) : withTiming(0, ease);
+  }, [selected, pulse]);
+  const ringStyle = useAnimatedStyle(() => ({ opacity: 0.85 - pulse.value * 0.5, transform: [{ scale: 1 + pulse.value * 0.18 }] }));
   const dx = useSharedValue(label?.dx ?? markerR + 4);
   const dy = useSharedValue(label?.dy ?? -labelH / 2);
   const lop = useSharedValue(label && shown ? 1 : 0);
@@ -98,15 +106,20 @@ export function MapPlaceMarker({ ax, ay, hit, shown, count, label, labelW, label
           <Text
             numberOfLines={1}
             maxFontSizeMultiplier={1}
-            style={[styles.label, { fontSize, lineHeight: labelH - 2, color: colors.mapInk, backgroundColor: colors.glass, borderColor: selected ? colors.stationNarrative : colors.border }]}
+            style={[
+              styles.label,
+              { fontSize, lineHeight: labelH - 2, borderRadius: labelH / 2, color: colors.mapInk, backgroundColor: tier === 3 ? "transparent" : colors.glass, shadowColor: colors.mapInk },
+              tier === 3 ? [styles.labelMinor, { textShadowColor: colors.surface }] : { fontFamily: fonts.display, fontWeight: tier === 1 ? "800" : "700", letterSpacing: tier === 1 ? 0.4 : 0.2 },
+              selected && { backgroundColor: colors.surface, borderWidth: 1.5, borderColor: colors.stationNarrative },
+            ]}
           >
             {name}
           </Text>
         </Pressable>
       </Animated.View>
       <Animated.View style={[styles.abs, { left: ax - hit, top: ay - hit, width: hit * 2, height: hit * 2, pointerEvents: shown ? "box-none" : "none" }, mStyle]}>
-        <Pressable testID={`place-node-${testID}`} accessibilityRole="button" accessibilityLabel={a11y} onPress={onPress} style={styles.hit}>
-          {selected ? <View style={[styles.ring, { width: markerR * 3.2, height: markerR * 3.2, borderRadius: markerR * 2, borderColor: colors.stationNarrative }]} /> : null}
+        <Pressable testID={`place-node-${testID}`} disabled={!shown} accessibilityRole="button" accessibilityLabel={a11y} onPress={onPress} style={styles.hit}>
+          {selected ? <Animated.View style={[styles.ring, { width: markerR * 3, height: markerR * 3, borderRadius: markerR * 1.5, borderColor: colors.stationNarrative }, ringStyle]} /> : null}
           {children}
           {count > 1 ? (
             <View style={[styles.badge, { backgroundColor: colors.surfaceInverse, borderColor: colors.surface }]}>
@@ -124,8 +137,9 @@ const styles = StyleSheet.create({
   fill: { flex: 1, alignItems: "flex-start" },
   hit: { flex: 1, alignItems: "center", justifyContent: "center" },
   line: { position: "absolute", height: 1.5, transformOrigin: "left center", pointerEvents: "none" },
-  label: { fontFamily: fonts.text, fontWeight: "800", paddingHorizontal: 6, borderRadius: 7, borderWidth: 1, overflow: "hidden" },
-  ring: { position: "absolute", borderWidth: 3 },
+  label: { fontFamily: fonts.text, fontWeight: "800", paddingHorizontal: 8, shadowOpacity: 0.12, shadowRadius: 3, shadowOffset: { width: 0, height: 1 }, elevation: 1 },
+  labelMinor: { fontStyle: "italic", fontWeight: "600", paddingHorizontal: 4, shadowOpacity: 0, elevation: 0, textShadowRadius: 3 },
+  ring: { position: "absolute", borderWidth: 2.5 },
   badge: { position: "absolute", right: 0, top: 2, minWidth: 20, height: 18, borderRadius: 9, paddingHorizontal: 4, alignItems: "center", justifyContent: "center", borderWidth: 1.5 },
   badgeText: { fontFamily: fonts.text, fontWeight: "900", fontSize: 10 },
 });

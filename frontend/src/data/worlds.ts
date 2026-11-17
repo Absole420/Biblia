@@ -40,7 +40,7 @@ export const WORLDS: World[] = [
     id: "prophets",
     title: "Die großen Propheten",
     subtitle: "Feuer, Gericht & Hoffnung",
-    books: ["Jesaja", "Jeremia", "Klagelieder", "Hesekiel", "Daniel"],
+    books: ["Jesaja", "Jeremia", "Klagelieder", "Hesekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadja", "Jona", "Micha", "Nahum", "Habakuk", "Zefanja", "Haggai", "Sacharja", "Maleachi"],
     palette: { base: "#2F4A7A", accent: "#E0A93B", glow: "#F07A3A", ink: "#F6E6C0" },
     x: 220, y: 850, icon: "zap", status: "playable", campaignIds: ["prophets", "prophets-2"],
     description: "Historische Hintergründe, Visionen, Gericht und Wiederherstellung. Messianisch gedeutete Stellen werden mit jüdischen und christlichen Lesarten gekennzeichnet. Zweite Kampagne: sechs kleine Propheten und die Klagelieder.",

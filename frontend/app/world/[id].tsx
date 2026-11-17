@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { BackHandler, Pressable, ScrollView, Text, useWindowDimensions, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { StudyWorldDetail } from "@/src/components/StudyJourneyCards";
 import { CampaignMapContent } from "@/src/components/CampaignMap";
 import { MapRect } from "@/src/components/AnchoredMarker";
 import { FavHeart } from "@/src/components/FavHeart";
@@ -25,9 +26,10 @@ import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 export default function WorldScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  const { id, view } = useLocalSearchParams<{ id: string; view?: string }>();
   const world = WORLDS.find((w) => w.id === id);
   if (!world) return <NotFound />;
+  if (view === "study") return <StudyWorldDetail world={world} />;
   if (world.status === "playable" && world.campaignIds?.length) return <CampaignScreen worldId={world.id} />;
   return <PreviewScreen worldId={world.id} />;
 }

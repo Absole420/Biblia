@@ -30,6 +30,8 @@ export type ThemeMap = {
   routes: GeoRoute[];
   labels: GeoLabel[];
   note?: string;
+  /** Position der dekorativen Windrose (nur wo freie Meeresfläche ist) */
+  compass?: { lat: number; lon: number };
 };
 
 const P = (id: string, name: string, lat: number, lon: number, certainty: Certainty, refs: string[], note: string, extra: Partial<GeoPlace> = {}): GeoPlace => ({ id, name, lat, lon, certainty, refs, note, ...extra });
@@ -93,6 +95,7 @@ export const THEME_MAPS: Record<string, ThemeMap> = {
     id: "overview",
     title: "Das Land der Bibel",
     era: "Übersicht · Orte aus Altem und Neuem Testament",
+    compass: { lat: 33.15, lon: 34.4 },
     bounds: { latMin: 29.45, latMax: 33.6, lonMin: 33.95, lonMax: 36.55 },
     pxPerDeg: 470,
     labels: ISRAEL_LABELS,

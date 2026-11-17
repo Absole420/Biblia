@@ -107,7 +107,7 @@ export default function TimelineScreen() {
                         <View style={[styles.dot, { backgroundColor: st.color }, sel && styles.dotFocus]} />
                       </View>
                       <Pressable testID={`timeline-item-${i.id}`} onPress={() => openItem(i)} style={[styles.card, { borderLeftColor: st.color }, sel && { borderColor: st.color, borderWidth: 2 }]}>
-                        {img ? <Image source={img} style={styles.thumb} contentFit="cover" /> : <View style={[styles.thumb, styles.thumbIcon, { backgroundColor: st.color + "22" }]}><Icon name={i.icon} size={20} color={st.color} /></View>}
+                        {img ? <Image source={img} style={styles.thumb} contentFit="contain" /> : <View style={[styles.thumb, styles.thumbIcon, { backgroundColor: st.color + "22" }]}><Icon name={i.icon} size={20} color={st.color} /></View>}
                         <View style={{ flex: 1 }}>
                           <Text style={[styles.year, { color: st.color }]} numberOfLines={2}>{i.when}</Text>
                           <View style={styles.nameRow}>

@@ -154,7 +154,7 @@ function ArticleRow({ id, onOpen }: { id: string; onOpen: (id: string) => void }
   return (
     <Pressable testID={`lex-article-${id}`} onPress={() => onOpen(id)} style={styles.row}>
       {ILLUSTRATIONS[id] ? (
-        <Image source={ILLUSTRATIONS[id]} style={styles.icon} testID={`lex-thumb-${id}`} accessibilityLabel={`${a.title} – ${ILLUSTRATION_LABEL}`} />
+        <Image source={ILLUSTRATIONS[id]} style={styles.icon} resizeMode="contain" testID={`lex-thumb-${id}`} accessibilityLabel={`${a.title} – ${ILLUSTRATION_LABEL}`} />
       ) : (
         <View style={[styles.icon, { backgroundColor: colors.brandPrimary }]}><Icon name={KIND_LABEL[a.kind].icon} size={16} color={colors.onBrandPrimary} /></View>
       )}
