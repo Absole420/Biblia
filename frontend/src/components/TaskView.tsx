@@ -59,6 +59,10 @@ export function TaskView({ task, onAnswered, fontScale = 1, testPrefix = "task" 
         return { right: shuffle(task.pairs.map((p, i) => i)) };
       case "order":
         return { items: shuffleDifferent(task.items.map((_, i) => i)) };
+      case "mc":
+      case "multi":
+        // Anzeigereihenfolge mischen; ausgewertet wird weiter über den Originalindex
+        return { order: shuffle(task.options.map((_, i) => i)) };
       default:
         return {};
     }
@@ -141,14 +145,15 @@ export function TaskView({ task, onAnswered, fontScale = 1, testPrefix = "task" 
         </View>
       ) : null}
 
-      {task.type === "mc" ? task.options.map((o, i) => (
+      {task.type === "mc" ? ((prepared as any).order as number[]).map((i) => { const o = task.options[i]; return (
         <Pressable key={i} testID={`${testPrefix}-option-${i}`} disabled={answered} onPress={() => setSel(i)} style={optionStyle(i, sel === i, i === task.answer)}>
           <View style={[styles.radio, sel === i && { backgroundColor: colors.brandPrimary, borderColor: colors.brandPrimary }]} />
           <Text style={[styles.optText, { fontSize: fs(16) }]}>{o}</Text>
         </Pressable>
-      )) : null}
+      ); }) : null}
 
-      {task.type === "multi" ? task.options.map((o, i) => {
+      {task.type === "multi" ? ((prepared as any).order as number[]).map((i) => {
+        const o = task.options[i];
         const on = multi.includes(i);
         return (
           <Pressable key={i} testID={`${testPrefix}-option-${i}`} disabled={answered} onPress={() => setMulti((m) => (on ? m.filter((x) => x !== i) : [...m, i]))} style={optionStyle(i, on, task.answers.includes(i))}>

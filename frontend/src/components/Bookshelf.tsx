@@ -16,6 +16,7 @@ export const BOOK_THEMES = {
   photos: { cover: "#B9802F", spine: "#8E6020", ink: "#FFF6E6", trim: "#5A3E14" }, // Fotoalbum, Ocker
   prayer: { cover: "#3F5E8C", spine: "#2C4466", ink: "#EEF3FA", trim: "#E2C08A" }, // Gebetsheft, Taubenblau
   way: { cover: "#6B5A3E", spine: "#4E412B", ink: "#FBF3E4", trim: "#9FC2B4" }, // Mein geistlicher Weg, Sand/Salbei
+  journey: { cover: "#2A3221", spine: "#1A2014", ink: "#F3E9D5", trim: "#DFC38A" }, // Auf den Spuren Jesu, Olivgrün/Gold
   units: { cover: "#5B4372", spine: "#432F56", ink: "#F1E9F8", trim: "#D9B45A" }, // Lila, Lernheft
 } satisfies Record<string, BookTheme>;
 
@@ -69,7 +70,7 @@ export function Book({ title, subtitle, icon, theme, size, onPress, testID, badg
         <View style={[styles.emblem, { borderColor: theme.trim, width: large ? 56 : 38, height: large ? 56 : 38 }]}>
           <Icon name={icon} size={large ? 26 : 18} color={theme.trim} />
         </View>
-        <Text style={[large ? styles.titleLarge : styles.titleSmall, { color: theme.ink }]} numberOfLines={large ? 2 : 3}>{title}</Text>
+        <Text style={[large ? styles.titleLarge : styles.titleSmall, { color: theme.ink }]} numberOfLines={3} adjustsFontSizeToFit minimumFontScale={0.8}>{title}</Text>
         {subtitle ? <Text style={[styles.sub, { color: theme.ink }]} numberOfLines={2}>{subtitle}</Text> : null}
       </View>
       {badge ? <View style={[styles.ribbon, { backgroundColor: theme.trim }]}><Text style={[styles.ribbonText, { color: theme.spine }]}>{badge}</Text></View> : null}

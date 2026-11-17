@@ -51,6 +51,9 @@ const LEX: Record<string, string[]> = {
   "ps3-6": ["sprueche", "salomo"], "ps3-7": ["sprueche", "salomo"], "ps3-8": ["sprueche", "salomo", "rut"], "ps3-9": ["sprueche", "salomo"], "ps3-10": ["gottesfurcht", "sprueche", "bergpredigt", "barmherziger-samariter", "jesus"],
   "ps4-1": ["gottesfurcht", "buch-hiob", "hiob"], "ps4-2": ["buch-hiob", "hiob"], "ps4-3": ["buch-hiob", "hiob"], "ps4-4": ["buch-hiob", "hiob"], "ps4-5": ["buch-hiob", "hiob", "psalmen"], "ps4-6": ["buch-hiob", "hiob"],
   "ps4-7": ["gottesfurcht", "buch-hiob", "hiob"], "ps4-8": ["buch-hiob", "hiob", "rut", "auferstehung"], "ps4-9": ["buch-hiob", "hiob", "schoepfung"], "ps4-10": ["buch-hiob", "hiob", "barmherziger-samariter", "jesus"],
+  "kp-1": ["samaria", "assyrien", "david"], "kp-2": ["esau-edom", "jakob", "babylon", "jerusalem"], "kp-3": ["jona", "ninive", "assyrien", "jesus"], "kp-4": ["ninive", "assyrien"],
+  "kp-5": ["babylon", "paulus"], "kp-6": ["jerusalem", "zion"], "kp-7": ["jerusalem", "babylon", "exil", "jeremia", "tempel-salomo"],
+  "syn-1": ["jesus", "johannes-taeufer", "kapernaum"], "syn-2": ["bergpredigt", "kreuzigung", "jesus", "petrus"],
 };
 
 const claim = (kind: Claim["kind"]) => ([title, text, refs]: [string, string, string[]?]): Claim => ({ kind, title, text, refs });
@@ -98,7 +101,7 @@ export function buildCampaign(c: { id: string; worldId: string; title: string; b
     ...pos(c.units.length),
     requires: c.units.map((u) => u.id),
     xp: 120,
-    goal: "Die Inhalte der zehn Einheiten sicher wiedergeben, vergleichen und auf Alltagssituationen anwenden.",
+    goal: `Die Inhalte aller ${c.units.length === 10 ? "zehn" : c.units.length} Einheiten sicher wiedergeben, vergleichen und auf Alltagssituationen anwenden.`,
     discover: c.examInfo,
     readings: [],
     terms: [],

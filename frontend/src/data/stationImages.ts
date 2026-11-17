@@ -1,6 +1,6 @@
 import { ImageSourcePropType } from "react-native";
 
-// KI-generierte Einheitenbilder (OpenAI GPT Image 1, backend/scripts/gen_psalms.py) – künstlerische Darstellung, offline gebündelt.
+// KI-generierte Einheitenbilder (OpenAI GPT Image 1, backend/scripts/gen_psalms.py; kp-*/syn-*: Gemini Nano Banana, gen_gemini.py) – künstlerische Darstellung, offline gebündelt.
 export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
   "ps1-1": require("../../assets/images/psalms/ps1-1.jpg"),
   "ps1-2": require("../../assets/images/psalms/ps1-2.jpg"),
@@ -42,4 +42,13 @@ export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
   "ps4-8": require("../../assets/images/psalms/ps4-8.jpg"),
   "ps4-9": require("../../assets/images/psalms/ps4-9.jpg"),
   "ps4-10": require("../../assets/images/psalms/ps4-10.jpg"),
+  "kp-1": require("../../assets/images/psalms/kp-1.jpg"),
+  "kp-2": require("../../assets/images/psalms/kp-2.jpg"),
+  "kp-3": require("../../assets/images/psalms/kp-3.jpg"),
+  "kp-4": require("../../assets/images/psalms/kp-4.jpg"),
+  "kp-5": require("../../assets/images/psalms/kp-5.jpg"),
+  "kp-6": require("../../assets/images/psalms/kp-6.jpg"),
+  "kp-7": require("../../assets/images/psalms/kp-7.jpg"),
+  "syn-1": require("../../assets/images/psalms/syn-1.jpg"),
+  "syn-2": require("../../assets/images/psalms/syn-2.jpg"),
 };

@@ -157,9 +157,10 @@ export default function LibraryScreen() {
               <Book size="large" testID="open-lexicon" title="Lexikon" subtitle={`${ARTICLES.length} Artikel`} icon="book" theme={BOOK_THEMES.lexicon} onPress={() => router.push("/lexicon")} />
               <Book size="large" testID="open-timeline" title="Zeitstrahl" subtitle="Urgeschichte bis Urkirche" icon="clock" theme={BOOK_THEMES.timeline} onPress={() => router.push("/timeline")} />
             </Shelf>
-            <Text style={styles.shelfLabel}>Mein geistlicher Weg</Text>
+            <Text style={styles.shelfLabel}>Mein geistlicher Weg und Auf den Spuren Jesu</Text>
             <Shelf testID="shelf-way">
               <Book size="large" testID="open-way" title={"Mein geistlicher\nWeg"} subtitle="Register · Tagebuch" icon="map" theme={BOOK_THEMES.way} onPress={() => router.push("/way")} />
+              <Book size="large" testID="open-jesus-journey" title={"Auf den Spuren\nJesu"} subtitle="15 Stationen" icon="sunrise" theme={BOOK_THEMES.journey} onPress={() => router.push("/intro")} />
             </Shelf>
             <Text style={styles.shelfLabel}>Mein Studium</Text>
             <Shelf testID="shelf-mine">

@@ -1,0 +1,44 @@
+{
+  "summary": "Frontend-only test at 390x844, plus a 1280 wide check, of the new 'Kleine Propheten & Klagelieder' campaign (prophets-2) and the synoptic comparison (/synopsis plus the synoptics campaign). Every requested flow works and there were no console errors. The prophets world shows both chips. prophets-2 shows the 8 nodes kp-1..kp-7 and prophets-2-exam. All 7 units passed end to end: title, image kp-N.jpg, Elberfelder readings, background, tasks with feedback, review question, completion. Each completion unlocked the next unit. The exam had 12 questions and scored 12/12. syn-1, syn-2 and synoptics-exam (8/8) passed too. All 97 Bible references in prophets2.ts and synoptics.ts resolve to non-empty verses through /api/bible. /synopsis lists 22 items. The group filters give 2+7+4+4+5 = 22. Details show columns Mt/Mk/Lk, plus Joh for speisung and einzug, along with the same/diff notes. synopsis-back goes from detail to list to world. At 390px the columns scroll horizontally (scrollWidth 1404); at 1280 they sit side by side. Psalms world (4 campaigns) and the old prophets campaign still open. Main problems: every multiple-choice answer is option 0, and every multiple-select answer is the first N options; browser or Android back from a synopsis detail leaves the page; the synopsis chip starts off-screen. No deprecated Expo packages found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "TaskView mc/multi", "issue": "The right answer is always the first option. All 21 mc in prophets2.ts and all 7 in synoptics.ts use answer index 0, and the same holds in psalms1 and psalms3. TaskView shuffles match, order and gap, but not mc or multi options. Multi answers are always [0,1,2] or [0,1,2,3]. Learners can game every quiz and exam by tapping the first option. Reference: src/components/TaskView.tsx:49-62,144-159", "testID": "task-option-0 / exam-option-0", "priority": "HIGH"},
+      {"component": "Synopsis detail back navigation", "issue": "Opening a detail uses router.setParams({p}), which replaces the history entry. Browser back or Android hardware back from /synopsis?p=vaterunser goes straight to /world/gospels instead of the list. The in-app synopsis-back works. Reference: app/synopsis.tsx:52", "testID": "synopsis-item-*", "priority": "MEDIUM"},
+      {"component": "Kit exam station, phase 2 'Bibelstudium'", "issue": "prophets-2-exam and synoptics-exam have readings=[] and terms=[]. Phase 2 still renders the headers 'BIBELTEXT · ELBERFELDER 1905' and 'BEGRIFFSKARTEN' over an empty page. This comes from the shared psalmsKit, so it likely affects the psalms exams too. Reference: app/station/[id].tsx:172-190", "testID": "phase-study", "priority": "LOW"},
+      {"component": "Completion unlock message", "issue": "A locked station can still be opened by direct URL. When you complete it, complete-unlocked lists that same station, e.g. kp-3 shows 'Neuer Weg frei: Jona …, Nahum …' and prophets-2-exam shows itself. Reference: app/station/[id].tsx:58-86", "testID": "complete-unlocked", "priority": "LOW"}
+    ],
+    "integration_issues": [
+      {"flow": "syn-1/syn-2 tasks → comparison page", "issue": "Tasks say 'Öffne in der Vergleichsseite „Die Stillung des Sturmes“' and '„Das Bekenntnis des Petrus“', but there is no link or button to /synopsis?p=sturm or ?p=bekenntnis. The syn-1 info card says to open „Synoptischer Vergleich“, which is the campaign name; the chip is actually labelled „Evangelien nebeneinander“.", "affected_testIDs": ["synopsis-chip", "phase-tasks"]}
+    ],
+    "design_issues": [
+      {"screen": "/world/gospels", "issues": ["synopsis-chip is the last item in the horizontal chip row. At 390px it starts at x=943, fully off-screen, so it is hard to discover. Consider putting it first or making it a separate button or card."]},
+      {"screen": "/synopsis", "issues": ["snapToInterval has no effect on web (scroll-snap-type: none), so swiping can stop in the middle of a column. Expect native to snap.", "When a group chip near the right edge is selected (e.g. 'Lehre'), it is not scrolled into view and stays half cut off.", "If a chapter fails to load, the column shows only its title. There is no error text and no retry (useRefText sets verses to [])."]},
+      {"screen": "/world/prophets (Historisch, prophets-2)", "issues": ["The kp units have no `places` (Tekoa, Bethel, Ninive, Joppe, Edom, Jerusalem). The historical map therefore highlights nothing for this campaign, and the initial view shows Karkemisch/Damaskus."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/backend/tests/test_prophets2_synoptics_refs.py", "/app/tests/station_runner_snippet.py", "/app/test_reports/pytest/prophets2_synoptics.xml"],
+  "action_items": [
+    "HIGH: In TaskView prepared(), shuffle the options of mc and multi tasks and map answer/answers to the new positions, or vary the answer index in the data. Today the correct answer is always option 0.",
+    "Synopsis: open details with router.push('/synopsis?p=id'), or handle BackHandler and browser popstate, so that hardware or browser back returns to the list.",
+    "Add a deep-link button from the syn-1 and syn-2 tasks and info cards to /synopsis?p=sturm and ?p=bekenntnis. Align the info text with the chip label „Evangelien nebeneinander“.",
+    "Make synopsis-chip discoverable on mobile: put it first in the row or move it out of the chip row.",
+    "In kit exam stations, hide the empty 'Bibeltext' and 'Begriffskarten' sections in phase 2, or skip phase 2 entirely.",
+    "Optional: the pre-exam free task example in psalmsKit says „Psalm 13 …“ even in the prophets-2 and synoptics exams; make it campaign-specific. The exam goal also mixes styles ('aller 7 Einheiten' / 'aller 2 Einheiten', but 'zehn' spelled out).",
+    "Optional: add places to the kp units so the historical map highlights them. Exclude the current station from the 'Neuer Weg frei' list."
+  ],
+  "critical_code_review_comments": [
+    "TaskView.tsx: the prepared memo shuffles verse, gap, match and order, but not mc or multi. Combined with data authored with answer 0 everywhere, the answer pattern is predictable.",
+    "synopsis.tsx:52: setParams is used for master/detail navigation, so the detail is not its own history entry.",
+    "synopsis.tsx: Column has no error state. useRefText swallows load errors as an empty array.",
+    "psalmsKit.ts:96-108: the exam station's free-task example text is hardcoded to Psalms, and the goal text has the 'zehn' special case."
+  ],
+  "updated_files": ["/app/backend/tests/test_prophets2_synoptics_refs.py", "/app/tests/station_runner_snippet.py"],
+  "success_rate": {"backend": "100% (97/97 reference checks)", "frontend": "~90% (all requested flows pass; 1 high and 1 medium UX/logic issue)"},
+  "seed_data_creation": "None. Progress was kept only in fresh browser contexts (IndexedDB). Free-text answers used the 'TEST_ Antwort' prefix.",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Use add_init_script to set localStorage biblia.introJourney.done=true and click 'Überspringen' twice. /app/tests/station_runner_snippet.py can be exec()'d inside browser_automation: ns={}; exec(open(path).read(), ns); await ns['run_station'](page,'kp-1'). It reads the answer keys from /tmp/answers.json; regenerate them with the regex script shown in this report's history (mc, tf and multi keyed by question text). Stations can be opened directly by URL even when locked. Default task testPrefix is 'task'; the review question and exam questions use 'exam'. Synopsis columns scroll element: [data-testid=synopsis-columns], only below 900px width.",
+  "rca_of_issue": "Back-navigation RCA: router.setParams on web calls history.replaceState, so /synopsis?p=x replaces /synopsis. One back step therefore lands on the previous route (/world/gospels). Repro: gospels → synopsis-chip → any item → browser back."
+}

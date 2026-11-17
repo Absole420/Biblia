@@ -106,10 +106,10 @@ export default function SettingsScreen() {
           <Button testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
         </View>
 
-        <SectionTitle>Intro</SectionTitle>
-        <Text style={styles.small}>Die Reise bis zum Kreuz – 15 Szenen aus dem Leben Jesu nach den Evangelien.</Text>
+        <SectionTitle>Auf den Spuren Jesu</SectionTitle>
+        <Text style={styles.small}>15 Stationen aus dem Leben Jesu nach den Evangelien – in deinem eigenen Tempo. Auch in der Bibliothek erreichbar.</Text>
         <View style={{ marginTop: spacing.md }}>
-          <Button testID="settings-replay-intro" label="Intro erneut ansehen" icon="play-circle" variant="secondary" onPress={() => router.push("/intro")} />
+          <Button testID="settings-replay-intro" label="Auf den Spuren Jesu (15 Stationen)" icon="play-circle" variant="secondary" onPress={() => router.push("/intro")} />
         </View>
 
         <SectionTitle>Über BIBLIA</SectionTitle>

@@ -282,3 +282,17 @@ agent_communication:
     stuck_count: 0
     priority: "high"
     needs_retesting: true
+  - task: "Iteration 29: Kampagne prophets-2 (Welt prophets; Einheiten kp-1 Amos … kp-6 Zefanja, kp-7 Klagelieder, Prüfung prophets-2-exam, je Bild) und Kampagne synoptics (Welt gospels; syn-1, syn-2, synoptics-exam) + Vergleichsseite /synopsis (22 Parallelabschnitte, Chip synopsis-chip in Welt gospels, Detail ?p=<id>, Spalten synopsis-col-Mt/Mk/Lk/Joh)"
+    implemented: true
+    working: "NA"
+    file: "src/data/prophets2.ts, src/data/synoptics.ts, app/synopsis.tsx, src/data/john.ts, src/data/worlds.ts, src/data/stationImages.ts, src/data/psalmsKit.ts, app/world/[id].tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+  - task: "Iteration 30: Cinematic Scripture Intro aus PR #4 (IntroAnimation.tsx 9 s: Wort 0–3 s, Kreuz mit Lichtschein 3–6 s, BIBLIA-Logo 6–9 s; Überspringen intro-skip-button; danach Willkommen welcome-screen mit welcome-start / welcome-journey; Speicherkey biblia.cinematic.seen='1'; Folgestarts nur ~1 s Logo). Auf den Spuren Jesu (15 Stationen, /intro) startet nicht mehr automatisch; Zugang: Bibliothek-Buch open-jesus-journey, Einstellungen settings-replay-intro, Willkommen welcome-journey. Zusätzlich: MC/Multi-Optionen werden gemischt angezeigt (TaskView), Synopsis-Detail per push (Back-Navigation)."
+    implemented: true
+    working: "NA"
+    file: "src/components/IntroAnimation.tsx, app/_layout.tsx, src/components/IntroJourney.tsx, app/(tabs)/library.tsx, src/components/Bookshelf.tsx, app/settings.tsx, src/components/TaskView.tsx, app/synopsis.tsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true

@@ -160,3 +160,12 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Allgemeines Register: 12 ausführliche Themen (src/data/way/topics1.ts, topics2.ts), Bibelstellen gegen ELB 1905 (KJV-Verszählung der Datendatei!) geprüft; 12 weitere Themen als „offen“ markiert.
 - Persönliches Register: Check-in + Erkenntnis/Frage/Gebet/Schritt, Weg-Ansicht, neutraler Rückblick (7/30 Tage/frei), Export (JSON + Text), Wiederherstellen, vollständiges Löschen. Speicher: AsyncStorage `biblia_way_v1`, AES-256-GCM via expo-crypto, Schlüssel `biblia_way_key` im SecureStore; nicht im Lernstand-Export enthalten.
 - Keine App-Sperre (Nutzerwahl), Krisennummern nur Deutschland, keine Push-Nachrichten, keine Sync.
+
+## Kleine Propheten & Synoptischer Vergleich (Iteration 29)
+- Kampagne `prophets-2` (src/data/prophets2.ts): Amos, Obadja, Jona, Nahum, Habakuk, Zefanja, Klagelieder (kp-1…kp-7) + Prüfung; Bilder via Gemini Nano Banana (backend/scripts/gen_gemini.py, Stilreferenz ps4-4), da gpt-image-1 derzeit nicht verfügbar.
+- Kampagne `synoptics` (src/data/synoptics.ts, syn-1/syn-2 + Prüfung) und Vergleichsseite /synopsis mit 22 Parallelabschnitten (Mt/Mk/Lk, teils Joh).
+
+## Cinematic Scripture Intro (Iteration 30, aus PR #4 übernommen)
+- IntroAnimation.tsx (9 s Erststart: Wort → leuchtendes Kreuz → BIBLIA-Logo; Überspringen; Folgestarts ~1 s Logo, sanftes Ausblenden), _layout.tsx (Willkommen-Modal, Key biblia.cinematic.seen, dunkle Abdeckung während des Ladens).
+- „Auf den Spuren Jesu“ (IntroJourney, /intro) nicht mehr automatisch; Zugang: Bibliothek-Buch, Einstellungen, Willkommen.
+- TaskView mischt MC/Multi-Optionen.

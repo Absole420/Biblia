@@ -62,6 +62,15 @@ SCENES = {
     "ps4-8": "A man looking up from a rocky hill toward the rising sun with hope, writing engraved on a stone tablet beside him, wind and light.",
     "ps4-9": "A mighty whirlwind over a wild landscape with wild animals, mountain goats, a wild donkey, an eagle, the sea and stars, creation's grandeur.",
     "ps4-10": "A restored family gathering under a large tree with new tents and herds, an older man with grandchildren, gentle evening light, quiet joy with memory.",
+    "kp-1": "A shepherd and fig-tree farmer from the hills of Tekoa holding a plumb line before a city wall, below him a clear river flowing through a marketplace where merchants weigh grain with honest scales, morning light.",
+    "kp-2": "High red sandstone cliffs with rock dwellings and eagle nests in the mountains of Edom, a wide valley below and far on the horizon the hills of Jerusalem, evening light, quiet and grand.",
+    "kp-3": "A lone man sitting under a small leafy shelter on a hill east of the great ancient city of Nineveh at dusk, the wide city with walls and many houses below, cattle in the fields, a gentle reflective mood.",
+    "kp-4": "A messenger running joyfully over the mountain tops of Judah with good news at sunrise, far away in the east a vast river plain with the ancient walls of Nineveh partly flooded, hopeful atmosphere.",
+    "kp-5": "A prophet standing on a stone watchtower writing on a clay tablet, below him a fig tree without fruit and an empty sheepfold, while a graceful deer stands safely on the rocky heights in the sunlight.",
+    "kp-6": "Jerusalem at dawn, humble poor people gathering with joy in a city square, a mother lifting her child and singing, soft warm light, peaceful and festive.",
+    "kp-7": "A quiet ruined city at dawn with broken stone walls, a lone woman in a mourning garment sitting by the gate, the first golden rays of morning light touching the stones, sorrow and faint hope.",
+    "syn-1": "Three ancient scrolls lying open side by side on a wooden table, a scribe comparing their lines by the light of an oil lamp, ink pots and a reed pen, calm scholarly atmosphere.",
+    "syn-2": "Three winding footpaths through the green hills of Galilee converging at the shore of the Sea of Galilee, where a teacher seen from behind speaks to a crowd, fishing boats on the water, golden light.",
 }
 
 

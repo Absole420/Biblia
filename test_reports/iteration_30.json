@@ -1,0 +1,37 @@
+{
+  "summary": "Frontend-only test of the Cinematic Scripture Intro (PR #4), the voluntary 15-station journey, quiz option shuffling and synopsis back navigation. Tested in the web preview at 390x844, 360x640 and 1280x800. Every requested flow passed. One text-clipping defect: on phone widths the library book titles are truncated. No deprecated Expo packages were found (expo-av, expo-barcode-scanner and expo-background-fetch are absent).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Library book open-jesus-journey (Bookshelf.Book, size large)", "issue": "At 360 and 390px width the title 'Auf den Spuren\\nJesu' wraps to 3 lines, but numberOfLines={2} cuts it to 'Auf den Spuren…'. The neighbouring book 'Mein geistlicher Weg' is also cut ('Mein geistlich…'). At 1280px both titles show in full. Reference: /app/frontend/src/components/Bookshelf.tsx:73", "testID": "open-jesus-journey", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Settings", "issues": ["The section is still titled 'Intro' with the text 'Die Reise bis zum Kreuz – 15 Szenen…'. The journey is no longer the intro, so a title like 'Auf den Spuren Jesu' would fit better (settings.tsx:109)."]},
+      {"screen": "IntroAnimation", "issues": ["There is no fade-out at the end. The logo stays fully visible and the overlay then unmounts in one hard cut, both after the ~1s short logo and before the welcome modal. Consider fading the opacity to 0 over the last ~10%."]}
+    ],
+    "react_native_issues": [
+      {"component": "IntroAnimation pointerEvents prop", "issue": "Several Animated.View elements get pointerEvents=\"none\" as a prop. The Expo web log warns 'props.pointerEvents is deprecated. Use style.pointerEvents'. Reference: /app/frontend/src/components/IntroAnimation.tsx:38-42"}
+    ]
+  },
+  "test_report_links": ["/app/tests/shuffle_check_snippet.py", "/app/tests/station_runner_snippet.py"],
+  "action_items": [
+    "MEDIUM: In Bookshelf.tsx:73, raise numberOfLines for large books to 3, or use adjustsFontSizeToFit / a smaller titleLarge font on narrow widths, so that 'Auf den Spuren Jesu' and 'Mein geistlicher Weg' are not truncated at 360–390px.",
+    "LOW: In IntroAnimation.tsx, move pointerEvents='none' into the style ({pointerEvents:'none'}) to clear the RN-web deprecation warning.",
+    "LOW: Rename the Settings section 'Intro' to 'Auf den Spuren Jesu' and update its description.",
+    "LOW (polish): Add a short fade-out at the end of IntroAnimation instead of a hard unmount."
+  ],
+  "critical_code_review_comments": [
+    "_layout.tsx: while AsyncStorage.multiGet is pending (first===null), the overlay is not rendered but AppStack is. On slow native storage the app may briefly flash before the intro. Consider rendering a plain dark cover while first===null.",
+    "endIntro sets biblia.cinematic.seen='1' as soon as the animation ends, before the welcome choice. If the user closes the app on the welcome screen, the welcome is not shown again. This is acceptable, but note it.",
+    "TaskView shuffle: evaluation uses the original indices, which is correct. testIDs still use the original index (task-option-<origIdx>), so existing automation keeps working. shuffle() can return the original order (about 1/24 for 4 options), so the correct answer sometimes stays first. This is acceptable.",
+    "IntroJourney comment 'Route /intro: Wiederholung aus den Einstellungen' is outdated (the route is now also opened from the library and the welcome screen)."
+  ],
+  "updated_files": ["/app/tests/shuffle_check_snippet.py (new test helper)"],
+  "success_rate": {"backend": "N/A", "frontend": "100% of requested flows pass (10/10); 1 MEDIUM text-clipping defect in the library"},
+  "seed_data_creation": "None. Only browser localStorage of the test browser was cleared or set.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Fresh storage gives the full 9s intro (book ~0–3s, cross ~3–6s, logo ~6–9s; verified by opacity samples at 1.6/4.5/7.8s) followed by welcome-screen. intro-skip-button jumps straight to welcome. Once biblia.cinematic.seen or biblia.introJourney.done is '1', only the ~0.8–1s logo appears, with no skip button and no welcome. The legacy value 'true' does not count (the old code always wrote '1'). To skip the intro use add_init_script localStorage.setItem('biblia.cinematic.seen','1'). The RN stack keeps hidden duplicate screens, so use the ':visible' selector suffix (e.g. synopsis-back). /app/tests/shuffle_check_snippet.py: ns={}; exec(open(path).read(), ns); await ns['check_station'](page,'kp-2',wrong=False). It needs /tmp/answers.json and localStorage.clear() before each run, because station progress resumes.",
+  "rca_of_issue": "Library title clipping: Book renders the title with numberOfLines={large ? 2 : 3} and fontSize 22. At phone widths the book cover is about 150px wide, so 'Auf den Spuren' breaks into 'Auf den' / 'Spuren' and the explicit \\n adds 'Jesu' as a third line, which gets cut."
+}
