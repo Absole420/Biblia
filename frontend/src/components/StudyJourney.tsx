@@ -65,7 +65,7 @@ export function StudyJourney({ bottom=0, onMap }: {bottom?:number; onMap:()=>voi
           <Text style={base.cardTitle}>{world.title}</Text>
           <Text style={base.cardSub}>{SUB[world.id]??world.subtitle}</Text>
           <Text style={base.meta}>{playable?done+" / "+stations.length+" Stationen · "+pct+" %":"Vorschau"}</Text>
-          {playable?<View style={base.track}><View style={[base.fill,{width:pct+"%"}]}/></View>:null}
+          {playable?<View style={base.track}><View style={[base.fill,{width:(pct+"%") as `${number}%`}]}/></View>:null}
         </View>
         <Icon name="chevron-right" color={CREAM} size={20}/>
       </Pressable>;
@@ -95,7 +95,7 @@ export function StudyWorld({world}:{world:World}) {
     <Text style={styles.heading}>Worum geht es?</Text>
     <Text style={styles.body}>{world.description}</Text>
     <Text style={styles.small}>{world.books.join(" · ")}</Text>
-    {playable?<><Text style={styles.heading}>Dein Fortschritt</Text><Text style={styles.body}>{done} von {stations.length} Stationen abgeschlossen</Text><View style={[base.track,{backgroundColor:colors.surfaceTertiary}]}><View style={[base.fill,{width:Math.round(done/stations.length*100)+"%"}]}/></View>
+    {playable?<><Text style={styles.heading}>Dein Fortschritt</Text><Text style={styles.body}>{done} von {stations.length} Stationen abgeschlossen</Text><View style={[base.track,{backgroundColor:colors.surfaceTertiary}]}><View style={[base.fill,{width:(Math.round(done/stations.length*100)+"%") as `${number}%`}]}/></View>
       {next?<Pressable accessibilityRole="button" testID="study-world-continue" onPress={()=>open(next.id)} style={styles.primary}><Text style={styles.primaryText}>{(state.phase[next.id]??0)>0?"Weiterlernen":"Nächste Station"}: {next.title}</Text><Icon name="play" color={colors.onBrandPrimary}/></Pressable>:null}</>:null}
     <Pressable accessibilityRole="button" testID="study-world-open-map" onPress={()=>router.push({pathname:"/world/[id]",params:{id:world.id}})} style={styles.action}><Icon name="map" color={colors.brandPrimary}/><Text style={styles.actionText}>{playable?"Abenteuerkarte und historische Karte":"Lernwelt-Vorschau"}</Text><Icon name="chevron-right" color={colors.muted}/></Pressable>
     {world.id==="psalms"?<Pressable accessibilityRole="button" onPress={()=>router.push("/psalms-jesus")} style={styles.action}><Icon name="book-open" color={colors.brandPrimary}/><Text style={styles.actionText}>Jesus in den Psalmen</Text><Icon name="chevron-right" color={colors.muted}/></Pressable>:null}
