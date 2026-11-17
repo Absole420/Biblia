@@ -52,7 +52,7 @@ export function IntroJourney({ onClose }: { onClose: () => void }) {
   const sysReduced = useReducedMotion();
   const [reduced, setReduced] = useState(sysReduced);
   const [i, setI] = useState(-1); // -1 = Titelkarte
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const motion = !reduced && !LOW_END;
 
@@ -108,8 +108,8 @@ export function IntroJourney({ onClose }: { onClose: () => void }) {
             ) : (
               <View testID="intro-title-card">
                 <Text style={[styles.count, { color: accent }]}>BIBLIA · by Absole</Text>
-                <Text style={styles.title}>Die Reise bis zum Kreuz</Text>
-                <Text style={styles.text}>Fünfzehn Stationen aus dem Leben Jesu – von Bethlehem bis zum leeren Grab.</Text>
+                <Text style={styles.title}>Auf den Spuren Jesu</Text>
+                <Text style={styles.text}>Fünfzehn Stationen aus dem Leben Jesu – von Bethlehem bis zum leeren Grab. Entdecke sie in deinem eigenen Tempo.</Text>
                 <Text style={styles.note}>Zusammenfassende Darstellung nach den vier Evangelien. Die Evangelien erzählen manches in anderer Reihenfolge; Hinweise dazu stehen bei den Szenen. Die Texte sind Nacherzählungen, keine Zitate. Bilder: KI-generierte künstlerische Rekonstruktion.</Text>
               </View>
             )}
