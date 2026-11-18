@@ -335,7 +335,7 @@ export const ARTICLES_GOSPELS: Article[] = [
     deep: [
       { h: "Josephus", layer: "history", body: "Josephus berichtet, Antipas habe Johannes in der Festung Machärus hinrichten lassen, weil er dessen Einfluss auf das Volk fürchtete (Ant. 18,116–119)." },
       { h: "Qumran?", layer: "hypothesis", body: "Wegen Wüste, Jes 40,3 und Reinigungsbädern wird eine Nähe zur Gemeinschaft von Qumran vermutet; belegt ist sie nicht." },
-      { h: "Elia", layer: "tradition", body: "Jesus deutet ihn als den erwarteten Elia (Mt 11,14; vgl. Mal 3,23)." },
+      { h: "Elia", layer: "tradition", body: "Jesus deutet ihn als den erwarteten Elia (Mt 11,14; vgl. Mal 4,5)." },
     ],
     refs: ["Lk 1,5–25", "Lk 1,57–80", "Mk 1,2–11", "Joh 1,19–34", "Mt 11,2–15", "Mk 6,17–29"],
     timeframe: "Wirken ca. 28 n. Chr.",

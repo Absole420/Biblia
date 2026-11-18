@@ -45,10 +45,10 @@ export const ARTICLES_EXO: Article[] = [
     ],
     deep: [
       { h: "Das goldene Kalb", layer: "bible", body: "Während Mose auf dem Berg ist, gibt Aaron dem Druck des Volkes nach und gießt ein Stierbild (2Mo 32). Die Erzählung schont den Hohepriester nicht – ein Zug, der die Ehrlichkeit der Überlieferung zeigt." },
-      { h: "Der grünende Stab", layer: "bible", body: "Als seine Stellung angefochten wird, treibt Aarons Stab über Nacht Blüten und Mandeln (4Mo 17,16–26)." },
+      { h: "Der grünende Stab", layer: "bible", body: "Als seine Stellung angefochten wird, treibt Aarons Stab über Nacht Blüten und Mandeln (4Mo 17,1–11)." },
       { h: "Auslegung", layer: "tradition", body: "Rabbinische Tradition rühmt Aaron als Friedensstifter (Pirke Avot 1,12). Der Hebräerbrief stellt dem aaronitischen Priestertum Christus als Hohepriester „nach der Weise Melchisedeks“ gegenüber (Hebr 5,1–10; 7)." },
     ],
-    refs: ["2Mo 4,14–16", "2Mo 7,8–13", "2Mo 28,1–4", "2Mo 32,1–6", "3Mo 8,1–13", "4Mo 6,22–27", "4Mo 17,16–26", "4Mo 20,22–29"],
+    refs: ["2Mo 4,14–16", "2Mo 7,8–13", "2Mo 28,1–4", "2Mo 32,1–6", "3Mo 8,1–13", "4Mo 6,22–27", "4Mo 17,1–11", "4Mo 20,22–29"],
     timeframe: "Exoduszeit (unsicher)",
     epoch: "exodus", region: "aegypten", books: ["2Mo", "3Mo", "4Mo", "5Mo", "Ps", "Lk", "Apg", "Hebr"],
     relations: [
@@ -173,7 +173,7 @@ export const ARTICLES_EXO: Article[] = [
       { h: "Wo geschah es?", layer: "hypothesis", body: "Vorgeschlagen werden u. a. die Bitterseen oder der Timsahsee (Suezgegend), der Sirbonische See an der Mittelmeerküste, der Golf von Suez oder der Golf von Akaba. Keine Lokalisierung ist gesichert." },
       { h: "Auslegung", layer: "tradition", body: "Paulus deutet den Durchzug als Bild der Taufe (1Kor 10,1–2). Im Judentum wird das Meerlied täglich im Morgengebet gesprochen." },
     ],
-    refs: ["2Mo 13,17–14,4", "2Mo 14,10–31", "2Mo 15,1–21", "Ps 106,7–12", "1Kor 10,1–2", "Hebr 11,29"],
+    refs: ["2Mo 13,17–22", "2Mo 14,1–4", "2Mo 14,10–31", "2Mo 15,1–21", "Ps 106,7–12", "1Kor 10,1–2", "Hebr 11,29"],
     timeframe: "Exoduszeit (unsicher)",
     epoch: "exodus", region: "aegypten", books: ["2Mo", "Jos", "Neh", "Ps", "Jes", "Apg", "1Kor", "Hebr"],
     relations: [

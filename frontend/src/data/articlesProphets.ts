@@ -37,7 +37,7 @@ export const ARTICLES_PROPHETS: Article[] = [
       { h: "Der Kyros-Zylinder", layer: "history", body: "Die 1879 in Babylon gefundene Tonwalze schildert die Einnahme Babylons als Befreiung durch den Gott Marduk und berichtet, Kyros habe verschleppte Völker und Götterbilder heimkehren lassen. Juda wird nicht genannt, die Politik entspricht aber Esra 1." },
       { h: "Grab", layer: "history", body: "Sein schlichtes Grab steht bis heute in Pasargadae (Iran)." },
     ],
-    refs: ["2Chr 36,22–23", "Esr 1,1–4", "Jes 44,24–28", "Jes 45,1–7", "Dan 6,29"],
+    refs: ["2Chr 36,22–23", "Esr 1,1–4", "Jes 44,24–28", "Jes 45,1–7", "Dan 6,28"],
     timeframe: "Regierte ca. 559–530 v. Chr.",
     epoch: "nachexil", region: "mesopotamien", books: ["2Chr", "Esr", "Jes", "Dan"],
     relations: [
@@ -127,7 +127,7 @@ export const ARTICLES_PROPHETS: Article[] = [
     deep: [
       { h: "Spätere Mauern", layer: "history", body: "Die Hasmonäer, Herodes und später Agrippa I. erweiterten die Mauern. Die heutige Altstadtmauer stammt von Sultan Süleyman dem Prächtigen (16. Jh.)." },
     ],
-    refs: ["Neh 2,11–17", "Neh 3,1–32", "Neh 6,15–16", "Neh 12,27–43", "Ps 51,20"],
+    refs: ["Neh 2,11–17", "Neh 3,1–32", "Neh 6,15–16", "Neh 12,27–43", "Ps 51,18"],
     timeframe: "Wiederaufbau 445 v. Chr.",
     epoch: "nachexil", region: "judaea", books: ["2Kö", "Neh", "Ps", "Jes"],
     relations: [
@@ -461,7 +461,7 @@ export const ARTICLES_PROPHETS: Article[] = [
       { h: "Auslegung", layer: "tradition", body: "Die Erzählung ermutigte Verfolgte, treu zu bleiben (vgl. Hebr 11,33: „verschlossen der Löwen Rachen“). Darius bekennt am Ende Daniels Gott." },
       { h: "Zum Nachdenken", layer: "reflection", body: "Daniel ändert nichts an seiner Gewohnheit – er betet „wie er es vorher getan hatte“. Was tragen dich deine Gewohnheiten, wenn es schwer wird?" },
     ],
-    refs: ["Dan 6,1–10", "Dan 6,11–18", "Dan 6,19–29", "Hebr 11,33"],
+    refs: ["Dan 6,1–10", "Dan 6,11–18", "Dan 6,18–28", "Hebr 11,33"],
     timeframe: "Unter „Darius dem Meder“ (literarisch, frühe Perserzeit)",
     epoch: "exil", region: "mesopotamien", books: ["Dan", "Hebr"],
     relations: [
@@ -483,7 +483,7 @@ export const ARTICLES_PROPHETS: Article[] = [
       { h: "Gattung", layer: "hypothesis", body: "Viele Ausleger lesen das Buch als lehrhafte Erzählung, oft nachexilisch datiert, gegen Engherzigkeit gegenüber Fremden. Andere lesen es als historischen Bericht." },
       { h: "Zeichen des Jona", layer: "tradition", body: "Jesus verweist auf das „Zeichen des Jona“: Wie Jona drei Tage im Fisch, so der Menschensohn im Herzen der Erde (Mt 12,39–41)." },
     ],
-    refs: ["2Kö 14,25", "Jona 1,1–17", "Jona 2,1–11", "Jona 3,1–10", "Jona 4,1–11", "Mt 12,39–41"],
+    refs: ["2Kö 14,25", "Jona 1,1–17", "Jona 2,1–10", "Jona 3,1–10", "Jona 4,1–11", "Mt 12,39–41"],
     timeframe: "8. Jh. v. Chr. (Erzählzeit)",
     epoch: "koenigszeit", region: "mesopotamien", books: ["2Kö", "Jona", "Mt", "Lk"],
     relations: [

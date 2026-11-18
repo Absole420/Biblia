@@ -219,10 +219,10 @@ export const ARTICLES_CHURCH: Article[] = [
     summary: "Ephesus, Smyrna, Pergamon, Thyatira, Sardes, Philadelphia und Laodizea: An sie richtet der erhöhte Christus in Offb 2–3 je einen Brief mit Lob, Mahnung und Verheißung.",
     overview: [
       { h: "Die Briefe", layer: "bible", body: "Ephesus hat die erste Liebe verlassen; Smyrna soll treu sein bis zum Tod; Laodizea ist „weder kalt noch warm“. „Siehe, ich stehe an der Tür und klopfe an“ (Offb 3,20)." },
-      { h: "Rundweg", layer: "history", body: "Die Städte liegen auf einer Postroute im Westen der heutigen Türkei – ein Bote konnte sie der Reihe nach besuchen." },
+      { h: "Rundweg", layer: "history", body: "Die Reihenfolge im Text lässt sich als möglicher Reiseweg durch das westliche Kleinasien lesen. Eine konkrete Botenroute ist nicht ausdrücklich bezeugt." },
     ],
     deep: [
-      { h: "Lokalkolorit", layer: "history", body: "Laodizea war reich, bekannt für Wolle und Augensalbe, aber ohne eigene gute Quelle – das lauwarme Wasser kam über eine Leitung. Pergamon hatte einen großen Zeusaltar (heute in Berlin) und Kaiserkult: „wo der Thron des Satans ist“ (Offb 2,13)." },
+      { h: "Lokalkolorit", layer: "history", body: "Die Wasserverhältnisse Laodizeas werden häufig als Hintergrund des Warm-kalt-Bildes diskutiert. In Pergamon werden unter anderem der Zeusaltar und der Kaiserkult als mögliche Hintergründe des „Thrones des Satans“ (Offb 2,13) genannt. Keine dieser Zuordnungen ist im Text ausdrücklich festgelegt." },
       { h: "Auslegung", layer: "tradition", body: "Die Briefe gelten als Spiegel für Gemeinden aller Zeiten; manche lasen sie auch als Abfolge von Kirchenepochen." },
     ],
     refs: ["Offb 1,11", "Offb 2,1–7", "Offb 2,8–11", "Offb 2,12–17", "Offb 3,14–22"],
@@ -247,7 +247,7 @@ export const ARTICLES_CHURCH: Article[] = [
       { h: "Zum Nachdenken", layer: "reflection", body: "Die Bibel endet nicht mit Flucht aus der Welt, sondern mit Gott, der zu den Menschen kommt. Welche Hoffnung gibt dir dieses Bild?" },
     ],
     refs: ["Offb 21,1–8", "Offb 21,9–27", "Offb 22,1–5", "Jes 65,17–19", "Hes 47,1–12", "Hebr 12,22"],
-    timeframe: "Vision der Vollendung (Offb um 95 n. Chr.)",
+    timeframe: "Vision der Vollendung; kein Kalenderdatum (Entstehungszeit der Schrift häufig um 95 n. Chr. eingeordnet)",
     epoch: "urkirche", region: "judaea", books: ["Jes", "Hes", "Gal", "Hebr", "Offb"],
     relations: [
       { type: "related", target: "garten-eden", label: "Wiederkehr Edens" },
