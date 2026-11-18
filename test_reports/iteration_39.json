@@ -1,0 +1,34 @@
+{
+  "summary": "Tested the PR #8 library expansion on the frontend only (Expo web, 390x844 and 360x640, light and dark). Static tests: 6/6 pass, tsc is clean. Lexicon: 188/188 articles, 188 unique ids and titles, all 49 new ids render, and the 10 sample ids are in the list. Book filters include the new books (Hos, Am, Pred, Hld, Kla, Zef, Tit, Phlm, Offb ...). Search finds Zefanja/Zephanja, Sacharja, Ninive, Rechtfertigung (matched in article text), Kohelet (alias), Offb 5 and multi-term queries. All 49 new article pages render with sections and Bible refs, and no relation chip is disabled. Tapping a ref opens the ELB 1905 text sheet (Hos 1,1-9). Relations navigate (amos -> samaria, reichsteilung). Every expected Lernstation link is present (amos->kp-1, klagelieder->kp-7, prediger->psalms-5-* x4, hoheslied->psalms-6-* x2, sieben-siegel->rev-seals, titus->letters-more-titus, philemon->letters-more-philemon, versiegelte-144000->history-tribes-hope), and tapping discover-kp-1 opens /station/kp-1. Reverse links (station-lexicon-links) appear on rev-seals, kp-1, psalms-5-time, letters-more-titus and history-tribes-hope, and lexicon-link-sieben-siegel opens the article. Timeline: 138 unique entries, all 28 new dated ids present. The separate 'Prophetische Visionen' section holds exactly 6 entries with no calendar dates. Only 'auszug' remains, with no duplicate Exodus entry. Old entries are still there. Search and the empty state work. Thumbnails use object-fit contain. 'Im Zeitstrahl zeigen' on sieben-siegel and fall-ninives scrolls to and highlights the focused item. Favorites (old jerusalem and new hosea) persist after reload and were toggled back. /lexicon/jerusalem and /lexicon/exil still open. The abraham illustration keeps its 1:1 ratio with no crop. No page errors and no horizontal overflow at 360px. Deprecated packages detected: none.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Lexicon/Timeline search with chapter numbers", "issue": "Number tokens match any substring, so 'Offb 5' returns 17 hits including bileam, isebel, garten-eden and ezechiel ('offb' and '5' appear anywhere, e.g. 'Offb 2,15' or '1250'). 'Offb 7' on the timeline returns bileam and isebel. The feature works but returns noise. Reference: frontend/src/lib/referenceSearch.ts:6-10", "testID": "lexicon-search / timeline-search", "priority": "LOW"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Timeline (dark mode)", "issues": ["The date line ('when') uses the epoch colour on dark cards: #68558C vision is about 2.4:1 and #8A2F3C Königszeit about 1.8:1, below WCAG AA for 11.5px text. Epoch colours are deliberately the same in light and dark (timelineData.ts:53), so this predates PR #8, but the new vision colour inherits it. Reference: frontend/app/timeline.tsx:117"]},
+      {"screen": "Lexicon article / list", "issues": ["TOC chips (34px, [id].tsx:226) and plan chips (34px, index.tsx:198) are under the 44px touch target (pre-existing)", "Vision articles show 'Epoche: Urkirche' in the facts row while the timeline marks them as undated visions. Minor semantic mismatch."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/tests/library-expansion.test.mjs", "/app/tests/study-journey-expansion.test.mjs"],
+  "action_items": [
+    "(LOW) referenceSearch: for pure-number tokens, match on word boundaries or parse 'Book Chapter' queries so 'Offb 5' only hits refs in Offb 5.",
+    "(LOW, optional) Dark mode: lighten epoch/vision colours for the 'when' text, or use colors.onSurfaceSecondary for it, on the timeline cards.",
+    "(LOW, optional) articles.ts:232: expansion is concatenated last, so ARTICLE_BY_ID would let an expansion article override an existing one with the same id. No collisions today, but the doc says existing articles take precedence. Add a dedupe guard that skips expansion ids already present."
+  ],
+  "critical_code_review_comments": [
+    "articles.ts: ARTICLES = [...existing, ...expansion]. No guard against id collisions (none exist now). Fromentries makes the later entry win, the opposite of the doc's 'existing articles take precedence'.",
+    "Article discover list is capped at 4 (slice(0,4) in [id].tsx:70), so Prediger shows 4 psalms-5 stations. Fine.",
+    "Locked stations show as disabled 'noch gesperrt' cards (rev-seals for a fresh user). This is intended and not a bug.",
+    "Timeline search covers title, when, summary, aliases, refs and category, but not the article body. So 'Rechtfertigung' finds nothing on the timeline. Acceptable."
+  ],
+  "updated_files": ["/app/test_reports/iteration_39.json"],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "100% of requested flows pass; 1 low-priority search-precision issue"},
+  "seed_data_creation": "None. Favorites on jerusalem and hosea were toggled on for the persistence test and toggled off again.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Close intro with 'Überspringen' then 'Bibel entdecken'. Dark mode follows the system: use page.emulate_media(color_scheme='dark'). Clicking with force=True right after page.goto sometimes didn't register (hydration timing). Wait about 1.5s and use a normal click. Station discover testIDs are discover-<stationId>; reverse links are lexicon-link-<articleId> inside station-lexicon-links.",
+  "rca_of_issue": "Search noise: matchesReferenceSearch uses haystack.includes(word) for every token, so a single digit matches any number in the text."
+}

@@ -14,7 +14,37 @@ export const TIMELINE_YEAR: Record<string, number> = {
   pharisaeer: -150, rom: -63, "herodes-grosse": -37, "tempel-herodes": -20, maria: -7, "geburt-jesu": -6, jesus: -5,
   "johannes-taeufer": 28, "johannes-apostel": 28.4, petrus: 28.5, "hochzeit-kana": 28.8, bergpredigt: 29, sturmstillung: 29.2,
   nikodemus: 29.5, "barmherziger-samariter": 29.6, "verlorener-sohn": 29.7, lazarus: 29.9, abendmahl: 29.95, kreuzigung: 30, auferstehung: 30.1,
-  pfingsten: 30.2, paulus: 34, barnabas: 35, "johannes-markus": 45, missionsreisen: 47, "sieben-gemeinden": 95, "neues-jerusalem": 96,
+  pfingsten: 30.2, paulus: 34, barnabas: 35, "johannes-markus": 45, missionsreisen: 47, "sieben-gemeinden": 95,
+  ...{
+  "hosea": -750,
+  "amos": -760,
+  "micha": -730,
+  "nahum": -620,
+  "habakuk": -605,
+  "zefanja": -630,
+  "haggai": -520,
+  "sacharja": -519,
+  "maleachi": -450,
+  "klagelieder": -585,
+  "rehabeam": -930,
+  "jerobeam-i": -929,
+  "ahab": -870,
+  "isebel": -860,
+  "manasse-koenig": -690,
+  "serubbabel": -520,
+  "fall-ninives": -612,
+  "fall-jerusalems": -586,
+  "fall-babylons": -539,
+  "rueckkehr-exil": -538,
+  "tempelzerstoerung-70": 70,
+  "stephanus": 34,
+  "philippus-evangelist": 36,
+  "timotheus": 50,
+  "titus": 55,
+  "priska-aquila": 50,
+  "apostelkonzil": 49,
+  "patmos": 95
+},
 };
 
 export const EPOCH_ORDER = ["urgeschichte", "erzvaeter", "exodus", "koenigszeit", "exil", "nachexil", "jesus", "urkirche"] as const;
@@ -24,15 +54,40 @@ export type Epoch = (typeof EPOCH_ORDER)[number];
 export const EPOCH_STYLE: Record<Epoch, { color: string; span: string; icon: string }> = {
   urgeschichte: { color: "#5E7F6B", span: "vor aller datierbaren Geschichte", icon: "sun" },
   erzvaeter: { color: "#C28E3A", span: "ca. 2000–1600 v. Chr. (unsicher)", icon: "moon" },
-  exodus: { color: "#D97736", span: "ca. 1500–1100 v. Chr. (umstritten)", icon: "navigation" },
+  exodus: { color: "#D97736", span: "ca. 1500–1050 v. Chr. (umstritten)", icon: "navigation" },
   koenigszeit: { color: "#8A2F3C", span: "ca. 1050–587 v. Chr.", icon: "award" },
   exil: { color: "#4A5E8C", span: "597–539 v. Chr.", icon: "cloud-rain" },
-  nachexil: { color: "#2F6F6A", span: "539 v. Chr. – Zeitenwende", icon: "home" },
+  nachexil: { color: "#2F6F6A", span: "539 v. Chr. – ca. 6 v. Chr.", icon: "home" },
   jesus: { color: "#B9802F", span: "ca. 6 v. Chr. – 30/33 n. Chr.", icon: "star" },
   urkirche: { color: "#7E5B82", span: "ab 30/33 n. Chr.", icon: "users" },
 };
 
-export const epochOfYear = (y: number): Epoch => (y >= 31 ? "urkirche" : y >= -63 ? "jesus" : y >= -539 ? "nachexil" : y >= -597 ? "exil" : y >= -1050 ? "koenigszeit" : y >= -1500 ? "exodus" : y >= -2100 ? "erzvaeter" : "urgeschichte");
+export const epochOfYear = (y: number): Epoch => (y >= 31 ? "urkirche" : y >= -6 ? "jesus" : y >= -539 ? "nachexil" : y >= -597 ? "exil" : y >= -1050 ? "koenigszeit" : y >= -1500 ? "exodus" : y >= -2100 ? "erzvaeter" : "urgeschichte");
 
 /** Grobe Sortierjahre je Epoche für Artikel ohne eigenes Jahr (z. B. Orte). */
 export const EPOCH_FALLBACK: Record<Epoch, number> = { urgeschichte: -4000, erzvaeter: -1800, exodus: -1250, koenigszeit: -900, exil: -570, nachexil: -400, jesus: 28, urkirche: 60 };
+
+// The order of the visions is a reading order, not a prediction calendar.
+export const TIMELINE_VISION_IDS = ["sieben-siegel", "versiegelte-144000", "malzeichen-tier", "babylon-offenbarung", "tausendjaehriges-reich", "neues-jerusalem"] as const;
+export type TimelineEpoch = Epoch | "vision";
+export const TIMELINE_EPOCH_ORDER: readonly TimelineEpoch[] = [...EPOCH_ORDER, "vision"];
+export const TIMELINE_EPOCH_STYLE: Record<TimelineEpoch, { color: string; span: string; icon: string }> = {
+  ...EPOCH_STYLE, vision: { color: "#68558C", span: "Leseordnung der Offenbarung · keine Kalenderdatierung", icon: "eye" },
+};
+export function isVision(id: string): boolean { return (TIMELINE_VISION_IDS as readonly string[]).includes(id); }
+export function isTimelineEntry(id: string): boolean { return TIMELINE_YEAR[id] !== undefined || isVision(id); }
+export type TimelineContext = "history" | "bible" | "literary" | "vision";
+const HISTORICAL = new Set(["fall-samarias", "fall-ninives", "fall-jerusalems", "fall-babylons", "tempelzerstoerung-70", "kreuzigung"]);
+const LITERARY = new Set(["barmherziger-samariter", "verlorener-sohn", "bergpredigt", "gottesknecht", "klagelieder"]);
+export function timelineContext(id: string): TimelineContext {
+  if (isVision(id)) return "vision";
+  if (HISTORICAL.has(id)) return "history";
+  if (LITERARY.has(id)) return "literary";
+  return "bible";
+}
+export const TIMELINE_CONTEXT_LABEL: Record<TimelineContext, string> = {
+  history: "Historischer Anker",
+  bible: "Biblischer Zusammenhang · zeitliche Einordnung",
+  literary: "Lehrtext / Dichtung · keine Ereignisdatierung",
+  vision: "Prophetische Vision · undatiert",
+};

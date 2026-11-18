@@ -1,0 +1,427 @@
+{
+  "id": "history-tribes",
+  "worldId": "history",
+  "title": "Die zwölf Stämme Israels",
+  "book": "Jos",
+  "intro": "Vom Stammbaum Jakobs zur Landverteilung und zur Aufnahme der Stämme in prophetischen und neutestamentlichen Texten.",
+  "mapW": 1000,
+  "mapH": 1280,
+  "stations": [
+    {
+      "id": "history-tribes-family",
+      "title": "Von Jakob zu Israel: Die zwölf Söhne",
+      "subtitle": "1Mo 29–35; 48–49 · Familie und Verheißung",
+      "type": "study",
+      "icon": "git-branch",
+      "x": 500,
+      "y": 1110,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Jakob erhält den Namen Israel. Seine zwölf Söhne bilden die familiäre Grundlage der Stammesüberlieferung: Lea bringt Ruben, Simeon, Levi, Juda, Issachar und Sebulon zur Welt; Rahel Josef und Benjamin; Bilha Dan und Naftali; Silpa Gad und Asser. Genesis erzählt keine konfliktfreie Familie: Konkurrenz, Bevorzugung und Gewalt begleiten die Geschichten. Jakob behandelt später Josefs Söhne Ephraim und Manasse wie eigene Söhne. Seine Worte in Genesis 49 verbinden die Figuren mit späteren Stammesbildern.",
+      "readings": [
+        {
+          "book": "1Mo",
+          "ch": 29,
+          "from": 31,
+          "to": 35
+        },
+        {
+          "book": "1Mo",
+          "ch": 30,
+          "from": 1,
+          "to": 24
+        },
+        {
+          "book": "1Mo",
+          "ch": 35,
+          "from": 16,
+          "to": 26
+        },
+        {
+          "book": "1Mo",
+          "ch": 48,
+          "from": 8,
+          "to": 20
+        },
+        {
+          "book": "1Mo",
+          "ch": 49,
+          "from": 1,
+          "to": 28
+        }
+      ],
+      "terms": [
+        {
+          "term": "Israel",
+          "explanation": "Der Name Jakobs und in späteren Texten des aus seinen Nachkommen hervorgehenden Volkes."
+        },
+        {
+          "term": "Ephraim und Manasse",
+          "explanation": "Josefs Söhne, die Jakob nach 1Mo 48,5 wie eigene Söhne behandelt."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Genealogien können in den antiken Texten sowohl Herkunft als auch Zugehörigkeit und politische Beziehungen ausdrücken. Die Entstehung der Stammesgruppen lässt sich historisch nicht als lückenlose Familienchronik rekonstruieren."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Verheißung an Juda in 1Mo 49,8–12 wird in jüdischen und christlichen Traditionen königlich beziehungsweise messianisch gelesen. Offb 5,5 greift das Löwenbild aus Juda auf."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "history-tribes-family-t1",
+          "type": "mc",
+          "question": "Welche beiden Söhne stammen von Rahel?",
+          "options": [
+            "Dan und Naftali",
+            "Gad und Asser",
+            "Josef und Benjamin"
+          ],
+          "answer": 2,
+          "explain": "Josef und Benjamin. Siehe 1Mo 35,24.",
+          "ref": "1Mo 35,24"
+        },
+        {
+          "id": "history-tribes-family-t2",
+          "type": "tf",
+          "statement": "Die Stammfamilie wird ohne Konflikte beschrieben.",
+          "answer": false,
+          "explain": "Die Geschichten berichten Rivalität und Bevorzugung.",
+          "ref": "1Mo 29,30–35; 30,1–24"
+        },
+        {
+          "id": "history-tribes-family-t3",
+          "type": "free",
+          "question": "Warum ist es wichtig, die Stammesverheißung nicht mit moralischer Fehlerlosigkeit der Familie zu verwechseln?",
+          "model": "Gottes Verheißung steht neben den sehr menschlichen Konflikten, die Genesis offen erzählt.",
+          "ref": "1Mo 35,24"
+        }
+      ],
+      "exam": [
+        {
+          "id": "history-tribes-family-e1",
+          "type": "mc",
+          "question": "Welche Söhne Josefs erhalten eine besondere Stellung?",
+          "options": [
+            "Ruben und Simeon",
+            "Juda und Levi",
+            "Ephraim und Manasse"
+          ],
+          "answer": 2,
+          "explain": "Ephraim und Manasse. Siehe 1Mo 48,5.",
+          "ref": "1Mo 48,5"
+        },
+        {
+          "id": "history-tribes-family-e2",
+          "type": "tf",
+          "statement": "Der Name Israel wird Jakob gegeben.",
+          "answer": true,
+          "explain": "1Mo 35,10 nennt die Namensgebung.",
+          "ref": "1Mo 35,10"
+        }
+      ],
+      "reflection": [
+        "Warum ist es wichtig, die Stammesverheißung nicht mit moralischer Fehlerlosigkeit der Familie zu verwechseln?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [
+        {
+          "from": "1Mo 49,9–10",
+          "to": "Offb 5,5",
+          "kind": "allusion",
+          "note": "Die Offenbarung greift das königliche Löwenbild Judas auf."
+        }
+      ],
+      "summary": "Gottes Verheißung steht neben den sehr menschlichen Konflikten, die Genesis offen erzählt."
+    },
+    {
+      "id": "history-tribes-land",
+      "title": "Die Landverteilung und die Städte Levis",
+      "subtitle": "Jos 13–22 · Verheißung, Erbe und Verantwortung",
+      "type": "study",
+      "icon": "map",
+      "x": 765,
+      "y": 870,
+      "requires": [
+        "history-tribes-family"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Ruben, Gad und ein Teil Manasses erhalten Gebiete östlich des Jordan. Die übrige Landverteilung wird in Josua 13–19 beschrieben. Juda und Josef erhalten große Anteile, Benjamin und weitere Stämme folgen. Levi erhält kein geschlossenes Stammesland wie die anderen, sondern Städte und Weidegebiete. Die Zufluchtsstädte schützen Menschen vor vorschneller Blutrache nach einer unbeabsichtigten Tötung bis zu geregelter Klärung. Josua 22 erzählt den Konflikt um einen Altar östlich des Jordan und dessen friedliche Klärung.",
+      "readings": [
+        {
+          "book": "4Mo",
+          "ch": 32,
+          "from": 1,
+          "to": 27
+        },
+        {
+          "book": "Jos",
+          "ch": 13,
+          "from": 8,
+          "to": 14
+        },
+        {
+          "book": "Jos",
+          "ch": 14,
+          "from": 1,
+          "to": 5
+        },
+        {
+          "book": "Jos",
+          "ch": 18,
+          "from": 1,
+          "to": 10
+        },
+        {
+          "book": "Jos",
+          "ch": 20,
+          "from": 1,
+          "to": 9
+        },
+        {
+          "book": "Jos",
+          "ch": 21,
+          "from": 1,
+          "to": 8
+        }
+      ],
+      "terms": [
+        {
+          "term": "Erbteil",
+          "explanation": "Der einem Stamm zugeordnete Landanteil."
+        },
+        {
+          "term": "Zufluchtsstadt",
+          "explanation": "Ort des Schutzes und der rechtlichen Klärung bei unbeabsichtigter Tötung."
+        },
+        {
+          "term": "Levitenstädte",
+          "explanation": "Wohnorte Levis innerhalb der Gebiete anderer Stämme."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die in Josua beschriebenen Grenzen sind schematisch zu rekonstruieren, nicht mit modernen Staatsgrenzen gleichzusetzen. Archäologie und Forschung diskutieren die Landnahme und die Entwicklung Israels im Land."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Landgabe ist im Buch mit Bundestreue und Verantwortung verbunden. Die Stammeslisten zählen je nach Zweck unterschiedlich; in Landlisten stehen Ephraim und Manasse häufig für Josef, während Levi eine Sonderstellung hat."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "history-tribes-land-t1",
+          "type": "mc",
+          "question": "Welche Gruppen erhalten Land östlich des Jordan?",
+          "options": [
+            "Ruben, Gad und ein halber Stamm Manasse",
+            "Levi, Juda und Dan",
+            "Alle Stämme Israels"
+          ],
+          "answer": 0,
+          "explain": "Ruben, Gad und ein halber Stamm Manasse. Siehe Jos 13,8–13.",
+          "ref": "Jos 13,8–13"
+        },
+        {
+          "id": "history-tribes-land-t2",
+          "type": "tf",
+          "statement": "Zufluchtsstädte dienen dem Schutz bis zur rechtlichen Klärung.",
+          "answer": true,
+          "explain": "Jos 20 beschreibt diesen Schutz bei unbeabsichtigter Tötung.",
+          "ref": "Jos 20,2–6"
+        },
+        {
+          "id": "history-tribes-land-t3",
+          "type": "free",
+          "question": "Welche Verantwortung verbindet Josua mit dem Empfang des Landes?",
+          "model": "Das Land wird als Gabe verstanden; Zusammenleben, Recht und Bundestreue bleiben Aufgabe des Volkes.",
+          "ref": "Jos 13,8–13"
+        }
+      ],
+      "exam": [
+        {
+          "id": "history-tribes-land-e1",
+          "type": "mc",
+          "question": "Welche Sonderstellung besitzt Levi?",
+          "options": [
+            "Städte statt eines geschlossenen Stammesgebiets",
+            "Das ganze Land allein",
+            "Keine Zugehörigkeit zu Israel"
+          ],
+          "answer": 0,
+          "explain": "Städte statt eines geschlossenen Stammesgebiets. Siehe Jos 14,3–4; 21,1–8.",
+          "ref": "Jos 14,3–4; 21,1–8"
+        },
+        {
+          "id": "history-tribes-land-e2",
+          "type": "tf",
+          "statement": "Alle Stammesgrenzen sind für jede Epoche unveränderlich.",
+          "answer": false,
+          "explain": "Die biblischen Listen und späteren Geschichtserzählungen haben unterschiedliche Kontexte.",
+          "ref": "Jos 19,47; Ri 18"
+        }
+      ],
+      "reflection": [
+        "Welche Verantwortung verbindet Josua mit dem Empfang des Landes?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Das Land wird als Gabe verstanden; Zusammenleben, Recht und Bundestreue bleiben Aufgabe des Volkes."
+    },
+    {
+      "id": "history-tribes-hope",
+      "title": "Die Stämme nach der Teilung und in der Hoffnung",
+      "subtitle": "1Kö 12; Hes 37; Offb 7; 21",
+      "type": "study",
+      "icon": "layers",
+      "x": 716,
+      "y": 630,
+      "requires": [
+        "history-tribes-land"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Nach Salomos Tod zerfällt das Königreich. Die Texte sprechen vom Nordreich Israel und dem Südreich Juda; die Stammeswirklichkeit ist komplexer als eine starre Aufteilung in zehn und zwei. Die assyrische Eroberung führt zur Deportation von Teilen der Bevölkerung des Nordreichs. Hesekiel zeigt die Hoffnung auf ein vereinigtes Volk durch zwei Hölzer, Juda und Josef/Ephraim. Jesus spricht von den zwölf Stämmen in Verbindung mit den Jüngern. Offenbarung 7 nennt eine eigene Stammesliste: Juda steht zuerst, Dan fehlt, Levi und Josef kommen vor. In Offenbarung 21 stehen Stammesnamen auf den Toren und Apostelnamen auf den Grundlagen.",
+      "readings": [
+        {
+          "book": "1Kö",
+          "ch": 12,
+          "from": 16,
+          "to": 24
+        },
+        {
+          "book": "2Kö",
+          "ch": 17,
+          "from": 6,
+          "to": 23
+        },
+        {
+          "book": "Hes",
+          "ch": 37,
+          "from": 15,
+          "to": 28
+        },
+        {
+          "book": "Mt",
+          "ch": 19,
+          "from": 28,
+          "to": 28
+        },
+        {
+          "book": "Offb",
+          "ch": 7,
+          "from": 4,
+          "to": 8
+        },
+        {
+          "book": "Offb",
+          "ch": 21,
+          "from": 12,
+          "to": 14
+        }
+      ],
+      "terms": [
+        {
+          "term": "Nordreich",
+          "explanation": "Das nach der Reichsteilung Israel genannte Königreich."
+        },
+        {
+          "term": "Zwei Hölzer",
+          "explanation": "Zeichen der verheißenen Vereinigung von Juda und Josef/Ephraim."
+        },
+        {
+          "term": "Stammeslisten",
+          "explanation": "Aufzählungen mit verschiedenen literarischen und theologischen Funktionen."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Das Nordreich endete 722/721 v. Chr. Die Deportationen betrafen nicht alle Bewohner; einfache Herkunftsbehauptungen über heutige Völker sind nicht nachweisbar."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Hesekiels Wiedervereinigung ist im Exilzusammenhang zu lesen. Die Stammesliste und 144.000 in Offb 7 werden unterschiedlich gedeutet; sie rechtfertigen keine moderne Zuordnung ethnischer Gruppen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "history-tribes-hope-t1",
+          "type": "mc",
+          "question": "Was symbolisieren die zwei Hölzer in Hesekiel?",
+          "options": [
+            "Zwei neue Tempel ohne Verbindung",
+            "Die Vereinigung Judas und Josefs/Israels",
+            "Den endgültigen Verlust aller Stämme"
+          ],
+          "answer": 1,
+          "explain": "Die Vereinigung Judas und Josefs/Israels. Siehe Hes 37,16–22.",
+          "ref": "Hes 37,16–22"
+        },
+        {
+          "id": "history-tribes-hope-t2",
+          "type": "tf",
+          "statement": "Offenbarung 21 verbindet die Tore mit den Stämmen Israels.",
+          "answer": true,
+          "explain": "Die Namen der zwölf Stämme stehen an den Toren.",
+          "ref": "Offb 21,12"
+        },
+        {
+          "id": "history-tribes-hope-t3",
+          "type": "free",
+          "question": "Warum kann die Zahl zwölf in verschiedenen Texten eine gemeinsame Bedeutung haben, obwohl die Namen nicht immer gleich sind?",
+          "model": "Die Zahl verbindet das Volk mit seiner Herkunft und Vollständigkeit; jede Liste muss im eigenen Zweck gelesen werden.",
+          "ref": "Hes 37,16–22"
+        }
+      ],
+      "exam": [
+        {
+          "id": "history-tribes-hope-e1",
+          "type": "mc",
+          "question": "Welcher Stamm fehlt in der Liste von Offb 7?",
+          "options": [
+            "Juda",
+            "Dan",
+            "Benjamin"
+          ],
+          "answer": 1,
+          "explain": "Dan. Siehe Offb 7,4–8.",
+          "ref": "Offb 7,4–8"
+        },
+        {
+          "id": "history-tribes-hope-e2",
+          "type": "tf",
+          "statement": "Alle biblischen Stammeslisten sind in Reihenfolge und Zusammensetzung identisch.",
+          "answer": false,
+          "explain": "Offb 7 unterscheidet sich etwa von 1Mo 35 und den Landlisten Josuas.",
+          "ref": "Offb 7,4–8; 1Mo 35,22–26"
+        }
+      ],
+      "reflection": [
+        "Warum kann die Zahl zwölf in verschiedenen Texten eine gemeinsame Bedeutung haben, obwohl die Namen nicht immer gleich sind?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [
+        {
+          "from": "Hes 37,15–28",
+          "to": "Offb 21,12–14",
+          "kind": "theme",
+          "note": "Beide Visionen verbinden Gottes Zukunft mit der Geschichte Israels; nicht identische Prophezeiungen."
+        }
+      ],
+      "summary": "Die Zahl verbindet das Volk mit seiner Herkunft und Vollständigkeit; jede Liste muss im eigenen Zweck gelesen werden."
+    }
+  ]
+}

@@ -1,0 +1,3274 @@
+[
+  {
+    "id": "hosea",
+    "kind": "person",
+    "title": "Hosea",
+    "aliases": [
+      "Hoschea"
+    ],
+    "category": "Prophet des Nordreichs",
+    "summary": "Hosea verbindet Israels Untreue mit der Hoffnung auf Gottes erneuerte Zuwendung.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Seine Familiengeschichte wird in Hos 1–3 zum Zeichen für das Verhältnis zwischen Gott und Israel. Die Namen der Kinder stellen Gericht und später erneuerte Zugehörigkeit dar. Hos 3,4–5 kündigt eine Zeit ohne König und Opfer sowie eine spätere Suche nach dem HERRN und David, ihrem König, an."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Hos 11 beschreibt Gottes Liebe zu Israel und die Spannung zwischen Gericht und Erbarmen. Matthäus nimmt Hos 11,1 in Mt 2,15 auf; Jesu Wort über Barmherzigkeit greift Hos 6,6 auf (Mt 9,13)."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Verheißung in Hos 3,5 besitzt eine davidische Hoffnung; jüdische und christliche Auslegungen unterscheiden sich in ihrer messianischen Konkretisierung."
+      }
+    ],
+    "refs": [
+      "Hos 1,1–9",
+      "Hos 2,16–23",
+      "Hos 3,1–5",
+      "Hos 6,6",
+      "Hos 11,1–9",
+      "Hos 14,2–9"
+    ],
+    "timeframe": "8. Jh. v. Chr.; nach Hos 1,1",
+    "epoch": "koenigszeit",
+    "region": "kanaan",
+    "books": [
+      "Hos"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "samaria"
+      },
+      {
+        "type": "related",
+        "target": "reichsteilung"
+      },
+      {
+        "type": "related",
+        "target": "davidsbund"
+      }
+    ],
+    "stationIds": [
+      "prophets-7"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "joel",
+    "kind": "person",
+    "title": "Joel",
+    "aliases": [
+      "Joël",
+      "Joel, Sohn Pethuels"
+    ],
+    "category": "Prophet und Buch",
+    "summary": "Joel ruft angesichts einer verheerenden Not zur Umkehr auf und verkündet Gottes Geist und den Tag des HERRN.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Heuschreckenplage, Ernteverlust und Klage prägen den Anfang. In Joel 2 steht die innere Umkehr vor äußerer Geste; die Gemeinschaft wird zum Gebet gerufen."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Joel 3,1–5 kündigt die Ausgießung des Geistes auf unterschiedliche Menschen an. Petrus deutet das Pfingstgeschehen mit diesem Text (Apg 2,16–21)."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die genaue Zeit der Verkündigung und das Verhältnis der Heuschreckenbilder zum Gericht sind umstritten. Deshalb erhält Joel kein scheinbar sicheres Kalenderjahr."
+      }
+    ],
+    "refs": [
+      "Joel 1,1–14",
+      "Joel 2,12–17",
+      "Joel 3,1–5",
+      "Apg 2,14–21"
+    ],
+    "timeframe": "Datierung umstritten; literarischer Bezug zu Juda und Jerusalem",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "Joel",
+      "Apg"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "pfingsten"
+      },
+      {
+        "type": "related",
+        "target": "jerusalem"
+      }
+    ],
+    "stationIds": [
+      "prophets-10"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "amos",
+    "kind": "person",
+    "title": "Amos",
+    "aliases": [
+      "Amos aus Tekoa"
+    ],
+    "category": "Prophet der Gerechtigkeit",
+    "summary": "Amos kritisiert religiöse Selbstsicherheit, Ausbeutung und Rechtsbeugung im Nordreich.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Aus Tekoa kommend, spricht Amos auch in Bethel. Er warnt Israel, dass Festfeiern ohne Gerechtigkeit keinen Ersatz für gelebte Treue bilden. Der Priester Amazja versucht, seine Verkündigung zu unterbinden."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Am 9,11–15 verbindet das Buch mit Wiederherstellung und der Hütte Davids. Jakobus nimmt die Verheißung in Apg 15 auf, als die Aufnahme der Völker diskutiert wird."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Am 5,21–24 kritisiert Kult in Verbindung mit Unrecht, nicht pauschal jedes religiöse Fest. Die Botschaft verlangt Schutz der Schwachen und gerechte Rechtsverhältnisse."
+      }
+    ],
+    "refs": [
+      "Am 1,1–2",
+      "Am 2,6–8",
+      "Am 5,10–24",
+      "Am 7,10–17",
+      "Am 9,11–15",
+      "Apg 15,15–18"
+    ],
+    "timeframe": "8. Jh. v. Chr.; Usija und Jerobeam II. nach Am 1,1",
+    "epoch": "koenigszeit",
+    "region": "kanaan",
+    "books": [
+      "Am",
+      "Apg"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "samaria"
+      },
+      {
+        "type": "related",
+        "target": "reichsteilung"
+      },
+      {
+        "type": "related",
+        "target": "davidsbund"
+      }
+    ],
+    "stationIds": [
+      "kp-1"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "obadja",
+    "kind": "person",
+    "title": "Obadja",
+    "aliases": [
+      "Obadiah",
+      "Obadja, Prophet"
+    ],
+    "category": "Prophet gegen Edom",
+    "summary": "Das kürzeste Buch des Alten Testaments klagt Edom wegen Hochmut und der Beteiligung an Judas Not an.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Obadja stellt die Sicherheit der Felsenfestungen Edoms infrage. Nicht nur offene Gewalt, auch Schadenfreude, Plünderung und das Ausliefern von Flüchtenden werden getadelt."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Der Tag des HERRN weitet die Gerichtsperspektive auf die Völker aus; das Buch schließt mit Zion und Gottes Königsherrschaft."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Der Anlass wird häufig mit Jerusalems Zerstörung verbunden, ist aber nicht zweifelsfrei datierbar. Der Text darf nicht zur Feindseligkeit gegen heutige Bevölkerungsgruppen benutzt werden."
+      }
+    ],
+    "refs": [
+      "Obd 1,1–9",
+      "Obd 1,10–15",
+      "Obd 1,16–21"
+    ],
+    "timeframe": "Bezug auf Jerusalems Unglück; Datierung umstritten",
+    "epoch": "exil",
+    "region": "kanaan",
+    "books": [
+      "Obd"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "esau-edom"
+      },
+      {
+        "type": "related",
+        "target": "exil"
+      },
+      {
+        "type": "related",
+        "target": "jerusalem"
+      }
+    ],
+    "stationIds": [
+      "kp-2"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "micha",
+    "kind": "person",
+    "title": "Micha",
+    "aliases": [
+      "Micha aus Moreschet",
+      "Micah"
+    ],
+    "category": "Prophet in Juda",
+    "summary": "Micha verbindet Kritik an Unrecht mit Hoffnung auf Frieden und einen kommenden Herrscher aus Bethlehem.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Micha kritisiert diejenigen, die Häuser und Felder an sich reißen, und Führende, die Recht und Gotteswort für Gewinn missbrauchen. Mi 6,8 fasst die Forderung nach Recht, Güte und demütigem Wandel mit Gott zusammen."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Mi 5 kündigt einen Herrscher aus Bethlehem an. Mt 2,5–6 nimmt die Verheißung im Zusammenhang der Geburt Jesu auf."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die ursprüngliche Situation Judas und die spätere messianische Aufnahme im Neuen Testament sind voneinander zu unterscheiden."
+      }
+    ],
+    "refs": [
+      "Mi 1,1–5",
+      "Mi 3,9–12",
+      "Mi 5,1–4",
+      "Mi 6,6–8",
+      "Mi 7,18–20",
+      "Mt 2,5–6"
+    ],
+    "timeframe": "8. Jh. v. Chr.; Jotam, Ahas und Hiskia nach Mi 1,1",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "Mi",
+      "Mt"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "bethlehem"
+      },
+      {
+        "type": "related",
+        "target": "hiskia"
+      },
+      {
+        "type": "related",
+        "target": "jesaja"
+      }
+    ],
+    "stationIds": [
+      "prophets-5"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "nahum",
+    "kind": "person",
+    "title": "Nahum",
+    "aliases": [
+      "Nahum aus Elkosch"
+    ],
+    "category": "Prophet gegen Ninive",
+    "summary": "Nahum verkündet den Zusammenbruch des gewalttätigen Ninive und Gottes Schutz für Bedrängte.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Nah 1 beschreibt Gottes Macht und Geduld; die folgenden Gedichte schildern den Sturz der Stadt. Blutvergießen, Täuschung und Raub gehören zur Anklage."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Ninive fiel 612 v. Chr. Das Nebeneinander von Jona und Nahum eröffnet einen Vergleich von Umkehr, Barmherzigkeit und Gericht."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die prophetische Hoffnung auf Gottes Gerechtigkeit ist keine Erlaubnis zur persönlichen Vergeltung. Die genaue Entstehungszeit und Redaktion des Buches bleiben diskutiert."
+      }
+    ],
+    "refs": [
+      "Nah 1,1–8",
+      "Nah 2,1–13",
+      "Nah 3,1–7"
+    ],
+    "timeframe": "7. Jh. v. Chr.; vor oder im Umfeld des Falls Ninives",
+    "epoch": "koenigszeit",
+    "region": "mesopotamien",
+    "books": [
+      "Nah"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "ninive"
+      },
+      {
+        "type": "related",
+        "target": "jona"
+      },
+      {
+        "type": "related",
+        "target": "assyrien"
+      },
+      {
+        "type": "related",
+        "target": "fall-ninives"
+      }
+    ],
+    "stationIds": [
+      "kp-4"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden.",
+      "Encyclopaedia Iranica, Babylonian Chronicles: https://www.iranicaonline.org/articles/babylonian-chronicles/"
+    ]
+  },
+  {
+    "id": "habakuk",
+    "kind": "person",
+    "title": "Habakuk",
+    "aliases": [
+      "Habakkuk"
+    ],
+    "category": "Prophet der Fragen und des Vertrauens",
+    "summary": "Habakuk fragt nach Gottes Gerechtigkeit angesichts von Gewalt und lernt, auf Gottes Antwort zu warten.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die angekündigte Macht der Chaldäer führt zu einer weiteren Frage: Wie kann eine grausame Macht dem Gericht dienen? Hab 2 stellt dem Hochmut die Treue des Gerechten gegenüber und verurteilt Ausbeutung."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Hab 3 endet mit Vertrauen trotz ausbleibender Ernte. Hab 2,4 wird im NT in unterschiedlichen Zusammenhängen aufgegriffen (Röm 1,17; Gal 3,11; Hebr 10,38)."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Der Text erlaubt ehrliche Fragen. Vertrauen bedeutet nicht, Leid zu verschweigen oder jede geschichtliche Entwicklung als verständliche Antwort zu betrachten."
+      }
+    ],
+    "refs": [
+      "Hab 1,1–17",
+      "Hab 2,1–5",
+      "Hab 2,6–20",
+      "Hab 3,16–19",
+      "Röm 1,17",
+      "Gal 3,11"
+    ],
+    "timeframe": "Späte Königszeit; genaue Datierung unsicher",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "Hab",
+      "Röm",
+      "Gal"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "babylonien"
+      },
+      {
+        "type": "related",
+        "target": "jeremia"
+      },
+      {
+        "type": "related",
+        "target": "glaube"
+      }
+    ],
+    "stationIds": [
+      "kp-5"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "zefanja",
+    "kind": "person",
+    "title": "Zefanja",
+    "aliases": [
+      "Zephanja",
+      "Zephaniah"
+    ],
+    "category": "Prophet zur Zeit Josias",
+    "summary": "Zefanja warnt vor dem Tag des HERRN und verheißt Erneuerung für ein demütiges Volk.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Götzendienst, Selbstsicherheit und korrupte Führung werden getadelt. Zef 2 ruft zur Suche nach dem HERRN, Gerechtigkeit und Demut auf."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Zef 3 verbindet Gericht mit Sammlung, Freude und Gottes Fürsorge für Bedrängte. Das Buch endet mit Hoffnung, nicht bloß mit Drohung."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Gerichtsbilder werden in unterschiedlichen endzeitlichen Lesarten aufgenommen. Der Text liefert keinen berechenbaren Termin für moderne Ereignisse."
+      }
+    ],
+    "refs": [
+      "Zef 1,1–18",
+      "Zef 2,1–3",
+      "Zef 3,1–13",
+      "Zef 3,14–20"
+    ],
+    "timeframe": "7. Jh. v. Chr.; Regierungszeit Josias nach Zef 1,1",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "Zef"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "josia"
+      },
+      {
+        "type": "related",
+        "target": "jerusalem"
+      }
+    ],
+    "stationIds": [
+      "kp-6"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "haggai",
+    "kind": "person",
+    "title": "Haggai",
+    "aliases": [
+      "Hagai",
+      "Chaggai"
+    ],
+    "category": "Prophet des Tempelwiederaufbaus",
+    "summary": "Haggai ermutigt die zurückgekehrte Gemeinschaft zum Wiederaufbau des Tempels.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Nach Hag 1 sind private Häuser bereits wichtig geworden, während das Haus Gottes verwüstet liegt. Serubbabel, Josua und das Volk reagieren auf den Ruf."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Hag 2 spricht über Gottes Gegenwart, die künftige Herrlichkeit des Hauses und Serubbabel als Siegelring."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Worte richten sich an eine konkrete nachexilische Gemeinschaft. Sie sind keine pauschale Garantie finanziellen Gewinns für heutige Bauprojekte."
+      }
+    ],
+    "refs": [
+      "Hag 1,1–15",
+      "Hag 2,1–9",
+      "Hag 2,20–23",
+      "Esr 5,1–2"
+    ],
+    "timeframe": "520 v. Chr.; zweites Regierungsjahr des Darius nach Hag 1,1",
+    "epoch": "nachexil",
+    "region": "judaea",
+    "books": [
+      "Hag",
+      "Esr"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "zweiter-tempel"
+      },
+      {
+        "type": "related",
+        "target": "esra"
+      },
+      {
+        "type": "related",
+        "target": "sacharja"
+      },
+      {
+        "type": "related",
+        "target": "serubbabel"
+      }
+    ],
+    "stationIds": [
+      "prophets-9"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "sacharja",
+    "kind": "person",
+    "title": "Sacharja",
+    "aliases": [
+      "Zacharja",
+      "Zechariah"
+    ],
+    "category": "Prophet der Wiederherstellung",
+    "summary": "Sacharja verbindet Umkehr und Tempelwiederaufbau mit Visionen über Gottes kommende Herrschaft.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Visionen von Pferden, einem Leuchter und dem Hohenpriester Josua bilden die ersten Kapitel. Sach 4 ermutigt Serubbabel, dass das Werk nicht durch menschliche Macht allein geschieht."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Sach 9,9 beschreibt den demütigen König; Mt 21,4–5 nimmt die Stelle beim Einzug Jesu in Jerusalem auf. Auch Sach 12–14 prägt spätere Auslegung."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Sach 1–8 steht im Umfeld der Rückkehr, die Entstehung von Sach 9–14 ist umstritten. Visionen und Bilder nicht vorschnell mit heutigen Ereignissen identifizieren."
+      }
+    ],
+    "refs": [
+      "Sach 1,1–6",
+      "Sach 3,1–10",
+      "Sach 4,1–14",
+      "Sach 9,9–10",
+      "Sach 12,10",
+      "Mt 21,4–5"
+    ],
+    "timeframe": "Ab 520 v. Chr.; spätere Buchteile zeitlich umstritten",
+    "epoch": "nachexil",
+    "region": "judaea",
+    "books": [
+      "Sach",
+      "Mt"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "haggai"
+      },
+      {
+        "type": "related",
+        "target": "zweiter-tempel"
+      },
+      {
+        "type": "related",
+        "target": "serubbabel"
+      }
+    ],
+    "stationIds": [
+      "prophets-6"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "maleachi",
+    "kind": "person",
+    "title": "Maleachi",
+    "aliases": [
+      "Malachi",
+      "Mal'achi"
+    ],
+    "category": "Prophet des Bundes",
+    "summary": "Maleachi ruft Priester und Volk zu Bundestreue, gerechtem Gottesdienst und Umkehr auf.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Der Prophet kritisiert geringgeschätzte Opfer, untreue Beziehungen und Missachtung des Rechts. Die Gespräche des Buches bestehen häufig aus Anklage und Gegenfrage."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Mal 3 spricht vom kommenden Boten und von Elia vor dem Tag des HERRN. Jesus verbindet die Boten-Erwartung mit Johannes dem Täufer."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Der hebräische Buchname kann als 'mein Bote' verstanden werden. Ob er ein Eigenname ist, bleibt offen; die Kapitelzählung variiert zwischen Übersetzungen."
+      }
+    ],
+    "refs": [
+      "Mal 1,6–14",
+      "Mal 2,10–16",
+      "Mal 3,1–7",
+      "Mal 4,5–6",
+      "Mt 11,10–14"
+    ],
+    "timeframe": "Perserzeit nach Wiederaufbau des Tempels; genaue Datierung unsicher",
+    "epoch": "nachexil",
+    "region": "judaea",
+    "books": [
+      "Mal",
+      "Mt"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "zweiter-tempel"
+      },
+      {
+        "type": "related",
+        "target": "elia"
+      },
+      {
+        "type": "related",
+        "target": "johannes-taeufer"
+      }
+    ],
+    "stationIds": [
+      "prophets-8"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "klagelieder",
+    "kind": "term",
+    "title": "Das Buch der Klagelieder",
+    "aliases": [
+      "Klagelieder Jeremias",
+      "Echa",
+      "Lamentationen"
+    ],
+    "category": "Klageliteratur",
+    "summary": "Fünf Gedichte bringen Jerusalems Verlust, Schuld, Verlassenheit und Hoffnung vor Gott.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die Stadt erscheint als trauernde Frau. Hunger, Gewalt und Verlust werden nicht verschwiegen; mehrere Gedichte sind alphabetisch gestaltet."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Kla 3 erinnert mitten in der Not an Gottes Barmherzigkeit. Kla 5 endet mit der Bitte um Wiederherstellung und einer offenen Frage."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Zuschreibung an Jeremia ist Tradition, im hebräischen Buch wird kein Verfasser genannt. Kollektive Gerichtsaussagen rechtfertigen keine Schuldzuweisung an jeden individuell Leidenden."
+      }
+    ],
+    "refs": [
+      "Kla 1,1–12",
+      "Kla 2,10–19",
+      "Kla 3,19–33",
+      "Kla 5,15–22"
+    ],
+    "timeframe": "Nach der Zerstörung Jerusalems 587/586 v. Chr.; genaue Entstehung unsicher",
+    "epoch": "exil",
+    "region": "judaea",
+    "books": [
+      "Kla"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "jeremia"
+      },
+      {
+        "type": "related",
+        "target": "exil"
+      },
+      {
+        "type": "related",
+        "target": "fall-jerusalems"
+      }
+    ],
+    "stationIds": [
+      "kp-7"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "prediger",
+    "kind": "term",
+    "title": "Das Buch Prediger",
+    "aliases": [
+      "Kohelet",
+      "Ecclesiastes",
+      "Prediger Salomo"
+    ],
+    "category": "Weisheitsbuch",
+    "summary": "Kohelet erforscht die Vergänglichkeit, den Wert menschlicher Arbeit und die Grenzen menschlichen Wissens.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Das hebräische Hebel bezeichnet einen Hauch und kann Vergänglichkeit, Unfassbarkeit oder Frustration ausdrücken. Kohelet prüft Reichtum, Vergnügen und Weisheit, ohne dauerhafte Kontrolle über das Leben zu finden."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Pred 3 stellt unterschiedliche Zeiten des Lebens nebeneinander; Freude und Gutes tun werden als Gaben verstanden. Der Schluss verbindet Gottesfurcht und Gebote mit Verantwortung vor Gott."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Überschrift verbindet den Sprecher mit David und Jerusalem, nennt aber Salomo nicht beim Namen. Die traditionelle Zuordnung und die in der Forschung häufig spätere Datierung sind zu unterscheiden."
+      }
+    ],
+    "refs": [
+      "Pred 1,1–18",
+      "Pred 2,24–26",
+      "Pred 3,1–15",
+      "Pred 4,9–12",
+      "Pred 12,1–14"
+    ],
+    "timeframe": "Salomonische Tradition; Entstehungszeit umstritten",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "Pred"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "salomo"
+      },
+      {
+        "type": "related",
+        "target": "sprueche"
+      },
+      {
+        "type": "related",
+        "target": "gottesfurcht"
+      }
+    ],
+    "stationIds": [
+      "psalms-5-meaning",
+      "psalms-5-time",
+      "psalms-5-justice",
+      "psalms-5-ending"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "hoheslied",
+    "kind": "term",
+    "title": "Das Hohelied",
+    "aliases": [
+      "Hoheslied",
+      "Lied der Lieder",
+      "Schir ha-Schirim"
+    ],
+    "category": "Liebesdichtung",
+    "summary": "Poetische Liebeslieder über gegenseitige Zuneigung, Sehnsucht und die unkäufliche Kraft der Liebe.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Frühling, Gärten, Düfte und Tiere bilden eine Sprache für Zärtlichkeit. Die Liebenden sprechen selbst; das Lied erzählt auch von Trennung und Suche."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Hld 8,6–7 beschreibt Liebe als stark wie der Tod und nicht durch Reichtum käuflich. Der wiederholte Ruf, die Liebe nicht vor ihrer Zeit zu wecken, lässt Raum für Freiwilligkeit."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Jüdische Tradition liest das Lied auch als Bild für Gott und Israel, christliche Tradition als Bild für Christus und seine Gemeinde. Diese Lesarten sind vom poetischen Sinn zu unterscheiden."
+      }
+    ],
+    "refs": [
+      "Hld 1,1–8",
+      "Hld 2,8–17",
+      "Hld 3,1–5",
+      "Hld 5,2–8",
+      "Hld 8,4–7"
+    ],
+    "timeframe": "Traditionell mit Salomo verbunden; Entstehungszeit ungesichert",
+    "epoch": "koenigszeit",
+    "region": "kanaan",
+    "books": [
+      "Hld"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "salomo"
+      },
+      {
+        "type": "related",
+        "target": "herz"
+      }
+    ],
+    "stationIds": [
+      "psalms-6-poetry",
+      "psalms-6-love"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "rehabeam",
+    "kind": "person",
+    "title": "Rehabeam",
+    "aliases": [
+      "Rehoboam"
+    ],
+    "category": "König von Juda",
+    "summary": "Salomos Sohn; seine Ablehnung der Bitte um Erleichterung der Lasten trägt zur Reichsteilung bei.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Rehabeam ignoriert den Rat der Ältesten und kündigt eine härtere Herrschaft an. Die nördlichen Stämme verweigern ihm ihre Gefolgschaft. Der Prophet Schemaja warnt vor dem Krieg gegen die Brüder."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "2Chr 12 berichtet den Feldzug Schischaks und Rehabeams Demütigung. Die Texte zeichnen den König nicht nur politisch, sondern auch in seinem Verhältnis zu Gott."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die genaue Regierungszeit ist chronologisch rekonstruiert. Könige und Chronik setzen unterschiedliche Akzente."
+      }
+    ],
+    "refs": [
+      "1Kö 12,1–24",
+      "1Kö 14,21–31",
+      "2Chr 10,1–19",
+      "2Chr 12,1–12"
+    ],
+    "timeframe": "Um 930 v. Chr.; Beginn des geteilten Reichs",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "1Kö",
+      "2Chr"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "salomo"
+      },
+      {
+        "type": "related",
+        "target": "reichsteilung"
+      },
+      {
+        "type": "related",
+        "target": "jerobeam-i"
+      }
+    ],
+    "stationIds": [
+      "history-tribes-hope"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "jerobeam-i",
+    "kind": "person",
+    "title": "Jerobeam I.",
+    "aliases": [
+      "Jerobeam, Sohn Nebats"
+    ],
+    "category": "Erster König des Nordreichs",
+    "summary": "Jerobeam übernimmt im Nordreich die Herrschaft und errichtet Heiligtümer in Bethel und Dan.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Ahija kündigt Jerobeam Herrschaft über Stämme Israels an. Nach der Teilung fürchtet der König, die Wallfahrten nach Jerusalem könnten das Volk zu Rehabeam zurückführen."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Die goldenen Kälber und der eigene Kult werden in den Königsbüchern zum Maßstab der Kritik an späteren Herrschern."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Nicht mit Jerobeam II. zu verwechseln. Die theologische Perspektive des Königsbuchs ist von einer politischen Rekonstruktion der Motive zu unterscheiden."
+      }
+    ],
+    "refs": [
+      "1Kö 11,26–39",
+      "1Kö 12,20–33",
+      "1Kö 14,1–20"
+    ],
+    "timeframe": "Um 930 v. Chr.; Beginn des Nordreichs",
+    "epoch": "koenigszeit",
+    "region": "kanaan",
+    "books": [
+      "1Kö"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "rehabeam"
+      },
+      {
+        "type": "related",
+        "target": "reichsteilung"
+      },
+      {
+        "type": "related",
+        "target": "samaria"
+      }
+    ],
+    "stationIds": [
+      "history-tribes-hope"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "ahab",
+    "kind": "person",
+    "title": "Ahab",
+    "aliases": [
+      "Achab"
+    ],
+    "category": "König des Nordreichs",
+    "summary": "Ahab ist mit Isebel verheiratet und steht im Konflikt mit Elia über Gottesdienst und Gerechtigkeit.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "1Kö 18 erzählt die Auseinandersetzung auf dem Karmel. Die Geschichte von Nabots Weinberg zeigt Machtmissbrauch und die Verantwortung eines Königs für Unrecht."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Nach Elias Gerichtswort demütigt sich Ahab; 1Kö 21,29 beschreibt Gottes Reaktion darauf. Sein Tod wird in der Schlacht bei Ramot-Gilead erzählt."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Das Königsbuch beurteilt Ahab aus theologischer Perspektive. Die politische Bedeutung der Omriden ist ein eigener historischer Untersuchungsgegenstand."
+      }
+    ],
+    "refs": [
+      "1Kö 16,29–34",
+      "1Kö 18,17–40",
+      "1Kö 21,1–29",
+      "1Kö 22,29–40"
+    ],
+    "timeframe": "9. Jh. v. Chr.",
+    "epoch": "koenigszeit",
+    "region": "kanaan",
+    "books": [
+      "1Kö"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "elia"
+      },
+      {
+        "type": "related",
+        "target": "karmel"
+      },
+      {
+        "type": "related",
+        "target": "samaria"
+      },
+      {
+        "type": "related",
+        "target": "isebel"
+      }
+    ],
+    "stationIds": [
+      "history-tribes-hope"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "isebel",
+    "kind": "person",
+    "title": "Isebel",
+    "aliases": [
+      "Jezebel",
+      "Isabel"
+    ],
+    "category": "Königin des Nordreichs",
+    "summary": "Die Tochter des Königs der Sidonier wird Ahabs Frau und steht in den Königsbüchern für die Förderung des Baalskults und den Missbrauch königlicher Macht.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Isebel verfolgt Propheten und organisiert nach 1Kö 21 falsche Anklagen gegen Nabot, damit Ahab dessen Weinberg erhält."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Offb 2,20 verwendet den Namen Isebel für eine kritisierte Lehrerin in Thyatira. Eine tatsächliche Namensgleichheit ist nicht gesichert."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die konkrete Kritik an Gewalt und Götzendienst darf nicht als pauschales Frauenbild oder als Bezeichnung für beliebige unbequeme Personen gebraucht werden."
+      }
+    ],
+    "refs": [
+      "1Kö 16,29–33",
+      "1Kö 18,4–19",
+      "1Kö 21,5–16",
+      "2Kö 9,30–37",
+      "Offb 2,20"
+    ],
+    "timeframe": "9. Jh. v. Chr.",
+    "epoch": "koenigszeit",
+    "region": "kanaan",
+    "books": [
+      "1Kö",
+      "2Kö",
+      "Offb"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "ahab"
+      },
+      {
+        "type": "related",
+        "target": "elia"
+      },
+      {
+        "type": "related",
+        "target": "sieben-gemeinden"
+      }
+    ],
+    "stationIds": [
+      "history-tribes-hope"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "manasse-koenig",
+    "kind": "person",
+    "title": "Manasse, König von Juda",
+    "aliases": [
+      "Manasse von Juda",
+      "Manasse (König)"
+    ],
+    "category": "König von Juda",
+    "summary": "Manasse wird in Könige wegen Götzendienstes und Blutvergießens verurteilt; Chronik erzählt außerdem seine Demütigung und Umkehr.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "2Kö 21 beschreibt Altäre für fremde Mächte und schwere Verfehlungen des Königs. Die Erzählung verbindet seine Herrschaft mit dem späteren Gericht über Juda."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "2Chr 33 schildert hingegen seine Gefangenschaft, sein Gebet und die Entfernung fremder Götter nach seiner Rückkehr."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Unterschiede zwischen Könige und Chronik zeigen verschiedene theologische Schwerpunkte. Manasse ist nicht mit Josefs Sohn gleichen Namens identisch."
+      }
+    ],
+    "refs": [
+      "2Kö 21,1–18",
+      "2Kö 23,26–27",
+      "2Chr 33,1–20"
+    ],
+    "timeframe": "7. Jh. v. Chr.",
+    "epoch": "koenigszeit",
+    "region": "judaea",
+    "books": [
+      "2Kö",
+      "2Chr"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "hiskia"
+      },
+      {
+        "type": "related",
+        "target": "josia"
+      },
+      {
+        "type": "related",
+        "target": "exil"
+      }
+    ],
+    "stationIds": [],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "serubbabel",
+    "kind": "person",
+    "title": "Serubbabel",
+    "aliases": [
+      "Zerubbabel",
+      "Zorobabel"
+    ],
+    "category": "Statthalter und Tempelwiederaufbau",
+    "summary": "Serubbabel führt mit dem Priester Josua die Gemeinschaft beim Wiederaufbau des Tempels in Jerusalem.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Esra beschreibt den Neubeginn des Opferdienstes und das Legen des Tempelgrundes. Haggai und Sacharja ermutigen den Wiederaufbau."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Hag 2 verwendet das Bild des Siegelrings; Mt 1 nennt Serubbabel im Stammbaum Jesu."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die Aussagen über Serubbabel sind im nachexilischen Zusammenhang zu lesen, bevor spätere messianische Verknüpfungen untersucht werden."
+      }
+    ],
+    "refs": [
+      "Esr 3,1–13",
+      "Esr 5,1–2",
+      "Hag 1,1–15",
+      "Hag 2,20–23",
+      "Sach 4,6–10",
+      "Mt 1,12–13"
+    ],
+    "timeframe": "Spätes 6. Jh. v. Chr.",
+    "epoch": "nachexil",
+    "region": "judaea",
+    "books": [
+      "Esr",
+      "Hag",
+      "Sach",
+      "Mt"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "kyros"
+      },
+      {
+        "type": "related",
+        "target": "haggai"
+      },
+      {
+        "type": "related",
+        "target": "sacharja"
+      },
+      {
+        "type": "related",
+        "target": "zweiter-tempel"
+      }
+    ],
+    "stationIds": [
+      "prophets-9"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "fall-ninives",
+    "kind": "event",
+    "title": "Der Fall Ninives",
+    "aliases": [
+      "Untergang Ninives",
+      "Eroberung Ninives"
+    ],
+    "category": "Wendepunkt der assyrischen Geschichte",
+    "summary": "Die assyrische Hauptstadt Ninive wird von babylonischen und medischen Kräften erobert.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Nahum verkündet den Sturz Ninives und kritisiert seine Gewalt; Zefanja kündigt ebenfalls Verwüstung an. Diese Prophetenworte sind keine militärischen Chroniken."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "history",
+        "body": "Die babylonische Fall-of-Nineveh-Chronik bezeugt die Eroberung 612 v. Chr.; assyrische Restherrschaft besteht noch einige Jahre."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Der außerbiblische Beleg stützt das historische Ereignis, nicht automatisch jede Einzelheit seiner prophetischen Auslegung."
+      }
+    ],
+    "refs": [
+      "Nah 1,1–8",
+      "Nah 2,1–13",
+      "Nah 3,1–7",
+      "Zef 2,13–15"
+    ],
+    "timeframe": "612 v. Chr. (babylonische Chronik)",
+    "epoch": "koenigszeit",
+    "region": "mesopotamien",
+    "books": [
+      "Nah",
+      "Zef"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "ninive"
+      },
+      {
+        "type": "related",
+        "target": "assyrien"
+      },
+      {
+        "type": "related",
+        "target": "nahum"
+      },
+      {
+        "type": "related",
+        "target": "babylonien"
+      }
+    ],
+    "stationIds": [
+      "kp-4"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden.",
+      "Encyclopaedia Iranica, Babylonian Chronicles: https://www.iranicaonline.org/articles/babylonian-chronicles/"
+    ]
+  },
+  {
+    "id": "fall-jerusalems",
+    "kind": "event",
+    "title": "Die Zerstörung des ersten Tempels",
+    "aliases": [
+      "Fall Jerusalems",
+      "Zerstörung Jerusalems 587/586"
+    ],
+    "category": "Babylonische Eroberung",
+    "summary": "Babylon zerstört Jerusalem und den ersten Tempel; ein Teil der Bevölkerung wird verschleppt.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "2Kö 25 erzählt die Belagerung, den Zusammenbruch der Herrschaft Zedekias und die Zerstörung des Tempels. Jer 52 und 2Chr 36 schildern verwandte Ereignisse."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "history",
+        "body": "Die Klagelieder geben dem Verlust der Stadt eine eigene poetische Stimme; die Hoffnung auf Rückkehr wird in anderen Texten weitergeführt."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die erste Deportation unter Jojachin 597 und die spätere Tempelzerstörung 587/586 sind unterschiedliche Ereignisse. Die Bevölkerung wurde nicht vollständig deportiert."
+      }
+    ],
+    "refs": [
+      "2Kö 25,1–21",
+      "2Chr 36,15–21",
+      "Jer 52,12–30",
+      "Kla 1,1–12"
+    ],
+    "timeframe": "587/586 v. Chr. (Datierung je nach Chronologiesystem)",
+    "epoch": "exil",
+    "region": "judaea",
+    "books": [
+      "2Kö",
+      "2Chr",
+      "Jer",
+      "Kla"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "exil"
+      },
+      {
+        "type": "related",
+        "target": "jerusalem"
+      },
+      {
+        "type": "related",
+        "target": "tempel-salomo"
+      },
+      {
+        "type": "related",
+        "target": "klagelieder"
+      }
+    ],
+    "stationIds": [],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "fall-babylons",
+    "kind": "event",
+    "title": "Kyros erobert Babylon",
+    "aliases": [
+      "Fall Babylons 539",
+      "Persische Eroberung Babylons"
+    ],
+    "category": "Übergang zur persischen Herrschaft",
+    "summary": "Die Eroberung Babylons durch Kyros beendet die neubabylonische Herrschaft und bildet den historischen Rahmen der Rückkehrtexte.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Jesaja nennt Kyros als Werkzeug Gottes. Daniel 5 erzählt das Gericht über Belsazar; Esra beginnt mit dem Erlass, der den Tempelwiederaufbau ermöglicht."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "history",
+        "body": "Die Nabonid-Chronik berichtet die persische Einnahme Babylons 539 v. Chr. Sie enthält nicht den Wortlaut des in Esra erzählten Erlasses für Jerusalem."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Die biblischen Texte verbinden den Machtwechsel mit Gottes Handeln. Die historische Chronik und die theologische Deutung haben unterschiedliche Aussageabsichten."
+      }
+    ],
+    "refs": [
+      "Jes 44,24–28",
+      "Jes 45,1–7",
+      "Dan 5,25–31",
+      "Esr 1,1–4"
+    ],
+    "timeframe": "539 v. Chr. (Nabonid-Chronik)",
+    "epoch": "exil",
+    "region": "mesopotamien",
+    "books": [
+      "Jes",
+      "Dan",
+      "Esr"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "kyros"
+      },
+      {
+        "type": "related",
+        "target": "babylon"
+      },
+      {
+        "type": "related",
+        "target": "persien"
+      },
+      {
+        "type": "related",
+        "target": "exil"
+      }
+    ],
+    "stationIds": [],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden.",
+      "University of Oxford, Nabonidus Chronicle (British Museum): https://www.cabinet.ox.ac.uk/nabonidus-chronicle-bm-0"
+    ]
+  },
+  {
+    "id": "rueckkehr-exil",
+    "kind": "event",
+    "title": "Rückkehr aus dem Exil",
+    "aliases": [
+      "Heimkehr nach Juda",
+      "Erlass des Kyros"
+    ],
+    "category": "Wiederaufbau nach dem Exil",
+    "summary": "Esra erzählt die Rückkehr von Teilen der judäischen Bevölkerung und den Beginn des Wiederaufbaus.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Kyros gestattet nach Esr 1 den Wiederaufbau des Hauses Gottes. Rückkehrende bringen Tempelgeräte mit und beginnen in Jerusalem den Opferdienst."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "bible",
+        "body": "Esr 3 schildert gemischte Gefühle bei der Grundsteinlegung; die Rückkehr ist kein Ende aller Konflikte."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Viele Juden blieben in der Diaspora. Die Rückkehr erfolgte über längere Zeit, nicht als eine lückenlos datierbare einmalige Wanderung aller Verschleppten."
+      }
+    ],
+    "refs": [
+      "Esr 1,1–11",
+      "Esr 2,1–2",
+      "Esr 3,1–13",
+      "2Chr 36,22–23"
+    ],
+    "timeframe": "Ab 538 v. Chr. (traditionelle chronologische Einordnung)",
+    "epoch": "nachexil",
+    "region": "judaea",
+    "books": [
+      "Esr",
+      "2Chr"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "kyros"
+      },
+      {
+        "type": "related",
+        "target": "serubbabel"
+      },
+      {
+        "type": "related",
+        "target": "zweiter-tempel"
+      },
+      {
+        "type": "related",
+        "target": "esra"
+      }
+    ],
+    "stationIds": [],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "tempelzerstoerung-70",
+    "kind": "event",
+    "title": "Die Zerstörung des zweiten Tempels",
+    "aliases": [
+      "Jerusalem 70 n. Chr.",
+      "Titus",
+      "Jüdischer Krieg"
+    ],
+    "category": "Historischer Kontext des Neuen Testaments",
+    "summary": "Römische Truppen unter Titus zerstören den zweiten Tempel und erobern Jerusalem während des jüdischen Krieges.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die Evangelien überliefern Jesu Ankündigung der Zerstörung des Tempels. Lukas verbindet in seiner Rede die Bedrohung Jerusalems mit Belagerung und Flucht."
+      },
+      {
+        "h": "Weitere Zusammenhänge",
+        "layer": "history",
+        "body": "Das Ereignis von 70 n. Chr. ist außerbiblisch bezeugt und markiert einen Einschnitt für das jüdische Leben. Der Tempelkult endete; jüdisches religiöses Leben entwickelte sich weiter."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "hypothesis",
+        "body": "Der historische Befund und die verschiedenen Deutungen von Jesu Endzeitreden sind getrennt zu betrachten. Die Texte dürfen nicht zu antijüdischen Schuldzuweisungen verwendet werden."
+      }
+    ],
+    "refs": [
+      "Mt 24,1–2",
+      "Mk 13,1–2",
+      "Lk 21,5–6",
+      "Lk 21,20–24"
+    ],
+    "timeframe": "70 n. Chr. (historisch belegt)",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "Mt",
+      "Mk",
+      "Lk"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "jerusalem"
+      },
+      {
+        "type": "related",
+        "target": "tempel-herodes"
+      },
+      {
+        "type": "related",
+        "target": "rom"
+      },
+      {
+        "type": "related",
+        "target": "zweiter-tempel"
+      }
+    ],
+    "stationIds": [],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden.",
+      "Metropolitan Museum of Art, The Flavian Dynasty (69–96 A.D.): https://www.metmuseum.org/pt/essays/the-flavian-dynasty-69-96"
+    ]
+  },
+  {
+    "id": "bund",
+    "kind": "term",
+    "title": "Der Bund Gottes",
+    "aliases": [
+      "Bund",
+      "Berit",
+      "Neuer Bund"
+    ],
+    "category": "Grundbegriff der Schrift",
+    "summary": "Gottes Bund beschreibt verbindliche Beziehungen, Zusagen und die Verantwortung der Menschen vor ihm.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die Schrift erzählt verschiedene Bundesschlüsse: mit Noah, Abraham, Israel am Sinai und die Zusage an David. Ihre Adressaten, Zeichen und Verpflichtungen sind nicht identisch."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Jer 31 verheißt einen neuen Bund mit Israel und Juda. Jesus verbindet den Kelch mit dem neuen Bund; Hebräer 8 nimmt Jeremias Worte auf."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Frage nach dem Verhältnis der Bünde wird in jüdischer und christlicher Theologie unterschiedlich beantwortet. Die Adressaten und Zusagen jedes Textes sind zuerst zu beachten."
+      }
+    ],
+    "refs": [
+      "1Mo 9,8–17",
+      "1Mo 15,1–18",
+      "2Mo 19,3–6",
+      "2Sam 7,12–16",
+      "Jer 31,31–34",
+      "Lk 22,19–20",
+      "Hebr 8,6–13"
+    ],
+    "timeframe": "Bibelübergreifendes Thema; kein einzelnes Datum",
+    "epoch": "erzvaeter",
+    "region": "kanaan",
+    "books": [
+      "1Mo",
+      "2Mo",
+      "2Sam",
+      "Jer",
+      "Lk",
+      "Hebr"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "abraham"
+      },
+      {
+        "type": "related",
+        "target": "davidsbund"
+      },
+      {
+        "type": "related",
+        "target": "stiftshuette"
+      },
+      {
+        "type": "related",
+        "target": "abendmahl"
+      }
+    ],
+    "stationIds": [
+      "tora-2-4",
+      "tora-5-6"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "messias",
+    "kind": "term",
+    "title": "Messias – der Gesalbte",
+    "aliases": [
+      "Christus",
+      "Maschiach",
+      "Gesalbter",
+      "Sohn Davids"
+    ],
+    "category": "Königliche und messianische Hoffnung",
+    "summary": "Messias und Christus bezeichnen den Gesalbten. Im Neuen Testament wird Jesus als der Christus bekannt.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Im Alten Testament werden Könige und andere Amtsträger gesalbt; nicht jede Verwendung des Begriffs ist eine unmittelbare Vorhersage Jesu. Die Hoffnung auf einen gerechten davidischen Herrscher entfaltet sich in prophetischen Texten."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Joh 1 erklärt Messias mit Christus; Petrus bekennt Jesus als den Christus. Die Evangelien verbinden dieses Bekenntnis mit Jesu Weg, Leiden und Auferstehung."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Jüdische und christliche messianische Erwartungen unterscheiden sich. Der jeweilige alttestamentliche Zusammenhang und die neutestamentliche Deutung werden getrennt dargestellt."
+      }
+    ],
+    "refs": [
+      "1Sam 16,1–13",
+      "2Sam 7,12–16",
+      "Ps 2,1–12",
+      "Jes 11,1–10",
+      "Dan 9,25–26",
+      "Joh 1,40–42",
+      "Mt 16,13–20"
+    ],
+    "timeframe": "Von Israels Königszeit bis zur Aufnahme im Neuen Testament",
+    "epoch": "jesus",
+    "region": "judaea",
+    "books": [
+      "1Sam",
+      "2Sam",
+      "Ps",
+      "Jes",
+      "Dan",
+      "Joh",
+      "Mt"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "david"
+      },
+      {
+        "type": "related",
+        "target": "davidsbund"
+      },
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "gottesknecht"
+      }
+    ],
+    "stationIds": [
+      "mark-3"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "gnade",
+    "kind": "term",
+    "title": "Gnade",
+    "aliases": [
+      "Barmherzigkeit",
+      "Unverdiente Zuwendung",
+      "Charis"
+    ],
+    "category": "Gottes Zuwendung",
+    "summary": "Gnade bezeichnet Gottes gütige, nicht durch menschliche Leistung erzwungene Zuwendung.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Schon im Alten Testament wird Gott als barmherzig und gnädig beschrieben. Paulus verbindet Rechtfertigung mit Gnade und der Erlösung in Christus."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Eph 2,8–10 stellt Rettung als Gottes Gabe dar und nennt gute Werke als Ziel des neuen Lebens. Tit 2 beschreibt Gnade als Erziehung zu Gerechtigkeit und Besonnenheit."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Gnade ist weder ein Verdienst noch eine Erlaubnis zur Ausbeutung anderer. Wie Gnade und menschliche Mitwirkung zusammenhängen, wird in christlichen Traditionen verschieden erläutert."
+      }
+    ],
+    "refs": [
+      "2Mo 34,6–7",
+      "Ps 103,8–13",
+      "Joh 1,14–17",
+      "Röm 3,23–26",
+      "Eph 2,8–10",
+      "Tit 2,11–14"
+    ],
+    "timeframe": "Bibelübergreifendes Thema",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "2Mo",
+      "Ps",
+      "Joh",
+      "Röm",
+      "Eph",
+      "Tit"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "bund"
+      },
+      {
+        "type": "related",
+        "target": "glaube"
+      },
+      {
+        "type": "related",
+        "target": "rechtfertigung"
+      },
+      {
+        "type": "related",
+        "target": "umkehr"
+      }
+    ],
+    "stationIds": [
+      "letters-1",
+      "letters-5",
+      "letters-more-titus"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "glaube",
+    "kind": "term",
+    "title": "Glaube und Vertrauen",
+    "aliases": [
+      "Treue",
+      "Pistis",
+      "Vertrauen auf Gott"
+    ],
+    "category": "Grundbegriff des Glaubens",
+    "summary": "Biblischer Glaube umfasst Vertrauen, Bekenntnis und eine Beziehung, die sich im Handeln zeigen kann.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Abraham vertraut Gottes Zusage. Der Vater in Mk 9 bittet Jesus zugleich um Hilfe für seinen Unglauben. Glaube erscheint damit nicht als Abwesenheit jeder Frage."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Röm 4 argumentiert gegen Selbstrechtfertigung durch Werke; Jak 2 kritisiert ein Bekenntnis ohne praktisches Handeln. Beide Briefe verwenden Abraham in ihren jeweiligen Argumentationen."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Glaube garantiert kein leidfreies Leben. Hebräer 11 schildert sowohl erfahrene Rettung als auch Menschen, die um ihres Glaubens willen litten."
+      }
+    ],
+    "refs": [
+      "1Mo 15,1–6",
+      "Hab 2,4",
+      "Mk 9,23–24",
+      "Röm 4,1–5",
+      "Hebr 11,1–6",
+      "Jak 2,14–26"
+    ],
+    "timeframe": "Bibelübergreifendes Thema",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "1Mo",
+      "Hab",
+      "Mk",
+      "Röm",
+      "Hebr",
+      "Jak"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "abraham"
+      },
+      {
+        "type": "related",
+        "target": "habakuk"
+      },
+      {
+        "type": "related",
+        "target": "gnade"
+      },
+      {
+        "type": "related",
+        "target": "rechtfertigung"
+      }
+    ],
+    "stationIds": [
+      "letters-1",
+      "letters-11"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "rechtfertigung",
+    "kind": "term",
+    "title": "Rechtfertigung",
+    "aliases": [
+      "Gerechtigkeit aus Glauben",
+      "Gerechtsprechung"
+    ],
+    "category": "Paulinischer Grundbegriff",
+    "summary": "Paulus beschreibt, wie Menschen vor Gott gerecht werden: nicht durch Selbstrechtfertigung, sondern durch Gottes Gnade mittels des Glaubens.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Röm 3 stellt alle Menschen unter die Notwendigkeit göttlicher Gnade; Röm 4 greift Abraham und David auf. Gal 2 verbindet Rechtfertigung mit Christus statt mit Gesetzeswerken."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Jakobus richtet sich gegen eine Behauptung von Glauben, die ohne entsprechende Werke bleibt. Der Ausdruck Rechtfertigung hat in diesen Argumentationen einen jeweils eigenen Zusammenhang."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die christlichen Traditionen unterscheiden sich bei der genaueren Bestimmung von Rechtfertigung, Erneuerung und Werken. Der Artikel gibt zunächst die Argumente der jeweiligen Texte wieder."
+      }
+    ],
+    "refs": [
+      "1Mo 15,6",
+      "Röm 3,21–31",
+      "Röm 4,1–8",
+      "Röm 5,1–5",
+      "Gal 2,15–21",
+      "Jak 2,20–26"
+    ],
+    "timeframe": "Briefe des Neuen Testaments",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "1Mo",
+      "Röm",
+      "Gal",
+      "Jak"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "gnade"
+      },
+      {
+        "type": "related",
+        "target": "glaube"
+      },
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "abraham"
+      }
+    ],
+    "stationIds": [
+      "letters-1",
+      "letters-4",
+      "letters-11"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "umkehr",
+    "kind": "term",
+    "title": "Umkehr und Buße",
+    "aliases": [
+      "Metanoia",
+      "Reue",
+      "Buße"
+    ],
+    "category": "Geistliche Erneuerung",
+    "summary": "Umkehr meint eine Neuorientierung zu Gott, nicht nur ein momentanes Schuldgefühl.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die Propheten rufen dazu auf, falsche Wege zu verlassen und zu Gott zurückzukehren. Jesus verbindet die Umkehr mit der Botschaft des nahen Reiches Gottes."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Lk 15 erzählt die Rückkehr des verlorenen Sohnes und die Freude des Vaters. 2Kor 7 unterscheidet eine zur Umkehr führende Betrübnis von zerstörerischer Traurigkeit."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Reue und Vergebung löschen nicht automatisch jede Folge angerichteten Schadens. Umkehr kann Wiedergutmachung, Hilfe und dauerhaft verändertes Handeln einschließen."
+      }
+    ],
+    "refs": [
+      "Hes 18,21–32",
+      "Joel 2,12–17",
+      "Mk 1,14–15",
+      "Lk 15,11–32",
+      "Apg 2,37–39",
+      "2Kor 7,9–11"
+    ],
+    "timeframe": "Bibelübergreifendes Thema",
+    "epoch": "jesus",
+    "region": "judaea",
+    "books": [
+      "Hes",
+      "Joel",
+      "Mk",
+      "Lk",
+      "Apg",
+      "2Kor"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "verlorener-sohn"
+      },
+      {
+        "type": "related",
+        "target": "johannes-taeufer"
+      },
+      {
+        "type": "related",
+        "target": "gnade"
+      }
+    ],
+    "stationIds": [
+      "mark-1",
+      "luke-2"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "heiliger-geist",
+    "kind": "term",
+    "title": "Der Heilige Geist",
+    "aliases": [
+      "Geist Gottes",
+      "Ruach",
+      "Pneuma",
+      "Geist der Wahrheit"
+    ],
+    "category": "Gottes Geist und Wirken",
+    "summary": "Die Schrift beschreibt Gottes Geist als lebensschaffendes, leitendes und befähigendes Wirken Gottes.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Gottes Geist erscheint in Schöpfung, prophetischer Berufung und Stärkung. Jesus spricht im Johannesevangelium vom Beistand und Geist der Wahrheit; Apostelgeschichte 2 erzählt das Pfingstgeschehen."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Gal 5 verbindet das Leben im Geist mit Liebe, Freude, Frieden und Selbstbeherrschung; 1Kor 12 beschreibt verschiedene Gaben zum Nutzen der Gemeinschaft."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Christliche Traditionen deuten das Verhältnis von Gott, Jesus Christus und dem Heiligen Geist unterschiedlich. Der Artikel unterscheidet ausdrücklich Schriftbefund und konfessionelle Systematik."
+      }
+    ],
+    "refs": [
+      "1Mo 1,2",
+      "Jes 61,1–2",
+      "Joel 3,1–5",
+      "Joh 14,16–17",
+      "Joh 16,13–15",
+      "Apg 2,1–21",
+      "Gal 5,22–25"
+    ],
+    "timeframe": "Bibelübergreifendes Thema",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "1Mo",
+      "Jes",
+      "Joel",
+      "Joh",
+      "Apg",
+      "Gal"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "pfingsten"
+      },
+      {
+        "type": "related",
+        "target": "joel"
+      },
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "gnade"
+      }
+    ],
+    "stationIds": [
+      "acts-1",
+      "letters-4",
+      "john-9"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "reich-gottes",
+    "kind": "term",
+    "title": "Das Reich Gottes",
+    "aliases": [
+      "Himmelreich",
+      "Königsherrschaft Gottes",
+      "Basileia"
+    ],
+    "category": "Jesu Verkündigung",
+    "summary": "Gottes Königsherrschaft ist ein zentraler Gegenstand der Verkündigung Jesu.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Jesus verkündet das Nahekommen des Reiches und ruft zu Umkehr und Glauben. Die Gleichnisse vom Senfkorn und Sauerteig beschreiben das unscheinbare Wachstum."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Das Vaterunser bittet um das Kommen des Reiches. Röm 14 verbindet Gottes Reich mit Gerechtigkeit, Frieden und Freude im Heiligen Geist."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Gottes Herrschaft wird in den Texten gegenwärtig erfahren und zugleich erwartet. Das Verhältnis von Gegenwart und Zukunft wird unterschiedlich akzentuiert; kein modernes Staatswesen wird damit ohne Weiteres gleichgesetzt."
+      }
+    ],
+    "refs": [
+      "Dan 7,13–14",
+      "Mk 1,14–15",
+      "Mt 6,9–13",
+      "Mt 13,31–33",
+      "Lk 17,20–21",
+      "Röm 14,17"
+    ],
+    "timeframe": "Verkündigung Jesu; Bezug zum Alten und Neuen Testament",
+    "epoch": "jesus",
+    "region": "galilaea",
+    "books": [
+      "Dan",
+      "Mk",
+      "Mt",
+      "Lk",
+      "Röm"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "bergpredigt"
+      },
+      {
+        "type": "related",
+        "target": "messias"
+      }
+    ],
+    "stationIds": [
+      "mark-1",
+      "matthew-2",
+      "parables-2"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "taufe",
+    "kind": "term",
+    "title": "Taufe",
+    "aliases": [
+      "Wassertaufe",
+      "Taufen",
+      "Baptisma"
+    ],
+    "category": "Biblischer Brauch und Bekenntnis",
+    "summary": "Die Taufe verbindet in neutestamentlichen Texten Umkehr, Zugehörigkeit zu Christus und den Beginn eines neuen Lebens.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Johannes tauft als Zeichen der Umkehr; Jesus wird von ihm getauft. Die Apostelgeschichte erzählt Taufen im Zusammenhang mit der Verkündigung Jesu."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Röm 6 verbindet Taufe mit Christus' Tod und Auferstehung. Gal 3 beschreibt die Zugehörigkeit zu Christus über bestehende soziale Grenzen hinweg."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Christliche Traditionen unterscheiden sich bezüglich Säuglings- und Glaubenstaufe, Form und Heilsbedeutung. Der Artikel vergleicht die Texte, ohne diese Fragen als abschließend entschieden darzustellen."
+      }
+    ],
+    "refs": [
+      "Mk 1,4–11",
+      "Mt 28,18–20",
+      "Apg 2,37–41",
+      "Apg 8,35–39",
+      "Röm 6,1–11",
+      "Gal 3,26–29"
+    ],
+    "timeframe": "Johannes der Täufer und frühe Gemeinden",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "Mk",
+      "Mt",
+      "Apg",
+      "Röm",
+      "Gal"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "johannes-taeufer"
+      },
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "pfingsten"
+      },
+      {
+        "type": "related",
+        "target": "umkehr"
+      }
+    ],
+    "stationIds": [
+      "acts-1",
+      "mark-1"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "nachfolge",
+    "kind": "term",
+    "title": "Nachfolge Jesu",
+    "aliases": [
+      "Jüngerschaft",
+      "Jünger",
+      "Kreuztragen"
+    ],
+    "category": "Leben als Jünger",
+    "summary": "Nachfolge bedeutet, Jesu Ruf anzunehmen und sein Leben an seiner Lehre und seinem Beispiel auszurichten.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Jesus ruft Menschen aus ihrem bisherigen Alltag und spricht zugleich über die Kosten der Nachfolge. Kreuztragen bezeichnet Bereitschaft zu selbstverleugnender Treue, nicht die Pflicht, Missbrauch hinzunehmen."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Joh 13–15 betont dienende Liebe und das Bleiben in Christus. Mk 10 stellt dem Machtstreben den Dienst gegenüber."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Konkrete Lebensentscheidungen brauchen verantwortliche Abwägung. Selbstverleugnung ist nicht gleichbedeutend mit der Abwertung menschlicher Würde oder der Aufgabe notwendiger Grenzen."
+      }
+    ],
+    "refs": [
+      "Mt 4,18–22",
+      "Mt 16,24–26",
+      "Mk 10,42–45",
+      "Lk 14,25–33",
+      "Joh 13,34–35",
+      "Joh 15,1–17"
+    ],
+    "timeframe": "Öffentliches Wirken Jesu und frühe Gemeinden",
+    "epoch": "jesus",
+    "region": "galilaea",
+    "books": [
+      "Mt",
+      "Mk",
+      "Lk",
+      "Joh"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "petrus"
+      },
+      {
+        "type": "related",
+        "target": "reich-gottes"
+      },
+      {
+        "type": "related",
+        "target": "glaube"
+      }
+    ],
+    "stationIds": [
+      "matthew-4",
+      "mark-3",
+      "john-9"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "auferstehung-der-toten",
+    "kind": "term",
+    "title": "Die Auferstehung der Toten",
+    "aliases": [
+      "Auferstehungshoffnung",
+      "Auferweckung",
+      "Ewiges Leben"
+    ],
+    "category": "Biblische Hoffnung",
+    "summary": "Die biblische Hoffnung auf Auferstehung verbindet Gottes Macht über den Tod mit Verantwortung und zukünftigem Leben.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Daniel spricht vom Erwachen der Toten. Jesus sagt Marta, dass er die Auferstehung und das Leben ist. Paulus begründet die Auferstehungshoffnung mit der Auferweckung Christi."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "1Kor 15 unterscheidet den vergänglichen Leib von seiner künftigen unverweslichen Gestalt; 1Thess 4 tröstet Trauernde mit der Hoffnung auf Gemeinschaft mit dem Herrn."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Der Zustand der Toten, die zeitliche Abfolge der Auferstehung und die Deutung des Gerichts werden unterschiedlich verstanden. Der Artikel unterscheidet Textaussage, Hoffnung und Auslegungsmodelle."
+      }
+    ],
+    "refs": [
+      "Dan 12,1–3",
+      "Joh 5,24–29",
+      "Joh 11,23–27",
+      "1Kor 15,12–28",
+      "1Kor 15,42–58",
+      "1Thess 4,13–18",
+      "Offb 20,11–15"
+    ],
+    "timeframe": "Zukunftshoffnung; keine Kalenderdatierung",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "Dan",
+      "Joh",
+      "1Kor",
+      "1Thess",
+      "Offb"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "auferstehung"
+      },
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "daniel"
+      },
+      {
+        "type": "related",
+        "target": "neues-jerusalem"
+      }
+    ],
+    "stationIds": [
+      "letters-2",
+      "letters-8",
+      "rev-victory"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "stephanus",
+    "kind": "person",
+    "title": "Stephanus",
+    "aliases": [
+      "Stefanus",
+      "Stephen"
+    ],
+    "category": "Zeuge der frühen Gemeinde",
+    "summary": "Stephanus wird in Apostelgeschichte als einer der Sieben berufen und wegen seines Zeugnisses getötet.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Apg 6 verbindet seine Berufung mit der Versorgung der Witwen. Vor dem Rat blickt Stephanus auf Israels Geschichte zurück und kritisiert den Widerstand gegen Gottes Boten."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Bei seiner Tötung bittet er für seine Verfolger. Saulus wird im Zusammenhang des Geschehens genannt; die anschließende Verfolgung führt zur Zerstreuung."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Konfliktrede ist in ihrem konkreten innerjüdischen Zusammenhang zu lesen; sie rechtfertigt keine Feindschaft gegen Juden."
+      }
+    ],
+    "refs": [
+      "Apg 6,1–15",
+      "Apg 7,1–53",
+      "Apg 7,54–60",
+      "Apg 8,1–4"
+    ],
+    "timeframe": "Frühe 30er Jahre n. Chr. (ungefähre Einordnung)",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "Apg"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "pfingsten"
+      },
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "jerusalem"
+      }
+    ],
+    "stationIds": [
+      "acts-2"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "philippus-evangelist",
+    "kind": "person",
+    "title": "Philippus, der Evangelist",
+    "aliases": [
+      "Philippus einer der Sieben"
+    ],
+    "category": "Zeuge der frühen Gemeinde",
+    "summary": "Philippus verkündet in Samaria und erklärt dem äthiopischen Hofbeamten die Schrift.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Er gehört zu den Sieben aus Apg 6. In Samaria verkündet er Christus; auf dem Weg nach Gaza begegnet er dem Hofbeamten, der aus Jesaja liest."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Philippus deutet die Schriftstelle im Licht Jesu, worauf der Beamte um die Taufe bittet. Apg 21 nennt Philippus ausdrücklich Evangelist."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Nicht mit dem Apostel Philippus ohne Weiteres gleichzusetzen. Die genaue Lage der Taufstelle ist nicht gesichert."
+      }
+    ],
+    "refs": [
+      "Apg 6,1–6",
+      "Apg 8,4–13",
+      "Apg 8,26–40",
+      "Apg 21,8–9"
+    ],
+    "timeframe": "1. Jh. n. Chr.; nach der Zerstreuung",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "Apg"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "stephanus"
+      },
+      {
+        "type": "related",
+        "target": "gottesknecht"
+      },
+      {
+        "type": "related",
+        "target": "taufe"
+      }
+    ],
+    "stationIds": [
+      "acts-2"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "timotheus",
+    "kind": "person",
+    "title": "Timotheus",
+    "aliases": [
+      "Timothy"
+    ],
+    "category": "Mitarbeiter des Paulus",
+    "summary": "Timotheus begleitet Paulus und übernimmt Aufgaben in der Leitung und Stärkung von Gemeinden.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Apg 16 beschreibt seine Herkunft und Berufung zur Mitarbeit. Paulus lobt in Phil 2 seine aufrichtige Sorge für die Gemeinde."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Die Timotheusbriefe verbinden Lehre mit Charakter, Mut und verantwortlicher Weitergabe des anvertrauten Wortes."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Verfasserschaft der Pastoralbriefe wird diskutiert. Ihre literarische Darstellung des Paulus und Timotheus ist von der historischen Rekonstruktion zu unterscheiden."
+      }
+    ],
+    "refs": [
+      "Apg 16,1–5",
+      "Phil 2,19–24",
+      "1Tim 4,6–16",
+      "2Tim 1,6–14"
+    ],
+    "timeframe": "1. Jh. n. Chr.; Mitarbeit während der Missionsreisen",
+    "epoch": "urkirche",
+    "region": "kleinasien",
+    "books": [
+      "Apg",
+      "Phil",
+      "1Tim",
+      "2Tim"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "missionsreisen"
+      },
+      {
+        "type": "related",
+        "target": "gnade"
+      }
+    ],
+    "stationIds": [
+      "letters-9",
+      "letters-more-2tim"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "titus",
+    "kind": "person",
+    "title": "Titus",
+    "aliases": [
+      "Titus, Mitarbeiter des Paulus"
+    ],
+    "category": "Mitarbeiter des Paulus",
+    "summary": "Titus ist ein Mitarbeiter des Paulus, der unter anderem in Korinth vermittelt und im Titusbrief Aufgaben für Kreta erhält.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Gal 2 nennt ihn als Griechen im Streit um die Beschneidung. In 2Kor erscheint er als vertrauenswürdiger Vermittler und Mitarbeiter bei der Sammlung."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Der Titusbrief betont gesunde Lehre, Charakter von Leitenden und gute Werke als Folge von Gottes Gnade."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Der Brief wird hinsichtlich seiner Verfasserschaft diskutiert. Titus ist nicht mit dem späteren römischen Kaiser gleichen Namens zu verwechseln."
+      }
+    ],
+    "refs": [
+      "Gal 2,1–5",
+      "2Kor 7,6–16",
+      "2Kor 8,16–24",
+      "Tit 1,4–9",
+      "Tit 3,4–8"
+    ],
+    "timeframe": "1. Jh. n. Chr.",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Gal",
+      "2Kor",
+      "Tit"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "korinth"
+      },
+      {
+        "type": "related",
+        "target": "gnade"
+      }
+    ],
+    "stationIds": [
+      "letters-more-titus"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "philemon",
+    "kind": "person",
+    "title": "Philemon und Onesimus",
+    "aliases": [
+      "Philemon",
+      "Onesimus"
+    ],
+    "category": "Versöhnung und Gemeindebeziehungen",
+    "summary": "Paulus bittet Philemon, Onesimus nicht mehr nur als Sklaven, sondern als geliebten Bruder aufzunehmen.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Der kurze Brief setzt eine bestehende Machtbeziehung voraus. Paulus möchte nicht einfach befehlen, sondern appelliert an die Liebe und bietet die Übernahme einer möglichen Schuld an."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Die neue brüderliche Beziehung stellt die bisherige soziale Rolle in Frage; die tatsächliche Antwort Philemons ist nicht überliefert."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Der Brief spricht keinen allgemeinen gesetzlichen Aufhebungsbefehl der antiken Sklaverei aus. Er darf nicht zur Rechtfertigung von Sklaverei oder Zwang benutzt werden."
+      }
+    ],
+    "refs": [
+      "Phlm 1,1–7",
+      "Phlm 1,8–16",
+      "Phlm 1,17–25"
+    ],
+    "timeframe": "1. Jh. n. Chr.; Gefangenschaft des Briefabsenders",
+    "epoch": "urkirche",
+    "region": "kleinasien",
+    "books": [
+      "Phlm"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "gnade"
+      },
+      {
+        "type": "related",
+        "target": "nachfolge"
+      }
+    ],
+    "stationIds": [
+      "letters-more-philemon"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "priska-aquila",
+    "kind": "person",
+    "title": "Priska und Aquila",
+    "aliases": [
+      "Priszilla",
+      "Priscilla",
+      "Aquila"
+    ],
+    "category": "Mitarbeiter und Gastgeber der Gemeinde",
+    "summary": "Das Ehepaar arbeitet mit Paulus, beherbergt Gemeindetreffen und erklärt Apollos den Weg Gottes genauer.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Paulus trifft die beiden in Korinth; später wirken sie in Ephesus. Lukas beschreibt, wie beide Apollos zu sich nehmen und ihm den Weg Gottes genauer erläutern."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Paulus nennt sie in Röm 16 Mitarbeiter und dankt ihnen; auch die Gemeinde in ihrem Haus wird erwähnt."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Das Beispiel zeigt die Bedeutung von Gastfreundschaft und Lehre im frühen Christentum. Aus einzelnen Rollenbeschreibungen lässt sich keine vollständige allgemeine Ämterordnung ableiten."
+      }
+    ],
+    "refs": [
+      "Apg 18,1–3",
+      "Apg 18,18–28",
+      "Röm 16,3–5",
+      "1Kor 16,19"
+    ],
+    "timeframe": "Mitte des 1. Jh. n. Chr.",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Apg",
+      "Röm",
+      "1Kor"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "korinth"
+      },
+      {
+        "type": "related",
+        "target": "roemergemeinde"
+      }
+    ],
+    "stationIds": [
+      "acts-4",
+      "letters-1"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "apostelkonzil",
+    "kind": "event",
+    "title": "Die Versammlung in Jerusalem",
+    "aliases": [
+      "Apostelkonzil",
+      "Jerusalemer Konzil"
+    ],
+    "category": "Aufnahme der Völker in die Gemeinde",
+    "summary": "Apostel und Älteste beraten, ob Menschen aus den Völkern zur Beschneidung und Einhaltung des mosaischen Gesetzes verpflichtet werden sollen.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Petrus verweist auf Gottes Handeln und Gnade. Jakobus greift die Propheten auf und schlägt einen Brief mit konkreten Anweisungen vor."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Die Gemeinde sendet Boten nach Antiochia. Der Text verbindet die Aufnahme der Völker mit Rücksichtnahme und verantwortlichem Zusammenleben."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Zuordnung von Gal 2 zur Jerusalemer Versammlung und die genaue Datierung sind Forschungsfragen. Das Ereignis kann deshalb nur ungefähr in den Zeitstrahl eingeordnet werden."
+      }
+    ],
+    "refs": [
+      "Apg 15,1–11",
+      "Apg 15,12–21",
+      "Apg 15,22–35",
+      "Am 9,11–12",
+      "Gal 2,1–10"
+    ],
+    "timeframe": "Um 49 n. Chr. (historische Rekonstruktion)",
+    "epoch": "urkirche",
+    "region": "judaea",
+    "books": [
+      "Apg",
+      "Am",
+      "Gal"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "paulus"
+      },
+      {
+        "type": "related",
+        "target": "petrus"
+      },
+      {
+        "type": "related",
+        "target": "amos"
+      },
+      {
+        "type": "related",
+        "target": "antiochia"
+      }
+    ],
+    "stationIds": [
+      "acts-3",
+      "letters-4"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "lamm-gottes",
+    "kind": "term",
+    "title": "Das Lamm Gottes",
+    "aliases": [
+      "Lamm",
+      "Geschlachtetes Lamm"
+    ],
+    "category": "Bild für Jesus Christus",
+    "summary": "Johannes der Täufer nennt Jesus das Lamm Gottes. In der Offenbarung steht das geschlachtete und siegreiche Lamm im Mittelpunkt der Anbetung.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Joh 1 verbindet das Lamm mit dem Wegnehmen der Sünde der Welt. 1Petr 1 verwendet das Bild eines fehlerlosen Lammes für die Erlösung durch Christi Blut."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "In Offb 5 hört Johannes vom Löwen aus Juda, sieht aber ein Lamm wie geschlachtet. Seine Würdigkeit wird mit seiner Hingabe und dem Erkaufen von Menschen für Gott begründet."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Bilder erinnern an Opfer, Passa und den leidenden Gottesknecht. Die Texte verwenden diese Motive in unterschiedlichen Zusammenhängen; sie sind nicht automatisch in jedem Detail identisch."
+      }
+    ],
+    "refs": [
+      "Jes 53,4–7",
+      "Joh 1,29–34",
+      "1Petr 1,18–21",
+      "Offb 5,1–14",
+      "Offb 7,9–17"
+    ],
+    "timeframe": "Bibelübergreifendes Motiv",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Jes",
+      "Joh",
+      "1Petr",
+      "Offb"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "jesus"
+      },
+      {
+        "type": "related",
+        "target": "passa"
+      },
+      {
+        "type": "related",
+        "target": "gottesknecht"
+      },
+      {
+        "type": "related",
+        "target": "neues-jerusalem"
+      }
+    ],
+    "stationIds": [
+      "rev-throne",
+      "rev-seals",
+      "john-2"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "sieben-siegel",
+    "kind": "term",
+    "title": "Die sieben Siegel",
+    "aliases": [
+      "Siegelgerichte",
+      "Vier Reiter"
+    ],
+    "category": "Vision der Offenbarung",
+    "summary": "Das Lamm öffnet die Siegel einer Buchrolle; die Visionen zeigen Not, Gericht und Gottes Bewahrung.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Vier Reiter erscheinen bei den ersten Siegeln. Danach rufen Getötete nach Gerechtigkeit, und die vertraute Welt wird erschüttert."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Offb 7 unterbricht die Siegelreihe mit den Versiegelten und der großen Menge vor Gottes Thron. Das siebte Siegel führt zum Schweigen im Himmel und zu den Posaunen."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Offenbarung liefert keinen eindeutigen modernen Zeitplan. Sacharjas Pferdevisionen helfen beim Verständnis der Bilder, sind aber nicht mit ihnen in jedem Einzelzug gleichzusetzen."
+      }
+    ],
+    "refs": [
+      "Offb 5,1–10",
+      "Offb 6,1–17",
+      "Offb 7,1–17",
+      "Offb 8,1–5",
+      "Sach 6,1–8"
+    ],
+    "timeframe": "Prophetische Vision; kein Kalenderdatum",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Offb",
+      "Sach"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "lamm-gottes"
+      },
+      {
+        "type": "related",
+        "target": "sacharja"
+      },
+      {
+        "type": "related",
+        "target": "versiegelte-144000"
+      }
+    ],
+    "stationIds": [
+      "rev-seals"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "versiegelte-144000",
+    "kind": "term",
+    "title": "Die 144.000 Versiegelten",
+    "aliases": [
+      "144000",
+      "144.000",
+      "Versiegelung"
+    ],
+    "category": "Vision der Offenbarung",
+    "summary": "Offb 7 nennt 144.000 Versiegelte aus zwölf Stammesgruppen Israels; Offb 14 zeigt 144.000 beim Lamm.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die Stammesliste in Offb 7 unterscheidet sich von Genesis: Juda ist zuerst genannt, Dan fehlt, Levi und Josef stehen in der Aufzählung. Danach sieht Johannes eine große Menge aus allen Nationen."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Offb 14 nennt den Namen des Lammes und seines Vaters auf den Stirnen. Die Gruppe wird mit Treue und Zugehörigkeit verbunden."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Zahl und das Verhältnis zur großen Menge werden wörtlich, symbolisch und in weiteren Modellen ausgelegt. Keine moderne Gruppenzugehörigkeit wird durch die Texte allein zweifelsfrei bestimmt."
+      }
+    ],
+    "refs": [
+      "Offb 7,1–17",
+      "Offb 14,1–5",
+      "1Mo 35,22–26",
+      "Offb 21,12–14"
+    ],
+    "timeframe": "Prophetische Vision; kein Kalenderdatum",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Offb",
+      "1Mo"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "zwoelf-staemme"
+      },
+      {
+        "type": "related",
+        "target": "lamm-gottes"
+      },
+      {
+        "type": "related",
+        "target": "neues-jerusalem"
+      }
+    ],
+    "stationIds": [
+      "rev-seals",
+      "rev-beasts",
+      "history-tribes-hope"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "malzeichen-tier",
+    "kind": "term",
+    "title": "Das Tier und sein Malzeichen",
+    "aliases": [
+      "666",
+      "Malzeichen",
+      "Zahl des Tieres"
+    ],
+    "category": "Vision der Offenbarung",
+    "summary": "Offb 13 verbindet zwei Tiere mit Macht, falscher Anbetung, Verführung und wirtschaftlichem Zwang.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Das zweite Tier fördert die Anbetung des ersten und verlangt ein Zeichen an Hand oder Stirn. Die Zahl 666 wird als Zahl eines Menschen bezeichnet."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Offb 14 stellt der Zugehörigkeit zum Tier die Treue zu Gott und zum Lamm gegenüber. Dan 7 bildet einen wichtigen Hintergrund der Tierbilder."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Die Deutung der Zahl als verschlüsselter Name Neros ist verbreitet, aber nicht die einzige. Der Text identifiziert keine heutige Technologie oder konkrete moderne Person eindeutig."
+      }
+    ],
+    "refs": [
+      "Dan 7,2–8",
+      "Offb 13,1–18",
+      "Offb 14,9–12",
+      "Offb 15,2–4"
+    ],
+    "timeframe": "Prophetische Vision; kein Kalenderdatum",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Dan",
+      "Offb"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "daniel"
+      },
+      {
+        "type": "related",
+        "target": "lamm-gottes"
+      },
+      {
+        "type": "related",
+        "target": "versiegelte-144000"
+      }
+    ],
+    "stationIds": [
+      "rev-beasts"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "tausendjaehriges-reich",
+    "kind": "term",
+    "title": "Das tausendjährige Reich",
+    "aliases": [
+      "Millennium",
+      "Tausend Jahre",
+      "1000 Jahre"
+    ],
+    "category": "Vision der Offenbarung",
+    "summary": "Offb 20 schildert die Bindung Satans, eine tausendjährige Herrschaft mit Christus, eine letzte Rebellion und Gottes Gericht.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Die Vision nennt die erste Auferstehung, die Herrschaft mit Christus und die spätere Freilassung Satans. Der große weiße Thron und das Buch des Lebens folgen."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Das Kapitel endet mit dem Gericht und dem Untergang von Tod und Hades. 1Kor 15 verbindet Christi Herrschaft mit der Überwindung des Todes."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Prämillennialistische, amillennialistische und postmillennialistische Lesarten ordnen die tausend Jahre unterschiedlich ein. Der Text bezeichnet kein konkretes modernes Kalenderjahr."
+      }
+    ],
+    "refs": [
+      "Offb 20,1–15",
+      "Dan 7,9–14",
+      "1Kor 15,20–28"
+    ],
+    "timeframe": "Prophetische Vision; kein Kalenderdatum",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Offb",
+      "Dan",
+      "1Kor"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "auferstehung-der-toten"
+      },
+      {
+        "type": "related",
+        "target": "neues-jerusalem"
+      },
+      {
+        "type": "related",
+        "target": "daniel"
+      }
+    ],
+    "stationIds": [
+      "rev-victory"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  },
+  {
+    "id": "babylon-offenbarung",
+    "kind": "term",
+    "title": "Babylon in der Offenbarung",
+    "aliases": [
+      "Babylon die Große",
+      "Hure Babylon"
+    ],
+    "category": "Vision der Offenbarung",
+    "summary": "Babylon erscheint als Bild einer mächtigen, verführerischen Stadt, deren Wohlstand mit Ausbeutung und Gewalt verbunden ist.",
+    "overview": [
+      {
+        "h": "Biblischer Zusammenhang",
+        "layer": "bible",
+        "body": "Offb 17 verwendet das Bild einer geschmückten Frau und einer großen Stadt. Offb 18 schildert die Klage von Herrschern und Händlern über ihren Fall; auch Menschen gehören zur Warenliste."
+      },
+      {
+        "h": "Weitere Schriftbezüge",
+        "layer": "bible",
+        "body": "Der Ruf zum Auszug aus Babylon knüpft an alttestamentliche Gerichtsworte an. Die Lesenden werden aufgefordert, nicht an den Sünden der Stadt teilzunehmen."
+      }
+    ],
+    "deep": [
+      {
+        "h": "Einordnung und Auslegung",
+        "layer": "tradition",
+        "body": "Rom ist ein verbreiteter zeitgeschichtlicher Bezug; andere Auslegungen verstehen Babylon als wiederkehrendes Bild für ungerechte Herrschaft oder eine zukünftige Macht. Der Text ist kein Freibrief zur Dämonisierung heutiger Völker."
+      }
+    ],
+    "refs": [
+      "Jer 51,6–9",
+      "Offb 14,8",
+      "Offb 17,1–18",
+      "Offb 18,1–24"
+    ],
+    "timeframe": "Prophetische Vision; kein Kalenderdatum",
+    "epoch": "urkirche",
+    "region": "mittelmeer",
+    "books": [
+      "Jer",
+      "Offb"
+    ],
+    "relations": [
+      {
+        "type": "related",
+        "target": "babylon"
+      },
+      {
+        "type": "related",
+        "target": "rom"
+      },
+      {
+        "type": "related",
+        "target": "malzeichen-tier"
+      },
+      {
+        "type": "related",
+        "target": "neues-jerusalem"
+      }
+    ],
+    "stationIds": [
+      "rev-babylon"
+    ],
+    "sources": [
+      "Bibeltext: Elberfelder Bibel 1905 (gemeinfrei), in der App eingebunden."
+    ]
+  }
+]

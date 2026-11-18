@@ -1,0 +1,1584 @@
+{
+  "id": "revelation",
+  "worldId": "revelation",
+  "title": "Offenbarung: Treue, Gericht und neue Schöpfung",
+  "book": "Offb",
+  "mapW": 1000,
+  "mapH": 3680,
+  "intro": "Eine Studienreise durch alle 22 Kapitel. Die Visionen werden zuerst im Schriftzusammenhang, mit Rückbezügen zum Alten Testament und mit fair gekennzeichneten Auslegungen gelesen. Keine Spekulation über Endzeitdaten.",
+  "stations": [
+    {
+      "id": "rev-intro",
+      "title": "Offenbarung: Jesus Christus und die Hoffnung",
+      "subtitle": "Offb 1 · Patmos und die sieben Leuchter",
+      "type": "study",
+      "icon": "eye",
+      "x": 500,
+      "y": 3510,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Offenbarung: Jesus Christus und die Hoffnung“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Die Offenbarung beginnt nicht mit einem Rätsel über die Zukunft, sondern mit der Offenbarung Jesu Christi, die Gott ihm gegeben hat, um seinen Knechten zu zeigen, was geschehen soll. Johannes bezeugt auf Patmos das Wort Gottes und das Zeugnis Jesu. Seine Vision verbindet eine Stimme, sieben Leuchter und den Menschensohn. Jesus erklärt einen Teil der Bilder selbst: Die Leuchter sind die sieben Gemeinden, die Sterne ihre Engel. Die Gemeinden sollen hören, bewahren und in Bedrängnis treu bleiben.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 1,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Offb",
+          "ch": 1,
+          "from": 9,
+          "to": 20
+        }
+      ],
+      "terms": [
+        {
+          "term": "Apokalypse",
+          "explanation": "Enthüllung oder Offenbarung; ein Text, der durch Visionen Einsicht vermittelt."
+        },
+        {
+          "term": "Leuchter",
+          "explanation": "Die sieben Gemeinden nach der ausdrücklichen Erklärung in Offb 1,20."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Offb 1,4–8 verbindet Briefgruß, Lobpreis und Ankündigung. Die Bildsprache greift Dan 7,9–14 auf; nicht jedes Detail ist bereits durch den Text eindeutig entschlüsselt. Die Offenbarung ist zugleich Brief, Prophetie und visionäre Literatur."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Patmos und die sieben Gemeinden liegen in der Ägäis und im westlichen Kleinasien. Eine Datierung gegen Ende des 1. Jahrhunderts ist verbreitet; frühere Ansätze werden diskutiert."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-intro-t1",
+          "type": "mc",
+          "question": "Was symbolisieren die sieben Leuchter?",
+          "options": [
+            "Die sieben Gemeinden",
+            "Sieben Weltreiche",
+            "Sieben Jahreszeiten"
+          ],
+          "answer": 0,
+          "explain": "Die sieben Gemeinden. Siehe Offb 1,20.",
+          "ref": "Offb 1,20"
+        },
+        {
+          "id": "rev-intro-t2",
+          "type": "tf",
+          "statement": "Johannes nennt Patmos als Ort seines Zeugnisses.",
+          "answer": true,
+          "explain": "Offb 1,9 nennt die Insel ausdrücklich.",
+          "ref": "Offb 1,9"
+        },
+        {
+          "id": "rev-intro-t3",
+          "type": "free",
+          "question": "Was verändert sich, wenn du das Buch als Botschaft an konkrete Gemeinden liest?",
+          "model": "Der Text spricht zuerst wirkliche Gemeinden an; seine Bilder und Ermahnungen werden in diesem Zusammenhang gelesen.",
+          "ref": "Offb 1,20"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-intro-e1",
+          "type": "mc",
+          "question": "Wer soll die Worte der Weissagung bewahren?",
+          "options": [
+            "Die Hörer und Leser",
+            "Nur politische Herrscher",
+            "Nur Johannes"
+          ],
+          "answer": 0,
+          "explain": "Die Hörer und Leser. Siehe Offb 1,3.",
+          "ref": "Offb 1,3"
+        },
+        {
+          "id": "rev-intro-e2",
+          "type": "tf",
+          "statement": "Die Bilder sind alle vollständig im ersten Kapitel erklärt.",
+          "answer": false,
+          "explain": "Offb 1,20 erklärt Sterne und Leuchter, nicht sämtliche späteren Visionen.",
+          "ref": "Offb 1,20"
+        }
+      ],
+      "reflection": [
+        "Was verändert sich, wenn du das Buch als Botschaft an konkrete Gemeinden liest?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [
+        "patmos"
+      ],
+      "connections": [
+        {
+          "from": "Dan 7,13–14",
+          "to": "Offb 1,13–16",
+          "kind": "allusion",
+          "note": "Die Menschensohnsprache knüpft an Daniels Vision an."
+        }
+      ],
+      "summary": "Der Text spricht zuerst wirkliche Gemeinden an; seine Bilder und Ermahnungen werden in diesem Zusammenhang gelesen."
+    },
+    {
+      "id": "rev-churches-west",
+      "title": "Ephesus, Smyrna und Pergamon",
+      "subtitle": "Offb 2,1–17 · Liebe, Treue und Wahrheit",
+      "type": "study",
+      "icon": "mail",
+      "x": 765,
+      "y": 3270,
+      "requires": [
+        "rev-intro"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Ephesus, Smyrna und Pergamon“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Ephesus wird für Arbeit, Ausdauer und die Prüfung falscher Apostel gelobt, aber wegen der verlassenen ersten Liebe zur Umkehr gerufen. Smyrna erlebt Bedrängnis und Armut; ihr wird Treue bis zum Tod zugemutet und die Krone des Lebens zugesagt. Pergamon hält an Jesu Namen fest, obwohl Antipas getötet wurde. Dennoch werden Lehren kritisiert, die zu Götzendienst und Unzucht führen. Jeder Brief verbindet die Beschreibung Jesu mit einer konkreten Gemeinde, einer Aufforderung und einer Verheißung.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 2,
+          "from": 1,
+          "to": 7
+        },
+        {
+          "book": "Offb",
+          "ch": 2,
+          "from": 8,
+          "to": 11
+        },
+        {
+          "book": "Offb",
+          "ch": 2,
+          "from": 12,
+          "to": 17
+        }
+      ],
+      "terms": [
+        {
+          "term": "Erste Liebe",
+          "explanation": "Die in Ephesus verlorene Liebe; der Text fordert Erinnerung, Umkehr und erste Werke."
+        },
+        {
+          "term": "Krone des Lebens",
+          "explanation": "Bild der Verheißung an den treuen Überwinder."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Briefe unterscheiden Standhaftigkeit von Lieblosigkeit und falschen Kompromissen. Die polemischen Formulierungen in Smyrna beziehen sich auf den antiken Konflikt; sie rechtfertigen keine Feindschaft gegen Juden oder andere Gruppen."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Ephesus, Smyrna und Pergamon waren Städte der römischen Provinz Asia. Die genaue Identifikation des 'Thrones Satans' ist umstritten."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-churches-west-t1",
+          "type": "mc",
+          "question": "Was soll Ephesus nach der Ermahnung tun?",
+          "options": [
+            "Sich von allen Gemeinden trennen",
+            "Umkehren und die ersten Werke tun",
+            "Seine Ausdauer aufgeben"
+          ],
+          "answer": 1,
+          "explain": "Umkehren und die ersten Werke tun. Siehe Offb 2,4–5.",
+          "ref": "Offb 2,4–5"
+        },
+        {
+          "id": "rev-churches-west-t2",
+          "type": "tf",
+          "statement": "Pergamon wird nur getadelt und niemals gelobt.",
+          "answer": false,
+          "explain": "Die Gemeinde hält an Jesu Namen fest, aber bestimmte Lehren werden kritisiert.",
+          "ref": "Offb 2,13–15"
+        },
+        {
+          "id": "rev-churches-west-t3",
+          "type": "free",
+          "question": "Wie lässt sich Wahrheitstreue mit Liebe verbinden?",
+          "model": "Ephesus wird für Prüfung und Ausdauer gelobt, aber zugleich zur Wiederaufnahme seiner Liebe und Werke gerufen.",
+          "ref": "Offb 2,4–5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-churches-west-e1",
+          "type": "mc",
+          "question": "Welche Gemeinde wird zur Treue bis zum Tod gerufen?",
+          "options": [
+            "Ephesus",
+            "Smyrna",
+            "Pergamon"
+          ],
+          "answer": 1,
+          "explain": "Smyrna. Siehe Offb 2,10.",
+          "ref": "Offb 2,10"
+        },
+        {
+          "id": "rev-churches-west-e2",
+          "type": "tf",
+          "statement": "Smyrnas äußere Armut bedeutet im Text nicht geistliche Armut.",
+          "answer": true,
+          "explain": "Jesus nennt die Gemeinde trotz ihrer Armut reich.",
+          "ref": "Offb 2,9"
+        }
+      ],
+      "reflection": [
+        "Wie lässt sich Wahrheitstreue mit Liebe verbinden?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [
+        "ephesus",
+        "smyrna",
+        "pergamon"
+      ],
+      "connections": [],
+      "summary": "Ephesus wird für Prüfung und Ausdauer gelobt, aber zugleich zur Wiederaufnahme seiner Liebe und Werke gerufen."
+    },
+    {
+      "id": "rev-churches-central",
+      "title": "Thyatira und Sardes",
+      "subtitle": "Offb 2,18–3,6 · Werke und Wachsamkeit",
+      "type": "study",
+      "icon": "mail",
+      "x": 716,
+      "y": 3030,
+      "requires": [
+        "rev-churches-west"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Thyatira und Sardes“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Thyatira wächst in Liebe, Glauben, Dienst und Ausharren, duldet aber eine als Isebel bezeichnete Lehrerin. Der Name erinnert an die Königin aus 1. Könige, ohne dass die Frau zwingend so hieß. Die Gemeinde soll am Guten festhalten. Sardes besitzt einen Namen, dass es lebe, ist aber tot. Die Werke sind vor Gott nicht vollendet. Der Ruf lautet: wach werden, stärken, was übrig ist, und sich an das Empfangene erinnern. Nicht Ruf und Selbstbild, sondern tatsächliche Treue zählen.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 2,
+          "from": 18,
+          "to": 29
+        },
+        {
+          "book": "Offb",
+          "ch": 3,
+          "from": 1,
+          "to": 6
+        }
+      ],
+      "terms": [
+        {
+          "term": "Isebel",
+          "explanation": "Name mit Bezug auf 1Kö 16–21; im Sendschreiben Bezeichnung einer kritisierten Lehrerin."
+        },
+        {
+          "term": "Buch des Lebens",
+          "explanation": "Bild für Zugehörigkeit zum Leben; die genaue theologische Auslegung wird diskutiert."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Das Bild der weißen Kleider und des Buches des Lebens beschreibt die Verheißung an Überwinder. Die Texte sprechen zu Gemeinden; aus ihrer Mahnung darf keine pauschale Diagnose über die Seele einzelner Menschen folgen."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Thyatira ist auch aus Apg 16,14 als Herkunftsort Lydias bekannt. Sardes war eine bedeutende Stadt Lydiens."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-churches-central-t1",
+          "type": "mc",
+          "question": "Was wird Thyatira ausdrücklich zugutegehalten?",
+          "options": [
+            "Keine Veränderung seit der Gründung",
+            "Eine große politische Macht",
+            "Liebe, Glaube, Dienst und Ausharren"
+          ],
+          "answer": 2,
+          "explain": "Liebe, Glaube, Dienst und Ausharren. Siehe Offb 2,19.",
+          "ref": "Offb 2,19"
+        },
+        {
+          "id": "rev-churches-central-t2",
+          "type": "tf",
+          "statement": "Die letzten Werke Thyatiras werden als mehr als die ersten beschrieben.",
+          "answer": true,
+          "explain": "Offb 2,19 vermerkt die Zunahme der Werke.",
+          "ref": "Offb 2,19"
+        },
+        {
+          "id": "rev-churches-central-t3",
+          "type": "free",
+          "question": "Wo können sichtbare Erfolge eine innere Schwäche verdecken?",
+          "model": "Die Ermahnung an Sardes fordert eine Prüfung des tatsächlichen Handelns statt Vertrauen auf den eigenen Ruf.",
+          "ref": "Offb 2,19"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-churches-central-e1",
+          "type": "mc",
+          "question": "Was fordert Jesus von Sardes?",
+          "options": [
+            "Neue Titel für die Leiter vergeben",
+            "Die Stadt verlassen",
+            "Wach werden und das Übrige stärken"
+          ],
+          "answer": 2,
+          "explain": "Wach werden und das Übrige stärken. Siehe Offb 3,2–3.",
+          "ref": "Offb 3,2–3"
+        },
+        {
+          "id": "rev-churches-central-e2",
+          "type": "tf",
+          "statement": "Sardes wird allein wegen seiner Bekanntheit gelobt.",
+          "answer": false,
+          "explain": "Gerade der Gegensatz zwischen Ruf und Wirklichkeit wird kritisiert.",
+          "ref": "Offb 3,1–2"
+        }
+      ],
+      "reflection": [
+        "Wo können sichtbare Erfolge eine innere Schwäche verdecken?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [
+        "thyatira",
+        "sardis"
+      ],
+      "connections": [
+        {
+          "from": "1Kö 21,5–16",
+          "to": "Offb 2,20",
+          "kind": "allusion",
+          "note": "Der Name Isebel erinnert an die alttestamentliche Gestalt, ohne eine Identität zu behaupten."
+        }
+      ],
+      "summary": "Die Ermahnung an Sardes fordert eine Prüfung des tatsächlichen Handelns statt Vertrauen auf den eigenen Ruf."
+    },
+    {
+      "id": "rev-churches-east",
+      "title": "Philadelphia und Laodizea",
+      "subtitle": "Offb 3,7–22 · Offene Tür und Umkehr",
+      "type": "study",
+      "icon": "mail",
+      "x": 412,
+      "y": 2790,
+      "requires": [
+        "rev-churches-central"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Philadelphia und Laodizea“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Philadelphia hat kleine Kraft, hat aber Jesu Wort bewahrt und seinen Namen nicht verleugnet. Die geöffnete Tür und der Schlüssel Davids stehen für Jesu Vollmacht. Laodizea dagegen hält sich für reich und bedürfnislos, wird jedoch als arm, blind und bloß beschrieben. Jesus ruft zur Umkehr und bietet Gemeinschaft an: Er steht vor der Tür und klopft. Die beiden Briefe stellen geringe äußere Kraft und selbstsichere Fülle gegenüber.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 3,
+          "from": 7,
+          "to": 13
+        },
+        {
+          "book": "Offb",
+          "ch": 3,
+          "from": 14,
+          "to": 22
+        }
+      ],
+      "terms": [
+        {
+          "term": "Schlüssel Davids",
+          "explanation": "Bild der Autorität, eine Tür zu öffnen oder zu schließen; vgl. Jes 22,22."
+        },
+        {
+          "term": "Lauheit",
+          "explanation": "Bild für den von Jesus getadelten Zustand der Gemeinde Laodizea."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Offb 3,19 verbindet Zurechtweisung mit Liebe. Das Klopfen an der Tür ist im unmittelbaren Zusammenhang eine Einladung an die Gemeinde Laodizea, nicht ursprünglich ein isolierter Satz über Bekehrung."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Philadelphia und Laodizea lagen im Binnenland der römischen Provinz Asia. Deutungen des Warm-kalt-Bildes anhand lokaler Wasseranlagen werden diskutiert."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-churches-east-t1",
+          "type": "mc",
+          "question": "Warum wird Philadelphia gelobt?",
+          "options": [
+            "Weil es Jesu Wort trotz kleiner Kraft bewahrt",
+            "Weil es besonders reich ist",
+            "Weil es keine Widerstände erlebt"
+          ],
+          "answer": 0,
+          "explain": "Weil es Jesu Wort trotz kleiner Kraft bewahrt. Siehe Offb 3,8.",
+          "ref": "Offb 3,8"
+        },
+        {
+          "id": "rev-churches-east-t2",
+          "type": "tf",
+          "statement": "Jesu Zurechtweisung kann nach dem Text Ausdruck seiner Liebe sein.",
+          "answer": true,
+          "explain": "Offb 3,19 verbindet Liebe mit Zurechtweisung und Umkehr.",
+          "ref": "Offb 3,19"
+        },
+        {
+          "id": "rev-churches-east-t3",
+          "type": "free",
+          "question": "Was bedeutet geistliche Wachheit, wenn äußerlich alles gut zu laufen scheint?",
+          "model": "Laodizea wird zur Einsicht, Umkehr und erneuerten Gemeinschaft mit Jesus gerufen.",
+          "ref": "Offb 3,8"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-churches-east-e1",
+          "type": "mc",
+          "question": "Welche Haltung kritisiert Jesus in Laodizea?",
+          "options": [
+            "Selbstzufriedenheit und fehlende Einsicht",
+            "Demut und Bitte um Hilfe",
+            "Standhaftigkeit in Verfolgung"
+          ],
+          "answer": 0,
+          "explain": "Selbstzufriedenheit und fehlende Einsicht. Siehe Offb 3,17.",
+          "ref": "Offb 3,17"
+        },
+        {
+          "id": "rev-churches-east-e2",
+          "type": "tf",
+          "statement": "Die geöffnete Tür ist eine Belohnung für politischen Einfluss.",
+          "answer": false,
+          "explain": "Jesus verbindet sie mit seiner Vollmacht und Philadelphias Treue.",
+          "ref": "Offb 3,7–8"
+        }
+      ],
+      "reflection": [
+        "Was bedeutet geistliche Wachheit, wenn äußerlich alles gut zu laufen scheint?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [
+        "philadelphia",
+        "laodicea"
+      ],
+      "connections": [
+        {
+          "from": "Jes 22,22",
+          "to": "Offb 3,7",
+          "kind": "allusion",
+          "note": "Das Schlüsselmotiv wird auf Jesu Vollmacht bezogen."
+        }
+      ],
+      "summary": "Laodizea wird zur Einsicht, Umkehr und erneuerten Gemeinschaft mit Jesus gerufen."
+    },
+    {
+      "id": "rev-throne",
+      "title": "Der Thronsaal und das Lamm",
+      "subtitle": "Offb 4–5 · Anbetung und Erlösung",
+      "type": "study",
+      "icon": "award",
+      "x": 212,
+      "y": 2550,
+      "requires": [
+        "rev-churches-east"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Der Thronsaal und das Lamm“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Johannes sieht einen Thron, vier lebendige Wesen und vierundzwanzig Älteste. Der auf dem Thron Sitzende wird als Schöpfer angebetet. Die folgende Vision zeigt eine versiegelte Buchrolle, die niemand öffnen kann, bis das Lamm erscheint. Johannes hört von einem Löwen aus Juda und sieht ein Lamm wie geschlachtet. Das Lamm nimmt die Rolle entgegen; es ist würdig, weil es Menschen für Gott erkauft hat. Die Vision verbindet Gottes Schöpferherrlichkeit mit Jesu Sieg durch Hingabe.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 4,
+          "from": 1,
+          "to": 11
+        },
+        {
+          "book": "Offb",
+          "ch": 5,
+          "from": 1,
+          "to": 14
+        }
+      ],
+      "terms": [
+        {
+          "term": "Lamm",
+          "explanation": "Bild für den geschlachteten und siegreichen Christus."
+        },
+        {
+          "term": "Versiegelte Rolle",
+          "explanation": "Rolle, deren Öffnung die folgenden Visionen auslöst."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Wesen erinnern an Hes 1 und Jes 6. Der Löwe aus Juda greift 1Mo 49 auf. Die Bedeutung der vierundzwanzig Ältesten ist nicht ausdrücklich festgelegt; mehrere Auslegungen sind möglich."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Vision ist kein Bauplan für einen irdischen Thronsaal. Ihre Bilder bilden eine liturgische und theologische Szene."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-throne-t1",
+          "type": "mc",
+          "question": "Weshalb ist das Lamm würdig?",
+          "options": [
+            "Weil es einen irdischen Thron erobert",
+            "Weil es geschlachtet wurde und Menschen für Gott erkauft hat",
+            "Weil es die Ältesten vertreibt"
+          ],
+          "answer": 1,
+          "explain": "Weil es geschlachtet wurde und Menschen für Gott erkauft hat. Siehe Offb 5,9.",
+          "ref": "Offb 5,9"
+        },
+        {
+          "id": "rev-throne-t2",
+          "type": "tf",
+          "statement": "Johannes hört vom Löwen und sieht ein Lamm.",
+          "answer": true,
+          "explain": "Offb 5,5–6 wechselt vom angekündigten Löwen zum sichtbaren Lamm.",
+          "ref": "Offb 5,5–6"
+        },
+        {
+          "id": "rev-throne-t3",
+          "type": "free",
+          "question": "Welche Art von Sieg vermittelt das Bild des geschlachteten Lammes?",
+          "model": "Würdigkeit und Sieg werden mit Hingabe und Erlösung verbunden, nicht bloß militärischer Stärke.",
+          "ref": "Offb 5,9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-throne-e1",
+          "type": "mc",
+          "question": "Wer wird in Kapitel 4 als Schöpfer angebetet?",
+          "options": [
+            "Der Engel mit der Rolle",
+            "Der auf dem Thron Sitzende",
+            "Einer der Ältesten"
+          ],
+          "answer": 1,
+          "explain": "Der auf dem Thron Sitzende. Siehe Offb 4,11.",
+          "ref": "Offb 4,11"
+        },
+        {
+          "id": "rev-throne-e2",
+          "type": "tf",
+          "statement": "Die Zahl 24 wird im Text eindeutig als Liste bestimmter Namen erklärt.",
+          "answer": false,
+          "explain": "Die Ältesten werden beschrieben, aber nicht namentlich identifiziert.",
+          "ref": "Offb 4,4"
+        }
+      ],
+      "reflection": [
+        "Welche Art von Sieg vermittelt das Bild des geschlachteten Lammes?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "1Mo 49,9–10",
+          "to": "Offb 5,5",
+          "kind": "allusion",
+          "note": "Das Löwenmotiv aus Juda wird auf Christus bezogen."
+        }
+      ],
+      "summary": "Würdigkeit und Sieg werden mit Hingabe und Erlösung verbunden, nicht bloß militärischer Stärke."
+    },
+    {
+      "id": "rev-seals",
+      "title": "Die sieben Siegel und die Versiegelten",
+      "subtitle": "Offb 6–8,1 · Not, Zeugnis und Bewahrung",
+      "type": "study",
+      "icon": "layers",
+      "x": 353,
+      "y": 2310,
+      "requires": [
+        "rev-throne"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Die sieben Siegel und die Versiegelten“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Mit den ersten vier Siegeln erscheinen Reiter: Eroberung, Krieg, Mangel und Tod werden durch sie sichtbar. Das fünfte Siegel zeigt Getötete, die nach Gottes gerechtem Handeln rufen. Das sechste erschüttert die vertraute Welt. Kapitel 7 unterbricht die Folge mit der Versiegelung von 144.000 aus den Stämmen Israels und einer unzählbaren Menge aus allen Nationen vor Thron und Lamm. Das siebte Siegel führt zum Schweigen im Himmel und zu den Posaunen.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 6,
+          "from": 1,
+          "to": 17
+        },
+        {
+          "book": "Offb",
+          "ch": 7,
+          "from": 1,
+          "to": 17
+        },
+        {
+          "book": "Offb",
+          "ch": 8,
+          "from": 1,
+          "to": 5
+        }
+      ],
+      "terms": [
+        {
+          "term": "Siegel",
+          "explanation": "Verschluss der Rolle; das Lamm öffnet die Siegel nacheinander."
+        },
+        {
+          "term": "Versiegelung",
+          "explanation": "Zeichen der Zugehörigkeit zu Gott im visionären Geschehen."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Zahl 144.000 und die Beziehung zwischen der versiegelten Gruppe und der großen Menge werden unterschiedlich gedeutet. Der Text unterscheidet Hören und Sehen, nennt die Stämme und betont Gottes Fürsorge; eine moderne Namensliste lässt sich daraus nicht ableiten."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Reiterbilder erinnern an Sach 1 und 6. Der Text deutet Bedrängnis in visionärer Form, ohne einen modernen Ereigniskalender zu liefern."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-seals-t1",
+          "type": "mc",
+          "question": "Was fragen die Getöteten unter dem Altar?",
+          "options": [
+            "Wann sie reich werden",
+            "Wie sie die Rolle selbst öffnen",
+            "Wie lange Gott noch mit seinem Gericht wartet"
+          ],
+          "answer": 2,
+          "explain": "Wie lange Gott noch mit seinem Gericht wartet. Siehe Offb 6,9–11.",
+          "ref": "Offb 6,9–11"
+        },
+        {
+          "id": "rev-seals-t2",
+          "type": "tf",
+          "statement": "Kapitel 7 steht zwischen dem sechsten und siebten Siegel.",
+          "answer": true,
+          "explain": "Das sechste Siegel steht in Kapitel 6, das siebte in Offb 8,1.",
+          "ref": "Offb 6,12; 8,1"
+        },
+        {
+          "id": "rev-seals-t3",
+          "type": "free",
+          "question": "Was unterscheidet Bewahrung in der Vision von einem Versprechen völliger Leidfreiheit?",
+          "model": "Die große Menge kommt aus Bedrängnis und empfängt Gottes Trost; der Text leugnet das Leiden nicht.",
+          "ref": "Offb 6,9–11"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-seals-e1",
+          "type": "mc",
+          "question": "Wie wird die große Menge beschrieben?",
+          "options": [
+            "Nur aus einer Stadt",
+            "Als genau ein einzelner Stamm",
+            "Aus allen Nationen, Stämmen, Völkern und Sprachen"
+          ],
+          "answer": 2,
+          "explain": "Aus allen Nationen, Stämmen, Völkern und Sprachen. Siehe Offb 7,9.",
+          "ref": "Offb 7,9"
+        },
+        {
+          "id": "rev-seals-e2",
+          "type": "tf",
+          "statement": "Die Offenbarung nennt Namen aller 144.000.",
+          "answer": false,
+          "explain": "Sie zählt zwölf Stammesgruppen auf, nicht einzelne Namen.",
+          "ref": "Offb 7,4–8"
+        }
+      ],
+      "reflection": [
+        "Was unterscheidet Bewahrung in der Vision von einem Versprechen völliger Leidfreiheit?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Sach 6,1–8",
+          "to": "Offb 6,1–8",
+          "kind": "allusion",
+          "note": "Verwandte Pferde- und Sendungsbilder; keine Gleichsetzung aller Details."
+        }
+      ],
+      "summary": "Die große Menge kommt aus Bedrängnis und empfängt Gottes Trost; der Text leugnet das Leiden nicht."
+    },
+    {
+      "id": "rev-trumpets",
+      "title": "Posaunen und die beiden Zeugen",
+      "subtitle": "Offb 8–11 · Gericht, Umkehr und Zeugnis",
+      "type": "study",
+      "icon": "bell",
+      "x": 668,
+      "y": 2070,
+      "requires": [
+        "rev-seals"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Posaunen und die beiden Zeugen“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Die Posaunen zeigen erschütternde Gerichte über Erde, Meer, Wasser, Gestirne und Menschen. Wiederholt wird nur ein Teil getroffen. Offb 9,20–21 betont, dass die Überlebenden dennoch nicht umkehren. In Kapitel 10 empfängt Johannes eine kleine Rolle, die im Mund süß und im Bauch bitter ist. Kapitel 11 erzählt von zwei Zeugen, ihrem Tod und ihrer Wiederbelebung, bevor die siebte Posaune Gottes und seines Christus Herrschaft verkündet.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 8,
+          "from": 6,
+          "to": 13
+        },
+        {
+          "book": "Offb",
+          "ch": 9,
+          "from": 13,
+          "to": 21
+        },
+        {
+          "book": "Offb",
+          "ch": 10,
+          "from": 8,
+          "to": 11
+        },
+        {
+          "book": "Offb",
+          "ch": 11,
+          "from": 1,
+          "to": 19
+        }
+      ],
+      "terms": [
+        {
+          "term": "Posaune",
+          "explanation": "Signalinstrument; in der Vision markiert es eine Folge von Gerichten."
+        },
+        {
+          "term": "Zeugnis",
+          "explanation": "Das öffentliche Bekenntnis, das auch unter Feindschaft Bestand haben soll."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Zeugen erinnern durch ihre Zeichen an Mose und Elia; der Text nennt sie nicht mit diesen Namen. Ihre Identität wird persönlich, kollektiv oder symbolisch gedeutet. Die Vision fordert Zeugnis und Umkehr, nicht spekulative Identifizierung moderner Personen."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Gerichtszeichen greifen Motive der ägyptischen Plagen und prophetischer Visionen auf."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-trumpets-t1",
+          "type": "mc",
+          "question": "Wie reagieren die Überlebenden in Offb 9,20–21?",
+          "options": [
+            "Sie kehren nicht um",
+            "Sie beenden jeden Götzendienst",
+            "Sie öffnen das letzte Siegel"
+          ],
+          "answer": 0,
+          "explain": "Sie kehren nicht um. Siehe Offb 9,20–21.",
+          "ref": "Offb 9,20–21"
+        },
+        {
+          "id": "rev-trumpets-t2",
+          "type": "tf",
+          "statement": "Die beiden Zeugen werden ausdrücklich Mose und Elia genannt.",
+          "answer": false,
+          "explain": "Ihre Zeichen erinnern an beide, doch der Text nennt ihre Namen nicht.",
+          "ref": "Offb 11,3–6"
+        },
+        {
+          "id": "rev-trumpets-t3",
+          "type": "free",
+          "question": "Warum kann Gottes Wort im Bild zugleich süß und bitter sein?",
+          "model": "Die Botschaft ist kostbar und zugleich mit schwerem Zeugnis und Gericht verbunden; das ist eine textnahe Deutung.",
+          "ref": "Offb 9,20–21"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-trumpets-e1",
+          "type": "mc",
+          "question": "Wie schmeckt die kleine Rolle?",
+          "options": [
+            "Süß im Mund, bitter im Bauch",
+            "Bitter im Mund, süß im Bauch",
+            "Überall salzig"
+          ],
+          "answer": 0,
+          "explain": "Süß im Mund, bitter im Bauch. Siehe Offb 10,9–10.",
+          "ref": "Offb 10,9–10"
+        },
+        {
+          "id": "rev-trumpets-e2",
+          "type": "tf",
+          "statement": "Die siebte Posaune verkündet die Herrschaft Gottes und seines Christus.",
+          "answer": true,
+          "explain": "Offb 11,15 enthält diese Verkündigung.",
+          "ref": "Offb 11,15"
+        }
+      ],
+      "reflection": [
+        "Warum kann Gottes Wort im Bild zugleich süß und bitter sein?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Hes 3,1–3",
+          "to": "Offb 10,8–11",
+          "kind": "allusion",
+          "note": "Beide Propheten essen eine Rolle; die bitteren Folgen werden in Offenbarung eigens betont."
+        }
+      ],
+      "summary": "Die Botschaft ist kostbar und zugleich mit schwerem Zeugnis und Gericht verbunden; das ist eine textnahe Deutung."
+    },
+    {
+      "id": "rev-dragon",
+      "title": "Die Frau, das Kind und der Drache",
+      "subtitle": "Offb 12 · Kampf und Treue",
+      "type": "study",
+      "icon": "shield",
+      "x": 784,
+      "y": 1830,
+      "requires": [
+        "rev-trumpets"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Die Frau, das Kind und der Drache“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Eine Frau, mit Sonne bekleidet, bringt einen Sohn zur Welt. Der Drache versucht, das Kind zu verschlingen. Das Kind wird zu Gott und seinem Thron entrückt. Michael und seine Engel kämpfen mit dem Drachen. Der Text identifiziert diesen als die alte Schlange, Teufel und Satan. Die Frau flieht in die Wüste; am Ende richtet der Drache seinen Zorn gegen diejenigen, die Gottes Gebote bewahren und das Zeugnis Jesu haben.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 12,
+          "from": 1,
+          "to": 17
+        }
+      ],
+      "terms": [
+        {
+          "term": "Drache",
+          "explanation": "Im Text ausdrücklich als Teufel und Satan identifiziert."
+        },
+        {
+          "term": "Zeugnis Jesu",
+          "explanation": "Kennzeichen derer, gegen die der Drache Krieg führt."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Frau wird unter anderem als Gottesvolk, Israel, Gemeinde oder in Verbindung mit Maria gelesen. Die Bilder überschneiden sich in manchen Auslegungen; der Text benennt den Drachen ausdrücklich, nicht aber die Frau ebenso eindeutig."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Zahl zwölf und Himmelsbilder erinnern an 1Mo 37. Psalm 2 liefert den Hintergrund für die Herrschaft des Kindes."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-dragon-t1",
+          "type": "mc",
+          "question": "Wen identifiziert Offb 12,9 ausdrücklich als den Drachen?",
+          "options": [
+            "Einen namentlich genannten römischen Kaiser",
+            "Den Teufel und Satan",
+            "Einen der zwölf Apostel"
+          ],
+          "answer": 1,
+          "explain": "Den Teufel und Satan. Siehe Offb 12,9.",
+          "ref": "Offb 12,9"
+        },
+        {
+          "id": "rev-dragon-t2",
+          "type": "tf",
+          "statement": "Die Frau wird im Text ausdrücklich mit dem Namen Maria bezeichnet.",
+          "answer": false,
+          "explain": "Die Frau bleibt namenlos; die Deutungen gehen vom Bildzusammenhang aus.",
+          "ref": "Offb 12,1–6"
+        },
+        {
+          "id": "rev-dragon-t3",
+          "type": "free",
+          "question": "Was heißt Treue, wenn Widerstand nicht sofort verschwindet?",
+          "model": "Die Vision beschreibt Schutz und bleibenden Konflikt; Treue wird nicht mit einem konfliktfreien Leben gleichgesetzt.",
+          "ref": "Offb 12,9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-dragon-e1",
+          "type": "mc",
+          "question": "Wohin wird das Kind entrückt?",
+          "options": [
+            "Nach Babylon",
+            "Zu Gott und seinem Thron",
+            "Nach Ephesus"
+          ],
+          "answer": 1,
+          "explain": "Zu Gott und seinem Thron. Siehe Offb 12,5.",
+          "ref": "Offb 12,5"
+        },
+        {
+          "id": "rev-dragon-e2",
+          "type": "tf",
+          "statement": "Das Zeugnis Jesu spielt für den Sieg der Glaubenden eine Rolle.",
+          "answer": true,
+          "explain": "Offb 12,11 nennt das Blut des Lammes und das Wort ihres Zeugnisses.",
+          "ref": "Offb 12,11"
+        }
+      ],
+      "reflection": [
+        "Was heißt Treue, wenn Widerstand nicht sofort verschwindet?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Ps 2,9",
+          "to": "Offb 12,5",
+          "kind": "allusion",
+          "note": "Das Zepter aus Eisen verbindet das Kind mit der königlichen Verheißung."
+        }
+      ],
+      "summary": "Die Vision beschreibt Schutz und bleibenden Konflikt; Treue wird nicht mit einem konfliktfreien Leben gleichgesetzt."
+    },
+    {
+      "id": "rev-beasts",
+      "title": "Die Tiere, das Malzeichen und das Lamm",
+      "subtitle": "Offb 13–14 · Anbetung und Loyalität",
+      "type": "study",
+      "icon": "alert-triangle",
+      "x": 565,
+      "y": 1590,
+      "requires": [
+        "rev-dragon"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Die Tiere, das Malzeichen und das Lamm“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Zwei Tiere erscheinen: eines aus dem Meer, eines aus der Erde. Macht, Verführung, falsche Anbetung und wirtschaftlicher Zwang werden miteinander verbunden. Das zweite Tier lenkt die Anbetung auf das erste. Das Malzeichen steht im Zusammenhang mit Handeln, Zugehörigkeit und der Möglichkeit zu kaufen oder zu verkaufen. Kapitel 14 stellt dem die Gemeinschaft des Lammes gegenüber, die Gottes und des Lammes Namen trägt. Die Vision stellt die Frage, wem der Mensch seine letzte Loyalität gibt.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 13,
+          "from": 1,
+          "to": 18
+        },
+        {
+          "book": "Offb",
+          "ch": 14,
+          "from": 1,
+          "to": 13
+        }
+      ],
+      "terms": [
+        {
+          "term": "Malzeichen",
+          "explanation": "Zeichen der Zugehörigkeit zum Tier in einer Vision über Anbetung und Zwang."
+        },
+        {
+          "term": "Babylon",
+          "explanation": "In Offb 14 angekündigtes Bild einer fallenden Macht; ausführlich in Kap. 17–18."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Zahl 666 ist nach Offb 13,18 die Zahl eines Menschen. Nero als verschlüsselte Namenszahl ist eine bekannte historische Deutung; andere Deutungen bestehen. Die Bilder dürfen nicht ohne Textbelege auf heutige technische Geräte oder konkrete Menschen übertragen werden."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Dan 7 beschreibt Tierbilder für Herrschaftsgebilde. Im römischen Umfeld von Kleinasien waren politische Loyalität und Herrscherverehrung wichtige Fragen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-beasts-t1",
+          "type": "mc",
+          "question": "Welche Handlung fördert das zweite Tier?",
+          "options": [
+            "Anbetung des Schöpfers",
+            "Rückkehr nach Patmos",
+            "Anbetung des ersten Tieres"
+          ],
+          "answer": 2,
+          "explain": "Anbetung des ersten Tieres. Siehe Offb 13,12.",
+          "ref": "Offb 13,12"
+        },
+        {
+          "id": "rev-beasts-t2",
+          "type": "tf",
+          "statement": "Der Text nennt eine eindeutige moderne technische Erfindung als Malzeichen.",
+          "answer": false,
+          "explain": "Er beschreibt ein Zeichen in seinem eigenen visionären Kontext, keine moderne Marke.",
+          "ref": "Offb 13,16–18"
+        },
+        {
+          "id": "rev-beasts-t3",
+          "type": "free",
+          "question": "Wie unterscheidet sich Treue zu Gott von bloßer Anpassung an gesellschaftlichen Druck?",
+          "model": "Die Vision warnt vor erzwungener falscher Anbetung und ermutigt zum Ausharren.",
+          "ref": "Offb 13,12"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-beasts-e1",
+          "type": "mc",
+          "question": "Wer steht mit dem Lamm auf Zion?",
+          "options": [
+            "Die vier Reiter",
+            "Die Könige Babylons",
+            "Die 144.000 mit dem Namen des Lammes und seines Vaters"
+          ],
+          "answer": 2,
+          "explain": "Die 144.000 mit dem Namen des Lammes und seines Vaters. Siehe Offb 14,1.",
+          "ref": "Offb 14,1"
+        },
+        {
+          "id": "rev-beasts-e2",
+          "type": "tf",
+          "statement": "Offb 14,12 verbindet Ausharren mit Gottes Geboten und dem Glauben Jesu.",
+          "answer": true,
+          "explain": "Der Vers benennt die Standhaftigkeit der Heiligen.",
+          "ref": "Offb 14,12"
+        }
+      ],
+      "reflection": [
+        "Wie unterscheidet sich Treue zu Gott von bloßer Anpassung an gesellschaftlichen Druck?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Dan 7,2–8",
+          "to": "Offb 13,1–2",
+          "kind": "allusion",
+          "note": "Die Tierbilder greifen Daniels Vision auf und verbinden mehrere Motive."
+        }
+      ],
+      "summary": "Die Vision warnt vor erzwungener falscher Anbetung und ermutigt zum Ausharren."
+    },
+    {
+      "id": "rev-bowls",
+      "title": "Die sieben Schalen",
+      "subtitle": "Offb 15–16 · Gericht und Gerechtigkeit",
+      "type": "study",
+      "icon": "droplet",
+      "x": 268,
+      "y": 1350,
+      "requires": [
+        "rev-beasts"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Die sieben Schalen“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Die Sieger über das Tier stehen an einem gläsernen Meer und singen das Lied Moses und des Lammes. Sie bekennen Gottes gerechte Wege. Danach werden sieben Schalen ausgegossen. Die Vision nutzt Bilder von Plagen, Blut, Finsternis und Erschütterung. Trotz der Gerichte lästern Menschen Gott, statt umzukehren. Die sechste Schale führt zur Sammlung bei Harmagedon. Der Text unterbricht die Szene mit dem Aufruf zur Wachsamkeit.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 15,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Offb",
+          "ch": 16,
+          "from": 1,
+          "to": 21
+        }
+      ],
+      "terms": [
+        {
+          "term": "Schalen",
+          "explanation": "Sieben Gefäße, die in der Vision die letzten Plagen enthalten."
+        },
+        {
+          "term": "Harmagedon",
+          "explanation": "Name des Sammelortes in Offb 16,16; Deutung nicht einheitlich."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Schalen erinnern an die Plagen in 2Mo. Harmagedon ist ein symbolisch aufgeladener Ortsname; seine genaue geografische und endzeitliche Deutung bleibt umstritten. Der Text legitimiert keine menschliche Gewalt im Namen Gottes."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Der Name wird oft mit Megiddo verbunden, aber der genaue sprachliche und geografische Bezug ist diskutiert."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-bowls-t1",
+          "type": "mc",
+          "question": "Welches Lied singen die Sieger?",
+          "options": [
+            "Das Lied Moses und des Lammes",
+            "Das Lied Deboras allein",
+            "Ein Loblied auf das Tier"
+          ],
+          "answer": 0,
+          "explain": "Das Lied Moses und des Lammes. Siehe Offb 15,3.",
+          "ref": "Offb 15,3"
+        },
+        {
+          "id": "rev-bowls-t2",
+          "type": "tf",
+          "statement": "Die Menschen kehren bei jeder Schale automatisch um.",
+          "answer": false,
+          "explain": "Offb 16,9.11 beschreibt ausdrücklich ausbleibende Umkehr.",
+          "ref": "Offb 16,9–11"
+        },
+        {
+          "id": "rev-bowls-t3",
+          "type": "free",
+          "question": "Was ist der Unterschied zwischen der Erwartung göttlicher Gerechtigkeit und eigener Vergeltung?",
+          "model": "Die Vision überlässt Gericht Gott und ruft die Lesenden zur Wachsamkeit.",
+          "ref": "Offb 15,3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-bowls-e1",
+          "type": "mc",
+          "question": "Wozu ruft Offb 16,15 auf?",
+          "options": [
+            "Wach bleiben und die Kleider bewahren",
+            "Das Datum der Schlacht errechnen",
+            "Eine Waffe kaufen"
+          ],
+          "answer": 0,
+          "explain": "Wach bleiben und die Kleider bewahren. Siehe Offb 16,15.",
+          "ref": "Offb 16,15"
+        },
+        {
+          "id": "rev-bowls-e2",
+          "type": "tf",
+          "statement": "Das Lied lobt Gottes gerechte und wahrhaftige Wege.",
+          "answer": true,
+          "explain": "Offb 15,3 drückt dies aus.",
+          "ref": "Offb 15,3"
+        }
+      ],
+      "reflection": [
+        "Was ist der Unterschied zwischen der Erwartung göttlicher Gerechtigkeit und eigener Vergeltung?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "2Mo 15,1–18",
+          "to": "Offb 15,3–4",
+          "kind": "allusion",
+          "note": "Das Lied Moses verbindet die Erinnerung an Rettung mit dem Lob des Lammes."
+        }
+      ],
+      "summary": "Die Vision überlässt Gericht Gott und ruft die Lesenden zur Wachsamkeit."
+    },
+    {
+      "id": "rev-babylon",
+      "title": "Der Fall Babylons",
+      "subtitle": "Offb 17–18 · Verführung, Handel und Gericht",
+      "type": "study",
+      "icon": "anchor",
+      "x": 246,
+      "y": 1110,
+      "requires": [
+        "rev-bowls"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Der Fall Babylons“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Babylon erscheint als prächtig geschmückte Frau und als große Stadt. Sie steht mit Herrschern und Kaufleuten in Verbindung, lebt im Luxus und trägt Verantwortung für Gewalt gegen die Heiligen. Kapitel 18 beschreibt die Klage der Könige, Händler und Schiffsleute über ihren Sturz. In der Warenliste werden auch Menschen genannt. Gottes Volk wird aufgerufen, sich nicht an ihren Sünden zu beteiligen. Die Vision stellt luxuriösen Wohlstand, Ausbeutung und religiös-politische Verführung unter Kritik.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 17,
+          "from": 1,
+          "to": 18
+        },
+        {
+          "book": "Offb",
+          "ch": 18,
+          "from": 1,
+          "to": 24
+        }
+      ],
+      "terms": [
+        {
+          "term": "Babylon",
+          "explanation": "Visionärer Name einer großen, gerichteten Stadt und Machtordnung."
+        },
+        {
+          "term": "Klage über den Handel",
+          "explanation": "Die wirtschaftlichen Profiteure trauern über den Verlust ihrer Einnahmen."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Babylon greift die prophetischen Gerichtsworte gegen die historische Stadt auf. Rom ist als zeitgenössischer Bezug verbreitet; darüber hinaus wird Babylon als Symbol verführerischer Machtordnungen gelesen. Die Auslegung darf nicht pauschal moderne Völker oder Religionen dämonisieren."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Rom als Stadt mit sieben Hügeln bildet einen möglichen historischen Bezug zu Offb 17,9; Details bleiben diskutiert."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-babylon-t1",
+          "type": "mc",
+          "question": "Warum klagen die Kaufleute?",
+          "options": [
+            "Sie haben das Lamm verloren",
+            "Niemand kauft ihre Waren mehr",
+            "Sie wollen die sieben Gemeinden besuchen"
+          ],
+          "answer": 1,
+          "explain": "Niemand kauft ihre Waren mehr. Siehe Offb 18,11.",
+          "ref": "Offb 18,11"
+        },
+        {
+          "id": "rev-babylon-t2",
+          "type": "tf",
+          "statement": "Menschen werden in der Warenliste genannt.",
+          "answer": true,
+          "explain": "Offb 18,13 nennt unter den Waren Leiber und Menschenseelen.",
+          "ref": "Offb 18,13"
+        },
+        {
+          "id": "rev-babylon-t3",
+          "type": "free",
+          "question": "Welche wirtschaftlichen Verhaltensweisen können mit dem Ruf aus Babylon in Spannung geraten?",
+          "model": "Ausbeutung, Gier und Gleichgültigkeit gegenüber Leid stehen in Spannung zur Aufforderung, sich an ihren Sünden nicht zu beteiligen.",
+          "ref": "Offb 18,11"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-babylon-e1",
+          "type": "mc",
+          "question": "Was soll Gottes Volk tun?",
+          "options": [
+            "Seinen Luxus nachahmen",
+            "Aus Babylon hinausgehen und nicht an ihren Sünden teilhaben",
+            "Das Gericht selbst vollstrecken"
+          ],
+          "answer": 1,
+          "explain": "Aus Babylon hinausgehen und nicht an ihren Sünden teilhaben. Siehe Offb 18,4.",
+          "ref": "Offb 18,4"
+        },
+        {
+          "id": "rev-babylon-e2",
+          "type": "tf",
+          "statement": "Babylons heutige Identität ist im Text mit einem modernen Staatsnamen festgelegt.",
+          "answer": false,
+          "explain": "Der Text verwendet einen antiken symbolischen Namen und visionäre Bilder.",
+          "ref": "Offb 17,5.18"
+        }
+      ],
+      "reflection": [
+        "Welche wirtschaftlichen Verhaltensweisen können mit dem Ruf aus Babylon in Spannung geraten?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Jer 51,6–9",
+          "to": "Offb 18,4–8",
+          "kind": "allusion",
+          "note": "Der Ruf zum Auszug und die Gerichtssprache knüpfen an Jeremias Babylonsprüche an."
+        }
+      ],
+      "summary": "Ausbeutung, Gier und Gleichgültigkeit gegenüber Leid stehen in Spannung zur Aufforderung, sich an ihren Sünden nicht zu beteiligen."
+    },
+    {
+      "id": "rev-victory",
+      "title": "Der König, das tausendjährige Reich und das Gericht",
+      "subtitle": "Offb 19–20 · Sieg und Verantwortung",
+      "type": "study",
+      "icon": "flag",
+      "x": 524,
+      "y": 870,
+      "requires": [
+        "rev-babylon"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Der König, das tausendjährige Reich und das Gericht“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Der Himmel jubelt über Gottes gerechtes Gericht, und die Hochzeit des Lammes wird angekündigt. Ein Reiter auf weißem Pferd trägt den Namen Wort Gottes; er wird als König der Könige und Herr der Herren bezeichnet. Kapitel 20 erzählt die Bindung Satans, eine tausendjährige Herrschaft, eine letzte Rebellion und das Gericht vor dem großen weißen Thron. Die Toten werden nach ihren Werken beurteilt; das Buch des Lebens wird geöffnet. Tod und Hades werden in den Feuersee geworfen.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 19,
+          "from": 1,
+          "to": 16
+        },
+        {
+          "book": "Offb",
+          "ch": 19,
+          "from": 17,
+          "to": 21
+        },
+        {
+          "book": "Offb",
+          "ch": 20,
+          "from": 1,
+          "to": 15
+        }
+      ],
+      "terms": [
+        {
+          "term": "Millennium",
+          "explanation": "Die tausend Jahre in Offb 20, deren zeitliche Einordnung umstritten ist."
+        },
+        {
+          "term": "Buch des Lebens",
+          "explanation": "Bild für Zugehörigkeit zum Leben im Gericht."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die tausend Jahre werden in christlichen Traditionen unterschiedlich verstanden: als zukünftige Herrschaft vor dem letzten Gericht, als symbolische Gegenwartsherrschaft oder in weiteren endzeitlichen Modellen. Kein Modell darf als allein durch die Reihenfolge der Bilder bewiesen ausgegeben werden. Der Text stellt Gottes Sieg und Verantwortung ins Zentrum."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Gerichtsbücher und die von Gott verliehene Herrschaft erinnern an Dan 7,9–14."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-victory-t1",
+          "type": "mc",
+          "question": "Welchen Namen trägt der Reiter?",
+          "options": [
+            "Der König von Babylon",
+            "Der Engel von Sardes",
+            "Das Wort Gottes"
+          ],
+          "answer": 2,
+          "explain": "Das Wort Gottes. Siehe Offb 19,13.",
+          "ref": "Offb 19,13"
+        },
+        {
+          "id": "rev-victory-t2",
+          "type": "tf",
+          "statement": "Alle christlichen Traditionen verstehen die tausend Jahre identisch.",
+          "answer": false,
+          "explain": "Der Text ist Grundlage verschiedener eschatologischer Auslegungen.",
+          "ref": "Offb 20,1–6"
+        },
+        {
+          "id": "rev-victory-t3",
+          "type": "free",
+          "question": "Wie kann die Hoffnung auf Gottes endgültige Gerechtigkeit das eigene Handeln prägen?",
+          "model": "Sie ermutigt zu Treue und Verantwortung, ohne menschliche Vergeltung zu rechtfertigen.",
+          "ref": "Offb 19,13"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-victory-e1",
+          "type": "mc",
+          "question": "Was wird beim Gericht geöffnet?",
+          "options": [
+            "Die Tore Jerichos",
+            "Die sieben Sendschreiben",
+            "Bücher und das Buch des Lebens"
+          ],
+          "answer": 2,
+          "explain": "Bücher und das Buch des Lebens. Siehe Offb 20,12.",
+          "ref": "Offb 20,12"
+        },
+        {
+          "id": "rev-victory-e2",
+          "type": "tf",
+          "statement": "Tod und Hades werden in den Feuersee geworfen.",
+          "answer": true,
+          "explain": "Offb 20,14 beschreibt ihren endgültigen Untergang.",
+          "ref": "Offb 20,14"
+        }
+      ],
+      "reflection": [
+        "Wie kann die Hoffnung auf Gottes endgültige Gerechtigkeit das eigene Handeln prägen?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Dan 7,9–14",
+          "to": "Offb 20,11–12",
+          "kind": "theme",
+          "note": "Thron, Gericht und Bücher bilden verwandte Bilder."
+        }
+      ],
+      "summary": "Sie ermutigt zu Treue und Verantwortung, ohne menschliche Vergeltung zu rechtfertigen."
+    },
+    {
+      "id": "rev-creation",
+      "title": "Das Neue Jerusalem und der Strom des Lebens",
+      "subtitle": "Offb 21–22 · Gottes Wohnung bei den Menschen",
+      "type": "study",
+      "icon": "sunrise",
+      "x": 774,
+      "y": 630,
+      "requires": [
+        "rev-victory"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema „Das Neue Jerusalem und der Strom des Lebens“ anhand der angegebenen Schriftstellen erklären und Textaussage von Auslegung unterscheiden.",
+      "discover": "Johannes sieht einen neuen Himmel und eine neue Erde. Das Neue Jerusalem kommt von Gott herab, und Gottes Wohnung ist bei den Menschen. Tod, Trauer und Schmerz gehören der vergangenen Ordnung an. Die Stadt hat zwölf Tore mit den Namen der Stämme Israels und zwölf Grundlagen mit den Namen der Apostel des Lammes. Ihr Tempel ist Gott und das Lamm. Der Strom des Lebens und der Baum des Lebens erinnern an Eden; die Blätter dienen zur Heilung der Nationen. Das Buch endet mit Einladung, Mahnung und der Bitte um Jesu Kommen.",
+      "readings": [
+        {
+          "book": "Offb",
+          "ch": 21,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Offb",
+          "ch": 21,
+          "from": 9,
+          "to": 27
+        },
+        {
+          "book": "Offb",
+          "ch": 22,
+          "from": 1,
+          "to": 21
+        }
+      ],
+      "terms": [
+        {
+          "term": "Neues Jerusalem",
+          "explanation": "Von Gott herabkommende heilige Stadt in der Vision."
+        },
+        {
+          "term": "Baum des Lebens",
+          "explanation": "Bild des von Gott geschenkten Lebens; verbindet Anfang und Ende der Bibel."
+        }
+      ],
+      "background": [
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Stadtvision verbindet Israels Geschichte, die Apostel und die Hoffnung der Völker. Ihre Maße und Schmucksteine werden wörtlich, symbolisch oder als Verbindung beider Ebenen gelesen. Sie ist nicht mit einer heutigen Stadtplanung gleichzusetzen."
+        },
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Bilder nehmen 1Mo 2–3, Jes 65 und Hes 47 auf. Die Offenbarung endet mit einer erneuerten Schöpfung statt mit der endgültigen Vernichtung aller Hoffnung."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "rev-creation-t1",
+          "type": "mc",
+          "question": "Woher kommt das Neue Jerusalem?",
+          "options": [
+            "Von Gott aus dem Himmel",
+            "Aus einem menschlichen Bauprojekt",
+            "Aus dem Tier des Meeres"
+          ],
+          "answer": 0,
+          "explain": "Von Gott aus dem Himmel. Siehe Offb 21,2.",
+          "ref": "Offb 21,2"
+        },
+        {
+          "id": "rev-creation-t2",
+          "type": "tf",
+          "statement": "Offb 21 verbindet die Stadttore mit Israel und die Grundlagen mit den Aposteln.",
+          "answer": true,
+          "explain": "Die Namen stehen auf Toren beziehungsweise Grundlagen.",
+          "ref": "Offb 21,12–14"
+        },
+        {
+          "id": "rev-creation-t3",
+          "type": "free",
+          "question": "Welche Hoffnung trägt die letzte Vision für das gegenwärtige Leben?",
+          "model": "Gottes Nähe, das Ende des Todes und die Heilung der Völker bilden einen Horizont für Hoffnung und Treue.",
+          "ref": "Offb 21,2"
+        }
+      ],
+      "exam": [
+        {
+          "id": "rev-creation-e1",
+          "type": "mc",
+          "question": "Was ist der Tempel der Stadt?",
+          "options": [
+            "Gott, der Herr, der Allmächtige, und das Lamm",
+            "Ein neu gebauter Tempel Salomos",
+            "Die sieben Leuchter"
+          ],
+          "answer": 0,
+          "explain": "Gott, der Herr, der Allmächtige, und das Lamm. Siehe Offb 21,22.",
+          "ref": "Offb 21,22"
+        },
+        {
+          "id": "rev-creation-e2",
+          "type": "tf",
+          "statement": "Das Buch endet ohne Einladung oder Hoffnung.",
+          "answer": false,
+          "explain": "Offb 22,17 lädt die Dürstenden ein und 22,20 blickt auf Jesu Kommen.",
+          "ref": "Offb 22,17–20"
+        }
+      ],
+      "reflection": [
+        "Welche Hoffnung trägt die letzte Vision für das gegenwärtige Leben?",
+        "Welche Aussage des Textes möchtest du in ihrem Zusammenhang weiter untersuchen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "1Mo 2,9; 3,22–24",
+          "to": "Offb 22,1–5",
+          "kind": "theme",
+          "note": "Der Baum des Lebens erscheint in der erneuerten Schöpfung erneut."
+        },
+        {
+          "from": "Hes 47,1–12",
+          "to": "Offb 22,1–2",
+          "kind": "allusion",
+          "note": "Lebenspendender Strom und Bäume verbinden die Visionen."
+        }
+      ],
+      "summary": "Gottes Nähe, das Ende des Todes und die Heilung der Völker bilden einen Horizont für Hoffnung und Treue."
+    }
+  ]
+}

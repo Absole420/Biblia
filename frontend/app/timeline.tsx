@@ -1,7 +1,7 @@
 import { Image } from "expo-image";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
@@ -11,27 +11,29 @@ import { ARTICLE_BY_ID, ARTICLES } from "@/src/data/articles";
 import { ArticleKind, EPOCH_LABEL, KIND_LABEL } from "@/src/data/articleTypes";
 import { ILLUSTRATIONS } from "@/src/data/illustrations";
 import { KIND_META, LEXICON } from "@/src/data/lexicon";
-import { Epoch, EPOCH_ORDER, EPOCH_STYLE, epochOfYear, TIMELINE_YEAR } from "@/src/data/timelineData";
+import { TimelineEpoch, TimelineContext, TIMELINE_EPOCH_ORDER, TIMELINE_EPOCH_STYLE, epochOfYear, TIMELINE_YEAR, TIMELINE_VISION_IDS, isTimelineEntry, isVision, timelineContext, TIMELINE_CONTEXT_LABEL } from "@/src/data/timelineData";
+import { matchesReferenceSearch } from "@/src/lib/referenceSearch";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
-type Item = { id: string; year: number; epoch: Epoch; title: string; when: string; summary: string; icon: string; kind: string; group: Filter; article: boolean; uncertain: boolean };
+type Item = { id: string; year: number; epoch: TimelineEpoch; title: string; when: string; summary: string; icon: string; kind: string; group: Filter; article: boolean; uncertain: boolean; context: TimelineContext; search: string[] };
 type Filter = "all" | "person" | "event" | "world";
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "all", label: "Alles" }, { id: "person", label: "Personen" }, { id: "event", label: "Ereignisse & Geschichten" }, { id: "world", label: "Reiche, Bauten & Begriffe" },
 ];
+const epochLabel = (e: TimelineEpoch) => e === "vision" ? "Prophetische Visionen" : EPOCH_LABEL[e];
 const groupOf = (k: ArticleKind | string): Filter => (k === "person" ? "person" : k === "event" || k === "story" ? "event" : "world");
 
 // Lexikonartikel + ältere Infotafeln mit Jahreszahl, die (noch) keinen Artikel haben
 const ITEMS: Item[] = [
-  ...ARTICLES.filter((a) => TIMELINE_YEAR[a.id] !== undefined).map((a) => ({
-    id: a.id, year: TIMELINE_YEAR[a.id], epoch: a.epoch, title: a.title, when: a.timeframe, summary: a.summary, icon: KIND_LABEL[a.kind].icon,
-    kind: KIND_LABEL[a.kind].label, group: groupOf(a.kind), article: true, uncertain: /unsicher|umstritten|Näherung|nicht datierbar/i.test(a.timeframe),
+  ...ARTICLES.filter((a) => isTimelineEntry(a.id)).map((a) => ({
+    id: a.id, year: isVision(a.id) ? (TIMELINE_VISION_IDS as readonly string[]).indexOf(a.id) : TIMELINE_YEAR[a.id], epoch: isVision(a.id) ? "vision" as const : a.epoch, title: a.title, when: isVision(a.id) ? "Prophetische Vision · kein Datum" : a.timeframe, summary: a.summary, icon: KIND_LABEL[a.kind].icon,
+    kind: KIND_LABEL[a.kind].label, group: groupOf(a.kind), article: true, context: timelineContext(a.id), search: [...a.aliases, ...a.refs, a.category], uncertain: !isVision(a.id) && (["urgeschichte", "erzvaeter", "exodus"].includes(a.epoch) || /unsicher|umstritten|Näherung|nicht.*datierbar|ca\.|ungefähr|Rekonstruktion|traditionell/i.test(a.timeframe)),
   })),
-  ...LEXICON.filter((e) => e.year !== undefined && !ARTICLE_BY_ID[e.id] && TIMELINE_YEAR[e.id] === undefined).map((e) => ({
+  ...LEXICON.filter((e) => e.year !== undefined && !ARTICLE_BY_ID[e.id] && !isTimelineEntry(e.id) && e.id !== "exodus").map((e) => ({
     id: e.id, year: e.year!, epoch: epochOfYear(e.year!), title: e.name, when: e.yearLabel ?? "", summary: e.summary, icon: KIND_META[e.kind].icon,
-    kind: "Infotafel", group: groupOf(e.kind), article: false, uncertain: !!e.uncertain,
+    kind: "Infotafel", group: groupOf(e.kind), article: false, uncertain: !!e.uncertain, context: "bible" as const, search: [...(e.aliases ?? []), e.refs],
   })),
-].sort((a, b) => EPOCH_ORDER.indexOf(a.epoch) - EPOCH_ORDER.indexOf(b.epoch) || a.year - b.year);
+].sort((a, b) => TIMELINE_EPOCH_ORDER.indexOf(a.epoch) - TIMELINE_EPOCH_ORDER.indexOf(b.epoch) || a.year - b.year);
 
 /** Zeitstrahl: Epochen als farbige Kapitel, Einträge mit Bild, Tippen öffnet den Lexikonartikel. */
 export default function TimelineScreen() {
@@ -42,10 +44,11 @@ export default function TimelineScreen() {
   const { open } = useInfo();
   const { focus } = useLocalSearchParams<{ focus?: string }>();
   const [filter, setFilter] = useState<Filter>("all");
+  const [query, setQuery] = useState("");
   const ref = useRef<ScrollView>(null);
   const ys = useRef<Record<string, number>>({});
-  const list = useMemo(() => ITEMS.filter((i) => filter === "all" || i.group === filter || i.id === focus), [filter, focus]);
-  const epochs = EPOCH_ORDER.filter((e) => list.some((i) => i.epoch === e));
+  const list = useMemo(() => ITEMS.filter((i) => i.id === focus || ((filter === "all" || i.group === filter) && matchesReferenceSearch(query, i.title, i.when, i.summary, ...i.search))), [filter, focus, query]);
+  const epochs = TIMELINE_EPOCH_ORDER.filter((e) => list.some((i) => i.epoch === e));
   const jump = (k: string) => ref.current?.scrollTo({ y: Math.max(0, (ys.current[k] ?? 0) - 8), animated: true });
 
   useEffect(() => {
@@ -68,30 +71,32 @@ export default function TimelineScreen() {
           <Pressable style={styles.back} onPress={() => (router.canGoBack() ? router.back() : router.replace("/library"))} testID="timeline-back" accessibilityLabel="Zurück"><Icon name="arrow-left" size={22} color="#EAF0F7" /></Pressable>
           <View style={{ flex: 1 }}>
             <Text style={styles.title}>Zeitstrahl</Text>
-            <Text style={styles.sub} testID="timeline-count">{ITEMS.length} Einträge · Jahresangaben sind Näherungen</Text>
+            <Text style={styles.sub} testID="timeline-count">{list.length} von {ITEMS.length} Einträgen · keine maßstäbliche Zeitachse</Text>
           </View>
         </View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.epochRow}>
           {epochs.map((e) => (
-            <Pressable key={e} onPress={() => jump(`epoch-${e}`)} testID={`timeline-jump-${e}`} style={[styles.epochChip, { backgroundColor: EPOCH_STYLE[e].color }]}>
-              <Icon name={EPOCH_STYLE[e].icon} size={12} color="#FFFFFF" /><Text style={styles.epochChipText}>{EPOCH_LABEL[e]}</Text>
+            <Pressable key={e} onPress={() => jump(`epoch-${e}`)} testID={`timeline-jump-${e}`} style={[styles.epochChip, { backgroundColor: TIMELINE_EPOCH_STYLE[e].color }]}>
+              <Icon name={TIMELINE_EPOCH_STYLE[e].icon} size={12} color="#FFFFFF" /><Text style={styles.epochChipText}>{epochLabel(e)}</Text>
             </Pressable>
           ))}
         </ScrollView>
       </View>
+      <View style={styles.searchWrap}><Icon name="search" size={18} color={colors.muted} /><TextInput testID="timeline-search" accessibilityLabel="Zeitstrahl durchsuchen" value={query} onChangeText={setQuery} placeholder="Person, Ereignis, Bibelstelle …" placeholderTextColor={colors.muted} style={styles.searchInput} />{query ? <Pressable accessibilityLabel="Suche leeren" onPress={() => setQuery("")}><Icon name="x-circle" size={18} color={colors.muted} /></Pressable> : null}</View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexGrow: 0, flexShrink: 0, minHeight: 56 }} contentContainerStyle={styles.filterRow}>
         {FILTERS.map((f) => <Chip key={f.id} testID={`timeline-filter-${f.id}`} label={f.label} selected={filter === f.id} onPress={() => setFilter(f.id)} />)}
       </ScrollView>
       <ScrollView ref={ref} contentContainerStyle={{ padding: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxxl }}>
+        {!list.length ? <Text style={styles.summary} testID="timeline-empty">Keine passenden Einträge gefunden.</Text> : null}
         {epochs.map((e) => {
-          const st = EPOCH_STYLE[e];
+          const st = TIMELINE_EPOCH_STYLE[e];
           const items = list.filter((i) => i.epoch === e);
           return (
             <View key={e} onLayout={(ev) => { ys.current[`epoch-${e}`] = ev.nativeEvent.layout.y; }} testID={`timeline-epoch-${e}`}>
               <View style={[styles.band, { backgroundColor: st.color }]}>
                 <Icon name={st.icon} size={18} color="#FFFFFF" />
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.bandTitle}>{EPOCH_LABEL[e]}</Text>
+                  <Text style={styles.bandTitle}>{epochLabel(e)}</Text>
                   <Text style={styles.bandSpan}>{st.span}</Text>
                 </View>
                 <Text style={styles.bandCount}>{items.length}</Text>
@@ -115,7 +120,7 @@ export default function TimelineScreen() {
                             {i.uncertain ? <Icon name="help-circle" size={14} color={colors.warning} /> : null}
                           </View>
                           <Text style={styles.summary} numberOfLines={2}>{i.summary}</Text>
-                          <Text style={styles.kind}>{i.kind}{i.article ? " · Lexikonartikel" : ""}</Text>
+                          <Text style={styles.kind}>{TIMELINE_CONTEXT_LABEL[i.context]} · {i.kind}</Text>
                         </View>
                         <Icon name="chevron-right" size={16} color={colors.muted} />
                       </Pressable>
@@ -141,6 +146,8 @@ const useStyles = makeStyles((c) => ({
   epochRow: { gap: spacing.sm, paddingHorizontal: spacing.lg, paddingTop: spacing.md },
   epochChip: { flexDirection: "row", alignItems: "center", gap: 5, height: 34, paddingHorizontal: spacing.md, borderRadius: radius.pill },
   epochChipText: { fontFamily: fonts.text, fontSize: 12.5, fontWeight: "800", color: "#FFFFFF" },
+  searchWrap: { flexDirection: "row", alignItems: "center", gap: spacing.sm, margin: spacing.lg, marginBottom: 0, paddingHorizontal: spacing.md, minHeight: 44, borderRadius: radius.lg, borderWidth: 1, borderColor: c.border, backgroundColor: c.surfaceSecondary },
+  searchInput: { flex: 1, fontFamily: fonts.text, color: c.onSurface, minHeight: 44, fontSize: 15 },
   filterRow: { gap: spacing.sm, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm, alignItems: "center" },
   band: { flexDirection: "row", alignItems: "center", gap: spacing.md, padding: spacing.md, borderRadius: radius.lg, marginTop: spacing.lg, marginBottom: spacing.sm },
   bandTitle: { fontFamily: fonts.display, fontSize: 19, fontWeight: "700", color: "#FFFFFF" },

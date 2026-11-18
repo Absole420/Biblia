@@ -87,7 +87,7 @@ export const ARTICLES_KINGS: Article[] = [
       { h: "Archäologie", layer: "history", body: "Auf dem Tempelberg sind wegen der heutigen religiösen Bauten keine Ausgrabungen möglich. Funde aus Schutt (Sifting Project) und der Granatapfel aus Elfenbein (Echtheit der Inschrift umstritten) zeigen die Problematik." },
       { h: "Zerstörung", layer: "bible", body: "Nebukadnezars Feldherr Nebusaradan verbrennt den Tempel; Geräte werden nach Babylon gebracht (2Kö 25,8–17)." },
     ],
-    refs: ["1Kö 5,15–19", "1Kö 6,1–14", "1Kö 8,1–30", "2Chr 3,1", "2Kö 25,8–17"],
+    refs: ["1Kö 5,1–5", "1Kö 6,1–14", "1Kö 8,1–30", "2Chr 3,1", "2Kö 25,8–17"],
     timeframe: "10. Jh. bis 587/586 v. Chr.",
     epoch: "koenigszeit", region: "judaea", books: ["1Kö", "2Kö", "1Chr", "2Chr", "Ps", "Jes", "Jer", "Hes"],
     relations: [
@@ -129,11 +129,11 @@ export const ARTICLES_KINGS: Article[] = [
       { h: "Entrückung", layer: "bible", body: "Elia übergibt seinen Mantel an Elisa und wird im Wetter zum Himmel aufgenommen (2Kö 2,1–14)." },
     ],
     deep: [
-      { h: "Erwartung seiner Wiederkunft", layer: "tradition", body: "Mal 3,23 kündigt Elia vor dem Tag des HERRN an. Beim Pessachmahl wird ein Becher für Elia bereitgestellt. Jesus deutet Johannes den Täufer als den erwarteten Elia (Mt 11,14); bei der Verklärung erscheint Elia (Mk 9,4)." },
+      { h: "Erwartung seiner Wiederkunft", layer: "tradition", body: "Mal 4,5 kündigt Elia vor dem Tag des HERRN an. Beim Pessachmahl wird ein Becher für Elia bereitgestellt. Jesus deutet Johannes den Täufer als den erwarteten Elia (Mt 11,14); bei der Verklärung erscheint Elia (Mk 9,4)." },
       { h: "Historischer Hintergrund", layer: "history", body: "Ahab ist außerbiblisch belegt: Die Kurch-Monolithinschrift Salmanassars III. nennt „Ahab von Israel“ mit 2000 Streitwagen in der Schlacht von Qarqar (853 v. Chr.)." },
       { h: "Zum Nachdenken", layer: "reflection", body: "Nach dem größten Erfolg kommt bei Elia der tiefste Einbruch. Gott antwortet zuerst mit Brot und Schlaf (1Kö 19,5–8). Was brauchst du, wenn du erschöpft bist?" },
     ],
-    refs: ["1Kö 17,1–24", "1Kö 18,20–40", "1Kö 19,1–18", "2Kö 2,1–14", "Mal 3,23–24", "Mt 17,1–13", "Jak 5,17–18"],
+    refs: ["1Kö 17,1–24", "1Kö 18,20–40", "1Kö 19,1–18", "2Kö 2,1–14", "Mal 4,5–6", "Mt 17,1–13", "Jak 5,17–18"],
     timeframe: "9. Jh. v. Chr. (Zeit Ahabs, ca. 871–852 v. Chr.)",
     epoch: "koenigszeit", region: "kanaan", books: ["1Kö", "2Kö", "2Chr", "Mal", "Mt", "Mk", "Lk", "Joh", "Röm", "Jak"],
     relations: [
@@ -202,7 +202,7 @@ export const ARTICLES_KINGS: Article[] = [
       { h: "Das Alphabet", layer: "history", body: "Die phönizische Buchstabenschrift wurde Vorbild für das griechische und damit für das lateinische Alphabet. Die althebräische Schrift ist eng mit ihr verwandt." },
       { h: "Im NT", layer: "bible", body: "Jesus zieht in das Gebiet von Tyrus und Sidon und heilt die Tochter einer syrophönizischen Frau (Mk 7,24–30)." },
     ],
-    refs: ["2Sam 5,11", "1Kö 5,15–26", "1Kö 16,29–33", "Hes 27,1–9", "Mk 7,24–30", "Apg 21,3–6"],
+    refs: ["2Sam 5,11", "1Kö 5,1–12", "1Kö 16,29–33", "Hes 27,1–9", "Mk 7,24–30", "Apg 21,3–6"],
     timeframe: "Ca. 1200–332 v. Chr. (Eroberung von Tyrus durch Alexander)",
     epoch: "koenigszeit", region: "mittelmeer", books: ["1Mo", "2Sam", "1Kö", "1Chr", "Jes", "Hes", "Am", "Mt", "Mk", "Apg"],
     relations: [

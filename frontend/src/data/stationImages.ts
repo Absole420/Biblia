@@ -51,4 +51,8 @@ export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
   "kp-7": require("../../assets/images/psalms/kp-7.jpg"),
   "syn-1": require("../../assets/images/psalms/syn-1.jpg"),
   "syn-2": require("../../assets/images/psalms/syn-2.jpg"),
+  "way-arbeit-sinn": require("../../assets/images/way/arbeit-sinn.jpg"),
+  "way-aelterwerden": require("../../assets/images/way/aelterwerden.jpg"),
+  "way-liebe-partnerschaft": require("../../assets/images/way/liebe-partnerschaft.jpg"),
+  "way-frieden-stille": require("../../assets/images/way/frieden-stille.jpg"),
 };

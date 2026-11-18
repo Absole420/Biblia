@@ -1,4 +1,4 @@
-import { World } from "./types";
+import type { World } from "./types";
 
 // Fantasievolle Abenteuer-Weltkarte (KEINE geografische Darstellung).
 // Farbwelten gemäß Auftrag Abschnitt 4 – identisch in Hell- und Dunkelmodus.
@@ -22,9 +22,9 @@ export const WORLDS: World[] = [
     subtitle: "Land, Richter & Könige",
     books: ["Josua", "Richter", "Rut", "1–2 Samuel", "1–2 Könige", "1–2 Chronik", "Esra", "Nehemia", "Ester"],
     palette: { base: "#9BA77A", accent: "#A9793F", glow: "#C9B37A", ink: "#3B3F26" },
-    x: 640, y: 1150, icon: "shield", status: "preview",
-    description: "Israels Geschichte von der Landnahme bis nach dem Exil – mit historischen Karten der Stämme und der Königreiche Israel und Juda.",
-    planned: ["Die zwölf Stämme", "Die Richterzeit", "David und Salomo", "Das geteilte Reich", "Exil und Rückkehr"],
+    x: 640, y: 1150, icon: "shield", status: "playable", campaignIds: ["history-1", "history-tribes"],
+    description: "Israels Geschichte von der Landnahme bis nach dem Exil – Josua & Richter sowie die zwölf Stämme Israels sind spielbar.",
+    planned: ["Die zwölf Stämme (spielbar)", "Die Richterzeit (spielbar)", "David und Salomo", "Das geteilte Reich", "Exil und Rückkehr"],
   },
   {
     id: "psalms",
@@ -32,9 +32,9 @@ export const WORLDS: World[] = [
     subtitle: "Lieder unter Sternenlicht",
     books: ["Hiob", "Psalmen", "Sprüche", "Prediger", "Hoheslied"],
     palette: { base: "#7E8FC8", accent: "#8E6BB8", glow: "#E8E3FF", ink: "#232A55" },
-    x: 820, y: 900, icon: "star", status: "playable", campaignIds: ["psalms-1", "psalms-2", "psalms-3", "psalms-4"],
-    description: "Gebete, Klagen, Lobpreis und Lebensweisheit Israels – vier Stationen: Psalmen als Gebetbuch, Klage und Vertrauen, Weisheit der Sprüche, Hiob und das Leid.",
-    planned: ["Die Psalmen als Gebetbuch", "Klage und Vertrauen", "Weisheit der Sprüche", "Hiob und das Leid"],
+    x: 820, y: 900, icon: "star", status: "playable", campaignIds: ["psalms-1", "psalms-2", "psalms-3", "psalms-4", "psalms-5", "psalms-6"],
+    description: "Gebete, Klagen, Lobpreis und Lebensweisheit Israels – Psalmen, Sprüche, Hiob, Prediger und Hoheslied in sechs Kampagnen.",
+    planned: ["Die Psalmen als Gebetbuch", "Klage und Vertrauen", "Weisheit der Sprüche", "Hiob und das Leid", "Prediger (spielbar)", "Hoheslied (spielbar)"],
   },
   {
     id: "prophets",
@@ -52,9 +52,9 @@ export const WORLDS: World[] = [
     subtitle: "Sonnenlicht über Galiläa",
     books: ["Matthäus", "Markus", "Lukas", "Johannes"],
     palette: { base: "#7FAF6A", accent: "#F2C14E", glow: "#FFE7A0", ink: "#24391B" },
-    x: 520, y: 640, icon: "sun", status: "playable", campaignIds: ["john", "matthew", "mark", "luke", "synoptics"],
+    x: 520, y: 640, icon: "sun", status: "playable", campaignIds: ["john", "matthew", "mark", "luke", "synoptics", "synoptic"],
     description: "Jedes Evangelium erhält eine eigene Karte und Kampagne. Matthäus, Markus und Lukas lassen sich zusätzlich im Synoptischen Vergleich nebeneinander lesen.",
-    planned: ["Johannes (spielbar)", "Matthäus", "Markus", "Lukas", "Synoptischer Vergleich (spielbar)"],
+    planned: ["Johannes (spielbar)", "Matthäus", "Markus", "Lukas", "Synoptischer Vergleich (spielbar)", "Wirken und Passion im Vergleich (spielbar)"],
   },
   {
     id: "parables",
@@ -82,8 +82,8 @@ export const WORLDS: World[] = [
     subtitle: "Pergament & Gemeinde",
     books: ["Römer", "1–2 Korinther", "Galater", "Epheser", "Philipper", "Kolosser", "1–2 Thess.", "1–2 Timotheus", "Titus", "Philemon", "Hebräer", "Jakobus", "1–2 Petrus", "1–3 Johannes", "Judas"],
     palette: { base: "#8A2F3C", accent: "#E9DFC6", glow: "#D9A54E", ink: "#F6EBD6" },
-    x: 600, y: 330, icon: "mail", status: "playable", campaignIds: ["letters"],
-    description: "Jeder Brief einzeln studierbar – mit den Bereichen „Bibelstudium“ und „Wirken und Verstehen“.",
+    x: 600, y: 330, icon: "mail", status: "playable", campaignIds: ["letters", "letters-more"],
+    description: "Alle 21 Briefe sind mit eigenen Leseabschnitten vertreten; sieben kürzere Briefe zusätzlich als vertiefende Einzelstudien.",
     planned: ["Römer", "Galater", "Epheser", "Philipper", "Hebräer", "Jakobus"],
   },
   {
@@ -92,8 +92,8 @@ export const WORLDS: World[] = [
     subtitle: "Licht über den sieben Gemeinden",
     books: ["Offenbarung"],
     palette: { base: "#6E4E9A", accent: "#FFFFFF", glow: "#E8C766", ink: "#F7F1FF" },
-    x: 400, y: 150, icon: "eye", status: "preview",
-    description: "Die Städte der sieben Gemeinden in Kleinasien und die Bildsprache der Apokalyptik.",
+    x: 400, y: 150, icon: "eye", status: "playable", campaignIds: ["revelation"],
+    description: "Alle 22 Kapitel: sieben Gemeinden, Gottes Thron, Gericht, Treue, Auferstehung und das Neue Jerusalem. Bildsprache und unterschiedliche Deutungen werden unterschieden.",
     planned: ["Die sieben Sendschreiben", "Thronsaalvision", "Neues Jerusalem"],
   },
 ];

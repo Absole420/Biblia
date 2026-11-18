@@ -8,14 +8,15 @@ import { Sheet } from "@/src/components/Sheet";
 import { Chip } from "@/src/components/ui";
 import { ARTICLE_BY_ID, ARTICLES } from "@/src/data/articles";
 import { Article, ArticleKind, EPOCH_LABEL, KIND_LABEL, REGION_LABEL } from "@/src/data/articleTypes";
-import { BOOK_BY_CODE } from "@/src/data/books";
+import { BIBLE_BOOKS, BOOK_BY_CODE } from "@/src/data/books";
 import { ILLUSTRATION_LABEL, ILLUSTRATIONS } from "@/src/data/illustrations";
 import { LEXICON_PLAN, PLAN_COUNT } from "@/src/data/lexiconPlan";
 import { EPOCH_FALLBACK, TIMELINE_YEAR } from "@/src/data/timelineData";
+import { matchesReferenceSearch } from "@/src/lib/referenceSearch";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
-const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ß/g, "ss");
+
 
 type Sort = "alpha" | "time";
 const SORTS: { id: Sort; label: string; icon: string }[] = [{ id: "alpha", label: "A–Z", icon: "type" }, { id: "time", label: "Zeitlich", icon: "clock" }];
@@ -41,9 +42,9 @@ export default function LexiconIndex() {
   const [sort, setSort] = useState<Sort>("alpha");
   const [sheet, setSheet] = useState(false);
   const active = [kind, epoch, region, book].filter(Boolean).length;
-  const nq = norm(q.trim());
+  const nq = q.trim();
   const results = useMemo(() => ARTICLES.filter((a) =>
-    (!nq || [a.title, ...a.aliases, a.category].some((x) => norm(x).includes(nq))) &&
+    matchesReferenceSearch(nq, a.title, ...a.aliases, a.category, a.summary, a.timeframe, ...a.refs, ...a.overview.flatMap(s => [s.h, s.body]), ...a.deep.flatMap(s => [s.h, s.body])) &&
     (!kind || a.kind === kind) && (!epoch || a.epoch === epoch) && (!region || a.region === region) && (!book || a.books.includes(book)),
   ).sort(SORTERS[sort]), [nq, kind, epoch, region, book, sort]);
   const all = useMemo(() => [...ARTICLES].sort(SORTERS[sort]), [sort]);
@@ -62,7 +63,7 @@ export default function LexiconIndex() {
       <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxxl }} keyboardShouldPersistTaps="handled">
         <View style={styles.search}>
           <Icon name="search" size={18} color={colors.muted} />
-          <TextInput testID="lexicon-search" value={q} onChangeText={setQ} placeholder="Suchen, z. B. Pessach, Kinneret, Abram …" placeholderTextColor={colors.muted} style={styles.input} />
+          <TextInput testID="lexicon-search" value={q} onChangeText={setQ} placeholder="Person, Thema, Bibelstelle …" placeholderTextColor={colors.muted} style={styles.input} />
         </View>
         <View style={styles.toolbar}>
           <Pressable testID="lexicon-filter-open" onPress={() => setSheet(true)} style={[styles.tool, active ? { borderColor: colors.brandPrimary, backgroundColor: colors.brandPrimary } : null]} accessibilityRole="button" accessibilityLabel={`Filter${active ? `, ${active} aktiv` : ""}`}>
@@ -98,7 +99,7 @@ export default function LexiconIndex() {
           <Text style={styles.fh}>Region</Text>
           <View style={styles.wrap}>{Object.entries(REGION_LABEL).map(([k, l]) => <Chip key={k} testID={`lex-region-${k}`} label={l} selected={region === k} onPress={() => setRegion(region === k ? null : k)} />)}</View>
           <Text style={styles.fh}>Bibelbuch</Text>
-          <View style={styles.wrap}>{LEXICON_PLAN.map((b) => <Chip key={b.book} testID={`lex-book-${b.book}`} label={b.book} selected={book === b.book} onPress={() => setBook(book === b.book ? null : b.book)} />)}</View>
+          <View style={styles.wrap}>{BIBLE_BOOKS.filter(b => ARTICLES.some(a => a.books.includes(b.code))).map((b) => <Chip key={b.code} testID={`lex-book-${b.code}`} label={b.code} selected={book === b.code} onPress={() => setBook(book === b.code ? null : b.code)} />)}</View>
         </Sheet>
 
         {filters ? (

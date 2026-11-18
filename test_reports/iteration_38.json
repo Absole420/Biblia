@@ -1,0 +1,29 @@
+{
+  "summary": "Retest of the iteration-37 layout and requires fixes, frontend only, run with Playwright on the public URL at 390x844 and 360x640. STATIC: iter38_check_data.mjs passes for all 6 new campaigns. x = round(500+sin(i*1.15)*290), y spacing 240, mapH = (n+1)*240+320, and y starts at mapH-170, the same as buildCampaign. requires is a strict chain (first []). No 'lock' icons; rev-seals = 'layers'. All 13 revelation goals start with 'Du kannst das Thema „…“ anhand …'. psalms-6-poetry has image null and psalms-6-love keeps way-liebe-partnerschaft. node --test tests/study-journey-expansion.test.mjs passes 3/3 and tsc --noEmit is clean. MAPS: on all 6 maps the dotted trails are drawn (revelation 12, letters-more 6, psalms-5 3, history-tribes 2, psalms-6 1, synoptic 1). Station 1 is 'verfügbar' and the rest are 'gesperrt'. At both viewports, no station node in revelation, psalms-5, letters-more or history-tribes is cut off or under the zoom controls. One issue remains: on the 2-station maps (psalms-6, synoptic) at 390x844, station 2's label runs 36px past the right edge ('Kreuz und Auferstehung i…'). After station 1 is completed the focus shifts, and station 1's label is cut at the left edge. UNLOCK CHAIN: after injecting completed rev-intro, psalms-6-poetry and synoptic-ministry, the next station becomes 'verfügbar' and the one after stays 'gesperrt'. Headers read 1/13 · 8% and 1/2 · 50%, and progress persists after reload. STUDY VIEW (?view=study): rev-churches-central shows 'Zuerst: Ephesus, Smyrna und Pergamon' (disabled) and psalms-5-time shows 'Zuerst: Prediger: Was bleibt von unserer Mühe?'. Unlocked stations show '3 Aufgaben · 2 Prüfungsfragen' and completed ones show 'Abgeschlossen · Wiederholen'. STATION PAGES: psalms-6-poetry has 0 station-illustration-img and shows the icon placeholder hero; psalms-6-love has 1. The rev-seals and rev-throne goal texts are grammatical. REGRESSION: the gospels (john, matthew, mark, luke, synoptics, synoptic), prophets (prophets, prophets-2), history (history-1, history-tribes) and psalms (psalms-1..6) chips all render maps. No page errors. No deprecated Expo packages.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "CampaignMap for 2-station campaigns (psalms-6, synoptic)", "issue": "At 390x844 the label of station 2 (x=765) is clipped at the right edge: its wrapper spans x 254-426 in a 390px area. Once station 1 is completed, the focus moves and station 1's label ('Versuchung und…') is clipped at the left edge. Root cause: ZoomableMap uses a cover fit, minS = max(vw/W, vh/H) (ZoomableMap.tsx:77). With mapH=1040 the scale is 689/1040 = 0.66, so the 1000px-wide map becomes 660px, wider than the viewport. Maps with 3 or more stations (mapH ≥ 1280, scale ≤ 0.54) fit fine, for example history-tribes. At 360x640 the scale is smaller and both labels fit.", "testID": "station-node-synoptic-passion / station-node-psalms-6-love", "priority": "LOW-MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Existing synoptics map (pre-existing, not a regression)", "issues": ["At 390x844 the synoptics-exam node (274,379,69x69) overlaps the map-zoom-out/map-fit-all control column (x 334-378). LOW."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iter38_check_data.mjs", "/app/test_reports/iter38_map_check.py", "/app/tests/study-journey-expansion.test.mjs"],
+  "action_items": [
+    "LOW-MEDIUM: For the 2-station campaigns psalms-6.json and synoptic.json, raise mapH to at least 1280 and shift y to 1110 and 870 (mapH-170-i*240). Alternatively, enforce a minimum mapH or reduce the x amplitude for very short campaigns, so the cover-fit scale stays ≤ ~0.55 and labels at x=765 and x=500 are not clipped at 390px width.",
+    "LOW (optional, pre-existing): the synoptics-exam node sits under the right-side map controls at 390x844."
+  ],
+  "critical_code_review_comments": [
+    "The new JSON layout now matches buildCampaign (psalmsKit.ts:64-65) exactly, and the requires chains connect every station, so unreachableStations stays empty.",
+    "Psalms-6 goals still use a generic 'Du kannst das Thema im Schriftzusammenhang erklären…' text. This is grammatical and acceptable."
+  ],
+  "updated_files": ["/app/test_reports/iter38_check_data.mjs (new, test only)", "/app/test_reports/iter38_map_check.py (new, test helper)"],
+  "success_rate": {"backend": "N/A", "frontend": "95% (all retest items pass; 1 low-medium label clipping on 2-station maps at 390px)"},
+  "seed_data_creation": "None. Only the test browser's localStorage biblia_state was injected (rev-intro, psalms-6-poetry, synoptic-ministry completed).",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "biblia_state is not present in localStorage until the first state change. Injecting a double-encoded JSON {stations:{id:{completedAt,examScore,examTotal,bestScore,attempts}}} works, because migrate() fills in the defaults. The station status is in the aria-label suffix of station-node-* ('verfügbar' / 'gesperrt' / 'abgeschlossen'). Use the parent element of station-node-* to get the label box. The John campaign lives in the gospels world (chip campaign-chip-john), and /world/john is not-found by design."
+}

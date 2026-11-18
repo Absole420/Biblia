@@ -1,0 +1,828 @@
+{
+  "id": "letters-more",
+  "worldId": "letters",
+  "title": "Die Briefe: Sieben vertiefende Einzelstudien",
+  "book": "2Thess",
+  "intro": "Ergänzt die vorhandenen Sammelstationen um sieben bisher nicht eigenständig studierbare Briefe, ohne die alten Einheiten oder Fortschritte zu verändern.",
+  "mapW": 1000,
+  "mapH": 2240,
+  "stations": [
+    {
+      "id": "letters-more-2thess",
+      "title": "2. Thessalonicher: Standhaftigkeit und besonnenes Warten",
+      "subtitle": "2Thess 1–3 · Hoffnung und Verantwortung",
+      "type": "study",
+      "icon": "clock",
+      "x": 500,
+      "y": 2070,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Der Brief ermutigt eine bedrängte Gemeinde zum Ausharren und korrigiert Verunsicherung über den Tag des Herrn. Die Gemeinde soll nicht durch Behauptungen, Briefe oder Gerüchte erschüttert werden. Kapitel 2 spricht vom Abfall und dem Menschen der Gesetzlosigkeit. Kapitel 3 verbindet das Warten auf den Herrn mit ruhiger Arbeit und gegenseitiger Verantwortung. Wer nicht arbeiten will, wird ermahnt; das ist keine Verurteilung von Kranken, Arbeitslosen oder Hilfsbedürftigen.",
+      "readings": [
+        {
+          "book": "2Thess",
+          "ch": 1,
+          "from": 3,
+          "to": 12
+        },
+        {
+          "book": "2Thess",
+          "ch": 2,
+          "from": 1,
+          "to": 17
+        },
+        {
+          "book": "2Thess",
+          "ch": 3,
+          "from": 6,
+          "to": 16
+        }
+      ],
+      "terms": [
+        {
+          "term": "Tag des Herrn",
+          "explanation": "Erwartetes göttliches Eingreifen; der Brief korrigiert die Behauptung, der Tag sei schon da."
+        },
+        {
+          "term": "Ausharren",
+          "explanation": "Treue und Geduld in Bedrängnis."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Der Brief nennt Paulus, Silvanus und Timotheus; seine Verfasserschaft wird in der Forschung diskutiert. Thessalonich war eine bedeutende Stadt Makedoniens."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Identität des Gesetzlosen und des aufhaltenden Faktors in 2Thess 2 wird verschieden gedeutet. Der Text liefert keinen sicheren modernen Zeitplan. Die Gemeinde soll sich nicht erschrecken lassen, sondern das Empfangene festhalten."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-2thess-t1",
+          "type": "mc",
+          "question": "Wovor warnt Kapitel 2?",
+          "options": [
+            "Jede Arbeit aufzunehmen",
+            "Sich durch Behauptungen über den Tag des Herrn erschüttern zu lassen",
+            "Die Gemeinde zu ermutigen"
+          ],
+          "answer": 1,
+          "explain": "Sich durch Behauptungen über den Tag des Herrn erschüttern zu lassen. Siehe 2Thess 2,1–3.",
+          "ref": "2Thess 2,1–3"
+        },
+        {
+          "id": "letters-more-2thess-t2",
+          "type": "tf",
+          "statement": "Der Brief verlangt eine sichere Berechnung des Wiederkunftstages.",
+          "answer": false,
+          "explain": "Er warnt vor voreiligen Behauptungen und fordert Standhaftigkeit.",
+          "ref": "2Thess 2,1–3.15"
+        },
+        {
+          "id": "letters-more-2thess-t3",
+          "type": "free",
+          "question": "Wie kann die Hoffnung auf Jesu Kommen verantwortungsvolles Handeln stärken?",
+          "model": "Das Warten auf den Herrn verbindet sich mit Standhaftigkeit, ruhiger Arbeit und brüderlicher Ermahnung.",
+          "ref": "2Thess 2,1–3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-2thess-e1",
+          "type": "mc",
+          "question": "Wie soll ein zurechtgewiesener Bruder behandelt werden?",
+          "options": [
+            "Als Ausgestoßener ohne jede Hoffnung",
+            "Nicht als Feind, sondern als Bruder ermahnen",
+            "Als politischer Gegner"
+          ],
+          "answer": 1,
+          "explain": "Nicht als Feind, sondern als Bruder ermahnen. Siehe 2Thess 3,15.",
+          "ref": "2Thess 3,15"
+        },
+        {
+          "id": "letters-more-2thess-e2",
+          "type": "tf",
+          "statement": "Der Brief unterscheidet zwischen nicht arbeiten wollen und nicht arbeiten können.",
+          "answer": true,
+          "explain": "Die Formulierung in Vers 10 richtet sich gegen den fehlenden Willen, nicht pauschal gegen Bedürftigkeit.",
+          "ref": "2Thess 3,10"
+        }
+      ],
+      "reflection": [
+        "Wie kann die Hoffnung auf Jesu Kommen verantwortungsvolles Handeln stärken?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Das Warten auf den Herrn verbindet sich mit Standhaftigkeit, ruhiger Arbeit und brüderlicher Ermahnung."
+    },
+    {
+      "id": "letters-more-2tim",
+      "title": "2. Timotheus: Das anvertraute Wort bewahren",
+      "subtitle": "2Tim 1–4 · Mut, Lehre und Treue",
+      "type": "study",
+      "icon": "book-open",
+      "x": 765,
+      "y": 1830,
+      "requires": [
+        "letters-more-2thess"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Der Brief zeichnet einen persönlichen Abschied und Auftrag an Timotheus. Er soll sich des Zeugnisses Jesu nicht schämen und das anvertraute Gut durch den Heiligen Geist bewahren. Das Bild vom Soldaten, Wettkämpfer und Landwirt spricht von Ausdauer. Die Schrift macht zur Rettung durch den Glauben an Christus Jesus weise und dient der Lehre und Erziehung zur Gerechtigkeit. Am Ende blickt der Sprecher auf den vollendeten Lauf zurück.",
+      "readings": [
+        {
+          "book": "2Tim",
+          "ch": 1,
+          "from": 6,
+          "to": 14
+        },
+        {
+          "book": "2Tim",
+          "ch": 2,
+          "from": 1,
+          "to": 13
+        },
+        {
+          "book": "2Tim",
+          "ch": 3,
+          "from": 10,
+          "to": 17
+        },
+        {
+          "book": "2Tim",
+          "ch": 4,
+          "from": 1,
+          "to": 8
+        }
+      ],
+      "terms": [
+        {
+          "term": "Anvertrautes Gut",
+          "explanation": "Die empfangene Botschaft, die Timotheus bewahren soll."
+        },
+        {
+          "term": "Gottes Eingebung",
+          "explanation": "Aussage über die Herkunft und Nützlichkeit der Schrift in 2Tim 3,16."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Der Brief stellt sich als Schreiben des Paulus aus Gefangenschaft dar. Die historische Verfasserschaft der Pastoralbriefe wird unterschiedlich bewertet; die literarische Situation ist im Text deutlich."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "2Tim 3,15–17 meint zunächst die Timotheus bekannten heiligen Schriften. Seine spätere Verwendung in der christlichen Schriftlehre muss von diesem unmittelbaren Zusammenhang unterschieden werden."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-2tim-t1",
+          "type": "mc",
+          "question": "Wozu ist die Schrift nach Kapitel 3 nützlich?",
+          "options": [
+            "Zur Garantie materiellen Erfolgs",
+            "Zum Vermeiden jeder Prüfung",
+            "Zur Lehre, Zurechtweisung und Erziehung in Gerechtigkeit"
+          ],
+          "answer": 2,
+          "explain": "Zur Lehre, Zurechtweisung und Erziehung in Gerechtigkeit. Siehe 2Tim 3,16–17.",
+          "ref": "2Tim 3,16–17"
+        },
+        {
+          "id": "letters-more-2tim-t2",
+          "type": "tf",
+          "statement": "Timotheus soll sich des Zeugnisses Jesu schämen.",
+          "answer": false,
+          "explain": "Er wird ausdrücklich zum Gegenteil ermutigt.",
+          "ref": "2Tim 1,8"
+        },
+        {
+          "id": "letters-more-2tim-t3",
+          "type": "free",
+          "question": "Was bedeutet es, eine empfangene Botschaft treu weiterzugeben?",
+          "model": "Die Botschaft wird bewahrt, gelehrt und durch einen glaubwürdigen Lebenswandel sichtbar.",
+          "ref": "2Tim 3,16–17"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-2tim-e1",
+          "type": "mc",
+          "question": "Was hat der Sprecher nach Kapitel 4 bewahrt?",
+          "options": [
+            "Seinen gesamten Besitz",
+            "Sein politisches Amt",
+            "Den Glauben"
+          ],
+          "answer": 2,
+          "explain": "Den Glauben. Siehe 2Tim 4,7.",
+          "ref": "2Tim 4,7"
+        },
+        {
+          "id": "letters-more-2tim-e2",
+          "type": "tf",
+          "statement": "Die Schrift soll zum guten Werk ausrüsten.",
+          "answer": true,
+          "explain": "Vers 17 formuliert dieses Ziel.",
+          "ref": "2Tim 3,17"
+        }
+      ],
+      "reflection": [
+        "Was bedeutet es, eine empfangene Botschaft treu weiterzugeben?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Die Botschaft wird bewahrt, gelehrt und durch einen glaubwürdigen Lebenswandel sichtbar."
+    },
+    {
+      "id": "letters-more-titus",
+      "title": "Titus: Gesunde Lehre und glaubwürdiges Leben",
+      "subtitle": "Tit 1–3 · Gnade, Verantwortung und gute Werke",
+      "type": "study",
+      "icon": "users",
+      "x": 716,
+      "y": 1590,
+      "requires": [
+        "letters-more-2tim"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Titus erhält den Auftrag, die Ordnung der Gemeinden auf Kreta weiterzuführen. Die Anforderungen an Älteste betonen Charakter, Selbstbeherrschung, Gastfreundschaft und zuverlässige Lehre. Kapitel 2 verbindet Gottes erschienene Gnade mit einem Leben der Besonnenheit und Gerechtigkeit. Kapitel 3 erinnert daran, dass Rettung nicht aus eigenen gerechten Werken, sondern aus Gottes Barmherzigkeit erfolgt. Gerade deshalb sollen die Glaubenden auf gute Werke bedacht sein.",
+      "readings": [
+        {
+          "book": "Tit",
+          "ch": 1,
+          "from": 5,
+          "to": 16
+        },
+        {
+          "book": "Tit",
+          "ch": 2,
+          "from": 1,
+          "to": 14
+        },
+        {
+          "book": "Tit",
+          "ch": 3,
+          "from": 1,
+          "to": 11
+        }
+      ],
+      "terms": [
+        {
+          "term": "Älteste",
+          "explanation": "Gemeindeverantwortliche, deren Charakter und Lehre geprüft werden."
+        },
+        {
+          "term": "Gnade",
+          "explanation": "Gottes unverdiente Zuwendung, die im Brief zu verändertem Handeln führt."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Der Titusbrief gehört zu den Pastoralbriefen; seine Zuschreibung und die historische Einordnung werden diskutiert. Der Text richtet sich an eine Gemeindesituation auf Kreta."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die antiken Haushaltsanweisungen betreffen konkrete soziale Verhältnisse. Sie sind keine Rechtfertigung von Ausbeutung oder Sklaverei. Die Gnade wird als Ursprung und Erziehungskraft guten Handelns beschrieben."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-titus-t1",
+          "type": "mc",
+          "question": "Woraus erfolgt die Rettung nach Tit 3,5?",
+          "options": [
+            "Aus Gottes Barmherzigkeit",
+            "Aus dem Verdienst eigener Werke",
+            "Aus sozialem Rang"
+          ],
+          "answer": 0,
+          "explain": "Aus Gottes Barmherzigkeit. Siehe Tit 3,5.",
+          "ref": "Tit 3,5"
+        },
+        {
+          "id": "letters-more-titus-t2",
+          "type": "tf",
+          "statement": "Gute Werke werden als Grund genannt, aus dem Gott uns errettet.",
+          "answer": false,
+          "explain": "Tit 3,5 unterscheidet Gottes Barmherzigkeit von eigenen gerechten Werken.",
+          "ref": "Tit 3,5.8"
+        },
+        {
+          "id": "letters-more-titus-t3",
+          "type": "free",
+          "question": "Wie kann Lehre durch einen glaubwürdigen Lebenswandel sichtbar werden?",
+          "model": "Gnade führt nach dem Brief zu Besonnenheit, Gerechtigkeit und guten Werken, nicht zu Selbstruhm.",
+          "ref": "Tit 3,5"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-titus-e1",
+          "type": "mc",
+          "question": "Was tut die erschienene Gnade nach Kapitel 2?",
+          "options": [
+            "Sie erzieht zu einem besonnenen und gerechten Leben",
+            "Sie macht jedes Handeln belanglos",
+            "Sie ersetzt jede Lehre durch Wohlstand"
+          ],
+          "answer": 0,
+          "explain": "Sie erzieht zu einem besonnenen und gerechten Leben. Siehe Tit 2,11–12.",
+          "ref": "Tit 2,11–12"
+        },
+        {
+          "id": "letters-more-titus-e2",
+          "type": "tf",
+          "statement": "Gemeindeleitung wird mit Charakter und Gastfreundschaft verbunden.",
+          "answer": true,
+          "explain": "Die Anforderungen werden in Tit 1,7–9 genannt.",
+          "ref": "Tit 1,7–9"
+        }
+      ],
+      "reflection": [
+        "Wie kann Lehre durch einen glaubwürdigen Lebenswandel sichtbar werden?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Gnade führt nach dem Brief zu Besonnenheit, Gerechtigkeit und guten Werken, nicht zu Selbstruhm."
+    },
+    {
+      "id": "letters-more-philemon",
+      "title": "Philemon: Onesimus als geliebten Bruder aufnehmen",
+      "subtitle": "Phlm 1 · Versöhnung und neue Beziehungen",
+      "type": "study",
+      "icon": "heart",
+      "x": 412,
+      "y": 1350,
+      "requires": [
+        "letters-more-titus"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Paulus bittet Philemon um Onesimus, den er in seiner Gefangenschaft als sein Kind bezeichnet. Obwohl er befehlen könnte, appelliert Paulus an die Liebe. Onesimus soll nicht nur als Sklave, sondern als geliebter Bruder aufgenommen werden. Paulus erklärt sich bereit, für ausstehende Schuld einzustehen. Der kurze Brief lässt erkennen, wie die Zugehörigkeit zu Christus ein bestehendes Machtverhältnis in Frage stellt; er berichtet jedoch nicht, wie Philemon tatsächlich reagierte.",
+      "readings": [
+        {
+          "book": "Phlm",
+          "ch": 1,
+          "from": 1,
+          "to": 7
+        },
+        {
+          "book": "Phlm",
+          "ch": 1,
+          "from": 8,
+          "to": 16
+        },
+        {
+          "book": "Phlm",
+          "ch": 1,
+          "from": 17,
+          "to": 25
+        }
+      ],
+      "terms": [
+        {
+          "term": "Onesimus",
+          "explanation": "Person, für die Paulus gegenüber Philemon Fürsprache einlegt."
+        },
+        {
+          "term": "Fürsprache",
+          "explanation": "Eintreten für einen anderen, verbunden mit persönlicher Verantwortung."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Sklaverei prägte die antike römische Gesellschaft. Die genauen Gründe für Onesimus' Entfernung von Philemon sind nicht ausdrücklich genannt; die Annahme einer Flucht ist eine mögliche Rekonstruktion."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Der Brief enthält keinen ausdrücklich formulierten allgemeinen Aufhebungsbefehl der Sklaverei. Die Bitte um brüderliche Aufnahme stellt dennoch einen gewaltigen Anspruch an die Beziehung. Sklaverei und Zwang sind nicht durch den Brief zu rechtfertigen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-philemon-t1",
+          "type": "mc",
+          "question": "Wie soll Philemon Onesimus aufnehmen?",
+          "options": [
+            "Nur als Geschäftspartner",
+            "Als geliebten Bruder",
+            "Als fremden Feind"
+          ],
+          "answer": 1,
+          "explain": "Als geliebten Bruder. Siehe Phlm 1,16–17.",
+          "ref": "Phlm 1,16–17"
+        },
+        {
+          "id": "letters-more-philemon-t2",
+          "type": "tf",
+          "statement": "Der Brief berichtet ausdrücklich, wie Philemon am Ende reagiert.",
+          "answer": false,
+          "explain": "Der Brief endet mit Erwartungen und Grüßen, nicht mit einem Ergebnisbericht.",
+          "ref": "Phlm 1,21–25"
+        },
+        {
+          "id": "letters-more-philemon-t3",
+          "type": "free",
+          "question": "Was kann sich ändern, wenn ein Mensch nicht nur über seine soziale Rolle wahrgenommen wird?",
+          "model": "Das Evangelium fordert eine brüderliche Aufnahme, die die bisherige Rollen- und Machtordnung herausfordert.",
+          "ref": "Phlm 1,16–17"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-philemon-e1",
+          "type": "mc",
+          "question": "Auf welche Weise bittet Paulus vorzugsweise?",
+          "options": [
+            "Mit einer militärischen Drohung",
+            "Um der Liebe willen statt durch Befehl",
+            "Durch einen öffentlichen Schuldspruch"
+          ],
+          "answer": 1,
+          "explain": "Um der Liebe willen statt durch Befehl. Siehe Phlm 1,8–9.",
+          "ref": "Phlm 1,8–9"
+        },
+        {
+          "id": "letters-more-philemon-e2",
+          "type": "tf",
+          "statement": "Paulus bietet an, ausstehende Schuld zu übernehmen.",
+          "answer": true,
+          "explain": "Er erklärt sich bereit, sie auf seine Rechnung setzen zu lassen.",
+          "ref": "Phlm 1,18–19"
+        }
+      ],
+      "reflection": [
+        "Was kann sich ändern, wenn ein Mensch nicht nur über seine soziale Rolle wahrgenommen wird?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Das Evangelium fordert eine brüderliche Aufnahme, die die bisherige Rollen- und Machtordnung herausfordert."
+    },
+    {
+      "id": "letters-more-2peter",
+      "title": "2. Petrus: Wachstum, Wahrheit und die Geduld Gottes",
+      "subtitle": "2Petr 1–3 · Erkenntnis und Erwartung",
+      "type": "study",
+      "icon": "trending-up",
+      "x": 212,
+      "y": 1110,
+      "requires": [
+        "letters-more-philemon"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Der Brief fordert, den Glauben durch Tugend, Erkenntnis, Selbstbeherrschung, Ausharren, Gottesfurcht, Bruderliebe und Liebe sichtbar werden zu lassen. Die Berufung auf das Zeugnis der Verklärung unterstreicht die Botschaft. Kapitel 2 warnt vor Lehrern, die Menschen ausnutzen. Kapitel 3 antwortet auf Spott über die scheinbar verzögerte Wiederkunft: Gottes Geduld eröffnet Raum zur Umkehr. Die Erwartung einer erneuerten Schöpfung soll ein heiliges Leben fördern.",
+      "readings": [
+        {
+          "book": "2Petr",
+          "ch": 1,
+          "from": 3,
+          "to": 11
+        },
+        {
+          "book": "2Petr",
+          "ch": 1,
+          "from": 16,
+          "to": 21
+        },
+        {
+          "book": "2Petr",
+          "ch": 2,
+          "from": 1,
+          "to": 10
+        },
+        {
+          "book": "2Petr",
+          "ch": 3,
+          "from": 3,
+          "to": 18
+        }
+      ],
+      "terms": [
+        {
+          "term": "Gottes Geduld",
+          "explanation": "Die dem Menschen gewährte Möglichkeit zur Umkehr."
+        },
+        {
+          "term": "Falsche Lehrer",
+          "explanation": "Im Brief kritisierte Personen, die Lehre mit Ausbeutung und Irreführung verbinden."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Verfasserschaft des 2. Petrusbriefes ist in der Forschung besonders umstritten. Der Brief selbst präsentiert sich als Zeugnis des Petrus und erinnert an dessen bevorstehenden Tod."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Aussage über tausend Jahre und einen Tag ist kein mathematischer Schlüssel für Endzeitdaten. Sie verdeutlicht Gottes andere Zeitperspektive und Geduld (vgl. Ps 90,4)."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-2peter-t1",
+          "type": "mc",
+          "question": "Warum wird Gottes scheinbare Verzögerung in Kapitel 3 nicht als Untreue verstanden?",
+          "options": [
+            "Der Brief widerruft jede Hoffnung",
+            "Die Gemeinde hat das Datum falsch bezahlt",
+            "Gott ist langmütig und eröffnet Raum zur Umkehr"
+          ],
+          "answer": 2,
+          "explain": "Gott ist langmütig und eröffnet Raum zur Umkehr. Siehe 2Petr 3,8–9.",
+          "ref": "2Petr 3,8–9"
+        },
+        {
+          "id": "letters-more-2peter-t2",
+          "type": "tf",
+          "statement": "Der Brief gibt eine Formel zur sicheren Berechnung der Wiederkunft.",
+          "answer": false,
+          "explain": "Er betont vielmehr Gottes Geduld und den nicht berechenbaren Tag.",
+          "ref": "2Petr 3,8–10"
+        },
+        {
+          "id": "letters-more-2peter-t3",
+          "type": "free",
+          "question": "Wie kann Erwartung der Zukunft die Gegenwart verantwortungsvoller machen?",
+          "model": "Sie fordert zu einem heiligen Wandel und Wachstum in Gnade auf, nicht zu Datenspekulationen.",
+          "ref": "2Petr 3,8–9"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-2peter-e1",
+          "type": "mc",
+          "question": "Worin sollen die Leser wachsen?",
+          "options": [
+            "In wirtschaftlicher Macht um jeden Preis",
+            "In der Zahl ihrer Spekulationen",
+            "In Gnade und Erkenntnis Jesu Christi"
+          ],
+          "answer": 2,
+          "explain": "In Gnade und Erkenntnis Jesu Christi. Siehe 2Petr 3,18.",
+          "ref": "2Petr 3,18"
+        },
+        {
+          "id": "letters-more-2peter-e2",
+          "type": "tf",
+          "statement": "Erkenntnis soll mit gelebter Liebe verbunden sein.",
+          "answer": true,
+          "explain": "Die Tugendfolge in 2Petr 1,5–7 schließt Bruderliebe und Liebe ein.",
+          "ref": "2Petr 1,5–7"
+        }
+      ],
+      "reflection": [
+        "Wie kann Erwartung der Zukunft die Gegenwart verantwortungsvoller machen?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [
+        {
+          "from": "Ps 90,4",
+          "to": "2Petr 3,8",
+          "kind": "allusion",
+          "note": "Die Gegenüberstellung menschlicher und göttlicher Zeitperspektive greift das Psalmmotiv auf."
+        }
+      ],
+      "summary": "Sie fordert zu einem heiligen Wandel und Wachstum in Gnade auf, nicht zu Datenspekulationen."
+    },
+    {
+      "id": "letters-more-2john",
+      "title": "2. Johannes: Wahrheit und Liebe zusammenhalten",
+      "subtitle": "2Joh 1 · Gastfreundschaft und Verantwortung",
+      "type": "study",
+      "icon": "mail",
+      "x": 353,
+      "y": 870,
+      "requires": [
+        "letters-more-2peter"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Der Älteste schreibt an die auserwählte Herrin und ihre Kinder. Ob damit eine konkrete Frau und Familie oder eine Gemeinde gemeint ist, wird unterschiedlich verstanden. Wahrheit und Liebe gehören eng zusammen. Liebe zeigt sich im Wandel nach Gottes Geboten. Der Brief warnt vor Lehrern, die das Kommen Jesu Christi im Fleisch nicht bekennen, und vor Unterstützung ihrer Lehre. Die Warnung betrifft die Aufnahme und Förderung irreführender Mission, nicht ein allgemeines Verbot menschlicher Höflichkeit.",
+      "readings": [
+        {
+          "book": "2Joh",
+          "ch": 1,
+          "from": 1,
+          "to": 6
+        },
+        {
+          "book": "2Joh",
+          "ch": 1,
+          "from": 7,
+          "to": 13
+        }
+      ],
+      "terms": [
+        {
+          "term": "Wahrheit",
+          "explanation": "Im Brief die empfangene und zu bewahrende Botschaft über Jesus Christus."
+        },
+        {
+          "term": "Wandel",
+          "explanation": "Die konkrete Lebensführung nach Gottes Geboten."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Kurze antike Briefe wurden oft durch Boten überbracht. Das Empfangen reisender Lehrer konnte ihre Arbeit materiell und öffentlich unterstützen. Die Verfasserschaft der Johannesbriefe wird diskutiert."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Der Brief fordert zugleich Liebe und Abgrenzung gegenüber irreführender Lehre. Er darf nicht als Freibrief für Feindseligkeit, Herabsetzung oder pauschale Ausgrenzung aller Andersdenkenden benutzt werden."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-2john-t1",
+          "type": "mc",
+          "question": "Woran zeigt sich Liebe nach 2Joh 1,6?",
+          "options": [
+            "Am Wandel nach Gottes Geboten",
+            "An der Unterstützung jeder Lehre",
+            "An gesellschaftlichem Rang"
+          ],
+          "answer": 0,
+          "explain": "Am Wandel nach Gottes Geboten. Siehe 2Joh 1,6.",
+          "ref": "2Joh 1,6"
+        },
+        {
+          "id": "letters-more-2john-t2",
+          "type": "tf",
+          "statement": "Wahrheit und Liebe werden im Brief unabhängig voneinander behandelt.",
+          "answer": false,
+          "explain": "Der Gruß und der Aufruf verbinden beide ausdrücklich.",
+          "ref": "2Joh 1,1–6"
+        },
+        {
+          "id": "letters-more-2john-t3",
+          "type": "free",
+          "question": "Wie kann man Irrtum widersprechen, ohne Menschen zu verachten?",
+          "model": "Der Brief verbindet Treue zur empfangenen Botschaft mit Liebe und verantwortlichem Umgang mit Unterstützung.",
+          "ref": "2Joh 1,6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-2john-e1",
+          "type": "mc",
+          "question": "Welche Aussage wird bei den Verführern kritisiert?",
+          "options": [
+            "Sie bekennen Jesus Christus nicht als im Fleisch kommend",
+            "Sie beten zu viel",
+            "Sie lesen die Schrift zu häufig"
+          ],
+          "answer": 0,
+          "explain": "Sie bekennen Jesus Christus nicht als im Fleisch kommend. Siehe 2Joh 1,7.",
+          "ref": "2Joh 1,7"
+        },
+        {
+          "id": "letters-more-2john-e2",
+          "type": "tf",
+          "statement": "Die Identität der auserwählten Herrin ist im Brief nicht eindeutig erklärt.",
+          "answer": true,
+          "explain": "Der Text gibt keinen Namen und lässt verschiedene Deutungen zu.",
+          "ref": "2Joh 1,1"
+        }
+      ],
+      "reflection": [
+        "Wie kann man Irrtum widersprechen, ohne Menschen zu verachten?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Der Brief verbindet Treue zur empfangenen Botschaft mit Liebe und verantwortlichem Umgang mit Unterstützung."
+    },
+    {
+      "id": "letters-more-3john",
+      "title": "3. Johannes: Gastfreundschaft und Machtmissbrauch",
+      "subtitle": "3Joh 1 · Gajus, Diotrephes und Demetrius",
+      "type": "study",
+      "icon": "users",
+      "x": 668,
+      "y": 630,
+      "requires": [
+        "letters-more-2john"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Der Älteste freut sich über Gajus, der in der Wahrheit wandelt und reisenden Brüdern Gastfreundschaft erweist. Dadurch wird er zum Mitarbeiter der Wahrheit. Diotrephes dagegen will der Erste sein, redet schlecht über den Ältesten und hindert andere an der Aufnahme von Brüdern. Demetrius erhält ein gutes Zeugnis. Der Brief zeigt, dass Leitung, Gastfreundschaft und der Umgang mit Macht Prüfsteine glaubwürdigen Glaubens sind.",
+      "readings": [
+        {
+          "book": "3Joh",
+          "ch": 1,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "3Joh",
+          "ch": 1,
+          "from": 9,
+          "to": 14
+        }
+      ],
+      "terms": [
+        {
+          "term": "Gastfreundschaft",
+          "explanation": "Praktische Aufnahme und Unterstützung reisender Brüder."
+        },
+        {
+          "term": "Mitarbeiter der Wahrheit",
+          "explanation": "Menschen, die durch ihre Hilfe das Zeugnis anderer mittragen."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Reisende Boten waren auf Gastfreundschaft und Unterstützung lokaler Gemeinden angewiesen. Die konkreten Konflikte der Gemeinde lassen sich aus dem knappen Text nur teilweise rekonstruieren."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Warnung vor Machtmissbrauch soll nicht zur vorschnellen Gleichsetzung heutiger Personen mit Diotrephes führen. Der Text benennt konkrete Verhaltensweisen, anhand derer Leitung überprüft werden kann."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "letters-more-3john-t1",
+          "type": "mc",
+          "question": "Wofür wird Gajus gelobt?",
+          "options": [
+            "Seinen Vorrang über alle anderen",
+            "Seine Treue und Unterstützung reisender Brüder",
+            "Seine Verweigerung von Gastfreundschaft"
+          ],
+          "answer": 1,
+          "explain": "Seine Treue und Unterstützung reisender Brüder. Siehe 3Joh 1,5–8.",
+          "ref": "3Joh 1,5–8"
+        },
+        {
+          "id": "letters-more-3john-t2",
+          "type": "tf",
+          "statement": "Der Brief ermuntert dazu, das Gute nachzuahmen.",
+          "answer": true,
+          "explain": "Der Aufruf steht ausdrücklich in Vers 11.",
+          "ref": "3Joh 1,11"
+        },
+        {
+          "id": "letters-more-3john-t3",
+          "type": "free",
+          "question": "Woran ist dienende Leitung im Unterschied zu Machtstreben zu erkennen?",
+          "model": "Dienende Leitung unterstützt andere und lässt sie teilhaben, statt Vorrang und Kontrolle zu suchen.",
+          "ref": "3Joh 1,5–8"
+        }
+      ],
+      "exam": [
+        {
+          "id": "letters-more-3john-e1",
+          "type": "mc",
+          "question": "Was zeichnet Diotrephes aus?",
+          "options": [
+            "Er unterstützt alle Boten",
+            "Er will der Erste sein und behindert andere",
+            "Er wird als Vorbild für Demut genannt"
+          ],
+          "answer": 1,
+          "explain": "Er will der Erste sein und behindert andere. Siehe 3Joh 1,9–10.",
+          "ref": "3Joh 1,9–10"
+        },
+        {
+          "id": "letters-more-3john-e2",
+          "type": "tf",
+          "statement": "Gastfreundschaft spielt für das Zeugnis der Gemeinde keine Rolle.",
+          "answer": false,
+          "explain": "Der Brief bezeichnet die Unterstützenden als Mitarbeiter der Wahrheit.",
+          "ref": "3Joh 1,8"
+        }
+      ],
+      "reflection": [
+        "Woran ist dienende Leitung im Unterschied zu Machtstreben zu erkennen?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Dienende Leitung unterstützt andere und lässt sie teilhaben, statt Vorrang und Kontrolle zu suchen."
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "id": "synoptic",
+  "worldId": "gospels",
+  "title": "Die Evangelien im Vergleich: Wirken und Passion",
+  "book": "Mt",
+  "intro": "Vergleiche Matthäus, Markus und Lukas in ihren eigenen Stimmen; ergänzend Johannes, wenn dieselbe Szene dort vorkommt.",
+  "mapW": 1000,
+  "mapH": 1280,
+  "stations": [
+    {
+      "id": "synoptic-ministry",
+      "title": "Jesu Taufe, Versuchung und Reich-Gottes-Botschaft",
+      "subtitle": "Mt 3–6; Mk 1; Lk 3–6",
+      "type": "study",
+      "icon": "sun",
+      "x": 500,
+      "y": 1110,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Alle drei Synoptiker erzählen Jesu Taufe. Matthäus berichtet zusätzlich ein Gespräch zwischen Jesus und Johannes; Lukas betont Jesu Gebet, Markus erzählt besonders knapp. Matthäus und Lukas berichten die Versuchungen ausführlicher als Markus, jedoch in unterschiedlicher Reihenfolge. Beide überliefern Seligpreisungen: Matthäus beschreibt unter anderem Arme im Geist, Lukas spricht die Armen direkt an und stellt Weherufe daneben. Diese Unterschiede laden zu einer genauen Lektüre ein, statt alle Fassungen in ein einziges Zitat zu verwandeln.",
+      "readings": [
+        {
+          "book": "Mt",
+          "ch": 3,
+          "from": 13,
+          "to": 17
+        },
+        {
+          "book": "Mk",
+          "ch": 1,
+          "from": 9,
+          "to": 15
+        },
+        {
+          "book": "Lk",
+          "ch": 3,
+          "from": 21,
+          "to": 22
+        },
+        {
+          "book": "Mt",
+          "ch": 4,
+          "from": 1,
+          "to": 11
+        },
+        {
+          "book": "Lk",
+          "ch": 4,
+          "from": 1,
+          "to": 13
+        },
+        {
+          "book": "Mt",
+          "ch": 5,
+          "from": 1,
+          "to": 12
+        },
+        {
+          "book": "Lk",
+          "ch": 6,
+          "from": 20,
+          "to": 26
+        }
+      ],
+      "terms": [
+        {
+          "term": "Seligpreisung",
+          "explanation": "Zusage von Glückseligkeit beziehungsweise Gottes Zuwendung in einer konkreten Lehraussage."
+        },
+        {
+          "term": "Parallelbericht",
+          "explanation": "Erzählung oder Lehre, die in mehr als einem Evangelium überliefert ist."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Gemeinsamkeiten und Unterschiede lassen sich in parallelen Textspalten untersuchen. Die Reihenfolge einer Erzählung allein reicht nicht zur sicheren Rekonstruktion jedes historischen Details."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Jesu Verkündigung des Reiches Gottes ist ein gemeinsamer Schwerpunkt. Die jeweiligen Formulierungen, Adressaten und Erzählkontexte bestimmen, wie einzelne Aussagen verstanden und angewendet werden."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "synoptic-ministry-t1",
+          "type": "mc",
+          "question": "Welches Evangelium berichtet ein Gespräch bei der Taufe zwischen Jesus und Johannes?",
+          "options": [
+            "Markus",
+            "Matthäus",
+            "Lukas"
+          ],
+          "answer": 1,
+          "explain": "Matthäus. Siehe Mt 3,13–15.",
+          "ref": "Mt 3,13–15"
+        },
+        {
+          "id": "synoptic-ministry-t2",
+          "type": "tf",
+          "statement": "Die Versuchungsberichte von Matthäus und Lukas haben dieselbe Reihenfolge aller Versuchungen.",
+          "answer": false,
+          "explain": "Die Tempel- und Bergversuchung erscheinen in unterschiedlicher Reihenfolge.",
+          "ref": "Mt 4,5–10; Lk 4,5–12"
+        },
+        {
+          "id": "synoptic-ministry-t3",
+          "type": "free",
+          "question": "Wie hilft der direkte Vergleich, vertraute Aussagen Jesu genauer zu lesen?",
+          "model": "Er macht Unterschiede in Adressaten, Wortlaut und Erzählkontext sichtbar, ohne die gemeinsame Botschaft zu verlieren.",
+          "ref": "Mt 3,13–15"
+        }
+      ],
+      "exam": [
+        {
+          "id": "synoptic-ministry-e1",
+          "type": "mc",
+          "question": "Was stellt Lukas den Seligpreisungen gegenüber?",
+          "options": [
+            "Eine Liste der zwölf Stämme",
+            "Weherufe",
+            "Die sieben Sendschreiben"
+          ],
+          "answer": 1,
+          "explain": "Weherufe. Siehe Lk 6,24–26.",
+          "ref": "Lk 6,24–26"
+        },
+        {
+          "id": "synoptic-ministry-e2",
+          "type": "tf",
+          "statement": "Lukas erwähnt Jesu Gebet bei der Taufe.",
+          "answer": true,
+          "explain": "Lk 3,21 beschreibt Jesus als betend.",
+          "ref": "Lk 3,21"
+        }
+      ],
+      "reflection": [
+        "Wie hilft der direkte Vergleich, vertraute Aussagen Jesu genauer zu lesen?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Er macht Unterschiede in Adressaten, Wortlaut und Erzählkontext sichtbar, ohne die gemeinsame Botschaft zu verlieren.",
+      "image": "syn-1"
+    },
+    {
+      "id": "synoptic-passion",
+      "title": "Kreuz und Auferstehung in den vier Evangelien",
+      "subtitle": "Mt 27–28; Mk 15–16; Lk 23–24; Joh 19–20",
+      "type": "study",
+      "icon": "sunrise",
+      "x": 765,
+      "y": 870,
+      "requires": [
+        "synoptic-ministry"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema aus den angegebenen Texten erklären und seine Aussage auf den jeweiligen Zusammenhang beziehen.",
+      "discover": "Matthäus und Markus berichten Jesu Verlassenheitsschrei mit Psalm 22. Lukas überliefert die Übergabe seines Geistes an den Vater; Johannes betont das Vollbracht. Gemeinsam erzählen die vier Evangelien Jesu Tod und das leere Grab, unterscheiden sich aber in Auswahl, Reihenfolge und benannten Beteiligten. Matthäus erzählt von den Frauen, Lukas hebt die Erinnerung an Jesu Worte hervor, Johannes schildert Maria Magdalenas Begegnung mit dem Auferstandenen. Markus 16,1–8 endet in Furcht und Flucht. Die Evangelien bezeugen die Auferstehung aus ihren jeweiligen Erzählperspektiven.",
+      "readings": [
+        {
+          "book": "Mt",
+          "ch": 27,
+          "from": 45,
+          "to": 54
+        },
+        {
+          "book": "Mk",
+          "ch": 15,
+          "from": 33,
+          "to": 39
+        },
+        {
+          "book": "Lk",
+          "ch": 23,
+          "from": 44,
+          "to": 49
+        },
+        {
+          "book": "Joh",
+          "ch": 19,
+          "from": 25,
+          "to": 30
+        },
+        {
+          "book": "Mt",
+          "ch": 28,
+          "from": 1,
+          "to": 10
+        },
+        {
+          "book": "Mk",
+          "ch": 16,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Lk",
+          "ch": 24,
+          "from": 1,
+          "to": 12
+        },
+        {
+          "book": "Joh",
+          "ch": 20,
+          "from": 1,
+          "to": 18
+        }
+      ],
+      "terms": [
+        {
+          "term": "Passion",
+          "explanation": "Die Erzählungen vom Leiden und Tod Jesu."
+        },
+        {
+          "term": "Textüberlieferung",
+          "explanation": "Die in Handschriften erhaltenen Fassungen und ihre Unterschiede."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Mk 16,9–20 fehlt in wichtigen frühen Handschriften. Übersetzungen kennzeichnen die Textüberlieferung unterschiedlich. Diese Beobachtung betrifft die Überlieferung des Schlusses, nicht eine automatische Widerlegung des Auferstehungsglaubens."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Berichte lassen sich in ihren eigenen Aussageabsichten vergleichen, ohne letzte Worte oder Begegnungen als einheitliche erfundene Szene zu präsentieren. Historische Rekonstruktion und biblisches Zeugnis sind unterscheidbare Fragen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "synoptic-passion-t1",
+          "type": "mc",
+          "question": "Welches Evangelium erzählt Marias Begegnung mit Jesus im Garten besonders ausführlich?",
+          "options": [
+            "Markus",
+            "Matthäus",
+            "Johannes"
+          ],
+          "answer": 2,
+          "explain": "Johannes. Siehe Joh 20,11–18.",
+          "ref": "Joh 20,11–18"
+        },
+        {
+          "id": "synoptic-passion-t2",
+          "type": "tf",
+          "statement": "Der Psalm-22-Schrei erscheint in Matthäus und Markus.",
+          "answer": true,
+          "explain": "Beide Evangelien berichten ihn.",
+          "ref": "Mt 27,46; Mk 15,34"
+        },
+        {
+          "id": "synoptic-passion-t3",
+          "type": "free",
+          "question": "Welche Gemeinsamkeit und welchen eigenen Schwerpunkt kannst du in zwei Grabberichten erkennen?",
+          "model": "Beide bezeugen das leere Grab; Johannes betont Marias persönliche Begegnung, Lukas etwa die Erinnerung an Jesu Worte.",
+          "ref": "Joh 20,11–18"
+        }
+      ],
+      "exam": [
+        {
+          "id": "synoptic-passion-e1",
+          "type": "mc",
+          "question": "Welches Evangelium überliefert das Wort Vollbracht?",
+          "options": [
+            "Lukas",
+            "Markus",
+            "Johannes"
+          ],
+          "answer": 2,
+          "explain": "Johannes. Siehe Joh 19,30.",
+          "ref": "Joh 19,30"
+        },
+        {
+          "id": "synoptic-passion-e2",
+          "type": "tf",
+          "statement": "Alle vier Grabberichte nennen exakt dieselben Beteiligten und dieselbe Reihenfolge.",
+          "answer": false,
+          "explain": "Die Berichte haben gemeinsame Motive, aber unterschiedliche Auswahl und Darstellung.",
+          "ref": "Mt 28,1–10; Joh 20,1–18"
+        }
+      ],
+      "reflection": [
+        "Welche Gemeinsamkeit und welchen eigenen Schwerpunkt kannst du in zwei Grabberichten erkennen?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "connections": [],
+      "summary": "Beide bezeugen das leere Grab; Johannes betont Marias persönliche Begegnung, Lukas etwa die Erinnerung an Jesu Worte.",
+      "image": "syn-2"
+    }
+  ]
+}

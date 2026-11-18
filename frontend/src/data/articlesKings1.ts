@@ -330,7 +330,7 @@ export const ARTICLES_JOS: Article[] = [
       { h: "Historisches", layer: "hypothesis", body: "Sauls Herrschaft wird ins späte 11. Jh. v. Chr. gesetzt und war wohl eher ein Häuptlingstum im Bergland von Benjamin und Ephraim. Außerbiblische Belege fehlen." },
       { h: "Davids Klage", layer: "bible", body: "David beklagt Saul und Jonatan ergreifend: „Wie sind die Helden gefallen!“ (2Sam 1,19–27)." },
     ],
-    refs: ["1Sam 9,1–2", "1Sam 10,1", "1Sam 15,10–23", "1Sam 16,14–23", "1Sam 24,1–23", "1Sam 31,1–6", "2Sam 1,17–27"],
+    refs: ["1Sam 9,1–2", "1Sam 10,1", "1Sam 15,10–23", "1Sam 16,14–23", "1Sam 23,29", "1Sam 24,1–22", "1Sam 31,1–6", "2Sam 1,17–27"],
     timeframe: "Spätes 11. Jh. v. Chr. (Näherung)",
     epoch: "koenigszeit", region: "kanaan", books: ["1Sam", "2Sam", "1Chr", "Apg"],
     relations: [

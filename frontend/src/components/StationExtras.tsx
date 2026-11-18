@@ -3,7 +3,7 @@ import React from "react";
 import { Pressable, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
-import { ARTICLE_BY_ID } from "@/src/data/articles";
+import { ARTICLE_BY_ID, ARTICLES } from "@/src/data/articles";
 import { Connection, ConnectionKind } from "@/src/data/types";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -47,11 +47,12 @@ export function InfoChips({ ids }: { ids?: string[] }) {
 }
 
 /** Links zu ausgearbeiteten Lexikonartikeln. */
-export function LexiconLinks({ ids }: { ids?: string[] }) {
+export function LexiconLinks({ ids, stationId }: { ids?: string[]; stationId?: string }) {
   const styles = useStyles();
   const { colors } = useTheme();
   const router = useRouter();
-  const list = (ids ?? []).filter((id) => ARTICLE_BY_ID[id]);
+  // Ausdrücklich verknüpfte Artikel plus Artikel, die diese Station in stationIds nennen
+  const list = [...new Set([...(ids ?? []), ...(stationId ? ARTICLES.filter((x) => x.stationIds?.includes(stationId)).map((x) => x.id) : [])])].filter((id) => ARTICLE_BY_ID[id]);
   if (!list.length) return null;
   return (
     <View testID="station-lexicon-links">

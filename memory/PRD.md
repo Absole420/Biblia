@@ -188,3 +188,18 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Gleicher Vers am selben Tag, keine Wiederholung bis Durchlauf, Schriftgröße 24/21/18 nach Länge, Teilung am Satzzeichen, maxFontSizeMultiplier 1.3
 - Tests: tests/daily-scripture.test.mjs (4/4), Testagent Iteration 36 bestanden; Nutzerbestätigung ausstehend
 - Redaktionell offen: 5 Verse mit einzelnen Anführungszeichen, 43 Satzfragmente mit Kleinbuchstaben
+
+## Update (Iteration 37) – PR #7 Studienreise-Erweiterung
+- Übernommen (Daten unverändert): revelation (13), psalms-5 Prediger (4), psalms-6 Hoheslied (2), letters-more (7), history-tribes (3), synoptic (2: Wirken, Passion)
+- Nicht übernommen (Duplikate): prophets-more (6, = kp-1…kp-7), synoptic-method (= syn-1)
+- letters-14 (Judas): nur Verweise korrigiert; übrige letters.json unverändert
+- Offenbarung spielbar; Geschichtsbücher spielbar mit vorhandenem history-1 (Josua & Richter) + history-tribes
+- Vorhandene Bilder wiederverwendet (way-*, syn-*, ps3-6); keine neuen Bilder
+- Test: tests/study-journey-expansion.test.mjs (angepasst, 31 Stationen)
+
+## Update (Iteration 39) – PR #8 Bibliothek-Erweiterung
+- 49 neue Lexikonartikel (articlesExpansion.json, keine ID-Kollisionen), lexiconPlan, Zeitstrahl (Visionen undatiert), Suche (referenceSearch.ts, offline), korrigierte Verweise, Bilder proportional
+- UI-Dateien lexicon/index, lexicon/[id], timeline per 3-Wege-Merge übernommen (aktuelles Design erhalten)
+- stationIds auf vorhandene Stationen umgestellt (prophets-more-* → kp-*, hist-kings-divided → history-tribes-hope, nicht vorhandene hist-* entfernt)
+- Stationsseite zeigt jetzt auch Artikel, die die Station über stationIds nennen
+- PR #7 Nachtrag: psalms-6/synoptic mapH 1280

@@ -166,7 +166,7 @@ export default function StationScreen() {
               <Text key={formatRef(r)} style={styles.refLine}>• {formatRef(r)}</Text>
             ))}
             <InfoChips ids={station.info} />
-            <LexiconLinks ids={station.lexicon} />
+            <LexiconLinks ids={station.lexicon} stationId={station.id} />
           </Animated.View>
         ) : null}
 
@@ -232,7 +232,7 @@ export default function StationScreen() {
             ))}
             <Connections list={station.connections} />
             <InfoChips ids={station.info} />
-            <LexiconLinks ids={station.lexicon} />
+            <LexiconLinks ids={station.lexicon} stationId={station.id} />
           </Animated.View>
         ) : null}
 

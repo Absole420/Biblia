@@ -1,0 +1,493 @@
+{
+  "id": "psalms-5",
+  "worldId": "psalms",
+  "title": "Prediger: Zeit, Vergänglichkeit und Gottesfurcht",
+  "book": "Pred",
+  "intro": "Das Buch Kohelet wird in vier Stationen vom Anfang bis zum Schluss gelesen. Die traditionelle Verbindung zu Salomo und die offene Verfasserfrage werden unterschieden.",
+  "mapW": 1000,
+  "mapH": 1520,
+  "stations": [
+    {
+      "id": "psalms-5-meaning",
+      "title": "Prediger: Was bleibt von unserer Mühe?",
+      "subtitle": "Pred 1–2 · Hebel, Weisheit und Arbeit",
+      "type": "study",
+      "icon": "wind",
+      "x": 500,
+      "y": 1350,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Kohelet beginnt mit dem Bild des Hebel: Hauch, Wind oder Vergänglichkeit. Was gewinnt der Mensch dauerhaft von seiner Mühe unter der Sonne? Der Sprecher prüft Wissen, Vergnügen, Besitz und große Bauprojekte. Er erkennt ihre Grenzen: Auch der Weise stirbt, und er muss seine Arbeit anderen hinterlassen. Dennoch nennt er Essen, Trinken und Freude an der Arbeit als Gabe aus Gottes Hand. Das Buch verwirft nicht das Leben, sondern stellt den Wunsch nach vollständiger Kontrolle und bleibendem Gewinn in Frage.",
+      "readings": [
+        {
+          "book": "Pred",
+          "ch": 1,
+          "from": 1,
+          "to": 18
+        },
+        {
+          "book": "Pred",
+          "ch": 2,
+          "from": 1,
+          "to": 11
+        },
+        {
+          "book": "Pred",
+          "ch": 2,
+          "from": 18,
+          "to": 26
+        }
+      ],
+      "terms": [
+        {
+          "term": "Hebel",
+          "explanation": "Hebräisches Bild des Hauchs; im Buch Ausdruck von Vergänglichkeit und Begrenztheit."
+        },
+        {
+          "term": "Unter der Sonne",
+          "explanation": "Wiederkehrende Perspektive des beobachtbaren menschlichen Lebens."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Stimme des Buches wird als Sohn Davids und König in Jerusalem eingeführt. Das begründet die traditionelle salomonische Zuordnung. Die sprachlichen und literarischen Befunde führen in der Forschung zu anderen Datierungen; der Text nennt Salomo nicht ausdrücklich."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Hebel kann je nach Zusammenhang Vergänglichkeit, Unfassbarkeit oder Frustration ausdrücken. Eine einzige Übersetzung als 'alles ist sinnlos' wäre zu eng."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "psalms-5-meaning-t1",
+          "type": "mc",
+          "question": "Was prüft Kohelet in Kapitel 2?",
+          "options": [
+            "Nur die Könige Assyriens",
+            "Nur die Tempelrituale",
+            "Vergnügen, Besitz, Arbeit und Weisheit"
+          ],
+          "answer": 2,
+          "explain": "Vergnügen, Besitz, Arbeit und Weisheit. Siehe Pred 2,1–11.",
+          "ref": "Pred 2,1–11"
+        },
+        {
+          "id": "psalms-5-meaning-t2",
+          "type": "tf",
+          "statement": "Der Text nennt Salomo ausdrücklich beim Namen.",
+          "answer": false,
+          "explain": "Er spricht vom Sohn Davids und König in Jerusalem.",
+          "ref": "Pred 1,1.12"
+        },
+        {
+          "id": "psalms-5-meaning-t3",
+          "type": "free",
+          "question": "Welche Ziele können wertvoll sein, ohne dauerhaft verfügbar zu sein?",
+          "model": "Arbeit und Weisheit besitzen Wert, aber Kohelet bestreitet, dass sie Tod und Zukunft vollständig kontrollieren.",
+          "ref": "Pred 2,1–11"
+        }
+      ],
+      "exam": [
+        {
+          "id": "psalms-5-meaning-e1",
+          "type": "mc",
+          "question": "Wie bewertet er die Freude an der Arbeit in 2,24?",
+          "options": [
+            "Als immer sündhaft",
+            "Als Garantie ewigen Reichtums",
+            "Als Gabe aus Gottes Hand"
+          ],
+          "answer": 2,
+          "explain": "Als Gabe aus Gottes Hand. Siehe Pred 2,24–26.",
+          "ref": "Pred 2,24–26"
+        },
+        {
+          "id": "psalms-5-meaning-e2",
+          "type": "tf",
+          "statement": "Kohelet erkennt, dass Besitz nach dem Tod anderen zufällt.",
+          "answer": true,
+          "explain": "Er kann nicht bestimmen, ob der Nachfolger weise sein wird.",
+          "ref": "Pred 2,18–21"
+        }
+      ],
+      "reflection": [
+        "Welche Ziele können wertvoll sein, ohne dauerhaft verfügbar zu sein?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Arbeit und Weisheit besitzen Wert, aber Kohelet bestreitet, dass sie Tod und Zukunft vollständig kontrollieren.",
+      "image": "way-arbeit-sinn"
+    },
+    {
+      "id": "psalms-5-time",
+      "title": "Alles hat seine Zeit",
+      "subtitle": "Pred 3,1–22 · Gottes Zeit und menschliche Grenzen",
+      "type": "study",
+      "icon": "clock",
+      "x": 765,
+      "y": 1110,
+      "requires": [
+        "psalms-5-meaning"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Vierzehn Gegensatzpaare zeichnen in Prediger 3 den Rhythmus des Lebens: Geborenwerden und Sterben, Pflanzen und Ausreißen, Weinen und Lachen, Schweigen und Reden. Der Mensch kann Gottes Werk nicht vom Anfang bis zum Ende erfassen. Dennoch darf er sich freuen, Gutes tun und die Früchte seiner Arbeit genießen. Gottes Handeln bleibt bestehen. Der zweite Teil des Kapitels benennt auch Unrecht und Sterblichkeit. Das Gedicht ist keine Aufforderung, jede Handlung als gut oder als Gottes ausdrücklichen Willen zu bezeichnen.",
+      "readings": [
+        {
+          "book": "Pred",
+          "ch": 3,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Pred",
+          "ch": 3,
+          "from": 9,
+          "to": 15
+        },
+        {
+          "book": "Pred",
+          "ch": 3,
+          "from": 16,
+          "to": 22
+        }
+      ],
+      "terms": [
+        {
+          "term": "Zeit",
+          "explanation": "Bestimmte, nicht völlig kontrollierbare Lebensabschnitte."
+        },
+        {
+          "term": "Ewigkeit im Herzen",
+          "explanation": "Ausdruck in Pred 3,11, dessen sprachliche und theologische Deutung diskutiert wird."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Das Kapitel gehört zur Weisheitsliteratur und reflektiert die begrenzte menschliche Perspektive. Die Form der Gegensatzpaare umfasst das Leben als Ganzes."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Pred 3,11 wird unterschiedlich übersetzt und ausgelegt; die Ewigkeit im Herzen verweist auf menschliche Sehnsucht nach dem Ganzen, ohne vollständige Erkenntnis zu versprechen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "psalms-5-time-t1",
+          "type": "mc",
+          "question": "Was bleibt dem Menschen nach Pred 3,11 verborgen?",
+          "options": [
+            "Gottes Werk vom Anfang bis zum Ende",
+            "Die Existenz aller Menschen",
+            "Jede Möglichkeit der Freude"
+          ],
+          "answer": 0,
+          "explain": "Gottes Werk vom Anfang bis zum Ende. Siehe Pred 3,11.",
+          "ref": "Pred 3,11"
+        },
+        {
+          "id": "psalms-5-time-t2",
+          "type": "tf",
+          "statement": "Die Zeit des Weinens gehört ebenfalls zum Gedicht.",
+          "answer": true,
+          "explain": "Pred 3,4 nennt Weinen und Lachen.",
+          "ref": "Pred 3,4"
+        },
+        {
+          "id": "psalms-5-time-t3",
+          "type": "free",
+          "question": "Welche Zeiten kannst du gestalten, welche entziehen sich deiner Kontrolle?",
+          "model": "Der Text lädt ein, menschliche Grenzen anzuerkennen und im gegebenen Augenblick verantwortungsvoll zu handeln.",
+          "ref": "Pred 3,11"
+        }
+      ],
+      "exam": [
+        {
+          "id": "psalms-5-time-e1",
+          "type": "mc",
+          "question": "Welche Haltung empfiehlt Pred 3,12–13?",
+          "options": [
+            "Sich freuen, Gutes tun und die Gabe Gottes genießen",
+            "Die Zukunft vollständig vorherberechnen",
+            "Jede Trauer verbieten"
+          ],
+          "answer": 0,
+          "explain": "Sich freuen, Gutes tun und die Gabe Gottes genießen. Siehe Pred 3,12–13.",
+          "ref": "Pred 3,12–13"
+        },
+        {
+          "id": "psalms-5-time-e2",
+          "type": "tf",
+          "statement": "Das Gedicht erklärt jede Gewalttat als moralisch richtig.",
+          "answer": false,
+          "explain": "Es beschreibt Gegensätze des Lebens; Vers 16 benennt Unrecht ausdrücklich.",
+          "ref": "Pred 3,1–8.16"
+        }
+      ],
+      "reflection": [
+        "Welche Zeiten kannst du gestalten, welche entziehen sich deiner Kontrolle?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Der Text lädt ein, menschliche Grenzen anzuerkennen und im gegebenen Augenblick verantwortungsvoll zu handeln.",
+      "image": "way-frieden-stille"
+    },
+    {
+      "id": "psalms-5-justice",
+      "title": "Arbeit, Besitz und die Grenzen der Gerechtigkeit",
+      "subtitle": "Pred 4–8 · Gemeinschaft und Maß",
+      "type": "study",
+      "icon": "users",
+      "x": 716,
+      "y": 870,
+      "requires": [
+        "psalms-5-time"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Kohelet sieht die Tränen der Unterdrückten und das Fehlen eines Trösters. Konkurrenz kann Arbeit antreiben; Einsamkeit kann den Gewinn entwerten. Zwei Menschen können einander aufhelfen. Der Text warnt vor der Unstillbarkeit des Geldverlangens und erinnert daran, dass Besitz nicht mitgenommen werden kann. Weisheit hilft, aber sie erklärt nicht alle Ungerechtigkeit. Der Mensch kann trotz aller Mühe Gottes Werk nicht vollständig ergründen.",
+      "readings": [
+        {
+          "book": "Pred",
+          "ch": 4,
+          "from": 1,
+          "to": 12
+        },
+        {
+          "book": "Pred",
+          "ch": 5,
+          "from": 9,
+          "to": 19
+        },
+        {
+          "book": "Pred",
+          "ch": 7,
+          "from": 11,
+          "to": 18
+        },
+        {
+          "book": "Pred",
+          "ch": 8,
+          "from": 10,
+          "to": 17
+        }
+      ],
+      "terms": [
+        {
+          "term": "Gemeinschaft",
+          "explanation": "Das gegenseitige Tragen und Helfen in Pred 4,9–12."
+        },
+        {
+          "term": "Genügsamkeit",
+          "explanation": "Wertschätzung des Gegebenen statt unstillbarer Anhäufung."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Prediger beobachtet soziale Beziehungen, Arbeit und Recht aus der Lebenspraxis. Das Buch ist kein Wirtschaftssystem und keine pauschale Ablehnung von Besitz."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Aussagen über Maß und Weisheit sind im Zusammenhang mit Pred 7,20 und 8,14 zu lesen. Sie versprechen kein Leben ohne Leid."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "psalms-5-justice-t1",
+          "type": "mc",
+          "question": "Was ist der Vorteil von zwei Menschen gegenüber einem?",
+          "options": [
+            "Sie erfahren nie Leid",
+            "Sie können einander aufhelfen",
+            "Sie besitzen automatisch mehr Weisheit"
+          ],
+          "answer": 1,
+          "explain": "Sie können einander aufhelfen. Siehe Pred 4,9–12.",
+          "ref": "Pred 4,9–12"
+        },
+        {
+          "id": "psalms-5-justice-t2",
+          "type": "tf",
+          "statement": "Kohelet nimmt die Not der Unterdrückten wahr.",
+          "answer": true,
+          "explain": "Pred 4,1 spricht von ihren Tränen und fehlendem Trost.",
+          "ref": "Pred 4,1"
+        },
+        {
+          "id": "psalms-5-justice-t3",
+          "type": "free",
+          "question": "Woran erkennst du, dass Arbeit oder Besitz ihren Platz im Leben überschreiten?",
+          "model": "Wenn Gewinn Beziehungen, Ruhe und Verantwortung verdrängt, trifft Kohelets Kritik an Konkurrenz und unstillbarem Besitzverlangen.",
+          "ref": "Pred 4,9–12"
+        }
+      ],
+      "exam": [
+        {
+          "id": "psalms-5-justice-e1",
+          "type": "mc",
+          "question": "Was kann nach Pred 5 der Liebhaber des Geldes nicht erreichen?",
+          "options": [
+            "Jede Form von Arbeit",
+            "Sättigung allein durch Geld",
+            "Jede Gemeinschaft"
+          ],
+          "answer": 1,
+          "explain": "Sättigung allein durch Geld. Siehe Pred 5,10.",
+          "ref": "Pred 5,10"
+        },
+        {
+          "id": "psalms-5-justice-e2",
+          "type": "tf",
+          "statement": "Der Weise versteht laut Pred 8 Gottes ganzes Werk vollständig.",
+          "answer": false,
+          "explain": "Auch der Weise vermag es nicht vollständig zu ergründen.",
+          "ref": "Pred 8,17"
+        }
+      ],
+      "reflection": [
+        "Woran erkennst du, dass Arbeit oder Besitz ihren Platz im Leben überschreiten?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Wenn Gewinn Beziehungen, Ruhe und Verantwortung verdrängt, trifft Kohelets Kritik an Konkurrenz und unstillbarem Besitzverlangen.",
+      "image": "ps3-6"
+    },
+    {
+      "id": "psalms-5-ending",
+      "title": "Gedenke deines Schöpfers",
+      "subtitle": "Pred 9–12 · Freude, Alter und Gottesfurcht",
+      "type": "study",
+      "icon": "sunrise",
+      "x": 412,
+      "y": 630,
+      "requires": [
+        "psalms-5-justice"
+      ],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Der letzte Teil des Buches erinnert an die Sterblichkeit, fordert aber gerade deshalb dazu auf, das Leben verantwortlich und mit Freude anzunehmen. Die Bilder in Kapitel 12 schildern das Nachlassen menschlicher Kräfte und den Tod. Der Staub kehrt zur Erde zurück und der Geist zu Gott, der ihn gegeben hat. Der Schluss ruft zur Gottesfurcht und zum Bewahren seiner Gebote auf. Kohelet verbindet die Begrenztheit der menschlichen Erkenntnis mit verantwortlichem Leben vor Gott.",
+      "readings": [
+        {
+          "book": "Pred",
+          "ch": 9,
+          "from": 7,
+          "to": 10
+        },
+        {
+          "book": "Pred",
+          "ch": 11,
+          "from": 7,
+          "to": 10
+        },
+        {
+          "book": "Pred",
+          "ch": 12,
+          "from": 1,
+          "to": 7
+        },
+        {
+          "book": "Pred",
+          "ch": 12,
+          "from": 9,
+          "to": 14
+        }
+      ],
+      "terms": [
+        {
+          "term": "Gottesfurcht",
+          "explanation": "Ehrfurcht vor Gott und Verantwortung vor ihm."
+        },
+        {
+          "term": "Staub",
+          "explanation": "Bild menschlicher Geschöpflichkeit und Sterblichkeit."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die poetischen Altersbilder werden unterschiedlich im Detail gedeutet; nicht jedes Bild muss exakt einem Körperteil zugeordnet werden."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Pred 12,7 ist kein vollständiges Lehrsystem über den Zustand der Toten. Bei der Frage nach Auferstehung und ewigem Leben sind weitere biblische Texte im eigenen Zusammenhang zu lesen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "psalms-5-ending-t1",
+          "type": "mc",
+          "question": "Woran soll sich der junge Mensch erinnern?",
+          "options": [
+            "Nur an materiellen Erfolg",
+            "An die Macht alter Könige",
+            "An seinen Schöpfer"
+          ],
+          "answer": 2,
+          "explain": "An seinen Schöpfer. Siehe Pred 12,1.",
+          "ref": "Pred 12,1"
+        },
+        {
+          "id": "psalms-5-ending-t2",
+          "type": "tf",
+          "statement": "Prediger verbindet Freude mit Verantwortung.",
+          "answer": true,
+          "explain": "Pred 11,9 verbindet Freude und die Erinnerung an Gottes Gericht.",
+          "ref": "Pred 11,9"
+        },
+        {
+          "id": "psalms-5-ending-t3",
+          "type": "free",
+          "question": "Wie verändert die Erinnerung an den Schöpfer deine Prioritäten?",
+          "model": "Sie richtet den Blick auf Gottesfurcht, Verantwortung und den Wert der geschenkten Lebenszeit.",
+          "ref": "Pred 12,1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "psalms-5-ending-e1",
+          "type": "mc",
+          "question": "Was nennt der Schluss des Buches als Aufgabe des Menschen?",
+          "options": [
+            "Alle Zukunftsereignisse wissen",
+            "Jede Freude ablehnen",
+            "Gott fürchten und seine Gebote halten"
+          ],
+          "answer": 2,
+          "explain": "Gott fürchten und seine Gebote halten. Siehe Pred 12,13–14.",
+          "ref": "Pred 12,13–14"
+        },
+        {
+          "id": "psalms-5-ending-e2",
+          "type": "tf",
+          "statement": "Pred 12 verspricht, dass der Mensch nicht altert.",
+          "answer": false,
+          "explain": "Die poetischen Bilder beschreiben gerade menschliche Vergänglichkeit.",
+          "ref": "Pred 12,1–7"
+        }
+      ],
+      "reflection": [
+        "Wie verändert die Erinnerung an den Schöpfer deine Prioritäten?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Sie richtet den Blick auf Gottesfurcht, Verantwortung und den Wert der geschenkten Lebenszeit.",
+      "image": "way-aelterwerden"
+    }
+  ]
+}

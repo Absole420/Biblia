@@ -16,7 +16,7 @@ import { BOOK_BY_CODE } from "@/src/data/books";
 import { ALL_STATIONS } from "@/src/data/john";
 import { ILLUSTRATION_LABEL, ILLUSTRATION_SOURCE, ILLUSTRATIONS } from "@/src/data/illustrations";
 import { INFO_BY_ID } from "@/src/data/lexicon";
-import { TIMELINE_YEAR } from "@/src/data/timelineData";
+import { isTimelineEntry } from "@/src/data/timelineData";
 import { STATION_INFO } from "@/src/lib/libraryIndex";
 import { stationStatus } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
@@ -102,7 +102,7 @@ function ArticleScreen({ id }: { id: string }) {
           <Text style={styles.fact}><Text style={styles.factK}>Zeit: </Text>{a.timeframe}</Text>
           <Text style={styles.fact}><Text style={styles.factK}>Epoche: </Text>{EPOCH_LABEL[a.epoch]} · <Text style={styles.factK}>Region: </Text>{REGION_LABEL[a.region]}</Text>
         </View>
-        {TIMELINE_YEAR[a.id] !== undefined ? (
+        {isTimelineEntry(a.id) ? (
           <Pressable testID="article-timeline" onPress={() => router.push({ pathname: "/timeline", params: { focus: a.id } })} style={styles.tlBtn} accessibilityRole="button">
             <Icon name="clock" size={15} color={colors.info} /><Text style={styles.tlText}>Im Zeitstrahl zeigen</Text><Icon name="chevron-right" size={14} color={colors.info} />
           </Pressable>
