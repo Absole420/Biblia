@@ -13,6 +13,8 @@ import { ErrorBoundary } from "@/src/components/error-boundary";
 import { IntroAnimation } from "@/src/components/IntroAnimation";
 import { INTRO_DONE_KEY } from "@/src/components/IntroJourney";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { loadDailyScripture } from "@/src/lib/dailyScripture";
+import type { Scripture } from "@/src/lib/dailyScriptureLogic";
 import { refreshTranslations } from "@/src/data/bible";
 import { InfoProvider } from "@/src/components/InfoSheet";
 import { ToastProvider } from "@/src/components/Toast";
@@ -64,9 +66,11 @@ export default function RootLayout() {
   });
   const [intro, setIntro] = useState(true);
   const [first, setFirst] = useState<boolean | null>(null);
+  const [scripture, setScripture] = useState<Scripture | null>(null);
   const [welcome, setWelcome] = useState(false);
   const router = useRouter();
   useEffect(() => {
+    loadDailyScripture().then((r) => setScripture(r.verse));
     AsyncStorage.multiGet(["biblia.cinematic.seen", INTRO_DONE_KEY]).then((pairs) => {
       setFirst(!pairs.some(([, value]) => value === "1"));
     }).catch(() => setFirst(false));
@@ -89,8 +93,8 @@ export default function RootLayout() {
               <ProgressProvider>
                 <ToastProvider>
                   {fontsLoaded ? <AppStack /> : <View style={styles.root} />}
-                  {intro && (!fontsLoaded || first === null) ? <View style={styles.cover} /> : null}
-                  {fontsLoaded && intro && first !== null ? <IntroAnimation first={first} onDone={endIntro} /> : null}
+                  {intro && (!fontsLoaded || first === null || !scripture) ? <View style={styles.cover} /> : null}
+                  {fontsLoaded && intro && first !== null && scripture ? <IntroAnimation first={first} scripture={scripture} onDone={endIntro} /> : null}
                   {fontsLoaded && !intro && welcome ? <Modal transparent animationType="fade" statusBarTranslucent onRequestClose={() => dismissWelcome(false)}><View style={styles.welcomeBackdrop} testID="welcome-screen"><View style={styles.welcome}>
                     <Text style={styles.welcomeLabel}>BIBLIA</Text>
                     <Text style={styles.welcomeTitle}>Willkommen bei Biblia</Text>

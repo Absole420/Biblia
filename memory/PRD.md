@@ -181,3 +181,10 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Lerneinheiten-Verknüpfungen korrigiert; leere Lexikon/Lerneinheiten-Labels ausgeblendet
 - Status: agent-tested (Iteration 35), Nutzerbestätigung ausstehend
 - Offen (nächste Phase): Atlas – breite Karten starten auf leeren Flächen, Ortsbilder überdecken Punkte (Shiloh/Jericho), Vers-des-Tages-Karte verdeckt nördliche Punkte
+
+## Update (Iteration 36) – Tagesvers im Intro (PR #4, nur Versauswahl übernommen)
+- Bestehendes Intro (Design, Animation, 9s/1,05s/0,65s, Ablauf, Willkommen) unverändert; nur Textplätze dynamisch
+- 365 ELB-1905-Verse (src/data/daily-scripture-elb1905.json), Logik src/lib/dailyScriptureLogic.ts, Speicher src/lib/dailyScripture.ts (AsyncStorage biblia.dailyScripture.v1), offline
+- Gleicher Vers am selben Tag, keine Wiederholung bis Durchlauf, Schriftgröße 24/21/18 nach Länge, Teilung am Satzzeichen, maxFontSizeMultiplier 1.3
+- Tests: tests/daily-scripture.test.mjs (4/4), Testagent Iteration 36 bestanden; Nutzerbestätigung ausstehend
+- Redaktionell offen: 5 Verse mit einzelnen Anführungszeichen, 43 Satzfragmente mit Kleinbuchstaben

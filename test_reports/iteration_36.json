@@ -1,0 +1,30 @@
+{
+  "summary": "Frontend-only test of the daily ELB 1905 verse in the current intro, using Playwright on the public URL at 390x844 and 360x640. Unit tests pass 4/4 (node --experimental-strip-types --test tests/daily-scripture.test.mjs). tsc --noEmit is clean. FIRST LAUNCH (localStorage cleared): the book scene shows 'DAS WORT' + the first half of the verse, the cross scene shows 'DAS LICHT' + the second half + '<ref> · ELB 1905', and the logo scene shows 'BIBLIA' / 'Entdecke sein Wort.' + the full verse (intro-daily-verse) + the ref (intro-daily-ref). welcome-screen appeared about 8.9s after the intro mounted. intro-skip-button takes you to welcome-screen at once. REPEAT LAUNCH: logo-only intro of about 1s, no skip button, the SAME verse and an unchanged stored state {day, id, remaining:364}, and no welcome screen. NEW DAY (stored day set to yesterday): a different verse, remaining 364->363->362, the previous ids are not in remaining, and the current id is not in remaining. EXHAUSTED POOL (remaining=[]): the pool refills to 364 and the new verse is not the previous one. CORRUPT KEY ('garbage{'): the state is repaired, a verse shows and the intro completes. REDUCED MOTION: a short intro (about 0.8s) with no skip button, and welcome still shows on first launch. DISPLAY: the longest verse Jer 31,33 (237 chars) uses 18px in all three scenes at both viewports. All text is inside the viewport, with no clipping (scrollHeight==clientHeight) and no horizontal overflow. The short verse Gal 5,23 uses 24px and looks normal. OFFLINE: the verse comes from the bundled JSON import. No network request for scripture/json was seen. REGRESSION: home loads after welcome-start. The 'Vers des Tages' card (verse-of-day, prayer-book empty state, verse-of-day-prayerbook button) is separate and unaffected. No page errors. No deprecated Expo packages were found.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "IntroAnimation (book/cross scenes)", "issues": ["The verse is split at the middle word, so the book scene often ends mid-clause (e.g. Jer 31,33 ends with '...Ich werde mein Gesetz', Jes 40,8 is split correctly at ';'). Consider splitting at the nearest punctuation (, ; : .) to the middle. Reference: src/components/IntroAnimation.tsx:34-37"]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/tests/daily-scripture.test.mjs"],
+  "action_items": [
+    "LOW (editorial): src/data/daily-scripture-elb1905.json has 5 entries with unbalanced quotes: Jes:40:8 and Apg:2:21 end with a stray '\"', and 1Petr:1:24, 1Petr:1:25 and Mk:12:30 have unpaired quotes. In the intro this shows as 'in Ewigkeit.\"'. Consider trimming or balancing them, or check with the user (the text is exact source text).",
+    "LOW (editorial): 43 verses start in lowercase because they are sentence fragments (e.g. Gal 5,23 'wider solche gibt es kein Gesetz.', Ps 1,2, Lk 1,37, Jes 40,31). Out of context they read oddly. Editorial review is recommended (docs already note this).",
+    "LOW: consider splitting the verse halves at punctuation instead of at the word count (IntroAnimation.tsx:34-37).",
+    "LOW (native only, not testable on web): the verse Text has no maxFontSizeMultiplier. With large system font scaling, a 237-char verse on a 360x640 device could push the logo layout past the screen. Consider maxFontSizeMultiplier around 1.3 on the verse/title Text."
+  ],
+  "critical_code_review_comments": [
+    "dailyScriptureLogic.selectDaily: validates the stored state, dedupes remaining and removes the current id. It refills when the pool is empty and avoids repeating the same verse at the cycle boundary. Correct.",
+    "dailyScripture.loadDailyScripture: it serializes calls through a pending promise, writes only on newDay, and on a storage error falls back to a date-hash verse. The rejection is caught inside, so the un-caught .then in _layout.tsx:73 is safe.",
+    "_layout.tsx: the cover View is shown until fonts, first flag and scripture are ready, so the intro never shows without a verse. The timing constants are unchanged (9000/1050/650)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "seed_data_creation": "None. Only the test browser's localStorage was changed.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Use https://gottes-wort-app.preview.emergentagent.com. The sandbox browser date was 2026-11-18. Storage keys are 'biblia.dailyScripture.v1', 'biblia.cinematic.seen' and 'biblia.introJourney.done'. To force the first-launch intro but keep the verse, remove the last two keys. The longest verses are Jer:31:33 and 4Mo:14:18 (237 chars). The shortest is Gal:5:23."
+}
