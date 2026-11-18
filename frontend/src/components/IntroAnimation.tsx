@@ -5,11 +5,12 @@ import Animated, { useSharedValue, useAnimatedStyle, withTiming, Easing, interpo
 import Svg, { Circle, Defs, Path, RadialGradient, Stop, Rect } from "react-native-svg";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { fonts } from "@/src/theme";
+import type { Scripture } from "@/src/lib/dailyScriptureLogic";
 
 const GOLD = "#DFC38A";
 const particles = Array.from({length: 24}, (_, i) => ({x: (i * 37 + 13) % 100, y: (i * 61 + 7) % 100, r: 0.7 + i % 3 * 0.5}));
 
-export function IntroAnimation({ onDone, first = false }: { onDone: () => void; first?: boolean }) {
+export function IntroAnimation({ onDone, first = false, scripture }: { onDone: () => void; first?: boolean; scripture: Scripture }) {
   const {width, height} = useWindowDimensions();
   const insets = useSafeAreaInsets();
   const reduced = useReducedMotion();
@@ -28,6 +29,11 @@ export function IntroAnimation({ onDone, first = false }: { onDone: () => void; 
   const logo = useAnimatedStyle(() => ({opacity: first && !reduced ? interpolate(p.value,[.60,.74,1],[0,1,1],Extrapolation.CLAMP) : interpolate(p.value,[0,.24,1],[0,1,1],Extrapolation.CLAMP)}));
   const dust = useAnimatedStyle(() => ({transform:[{translateY: reduced ? 0 : -18*p.value}], opacity: .48 + .2*p.value}));
   const full = first && !reduced;
+  const words = scripture.text.split(/\s+/);
+  const middle = Math.ceil(words.length / 2);
+  const firstPart = words.slice(0, middle).join(" ");
+  const secondPart = words.slice(middle).join(" ");
+  const verseSize = Math.max(15, Math.min(width < 360 || height < 620 ? 18 : 24, scripture.text.length > 175 ? 18 : scripture.text.length > 100 ? 21 : 24));
   return <View style={styles.root} testID="intro-animation">
     <LinearGradient colors={["#0A100D","#22281B","#100F0B"]} style={StyleSheet.absoluteFill}/>
     <Svg width={width} height={height} style={StyleSheet.absoluteFill}>
@@ -35,9 +41,9 @@ export function IntroAnimation({ onDone, first = false }: { onDone: () => void; 
       <Rect width={width} height={height} fill="url(#glow)"/>
     </Svg>
     {!reduced && <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill,dust]}><Svg width={width} height={height}>{particles.map((s,i)=><Circle key={i} cx={s.x*width/100} cy={s.y*height/100} r={s.r} fill={GOLD} opacity={.15+(i%5)*.13}/>)}</Svg></Animated.View>}
-    {full && <Animated.View style={[styles.center,book]}><BookMark cross={false}/><Text style={styles.eyebrow}>DAS WORT</Text><Text style={styles.verse}>Dein Wort ist Leuchte meinem Fuß</Text></Animated.View>}
-    {full && <Animated.View style={[styles.center,cross]}><Svg width={156} height={174} viewBox="0 0 156 174"><Path d="M12 155 Q78 110 144 155" stroke={GOLD} strokeWidth="1" fill="none" opacity=".5"/><Path d="M78 20 V137 M44 57 H112" stroke={GOLD} strokeWidth="4" strokeLinecap="round"/></Svg><Text style={styles.eyebrow}>DAS LICHT</Text><Text style={styles.verse}>und Licht für meinen Pfad.</Text><Text style={styles.ref}>PSALM 119,105</Text></Animated.View>}
-    <Animated.View style={[styles.center,logo]}><BookMark cross/><Text accessibilityRole="header" style={styles.title}>BIBLIA</Text><Text style={styles.subtitle}>Entdecke sein Wort.</Text><Text style={styles.ref}>PSALM 119,105</Text></Animated.View>
+    {full && <Animated.View style={[styles.center,book]}><BookMark cross={false}/><Text style={styles.eyebrow}>DAS WORT</Text><Text style={[styles.verse,{fontSize:verseSize}]}>{firstPart}</Text></Animated.View>}
+    {full && <Animated.View style={[styles.center,cross]}><Svg width={156} height={174} viewBox="0 0 156 174"><Path d="M12 155 Q78 110 144 155" stroke={GOLD} strokeWidth="1" fill="none" opacity=".5"/><Path d="M78 20 V137 M44 57 H112" stroke={GOLD} strokeWidth="4" strokeLinecap="round"/></Svg><Text style={styles.eyebrow}>DAS LICHT</Text><Text style={[styles.verse,{fontSize:verseSize}]}>{secondPart || firstPart}</Text><Text style={styles.ref}>{scripture.ref} · ELB 1905</Text></Animated.View>}
+    <Animated.View style={[styles.center,logo]}><BookMark cross/><Text accessibilityRole="header" style={styles.title}>BIBLIA</Text><Text style={styles.subtitle}>Entdecke sein Wort.</Text><Text testID="intro-daily-verse" style={[styles.verse,{fontSize:verseSize}]}>{scripture.text}</Text><Text style={styles.ref} testID="intro-daily-ref">{scripture.ref} · ELB 1905</Text></Animated.View>
     {full && <Pressable accessibilityRole="button" testID="intro-skip-button" onPress={finish} style={[styles.skip,{top:insets.top+12}]}><Text style={styles.skipText}>Überspringen</Text></Pressable>}
   </View>;
 }
