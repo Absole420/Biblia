@@ -18,6 +18,13 @@ import { PSALMS_2 } from "./psalms2";
 import { PSALMS_3 } from "./psalms3";
 import { PSALMS_4 } from "./psalms4";
 import { HISTORY } from "./history";
+import C_revelation from "./campaigns/revelation.json";
+import C_prophets_more from "./campaigns/prophets-more.json";
+import C_psalms_5 from "./campaigns/psalms-5.json";
+import C_psalms_6 from "./campaigns/psalms-6.json";
+import C_letters_more from "./campaigns/letters-more.json";
+import C_history_tribes from "./campaigns/history-tribes.json";
+import C_synoptic from "./campaigns/synoptic.json";
 
 // Lernkampagne: Das Evangelium nach Johannes (vollständig spielbar).
 // Bibeltexte werden NICHT hier gespeichert, sondern über die austauschbare
@@ -398,7 +405,7 @@ export const JOHN: Campaign = {
 };
 
 // Aus den HTML-Lernreisen importierte Kampagnen (Generator: /app/imports/convert.ts)
-const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C_mark, C_luke, C_parables, C_prophets, C_acts, C_letters] as unknown as Campaign[];
+const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C_mark, C_luke, C_parables, C_prophets, C_acts, C_letters, C_revelation, C_prophets_more, C_psalms_5, C_psalms_6, C_letters_more, C_history_tribes, C_synoptic] as unknown as Campaign[];
 
 export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])), "psalms-1": PSALMS_1, "psalms-2": PSALMS_2, "psalms-3": PSALMS_3, "psalms-4": PSALMS_4, history: HISTORY });
 export const ALL_STATIONS = Object.values(CAMPAIGNS).flatMap((c) => c.stations);
