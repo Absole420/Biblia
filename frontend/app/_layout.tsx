@@ -15,7 +15,6 @@ import { INTRO_DONE_KEY } from "@/src/components/IntroJourney";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { loadDailyScripture } from "@/src/lib/dailyScripture";
 import type { Scripture } from "@/src/lib/dailyScriptureLogic";
-import { refreshTranslations } from "@/src/data/bible";
 import { InfoProvider } from "@/src/components/InfoSheet";
 import { ToastProvider } from "@/src/components/Toast";
 import { ProgressProvider, useProgress } from "@/src/lib/store";
@@ -58,7 +57,6 @@ export default function RootLayout() {
   // Vollbild auf Android: Navigationsleiste ausblenden (Wischen vom Rand blendet sie ein)
   useEffect(() => {
     if (Platform.OS === "android") NavigationBar.setVisibilityAsync("hidden").catch(() => {});
-    refreshTranslations();
   }, []);
   const [fontsLoaded] = useFonts({
     Fraunces: require("../assets/fonts/Fraunces.ttf"),

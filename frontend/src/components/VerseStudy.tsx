@@ -1,28 +1,26 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Linking from "expo-linking";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
 
 import { getChapterSync, loadChapter } from "@/src/data/bible";
 import { BIBLE_BOOKS, BOOK_BY_CODE } from "@/src/data/books";
+import { COMMENTARY, XREF } from "@/src/data/offline";
+import SOURCES from "@/src/data/offline/sources.json";
 import { typedXrefs, XKIND_META } from "@/src/data/xrefTyped";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 import { Icon } from "./Icon";
 
-const API = process.env.EXPO_PUBLIC_BACKEND_URL;
 const byNr = (nr: number) => BIBLE_BOOKS.find((b) => b.nr === nr)!;
 
-/** Lädt Studieninhalte (getrennt von persönlichen Daten) und speichert erlaubte Inhalte für die Offline-Nutzung. */
+/** Studieninhalte liegen lokal im App-Paket (Permanent Offline Edition) – getrennt von persönlichen Daten. */
 async function cached<T>(path: string): Promise<T | null> {
-  const key = `study-content:${path}`;
-  try {
-    const res = await fetch(`${API}/api${path}`);
-    if (res.ok) { const j = await res.json(); AsyncStorage.setItem(key, JSON.stringify(j)).catch(() => {}); return j; }
-  } catch { /* offline */ }
-  const raw = await AsyncStorage.getItem(key);
-  return raw ? JSON.parse(raw) : null;
+  const [, , kind, nr, ch] = path.split("/");
+  if (path === "/study/sources") return { sources: SOURCES } as T;
+  if (kind === "commentary") return { entries: (COMMENTARY[Number(nr)]?.() ?? []).filter((e: Entry) => e.chapter === Number(ch)) } as T;
+  if (kind === "xref") return { refs: XREF[Number(nr)]?.()[ch] ?? [] } as T;
+  return null;
 }
 
 export type Source = { id: string; type: string; title: string; author: string; language: string; edition: string; year: string; url: string; license: string; rights: Record<string, boolean>; perspective: string; historical: boolean; status: string; coverage?: string };

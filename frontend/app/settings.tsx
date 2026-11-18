@@ -10,6 +10,7 @@ import { useToast } from "@/src/components/Toast";
 import { Button, Chip, SectionTitle } from "@/src/components/ui";
 import { TRANSLATIONS } from "@/src/data/bible";
 import { exportState, pickImport } from "@/src/lib/backup";
+import { exportFullBackup, pickAndRestoreFullBackup } from "@/src/lib/fullBackup";
 import { CATEGORY_PALETTE, uid } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
@@ -23,6 +24,7 @@ export default function SettingsScreen() {
   const p = useProgress();
   const { state } = p;
   const [confirmReset, setConfirmReset] = useState(false);
+  const [confirmRestore, setConfirmRestore] = useState(false);
   const [colorFor, setColorFor] = useState<string | null>(null);
 
   const doExport = async () => {
@@ -41,6 +43,25 @@ export default function SettingsScreen() {
       toast.show("Lernstand importiert");
     } catch {
       toast.show("Datei konnte nicht gelesen werden", "error");
+    }
+  };
+
+  const doFull = async () => {
+    try {
+      toast.show(await exportFullBackup(state));
+    } catch {
+      toast.show("Vollsicherung fehlgeschlagen", "error");
+    }
+  };
+  const doRestore = async () => {
+    try {
+      const r = await pickAndRestoreFullBackup();
+      if (!r) return;
+      if (!r.ok) return toast.show(r.error, "error");
+      p.replaceState(r.state);
+      toast.show(`Wiederhergestellt: Lernstand, ${r.entries} ${r.entries === 1 ? "Tagebucheintrag" : "Tagebucheinträge"}, ${r.photos} ${r.photos === 1 ? "Foto" : "Fotos"}. Bitte App einmal neu starten.`);
+    } catch {
+      toast.show("Wiederherstellung fehlgeschlagen", "error");
     }
   };
 
@@ -109,7 +130,15 @@ export default function SettingsScreen() {
         <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
           <Button testID="export-button" label="Als JSON exportieren" icon="upload" variant="secondary" onPress={doExport} />
           <Button testID="import-button" label="JSON importieren" icon="download" variant="secondary" onPress={doImport} />
+          <Text style={[styles.small, { marginTop: spacing.md }]}>Vollsicherung: alles in einer Datei – Lernstand, Notizen, Gebetsheft, Tagebuch „Mein geistlicher Weg“ und eigene Fotos. Auf einem anderen Gerät wiederherstellbar. Die Datei ist nicht passwortgeschützt; bewahre sie sicher auf. Eigene MP3/MP4-Dateien sind nicht enthalten.</Text>
+          <Button testID="full-backup-button" label="Vollsicherung erstellen" icon="archive" variant="secondary" onPress={doFull} />
+          <Button testID="full-restore-button" label="Vollsicherung wiederherstellen" icon="refresh-cw" variant="secondary" onPress={() => setConfirmRestore(true)} />
           <Button testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
+        </View>
+
+        <SectionTitle>Hören & Sehen</SectionTitle>
+        <View style={{ marginTop: spacing.sm }}>
+          <Button testID="settings-open-media" label="Audio & Video (MP3/MP4)" icon="headphones" variant="secondary" onPress={() => router.push("/media")} />
         </View>
 
         <SectionTitle>Auf den Spuren Jesu</SectionTitle>
@@ -119,7 +148,7 @@ export default function SettingsScreen() {
         </View>
 
         <SectionTitle>Über BIBLIA</SectionTitle>
-        <Text style={styles.small}>Version 0.1 · Bibeltext: Elberfelder 1905 (gemeinfrei). Karten-Koordinaten: OpenBible.info (CC BY 4.0), Pleiades (CC BY 3.0). Intro- und Personenbilder: KI-generiert (OpenAI GPT Image 1), künstlerische Rekonstruktion.</Text>
+        <Text style={styles.small}>Version 0.1 · Permanent Offline Edition: alle Inhalte liegen auf dem Gerät, keine Konten, keine Telemetrie, keine automatischen Updates. Bibeltext: Elberfelder 1905 (gemeinfrei). Karten-Koordinaten: OpenBible.info (CC BY 4.0), Pleiades (CC BY 3.0). Intro- und Personenbilder: KI-generiert (OpenAI GPT Image 1), künstlerische Rekonstruktion.</Text>
       </KeyboardAwareScrollView>
 
       <Sheet visible={!!colorFor} onClose={() => setColorFor(null)} title="Farbe wählen" testID="color-sheet">
@@ -128,6 +157,10 @@ export default function SettingsScreen() {
             <Pressable key={col} testID={`palette-${col}`} style={[styles.bigSwatch, { backgroundColor: col }]} onPress={() => { p.setCategories(state.categories.map((x) => (x.id === colorFor ? { ...x, color: col } : x))); setColorFor(null); }} />
           ))}
         </View>
+      </Sheet>
+      <Sheet visible={confirmRestore} onClose={() => setConfirmRestore(false)} title="Vollsicherung wiederherstellen?" testID="restore-sheet">
+        <Text style={styles.small}>Lernstand, Notizen, Gebetsheft und Tagebuch auf diesem Gerät werden durch den Stand der Sicherung ersetzt. Was du seitdem neu angelegt hast, geht verloren. Erstelle vorher eine Vollsicherung, wenn du es behalten möchtest.</Text>
+        <Button testID="restore-confirm-button" label="Sicherungsdatei auswählen" icon="refresh-cw" style={{ marginTop: spacing.xl }} onPress={() => { setConfirmRestore(false); doRestore(); }} />
       </Sheet>
       <Sheet visible={confirmReset} onClose={() => setConfirmReset(false)} title="Lernstand zurücksetzen?" testID="reset-sheet">
         <Text style={styles.small}>Alle EP, Stationen, Notizen und Markierungen werden gelöscht. Exportiere vorher deinen Lernstand, wenn du ihn behalten möchtest.</Text>

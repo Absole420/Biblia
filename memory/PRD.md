@@ -203,3 +203,11 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - stationIds auf vorhandene Stationen umgestellt (prophets-more-* → kp-*, hist-kings-divided → history-tribes-hope, nicht vorhandene hist-* entfernt)
 - Stationsseite zeigt jetzt auch Artikel, die die Station über stationIds nennen
 - PR #7 Nachtrag: psalms-6/synoptic mapH 1280
+
+## Update (Iteration 40) – Permanent Offline Edition
+- Grundsatz: App läuft nach Installation vollständig ohne Internet/Backend; keine Konten, Telemetrie, OTA (app.json updates.enabled=false)
+- Bibel (66 Bücher ELB 1905), Kommentare (Calvin, MHCC), Querverweise, Quellen lokal: src/data/offline/ (lazy require pro Buch); Offline-Volltextsuche in bible.ts
+- Bibliotheks-Cover lokal (assets/images/library-cover.jpg)
+- Medien: /media (expo-audio, expo-video), mitgelieferte Liste src/data/media.ts (derzeit leer), eigene MP3/MP4 per Dateiauswahl in App-Speicher
+- Vollsicherung (ohne Passwort, Nutzerentscheidung) inkl. Fotos (Base64) und Tagebuch: src/lib/fullBackup.ts, Einstellungen
+- APK-Build und Flugmodus-Gerätetest: Nutzer via Publish

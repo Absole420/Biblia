@@ -56,10 +56,17 @@
           "cameraPermission": "Fotos zu Bibelstellen und Lektionen aufnehmen",
           "microphonePermission": false
         }
-      ]
+      ],
+      "expo-audio",
+      "expo-video"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "updates": {
+      "enabled": false,
+      "checkAutomatically": "NEVER",
+      "fallbackToCacheTimeout": 0
     }
   }
 }
