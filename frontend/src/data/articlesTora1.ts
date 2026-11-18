@@ -263,14 +263,14 @@ export const ARTICLES_GEN: Article[] = [
     overview: [
       { h: "Flucht und Himmelsleiter", layer: "bible", body: "Nach dem Betrug an Esau flieht Jakob nach Haran. In Bethel träumt er von einer Leiter zum Himmel; Gott verspricht, mit ihm zu sein (1Mo 28,10–22)." },
       { h: "Bei Laban", layer: "bible", body: "Jakob dient sieben Jahre um Rahel, erhält zuerst Lea und dient weitere sieben Jahre. Elf Söhne und eine Tochter werden dort geboren (1Mo 29–30)." },
-      { h: "Am Jabbok", layer: "bible", body: "Auf der Rückkehr ringt er nachts mit einem Unbekannten und lässt ihn nicht los, bis er gesegnet wird: „Israel“ – „Gottesstreiter“ (1Mo 32,23–33). Es folgt die Versöhnung mit Esau (1Mo 33)." },
+      { h: "Am Jabbok", layer: "bible", body: "Auf der Rückkehr ringt er nachts mit einem Unbekannten und lässt ihn nicht los, bis er gesegnet wird: „Israel“ – „Gottesstreiter“ (1Mo 32,22–32). Es folgt die Versöhnung mit Esau (1Mo 33)." },
     ],
     deep: [
       { h: "Späte Jahre", layer: "bible", body: "Jakob bevorzugt Josef, verliert ihn für tot und findet ihn in Ägypten wieder. Er zieht mit 70 Personen nach Goschen und segnet vor seinem Tod seine Söhne (1Mo 37; 46; 49)." },
       { h: "Name „Israel“", layer: "history", body: "Der Name Israel als Volksbezeichnung ist erstmals außerbiblisch auf der Merenptah-Stele (um 1208 v. Chr.) belegt. Über die Person Jakob sagt das nichts aus." },
       { h: "Auslegung", layer: "tradition", body: "Die Erzählungen zeigen einen Menschen mit Brüchen, der durch Gottes Treue verändert wird. Jesus greift die Leiter auf: „Ihr werdet den Himmel geöffnet sehen“ (Joh 1,51)." },
     ],
-    refs: ["1Mo 25,19–34", "1Mo 27,1–45", "1Mo 28,10–22", "1Mo 29,15–30", "1Mo 32,23–33", "1Mo 33,1–11", "1Mo 49,1–28", "Joh 1,51"],
+    refs: ["1Mo 25,19–34", "1Mo 27,1–45", "1Mo 28,10–22", "1Mo 29,15–30", "1Mo 32,22–32", "1Mo 33,1–11", "1Mo 49,1–28", "Joh 1,51"],
     timeframe: "Erzväterzeit (unsicher)",
     epoch: "erzvaeter", region: "kanaan", books: ["1Mo", "2Mo", "Hos", "Mal", "Joh", "Röm", "Hebr"],
     relations: [

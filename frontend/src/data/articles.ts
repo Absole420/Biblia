@@ -8,6 +8,7 @@ import { ARTICLES_PROPHETS } from "./articlesProphets";
 import { ARTICLES_GOSPELS } from "./articlesGospels";
 import { ARTICLES_CHURCH } from "./articlesChurch";
 import { ARTICLES_WISDOM } from "./articlesWisdom";
+import expansion from "./articlesExpansion.json";
 
 /** Etappe 1: je Artikeltyp ein Musterartikel. */
 const STAGE1: Article[] = [
@@ -157,7 +158,7 @@ const STAGE1: Article[] = [
       { h: "Untergang", layer: "history", body: "612 v. Chr. erobern Babylonier und Meder Ninive; nach der Schlacht bei Karkemisch (605 v. Chr.) übernimmt Babylon die Vorherrschaft im Westen." },
       { h: "Ausdehnung zu bestimmten Zeitpunkten", layer: "hypothesis", body: "Die Karte zeigt Zentren und belegte Machtbereiche zu drei Zeitständen. Genaue Grenzen sind für das Altertum nicht gesichert und werden deshalb nicht als Linie gezeichnet." },
     ],
-    refs: ["2Kö 15,19–20", "2Kö 17,1–6", "2Kö 18,13–19,37", "Jes 10,5–11", "Jona 3,1–10", "Nah 3,1–7"],
+    refs: ["2Kö 15,19–20", "2Kö 17,1–6", "2Kö 18,13–37", "2Kö 19,1–37", "Jes 10,5–11", "Jona 3,1–10", "Nah 3,1–7"],
     timeframe: "Neuassyrisches Reich ca. 911–609 v. Chr.",
     epoch: "koenigszeit", region: "mesopotamien", books: ["2Kö", "2Chr", "Jes", "Jona", "Nah", "Hos"],
     relations: [
@@ -228,6 +229,6 @@ const STAGE1: Article[] = [
 ];
 
 /** Vollständig ausgearbeitete Artikel (Etappe 1, 2: Tora, 3: Josua–Könige, 4: Esra–Propheten). */
-export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS, ...ARTICLES_PROPHETS, ...ARTICLES_GOSPELS, ...ARTICLES_CHURCH, ...ARTICLES_WISDOM];
+export const ARTICLES: Article[] = [...STAGE1, ...ARTICLES_GEN, ...ARTICLES_EXO, ...ARTICLES_JOS, ...ARTICLES_KINGS, ...ARTICLES_PROPHETS, ...ARTICLES_GOSPELS, ...ARTICLES_CHURCH, ...ARTICLES_WISDOM, ...(expansion as Article[])];
 
 export const ARTICLE_BY_ID: Record<string, Article> = Object.fromEntries(ARTICLES.map((a) => [a.id, a]));

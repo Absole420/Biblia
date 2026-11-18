@@ -1,6 +1,8 @@
 // Inhaltsplan des Lexikons, gegliedert nach Bibelbüchern. Format je Eintrag: "id|Titel|Typ".
 // Verfügbar ist ein Artikel nur, wenn er in articles.ts tatsächlich ausgearbeitet ist.
 import { ArticleKind } from "./articleTypes";
+import expansion from "./articlesExpansion.json";
+import { BIBLE_BOOKS } from "./books";
 
 const RAW: Record<string, string[]> = {
   "1Mo": ["schoepfung|Schöpfung|story", "adam-eva|Adam und Eva|person", "garten-eden|Garten Eden|place", "kain-abel|Kain und Abel|story", "noah|Noah|person", "sintflut|Die Sintflut|story", "turmbau-babel|Turmbau zu Babel|story", "abraham|Abraham|person", "sara|Sara|person", "lot|Lot|person", "sodom|Sodom und Gomorra|place", "isaak|Isaak|person", "jakob|Jakob (Israel)|person", "esau-edom|Esau und Edom|empire", "zwoelf-staemme|Die zwölf Stämme|empire", "josef|Josef (Sohn Jakobs)|person", "ur|Ur in Chaldäa|place", "haran|Haran|place", "hebron|Hebron und Mamre|place", "beerscheba|Beerscheba|place"],
@@ -36,8 +38,43 @@ const RAW: Record<string, string[]> = {
   "Offb": ["patmos|Patmos|place", "sieben-gemeinden|Die sieben Gemeinden|place", "neues-jerusalem|Das neue Jerusalem|term"],
 };
 
+const PRIMARY: Record<string, string> = {
+  "bund": "1Mo",
+  "messias": "Mt",
+  "gnade": "Eph",
+  "glaube": "Hebr",
+  "rechtfertigung": "Röm",
+  "umkehr": "Mk",
+  "heiliger-geist": "Apg",
+  "reich-gottes": "Mt",
+  "taufe": "Röm",
+  "nachfolge": "Mt",
+  "auferstehung-der-toten": "1Kor",
+  "lamm-gottes": "Joh",
+  "sieben-siegel": "Offb",
+  "versiegelte-144000": "Offb",
+  "malzeichen-tier": "Offb",
+  "tausendjaehriges-reich": "Offb",
+  "babylon-offenbarung": "Offb",
+  "timotheus": "2Tim",
+  "titus": "Tit",
+  "philemon": "Phlm",
+  "serubbabel": "Esr",
+  "fall-ninives": "Nah",
+  "fall-jerusalems": "2Kö",
+  "fall-babylons": "Dan",
+  "rueckkehr-exil": "Esr",
+  "tempelzerstoerung-70": "Lk",
+  "apostelkonzil": "Apg"
+};
+for (const a of expansion) {
+  const book = PRIMARY[a.id] ?? a.books[0];
+  (RAW[book] ??= []).push(`${a.id}|${a.title}|${a.kind}`);
+}
+const bookOrder = new Map(BIBLE_BOOKS.map(b => [b.code, b.nr]));
+
 export type PlanEntry = { id: string; title: string; kind: ArticleKind };
-export const LEXICON_PLAN: { book: string; entries: PlanEntry[] }[] = Object.entries(RAW).map(([book, list]) => ({
+export const LEXICON_PLAN: { book: string; entries: PlanEntry[] }[] = Object.entries(RAW).sort(([a], [b]) => (bookOrder.get(a) ?? 99) - (bookOrder.get(b) ?? 99)).map(([book, list]) => ({
   book,
   entries: list.map((s) => { const [id, title, kind] = s.split("|"); return { id, title, kind: kind as ArticleKind }; }),
 }));
