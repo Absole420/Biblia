@@ -1,24 +1,26 @@
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { QueryClientProvider } from "@tanstack/react-query";
 import * as NavigationBar from "expo-navigation-bar";
 import { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, LogBox, Platform, StyleSheet, View } from "react-native";
+import { ActivityIndicator, LogBox, Platform, StyleSheet, View, Text, Pressable, Modal } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/src/components/error-boundary";
 import { IntroAnimation } from "@/src/components/IntroAnimation";
-import { INTRO_DONE_KEY, IntroJourney } from "@/src/components/IntroJourney";
+import { INTRO_DONE_KEY } from "@/src/components/IntroJourney";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { loadDailyScripture } from "@/src/lib/dailyScripture";
+import type { Scripture } from "@/src/lib/dailyScriptureLogic";
 import { refreshTranslations } from "@/src/data/bible";
 import { InfoProvider } from "@/src/components/InfoSheet";
 import { ToastProvider } from "@/src/components/Toast";
 import { ProgressProvider, useProgress } from "@/src/lib/store";
 import { queryClient } from "@/src/query-client";
-import { useTheme } from "@/src/theme";
+import { fonts, useTheme } from "@/src/theme";
 
 LogBox.ignoreAllLogs(true);
 
@@ -63,13 +65,25 @@ export default function RootLayout() {
     Nunito: require("../assets/fonts/Nunito.ttf"),
   });
   const [intro, setIntro] = useState(true);
-  const [journey, setJourney] = useState(false);
-  // Beim ersten Start (oder bei unterbrochener Reise) nach der kurzen Logo-Animation die Reise zeigen.
+  const [scripture, setScripture] = useState<Scripture | null>(null);
+  const [first, setFirst] = useState<boolean | null>(null);
+  const [welcome, setWelcome] = useState(false);
+  const router = useRouter();
   useEffect(() => {
-    AsyncStorage.getItem(INTRO_DONE_KEY).then((v) => { if (!v) setJourney(true); }).catch(() => {});
+    loadDailyScripture().then(result => setScripture(result.verse));
+    AsyncStorage.multiGet(["biblia.cinematic.seen", INTRO_DONE_KEY]).then((pairs) => {
+      setFirst(!pairs.some(([, value]) => value === "1"));
+    }).catch(() => setFirst(false));
   }, []);
-  const endIntro = useCallback(() => setIntro(false), []);
-  const endJourney = useCallback(() => setJourney(false), []);
+  const endIntro = useCallback(() => {
+    setIntro(false);
+    if (first) setWelcome(true);
+  }, [first]);
+  const dismissWelcome = (journey: boolean) => {
+    setWelcome(false);
+    AsyncStorage.setItem("biblia.cinematic.seen", "1").catch(() => {});
+    if (journey) router.push("/intro");
+  };
   return (
     <GestureHandlerRootView style={styles.root}>
       <ErrorBoundary>
@@ -79,8 +93,14 @@ export default function RootLayout() {
               <ProgressProvider>
                 <ToastProvider>
                   {fontsLoaded ? <AppStack /> : <View style={styles.root} />}
-                  {fontsLoaded && intro ? <IntroAnimation onDone={endIntro} /> : null}
-                  {fontsLoaded && !intro && journey ? <IntroJourney onClose={endJourney} /> : null}
+                  {fontsLoaded && intro && first !== null && scripture ? <IntroAnimation first={first} scripture={scripture} onDone={endIntro} /> : null}
+                  {fontsLoaded && !intro && welcome ? <Modal transparent animationType="fade" onRequestClose={() => dismissWelcome(false)}><View style={styles.welcomeBackdrop}><View style={styles.welcome}>
+                    <Text style={styles.welcomeLabel}>BIBLIA</Text>
+                    <Text style={styles.welcomeTitle}>Willkommen bei Biblia</Text>
+                    <Text style={styles.welcomeText}>Entdecke die Heilige Schrift, ihre Geschichte und die Botschaft Jesu. In deinem eigenen Tempo.</Text>
+                    <Pressable accessibilityRole="button" style={styles.primary} onPress={() => dismissWelcome(false)}><Text style={styles.primaryText}>Bibel entdecken</Text></Pressable>
+                    <Pressable accessibilityRole="button" style={styles.secondary} onPress={() => dismissWelcome(true)}><Text style={styles.welcomeLabel}>Auf den Spuren Jesu</Text><Text style={styles.welcomeText}>15 freiwillige Stationen</Text></Pressable>
+                  </View></View></Modal> : null}
                 </ToastProvider>
               </ProgressProvider>
             </KeyboardProvider>
@@ -91,4 +111,13 @@ export default function RootLayout() {
   );
 }
 
-const styles = StyleSheet.create({ root: { flex: 1 } });
+const styles = StyleSheet.create({ root: { flex: 1 },
+ welcomeBackdrop:{flex:1,backgroundColor:"#10130E",justifyContent:"center",alignItems:"center",padding:24},
+ welcome:{width:"100%",maxWidth:440,padding:28,borderRadius:24,borderWidth:1,borderColor:"#6F6241",backgroundColor:"#22281B",gap:18},
+ welcomeLabel:{color:"#DFC38A",fontFamily:fonts.text,fontSize:14,textAlign:"center"},
+ welcomeTitle:{color:"#F3E9D5",fontFamily:fonts.display,fontSize:32,textAlign:"center"},
+ welcomeText:{color:"#F3E9D5",fontFamily:fonts.text,fontSize:16,lineHeight:23,textAlign:"center"},
+ primary:{backgroundColor:"#DFC38A",padding:16,borderRadius:14},
+ primaryText:{color:"#171B12",fontFamily:fonts.text,fontWeight:"700",textAlign:"center",fontSize:16},
+ secondary:{padding:12,borderRadius:14,borderWidth:1,borderColor:"#6F6241",gap:6}
+});
