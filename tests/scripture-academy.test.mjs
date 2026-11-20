@@ -4,11 +4,11 @@ import { readFileSync } from "node:fs";
 import { BIBLE_BOOKS, findBook } from "../frontend/src/data/books.ts";
 import { applyAcademy, normalizeReadings, parseAcademyRef, coverage } from "../frontend/src/data/academy-core.ts";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
-const rows=["tora","gospels","parables-acts","deeper","prophets-letters"].flatMap(n=>read("../frontend/src/data/academy/"+n+".json"));
+const rows=["tora","gospels","parables-acts","deeper","prophets-letters","john-revelation"].flatMap(n=>read("../frontend/src/data/academy/"+n+".json"));
 const counts=read("../frontend/src/data/verseCounts.json");
 const lookup=(code,ch)=>{const b=findBook(code),n=b&&counts[b.nr]?.[ch-1]?.[0];return b&&n?{code:b.code,verses:n}:null;};
 test("all Academy entries are unique, manually authored and reference valid verse ranges",()=>{
- assert.equal(rows.length,141);assert.equal(new Set(rows.map(r=>r.id)).size,141);
+ assert.equal(rows.length,164);assert.equal(new Set(rows.map(r=>r.id)).size,164);
  for(const r of rows){assert.equal(r.body.length,3,r.id);assert.ok(r.body.every(x=>x.length>120),r.id);assert.ok(r.terms.length>=2,r.id);assert.ok(r.quiz.length>=2,r.id);assert.ok(r.reflection&&r.image,r.id);for(const ref of [...r.refs,r.connection.from,r.connection.to])assert.ok(parseAcademyRef(ref,lookup),r.id+" "+ref);}
 });
 test("old sentinel range and book alias are normalized",()=>{

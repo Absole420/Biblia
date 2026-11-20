@@ -7,11 +7,12 @@ import gospels from "./academy/gospels.json";
 import parablesActs from "./academy/parables-acts.json";
 import deeper from "./academy/deeper.json";
 import prophetsLetters from "./academy/prophets-letters.json";
+import johnRevelation from "./academy/john-revelation.json";
 import { ARTICLE_BY_ID } from "./articles";
 import { THEME_MAPS } from "./themeMaps";
 import { findInfoIds } from "./lexicon";
 
-export const ACADEMY_ROWS=[...tora,...gospels,...parablesActs,...deeper,...prophetsLetters] as AcademyRow[];
+export const ACADEMY_ROWS=[...tora,...gospels,...parablesActs,...deeper,...prophetsLetters,...johnRevelation] as AcademyRow[];
 const lookup:BookLookup=(code,ch)=>{
   const b=findBook(code);const n=b?(counts as Record<string,number[][]>)[String(b.nr)]?.[ch-1]?.[0]:undefined;
   return b&&n?{code:b.code,verses:n}:null;
