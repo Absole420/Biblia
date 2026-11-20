@@ -62,8 +62,14 @@ export default function SettingsScreen() {
       const r = await pickAndRestoreFullBackup();
       if (!r) return;
       if (!r.ok) return toast.show(r.error, "error");
-      await p.replaceState(r.state);
-      toast.show(`Wiederhergestellt: Lernstand, ${r.entries} ${r.entries === 1 ? "Tagebucheintrag" : "Tagebucheinträge"}, ${r.photos} ${r.photos === 1 ? "Foto" : "Fotos"}. Bitte App einmal neu starten.`);
+      try {
+        await p.replaceState(r.state);
+      } catch {
+        await r.rollback();
+        return toast.show("Wiederherstellung fehlgeschlagen. Der vorherige Stand wurde wiederhergestellt.", "error");
+      }
+      await r.commit();
+      toast.show(`Wiederhergestellt: Lernstand, ${r.entries} ${r.entries === 1 ? "Tagebucheintrag" : "Tagebucheinträge"}, ${r.photos} ${r.photos === 1 ? "Foto" : "Fotos"}${r.media ? `, ${r.media} Mediendateien` : ""}. Bitte App einmal neu starten.`);
     } catch {
       toast.show("Wiederherstellung fehlgeschlagen", "error");
     }
@@ -147,7 +153,7 @@ export default function SettingsScreen() {
           {p.hasBeforeChange ? <Button testID="guardian-undo" label="Stand vor letzter Wiederherstellung / Import / Reset" icon="clock" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => setConfirmRestore("before")} /> : null}
           <Button disabled={busy || p.storageBlocked} testID="export-button" label="Als JSON exportieren" icon="upload" variant="secondary" onPress={doExport} />
           <Button disabled={busy || p.storageBlocked} testID="import-button" label="JSON importieren" icon="download" variant="secondary" onPress={doImport} />
-          <Text style={[styles.small, { marginTop: spacing.md }]}>Vollsicherung: alles in einer Datei – Lernstand, Notizen, Gebetsheft, Tagebuch „Mein geistlicher Weg“ und eigene Fotos. Auf einem anderen Gerät wiederherstellbar. Die Datei ist nicht passwortgeschützt; bewahre sie sicher auf. Eigene MP3/MP4-Dateien sind nicht enthalten.</Text>
+          <Text style={[styles.small, { marginTop: spacing.md }]}>Vollsicherung: alles in einer Datei – Lernstand, Notizen, Gebetsheft, Tagebuch „Mein geistlicher Weg“, eigene Fotos und eigene MP3/MP4-Dateien bis zusammen 60 MB (größere Medien bitte separat aufbewahren). Auf einem anderen Gerät wiederherstellbar; schlägt die Wiederherstellung fehl, bleibt der vorherige Stand erhalten. Die Datei ist nicht passwortgeschützt; bewahre sie sicher auf.</Text>
           <Button testID="full-backup-button" label="Vollsicherung erstellen" icon="archive" variant="secondary" disabled={busy || p.storageBlocked} onPress={doFull} />
           <Button testID="full-restore-button" label="Vollsicherung wiederherstellen" icon="refresh-cw" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => setConfirmFull(true)} />
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 44 }}>

@@ -33,6 +33,22 @@ export function useMedia(): MediaItem[] {
   return useSyncExternalStore((f) => { subs.add(f); return () => subs.delete(f); }, () => items, () => items);
 }
 
+/** Für die Vollsicherung: aktuelle Medienliste (nur Gerät). */
+export async function listMedia(): Promise<MediaItem[]> {
+  await ensure();
+  return items;
+}
+
+/** Wiederhergestellte Medien ergänzen (vorhandene Einträge bleiben unverändert). */
+export async function mergeRestoredMedia(restored: MediaItem[]) {
+  await ensure();
+  const ids = new Set(items.map((m) => m.id));
+  save([...items, ...restored.filter((m) => !ids.has(m.id))]);
+}
+
+/** Rückgängig machen einer fehlgeschlagenen Wiederherstellung. */
+export function setMediaItems(next: MediaItem[]) { save(next); }
+
 const isVideo = (name: string, mime?: string | null) => (mime ? mime.startsWith("video") : /\.(mp4|m4v|mov)$/i.test(name));
 
 export async function importMedia(): Promise<number> {

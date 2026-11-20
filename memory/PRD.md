@@ -276,3 +276,6 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 
 ## Release Lock v0.9.0
 - backupKeys.ts Schema-Allowlist bei Wiederherstellung; 3 Backend-Tests aktualisiert (129/129); Frontend 45/45, tsc/eslint 0; Version 0.9.0, versionCode 900; yarn.lock reproduzierbar (--frozen-lockfile). Entwicklung eingefroren.
+
+## PR #13 Integration
+- 16 Geschichtsstationen, Such-/Prüfungs-/Zoom-/Matching-/Settings-Fixes übernommen; fullBackup mit Prüfung, Zwischenordner, Rollback, Medien ≤60 MB; Streitenberger edit=false; yarn.lock im Git-Index.

@@ -1,6 +1,6 @@
 // Reine (seiteneffektfreie) Fortschrittslogik – testbar ohne UI.
 import type { Station } from "../data/types";
-import type { LibraryLayout } from "./library-layout";
+import { normalizeLibraryLayout, type LibraryLayout } from "./library-layout";
 import { type Avatar, sanitizeAvatar } from "./avatar";
 import { DEFAULT_STUDY, sanitizeStudy, type StudyState } from "./study";
 
@@ -97,6 +97,21 @@ export function defaultState(): AppState {
 
 const isObj = (v: unknown): v is Record<string, any> => typeof v === "object" && v !== null && !Array.isArray(v);
 
+/** Only supported settings may enter the live state, including legacy backups. */
+function sanitizeSettings(raw:unknown):AppState["settings"] {
+  const r=isObj(raw)?raw:{};
+  const result:AppState["settings"]={
+    theme:r.theme==="light"||r.theme==="dark"||r.theme==="system"?r.theme:"system",
+    fontScale:typeof r.fontScale==="number"&&Number.isFinite(r.fontScale)&&r.fontScale>=0.5&&r.fontScale<=3?r.fontScale:1,
+    translation:r.translation==="elb2006"||r.translation==="neue"?r.translation:"elb1905",
+  };
+  if(r.votdCat==="all"||PRAYER_CATS.some(c=>c.id===r.votdCat)) result.votdCat=r.votdCat;
+  if(typeof r.mapMotion==="boolean")result.mapMotion=r.mapMotion;
+  if(typeof r.votdHidden==="boolean")result.votdHidden=r.votdHidden;
+  if(Array.isArray(r.libraryLayout))result.libraryLayout=normalizeLibraryLayout(r.libraryLayout);
+  return result;
+}
+
 /** Reject damaged snapshots before the permissive migration can replace data by defaults. */
 export function isStoredState(raw: unknown): boolean {
   if (!isObj(raw)) return false;
@@ -139,7 +154,7 @@ export function migrate(raw: unknown): AppState {
     bookmarks: Array.isArray(r.bookmarks) ? r.bookmarks.filter((b: any) => isObj(b) && typeof b.key === "string") : [],
     highlights: isObj(r.highlights) ? r.highlights : {},
     categories: Array.isArray(r.categories) && r.categories.length ? r.categories : base.categories,
-    settings: { ...base.settings, ...(isObj(r.settings) ? r.settings : {}) },
+    settings: sanitizeSettings(r.settings),
     goal: { ...base.goal, ...(isObj(r.goal) ? r.goal : {}) },
     activity: Array.isArray(r.activity) ? r.activity : [],
     answered: isObj(r.answered) ? { total: Number(r.answered.total) || 0, correct: Number(r.answered.correct) || 0 } : base.answered,

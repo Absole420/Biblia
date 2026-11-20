@@ -221,7 +221,7 @@
   "rights": {
    "fulltext": true,
    "offline": true,
-   "edit": true,
+   "edit": false,
    "redistribute": true
   },
   "perspective": "Evangelikal, philologisch am griechischen Text",

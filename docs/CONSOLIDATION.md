@@ -55,3 +55,10 @@ Basis: aktueller Emergent-Stand (vollständig). Backup vor der Konsolidierung: `
 - Version 0.9.0 / versionCode 900; `frontend/yarn.lock` wird mitgespeichert.
 - Save to GitHub: in Emergent den vorhandenen Branch `emergent-nov-20` wählen (normaler Push, kein Force-Push, kein neuer Branch). Lokal existiert dieser Branch nicht; es wurde bewusst kein Branch angelegt.
 - Tag danach: `git tag -a v0.9.0 -m "BIBLIA 0.9.0" && git push origin v0.9.0`.
+
+## Final Consolidation & Integrity (PR #13)
+- PR #13 (`52ae5a8`) vollständig übernommen: 16 ursprüngliche Geschichtsstationen (u. a. 4× Könige, 4× Chronik) wiederhergestellt neben Josua/Richter- und Stämme-Kurs; Suchreihenfolge (exakte Phrase zuerst), Prüfungen nach Zusatzstationen, niedrigere Karten-Zoomgrenze, gemischte Zuordnungsaufgaben, Einstellungsprüfung bei Migration/Import. Lesepläne waren bereits offline – nicht dupliziert.
+- Vollsicherung: Prüfung aller Teile vor jeder Änderung (Lernstand, Tagebuch, Speicherschlüssel, Base64 von Fotos/Medien, freier Speicher), Schreiben in Zwischenordner, dann Übernahme; bei jedem Fehler (auch beim Übernehmen des Lernstands) Rücknahme von Einstellungen, Tagebuch, Fotos und Medien. Eigene MP3/MP4 jetzt enthalten bis zusammen 60 MB; größere werden gezählt und gemeldet (separat aufbewahren). Ältere Sicherungen bleiben lesbar. Nativer Rundlauf auf echtem Gerät steht aus.
+- Lizenzen: Streitenberger `rights.edit=false` (Wortlaut unverändert, nicht verkaufen); Calvin 2.967 Abschnitte = Bündel. Text keiner Quelle verändert außer typografischer OCR-Bereinigung (Kroeker, gemeinfrei).
+- `frontend/yarn.lock` ist jetzt im Git-Index (`git ls-files` bestätigt) und wird beim nächsten Speichern mit übertragen.
+- Tests: 54/54 Node (inkl. history-campaign, final-consolidation), 129/129 Backend, tsc und ESLint fehlerfrei, Kommentardaten 12.089.

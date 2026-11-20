@@ -3,6 +3,7 @@
 import { BOOK_BY_CODE } from "./books";
 import johnElb from "./john-elb1905.json";
 import { BIBLE } from "./offline";
+import { rankBibleMatches } from "./searchRanking";
 import { VerseRef } from "./types";
 
 export type TranslationId = "elb1905" | "elb2006" | "neue";
@@ -58,22 +59,14 @@ export async function loadChapter(code: string, ch: number): Promise<string[]> {
 
 /** Offline-Volltextsuche über alle 66 Bücher (Groß-/Kleinschreibung und Akzente egal, alle Wörter müssen vorkommen). */
 export async function searchBible(q: string, limit = 60) {
-  const norm = (t: string) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ß/g, "ss");
-  const words = norm(q).split(/\s+/).filter(Boolean);
-  const results: { book: number; chapter: number; verse: number; text: string }[] = [];
-  if (!words.length) return { results, truncated: false };
-  for (const nr of Object.keys(BIBLE).map(Number).sort((a, b) => a - b)) {
-    const chapters = bookChapters(nr);
-    for (let c = 0; c < chapters.length; c++) for (let v = 0; v < chapters[c].length; v++) {
-      const text = chapters[c][v];
-      const n = norm(text);
-      if (words.every((w) => n.includes(w))) {
-        results.push({ book: nr, chapter: c + 1, verse: v + 1, text });
-        if (results.length >= limit) return { results, truncated: true };
-      }
+  function* verses(){
+    for(const nr of Object.keys(BIBLE).map(Number).sort((a,b)=>a-b)){
+      const chapters=bookChapters(nr);
+      for(let c=0;c<chapters.length;c++)for(let v=0;v<chapters[c].length;v++)
+        yield {book:nr,chapter:c+1,verse:v+1,text:chapters[c][v]};
     }
   }
-  return { results, truncated: false };
+  return rankBibleMatches(verses(),q,limit);
 }
 
 export function getVerses(_t: TranslationId, ref: VerseRef): { v: number; text: string }[] {

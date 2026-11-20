@@ -179,7 +179,8 @@ export const way = {
   deleteEntry(id: string) { set({ ...data, entries: data.entries.filter((x) => x.id !== id) }); },
   markIntroSeen() { set({ ...data, introSeenAt: new Date().toISOString() }); },
   /** Wiederherstellen aus einer Sicherungsdatei. mode=merge ergänzt fehlende Einträge. */
-  restore(d: WayData, mode: "merge" | "replace") {
+  restore(raw: WayData, mode: "merge" | "replace") {
+    const d = normalize(raw);
     if (mode === "replace") return set({ ...d, introSeenAt: data.introSeenAt ?? d.introSeenAt });
     const ids = new Set(data.entries.map((e) => e.id));
     set({ ...data, entries: [...data.entries, ...d.entries.filter((e) => !ids.has(e.id))] });

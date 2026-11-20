@@ -49,7 +49,7 @@ cd frontend && npx tsc --noEmit -p .
 ## Prüfstand v0.9.0 (Release Lock)
 - Version `0.9.0` (`app.json` und `package.json`), Android `versionCode` 900.
 - `frontend/yarn.lock` (Yarn 1.22.22) liegt im Repo; reproduzierbare Installation: `cd frontend && yarn install --frozen-lockfile` (in sauberer Kopie geprüft, ohne Änderungen am Lockfile).
-- Frontend: 45/45 Node-Tests (inkl. `tests/backup-keys.test.mjs`), `tsc --noEmit` und `npx eslint app src` fehlerfrei.
+- Frontend: 54/54 Node-Tests (seit PR #13) (inkl. `tests/backup-keys.test.mjs`), `tsc --noEmit` und `npx eslint app src` fehlerfrei.
 - Backend: `cd backend && EXPO_PUBLIC_BACKEND_URL=<Preview-URL> python -m pytest tests -q` → 129/129.
 - 42/42 Node-Tests, `tsc --noEmit` fehlerfrei, `npx eslint app src` ohne Fehler und Warnungen (Final Cleanup).
 - Kommentardaten: `python3 tests/kroeker_ocr_scan.py` und `python3 tests/commentary_data_check.py` (12.089 Abschnitte, keine doppelten IDs, keine ungültigen Verszuordnungen, Rieger ohne defekte Umlaute).

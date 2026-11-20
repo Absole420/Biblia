@@ -23,7 +23,7 @@ function shuffleDifferent<T>(arr: T[]): T[] {
   let s = shuffle(arr);
   let guard = 0;
   while (s.every((x, i) => x === arr[i]) && guard++ < 10) s = shuffle(arr);
-  return s;
+  return s.every((x,i)=>x===arr[i])?[...arr.slice(1),arr[0]]:s;
 }
 
 type Props = { task: Task; onAnswered: (correct: boolean) => void; fontScale?: number; testPrefix?: string };
@@ -56,7 +56,7 @@ export function TaskView({ task, onAnswered, fontScale = 1, testPrefix = "task" 
         return { before: text.slice(0, idx), after: text.slice(idx + task.blank.length), options: shuffle(task.options) };
       }
       case "match":
-        return { right: shuffle(task.pairs.map((p, i) => i)) };
+        return { right: shuffleDifferent(task.pairs.map((_, i) => i)) };
       case "order":
         return { items: shuffleDifferent(task.items.map((_, i) => i)) };
       case "mc":

@@ -18,6 +18,6 @@ export const BACKUP_KEY_SCHEMA: Record<string, (v: string) => boolean> = {
 export function validBackupKeys(keys: unknown): [string, string][] {
   if (!keys || typeof keys !== "object" || Array.isArray(keys)) return [];
   return Object.entries(keys as Record<string, unknown>).filter(
-    (p): p is [string, string] => typeof p[1] === "string" && p[1].length <= MAX_LEN && !!BACKUP_KEY_SCHEMA[p[0]]?.(p[1]),
+    (p): p is [string, string] => typeof p[1] === "string" && p[1].length <= MAX_LEN && Object.prototype.hasOwnProperty.call(BACKUP_KEY_SCHEMA,p[0]) && BACKUP_KEY_SCHEMA[p[0]](p[1]),
   );
 }

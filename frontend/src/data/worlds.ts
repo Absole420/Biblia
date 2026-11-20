@@ -22,9 +22,9 @@ export const WORLDS: World[] = [
     subtitle: "Land, Richter & Könige",
     books: ["Josua", "Richter", "Rut", "1–2 Samuel", "1–2 Könige", "1–2 Chronik", "Esra", "Nehemia", "Ester"],
     palette: { base: "#9BA77A", accent: "#A9793F", glow: "#C9B37A", ink: "#3B3F26" },
-    x: 640, y: 1150, icon: "shield", status: "playable", campaignIds: ["history-1", "history-tribes"],
-    description: "Israels Geschichte von der Landnahme bis nach dem Exil – Josua & Richter sowie die zwölf Stämme Israels sind spielbar.",
-    planned: ["Die zwölf Stämme (spielbar)", "Die Richterzeit (spielbar)", "David und Salomo", "Das geteilte Reich", "Exil und Rückkehr"],
+    x: 640, y: 1150, icon: "shield", status: "playable", campaignIds: ["history-1", "history", "history-tribes"],
+    description: "Israels Geschichte von der Landnahme bis nach dem Exil: Josua und Richter, Könige und Chronik, Exil und Rückkehr sowie die zwölf Stämme Israels.",
+    planned: ["Die zwölf Stämme", "Die Richterzeit", "David und Salomo", "Das geteilte Reich", "Könige und Chronik", "Exil und Rückkehr"],
   },
   {
     id: "psalms",

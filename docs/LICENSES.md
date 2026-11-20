@@ -7,7 +7,7 @@
 | Jakob Kroeker, „Das lebendige Wort“ (AT, 1.085) | SWORD `deuKroekerJakobDLW` | gemeinfrei (Autor † 1948); OCR, rein typografisch bereinigt (Silbentrennung, Fußnotenzeichen, Fehlzeichen) – Wortlaut unverändert; unsichere Stellen unverändert und in `docs/CONSOLIDATION.md` aufgelistet |
 | Carl Heinrich Rieger, Betrachtungen (NT/Ps/kl. Propheten, 742) | SWORD `Rieger` (CrossWire) | Public Domain |
 | Matthias Ansorg, Kommentar (724 Einträge; kapitelübergreifende Predigten je Kapitel zugeordnet) | SWORD `MAK` (CrossWire) | Public Domain (Autorfreigabe) |
-| Peter M. Streitenberger, NT-Kommentar (6.571) | SWORD `deuStreitenbergerKommentar` | frei kopierbar, **nicht verkaufen**, Quellenangabe Pflicht, Wortlaut unverändert → nur in kostenloser App |
+| Peter M. Streitenberger, NT-Kommentar (6.571) | SWORD `deuStreitenbergerKommentar` | frei kopierbar, **nicht verkaufen**, Quellenangabe Pflicht, Wortlaut unverändert (Metadaten: Bearbeitung nicht erlaubt) → nur in kostenloser App |
 | Querverweise | OpenBible.info | CC BY (Namensnennung in der App) |
 | Matthew Henry (MHCC) | gemeinfrei, englisch | **ausgeblendet** (Vorgabe: nur deutsch) |
 | Bengel Gnomon | – | nicht eingebunden (deutsche Edition ungeprüft) |

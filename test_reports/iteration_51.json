@@ -1,0 +1,39 @@
+{
+  "summary": "Iteration 51: Final Consolidation & Integrity retest (backend and frontend, web preview at 375x667). Suites: node tests 54/54 pass, tsc --noEmit clean, ESLint clean, backend pytest 129/129 pass. History world: /world/history has 3 campaign chips (history-1 'Josua & Richter' with 14 stations, history 'Israels Geschichte: Land, Bund und Königtum' with 16 stations, history-tribes with 3 stations). The 16 restored stations are listed in the expected order with correct lock states. /station/hist-kings-solomon and /station/hist-chronicles-david were each completed end to end (mc/tf/free/match tasks plus 2 exam questions, 'Prüfung: 2 von 2 richtig', +60 EP, next station unlocked). Matching: the right-hand column was rendered shuffled ([1,0,2] and [0,3,1,2]) and correct pairs graded 'Richtig!'. Search: 'Im Anfang war das Wort' returns Joh 1,1 first, and 'Gott ist Liebe' returns 1Joh 4,8 first. Settings: font scale persists after reload (19.55px for Groß), and the theme selection persists, but on web the UI stays light (known react-native-web limitation, see iteration 45). JSON export and import work (an imported station shows 1/16). An import with invalid settings (theme 'neon', fontScale 'huge') is sanitized to System/Normal without a crash. Full backup on web: the download is created with toast 'Vollsicherung erstellt (0 Fotos).'. Rejection cases all give a specific error toast with 0 localStorage keys changed: invalid JSON, wrong kind, way.entries containing an invalid entry, and an invalid base64 photo. A valid restore shows the toast 'Wiederhergestellt: Lernstand, 1 Tagebucheintrag, 0 Fotos…'; after reload the diary entry, note and station progress are all present. ONE BUG FOUND: a full backup whose diary entry has only {id, date} passes validation, and the in-memory way store then holds an un-normalized entry. Opening the diary without a reload crashes the app ('Cannot read properties of undefined (reading icon)'). After a reload the entry is normalized and shows correctly. Regression checks pass: Röm 8,28 commentary panel (Streitenberger, Calvin and Rieger cards; filters toggle; compare/Liste toggle; 'Römer 8,28-39'), and /library, /lexicon, /timeline, /way and /intro all render without errors. No deprecated Expo packages (expo-audio and expo-video are used).",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Full backup restore → Diary (DiaryHome)", "issue": "Restoring a Vollsicherung whose way.entries contains a minimal entry ({id, date} without kind/feelings/refs…) passes validWay(). way.restore(b.way,'replace') then stores the raw entry in memory, and opening /way → Persönliches Register without a reload crashes with 'Cannot read properties of undefined (reading icon)'. After a reload, normalize() fixes the entry, so data is not lost, but the app crashes until it is restarted. Reference: frontend/src/lib/fullBackup.ts:77-79,186 and frontend/src/lib/way.ts:182-183", "testID": "way-area-diary / diary-entry-*", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Settings", "issues": ["theme-dark is saved, but the web preview stays light: react-native-web has no Appearance.setColorScheme (known since iteration 45). Should work on native, but not verifiable here.", "category-add button is 40x40 (below 44pt)."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": [
+    "/app/tests/hist_station_runner_snippet.py",
+    "/app/tests/make_fullbackup_fixtures.py",
+    "/app/test_reports/pytest/pytest_results_iter51.xml"
+  ],
+  "action_items": [
+    "Fix the in-memory un-normalized diary data after a full restore. Option 1: export normalize() from way.ts and call way.restore(normalize(b.way),'replace') in fullBackup.ts. Option 2 (simplest): make way.restore() normalize its input itself (d = normalize(d)), which also protects other callers.",
+    "Optional: decide whether a structurally incomplete diary entry (missing kind or arrays) should be rejected instead of normalized; the current validWay checks only id and date.",
+    "Update docs/final-consolidation-integrity.md: 'Remaining release gates' 1 and 2 still say the yarn.lock is absent and that the full backup excludes MP3/MP4 with no rollback. Both are now done (frontend/yarn.lock is git-tracked, and staging/rollback/media are implemented). It also still says '45 frontend tests' (now 54)."
+  ],
+  "critical_code_review_comments": [
+    "fullBackup.ts:107-108: invalid media items are silently dropped, while their files in media.files are still staged and moved into documents/media. This leaves orphaned files that no list references (storage leak on native).",
+    "fullBackup.ts:181: photos in the state whose files are not in the backup keep the source device's file:// URI, which gives broken thumbnails on the new device. Consider flagging or dropping them in the success toast.",
+    "settings.tsx:60-76: doRestore does not set busy, so a double tap on restore-confirm or full-restore during a running restore can start a second restore at the same time.",
+    "fullBackup.ts: the AsyncStorage keys and Way data are written before p.replaceState(). A failure there is correctly rolled back (r.rollback), and replace() in store.tsx throws properly. OK.",
+    "Native-only paths (photo/media staging, disk-space check, file move with undo directory) were reviewed by code only, not executed. They need a real-device roundtrip, as the doc itself states.",
+    "TaskView shuffleDifferent guarantees a non-identity order for match and order tasks; grading uses original indices. OK."
+  ],
+  "updated_files": ["/app/tests/hist_station_runner_snippet.py (new)", "/app/tests/make_fullbackup_fixtures.py (new)"],
+  "success_rate": { "backend": "100% (129/129)", "frontend": "~95% (all requested flows pass; 1 crash in an edge case after a full restore with an incomplete diary entry)" },
+  "seed_data_creation": "None in the DB. Browser-local fixtures only (fresh Playwright contexts): TEST_way_1 / TEST_min diary entries, TEST_note_1 note, hist-kings-solomon / hist-ezra progress. Fixture files are in /tmp/fb_*.json and /tmp/imp_*.json, generated from a real export by tests/make_fullbackup_fixtures.py.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Close the intro with intro-skip-button, then welcome-start. File pickers on web: wrap the click in page.expect_file_chooser() and call set_files; full restore = full-restore-button → restore-sheet → restore-confirm-button; JSON import = import-button → import-confirm-button. Downloads: page.expect_download() around export-button or full-backup-button. The Way diary is encrypted in localStorage, so verify it via the UI (/way → way-area-diary → diary-intro-accept → diary-entry-<id>). Station list: /world/history → campaign-chip-history → map-mode-adventure → map-places-toggle → map-station-item-*. Bible search: /bible → bible-options-toggle → bible-search-button → bible-search-input/submit. Answer keys: node --import ./tests/ts-loader.mjs --experimental-strip-types on a script importing ALL_STATIONS from frontend/src/data/john.ts.",
+  "rca_of_issue": "Repro: build a full backup with way.entries=[{id:'x',date:'2026-01-16'}], then Settings → Vollsicherung wiederherstellen → choose the file (success toast) → navigate client-side to /way → Persönliches Register → error boundary 'reading icon'. Cause: fullBackup.validWay() checks only id and date; way.restore(...,'replace') calls set(d) without normalize(), so DiaryHome reads KIND_BY_ID[undefined].icon and e.feelings.length. normalize() runs only when loading from storage, which is why a reload fixes it. Way's own restore (app/way/data.tsx) uses parseWayBackup(), which normalizes, so it is not affected. Mitigation: normalize inside way.restore() or before calling it in fullBackup.ts."
+}
