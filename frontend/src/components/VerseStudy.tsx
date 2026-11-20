@@ -25,7 +25,7 @@ async function cached<T>(path: string): Promise<T | null> {
   return null;
 }
 
-export type Source = { id: string; type: string; title: string; author: string; language: string; edition: string; year: string; url: string; license: string; rights: Record<string, boolean>; perspective: string; historical: boolean; status: string; coverage?: string };
+export type Source = { id: string; type: string; title: string; author: string; language: string; edition: string; year: string; url: string; license: string; rights: Record<string, boolean>; perspective: string; historical: boolean; status: string; coverage?: string; tradition?: string };
 type Entry = { id: string; source: string; book: number; chapter: number; from: number; to: number; scope: "verse" | "range" | "section" | "chapter"; title: string; text: string };
 const SCOPE: Record<Entry["scope"], string> = { verse: "Einzelvers", range: "Versbereich", section: "Abschnitt", chapter: "ganzes Kapitel" };
 
@@ -48,7 +48,7 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   const entries = data?.key === key ? data.entries : null;
   if (!entries || !sources) return <ActivityIndicator color={colors.brandPrimary} />;
   // Gespeicherte Filter auf deaktivierte Quellen (z. B. Calvin) ignorieren, sonst bliebe die Liste leer
-  const pref = state.study.prefSources.filter((id) => permittedOffline(sources.find((x) => x.id === id)));
+  const pref = state.study.prefSources.filter((id) => id === "none" || permittedOffline(sources.find((x) => x.id === id)));
   // Deutschsprachige Auslegungen zuerst, danach die engere Passage
   const lang = (id: string) => (sources?.find((x) => x.id === id)?.language === "de" ? 0 : 1);
   const hits = entries
@@ -58,11 +58,26 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   return (
     <View testID="commentary-panel">
       <Text style={styles.hint}>Veröffentlichte Auslegungen anderer Autoren – nicht deine eigenen Notizen.</Text>
+      {/* Ganze Traditionen ein-/ausblenden (setzt die gemerkten Quellen-Filter) */}
+      <View style={styles.row}>
+        {[...new Set(commSources.filter((s) => s.status === "integrated").map((s) => s.tradition ?? "Sonstige"))].map((tr) => {
+          const all = commSources.filter((x) => x.status === "integrated");
+          const ids = all.filter((x) => (x.tradition ?? "Sonstige") === tr).map((x) => x.id);
+          const active = pref.length ? pref : all.map((x) => x.id);
+          const on = ids.every((id) => active.includes(id));
+          const next = on ? active.filter((id) => !ids.includes(id)) : [...new Set([...active, ...ids])];
+          return (
+            <Pressable key={tr} testID={`tradition-filter-${tr}`} style={[styles.chip, on && styles.chipOn]} onPress={() => updateStudy((st) => ({ ...st, prefSources: next.length === all.length ? [] : next.length ? next : ["none"] }))}>
+              <Text style={[styles.chipText, on && { color: colors.onBrandPrimary }]}>{tr}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
       <View style={styles.row}>
         {commSources.filter((s) => s.status === "integrated").map((s) => {
           const on = !pref.length || pref.includes(s.id);
           return (
-            <Pressable key={s.id} testID={`source-filter-${s.id}`} style={[styles.chip, on && styles.chipOn]} onPress={() => updateStudy((st) => ({ ...st, prefSources: on ? commSources.filter((x) => x.status === "integrated" && x.id !== s.id && (!pref.length || pref.includes(x.id))).map((x) => x.id) : [...pref, s.id] }))}>
+            <Pressable key={s.id} testID={`source-filter-${s.id}`} style={[styles.chip, on && styles.chipOn]} onPress={() => updateStudy((st) => ({ ...st, prefSources: on ? ((rest) => (rest.length ? rest : ["none"]))(commSources.filter((x) => x.status === "integrated" && x.id !== s.id && (!pref.length || pref.includes(x.id))).map((x) => x.id)) : ((added) => (added.length >= commSources.filter((x) => x.status === "integrated").length ? [] : added))([...pref.filter((x) => x !== "none"), s.id]) }))}>
               <Text style={[styles.chipText, on && { color: colors.onBrandPrimary }]}>{s.author.split(" (")[0]}</Text>
             </Pressable>
           );
@@ -86,7 +101,7 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
                 <Text style={styles.meta} testID={`commentary-scope-${e.id}`}>Behandelt: {range} ({SCOPE[e.scope]}){e.scope !== "verse" ? " – keine Einzelerklärung zu V. " + v : ""}</Text>
                 <Text style={styles.meta}>Sprache: {s?.language === "en" ? "Englisch (Originaltext, nicht übersetzt)" : s?.language === "de" ? "Deutsch" : s?.language} · {s?.edition} · {s?.year}</Text>
                 <LongText text={e.text} style={styles.body} more={styles.linkText} testID={`commentary-text-${e.id}`} />
-                <Text style={styles.meta}>Einordnung: {s?.perspective}</Text>
+                <Text style={styles.meta}>Tradition: {s?.tradition ?? "–"} · Einordnung: {s?.perspective}</Text>
                 <Text style={styles.meta}>Rechte: {s?.license}</Text>
                 {s?.url ? <Pressable onPress={() => Linking.openURL(s.url)} accessibilityRole="link" style={styles.link}><Icon name="external-link" size={13} color={colors.brandPrimary} /><Text style={styles.linkText}>Quelle (externer Link)</Text></Pressable> : null}
               </View>

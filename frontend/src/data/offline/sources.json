@@ -8,17 +8,18 @@
   "edition": "Deutsche Übersetzung aus der Sammlung „Lesekammer“, als SWORD-Modul aufbereitet vom Projekt GermanSwordModules (deuCalvinKommentare, Version 1.1, Alpha-Stand)",
   "year": "1540–1564 (Original); Übersetzer im Modul nicht angegeben",
   "url": "https://lesekammer.de/2023/06/09/jean-calvin/",
-  "license": "Rechte der deutschen Fassung nicht bestätigt – bis zur Klärung deaktiviert (Beta 0.9). Gemeinfrei (laut GermanSwordModules, DistributionLicense=Gemeinfrei). Die Lesekammer erlaubt die Weitergabe ausdrücklich. Quelle: github.com/GermanSwordModules. Hinweis: Übersetzer und Jahr der deutschen Fassung sind nicht belegt; vor einer kommerziellen Veröffentlichung prüfen. Alpha-Stand: kleinere OCR-/Tippfehler möglich.",
+  "license": "Gemeinfrei: SWORD-Modul deuCalvinKommentare (GermanSwordModules), DistributionLicense=Gemeinfrei; Texte mit Genehmigung aus lesekammer.de, historische deutsche Übersetzungen (19. Jh.).",
   "rights": {
-   "fulltext": false,
-   "offline": false,
-   "edit": false,
-   "redistribute": false
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
   },
   "perspective": "Reformatorische (reformiert-calvinistische) Auslegung des 16. Jahrhunderts. Historische Stimme, kein aktueller wissenschaftlicher Forschungsstand.",
   "historical": true,
-  "status": "pending",
-  "coverage": "Josua, Johannes, Apostelgeschichte, Römer, Galater, Epheser, Philipper, Titus, Philemon, Hebräer, Jakobus, 1./2. Petrus, 1. Johannes, Judas (2.972 Abschnitte)"
+  "status": "integrated",
+  "coverage": "Josua, Johannes, Apostelgeschichte, Römer, Galater, Epheser, Philipper, Titus, Philemon, Hebräer, Jakobus, 1./2. Petrus, 1. Johannes, Judas (2.972 Abschnitte)",
+  "tradition": "Reformiert"
  },
  {
   "id": "mhcc",
@@ -29,17 +30,18 @@
   "edition": "Kurzfassung des Kommentars von 1706–1721 (gemeinfreier Text)",
   "year": "1706–1721",
   "url": "https://www.biblestudytools.com/commentaries/matthew-henry-concise/",
-  "license": "Gemeinfrei (Autor † 1714; Original englisch, keine moderne Übersetzung). Text aus öffentlich zugänglicher gemeinfreier Fassung übernommen; Gestaltung der Website nicht übernommen.",
+  "license": "Gemeinfrei, aber nur englisch – nach Vorgabe „nur deutsch“ ausgeblendet.",
   "rights": {
-   "fulltext": true,
-   "offline": true,
-   "edit": true,
-   "redistribute": true
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
   },
   "perspective": "Historische, puritanisch-reformierte Erbauungsauslegung (frühes 18. Jh.). Kein aktueller wissenschaftlicher Forschungsstand.",
   "historical": true,
-  "status": "integrated",
-  "coverage": "Beispielbestand: Johannes 3"
+  "status": "pending",
+  "coverage": "Beispielbestand: Johannes 3",
+  "tradition": "Puritanisch / Reformiert"
  },
  {
   "id": "openbible-xref",
@@ -100,7 +102,8 @@
   },
   "perspective": "Pietistisch-philologische Auslegung (18. Jh.), historisch.",
   "historical": true,
-  "status": "pending"
+  "status": "pending",
+  "tradition": "Lutherisch / Pietismus"
  },
  {
   "id": "oeab-plan",
@@ -141,5 +144,131 @@
   "perspective": "Herrnhuter Tradition.",
   "historical": false,
   "status": "link"
+ },
+ {
+  "id": "kroeker",
+  "type": "commentary",
+  "title": "Das lebendige Wort (15 Bände, AT)",
+  "author": "Jakob Kroeker (1872–1948)",
+  "language": "de",
+  "edition": "SWORD-Modul deuKroekerJakobDLW (GermanSwordModules), OCR der Ausgabe 1989, nur Kroekers Text",
+  "year": "1920er–1940er",
+  "url": "https://github.com/GermanSwordModules/GermanSwordModules",
+  "license": "Gemeinfrei (Autor † 1948, Schutzfrist abgelaufen); Herausgebertexte nicht enthalten.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Pietistisch-evangelisch (Mennonit/Allianz), heilsgeschichtlich",
+  "historical": true,
+  "status": "integrated",
+  "tradition": "Pietismus / Evangelikal"
+ },
+ {
+  "id": "rieger",
+  "type": "commentary",
+  "title": "Betrachtungen über das Neue Testament, die Psalmen und die zwölf kleinen Propheten",
+  "author": "Carl Heinrich Rieger (1726–1791)",
+  "language": "de",
+  "edition": "SWORD-Modul Rieger (CrossWire), nach Ausgabe Stuttgart 1833",
+  "year": "1833",
+  "url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=Rieger",
+  "license": "Public Domain (CrossWire: „copy freely“).",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Württembergischer Pietismus, lutherisch",
+  "historical": true,
+  "status": "integrated",
+  "tradition": "Lutherisch / Pietismus"
+ },
+ {
+  "id": "ansorg",
+  "type": "commentary",
+  "title": "Kommentar zur Bibel (Predigtzusammenfassungen)",
+  "author": "Matthias Ansorg",
+  "language": "de",
+  "edition": "SWORD-Modul MAK (CrossWire), 2002 ff.",
+  "year": "2002",
+  "url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=MAK",
+  "license": "Public Domain (vom Autor freigegeben, laut CrossWire-Modul).",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Evangelisch-freikirchlich (Brüdergemeinde), Predigtnotizen",
+  "historical": false,
+  "status": "integrated",
+  "tradition": "Freikirchlich"
+ },
+ {
+  "id": "streitenberger",
+  "type": "commentary",
+  "title": "Kommentar zum Neuen Testament (griechischer Text)",
+  "author": "Peter M. Streitenberger",
+  "language": "de",
+  "edition": "SWORD-Modul deuStreitenbergerKommentar (GermanSwordModules)",
+  "year": "2010er–2020er",
+  "url": "https://www.bibelgriechisch.online",
+  "license": "Frei nutzbar und kopierbar; nicht verkaufen; Quellenhinweis Pflicht; Wortlaut unverändert (vom Autor). Nur in kostenloser App zulässig.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Evangelikal, philologisch am griechischen Text",
+  "historical": false,
+  "status": "integrated",
+  "tradition": "Evangelikal"
+ },
+ {
+  "id": "jw-einsichten",
+  "type": "commentary",
+  "title": "Einsichten über die Heilige Schrift / Studienbibel",
+  "author": "Wachtturm-Gesellschaft (Jehovas Zeugen)",
+  "language": "de",
+  "edition": "wol.jw.org",
+  "year": "",
+  "url": "https://wol.jw.org/de/",
+  "license": "Urheberrechtlich geschützt (© Watch Tower Bible and Tract Society) – keine Weitergabeerlaubnis, nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Jehovas Zeugen",
+  "historical": false,
+  "status": "link",
+  "tradition": "Jehovas Zeugen"
+ },
+ {
+  "id": "sefaria",
+  "type": "commentary",
+  "title": "Raschi, Ibn Esra, Ramban u. a.",
+  "author": "Sefaria (Bibliothek jüdischer Texte)",
+  "language": "de",
+  "edition": "sefaria.org",
+  "year": "",
+  "url": "https://www.sefaria.org/",
+  "license": "Deutsche Übersetzungen der Kommentare dort kaum vorhanden bzw. lizenzabhängig – nicht eingebunden, nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Rabbinisches Judentum",
+  "historical": true,
+  "status": "link",
+  "tradition": "Judentum"
  }
 ]

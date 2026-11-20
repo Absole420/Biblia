@@ -197,3 +197,6 @@ local-run notes above.
 - Protected, never edit (relative to the app dir): `metro.config.js`,
   `scripts/**`, `tsconfig.json`, `eslint.config.js`, the platform keys in
   `.env`, and `backend/pytest.ini`. Never create `eas.json`.
+
+## BIBLIA v0.9.0-beta
+- Build: `docs/BUILD.md` · Lizenzen: `docs/LICENSES.md` · PR-/Konsolidierungsstatus: `docs/CONSOLIDATION.md`

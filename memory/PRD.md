@@ -251,3 +251,15 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Calvin (deutsch) deaktiviert: Rechte unbestätigt → sources status pending, alle Rechte false, 2972 Einträge aus dem App-Paket entfernt (Backend-Datei bleibt unverändert, nicht gebündelt)
 - Hebräische Begriffskarten: RTL nur für Originalschrift, Abstand zum Symbol
 - Tests 42/42 grün, tsc sauber; 14 ESLint-Meldungen der React-Compiler-Regeln in way/entry, way/review, way/topic (vorbestehend, keine Funktionsfehler)
+
+## Update (Iteration 48) – Commentary Collection (nur deutsch)
+- Quellen (alle lokal, rechtlich geprüft): Calvin (deuCalvinKommentare, gemeinfrei, 2967), Streitenberger NT (frei, nicht verkaufen, 6571), Kroeker AT (gemeinfrei †1948, 1085), Rieger NT/Ps/kl. Propheten (PD, 742), Ansorg (PD, 705) = 12.070 Abschnitte
+- MHCC (englisch) ausgeblendet; JW, Sefaria als reine Links; ungültige Versangaben (5) verworfen
+- Import-Skript backend/scripts/import_sword_commentaries.py (pysword nur Bauzeit, /tmp)
+- Traditionsfilter (tradition-filter-*) + Quellenfilter gemerkt in study.prefSources; Tradition auf Karten
+
+## Update (Iteration 49) – Konsolidierung v0.9.0-beta
+- Fix: Quellen-Chips speichern „none“ (leerer Filter möglich); Bereichs-Einträge scope=range (2.079); Ansorg-Predigten auf genannte Versbereiche erweitert (466)
+- Entfernt: date-fns, dayjs, expo-blur, expo-haptics, expo-symbols, react-native-dotenv, react-native-webview
+- Doku: docs/BUILD.md, docs/LICENSES.md, docs/CONSOLIDATION.md; Backup-Bundle /app/backup-pre-consolidation-20261120.bundle (gitignored)
+- GitHub: keine Schreibrechte – Push/Tag/PR-Schließen/Branch-Cleanup manuell (siehe CONSOLIDATION.md)

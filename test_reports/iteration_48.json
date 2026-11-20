@@ -1,0 +1,28 @@
+{
+  "summary": "Iteration 48 (v0.9.0-beta consolidation, frontend only, web preview at 390x844). All requested retests PASS. (1) HIGH source-chip fix: at Röm 8,28 the chips were switched off one at a time (calvin-de, kroeker, rieger, ansorg, streitenberger). Card counts went 2, 2, 1, 1, then 0, and the last step shows commentary-empty with every chip off. The empty state persists after reload. Turning Rieger back on shows only Rieger (stored ['rieger']), which persists after reload. Turning Calvin on gives 2 cards; re-enabling all gives 3 cards, and 'none' is stripped. (2) Scope label: 'Römer 8,28–39 (Versbereich) – keine Einzelerklärung zu V. 28' for Rieger. Ps 1,1 Kroeker and Rieger show '1,1–6 (Versbereich)'. The data check reports 0 'range labelled Einzelvers' entries (iteration 47 had 1,611). (3) Ansorg: 1Mo 1,5, 1,20, 1,1 and 1,31 all show ansorg-1-1-1 '1,1–31 (Versbereich)'. Neh 1,5 shows Ansorg 1,1–11. The Stelle mismatches fell from 475 to 9; all 9 are ranges that cross chapters (LOW). (4) Regression after removing dependencies: intro, welcome, the 4 tabs, /station/tora-1-1, /lexicon, /lexicon/abraham, /timeline, /settings, /media, /living/words, /world/tora, /study/sources, /synopsis and /way all render. There were 0 pageerrors, 0 console errors and no module-not-found errors; the expo error log is clean. No source imports of the removed packages remain. expo-symbols is still in yarn.lock only as a transitive dependency of expo-router, which is expected. (5) Node tests 42/42 pass; tsc --noEmit exit 0.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {"flow": "Ansorg verse mapping – ranges that cross chapters", "issue": "9 of 705 Ansorg sermons are still mapped to their first verse only (scope 'verse') because their Stelle range crosses a chapter boundary: ansorg-12-2-19 (2Kön 2:19-6:7), ansorg-16-7-1 (Neh 7:1-13:31), ansorg-20-8-1 (Spr 8:1-9:18), ansorg-27-10-1 (Dan 10:1-12:13), ansorg-30-1-1 (Am 1:1-2:7), ansorg-40-2-13 (Mt 2:13-4:2), ansorg-40-9-35 (Mt 9:35-10:10), ansorg-40-27-57 (Mt 27:57-28:20). ansorg-27-4-1 has 'Daniel 4:1-4:37', which stays within one chapter but uses the c:v-c:v format, so it is still mapped to 4,1 only. LOW.", "affected_testIDs": ["commentary-ansorg-27-4-1", "commentary-ansorg-1-1-1"]}
+    ],
+    "design_issues": [],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/tests/commentary_data_check.py", "/app/tests/ansorg_stelle_check.py", "/app/tests/*.test.mjs (42 pass)"],
+  "action_items": [
+    "LOW: Ansorg importer. Parse the 'c:v-c:v' format. At minimum handle the same-chapter case Dan 4:1-4:37 (ansorg-27-4-1). Optionally split the 8 sermons that cross chapters into one range entry per chapter.",
+    "LOW (optional): When re-enabling every source chip, normalise prefSources to [] instead of the explicit list of all 5 ids. With the explicit list, a source added in a future release would be hidden by default for users who once toggled the chips."
+  ],
+  "critical_code_review_comments": [
+    "VerseStudy.tsx:80: the source-chip off-branch now maps an empty rest to ['none'], and the on-branch strips 'none'. Correct. The on-branch does not collapse a full list back to [], unlike the tradition handler at line 70, so the state stays un-normalised (see the action item).",
+    "Persistence of prefSources is debounced. localStorage still held the previous value immediately after the tap, but the value was correct after reload, so this is not a bug."
+  ],
+  "updated_files": ["/app/tests/ansorg_stelle_check.py (new: lists Ansorg Stelle and mapping mismatches)"],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "100% of requested retests and regression routes pass; 1 LOW data leftover (9 Ansorg ranges that cross chapters)"},
+  "seed_data_creation": "None. Only browser localStorage in fresh Playwright contexts was used.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Close the intro: intro-skip-button, then welcome-start. Open the verse sheet: goto /bible?b=<Code>&ch=<c>&v=<v>, wait for verse-<c>-<v>, wait 1.5s, then do a normal click. Wait 0.7s, then click verse-tab-comm. The cards are found via [data-testid^=commentary-scope-]. A chip is active when its backgroundColor is rgb(47, 95, 122). Data checks: python3 /app/tests/commentary_data_check.py and python3 /app/tests/ansorg_stelle_check.py. The browser tool rewrites f-string screenshot paths, so use static path strings.",
+  "rca_of_issue": "Iteration 47 HIGH bug fixed: VerseStudy.tsx:80 now returns ['none'] when the last visible source is removed."
+}

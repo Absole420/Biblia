@@ -1,145 +1,274 @@
 [
-  {
-    "id": "calvin-de",
-    "type": "commentary",
-    "title": "Calvin Kommentare (deutsche Ausgabe)",
-    "author": "Johannes Calvin (1509–1564)",
-    "language": "de",
-    "edition": "Deutsche Übersetzung aus der Sammlung „Lesekammer“, als SWORD-Modul aufbereitet vom Projekt GermanSwordModules (deuCalvinKommentare, Version 1.1, Alpha-Stand)",
-    "year": "1540–1564 (Original); Übersetzer im Modul nicht angegeben",
-    "url": "https://lesekammer.de/2023/06/09/jean-calvin/",
-    "license": "Rechte der deutschen Fassung nicht bestätigt – bis zur Klärung deaktiviert (Beta 0.9). Gemeinfrei (laut GermanSwordModules, DistributionLicense=Gemeinfrei). Die Lesekammer erlaubt die Weitergabe ausdrücklich. Quelle: github.com/GermanSwordModules. Hinweis: Übersetzer und Jahr der deutschen Fassung sind nicht belegt; vor einer kommerziellen Veröffentlichung prüfen. Alpha-Stand: kleinere OCR-/Tippfehler möglich.",
-    "rights": {
-      "fulltext": false,
-      "offline": false,
-      "edit": false,
-      "redistribute": false
-    },
-    "perspective": "Reformatorische (reformiert-calvinistische) Auslegung des 16. Jahrhunderts. Historische Stimme, kein aktueller wissenschaftlicher Forschungsstand.",
-    "historical": true,
-    "status": "pending",
-    "coverage": "Josua, Johannes, Apostelgeschichte, Römer, Galater, Epheser, Philipper, Titus, Philemon, Hebräer, Jakobus, 1./2. Petrus, 1. Johannes, Judas (2.972 Abschnitte)"
+ {
+  "id": "calvin-de",
+  "type": "commentary",
+  "title": "Calvin Kommentare (deutsche Ausgabe)",
+  "author": "Johannes Calvin (1509–1564)",
+  "language": "de",
+  "edition": "Deutsche Übersetzung aus der Sammlung „Lesekammer“, als SWORD-Modul aufbereitet vom Projekt GermanSwordModules (deuCalvinKommentare, Version 1.1, Alpha-Stand)",
+  "year": "1540–1564 (Original); Übersetzer im Modul nicht angegeben",
+  "url": "https://lesekammer.de/2023/06/09/jean-calvin/",
+  "license": "Gemeinfrei: SWORD-Modul deuCalvinKommentare (GermanSwordModules), DistributionLicense=Gemeinfrei; Texte mit Genehmigung aus lesekammer.de, historische deutsche Übersetzungen (19. Jh.).",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
   },
-  {
-    "id": "mhcc",
-    "type": "commentary",
-    "title": "Concise Commentary on the Whole Bible",
-    "author": "Matthew Henry (1662–1714)",
-    "language": "en",
-    "edition": "Kurzfassung des Kommentars von 1706–1721 (gemeinfreier Text)",
-    "year": "1706–1721",
-    "url": "https://www.biblestudytools.com/commentaries/matthew-henry-concise/",
-    "license": "Gemeinfrei (Autor † 1714; Original englisch, keine moderne Übersetzung). Text aus öffentlich zugänglicher gemeinfreier Fassung übernommen; Gestaltung der Website nicht übernommen.",
-    "rights": {
-      "fulltext": true,
-      "offline": true,
-      "edit": true,
-      "redistribute": true
-    },
-    "perspective": "Historische, puritanisch-reformierte Erbauungsauslegung (frühes 18. Jh.). Kein aktueller wissenschaftlicher Forschungsstand.",
-    "historical": true,
-    "status": "integrated",
-    "coverage": "Beispielbestand: Johannes 3"
+  "perspective": "Reformatorische (reformiert-calvinistische) Auslegung des 16. Jahrhunderts. Historische Stimme, kein aktueller wissenschaftlicher Forschungsstand.",
+  "historical": true,
+  "status": "integrated",
+  "coverage": "Josua, Johannes, Apostelgeschichte, Römer, Galater, Epheser, Philipper, Titus, Philemon, Hebräer, Jakobus, 1./2. Petrus, 1. Johannes, Judas (2.972 Abschnitte)",
+  "tradition": "Reformiert"
+ },
+ {
+  "id": "mhcc",
+  "type": "commentary",
+  "title": "Concise Commentary on the Whole Bible",
+  "author": "Matthew Henry (1662–1714)",
+  "language": "en",
+  "edition": "Kurzfassung des Kommentars von 1706–1721 (gemeinfreier Text)",
+  "year": "1706–1721",
+  "url": "https://www.biblestudytools.com/commentaries/matthew-henry-concise/",
+  "license": "Gemeinfrei, aber nur englisch – nach Vorgabe „nur deutsch“ ausgeblendet.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
   },
-  {
-    "id": "openbible-xref",
-    "type": "crossref",
-    "title": "OpenBible.info Cross References",
-    "author": "OpenBible.info (auf Basis von Treasury of Scripture Knowledge u. a.)",
-    "language": "–",
-    "edition": "Stand 2026, Filter: ≥ 8 Stimmen",
-    "year": "2026",
-    "url": "https://www.openbible.info/labs/cross-references/",
-    "license": "CC BY (Namensnennung) – Einbindung, Offline-Nutzung, Bearbeitung und Weitergabe mit Namensnennung erlaubt.",
-    "rights": {
-      "fulltext": true,
-      "offline": true,
-      "edit": true,
-      "redistribute": true
-    },
-    "perspective": "Automatisch/gemeinschaftlich gesammelte Querverweise; nicht nach Art des Bezugs klassifiziert. Verszählung nach KJV.",
-    "historical": false,
-    "status": "integrated",
-    "coverage": "ca. 61 000 Verweise"
+  "perspective": "Historische, puritanisch-reformierte Erbauungsauslegung (frühes 18. Jh.). Kein aktueller wissenschaftlicher Forschungsstand.",
+  "historical": true,
+  "status": "pending",
+  "coverage": "Beispielbestand: Johannes 3",
+  "tradition": "Puritanisch / Reformiert"
+ },
+ {
+  "id": "openbible-xref",
+  "type": "crossref",
+  "title": "OpenBible.info Cross References",
+  "author": "OpenBible.info (auf Basis von Treasury of Scripture Knowledge u. a.)",
+  "language": "–",
+  "edition": "Stand 2026, Filter: ≥ 8 Stimmen",
+  "year": "2026",
+  "url": "https://www.openbible.info/labs/cross-references/",
+  "license": "CC BY (Namensnennung) – Einbindung, Offline-Nutzung, Bearbeitung und Weitergabe mit Namensnennung erlaubt.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
   },
-  {
-    "id": "bibelkommentare-de",
-    "type": "commentary",
-    "title": "bibelkommentare.de",
-    "author": "verschiedene Autoren",
-    "language": "de",
-    "edition": "online",
-    "year": "–",
-    "url": "https://www.bibelkommentare.de/",
-    "license": "Urheberrechtlich geschützt; keine Einbindungserlaubnis – nur externer Link.",
-    "rights": {
-      "fulltext": false,
-      "offline": false,
-      "edit": false,
-      "redistribute": false
-    },
-    "perspective": "Überwiegend brüdergemeindlich-konservative Auslegungen.",
-    "historical": false,
-    "status": "link"
+  "perspective": "Automatisch/gemeinschaftlich gesammelte Querverweise; nicht nach Art des Bezugs klassifiziert. Verszählung nach KJV.",
+  "historical": false,
+  "status": "integrated",
+  "coverage": "ca. 61 000 Verweise"
+ },
+ {
+  "id": "bibelkommentare-de",
+  "type": "commentary",
+  "title": "bibelkommentare.de",
+  "author": "verschiedene Autoren",
+  "language": "de",
+  "edition": "online",
+  "year": "–",
+  "url": "https://www.bibelkommentare.de/",
+  "license": "Urheberrechtlich geschützt; keine Einbindungserlaubnis – nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
   },
-  {
-    "id": "bengel-gnomon",
-    "type": "commentary",
-    "title": "Gnomon Novi Testamenti (dt. Übers. C. F. Werner, 1853)",
-    "author": "Johann Albrecht Bengel (1687–1752)",
-    "language": "de",
-    "edition": "Werner-Übersetzung 1853 (vermutlich gemeinfrei)",
-    "year": "1742 / 1853",
-    "url": "https://de.wikisource.org/wiki/Johann_Albrecht_Bengel",
-    "license": "Original und Übersetzung voraussichtlich gemeinfrei, aber in dieser Sitzung keine geprüfte digitale Textfassung gefunden – noch nicht eingebunden.",
-    "rights": {
-      "fulltext": false,
-      "offline": false,
-      "edit": false,
-      "redistribute": false
-    },
-    "perspective": "Pietistisch-philologische Auslegung (18. Jh.), historisch.",
-    "historical": true,
-    "status": "pending"
+  "perspective": "Überwiegend brüdergemeindlich-konservative Auslegungen.",
+  "historical": false,
+  "status": "link"
+ },
+ {
+  "id": "bengel-gnomon",
+  "type": "commentary",
+  "title": "Gnomon Novi Testamenti (dt. Übers. C. F. Werner, 1853)",
+  "author": "Johann Albrecht Bengel (1687–1752)",
+  "language": "de",
+  "edition": "Werner-Übersetzung 1853 (vermutlich gemeinfrei)",
+  "year": "1742 / 1853",
+  "url": "https://de.wikisource.org/wiki/Johann_Albrecht_Bengel",
+  "license": "Original und Übersetzung voraussichtlich gemeinfrei, aber in dieser Sitzung keine geprüfte digitale Textfassung gefunden – noch nicht eingebunden.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
   },
-  {
-    "id": "oeab-plan",
-    "type": "plan",
-    "title": "Ökumenischer Bibelleseplan",
-    "author": "Ökumenische Arbeitsgemeinschaft für Bibellesen (ÖAB)",
-    "language": "de",
-    "edition": "jährlich",
-    "year": "jährlich",
-    "url": "https://www.oeab.de/",
-    "license": "Keine Einbindungserlaubnis – nur externer Link.",
-    "rights": {
-      "fulltext": false,
-      "offline": false,
-      "edit": false,
-      "redistribute": false
-    },
-    "perspective": "Ökumenisch, kirchenjahresorientiert.",
-    "historical": false,
-    "status": "link"
+  "perspective": "Pietistisch-philologische Auslegung (18. Jh.), historisch.",
+  "historical": true,
+  "status": "pending",
+  "tradition": "Lutherisch / Pietismus"
+ },
+ {
+  "id": "oeab-plan",
+  "type": "plan",
+  "title": "Ökumenischer Bibelleseplan",
+  "author": "Ökumenische Arbeitsgemeinschaft für Bibellesen (ÖAB)",
+  "language": "de",
+  "edition": "jährlich",
+  "year": "jährlich",
+  "url": "https://www.oeab.de/",
+  "license": "Keine Einbindungserlaubnis – nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
   },
-  {
-    "id": "losungen",
-    "type": "plan",
-    "title": "Herrnhuter Losungen & Bibelleseplan",
-    "author": "Herrnhuter Brüdergemeine",
-    "language": "de",
-    "edition": "jährlich",
-    "year": "jährlich",
-    "url": "https://www.losungen.de/",
-    "license": "Urheberrechtlich geschützt – nur externer Link.",
-    "rights": {
-      "fulltext": false,
-      "offline": false,
-      "edit": false,
-      "redistribute": false
-    },
-    "perspective": "Herrnhuter Tradition.",
-    "historical": false,
-    "status": "link"
-  }
+  "perspective": "Ökumenisch, kirchenjahresorientiert.",
+  "historical": false,
+  "status": "link"
+ },
+ {
+  "id": "losungen",
+  "type": "plan",
+  "title": "Herrnhuter Losungen & Bibelleseplan",
+  "author": "Herrnhuter Brüdergemeine",
+  "language": "de",
+  "edition": "jährlich",
+  "year": "jährlich",
+  "url": "https://www.losungen.de/",
+  "license": "Urheberrechtlich geschützt – nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Herrnhuter Tradition.",
+  "historical": false,
+  "status": "link"
+ },
+ {
+  "id": "kroeker",
+  "type": "commentary",
+  "title": "Das lebendige Wort (15 Bände, AT)",
+  "author": "Jakob Kroeker (1872–1948)",
+  "language": "de",
+  "edition": "SWORD-Modul deuKroekerJakobDLW (GermanSwordModules), OCR der Ausgabe 1989, nur Kroekers Text",
+  "year": "1920er–1940er",
+  "url": "https://github.com/GermanSwordModules/GermanSwordModules",
+  "license": "Gemeinfrei (Autor † 1948, Schutzfrist abgelaufen); Herausgebertexte nicht enthalten.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Pietistisch-evangelisch (Mennonit/Allianz), heilsgeschichtlich",
+  "historical": true,
+  "status": "integrated",
+  "tradition": "Pietismus / Evangelikal"
+ },
+ {
+  "id": "rieger",
+  "type": "commentary",
+  "title": "Betrachtungen über das Neue Testament, die Psalmen und die zwölf kleinen Propheten",
+  "author": "Carl Heinrich Rieger (1726–1791)",
+  "language": "de",
+  "edition": "SWORD-Modul Rieger (CrossWire), nach Ausgabe Stuttgart 1833",
+  "year": "1833",
+  "url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=Rieger",
+  "license": "Public Domain (CrossWire: „copy freely“).",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Württembergischer Pietismus, lutherisch",
+  "historical": true,
+  "status": "integrated",
+  "tradition": "Lutherisch / Pietismus"
+ },
+ {
+  "id": "ansorg",
+  "type": "commentary",
+  "title": "Kommentar zur Bibel (Predigtzusammenfassungen)",
+  "author": "Matthias Ansorg",
+  "language": "de",
+  "edition": "SWORD-Modul MAK (CrossWire), 2002 ff.",
+  "year": "2002",
+  "url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=MAK",
+  "license": "Public Domain (vom Autor freigegeben, laut CrossWire-Modul).",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Evangelisch-freikirchlich (Brüdergemeinde), Predigtnotizen",
+  "historical": false,
+  "status": "integrated",
+  "tradition": "Freikirchlich"
+ },
+ {
+  "id": "streitenberger",
+  "type": "commentary",
+  "title": "Kommentar zum Neuen Testament (griechischer Text)",
+  "author": "Peter M. Streitenberger",
+  "language": "de",
+  "edition": "SWORD-Modul deuStreitenbergerKommentar (GermanSwordModules)",
+  "year": "2010er–2020er",
+  "url": "https://www.bibelgriechisch.online",
+  "license": "Frei nutzbar und kopierbar; nicht verkaufen; Quellenhinweis Pflicht; Wortlaut unverändert (vom Autor). Nur in kostenloser App zulässig.",
+  "rights": {
+   "fulltext": true,
+   "offline": true,
+   "edit": true,
+   "redistribute": true
+  },
+  "perspective": "Evangelikal, philologisch am griechischen Text",
+  "historical": false,
+  "status": "integrated",
+  "tradition": "Evangelikal"
+ },
+ {
+  "id": "jw-einsichten",
+  "type": "commentary",
+  "title": "Einsichten über die Heilige Schrift / Studienbibel",
+  "author": "Wachtturm-Gesellschaft (Jehovas Zeugen)",
+  "language": "de",
+  "edition": "wol.jw.org",
+  "year": "",
+  "url": "https://wol.jw.org/de/",
+  "license": "Urheberrechtlich geschützt (© Watch Tower Bible and Tract Society) – keine Weitergabeerlaubnis, nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Jehovas Zeugen",
+  "historical": false,
+  "status": "link",
+  "tradition": "Jehovas Zeugen"
+ },
+ {
+  "id": "sefaria",
+  "type": "commentary",
+  "title": "Raschi, Ibn Esra, Ramban u. a.",
+  "author": "Sefaria (Bibliothek jüdischer Texte)",
+  "language": "de",
+  "edition": "sefaria.org",
+  "year": "",
+  "url": "https://www.sefaria.org/",
+  "license": "Deutsche Übersetzungen der Kommentare dort kaum vorhanden bzw. lizenzabhängig – nicht eingebunden, nur externer Link.",
+  "rights": {
+   "fulltext": false,
+   "offline": false,
+   "edit": false,
+   "redistribute": false
+  },
+  "perspective": "Rabbinisches Judentum",
+  "historical": true,
+  "status": "link",
+  "tradition": "Judentum"
+ }
 ]

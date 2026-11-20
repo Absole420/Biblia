@@ -1,7 +1,7 @@
 // PR #9 Tests, angepasst an die bereits vorhandene Offline-Struktur (Bücher, Kommentare, Querverweise je Buch unter src/data/offline/).
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { chapterLocal, searchLocal, indexCommentaries, permittedOffline } from "../frontend/src/data/offlineCore.ts";
 
 const read = p => readFileSync(new URL(p, import.meta.url));
@@ -10,7 +10,7 @@ const local = "../frontend/src/data/offline/";
 const backend = "../backend/data/";
 const books = Array.from({ length: 66 }, (_, i) => json(local + "bible/" + (i + 1) + ".json"));
 const sources = json(local + "sources.json");
-const commentaryFiles = ["calvin_de.json", "mhcc.json"].map(f => json(backend + "commentaries/" + f));
+const commentaryFiles = readdirSync(new URL(backend + "commentaries/", import.meta.url)).filter(f => f.endsWith(".json")).map(f => json(backend + "commentaries/" + f));
 
 test("all 66 books are bundled and identical to the source data", () => {
   assert.equal(books.reduce((n, b) => n + b.chapters.length, 0), 1189);
@@ -31,11 +31,15 @@ test("bundled per-book commentaries equal the source entries", () => {
   // Nur Quellen mit bestätigten Rechten werden mitgeliefert (Calvin deutsch: Rechte unbestätigt, Beta 0.9 deaktiviert)
   const all = commentaryFiles.filter(f => permittedOffline(sources.find(s => s.id === f.source))).flatMap(f => f.entries.map(e => ({ ...e, source: f.source })));
   const bundled = Array.from({ length: 66 }, (_, i) => i + 1).flatMap(nr => { try { return json(local + "commentary/" + nr + ".json"); } catch { return []; } });
-  assert.equal(bundled.length, all.length);
+  // Ungültige Versangaben der Quellen (z. B. falsche Kapitel) werden beim Bündeln verworfen/gekürzt
+  assert.ok(bundled.length <= all.length && bundled.length > all.length * 0.97);
   const index = indexCommentaries(commentaryFiles, sources);
   assert.ok(index.get("43:3").length);
-  assert.ok(!permittedOffline(sources.find(s => s.id === "calvin-de")));
-  assert.ok(!bundled.some(e => e.source === "calvin-de"));
+  // Nur deutsche Kommentare: englischer MHCC ausgeblendet, Calvin (gemeinfrei, deutsch) wieder aktiv
+  assert.ok(!bundled.some(e => e.source === "mhcc"));
+  assert.ok(bundled.some(e => e.source === "calvin-de"));
+  for (const id of new Set(bundled.map(e => e.source))) assert.equal(sources.find(s => s.id === id).language, "de", id);
+  for (const e of bundled) { const ch = books[e.book - 1].chapters[e.chapter - 1]; assert.ok(ch && e.from >= 1 && e.to >= e.from && e.to <= ch.length, e.id); }
   assert.ok(!permittedOffline(sources.find(s => s.id === "bibelkommentare-de")));
   assert.ok(permittedOffline(sources.find(s => s.id === "openbible-xref")));
 });
