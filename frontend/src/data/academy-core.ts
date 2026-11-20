@@ -42,7 +42,7 @@ function mc(id:string,q:string,a:string,wrong:string[],ref:string,offset:number)
   return {id,type:"mc",question:q,options:rotated,answer:rotated.indexOf(a),explain:a+". Lies dazu "+ref+".",ref};
 }
 function conceptTasks(row:AcademyRow):{tasks:Task[];exam:Task[]} {
-  const ref=row.refs[0], prefix=row.id+"-academy";
+  const ref=row.refs.join("; "), prefix=row.id+"-academy";
   const concepts=row.quiz.map((q,i)=>mc(prefix+"-t"+(i+1),q.q,q.a,q.wrong,ref,i+1));
   const matching:Task={id:prefix+"-terms",type:"match",question:"Ordne die Begriffe der in dieser Einheit erläuterten Bedeutung zu.",pairs:row.terms.map(t=>[t.term,t.explanation]),explain:"Die Wortstudien erläutern die Bedeutung im jeweiligen Zusammenhang.",ref};
   const tasks:Task[]=[...concepts,matching,
@@ -57,7 +57,6 @@ export function enrichAcademyStation(station:Station,row:AcademyRow,lookup:BookL
   if(readingRefs.some(r=>!r))throw new Error("Ungültiger Academy-Verweis: "+row.id);
   const {tasks,exam}=conceptTasks(row);
   const background=row.body.map((text,i)=>({kind:"teach" as const,title:["Text und Aufbau","Hintergrund und Einordnung","Biblische Zusammenhänge"][i]??"Vertiefung",text,refs:i===2?[row.connection.from,row.connection.to]:row.refs}));
-  const isNew=station.id.startsWith("ac-");
   const hasAcademy=station.tasks.some(x=>x.id===row.id+"-academy-t1");
   return {
     ...station,
