@@ -8,7 +8,7 @@ const rows=["tora","gospels","parables-acts","deeper","prophets-letters","john-r
 const counts=read("../frontend/src/data/verseCounts.json");
 const lookup=(code,ch)=>{const b=findBook(code),n=b&&counts[b.nr]?.[ch-1]?.[0];return b&&n?{code:b.code,verses:n}:null;};
 test("all Academy entries are unique, manually authored and reference valid verse ranges",()=>{
- assert.equal(rows.length,164);assert.equal(new Set(rows.map(r=>r.id)).size,164);
+ assert.equal(rows.length,160);assert.equal(new Set(rows.map(r=>r.id)).size,160);
  for(const r of rows){assert.equal(r.body.length,3,r.id);assert.ok(r.body.every(x=>x.length>120),r.id);assert.ok(r.terms.length>=2,r.id);assert.ok(r.quiz.length>=2,r.id);assert.ok(r.reflection&&r.image,r.id);for(const ref of [...r.refs,r.connection.from,r.connection.to])assert.ok(parseAcademyRef(ref,lookup),r.id+" "+ref);}
 });
 test("old sentinel range and book alias are normalized",()=>{

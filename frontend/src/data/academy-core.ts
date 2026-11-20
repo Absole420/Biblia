@@ -37,7 +37,7 @@ function addMissingTasks(existing:Task[],added:Task[]){
   const ids=new Set(existing.map(t=>t.id));return [...existing,...added.filter(t=>!ids.has(t.id))];
 }
 function mc(id:string,q:string,a:string,wrong:string[],ref:string,offset:number):Task {
-  const options=[a,...wrong];const step=offset%options.length;
+  const options=[a,...wrong];const step=(offset+[...id].reduce((sum,ch)=>sum+ch.charCodeAt(0),0))%options.length;
   const rotated=[...options.slice(step),...options.slice(0,step)];
   return {id,type:"mc",question:q,options:rotated,answer:rotated.indexOf(a),explain:a+". Lies dazu "+ref+".",ref};
 }

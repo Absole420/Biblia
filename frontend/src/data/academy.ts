@@ -1,7 +1,8 @@
 import type { Campaign, Station } from "./types";
 import { BIBLE_BOOKS, findBook } from "./books";
 import counts from "./verseCounts.json";
-import { applyAcademy as apply, coverage, AcademyRow, BookLookup } from "./academy-core";
+import { applyAcademy as apply, coverage } from "./academy-core";
+import type { AcademyRow, BookLookup } from "./academy-core";
 import tora from "./academy/tora.json";
 import gospels from "./academy/gospels.json";
 import parablesActs from "./academy/parables-acts.json";
