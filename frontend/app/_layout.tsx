@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { QueryClientProvider } from "@tanstack/react-query";
 import * as NavigationBar from "expo-navigation-bar";
 import { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, LogBox, Platform, StyleSheet, View } from "react-native";
+import { ActivityIndicator, LogBox, Platform, StyleSheet, Text, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -23,7 +23,7 @@ import { useTheme } from "@/src/theme";
 LogBox.ignoreAllLogs(true);
 
 function AppStack() {
-  const { ready } = useProgress();
+  const { ready, storageError, storageBlocked, recovered } = useProgress();
   const { colors, scheme } = useTheme();
   if (!ready) {
     return (
@@ -32,8 +32,15 @@ function AppStack() {
       </View>
     );
   }
+  if (storageBlocked) return (
+    <View style={[styles.root, { backgroundColor: colors.surface, justifyContent: "center", padding: 24 }]}>
+      <Text accessibilityRole="alert" style={{ color: colors.onSurface, fontSize: 18 }}>{storageError}</Text>
+      <Text style={{ color: colors.onSurface, marginTop: 12 }}>Keine leeren Daten wurden gespeichert. Falls der Fehler bleibt, die App-Daten nicht löschen.</Text>
+    </View>
+  );
   return (
-    <>
+    <View style={styles.root}>
+      {storageError || recovered ? <Text accessibilityRole="alert" style={{ color: colors.onSurface, backgroundColor: colors.surfaceSecondary, padding: 8 }}>{storageError ?? "Ein älterer intakter Speicherstand wurde geladen. Bitte Lernstand prüfen."}</Text> : null}
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
       <InfoProvider>
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.surface } }}>
@@ -48,7 +55,7 @@ function AppStack() {
         <Stack.Screen name="avatar" options={{ gestureEnabled: false }} />
       </Stack>
       </InfoProvider>
-    </>
+    </View>
   );
 }
 

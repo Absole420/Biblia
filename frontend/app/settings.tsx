@@ -23,6 +23,9 @@ export default function SettingsScreen() {
   const p = useProgress();
   const { state } = p;
   const [confirmReset, setConfirmReset] = useState(false);
+  const [confirmRestore, setConfirmRestore] = useState<"weekly" | "before" | null>(null);
+  const [pendingImport, setPendingImport] = useState<typeof state | null>(null);
+  const [busy, setBusy] = useState(false);
   const [colorFor, setColorFor] = useState<string | null>(null);
 
   const doExport = async () => {
@@ -37,11 +40,18 @@ export default function SettingsScreen() {
       const res = await pickImport();
       if (!res) return;
       if (!res.ok) return toast.show(res.error, "error");
-      p.replaceState(res.state);
-      toast.show("Lernstand importiert");
+      setPendingImport(res.state);
     } catch {
       toast.show("Datei konnte nicht gelesen werden", "error");
     }
+  };
+
+  const run = async (action: () => Promise<void>, success: string) => {
+    if (busy) return;
+    setBusy(true);
+    try { await action(); toast.show(success); }
+    catch { toast.show("Vorgang fehlgeschlagen. Bitte Speicher prüfen.", "error"); }
+    finally { setBusy(false); }
   };
 
   return (
@@ -99,11 +109,17 @@ export default function SettingsScreen() {
         ))}
 
         <SectionTitle>Lernstand sichern</SectionTitle>
-        <Text style={styles.small}>Alle Daten bleiben lokal auf deinem Gerät. Keine Registrierung nötig.</Text>
+        <Text style={styles.small}>Alle 7 Tage bei geöffneter App wird automatisch ein lokaler Lernstand gesichert. Die zwei jüngsten Sicherungen bleiben erhalten.</Text>
+        <Text style={styles.small} testID="guardian-last-backup">Letzte Sicherung: {p.lastBackup === null ? "Noch keine" : new Date(p.lastBackup).toLocaleString("de-DE")}</Text>
+        {p.backupError ? <Text style={[styles.small, { color: colors.error }]}>Wochensicherung fehlgeschlagen.</Text> : null}
+        <Text style={styles.small}>Für Gerätewechsel exportiere die JSON-Datei außerhalb der App. Fotos sind nur als Verweise enthalten; Bilddateien werden nicht mitgesichert. Sicherungen sind nicht separat verschlüsselt.</Text>
         <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
-          <Button testID="export-button" label="Als JSON exportieren" icon="upload" variant="secondary" onPress={doExport} />
-          <Button testID="import-button" label="JSON importieren" icon="download" variant="secondary" onPress={doImport} />
-          <Button testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
+          <Button testID="guardian-backup" label="Jetzt sichern" icon="save" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => run(p.backupNow, "Sicherung erstellt")} />
+          <Button testID="guardian-restore" label="Letzte Wochensicherung wiederherstellen" icon="clock" variant="secondary" disabled={busy || p.storageBlocked || p.lastBackup === null} onPress={() => setConfirmRestore("weekly")} />
+          {p.hasBeforeChange ? <Button testID="guardian-undo" label="Stand vor letzter Wiederherstellung / Import / Reset" icon="clock" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => setConfirmRestore("before")} /> : null}
+          <Button disabled={busy || p.storageBlocked} testID="export-button" label="Als JSON exportieren" icon="upload" variant="secondary" onPress={doExport} />
+          <Button disabled={busy || p.storageBlocked} testID="import-button" label="JSON importieren" icon="download" variant="secondary" onPress={doImport} />
+          <Button disabled={busy || p.storageBlocked} testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
         </View>
 
         <SectionTitle>Intro</SectionTitle>
@@ -123,9 +139,17 @@ export default function SettingsScreen() {
           ))}
         </View>
       </Sheet>
+      <Sheet visible={!!pendingImport} onClose={() => setPendingImport(null)} title="Lernstand importieren?">
+        <Text style={styles.small}>Der aktuelle Lernstand wird vorher lokal gesichert und anschließend ersetzt.</Text>
+        <Button label="Importieren" disabled={busy} onPress={() => { const next = pendingImport; setPendingImport(null); if (next) void run(() => p.replaceState(next), "Lernstand importiert"); }} />
+      </Sheet>
+      <Sheet visible={!!confirmRestore} onClose={() => setConfirmRestore(null)} title="Sicherung wiederherstellen?">
+        <Text style={styles.small}>Dein aktueller Lernstand wird vorher gesichert.</Text>
+        <Button label="Wiederherstellen" disabled={busy} onPress={() => { const before = confirmRestore === "before"; setConfirmRestore(null); void run(() => p.restoreBackup(before), "Lernstand wiederhergestellt"); }} />
+      </Sheet>
       <Sheet visible={confirmReset} onClose={() => setConfirmReset(false)} title="Lernstand zurücksetzen?" testID="reset-sheet">
         <Text style={styles.small}>Alle EP, Stationen, Notizen und Markierungen werden gelöscht. Exportiere vorher deinen Lernstand, wenn du ihn behalten möchtest.</Text>
-        <Button testID="reset-confirm-button" label="Endgültig zurücksetzen" variant="danger" icon="trash-2" style={{ marginTop: spacing.xl }} onPress={() => { p.reset(); setConfirmReset(false); toast.show("Lernstand zurückgesetzt"); }} />
+        <Button testID="reset-confirm-button" label="Endgültig zurücksetzen" variant="danger" icon="trash-2" style={{ marginTop: spacing.xl }} disabled={busy} onPress={() => { setConfirmReset(false); void run(p.reset, "Lernstand zurückgesetzt"); }} />
       </Sheet>
     </View>
   );
