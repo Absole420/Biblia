@@ -5,6 +5,7 @@ import { ActivityIndicator, Pressable, Text, View } from "react-native";
 import { getChapterSync, loadChapter } from "@/src/data/bible";
 import { BIBLE_BOOKS, BOOK_BY_CODE } from "@/src/data/books";
 import { COMMENTARY, XREF } from "@/src/data/offline";
+import { permittedOffline } from "@/src/data/offlineCore";
 import SOURCES from "@/src/data/offline/sources.json";
 import { typedXrefs, XKIND_META } from "@/src/data/xrefTyped";
 import { useProgress } from "@/src/lib/store";
@@ -18,7 +19,8 @@ const byNr = (nr: number) => BIBLE_BOOKS.find((b) => b.nr === nr)!;
 async function cached<T>(path: string): Promise<T | null> {
   const [, , kind, nr, ch] = path.split("/");
   if (path === "/study/sources") return { sources: SOURCES } as T;
-  if (kind === "commentary") return { entries: (COMMENTARY[Number(nr)]?.() ?? []).filter((e: Entry) => e.chapter === Number(ch)) } as T;
+  // Nur Kommentare mit lokal freigegebenen Rechten (Volltext, offline, Weitergabe) – PR #9 permittedOffline
+  if (kind === "commentary") return { entries: (COMMENTARY[Number(nr)]?.() ?? []).filter((e: Entry) => e.chapter === Number(ch) && permittedOffline((SOURCES as Source[]).find((x) => x.id === e.source))) } as T;
   if (kind === "xref") return { refs: XREF[Number(nr)]?.()[ch] ?? [] } as T;
   return null;
 }

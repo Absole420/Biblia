@@ -211,3 +211,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Medien: /media (expo-audio, expo-video), mitgelieferte Liste src/data/media.ts (derzeit leer), eigene MP3/MP4 per Dateiauswahl in App-Speicher
 - Vollsicherung (ohne Passwort, Nutzerentscheidung) inkl. Fotos (Base64) und Tagebuch: src/lib/fullBackup.ts, Einstellungen
 - APK-Build und Flugmodus-Gerätetest: Nutzer via Publish
+
+## Update (Iteration 42) – PR #9 Permanent Offline Engine
+- Bereits vorhanden (nicht doppelt übernommen): lokale Bibel/Kommentare/Querverweise je Buch (src/data/offline/), Offline-Suche, lokales Cover, OTA aus
+- Übernommen: offlineCore.ts (Rechteprüfung permittedOffline – jetzt in VerseStudy aktiv), eas.json (offline-release, APK), app.json updates.useEmbeddedUpdate=true, Doku
+- PR-Monolith-Datendateien (12 MB) und offlineData.ts nicht übernommen (Duplikat)
+- tests/permanent-offline.test.mjs an Struktur angepasst; 14/14 Tests aller Suites grün
