@@ -119,8 +119,15 @@ class TestBibleTranslations:
 
 # --- Core health ---
 class TestHealth:
-    def test_health(self, api):
-        r = api.get(f"{BASE_URL}/health", timeout=15)
+    def test_health(self):
+        # /health liegt bewusst außerhalb von /api (Pod-Probe); die öffentliche URL leitet es ans Frontend.
+        # Daher direkt gegen die App prüfen – gleiche Zusicherungen wie zuvor.
+        import sys
+        from pathlib import Path
+        from fastapi.testclient import TestClient
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from server import app
+        r = TestClient(app).get("/health")
         assert r.status_code == 200
         assert r.json().get("status") == "ok"
 

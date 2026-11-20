@@ -27,8 +27,15 @@ class TestStudySources:
         assert "sources" in data
         sources = data["sources"]
         assert isinstance(sources, list)
-        # Iteration 10: calvin-de added → 7 total
-        assert len(sources) == 7, f"expected 7 sources, got {len(sources)}"
+        # v0.9.0: 13 Quellen (5 deutsche Kommentare + xref integriert, übrige pending/link)
+        assert len(sources) == 13, f"expected 13 sources, got {len(sources)}"
+        ids = [s["id"] for s in sources]
+        assert len(ids) == len(set(ids)), "duplicate source ids"
+        integrated = {s["id"] for s in sources if s["status"] == "integrated"}
+        assert integrated == {"calvin-de", "openbible-xref", "kroeker", "rieger", "ansorg", "streitenberger"}, integrated
+        for s in sources:
+            if s["status"] == "integrated":
+                assert s["rights"]["fulltext"] is True and s["rights"]["redistribute"] is True, s["id"]
         by_id = {s["id"]: s for s in sources}
         # calvin-de (new, iteration 10)
         assert "calvin-de" in by_id
@@ -39,9 +46,9 @@ class TestStudySources:
         assert "Gemeinfrei" in calvin["license"]
         assert calvin["rights"]["fulltext"] is True
         assert calvin["rights"]["redistribute"] is True
-        # mhcc still present and integrated
+        # mhcc (englisch) ist nicht mehr gebündelt, nur noch als „pending“ gelistet
         assert "mhcc" in by_id
-        assert by_id["mhcc"]["status"] == "integrated"
+        assert by_id["mhcc"]["status"] == "pending"
         # openbible-xref must be present and integrated
         assert "openbible-xref" in by_id
         assert by_id["openbible-xref"]["status"] == "integrated"
@@ -87,11 +94,20 @@ class TestStudyCommentary:
             assert isinstance(e.get("from"), int)
             assert e["text"] and len(e["text"]) > 50
 
-    def test_genesis_1_empty(self, api):
-        """Genesis (book 1) is not covered by Calvin nor mhcc → empty."""
+    def test_genesis_1_covered_by_kroeker(self, api):
+        """Genesis 1 is now covered by Kroeker (and nicht von Calvin/mhcc); every entry is valid."""
         r = api.get(f"{BASE_URL}/api/study/commentary/1/1", timeout=15)
         assert r.status_code == 200
-        assert r.json()["entries"] == []
+        entries = r.json()["entries"]
+        assert len(entries) >= 1
+        srcs = {e["source"] for e in entries}
+        assert "kroeker" in srcs
+        assert not srcs & {"calvin-de", "mhcc"}, srcs
+        assert any(e["from"] <= 1 <= e["to"] for e in entries if e["source"] == "kroeker")
+        for e in entries:
+            assert e["book"] == 1 and e["chapter"] == 1
+            assert 1 <= e["from"] <= e["to"] <= 31
+            assert e["text"].strip() and "\ufffd" not in e["text"]
 
     def test_john_1_has_calvin_only(self, api):
         """John 1 is covered by Calvin but NOT by mhcc seed."""

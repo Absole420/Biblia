@@ -3,6 +3,7 @@ import { Directory, File, Paths } from "expo-file-system";
 import { Platform } from "react-native";
 
 import { exportTextFile, pickTextFile } from "./backup";
+import { validBackupKeys } from "./backupKeys";
 import { markFullBackupExported } from "./backupReminder";
 import { AppState, buildExport, parseImport } from "./progress-logic";
 import { way, WayData } from "./way";
@@ -84,7 +85,7 @@ export async function pickAndRestoreFullBackup(): Promise<RestoreResult | null> 
     }
     state = { ...state, photos: state.photos.map((p) => (moved[fileName(p.uri)] ? { ...p, uri: moved[fileName(p.uri)] } : p)) };
   }
-  const pairs = Object.entries(b.keys ?? {}).filter(([k]) => !SKIP(k));
+  const pairs = validBackupKeys(b.keys).filter(([k]) => !SKIP(k));
   if (pairs.length) await AsyncStorage.multiSet(pairs);
   if (b.way) way.restore(b.way, "replace");
   return { ok: true, state, photos: restoredPhotos, entries: b.way?.entries?.length ?? 0 };

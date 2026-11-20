@@ -2,7 +2,7 @@
   "expo": {
     "name": "BIBLIA",
     "slug": "frontend",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
     "scheme": "frontend",
@@ -24,7 +24,8 @@
       "edgeToEdgeEnabled": true,
       "permissions": [
         "android.permission.CAMERA"
-      ]
+      ],
+      "versionCode": 900
     },
     "web": {
       "bundler": "metro",

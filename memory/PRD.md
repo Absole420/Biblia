@@ -273,3 +273,6 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Iteration 50 (Retest bestanden): Kroeker eindeutige Reste korrigiert, unsichere Stellen unverändert in CONSOLIDATION.md gelistet; Ansorg 0 Abweichungen; ESLint 0 / tsc 0 (way/* und living ohne Verhaltensänderung); Filter-Chips 44 px, Hinweis „Alle Autoren ausgeblendet“; Traditions-Filter-Fehler („none“) behoben; Reiter heißt „Kommentare“; Backend: /api/status entfernt, CORS ohne Credentials, Suche begrenzt
 - Offen: 3 veraltete Backend-Tests (test_study_api erwartet 7 Quellen/kein Kommentar zu 1Mo 1; test_health über öffentliche URL)
 
+
+## Release Lock v0.9.0
+- backupKeys.ts Schema-Allowlist bei Wiederherstellung; 3 Backend-Tests aktualisiert (129/129); Frontend 45/45, tsc/eslint 0; Version 0.9.0, versionCode 900; yarn.lock reproduzierbar (--frozen-lockfile). Entwicklung eingefroren.

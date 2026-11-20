@@ -1,4 +1,4 @@
-# BIBLIA – Lizenzen gebündelter Inhalte (v0.9.0-beta)
+# BIBLIA – Lizenzen gebündelter Inhalte (v0.9.0)
 
 | Inhalt | Quelle | Lizenz / Status |
 |---|---|---|
@@ -20,7 +20,7 @@
 
 Nicht verfügbar mangels Rechten/deutscher Fassung: Luther-Kommentare (keine geprüfte digitale Edition), Wesley, Clarke, Barnes, Spurgeon, Keil/Delitzsch (keine deutschen Gemeinfrei-Module gefunden), Schlatter (gemeinfrei, aber keine geprüfte digitale Vorlage), Stern, Fruchtenbaum (geschützt), Raschi/Ibn Esra/Ramban deutsch (keine freie Edition), katholische/orthodoxe/adventistische Kommentare (keine freien deutschen Module), MacDonald/MacArthur/Gaebelein (CC BY-NC-ND), Kingcomments (nur nicht-kommerziell).
 
-## Kommentar-Bestand (geprüft, Stand v0.9.0-beta)
+## Kommentar-Bestand (geprüft, Stand v0.9.0, unverändert seit Final Cleanup)
 Gesamt 12.089 Abschnitte, 60 von 66 Büchern (ohne 3Mo, Ruth, 1Chr, 2Chr, Esra, Klgl), alle Versangaben gegen ELB 1905 validiert, keine doppelten IDs, nur deutsch und nur Quellen mit Status „integrated“ und vollständigen Rechten.
 | Quelle | Abschnitte | Bücher |
 |---|---|---|

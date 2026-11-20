@@ -47,4 +47,11 @@ Basis: aktueller Emergent-Stand (vollständig). Backup vor der Konsolidierung: `
 - Laden: Kommentare je Buch einmal nach Kapitel indexiert.
 - Sicherheit: Fotodateinamen beim Wiederherstellen einer Vollsicherung auf einfache Namen beschränkt (Audit SEC-002).
 - Sicherheitsaudit (Final Cleanup) behoben: ungenutzter offener Schreibzugang `/api/status` entfernt; CORS ohne Credentials; Bibelsuche mit Obergrenzen (`q` ≤ 200 Zeichen, `limit` ≤ 200).
-- Weiterhin offen (nur Hinweise): `EMERGENT_LLM_KEY` in `backend/.env` nur für Bauskripte – `.env` ist gitignored, vor dem Push nochmals prüfen; Wiederherstellung übernimmt beliebige Speicherschlüssel aus einer selbst gewählten Sicherungsdatei (geringes Risiko, nur lokal).
+- Weiterhin offen (nur Hinweis): `EMERGENT_LLM_KEY` in `backend/.env` nur für Bauskripte – `.env` ist gitignored, vor dem Push nochmals prüfen.
+
+## Release Lock v0.9.0 (Entwicklung eingefroren)
+- Wiederherstellung einer Vollsicherung übernimmt nur noch Speicherschlüssel aus dem unterstützten Schema (`frontend/src/lib/backupKeys.ts`); unbekannte/ungültige Werte werden übersprungen, ältere Sicherungen bleiben lesbar, vorhandene Daten unverändert.
+- Drei veraltete Backend-Tests aktualisiert, ohne die Prüfungen abzuschwächen: exakt 13 Quellen mit festem Satz integrierter Quellen und Rechteprüfung; 1Mo 1 jetzt mit Kroeker-Prüfung (gültige Verse, keine Ersatzzeichen); `/health` direkt gegen die App geprüft.
+- Version 0.9.0 / versionCode 900; `frontend/yarn.lock` wird mitgespeichert.
+- Save to GitHub: in Emergent den vorhandenen Branch `emergent-nov-20` wählen (normaler Push, kein Force-Push, kein neuer Branch). Lokal existiert dieser Branch nicht; es wurde bewusst kein Branch angelegt.
+- Tag danach: `git tag -a v0.9.0 -m "BIBLIA 0.9.0" && git push origin v0.9.0`.
