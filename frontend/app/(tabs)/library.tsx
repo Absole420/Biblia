@@ -40,7 +40,8 @@ const TABS: Record<Tab, { label: string; spine: string; icon: string; theme: Boo
 
 const pl = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
-const COVER = "https://images.unsplash.com/photo-1600181982553-ce7d36051c01?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200";
+// Bundled fallback; no network request when opening the library.
+const COVER = require("../../assets/images/app-image.png");
 
 /** Alle eigenen Einträge zu einem Vers bzw. einer Lektion. */
 type VerseEntry = { key: string; notes: { id: string; title: string; text: string }[]; highlight?: string; bookmark: boolean; photos: Photo[] };
@@ -144,7 +145,7 @@ export default function LibraryScreen() {
       {tab === null ? (
         <ScrollView contentContainerStyle={{ paddingBottom: bottomChrome + spacing.xxxl + 40 }} testID="library-shelf">
           <View>
-            <Image source={{ uri: COVER }} style={[styles.cover, { height: 130 + insets.top }]} contentFit="cover" />
+            <Image source={COVER} style={[styles.cover, { height: 130 + insets.top }]} contentFit="cover" />
             <LinearGradient colors={["transparent", "rgba(44,40,34,0.2)", "rgba(44,40,34,0.75)"]} style={[styles.coverGrad, { height: 130 + insets.top }]} />
             <View style={[styles.coverText, { top: insets.top + 48 }]}>
               <Text style={styles.coverTitle}>Studienbibliothek</Text>

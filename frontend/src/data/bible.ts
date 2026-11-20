@@ -1,17 +1,12 @@
-// Austauschbare Bibel-Datenquelle.
-// Elberfelder 1905: gesamte Bibel über das Backend (/api/bible), Kapitel werden
-// lokal zwischengespeichert (offline lesbar). Johannes ist zusätzlich im App-Bundle.
-import { storage } from "@/src/utils/storage";
-
+// Fully bundled Bible; preserve the existing reader API and ELB 1905 numbering.
 import { BOOK_BY_CODE } from "./books";
-import johnElb from "./john-elb1905.json";
-import { VerseRef } from "./types";
+import type { VerseRef } from "./types";
+import { offlineBible } from "./offlineData";
+import { chapterLocal, searchLocal } from "./offlineCore";
 
 export type TranslationId = "elb1905" | "elb2006" | "neue";
 
 export type Translation = { id: TranslationId; name: string; short: string; license: string; available: boolean };
-
-const elbJohn = (johnElb as { chapters: Record<string, string[]> }).chapters;
 
 export const TRANSLATIONS: Record<TranslationId, Translation> = {
   elb1905: { id: "elb1905", name: "Elberfelder 1905", short: "ELB 1905", license: "Gemeinfrei (Public Domain). Quelle: getbible.net", available: true },
@@ -19,7 +14,7 @@ export const TRANSLATIONS: Record<TranslationId, Translation> = {
     id: "elb2006",
     name: "Elberfelder Bibel, Edition 2006",
     short: "ELB 2006",
-    license: "Urheberrechtlich geschützt (SCM R.Brockhaus). Technisch vorbereitet: Sobald lizenzierte Textdaten als backend/data/elb2006.json vorliegen, wird sie automatisch angeboten. Bis dahin wird die Elberfelder 1905 angezeigt und so gekennzeichnet.",
+    license: "Urheberrechtlich geschützt (SCM R.Brockhaus). Nicht in dieser Offline-Ausgabe enthalten. Angezeigt wird die Elberfelder 1905.",
     available: false,
   },
   neue: {
@@ -37,49 +32,24 @@ export function displayedTranslation(id: TranslationId): Translation {
   return t.available ? t : TRANSLATIONS.elb1905;
 }
 
-/** Fragt beim Backend nach, welche lizenzierten Übersetzungen tatsächlich vorliegen. */
-export async function refreshTranslations() {
-  try {
-    const res = await fetch(`${API}/api/bible/translations`);
-    if (!res.ok) return;
-    const data = (await res.json()) as { translations: { id: TranslationId; available: boolean }[] };
-    for (const t of data.translations) if (TRANSLATIONS[t.id]) TRANSLATIONS[t.id].available = t.available;
-  } catch {
-    // offline: lokale Annahmen behalten
-  }
+/** Compatibility for existing startup code, never contacts a server. */
+export async function refreshTranslations(): Promise<void> {
+  TRANSLATIONS.elb1905.available = true;
+  TRANSLATIONS.elb2006.available = false;
+  TRANSLATIONS.neue.available = false;
 }
-
-const mem = new Map<string, string[]>();
-const API = process.env.EXPO_PUBLIC_BACKEND_URL;
 
 export function getChapterSync(code: string, ch: number): string[] | null {
-  if (code === "Joh" && elbJohn[String(ch)]) return elbJohn[String(ch)];
-  return mem.get(`${code}:${ch}`) ?? null;
-}
-
-export async function loadChapter(code: string, ch: number): Promise<string[]> {
-  const cached = getChapterSync(code, ch);
-  if (cached) return cached;
-  const key = `bible_elb_${code}_${ch}`;
-  const stored = await storage.getItem(key, null as string | null);
-  if (typeof stored === "string") {
-    const verses = JSON.parse(stored) as string[];
-    mem.set(`${code}:${ch}`, verses);
-    return verses;
-  }
   const book = BOOK_BY_CODE[code];
-  const res = await fetch(`${API}/api/bible/${book.nr}/${ch}`);
-  if (!res.ok) throw new Error("Kapitel konnte nicht geladen werden");
-  const data = (await res.json()) as { verses: string[] };
-  mem.set(`${code}:${ch}`, data.verses);
-  storage.setItem(key, JSON.stringify(data.verses));
-  return data.verses;
+  return book ? chapterLocal(offlineBible(), book.nr, ch) : null;
 }
-
+export async function loadChapter(code: string, ch: number): Promise<string[]> {
+  const verses = getChapterSync(code, ch);
+  if (!verses) throw new Error("Bibelkapitel nicht gefunden.");
+  return verses;
+}
 export async function searchBible(q: string) {
-  const res = await fetch(`${API}/api/bible/search?q=${encodeURIComponent(q)}`);
-  if (!res.ok) throw new Error("Suche fehlgeschlagen");
-  return (await res.json()) as { results: { book: number; chapter: number; verse: number; text: string }[]; truncated: boolean };
+  return searchLocal(offlineBible(), q);
 }
 
 export function getVerses(_t: TranslationId, ref: VerseRef): { v: number; text: string }[] {

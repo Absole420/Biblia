@@ -1,0 +1,25 @@
+# BIBLIA – Permanent Offline Engine
+
+Basis: main 07569a3bf703fcf761e6faa3fae24a0467805e35, 4. November 2026. Vorhandene lokale Lernwelten, Lexikon, Zeitstrahl, Karten, Illustrationen, Fonts, Lernfortschritte, Gebets-/Tagebuchdaten werden nicht neu entwickelt oder überschrieben. Nicht synchronisierte Emergent-Änderungen sind nicht einsehbar.
+
+## Enthaltene Änderungen
+- 70 unveränderte Quelldateien (12.360.960 Bytes) unter frontend/src/data/offline: ELB 1905 mit 66 Büchern, 1.189 Kapiteln und 31.102 Versen; zwei bestehende Kommentare, 66 Querverweisdateien und Quellenverzeichnis. Git-Blobs sind identisch mit backend/data. Kein Download bei Erststart, kein Vorwärmen von Caches. Originaldaten bleiben für bisheriges Backend und andere Branches verfügbar; bei spätem Datenwechsel Spiegelgleichheit testen.
+- offlineCore.ts und offlineData.ts: Bibliothek lokal abfragen; Volltextsuche in der ganzen Bibel, max. 60 Treffer (mehr als 60 wird als truncated gemeldet), exakt dieselbe Versnummerierung. Kommentare erst beim ersten Aufruf indexieren, Querverweise je Buch per statischem require laden. Keine neue Abhängigkeit. Die Suche ist eine lineare Suche auf dem kleinen Bestand, kein SQLite-Index; auf älteren Geräten messen.
+- bible.ts behält bestehende Funktionssignaturen. refreshTranslations ist eine lokale Kompatibilitätsfunktion. Nur ELB 1905 ist verfügbar. ELB 2006 und NeÜ bleiben deaktiviert und korrekt gekennzeichnet. Keine geschützten neuen Bibeltexte.
+- VerseStudy.tsx benutzt lokale Kommentardaten, lokale Quellen und Querverweise. Keine alten Cachewerte oder Serveranfragen. Quellenlinks bleiben ausdrücklich freiwillige externe Links. Verweiszählungswarnungen (KJV vs. ELB) bleiben bestehen.
+- Bibliothek: externes Unsplash-Bild durch vorhandenes app-image.png ersetzt. Keine Layoutänderung beabsichtigt; Emergent kann ein schon vorhandenes geeigneteres lokales Motiv einsetzen. Bildwirkung nicht auf einem Gerät geprüft.
+- app.json deaktiviert OTA-Updates und erzwingt eingebettetes Bundle; eas.json definiert offline-release mit Android APK, ohne Dev Client. Bestehende Paket-ID und Version bleiben unverändert. Signierschlüssel nicht im Repo speichern.
+
+## Lizenzen / Freigabe
+Vorhandene Quellenmetadaten weisen ELB 1905, Calvin DE, Matthew Henry (nur Joh 3 Beispiel) und OpenBible Querverweise als einbindbar aus. Keine zusätzlichen Texte oder angeblichen vollständigen Kommentare generiert. Calvin-DE: Übersetzer/Ausgabe laut Quellenverzeichnis nicht belegt. Vor Weitergabe bzw. kommerzieller Veröffentlichung Rechte der konkreten deutschen Fassung verifizieren; falls nicht sicher, Datei aus APK und offlineData.ts entfernen und Quellenstatus ändern. OpenBible-Namensnennung sowie Rechte-/Quellenhinweise erhalten. Links ohne Einbindungserlaubnis bleiben Links. Die Rechteprüfung ist kein bestätigter Freigabestatus.
+
+## Emergent-Integration (Token sparen)
+Importiere die Dateien dieses PR direkt, nicht erneut generieren. Prüfe zuerst, ob lokaler Emergent-Stand bereits entsprechende Offline-Provider hat; nur fehlende Teile gezielt übernehmen. Alte Schnittstellen und aktuelle App-Oberfläche, Theme, Nutzerfortschritte, PR #4/#6/#7/#8 und neuere Änderungen behalten. Merge app.json/eas.json additiv; keine neueren Projekt-IDs oder Konfiguration überschreiben. Andere notwendige API-Aufrufe/Remote-Assets des aktuelleren Standes gesondert suchen und entfernen; freiwillige externe Quellenlinks bleiben. Kein automatischer Merge.
+
+## Tests / Abnahme (noch ausstehend)
+1. Lokaler Datentest: node --experimental-strip-types --test tests/permanent-offline.test.mjs (Node 22.6+). TypeScript, bestehende Regressionstests und Android-Bundle prüfen.
+2. Aus frontend: npx expo config --type public; Prüfen, dass updates.enabled=false; EAS-Profil offline-release verwenden (eas build --platform android --profile offline-release). Build-/Signaturvoraussetzungen nach Emergent-Umgebung einrichten. Kein Devserver zur Laufzeit.
+3. Signierte APK auf frischem Android-Gerät / Emulator installieren. Vor erstem Start Flugmodus, WLAN aus, kein Cache. AT/NT vollständig lesen, sechs unterschiedliche Bücher inklusive Genesis/Offenbarung und viele Kapitelgrenzen öffnen; Bibelsuche, Calvin in Joh/Briefen, Henry Joh 3, Quellenverzeichnis, Querverweise samt Sprung testen. Studienreise, Karten, Lexikon, Intro (PR #4), Notizen, Favoriten, Gebetsheft und persönlicher Speicher prüfen. Neustart offline, Fehlerzustände, Rückkehr aus Hintergrund, kleine Displays, alte Geräte und Netzwerkmitschnitt prüfen.
+4. Vollständige lokale Sicherung, Recovery und fail-closed Tagebuchverschlüsselung sind separate notwendige Release-Aufgaben; nicht Teil dieses PR. Neue Musik/Video-Dateien, Farben und fehlende Inhalte ebenso separat. Keine 100%-Offline- oder Release-Freigabe ohne vollständigen Gerätetest.
+
+Code-/Datenprüfung: 66 Bücher, Kapitel-/Verszahl und alle 66 Querverweis-Dateinamen validiert; Quelldateien über identische Git-Blobs übernommen. Testdatei bereitgestellt, noch nicht ausgeführt; TypeScript/Metro/Release-APK und reale UI nicht getestet.

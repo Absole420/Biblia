@@ -1,9 +1,11 @@
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Linking from "expo-linking";
-import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Pressable, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Pressable, Text, View } from "react-native";
 
 import { getChapterSync, loadChapter } from "@/src/data/bible";
+import { offlineSources, offlineCommentary, offlineXrefs } from "@/src/data/offlineData";
+import type { Source, CommentaryEntry } from "@/src/data/offlineCore";
+export type { Source } from "@/src/data/offlineCore";
 import { BIBLE_BOOKS, BOOK_BY_CODE } from "@/src/data/books";
 import { typedXrefs, XKIND_META } from "@/src/data/xrefTyped";
 import { useProgress } from "@/src/lib/store";
@@ -11,28 +13,12 @@ import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 import { Icon } from "./Icon";
 
-const API = process.env.EXPO_PUBLIC_BACKEND_URL;
 const byNr = (nr: number) => BIBLE_BOOKS.find((b) => b.nr === nr)!;
-
-/** Lädt Studieninhalte (getrennt von persönlichen Daten) und speichert erlaubte Inhalte für die Offline-Nutzung. */
-async function cached<T>(path: string): Promise<T | null> {
-  const key = `study-content:${path}`;
-  try {
-    const res = await fetch(`${API}/api${path}`);
-    if (res.ok) { const j = await res.json(); AsyncStorage.setItem(key, JSON.stringify(j)).catch(() => {}); return j; }
-  } catch { /* offline */ }
-  const raw = await AsyncStorage.getItem(key);
-  return raw ? JSON.parse(raw) : null;
-}
-
-export type Source = { id: string; type: string; title: string; author: string; language: string; edition: string; year: string; url: string; license: string; rights: Record<string, boolean>; perspective: string; historical: boolean; status: string; coverage?: string };
-type Entry = { id: string; source: string; book: number; chapter: number; from: number; to: number; scope: "verse" | "range" | "section" | "chapter"; title: string; text: string };
+type Entry = CommentaryEntry;
 const SCOPE: Record<Entry["scope"], string> = { verse: "Einzelvers", range: "Versbereich", section: "Abschnitt", chapter: "ganzes Kapitel" };
 
-export function useSources() {
-  const [s, setS] = useState<Source[] | null>(null);
-  useEffect(() => { cached<{ sources: Source[] }>("/study/sources").then((r) => setS(r?.sources ?? [])); }, []);
-  return s;
+export function useSources(): Source[] {
+  return offlineSources();
 }
 
 /** Studienkommentare externer Autoren – klar getrennt von eigenen Kommentaren. */
@@ -41,12 +27,9 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   const { colors } = useTheme();
   const { state, updateStudy } = useProgress();
   const sources = useSources();
-  const key = `${book}:${ch}`;
-  const [data, setData] = useState<{ key: string; entries: Entry[] } | null>(null);
+
   const [compare, setCompare] = useState(false);
-  useEffect(() => { cached<{ entries: Entry[] }>(`/study/commentary/${BOOK_BY_CODE[book].nr}/${ch}`).then((r) => setData({ key: `${book}:${ch}`, entries: r?.entries ?? [] })); }, [book, ch]);
-  const entries = data?.key === key ? data.entries : null;
-  if (!entries || !sources) return <ActivityIndicator color={colors.brandPrimary} />;
+  const entries = offlineCommentary(BOOK_BY_CODE[book].nr, ch);
   const pref = state.study.prefSources;
   // Deutschsprachige Auslegungen zuerst, danach die engere Passage
   const lang = (id: string) => (sources?.find((x) => x.id === id)?.language === "de" ? 0 : 1);
@@ -103,17 +86,13 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   );
 }
 
-type Row = [number, number, number, number, number, number, number, number];
 
 /** Querverweise: kuratiert & klassifiziert sowie unklassifiziert (OpenBible, CC BY). Vorschau → Sprung in den Kontext. */
 export function XrefPanel({ book, ch, v, onJump }: { book: string; ch: number; v: number; onJump: (b: string, c: number, v: number) => void }) {
   const styles = useStyles();
   const { colors } = useTheme();
-  const rKey = `${book}:${ch}`;
-  const [rowData, setRowData] = useState<{ key: string; refs: Row[] } | null>(null);
   const [preview, setPreview] = useState<{ key: string; text: string } | null>(null);
-  useEffect(() => { cached<{ refs: Row[] }>(`/study/xref/${BOOK_BY_CODE[book].nr}/${ch}`).then((r) => setRowData({ key: `${book}:${ch}`, refs: r?.refs ?? [] })); }, [book, ch]);
-  const rows = rowData?.key === rKey ? rowData.refs : null;
+  const rows = offlineXrefs(BOOK_BY_CODE[book].nr, ch);
   const typed = typedXrefs(book, ch, v);
   const auto = (rows ?? []).filter((r) => r[0] === v).slice(0, 12);
   const show = async (b: string, c: number, from: number, to: number, key: string) => {
@@ -142,7 +121,6 @@ export function XrefPanel({ book, ch, v, onJump }: { book: string; ch: number; v
         const [b, c, vv] = x.target.split(":");
         return <Item key={"t" + i} k={`t${i}`} b={b} c={+c} from={+vv} to={x.to ?? +vv} label={`${BOOK_BY_CODE[b].name} ${c},${vv}${x.to ? "–" + x.to : ""}`} sub={`${XKIND_META[x.kind].label} – ${x.note}${x.debate ? " Abweichende Deutung: " + x.debate : ""}`} />;
       })}
-      {rows === null ? <ActivityIndicator color={colors.brandPrimary} /> : null}
       {auto.length ? <Text style={styles.sub}>Verwandte Stellen (OpenBible.info, CC BY – nicht nach Art klassifiziert)</Text> : null}
       {auto.map((r, i) => {
         const b = byNr(r[1]);
