@@ -1,6 +1,7 @@
 import type { Campaign, Station } from "./types";
 import { EXTRA_LESSONS } from "./lessonsExtra";
 import { applyAcademy, academyCoverage } from "./academy";
+import { orderFinalExams } from "./academy-core";
 import { findInfoIds, INFO_BY_ID } from "./lexicon";
 import C_tora_1 from "./campaigns/tora-1.json";
 import C_tora_2 from "./campaigns/tora-2.json";
@@ -21,6 +22,7 @@ import { PSALMS_4 } from "./psalms4";
 import { PROPHETS_2 } from "./prophets2";
 import { SYNOPTICS } from "./synoptics";
 import { HISTORY_1 } from "./history1";
+import { HISTORY } from "./history";
 import C_revelation from "./campaigns/revelation.json";
 import C_psalms_5 from "./campaigns/psalms-5.json";
 import C_psalms_6 from "./campaigns/psalms-6.json";
@@ -409,7 +411,7 @@ export const JOHN: Campaign = {
 // Aus den HTML-Lernreisen importierte Kampagnen (Generator: /app/imports/convert.ts)
 const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C_mark, C_luke, C_parables, C_prophets, C_acts, C_letters, C_revelation, C_psalms_5, C_psalms_6, C_letters_more, C_history_tribes, C_synoptic] as unknown as Campaign[];
 
-export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])), "psalms-1": PSALMS_1, "psalms-2": PSALMS_2, "psalms-3": PSALMS_3, "psalms-4": PSALMS_4, "prophets-2": PROPHETS_2, synoptics: SYNOPTICS, "history-1": HISTORY_1 });
+export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])), "psalms-1": PSALMS_1, "psalms-2": PSALMS_2, "psalms-3": PSALMS_3, "psalms-4": PSALMS_4, "prophets-2": PROPHETS_2, synoptics: SYNOPTICS, "history-1": HISTORY_1, history: HISTORY });
 export const ALL_STATIONS = Object.values(CAMPAIGNS).flatMap((c) => c.stations);
 export const ACADEMY_COVERAGE = academyCoverage(ALL_STATIONS);
 
@@ -444,7 +446,7 @@ function enrich(all: Record<string, Campaign>): Record<string, Campaign> {
       stations.push({ ...rest, x: 500 + Math.sin((stations.length + i) * 1.15) * 300, y: prev.y - 230, requires: [prev.id], xp: 60 });
     });
     const academy = applyAcademy(c0, stations);
-    stations = academy.stations;
+    stations = orderFinalExams(academy.stations);
     stations = stations.map((s) => {
       const text = [s.title, s.discover, ...s.background.map((b) => b.text), ...s.terms.map((t) => t.term)].join(" ");
       const info = Array.from(new Set([...(s.info ?? []), ...findInfoIds(text)])).filter((x) => INFO_BY_ID[x]).slice(0, 8);

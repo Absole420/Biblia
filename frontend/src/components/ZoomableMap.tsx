@@ -74,20 +74,24 @@ function Inner({
 }: Props & { vw: number; vh: number; saved: React.RefObject<Saved | null> }) {
   const { colors } = useTheme();
   // „cover“: Karte füllt die gesamte verfügbare Fläche, ohne Leerraum.
-  const minS = fit === "contain" ? Math.min(vw / width, vh / height) : Math.max(vw / width, vh / height);
-  const maxS = minS * maxZoom;
+  const homeS = fit === "contain" ? Math.min(vw / width, vh / height) : Math.max(vw / width, vh / height);
+  // Allow a complete overview even for very tall campaigns. Preserve the old maximum detail zoom.
+  const overviewW = Math.max(80, vw - spacing.sm - CTRL_W - padRight);
+  const overviewH = Math.max(80, vh - padTop - padBottom - spacing.sm);
+  const minS = Math.min(homeS, overviewW / Math.max(width, allBox?.w ?? 1), overviewH / Math.max(height, allBox?.h ?? 1));
+  const maxS = homeS * maxZoom;
   const pB = useSharedValue(padBottom);
   const pR = useSharedValue(padRight);
   const clampX = (x: number, s: number) => {
     "worklet";
     const cw = width * s;
-    if (cw <= vw) return (vw - cw) / 2;
+    if (cw <= vw) return Math.max(0, (vw - pR.value - cw) / 2);
     return Math.min(0, Math.max(vw - cw - pR.value, x));
   };
   const clampY = (y: number, s: number) => {
     "worklet";
     const ch = height * s;
-    if (ch <= vh) return (vh - ch) / 2;
+    if (ch <= vh) return Math.max(0, (vh - pB.value - ch) / 2);
     return Math.min(0, Math.max(vh - ch - pB.value, y));
   };
   const clampS = (s: number) => Math.min(maxS, Math.max(minS, s));
@@ -104,7 +108,7 @@ function Inner({
     if (initial) return fitT(initial);
     const fx = focus?.x ?? width / 2;
     const fy = focus?.y ?? height / 2;
-    return { s: minS, x: clampX(vw / 2 - fx * minS, minS), y: clampY(vh / 2 - fy * minS, minS) };
+    return { s: homeS, x: clampX(vw / 2 - fx * homeS, homeS), y: clampY(vh / 2 - fy * homeS, homeS) };
   };
   const [init] = useState(() => {
     const sv = saved.current;
