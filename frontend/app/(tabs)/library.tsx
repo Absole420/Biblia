@@ -5,7 +5,9 @@ import React, { useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { Book, BOOK_THEMES, BookTheme, Shelf } from "@/src/components/Bookshelf";
+import { BOOK_THEMES, BookTheme } from "@/src/components/Bookshelf";
+import { PersonalBookshelf, LibraryBook } from "@/src/components/PersonalBookshelf";
+import { LIVING_VOLUMES } from "@/src/data/livingScripture";
 import { PrayerBookList } from "@/src/components/PrayerBook";
 import { FavHeart } from "@/src/components/FavHeart";
 import { Icon } from "@/src/components/Icon";
@@ -137,6 +139,20 @@ export default function LibraryScreen() {
   const units = state.units.filter((u) => match(u.title, u.description, ...u.questions.map((x) => x.q)));
   const terms = ALL_STATIONS.filter((s) => state.stations[s.id] || (state.phase[s.id] ?? 0) > 0).flatMap((s) => s.terms.map((t) => ({ ...t, station: s.title }))).filter((t) => match(t.term, t.explanation));
 
+  const libraryBooks: Record<string,LibraryBook> = {
+    lexicon:{id:"lexicon",title:"Lexikon",subtitle:`${ARTICLES.length} Artikel`,icon:"book",theme:BOOK_THEMES.lexicon,testID:"open-lexicon",onPress:()=>router.push("/lexicon")},
+    timeline:{id:"timeline",title:"Zeitstrahl",subtitle:"Urgeschichte bis Urkirche",icon:"clock",theme:BOOK_THEMES.timeline,testID:"open-timeline",onPress:()=>router.push("/timeline")},
+    media:{id:"media",title:"Hören &\nSehen",subtitle:"MP3 · MP4 offline",icon:"headphones",theme:BOOK_THEMES.journey,testID:"open-media",onPress:()=>router.push("/media")},
+    way:{id:"way",title:"Mein geistlicher\nWeg",subtitle:"Register · Tagebuch",icon:"map",theme:BOOK_THEMES.way,testID:"open-way",onPress:()=>router.push("/way")},
+  };
+  const counts:Record<Tab,number>={mine:state.notes.length+Object.keys(state.highlights).length+state.bookmarks.length,favBible:state.favorites.bible.length,favLessons:state.favorites.lessons.length,photos:state.photos.length,units:state.units.length,prayer:state.prayers.length,terms:terms.length};
+  for(const id of Object.keys(TABS) as Tab[]){const t=TABS[id];const count=counts[id];libraryBooks[id]={id,title:t.spine,subtitle:count?String(count):"leer",icon:t.icon,theme:t.theme,badge:count||undefined,testID:"library-tab-"+id,onPress:()=>setTab(id)};}
+  // Lange Titel an Wortgrenzen umbrechen statt mitten im Wort
+  const TITLE_BREAKS:Record<string,string>={jesus:"Auf den Spuren\nJesu",unseen:"Unsicht-\nbare Welt",trees:"Stamm-\nbäume",history:"Bibel-\ngeschichte",words:"Ur-\nsprachen"};
+  const extraTheme:Record<string,BookTheme>={words:BOOK_THEMES.lexicon,thread:BOOK_THEMES.favLessons,unseen:BOOK_THEMES.timeline,jesus:BOOK_THEMES.journey,trees:BOOK_THEMES.way,symbols:BOOK_THEMES.units,history:BOOK_THEMES.prayer};
+  const extraIcon:Record<string,string>={words:"book-open",thread:"link",unseen:"eye",jesus:"sunrise",trees:"git-branch",symbols:"layers",history:"clock"};
+  for(const volume of LIVING_VOLUMES){libraryBooks[volume.id]={id:volume.id,title:TITLE_BREAKS[volume.id]??volume.short,subtitle:volume.id==="jesus"?"15 Stationen · 30 Texte":volume.entries.length+" Einträge",icon:extraIcon[volume.id],theme:extraTheme[volume.id],testID:"open-living-"+volume.id,onPress:()=>router.push({pathname:"/living/[id]",params:{id:volume.id}})};}
+
   const cat = (id?: string) => state.categories.find((c) => c.id === id);
   const targetLabel = (ph: Photo) => (ph.target.kind === "verse" ? bibleKeyLabel(ph.target.ref) : STATION_INFO[ph.target.id]?.station.title ?? "Lektion");
 
@@ -153,33 +169,7 @@ export default function LibraryScreen() {
             </View>
           </View>
           <View style={{ padding: spacing.lg, maxWidth: 720, width: "100%", alignSelf: "center" }}>
-            <Text style={styles.shelfLabel}>Nachschlagewerke</Text>
-            <Shelf testID="shelf-reference">
-              <Book size="large" testID="open-lexicon" title="Lexikon" subtitle={`${ARTICLES.length} Artikel`} icon="book" theme={BOOK_THEMES.lexicon} onPress={() => router.push("/lexicon")} />
-              <Book size="large" testID="open-timeline" title="Zeitstrahl" subtitle="Urgeschichte bis Urkirche" icon="clock" theme={BOOK_THEMES.timeline} onPress={() => router.push("/timeline")} />
-            </Shelf>
-            <Shelf testID="shelf-media">
-              <Book size="large" testID="open-media" title={"Hören &\nSehen"} subtitle="MP3 · MP4 offline" icon="headphones" theme={BOOK_THEMES.journey} onPress={() => router.push("/media")} />
-            </Shelf>
-            <Text style={styles.shelfLabel}>Mein geistlicher Weg und Auf den Spuren Jesu</Text>
-            <Shelf testID="shelf-way">
-              <Book size="large" testID="open-way" title={"Mein geistlicher\nWeg"} subtitle="Register · Tagebuch" icon="map" theme={BOOK_THEMES.way} onPress={() => router.push("/way")} />
-              <Book size="large" testID="open-jesus-journey" title={"Auf den Spuren\nJesu"} subtitle="15 Stationen" icon="sunrise" theme={BOOK_THEMES.journey} onPress={() => router.push("/intro")} />
-            </Shelf>
-            <Text style={styles.shelfLabel}>Mein Studium</Text>
-            <Shelf testID="shelf-mine">
-              <SmallBook id="mine" count={state.notes.length + Object.keys(state.highlights).length + state.bookmarks.length} onOpen={setTab} />
-              <SmallBook id="favBible" count={state.favorites.bible.length} onOpen={setTab} />
-              <SmallBook id="favLessons" count={state.favorites.lessons.length} onOpen={setTab} />
-            </Shelf>
-            <Shelf testID="shelf-collection">
-              <SmallBook id="photos" count={state.photos.length} onOpen={setTab} />
-              <SmallBook id="units" count={state.units.length} onOpen={setTab} />
-            </Shelf>
-            <Shelf testID="shelf-prayer">
-              <SmallBook id="prayer" count={state.prayers.length} onOpen={setTab} />
-              <SmallBook id="terms" count={terms.length} onOpen={setTab} />
-            </Shelf>
+            <PersonalBookshelf stored={state.settings.libraryLayout} onSave={libraryLayout=>p.setSettings({libraryLayout})} books={libraryBooks} />
           </View>
         </ScrollView>
       ) : (
@@ -465,11 +455,6 @@ export default function LibraryScreen() {
       </Sheet>
     </View>
   );
-}
-
-function SmallBook({ id, count, onOpen }: { id: Tab; count: number; onOpen: (t: Tab) => void }) {
-  const t = TABS[id];
-  return <Book size="small" testID={`library-tab-${id}`} title={t.spine} subtitle={count ? `${count}` : "leer"} badge={count || undefined} icon={t.icon} theme={t.theme} onPress={() => onOpen(id)} />;
 }
 
 function Empty({ text }: { text: string }) {

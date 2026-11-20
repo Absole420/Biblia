@@ -1,0 +1,2673 @@
+[
+  {
+    "id": "words",
+    "title": "Die Ursprachen der Bibel",
+    "short": "Ursprachen",
+    "intro": "Hebräisch und Aramäisch prägen das Alte Testament, Koine-Griechisch das Neue Testament. Dieses Einstiegslexikon zeigt Originalschrift, vereinfachte lateinische Umschrift, Bedeutungsbreite und ausgewählte Kontextstellen. Es ersetzt keine vollständige Konkordanz. Bei aramäischen Jesusworten ist die Schreibung eine Rekonstruktion aus der griechischen Überlieferung.",
+    "entries": [
+      {
+        "id": "word-0-1",
+        "group": "Hebräisch",
+        "title": "Gottes Eigenname",
+        "original": "יהוה",
+        "translit": "JHWH",
+        "body": "Vier Konsonanten; Jahwe ist eine verbreitete Rekonstruktion der Aussprache, Jehova eine traditionelle Wiedergabe. In jüdischer Lesetradition wird häufig Adonai gesprochen.",
+        "refs": [
+          "2Mo 3,15",
+          "2Mo 6,2-3"
+        ]
+      },
+      {
+        "id": "word-0-2",
+        "group": "Hebräisch",
+        "title": "Gott, Götter",
+        "original": "אֱלֹהִים",
+        "translit": "elohim",
+        "body": "Die Form ist pluralisch, kann aber mit singularem Verb Israels Gott bezeichnen. Grammatische Form allein beweist keine Gotteslehre.",
+        "refs": [
+          "1Mo 1,1",
+          "Ps 82,1"
+        ]
+      },
+      {
+        "id": "word-0-3",
+        "group": "Hebräisch",
+        "title": "Gott, Gottheit",
+        "original": "אֵל",
+        "translit": "el",
+        "body": "Semitischer Gottesbegriff, auch Bestandteil vieler Personennamen. Der Zusammenhang entscheidet, wer gemeint ist.",
+        "refs": [
+          "1Mo 17,1",
+          "2Mo 15,11"
+        ]
+      },
+      {
+        "id": "word-0-4",
+        "group": "Hebräisch",
+        "title": "Herr",
+        "original": "אֲדֹנָי",
+        "translit": "adonai",
+        "body": "Ehrerbietige Gottesbezeichnung; andere Formen von adon können menschliche Herren meinen.",
+        "refs": [
+          "Jes 6,1",
+          "Ps 110,5"
+        ]
+      },
+      {
+        "id": "word-0-5",
+        "group": "Hebräisch",
+        "title": "Friede, Wohlergehen",
+        "original": "שָׁלוֹם",
+        "translit": "shalom",
+        "body": "Mehr als innere Ruhe: auch Sicherheit, Unversehrtheit und gelingende Beziehungen.",
+        "refs": [
+          "4Mo 6,26",
+          "Jer 29,7"
+        ]
+      },
+      {
+        "id": "word-0-6",
+        "group": "Hebräisch",
+        "title": "Wind, Atem, Geist",
+        "original": "רוּחַ",
+        "translit": "ruach",
+        "body": "Die Bedeutung erschließt sich aus dem Zusammenhang: Nicht jede Erwähnung meint den Heiligen Geist.",
+        "refs": [
+          "1Mo 1,2",
+          "Hes 37,9-10"
+        ]
+      },
+      {
+        "id": "word-0-7",
+        "group": "Hebräisch",
+        "title": "Leben, Person, Seele",
+        "original": "נֶפֶשׁ",
+        "translit": "nefesh",
+        "body": "Kann den lebenden Menschen, die Kehle, das Verlangen oder das Leben bezeichnen. Nicht automatisch eine vom Körper getrennte Seele.",
+        "refs": [
+          "1Mo 2,7",
+          "Ps 42,2"
+        ]
+      },
+      {
+        "id": "word-0-8",
+        "group": "Hebräisch",
+        "title": "Lebensatem",
+        "original": "נְשָׁמָה",
+        "translit": "neshamah",
+        "body": "Der Mensch empfängt Gottes Lebensatem; das Wort ist nicht in jedem Zusammenhang mit ruach identisch.",
+        "refs": [
+          "1Mo 2,7",
+          "Hi 33,4"
+        ]
+      },
+      {
+        "id": "word-0-9",
+        "group": "Hebräisch",
+        "title": "Güte, Treue, Gunst",
+        "original": "חֶסֶד",
+        "translit": "chesed",
+        "body": "Verlässliche Zuwendung, häufig im Zusammenhang mit Bund und Loyalität. Kein einzelnes deutsches Wort erfasst alle Fälle.",
+        "refs": [
+          "2Mo 34,6",
+          "Rut 1,8"
+        ]
+      },
+      {
+        "id": "word-0-10",
+        "group": "Hebräisch",
+        "title": "Wahrheit, Verlässlichkeit",
+        "original": "אֱמֶת",
+        "translit": "emet",
+        "body": "Wahrheit kann auch Treue und Zuverlässigkeit einer Person meinen. Gottes Selbstbeschreibung verbindet sie mit Güte.",
+        "refs": [
+          "2Mo 34,6",
+          "Ps 119,160"
+        ]
+      },
+      {
+        "id": "word-0-11",
+        "group": "Hebräisch",
+        "title": "Treue, Beständigkeit",
+        "original": "אֱמוּנָה",
+        "translit": "emunah",
+        "body": "Festigkeit, Zuverlässigkeit und Vertrauen gehören zum Wortfeld. Habakuk wird später im NT aufgegriffen.",
+        "refs": [
+          "2Mo 17,12",
+          "Hab 2,4"
+        ]
+      },
+      {
+        "id": "word-0-12",
+        "group": "Hebräisch",
+        "title": "Weisung, Gesetz",
+        "original": "תּוֹרָה",
+        "translit": "torah",
+        "body": "Unterweisung, nicht bloß juristische Regeln. Kann einzelne Weisungen oder die fünf Mosebücher bezeichnen.",
+        "refs": [
+          "5Mo 4,8",
+          "Ps 119,1"
+        ]
+      },
+      {
+        "id": "word-0-13",
+        "group": "Hebräisch",
+        "title": "Bund",
+        "original": "בְּרִית",
+        "translit": "berit",
+        "body": "Verbindliche Beziehung oder Vereinbarung. Die Bünde mit Noah, Abraham und Israel besitzen unterschiedliche Inhalte.",
+        "refs": [
+          "1Mo 9,9",
+          "1Mo 17,7",
+          "Jer 31,31"
+        ]
+      },
+      {
+        "id": "word-0-14",
+        "group": "Hebräisch",
+        "title": "heilig",
+        "original": "קָדוֹשׁ",
+        "translit": "qadosh",
+        "body": "Bezeichnet Gottes Heiligkeit oder Gott zugeordnete Menschen, Orte und Dinge. Heiligkeit betrifft auch ethisches Handeln.",
+        "refs": [
+          "3Mo 19,2",
+          "Jes 6,3"
+        ]
+      },
+      {
+        "id": "word-0-15",
+        "group": "Hebräisch",
+        "title": "Heiligkeit, Heiligtum",
+        "original": "קֹדֶשׁ",
+        "translit": "qodesh",
+        "body": "Bezeichnet das Heilige oder einen heiligen Bereich. Verwandt mit qadosh, aber eine andere Wortform.",
+        "refs": [
+          "2Mo 28,36",
+          "3Mo 16,2"
+        ]
+      },
+      {
+        "id": "word-0-16",
+        "group": "Hebräisch",
+        "title": "Ehre, Herrlichkeit",
+        "original": "כָּבוֹד",
+        "translit": "kavod",
+        "body": "Menschliche Ehre oder Gottes Herrlichkeit. Das verwandte Wortfeld von Gewicht ist keine vollständige Definition.",
+        "refs": [
+          "2Mo 24,16",
+          "Ps 19,1"
+        ]
+      },
+      {
+        "id": "word-0-17",
+        "group": "Hebräisch",
+        "title": "Weisheit",
+        "original": "חָכְמָה",
+        "translit": "chokhmah",
+        "body": "Handwerkliches Können, Urteilsvermögen und gottgemäße Lebensführung. Sprüche 8 personifiziert Weisheit poetisch.",
+        "refs": [
+          "2Mo 31,3",
+          "Spr 1,7"
+        ]
+      },
+      {
+        "id": "word-0-18",
+        "group": "Hebräisch",
+        "title": "Einsicht, Verständnis",
+        "original": "בִּינָה",
+        "translit": "binah",
+        "body": "Die Fähigkeit, zu unterscheiden und Zusammenhänge zu erfassen. Die Sprüche verbinden sie mit Weisheit.",
+        "refs": [
+          "Spr 2,3",
+          "Spr 4,7"
+        ]
+      },
+      {
+        "id": "word-0-19",
+        "group": "Hebräisch",
+        "title": "Furcht, Ehrfurcht",
+        "original": "יִרְאָה",
+        "translit": "yirah",
+        "body": "Kann Angst meinen; Gottesfurcht beinhaltet auch ehrfürchtige Anerkennung Gottes.",
+        "refs": [
+          "Spr 1,7",
+          "Ps 111,10"
+        ]
+      },
+      {
+        "id": "word-0-20",
+        "group": "Hebräisch",
+        "title": "Gerechtigkeit",
+        "original": "צְדָקָה",
+        "translit": "tsedaqah",
+        "body": "Rechtes Handeln und gerechte Beziehungen; bei Abraham geht es um angerechnete Gerechtigkeit.",
+        "refs": [
+          "1Mo 15,6",
+          "Jes 1,27"
+        ]
+      },
+      {
+        "id": "word-0-21",
+        "group": "Hebräisch",
+        "title": "Recht, Urteil",
+        "original": "מִשְׁפָּט",
+        "translit": "mishpat",
+        "body": "Rechtsentscheidung, Vorschrift oder gerechte Ordnung. Propheten verlangen Recht für Benachteiligte.",
+        "refs": [
+          "Am 5,24",
+          "Mi 6,8"
+        ]
+      },
+      {
+        "id": "word-0-22",
+        "group": "Hebräisch",
+        "title": "sündigen, verfehlen",
+        "original": "חָטָא",
+        "translit": "chata",
+        "body": "Moralische Verfehlung; in Richter 20,16 dasselbe Verb für das Verfehlen eines Ziels. Die Metapher erschöpft die Bedeutung nicht.",
+        "refs": [
+          "1Mo 39,9",
+          "Ri 20,16"
+        ]
+      },
+      {
+        "id": "word-0-23",
+        "group": "Hebräisch",
+        "title": "Schuld, Vergehen",
+        "original": "עָוֹן",
+        "translit": "avon",
+        "body": "Kann Übertretung, Schuld oder deren Folgen bezeichnen. Der Satz bestimmt die Übersetzung.",
+        "refs": [
+          "2Mo 34,7",
+          "Ps 32,5"
+        ]
+      },
+      {
+        "id": "word-0-24",
+        "group": "Hebräisch",
+        "title": "umkehren, zurückkehren",
+        "original": "שׁוּב",
+        "translit": "shuv",
+        "body": "Häufiges Verb für Rückkehr; prophetisch auch Umkehr zu Gott. Nicht jede Rückkehr ist geistlich gemeint.",
+        "refs": [
+          "Hos 14,2",
+          "Sach 1,3"
+        ]
+      },
+      {
+        "id": "word-0-25",
+        "group": "Hebräisch",
+        "title": "hören, gehorchen",
+        "original": "שָׁמַע",
+        "translit": "shama",
+        "body": "Hören kann aufmerksames Befolgen einschließen. Das Schma beginnt mit einem Aufruf an Israel zu hören.",
+        "refs": [
+          "5Mo 6,4-5",
+          "1Sam 15,22"
+        ]
+      },
+      {
+        "id": "word-0-26",
+        "group": "Hebräisch",
+        "title": "Liebe",
+        "original": "אַהֲבָה",
+        "translit": "ahavah",
+        "body": "Menschliche Liebe und Zuwendung; die Tora nutzt in den Liebesgeboten das verwandte Verb.",
+        "refs": [
+          "Hld 8,7",
+          "5Mo 6,5"
+        ]
+      },
+      {
+        "id": "word-0-27",
+        "group": "Hebräisch",
+        "title": "Gunst, Wohlgefallen",
+        "original": "חֵן",
+        "translit": "chen",
+        "body": "Gunst in den Augen eines anderen bedeutet Wohlwollen. Noah findet Gunst vor Gott.",
+        "refs": [
+          "1Mo 6,8",
+          "Spr 3,4"
+        ]
+      },
+      {
+        "id": "word-0-28",
+        "group": "Hebräisch",
+        "title": "Erbarmen, Mitgefühl",
+        "original": "רַחֲמִים",
+        "translit": "rachamim",
+        "body": "Ausdruck tiefer Zuwendung. Das verwandte Wort für Mutterleib ersetzt nicht die Bedeutung des jeweiligen Satzes.",
+        "refs": [
+          "Ps 25,6",
+          "Jes 63,15"
+        ]
+      },
+      {
+        "id": "word-0-29",
+        "group": "Hebräisch",
+        "title": "Gottestitel, Allmächtiger",
+        "original": "שַׁדַּי",
+        "translit": "shaddai",
+        "body": "Traditionell als Allmächtiger wiedergegeben; die genaue Wortherkunft ist unsicher.",
+        "refs": [
+          "1Mo 17,1",
+          "Hi 5,17"
+        ]
+      },
+      {
+        "id": "word-0-30",
+        "group": "Hebräisch",
+        "title": "Gesalbter",
+        "original": "מָשִׁיחַ",
+        "translit": "mashiach",
+        "body": "Könige und andere Beauftragte können Gesalbte heißen, auch Kyros. Christus ist die griechische Entsprechung.",
+        "refs": [
+          "1Sam 24,7",
+          "Jes 45,1"
+        ]
+      },
+      {
+        "id": "word-0-31",
+        "group": "Hebräisch",
+        "title": "Prophet",
+        "original": "נָבִיא",
+        "translit": "navi",
+        "body": "Ein beauftragter Sprecher Gottes. Prophetie betrifft Gegenwart, Umkehr und Gerechtigkeit ebenso wie Zukunft.",
+        "refs": [
+          "5Mo 18,18",
+          "Jer 1,5"
+        ]
+      },
+      {
+        "id": "word-0-32",
+        "group": "Hebräisch",
+        "title": "Bote, Engel",
+        "original": "מַלְאָךְ",
+        "translit": "malakh",
+        "body": "Menschliche und himmlische Boten heißen so; die Art des Boten ergibt sich aus der Erzählung.",
+        "refs": [
+          "1Mo 19,1",
+          "Hag 1,13"
+        ]
+      },
+      {
+        "id": "word-0-33",
+        "group": "Hebräisch",
+        "title": "Cherub",
+        "original": "כְּרוּב",
+        "translit": "keruv",
+        "body": "Himmlische Gestalt in Heiligtums- und Thronmotiven. Nicht mit späteren Puttenbildern gleichzusetzen.",
+        "refs": [
+          "1Mo 3,24",
+          "2Mo 25,18"
+        ]
+      },
+      {
+        "id": "word-0-34",
+        "group": "Hebräisch",
+        "title": "brennende Gestalt, Schlange",
+        "original": "שָׂרָף",
+        "translit": "saraf",
+        "body": "In Numeri Schlangen, in Jesaja 6 sechsflügelige Throngestalten. Die Bilder nicht einfach gleichsetzen.",
+        "refs": [
+          "4Mo 21,8",
+          "Jes 6,2"
+        ]
+      },
+      {
+        "id": "word-0-35",
+        "group": "Hebräisch",
+        "title": "Totenreich",
+        "original": "שְׁאוֹל",
+        "translit": "sheol",
+        "body": "Bereich der Toten in vielen AT-Texten; nicht ohne Weiteres identisch mit späteren Vorstellungen der Hölle.",
+        "refs": [
+          "1Mo 37,35",
+          "Ps 16,10"
+        ]
+      },
+      {
+        "id": "word-0-36",
+        "group": "Hebräisch",
+        "title": "Gegner, Ankläger",
+        "original": "שָׂטָן",
+        "translit": "satan",
+        "body": "Kann menschliche Gegner bezeichnen; im Hiobbuch erscheint der Ankläger am himmlischen Hof.",
+        "refs": [
+          "1Kö 11,14",
+          "Hi 1,6",
+          "Sach 3,1"
+        ]
+      },
+      {
+        "id": "word-0-37",
+        "group": "Hebräisch",
+        "title": "Sühne, Entsühnung",
+        "original": "כִּפֻּרִים",
+        "translit": "kippurim",
+        "body": "Im Ausdruck Tag der Entsühnung. Die Rituale betreffen Reinigung und Wiederherstellung der Beziehung zu Gott.",
+        "refs": [
+          "3Mo 16,30",
+          "3Mo 23,27"
+        ]
+      },
+      {
+        "id": "word-0-38",
+        "group": "Hebräisch",
+        "title": "Passa",
+        "original": "פֶּסַח",
+        "translit": "pesach",
+        "body": "Fest bzw. Opfer zur Erinnerung an Israels Befreiung. Christliche Deutungen ersetzen nicht das jüdische Festverständnis.",
+        "refs": [
+          "2Mo 12,11",
+          "5Mo 16,1"
+        ]
+      },
+      {
+        "id": "word-0-39",
+        "group": "Hebräisch",
+        "title": "Sabbat, Ruhetag",
+        "original": "שַׁבָּת",
+        "translit": "shabbat",
+        "body": "Der siebte Tag dient Ruhe, Heiligung und Erinnerung. Exodus und Deuteronomium setzen verschiedene Akzente.",
+        "refs": [
+          "2Mo 20,8-11",
+          "5Mo 5,12-15"
+        ]
+      },
+      {
+        "id": "word-0-40",
+        "group": "Hebräisch",
+        "title": "Zion",
+        "original": "צִיּוֹן",
+        "translit": "tsiyon",
+        "body": "Ort in Jerusalem; poetisch auch Jerusalem und seine Bewohner. Der jeweilige Text bestimmt die Bedeutung.",
+        "refs": [
+          "2Sam 5,7",
+          "Jes 2,3"
+        ]
+      },
+      {
+        "id": "word-0-41",
+        "group": "Hebräisch",
+        "title": "Fleisch, Leib, Verwandtschaft",
+        "original": "בָּשָׂר",
+        "translit": "basar",
+        "body": "Kann Nahrung, leibliche Existenz, Verwandtschaft oder menschliche Vergänglichkeit bezeichnen.",
+        "refs": [
+          "1Mo 2,23",
+          "Jes 40,6"
+        ]
+      },
+      {
+        "id": "word-0-42",
+        "group": "Hebräisch",
+        "title": "Herz, Inneres",
+        "original": "לֵב",
+        "translit": "lev",
+        "body": "Auch Ort von Denken, Planen und Entscheiden, nicht lediglich Gefühl.",
+        "refs": [
+          "1Kö 3,9",
+          "Spr 4,23"
+        ]
+      },
+      {
+        "id": "word-0-43",
+        "group": "Hebräisch",
+        "title": "lange Dauer, Ewigkeit",
+        "original": "עוֹלָם",
+        "translit": "olam",
+        "body": "Kann lange Zeit, alte Zeiten oder dauerhafte Geltung meinen. Der Zusammenhang bestimmt den Zeithorizont.",
+        "refs": [
+          "1Mo 17,7",
+          "Ps 90,2"
+        ]
+      },
+      {
+        "id": "word-0-44",
+        "group": "Hebräisch",
+        "title": "Licht",
+        "original": "אוֹר",
+        "translit": "or",
+        "body": "Physisches Licht und Bild für Orientierung oder Rettung; nicht jede Erwähnung bezeichnet Gott.",
+        "refs": [
+          "1Mo 1,3",
+          "Ps 119,105"
+        ]
+      },
+      {
+        "id": "word-0-45",
+        "group": "Hebräisch",
+        "title": "Wasser",
+        "original": "מַיִם",
+        "translit": "mayim",
+        "body": "Lebensspendend, reinigend oder bedrohlich; kein starrer symbolischer Code.",
+        "refs": [
+          "1Mo 1,2",
+          "Jes 55,1"
+        ]
+      },
+      {
+        "id": "word-0-46",
+        "group": "Hebräisch",
+        "title": "Feuer",
+        "original": "אֵשׁ",
+        "translit": "esh",
+        "body": "Gottes Erscheinung, Gericht, Opfer oder alltägliches Feuer. Der Zusammenhang entscheidet.",
+        "refs": [
+          "2Mo 3,2",
+          "1Kö 18,38"
+        ]
+      },
+      {
+        "id": "word-0-47",
+        "group": "Hebräisch",
+        "title": "Brot, Nahrung",
+        "original": "לֶחֶם",
+        "translit": "lechem",
+        "body": "Grundnahrungsmittel und Bild der Versorgung; Jesus greift die Wüstenüberlieferung auf.",
+        "refs": [
+          "2Mo 16,4",
+          "5Mo 8,3"
+        ]
+      },
+      {
+        "id": "word-0-48",
+        "group": "Hebräisch",
+        "title": "König",
+        "original": "מֶלֶךְ",
+        "translit": "melekh",
+        "body": "Bezeichnet menschliche Könige und Gott als König. Psalmen feiern Gottes Herrschaft.",
+        "refs": [
+          "1Sam 8,5",
+          "Ps 47,7"
+        ]
+      },
+      {
+        "id": "word-0-49",
+        "group": "Hebräisch",
+        "title": "Königtum, Reich",
+        "original": "מַמְלָכָה",
+        "translit": "mamlakhah",
+        "body": "Herrschaft oder politisches Reich. Israel wird im Sinai-Bund ein Königreich von Priestern genannt.",
+        "refs": [
+          "2Mo 19,6",
+          "1Kö 9,5"
+        ]
+      },
+      {
+        "id": "word-0-50",
+        "group": "Hebräisch",
+        "title": "Lob, Lobgesang",
+        "original": "תְּהִלָּה",
+        "translit": "tehillah",
+        "body": "Die hebräische Bezeichnung der Psalmen, Tehillim, gehört zum Wortfeld, obwohl viele Psalmen Klagegebete sind.",
+        "refs": [
+          "Ps 34,1",
+          "Ps 145,1"
+        ]
+      },
+      {
+        "id": "word-1-1",
+        "group": "Griechisch",
+        "title": "Wort, Rede, Aussage",
+        "original": "λόγος",
+        "translit": "logos",
+        "body": "Rede, Botschaft, Rechenschaft oder Wort. Johannes 1 verwendet es christologisch; nicht jeder logos ist Jesus.",
+        "refs": [
+          "Joh 1,1-3",
+          "Mt 12,36"
+        ]
+      },
+      {
+        "id": "word-1-2",
+        "group": "Griechisch",
+        "title": "Liebe",
+        "original": "ἀγάπη",
+        "translit": "agapē",
+        "body": "Liebe in unterschiedlichen Beziehungen. Das Wort allein bedeutet nicht automatisch bedingungslose göttliche Liebe.",
+        "refs": [
+          "Joh 15,13",
+          "1Kor 13,4-7"
+        ]
+      },
+      {
+        "id": "word-1-3",
+        "group": "Griechisch",
+        "title": "lieben",
+        "original": "ἀγαπάω",
+        "translit": "agapaō",
+        "body": "Göttliche, menschliche und sogar fehlgeleitete Liebe; Johannes 3,19 spricht vom Lieben der Finsternis.",
+        "refs": [
+          "Joh 3,16",
+          "Joh 3,19"
+        ]
+      },
+      {
+        "id": "word-1-4",
+        "group": "Griechisch",
+        "title": "lieben, gernhaben",
+        "original": "φιλέω",
+        "translit": "phileō",
+        "body": "Zuneigung und Liebe. Überschneidet sich mit agapaō; Johannes 21 begründet keine starre Rangfolge beider Wörter.",
+        "refs": [
+          "Joh 11,3",
+          "Joh 21,17"
+        ]
+      },
+      {
+        "id": "word-1-5",
+        "group": "Griechisch",
+        "title": "Glaube, Vertrauen, Treue",
+        "original": "πίστις",
+        "translit": "pistis",
+        "body": "Vertrauen oder Treue. Bei Paulus ist der Zusammenhang mit Rechtfertigung wichtig; einzelne Genitivverbindungen werden unterschiedlich verstanden.",
+        "refs": [
+          "Röm 3,22",
+          "Gal 5,22"
+        ]
+      },
+      {
+        "id": "word-1-6",
+        "group": "Griechisch",
+        "title": "glauben, vertrauen",
+        "original": "πιστεύω",
+        "translit": "pisteuō",
+        "body": "Etwas für wahr halten oder einer Person vertrauen. Johannes betont Glauben an Jesus.",
+        "refs": [
+          "Joh 3,16",
+          "Jak 2,19"
+        ]
+      },
+      {
+        "id": "word-1-7",
+        "group": "Griechisch",
+        "title": "Gnade, Gunst, Dank",
+        "original": "χάρις",
+        "translit": "charis",
+        "body": "Geschenkte Gunst, Wohlwollen, in manchen Kontexten Dank. Paulus beschreibt Rettung als Geschenk, nicht als Verdienst.",
+        "refs": [
+          "Eph 2,8-9",
+          "1Kor 15,10"
+        ]
+      },
+      {
+        "id": "word-1-8",
+        "group": "Griechisch",
+        "title": "Barmherzigkeit",
+        "original": "ἔλεος",
+        "translit": "eleos",
+        "body": "Erbarmen mit Menschen in Not. Jesus verbindet es mit dem Handeln des Samariters.",
+        "refs": [
+          "Mt 9,13",
+          "Lk 10,37"
+        ]
+      },
+      {
+        "id": "word-1-9",
+        "group": "Griechisch",
+        "title": "Friede",
+        "original": "εἰρήνη",
+        "translit": "eirēnē",
+        "body": "Frieden zwischen Menschen und mit Gott, auch Gruß. Jesus unterscheidet seinen Frieden von dem der Welt.",
+        "refs": [
+          "Joh 14,27",
+          "Röm 5,1"
+        ]
+      },
+      {
+        "id": "word-1-10",
+        "group": "Griechisch",
+        "title": "Geist, Wind, Atem",
+        "original": "πνεῦμα",
+        "translit": "pneuma",
+        "body": "Kann Gottes Geist, menschlichen Geist oder Wind bezeichnen. Johannes 3 nutzt die Mehrdeutigkeit als Bild.",
+        "refs": [
+          "Joh 3,8",
+          "Röm 8,16"
+        ]
+      },
+      {
+        "id": "word-1-11",
+        "group": "Griechisch",
+        "title": "Leben, Seele, Person",
+        "original": "ψυχή",
+        "translit": "psychē",
+        "body": "Kann das Leben oder die Person meinen. Nicht jeder Gebrauch bezeichnet einen vom Leib getrennten Bestandteil.",
+        "refs": [
+          "Mt 16,25-26",
+          "Apg 2,41"
+        ]
+      },
+      {
+        "id": "word-1-12",
+        "group": "Griechisch",
+        "title": "Leib, Körper",
+        "original": "σῶμα",
+        "translit": "sōma",
+        "body": "Der menschliche Körper und bildlich die Gemeinde als Leib Christi. Leiblichkeit gehört zur Hoffnung auf Auferstehung.",
+        "refs": [
+          "1Kor 12,27",
+          "1Kor 15,44"
+        ]
+      },
+      {
+        "id": "word-1-13",
+        "group": "Griechisch",
+        "title": "Fleisch",
+        "original": "σάρξ",
+        "translit": "sarx",
+        "body": "Kann menschliche Leiblichkeit oder bei Paulus eine gottferne Lebensweise meinen. Johannes 1,14 verwendet es positiv für Jesu Menschwerdung.",
+        "refs": [
+          "Joh 1,14",
+          "Gal 5,16-17"
+        ]
+      },
+      {
+        "id": "word-1-14",
+        "group": "Griechisch",
+        "title": "Herz, Inneres",
+        "original": "καρδία",
+        "translit": "kardia",
+        "body": "Zentrum von Denken, Wollen und Empfinden. Jesus spricht vom Herzen als Ursprung menschlichen Handelns.",
+        "refs": [
+          "Mt 5,8",
+          "Mk 7,21"
+        ]
+      },
+      {
+        "id": "word-1-15",
+        "group": "Griechisch",
+        "title": "Sinn, Verstand",
+        "original": "νοῦς",
+        "translit": "nous",
+        "body": "Die Fähigkeit zu denken und zu urteilen; Römer 12 verbindet Erneuerung des Sinnes mit verändertem Leben.",
+        "refs": [
+          "Röm 12,2",
+          "1Kor 2,16"
+        ]
+      },
+      {
+        "id": "word-1-16",
+        "group": "Griechisch",
+        "title": "Umkehr, Sinnesänderung",
+        "original": "μετάνοια",
+        "translit": "metanoia",
+        "body": "Eine Neuausrichtung des Lebens; mehr als bloßes Bedauern, aber nicht durch Wortzerlegung zu definieren.",
+        "refs": [
+          "Mk 1,4",
+          "Apg 2,38"
+        ]
+      },
+      {
+        "id": "word-1-17",
+        "group": "Griechisch",
+        "title": "umkehren",
+        "original": "μετανοέω",
+        "translit": "metanoeō",
+        "body": "Verb für Umkehr. Die Verkündigung Jesu verbindet sie mit Gottes nahegekommener Herrschaft.",
+        "refs": [
+          "Mk 1,15",
+          "Lk 13,3"
+        ]
+      },
+      {
+        "id": "word-1-18",
+        "group": "Griechisch",
+        "title": "Sünde",
+        "original": "ἁμαρτία",
+        "translit": "hamartia",
+        "body": "Verfehlung gegen Gott, bei Paulus auch als beherrschende Macht beschrieben. Nicht nur ein unbeabsichtigter Fehler.",
+        "refs": [
+          "Joh 8,34",
+          "Röm 6,12"
+        ]
+      },
+      {
+        "id": "word-1-19",
+        "group": "Griechisch",
+        "title": "Vergebung, Freilassung",
+        "original": "ἄφεσις",
+        "translit": "aphesis",
+        "body": "Erlass und Befreiung. Im NT häufig Vergebung von Sünden; in Lukas 4 auch Freilassung.",
+        "refs": [
+          "Lk 4,18",
+          "Kol 1,14"
+        ]
+      },
+      {
+        "id": "word-1-20",
+        "group": "Griechisch",
+        "title": "Gerechtigkeit",
+        "original": "δικαιοσύνη",
+        "translit": "dikaiosynē",
+        "body": "Gottes Gerechtigkeit, rechtes Verhalten oder gerechter Status. Der Briefkontext bestimmt die Nuance.",
+        "refs": [
+          "Mt 5,6",
+          "Röm 1,17"
+        ]
+      },
+      {
+        "id": "word-1-21",
+        "group": "Griechisch",
+        "title": "rechtfertigen, für gerecht erklären",
+        "original": "δικαιόω",
+        "translit": "dikaioō",
+        "body": "In Paulus' Argumentation geht es um Gottes Urteil und Annahme, nicht bloß um moralische Selbstverbesserung.",
+        "refs": [
+          "Röm 3,24",
+          "Gal 2,16"
+        ]
+      },
+      {
+        "id": "word-1-22",
+        "group": "Griechisch",
+        "title": "Rettung, Heil",
+        "original": "σωτηρία",
+        "translit": "sōtēria",
+        "body": "Rettung vor Gefahr oder eschatologisches Heil; die christliche Verkündigung verbindet sie mit Jesus.",
+        "refs": [
+          "Lk 1,69",
+          "Röm 1,16"
+        ]
+      },
+      {
+        "id": "word-1-23",
+        "group": "Griechisch",
+        "title": "retten, heilen",
+        "original": "σῴζω",
+        "translit": "sōzō",
+        "body": "Kann körperliche Rettung oder Heil bezeichnen. Manche Heilungsgeschichten verbinden beides.",
+        "refs": [
+          "Mk 5,34",
+          "Mt 1,21"
+        ]
+      },
+      {
+        "id": "word-1-24",
+        "group": "Griechisch",
+        "title": "Lösegeld",
+        "original": "λύτρον",
+        "translit": "lytron",
+        "body": "Bild der Befreiung durch einen Preis. Jesus verwendet es für die Hingabe seines Lebens.",
+        "refs": [
+          "Mk 10,45",
+          "Mt 20,28"
+        ]
+      },
+      {
+        "id": "word-1-25",
+        "group": "Griechisch",
+        "title": "Erlösung, Befreiung",
+        "original": "ἀπολύτρωσις",
+        "translit": "apolytrōsis",
+        "body": "Beschreibt Befreiung und Erlösung; Paulus spricht auch von der künftigen Erlösung des Leibes.",
+        "refs": [
+          "Eph 1,7",
+          "Röm 8,23"
+        ]
+      },
+      {
+        "id": "word-1-26",
+        "group": "Griechisch",
+        "title": "Sühnemittel, Sühneort",
+        "original": "ἱλαστήριον",
+        "translit": "hilastērion",
+        "body": "Verwandt mit der Sühnesprache der griechischen Bibel; Römer 3,25 wird unterschiedlich übersetzt. Hebräer 9 meint den Deckel der Bundeslade.",
+        "refs": [
+          "Röm 3,25",
+          "Hebr 9,5"
+        ]
+      },
+      {
+        "id": "word-1-27",
+        "group": "Griechisch",
+        "title": "Bund, Verfügung",
+        "original": "διαθήκη",
+        "translit": "diathēkē",
+        "body": "Übersetzt häufig berit in der Septuaginta. Die Bedeutung Bund bzw. Verfügung ist besonders in Hebräer 9 zu beachten.",
+        "refs": [
+          "Lk 22,20",
+          "Hebr 9,15-17"
+        ]
+      },
+      {
+        "id": "word-1-28",
+        "group": "Griechisch",
+        "title": "gute Botschaft",
+        "original": "εὐαγγέλιον",
+        "translit": "euangelion",
+        "body": "Die verkündigte Nachricht von Gottes Handeln in Jesus, nicht ausschließlich die Bezeichnung eines geschriebenen Buches.",
+        "refs": [
+          "Mk 1,1",
+          "1Kor 15,1-4"
+        ]
+      },
+      {
+        "id": "word-1-29",
+        "group": "Griechisch",
+        "title": "Königsherrschaft, Reich",
+        "original": "βασιλεία",
+        "translit": "basileia",
+        "body": "Kann Herrschaft und Herrschaftsbereich meinen. Gottes Reich ist zentral in Jesu Predigt.",
+        "refs": [
+          "Mk 1,15",
+          "Mt 6,33"
+        ]
+      },
+      {
+        "id": "word-1-30",
+        "group": "Griechisch",
+        "title": "Herr",
+        "original": "κύριος",
+        "translit": "kyrios",
+        "body": "Höfliche Anrede, menschlicher Herr oder Gottesbezeichnung. Die Septuaginta verwendet es häufig für JHWH; das NT auch für Jesus.",
+        "refs": [
+          "Röm 10,9",
+          "Phil 2,11"
+        ]
+      },
+      {
+        "id": "word-1-31",
+        "group": "Griechisch",
+        "title": "Gesalbter, Christus",
+        "original": "Χριστός",
+        "translit": "Christos",
+        "body": "Griechische Wiedergabe von Messias; ursprünglich Titel, im NT eng mit Jesu Namen verbunden.",
+        "refs": [
+          "Joh 1,41",
+          "Mt 16,16"
+        ]
+      },
+      {
+        "id": "word-1-32",
+        "group": "Griechisch",
+        "title": "Sohn",
+        "original": "υἱός",
+        "translit": "huios",
+        "body": "Leibliche Abstammung, Zugehörigkeit oder Titel. Sohn Gottes wird in der Bibel unterschiedlich gebraucht; bei Jesus christologisch zentral.",
+        "refs": [
+          "Mk 1,1",
+          "Röm 8,14"
+        ]
+      },
+      {
+        "id": "word-1-33",
+        "group": "Griechisch",
+        "title": "einzig, einzigartig",
+        "original": "μονογενής",
+        "translit": "monogenēs",
+        "body": "Beschreibt Einzigartigkeit oder ein einziges Kind; auch in Christus-Aussagen. Die Wortbildung allein entscheidet keine Lehre über Ursprung oder Wesen.",
+        "refs": [
+          "Joh 1,18",
+          "Hebr 11,17"
+        ]
+      },
+      {
+        "id": "word-1-34",
+        "group": "Griechisch",
+        "title": "Gott, Gottheit",
+        "original": "θεός",
+        "translit": "theos",
+        "body": "Kann je nach Kontext den einen Gott oder andere Götter meinen. Artikelgebrauch allein legt die christologische Deutung nicht fest.",
+        "refs": [
+          "Joh 1,1",
+          "Apg 17,23"
+        ]
+      },
+      {
+        "id": "word-1-35",
+        "group": "Griechisch",
+        "title": "heilig",
+        "original": "ἅγιος",
+        "translit": "hagios",
+        "body": "Gott zugehörig oder Gottes Heiligkeit. Christen werden als Heilige angeredet, nicht weil sie bereits fehlerlos sind.",
+        "refs": [
+          "1Petr 1,15-16",
+          "Röm 1,7"
+        ]
+      },
+      {
+        "id": "word-1-36",
+        "group": "Griechisch",
+        "title": "Heiligung",
+        "original": "ἁγιασμός",
+        "translit": "hagiasmos",
+        "body": "Gott zugeordnetes und entsprechend geführtes Leben. Paulus verbindet Heiligung mit konkreter Lebensführung.",
+        "refs": [
+          "1Thess 4,3-7",
+          "Röm 6,22"
+        ]
+      },
+      {
+        "id": "word-1-37",
+        "group": "Griechisch",
+        "title": "Herrlichkeit, Ehre",
+        "original": "δόξα",
+        "translit": "doxa",
+        "body": "Ehre, Ansehen oder Gottes Herrlichkeit. Das Wort wird im NT häufig im Zusammenhang mit Gottes Offenbarung gebraucht.",
+        "refs": [
+          "Joh 1,14",
+          "Röm 3,23"
+        ]
+      },
+      {
+        "id": "word-1-38",
+        "group": "Griechisch",
+        "title": "Weisheit",
+        "original": "σοφία",
+        "translit": "sophia",
+        "body": "Weisheit und Einsicht; Paulus kontrastiert menschliche Maßstäbe mit Gottes Weisheit im Kreuz.",
+        "refs": [
+          "1Kor 1,24-25",
+          "Jak 3,17"
+        ]
+      },
+      {
+        "id": "word-1-39",
+        "group": "Griechisch",
+        "title": "Wahrheit",
+        "original": "ἀλήθεια",
+        "translit": "alētheia",
+        "body": "Wahrheit, Wirklichkeit, Verlässlichkeit; bei Johannes eng mit Jesu Offenbarung verbunden.",
+        "refs": [
+          "Joh 8,32",
+          "Joh 14,6"
+        ]
+      },
+      {
+        "id": "word-1-40",
+        "group": "Griechisch",
+        "title": "Leben",
+        "original": "ζωή",
+        "translit": "zōē",
+        "body": "Leben, besonders bei Johannes auch ewiges Leben in Beziehung zu Gott; nicht nur biologische Existenz.",
+        "refs": [
+          "Joh 10,10",
+          "Joh 17,3"
+        ]
+      },
+      {
+        "id": "word-1-41",
+        "group": "Griechisch",
+        "title": "Zeitalter, Ewigkeit",
+        "original": "αἰών",
+        "translit": "aiōn",
+        "body": "Zeitabschnitt oder lange Dauer. Das verwandte Adjektiv aiōnios wird u. a. für ewiges Leben gebraucht.",
+        "refs": [
+          "Mt 13,39",
+          "Eph 2,7"
+        ]
+      },
+      {
+        "id": "word-1-42",
+        "group": "Griechisch",
+        "title": "Auferstehung",
+        "original": "ἀνάστασις",
+        "translit": "anastasis",
+        "body": "Aufstehen der Toten; die Auferstehung Jesu und die Hoffnung der Gläubigen stehen im Mittelpunkt.",
+        "refs": [
+          "Joh 11,25",
+          "1Kor 15,12"
+        ]
+      },
+      {
+        "id": "word-1-43",
+        "group": "Griechisch",
+        "title": "Hoffnung",
+        "original": "ἐλπίς",
+        "translit": "elpis",
+        "body": "Erwartung, im NT häufig auf Gottes Zukunft gegründet. Sie ist nicht bloßer Optimismus.",
+        "refs": [
+          "Röm 5,5",
+          "Hebr 6,19"
+        ]
+      },
+      {
+        "id": "word-1-44",
+        "group": "Griechisch",
+        "title": "Jünger, Schüler",
+        "original": "μαθητής",
+        "translit": "mathētēs",
+        "body": "Lernender und Nachfolger. Jüngerschaft umfasst Lernen durch Beobachtung und Handeln.",
+        "refs": [
+          "Mt 28,19",
+          "Lk 14,27"
+        ]
+      },
+      {
+        "id": "word-1-45",
+        "group": "Griechisch",
+        "title": "Gesandter, Apostel",
+        "original": "ἀπόστολος",
+        "translit": "apostolos",
+        "body": "Beauftragter Gesandter. Im NT nicht in jeder Stelle auf die Zwölf beschränkt.",
+        "refs": [
+          "Lk 6,13",
+          "Apg 14,14"
+        ]
+      },
+      {
+        "id": "word-1-46",
+        "group": "Griechisch",
+        "title": "Versammlung, Gemeinde",
+        "original": "ἐκκλησία",
+        "translit": "ekklēsia",
+        "body": "Versammlung, auch außerhalb der Kirche; christlich die örtliche oder überörtliche Gemeinschaft, nicht primär ein Gebäude.",
+        "refs": [
+          "Apg 19,32",
+          "1Kor 1,2"
+        ]
+      },
+      {
+        "id": "word-1-47",
+        "group": "Griechisch",
+        "title": "Gemeinschaft, Teilhabe",
+        "original": "κοινωνία",
+        "translit": "koinōnia",
+        "body": "Gemeinsamer Anteil, Verbindung und praktisches Teilen; im Abendmahl Gemeinschaft mit Christus.",
+        "refs": [
+          "Apg 2,42",
+          "1Kor 10,16"
+        ]
+      },
+      {
+        "id": "word-1-48",
+        "group": "Griechisch",
+        "title": "Gebet",
+        "original": "προσευχή",
+        "translit": "proseuchē",
+        "body": "Zuwendung zu Gott im Gebet. Die erste Gemeinde verbindet Gebet mit Gemeinschaft und Lehre.",
+        "refs": [
+          "Mt 21,13",
+          "Apg 2,42"
+        ]
+      },
+      {
+        "id": "word-1-49",
+        "group": "Griechisch",
+        "title": "Prüfung, Versuchung",
+        "original": "πειρασμός",
+        "translit": "peirasmos",
+        "body": "Erprobung oder Verlockung; Jakobus unterscheidet Bewährung von dem Anreiz zur Sünde.",
+        "refs": [
+          "Mt 6,13",
+          "Jak 1,2-14"
+        ]
+      },
+      {
+        "id": "word-1-50",
+        "group": "Griechisch",
+        "title": "Ausdauer, Standhaftigkeit",
+        "original": "ὑπομονή",
+        "translit": "hypomonē",
+        "body": "Beharrliches Aushalten unter Druck. Geduld ist hier nicht bloß passives Warten.",
+        "refs": [
+          "Röm 5,3-4",
+          "Hebr 12,1"
+        ]
+      },
+      {
+        "id": "word-2-1",
+        "group": "Aramäisch",
+        "title": "Vater",
+        "original": "אַבָּא",
+        "translit": "abba",
+        "body": "Aramäische Anrede, im griechischen NT als ἀββά überliefert. Vertrautheit bedeutet nicht zwingend eine kindliche Verniedlichung.",
+        "refs": [
+          "Mk 14,36",
+          "Röm 8,15"
+        ]
+      },
+      {
+        "id": "word-2-2",
+        "group": "Aramäisch",
+        "title": "Mädchen, steh auf",
+        "original": "טַלִיתָא קוּמִי",
+        "translit": "talitha qumi",
+        "body": "Jesu Worte in der Auferweckung der Tochter des Jairus; Markus gibt sie in griechischen Buchstaben wieder und übersetzt sie.",
+        "refs": [
+          "Mk 5,41"
+        ]
+      },
+      {
+        "id": "word-2-3",
+        "group": "Aramäisch",
+        "title": "Öffne dich",
+        "original": "אֶפַּתַּח",
+        "translit": "ephphatha",
+        "body": "Aramäischer Ausdruck, im Markusevangelium in griechischen Buchstaben erhalten. Jesus heilt einen Menschen, der kaum hören und sprechen kann.",
+        "refs": [
+          "Mk 7,34"
+        ]
+      },
+      {
+        "id": "word-2-4",
+        "group": "Aramäisch",
+        "title": "Gott",
+        "original": "אֱלָהּ",
+        "translit": "elah",
+        "body": "Aramäischer Gottesbegriff in den aramäischen Abschnitten von Daniel und Esra. Sprachlich mit hebräischem el verwandt.",
+        "refs": [
+          "Dan 2,20",
+          "Esr 5,1"
+        ]
+      },
+      {
+        "id": "word-2-5",
+        "group": "Aramäisch",
+        "title": "Königtum, Reich",
+        "original": "מַלְכוּ",
+        "translit": "malku",
+        "body": "Aramäische Reichs- und Herrschaftssprache in Daniel. Gottes bleibende Herrschaft steht gegenüber vergänglichen Weltreichen.",
+        "refs": [
+          "Dan 2,44",
+          "Dan 7,14"
+        ]
+      },
+      {
+        "id": "word-2-6",
+        "group": "Aramäisch",
+        "title": "Unser Herr, komm!",
+        "original": "מָרַנָא תָא",
+        "translit": "marana tha",
+        "body": "In 1Kor 16,22 griechisch überlieferter aramäischer Ruf. Die Worttrennung und Deutung sind nicht völlig unumstritten.",
+        "refs": [
+          "1Kor 16,22"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "thread",
+    "title": "Der rote Faden der Bibel",
+    "short": "Roter Faden",
+    "intro": "Eine christliche Lesereise von der Schöpfung zur neuen Schöpfung. Ursprünglicher jüdischer Kontext, ausdrückliche neutestamentliche Bezugnahmen und christliche Auslegung werden unterschieden.",
+    "entries": [
+      {
+        "id": "thread-1",
+        "group": "Ursprung",
+        "title": "Schöpfung und Ebenbild",
+        "body": "Die Bibel beginnt mit Gott, nicht mit dem Menschen. Die Welt wird als gut beschrieben; Menschen erhalten Würde und Verantwortung als Gottes Ebenbild. Psalm 8 nimmt diese Berufung auf, während die Offenbarung Gottes erneuerte Schöpfung am Ende in den Blick nimmt.",
+        "refs": [
+          "1Mo 1,26-31",
+          "Ps 8,4-9",
+          "Offb 21,1-5"
+        ],
+        "note": "Was bedeutet es, einen Mitmenschen als Ebenbild Gottes zu behandeln?"
+      },
+      {
+        "id": "thread-2",
+        "group": "Ursprung",
+        "title": "Der Bruch und seine Folgen",
+        "body": "Genesis 3 schildert Misstrauen, Ungehorsam, Scham und Entfremdung. Es folgen Gewalt und Zerbruch, aber Gott sucht den Menschen. Paulus stellt Adam und Christus als Repräsentanten zweier Menschheitsgeschichten gegenüber.",
+        "refs": [
+          "1Mo 3,1-24",
+          "1Mo 4,8-16",
+          "Röm 5,12-21"
+        ],
+        "note": "Unterscheide die Erzählung von ihrer späteren theologischen Auslegung."
+      },
+      {
+        "id": "thread-3",
+        "group": "Ursprung",
+        "title": "Noah: Gericht und Bewahrung",
+        "body": "Die Flutgeschichte verbindet Gewalt, Gericht, Rettung und einen Bund mit allem Lebendigen. Der Regenbogen bezeichnet in Genesis Gottes Zusage. 1. Petrus greift die Rettung durch Wasser als Bild für die Taufe auf.",
+        "refs": [
+          "1Mo 6,5-18",
+          "1Mo 9,8-17",
+          "1Petr 3,20-21"
+        ],
+        "note": "Die typologische Deutung in 1. Petrus ist nicht die einzige Bedeutung der Genesisgeschichte."
+      },
+      {
+        "id": "thread-4",
+        "group": "Verheißung und Bund",
+        "title": "Abraham: Segen für die Völker",
+        "body": "Gott ruft Abraham aus seiner Heimat und verheißt Land, Nachkommen und Segen. Abraham antwortet im Vertrauen; Paulus und Jakobus setzen unterschiedliche Schwerpunkte bei Glauben und Handeln.",
+        "refs": [
+          "1Mo 12,1-3",
+          "1Mo 15,1-6",
+          "Gal 3,6-9",
+          "Jak 2,21-23"
+        ],
+        "note": "Wie gehören Vertrauen und Handeln zusammen?"
+      },
+      {
+        "id": "thread-5",
+        "group": "Verheißung und Bund",
+        "title": "Exodus: Befreiung vor Gebot",
+        "body": "Gott hört die Not Israels, führt das Volk aus Ägypten und schließt am Sinai einen Bund. Die Gebote folgen auf Befreiung, nicht umgekehrt. Pessach bewahrt diese Erinnerung bis heute; Paulus verwendet das Passamotiv christologisch.",
+        "refs": [
+          "2Mo 3,7-10",
+          "2Mo 12,1-14",
+          "2Mo 20,1-17",
+          "1Kor 5,7-8"
+        ]
+      },
+      {
+        "id": "thread-6",
+        "group": "Verheißung und Bund",
+        "title": "Gottes Gegenwart: Zelt und Tempel",
+        "body": "Stiftshütte und Tempel stellen Gottes Gegenwart inmitten Israels dar, ohne Gott räumlich einzuschließen. Johannes verbindet das Wohnen Gottes mit Jesu Menschwerdung; die Offenbarung beschreibt Gottes Wohnung bei den Menschen.",
+        "refs": [
+          "2Mo 25,8-9",
+          "1Kö 8,27-30",
+          "Joh 1,14",
+          "Offb 21,3"
+        ]
+      },
+      {
+        "id": "thread-7",
+        "group": "Könige und Propheten",
+        "title": "David und das Königtum",
+        "body": "Gott verheißt David ein fortbestehendes Haus. Die Geschichte der Könige zeigt zugleich Machtmissbrauch und Treue. Das NT bezieht die davidische Verheißung auf Jesus; jüdische Messiaserwartungen sind vielfältig.",
+        "refs": [
+          "2Sam 7,8-16",
+          "Ps 89,3-5",
+          "Lk 1,32-33"
+        ]
+      },
+      {
+        "id": "thread-8",
+        "group": "Könige und Propheten",
+        "title": "Die Propheten: Recht und Hoffnung",
+        "body": "Prophetische Rede klagt Götzendienst, Ausbeutung und falsche Sicherheit an. Sie eröffnet zugleich den Horizont von Umkehr, Wiederherstellung und Gerechtigkeit. Micha verbindet Gottes Anspruch mit Recht, Güte und Demut.",
+        "refs": [
+          "Am 5,21-24",
+          "Mi 6,6-8",
+          "Jes 2,2-4"
+        ]
+      },
+      {
+        "id": "thread-9",
+        "group": "Könige und Propheten",
+        "title": "Exil und Heimkehr",
+        "body": "Der Verlust Jerusalems und des Tempels erschüttert Israels Selbstverständnis. Jeremia ermutigt die Verbannten, im fremden Land Leben zu gestalten. Die Rückkehr wird als erneute Befreiung erfahren, beseitigt aber nicht alle Probleme.",
+        "refs": [
+          "2Kö 25,8-12",
+          "Jer 29,4-14",
+          "Esr 1,1-4"
+        ]
+      },
+      {
+        "id": "thread-10",
+        "group": "Könige und Propheten",
+        "title": "Neuer Bund und neues Herz",
+        "body": "Jeremia kündigt einen Bund mit Israel und Juda an, dessen Weisung ins Herz geschrieben wird. Hesekiel spricht von neuem Herz und Geist. Der Hebräerbrief nimmt Jeremias Text christologisch auf, ohne den ursprünglichen Adressaten zu verschweigen.",
+        "refs": [
+          "Jer 31,31-34",
+          "Hes 36,24-28",
+          "Hebr 8,8-12"
+        ]
+      },
+      {
+        "id": "thread-11",
+        "group": "Jesus Christus",
+        "title": "Das Reich Gottes kommt nahe",
+        "body": "Jesus verkündigt Gottes nahende Herrschaft. Heilungen, Gleichnisse und Mahlgemeinschaften zeigen, wie diese Botschaft Menschen erreicht; zugleich lehrt Jesus, um die kommende Herrschaft zu beten.",
+        "refs": [
+          "Mk 1,14-15",
+          "Lk 4,16-21",
+          "Mt 6,9-10"
+        ]
+      },
+      {
+        "id": "thread-12",
+        "group": "Jesus Christus",
+        "title": "Kreuz: Liebe und Hingabe",
+        "body": "Die Evangelien berichten Jesu Tod unter Pilatus. Das NT entfaltet seine Bedeutung mit verschiedenen Bildern: Lösegeld, Opfer, Versöhnung und Sieg. Diese Bilder sind keine austauschbaren technischen Modelle.",
+        "refs": [
+          "Mk 10,45",
+          "Joh 19,28-30",
+          "2Kor 5,18-21",
+          "Kol 2,13-15"
+        ]
+      },
+      {
+        "id": "thread-13",
+        "group": "Jesus Christus",
+        "title": "Auferstehung und neues Leben",
+        "body": "Die Evangelien bezeugen das leere Grab und Begegnungen mit dem Auferstandenen. Paulus sieht Jesu Auferstehung als Anfang der künftigen Auferstehung und begründet darin christliche Hoffnung.",
+        "refs": [
+          "Lk 24,1-12",
+          "Joh 20,19-29",
+          "1Kor 15,12-22"
+        ]
+      },
+      {
+        "id": "thread-14",
+        "group": "Gemeinde und Vollendung",
+        "title": "Gottes Geist und die Gemeinde",
+        "body": "Pfingsten steht in einer Geschichte von Gottes Verheißung, Geist und Sendung. Die Gemeinschaft teilt, betet und lernt; Konflikte und Unterschiede bleiben reale Aufgaben. Die Frucht des Geistes zeigt sich an der Lebensführung.",
+        "refs": [
+          "Apg 2,1-21",
+          "Apg 2,42-47",
+          "Gal 5,22-23"
+        ]
+      },
+      {
+        "id": "thread-15",
+        "group": "Gemeinde und Vollendung",
+        "title": "Ein Leib, viele Völker",
+        "body": "In der frühen Kirche wird die Aufnahme nichtjüdischer Menschen ausgehandelt. Paulus beschreibt unterschiedliche Gaben als Teile eines Leibes. Die Einheit löscht Unterschiede nicht aus und rechtfertigt keine Verachtung Israels.",
+        "refs": [
+          "Apg 15,6-21",
+          "1Kor 12,12-27",
+          "Röm 11,17-24"
+        ]
+      },
+      {
+        "id": "thread-16",
+        "group": "Gemeinde und Vollendung",
+        "title": "Neue Schöpfung und Gottes Wohnung",
+        "body": "Offenbarung 21–22 greift Eden, Wasser des Lebens und Gottes Gegenwart auf. Der Zielpunkt ist nicht bloß Flucht aus der Welt, sondern das biblische Bild von Gottes erneuerter Schöpfung, in der Tod und Leid vergehen.",
+        "refs": [
+          "1Mo 2,8-10",
+          "Offb 21,1-5",
+          "Offb 22,1-5"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unseen",
+    "title": "Die unsichtbare Welt",
+    "short": "Unsichtbare Welt",
+    "intro": "Was die biblischen Texte über Gott, himmlische Wesen, geistlichen Widerstand und die Hoffnung nach dem Tod sagen. Visionen und spätere Traditionen sind keine lückenlose Landkarte der unsichtbaren Welt.",
+    "entries": [
+      {
+        "id": "unseen-1",
+        "group": "Gottes Gegenwart",
+        "title": "Himmel und Himmel der Himmel",
+        "body": "Himmel bezeichnet Luft, Sternenhimmel oder Gottes Bereich. Die Bibel verwendet verschiedene Bilder, ohne einen physikalischen Bauplan des Jenseits zu liefern. Salomo betont, dass Gott selbst der Himmel nicht umfassen kann.",
+        "refs": [
+          "1Mo 1,8",
+          "1Kö 8,27",
+          "2Kor 12,2-4"
+        ]
+      },
+      {
+        "id": "unseen-2",
+        "group": "Gottes Gegenwart",
+        "title": "Heiliger Geist",
+        "body": "Schon das AT spricht von Gottes Geist als lebensspendend und befähigend. Das NT beschreibt sein Wirken in Jesus, der Gemeinde und Gläubigen. Trinitarische und nichttrinitarische Traditionen deuten sein Verhältnis zu Vater und Sohn unterschiedlich.",
+        "refs": [
+          "1Mo 1,2",
+          "Jes 61,1",
+          "Joh 14,16-17",
+          "Gal 5,22-23"
+        ]
+      },
+      {
+        "id": "unseen-3",
+        "group": "Himmlische Boten",
+        "title": "Engel: Boten und Diener",
+        "body": "Engel vermitteln Botschaften, dienen Gott und begleiten einzelne Erzählungen. Die Bibel gibt kein vollständiges Verzeichnis ihrer Ordnung. In Offenbarung 22 verweigert ein Engel Anbetung.",
+        "refs": [
+          "1Mo 19,1",
+          "Lk 1,26-38",
+          "Hebr 1,14",
+          "Offb 22,8-9"
+        ]
+      },
+      {
+        "id": "unseen-4",
+        "group": "Himmlische Boten",
+        "title": "Cherubim",
+        "body": "Cherubim bewachen in Genesis den Zugang zum Garten; im Heiligtum erscheinen sie an der Lade. Hesekiel identifiziert die lebendigen Wesen seiner Thronvision als Cherubim. Details gehören zur jeweiligen Vision.",
+        "refs": [
+          "1Mo 3,24",
+          "2Mo 25,18-22",
+          "Hes 10,20"
+        ]
+      },
+      {
+        "id": "unseen-5",
+        "group": "Himmlische Boten",
+        "title": "Seraphim",
+        "body": "Jesaja sieht sechsflügelige Gestalten, die Gottes Heiligkeit ausrufen; mit zwei Flügeln bedecken sie Gesicht, mit zwei Füße, mit zwei fliegen sie. Augen auf Flügeln gehören nicht zur Beschreibung von Jesaja 6; sie erscheinen in anderen Visionen.",
+        "refs": [
+          "Jes 6,1-7",
+          "Hes 10,12",
+          "Offb 4,6-8"
+        ]
+      },
+      {
+        "id": "unseen-6",
+        "group": "Himmlische Boten",
+        "title": "Michael und Gabriel",
+        "body": "Michael erscheint in Daniel und Judas als himmlischer Fürst bzw. Erzengel; Gabriel erklärt Daniel eine Vision und überbringt bei Lukas Botschaften. Die Bibel nennt nicht sieben Erzengel mit Namen.",
+        "refs": [
+          "Dan 8,16",
+          "Dan 10,13",
+          "Lk 1,26",
+          "Jud 1,9"
+        ]
+      },
+      {
+        "id": "unseen-7",
+        "group": "Himmlische Boten",
+        "title": "Die vier lebendigen Wesen",
+        "body": "Hesekiel und Offenbarung zeigen Thronvisionen mit lebendigen Wesen. Offenbarung 4 nennt sechs Flügel und viele Augen. Die Motive greifen ältere Bilder auf; eine exakte Gleichsetzung sämtlicher Gestalten ist nicht zwingend.",
+        "refs": [
+          "Hes 1,4-14",
+          "Hes 10,12",
+          "Offb 4,6-11"
+        ]
+      },
+      {
+        "id": "unseen-8",
+        "group": "Widerstand und Prüfung",
+        "title": "Satan: Gegner und Ankläger",
+        "body": "Hiob und Sacharja zeigen einen Ankläger; in den Evangelien tritt der Versucher Jesus entgegen. Offenbarung verbindet verschiedene Gegnerbilder. Jesaja 14 richtet sich unmittelbar an den König von Babylon; die Anwendung auf Satan ist spätere Auslegung.",
+        "refs": [
+          "Hi 1,6-12",
+          "Sach 3,1-5",
+          "Mt 4,1-11",
+          "Offb 12,9"
+        ]
+      },
+      {
+        "id": "unseen-9",
+        "group": "Widerstand und Prüfung",
+        "title": "Dämonen und Jesu Vollmacht",
+        "body": "Die Evangelien erzählen Befreiungen als Zeichen der Herrschaft Gottes. Sie unterscheiden verschiedene Leiden; Krankheit oder ungewöhnliche Erfahrungen sind nicht automatisch dämonisch. Die Texte geben keine Anleitung zur Selbstdiagnose.",
+        "refs": [
+          "Mk 1,23-27",
+          "Mk 5,1-20",
+          "Lk 11,20"
+        ]
+      },
+      {
+        "id": "unseen-10",
+        "group": "Widerstand und Prüfung",
+        "title": "Geistliche Waffenrüstung",
+        "body": "Epheser beschreibt den Kampf mit Bildern eines antiken Soldaten: Wahrheit, Gerechtigkeit, Frieden, Glaube, Heil, Gottes Wort und Gebet. Menschen werden gerade nicht zum eigentlichen Feind erklärt.",
+        "refs": [
+          "Eph 6,10-20"
+        ]
+      },
+      {
+        "id": "unseen-11",
+        "group": "Tod und Hoffnung",
+        "title": "Scheol, Hades und Gehenna",
+        "body": "Scheol und Hades bezeichnen häufig das Totenreich; Gehenna ist ein anderes Wort in Jesu Gerichtsworten. Nicht jede Stelle beschreibt dasselbe. Übersetzungen mit Hölle können diese Unterschiede verdecken.",
+        "refs": [
+          "Ps 16,10",
+          "Apg 2,27",
+          "Mt 10,28"
+        ]
+      },
+      {
+        "id": "unseen-12",
+        "group": "Tod und Hoffnung",
+        "title": "Auferstehung und ewiges Leben",
+        "body": "Daniel spricht von Auferstehung, Jesus von Leben, Paulus von einem verwandelten Leib. Christliche Hoffnung schließt Gottes Gericht ein, ist aber nicht auf eine Karte des Jenseits reduzierbar.",
+        "refs": [
+          "Dan 12,2",
+          "Joh 5,28-29",
+          "1Kor 15,42-49"
+        ]
+      },
+      {
+        "id": "unseen-13",
+        "group": "Tod und Hoffnung",
+        "title": "Gericht und neue Schöpfung",
+        "body": "Offenbarung nutzt apokalyptische Bilder von Gericht, Feuersee und neuer Schöpfung. Christliche Traditionen diskutieren Dauer und Natur des endgültigen Gerichts. Gottes Gerechtigkeit und das Ende des Todes sind zentrale Motive.",
+        "refs": [
+          "Offb 20,11-15",
+          "Offb 21,1-5"
+        ]
+      },
+      {
+        "id": "unseen-14",
+        "group": "Unterscheidung",
+        "title": "Visionen, Träume und prüfen",
+        "body": "Die Bibel kennt Träume und Visionen, aber auch irreführende Ansprüche. Paulus rät zu sorgfältigem Prüfen; 1. Johannes verbindet Prüfung mit dem Bekenntnis zu Christus. Persönliche Erfahrungen allein beweisen keine geistliche Herkunft.",
+        "refs": [
+          "5Mo 13,1-4",
+          "1Thess 5,19-22",
+          "1Joh 4,1-3"
+        ],
+        "note": "Bei belastenden Wahrnehmungen ist medizinische oder psychologische Hilfe mit Glauben vereinbar."
+      }
+    ]
+  },
+  {
+    "id": "jesus",
+    "title": "Auf den Spuren Jesu",
+    "short": "Lehren Jesu",
+    "intro": "Eine frei zugängliche Sammlung von Jesu Lehren, Gebeten, Ich-bin-Worten, Wundern und Begegnungen, unabhängig vom Fortschritt der Studienreise. Die vorhandene Sammlung der Gleichnisse bleibt erhalten.",
+    "entries": [
+      {
+        "id": "jesus-1",
+        "group": "Verkündigung",
+        "title": "Umkehr und Gottes Reich",
+        "body": "Jesus beginnt mit der Botschaft, dass Gottes Reich nahegekommen ist. Umkehr ist Antwort auf Gottes Initiative, nicht nur Schuldgefühl. In Gleichnissen entfaltet Jesus die überraschende Gestalt dieser Herrschaft.",
+        "refs": [
+          "Mk 1,14-15",
+          "Mt 13,31-33"
+        ]
+      },
+      {
+        "id": "jesus-2",
+        "group": "Verkündigung",
+        "title": "Die Seligpreisungen",
+        "body": "Jesus nennt Arme im Geist, Trauernde, Barmherzige und Friedensstifter selig. Seine Perspektive widerspricht einfachen Maßstäben von Erfolg und Ansehen und verheißt Gottes Zuwendung.",
+        "refs": [
+          "Mt 5,3-12",
+          "Lk 6,20-23"
+        ]
+      },
+      {
+        "id": "jesus-3",
+        "group": "Verkündigung",
+        "title": "Salz und Licht",
+        "body": "Jünger sollen mit ihrem Handeln sichtbar werden, damit Menschen den Vater ehren. Das Bild verlangt weder Selbstdarstellung noch Rückzug aus der Welt.",
+        "refs": [
+          "Mt 5,13-16"
+        ]
+      },
+      {
+        "id": "jesus-4",
+        "group": "Verkündigung",
+        "title": "Das wichtigste Gebot",
+        "body": "Jesus verbindet die Liebe zu Gott aus Deuteronomium mit der Nächstenliebe aus Levitikus. Beide Gebote stehen in der Tora; Jesus erklärt sie zum tragenden Maßstab.",
+        "refs": [
+          "5Mo 6,4-5",
+          "3Mo 19,18",
+          "Mk 12,28-34"
+        ]
+      },
+      {
+        "id": "jesus-5",
+        "group": "Verkündigung",
+        "title": "Feindesliebe",
+        "body": "Jesus ruft dazu auf, Feinde zu lieben und für Verfolger zu beten. Das heißt nicht, Gewalt gutzuheißen oder auf Schutz zu verzichten; es widerspricht Vergeltung und Verachtung.",
+        "refs": [
+          "Mt 5,43-48",
+          "Lk 6,27-36"
+        ]
+      },
+      {
+        "id": "jesus-6",
+        "group": "Verkündigung",
+        "title": "Vergebung und Grenzen",
+        "body": "Petrus fragt nach der Häufigkeit des Vergebens; Jesus antwortet mit einem Gleichnis über empfangene und verweigerte Barmherzigkeit. Matthäus 18 kennt auch die Konfrontation mit Unrecht.",
+        "refs": [
+          "Mt 18,15-22",
+          "Mt 18,23-35"
+        ]
+      },
+      {
+        "id": "jesus-7",
+        "group": "Verkündigung",
+        "title": "Nicht heuchlerisch urteilen",
+        "body": "Der Balken im eigenen Auge warnt vor Selbstgerechtigkeit. Jesus fordert ehrliche Selbstprüfung; er verbietet nicht jede verantwortliche Unterscheidung zwischen Recht und Unrecht.",
+        "refs": [
+          "Mt 7,1-5",
+          "Joh 7,24"
+        ]
+      },
+      {
+        "id": "jesus-8",
+        "group": "Gebet und Nachfolge",
+        "title": "Das Vaterunser",
+        "body": "Jesus lehrt Gottes Namen, Reich und Willen vor persönliche Bitten zu stellen. Tägliches Brot, Vergebung und Bewahrung zeigen, dass Gebet das ganze Leben berührt.",
+        "refs": [
+          "Mt 6,9-13",
+          "Lk 11,2-4"
+        ]
+      },
+      {
+        "id": "jesus-9",
+        "group": "Gebet und Nachfolge",
+        "title": "Beten und Fasten",
+        "body": "Fasten und Gebet sollen nicht zur Schau gestellt werden. In der Wüste antwortet Jesus dem Versucher aus der Schrift. Seine Worte über das Fasten unterscheiden Situationen von Freude und Trauer.",
+        "refs": [
+          "Mt 4,1-11",
+          "Mt 6,5-18",
+          "Mk 2,18-20"
+        ]
+      },
+      {
+        "id": "jesus-10",
+        "group": "Gebet und Nachfolge",
+        "title": "Sorgen und Vertrauen",
+        "body": "Jesus spricht über Vögel und Lilien, um Gottes Fürsorge zu verdeutlichen. Die Aufforderung ist kein Verbot vernünftiger Vorsorge oder eine Schuldzuweisung an Menschen mit Angst.",
+        "refs": [
+          "Mt 6,25-34",
+          "Mt 11,28-30"
+        ]
+      },
+      {
+        "id": "jesus-11",
+        "group": "Gebet und Nachfolge",
+        "title": "Schätze, Geld und Besitz",
+        "body": "Jesu Worte über Schätze und den reichen Mann hinterfragen, ob Besitz zum Herrn wird. Er fordert Großzügigkeit und warnt vor dem Illusion, Leben lasse sich durch Vorräte sichern.",
+        "refs": [
+          "Mt 6,19-24",
+          "Lk 12,13-21"
+        ]
+      },
+      {
+        "id": "jesus-12",
+        "group": "Gebet und Nachfolge",
+        "title": "Das Kreuz auf sich nehmen",
+        "body": "Nachfolge hat Kosten: Jesus spricht vom Verleugnen des eigenen Anspruchs auf Selbstherrschaft. Das ist kein Auftrag, Missbrauch zu dulden oder künstlich Leid zu suchen.",
+        "refs": [
+          "Mk 8,34-38",
+          "Lk 14,27-33"
+        ]
+      },
+      {
+        "id": "jesus-13",
+        "group": "Gebet und Nachfolge",
+        "title": "Dienen statt herrschen",
+        "body": "Jesus stellt die Herrschaftspraxis seiner Umwelt dem Dienst gegenüber. Die Fußwaschung macht das Bild konkret: Der Meister dient seinen Jüngern.",
+        "refs": [
+          "Mk 10,42-45",
+          "Joh 13,1-17"
+        ]
+      },
+      {
+        "id": "jesus-14",
+        "group": "Gebet und Nachfolge",
+        "title": "Bleiben und Frucht bringen",
+        "body": "Der Weinstock ist Jesu Bild für die bleibende Beziehung zwischen ihm und seinen Jüngern. Frucht wächst aus dieser Verbindung, nicht aus religiöser Selbstdarstellung.",
+        "refs": [
+          "Joh 15,1-17"
+        ]
+      },
+      {
+        "id": "jesus-15",
+        "group": "Ich-bin-Worte",
+        "title": "Brot des Lebens",
+        "body": "Nach der Speisung der Menge lenkt Jesus den Blick von vergänglichem Brot auf Leben, das Gott schenkt. Johannes 6 verbindet das mit Glauben und Jesu Hingabe.",
+        "refs": [
+          "Joh 6,26-40",
+          "Joh 6,51"
+        ]
+      },
+      {
+        "id": "jesus-16",
+        "group": "Ich-bin-Worte",
+        "title": "Licht der Welt",
+        "body": "Jesus verbindet Nachfolge mit Licht und Leben. In Johannes 9 führt das Motiv von einer körperlichen Heilung zur Frage geistlicher Wahrnehmung.",
+        "refs": [
+          "Joh 8,12",
+          "Joh 9,5"
+        ]
+      },
+      {
+        "id": "jesus-17",
+        "group": "Ich-bin-Worte",
+        "title": "Tür und guter Hirte",
+        "body": "Jesus verwendet Tür und Hirte als Bilder von Schutz, Zugang, Führung und Hingabe. Seine Schafe kennen seine Stimme; er setzt sein Leben für sie ein.",
+        "refs": [
+          "Joh 10,7-18"
+        ]
+      },
+      {
+        "id": "jesus-18",
+        "group": "Ich-bin-Worte",
+        "title": "Auferstehung und Leben",
+        "body": "Im Gespräch mit Marta verbindet Jesus die Zukunftshoffnung mit seiner Person. Er weint am Grab des Lazarus, bevor die Erzählung von dessen Auferweckung berichtet.",
+        "refs": [
+          "Joh 11,21-27",
+          "Joh 11,33-44"
+        ]
+      },
+      {
+        "id": "jesus-19",
+        "group": "Ich-bin-Worte",
+        "title": "Weg, Wahrheit und Leben",
+        "body": "In den Abschiedsreden tröstet Jesus seine Jünger vor der Trennung und erklärt seinen Weg zum Vater. Das Wort steht in einem Gespräch über Vertrauen, nicht in einer abstrakten Definition.",
+        "refs": [
+          "Joh 14,1-11"
+        ]
+      },
+      {
+        "id": "jesus-20",
+        "group": "Ich-bin-Worte",
+        "title": "Der wahre Weinstock",
+        "body": "Das letzte der sieben klassischen bildhaften Ich-bin-Worte verbindet Bleiben, Reinigung und Frucht. Andere Ich-bin-Aussagen in Johannes haben andere Funktionen.",
+        "refs": [
+          "Joh 15,1-8",
+          "Joh 8,58"
+        ]
+      },
+      {
+        "id": "jesus-21",
+        "group": "Wunder und Begegnungen",
+        "title": "Die Hochzeit in Kana",
+        "body": "Johannes bezeichnet die Verwandlung von Wasser in Wein als erstes Zeichen. Die Erzählung verweist auf Jesu Herrlichkeit und den Glauben der Jünger; sie ist nicht bloß eine Lektion über Wunder.",
+        "refs": [
+          "Joh 2,1-11"
+        ]
+      },
+      {
+        "id": "jesus-22",
+        "group": "Wunder und Begegnungen",
+        "title": "Nikodemus: neu geboren",
+        "body": "Jesus spricht von Geburt von oben bzw. neuem Geborenwerden, Wasser und Geist. Nikodemus versteht zunächst wörtlich; Johannes lenkt den Blick auf Gottes Gabe und Glauben.",
+        "refs": [
+          "Joh 3,1-21"
+        ]
+      },
+      {
+        "id": "jesus-23",
+        "group": "Wunder und Begegnungen",
+        "title": "Die Frau am Brunnen",
+        "body": "Jesus spricht mit einer Samaritanerin und verwendet lebendiges Wasser als Bild für Gottes Gabe. Die Erzählung überschreitet soziale und religiöse Grenzen, ohne die Unterschiede zu leugnen.",
+        "refs": [
+          "Joh 4,7-26",
+          "Joh 4,39-42"
+        ]
+      },
+      {
+        "id": "jesus-24",
+        "group": "Wunder und Begegnungen",
+        "title": "Speisung der Menge",
+        "body": "Jesus empfindet Mitgefühl und gibt Menschen Nahrung. Die Evangelien schildern die Speisung mit verschiedenen Details; Johannes entfaltet anschließend die Brotrede.",
+        "refs": [
+          "Mk 6,30-44",
+          "Joh 6,1-15"
+        ]
+      },
+      {
+        "id": "jesus-25",
+        "group": "Wunder und Begegnungen",
+        "title": "Sturmstillung und Vertrauen",
+        "body": "Die Jünger erleben Angst in einem Sturm. Jesus stillt ihn und stellt die Glaubensfrage; die Reaktion der Jünger ist zugleich Staunen und Furcht.",
+        "refs": [
+          "Mk 4,35-41"
+        ]
+      },
+      {
+        "id": "jesus-26",
+        "group": "Wunder und Begegnungen",
+        "title": "Bartimäus und Zachäus",
+        "body": "Der blinde Bartimäus ruft trotz Widerstands und folgt Jesus. Zachäus antwortet auf Jesu Zuwendung mit Wiedergutmachung; beide Begegnungen zeigen unterschiedliche Aspekte von Nachfolge.",
+        "refs": [
+          "Mk 10,46-52",
+          "Lk 19,1-10"
+        ]
+      },
+      {
+        "id": "jesus-27",
+        "group": "Passion und Sendung",
+        "title": "Gethsemane",
+        "body": "Jesus bringt seine Not im Gebet vor den Vater und bittet Freunde um Nähe. Gehorsam und Angst werden nicht gegeneinander ausgespielt.",
+        "refs": [
+          "Mt 26,36-46",
+          "Mk 14,32-42"
+        ]
+      },
+      {
+        "id": "jesus-28",
+        "group": "Passion und Sendung",
+        "title": "Das Mahl und der neue Bund",
+        "body": "Jesus deutet Brot und Kelch auf seine Hingabe und den Bund. Die christlichen Traditionen verstehen das Abendmahl unterschiedlich; gemeinsam ist seine Verbindung mit Jesus und seiner Hingabe.",
+        "refs": [
+          "Lk 22,14-20",
+          "1Kor 11,23-26"
+        ]
+      },
+      {
+        "id": "jesus-29",
+        "group": "Passion und Sendung",
+        "title": "Die Auferstehung und Emmaus",
+        "body": "Die Auferstehungsberichte schildern Begegnungen mit dem Auferstandenen. In Emmaus legt Jesus die Schrift aus und wird beim Brotbrechen erkannt.",
+        "refs": [
+          "Lk 24,13-35",
+          "Joh 20,19-29"
+        ]
+      },
+      {
+        "id": "jesus-30",
+        "group": "Passion und Sendung",
+        "title": "Der Auftrag an die Jünger",
+        "body": "Matthäus verbindet Sendung mit Jüngermachen, Taufe und Lehre; Johannes betont Sendung und Geist. Die Berufung richtet sich über lokale Grenzen hinaus und wird in der Apostelgeschichte entfaltet.",
+        "refs": [
+          "Mt 28,18-20",
+          "Joh 20,21-23",
+          "Apg 1,8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trees",
+    "title": "Biblische Stammbäume",
+    "short": "Stammbäume",
+    "intro": "Ausgewählte biblische Familienlinien und Herrscherfolgen als lesbare Schaubilder. Pfeile bedeuten Abstammung oder die jeweils ausdrücklich bezeichnete Reihenfolge; Ellipsen markieren verkürzte Linien. Kein historisch vollständig verifizierter Stammbaum.",
+    "entries": [
+      {
+        "id": "tree-1",
+        "group": "Urgeschichte",
+        "title": "Adam bis Noah",
+        "body": "Genesis 5 verfolgt die Linie über Seth bis Noah. Kain und Abel werden gesondert erzählt; die Liste ist eine ausgewählte Linie und kein vollständiger Stammbaum aller Menschen. Die Zahlen werden unterschiedlich interpretiert und nicht als sichere Weltchronologie dargestellt.",
+        "refs": [
+          "1Mo 4,1-26",
+          "1Mo 5,1-32"
+        ],
+        "note": "Linie nach Genesis 5.",
+        "diagram": [
+          "Adam → Seth → Enosch → Kenan → Mahalalel",
+          "Jered → Henoch → Methusalah → Lamech → Noah"
+        ]
+      },
+      {
+        "id": "tree-2",
+        "group": "Urgeschichte",
+        "title": "Noahs drei Söhne",
+        "body": "Noah hat Sem, Ham und Japhet. Genesis 10 ordnet Völker und Gruppen in genealogischer Sprache. Die Darstellung ist antike Völkertafel, keine moderne genetische Einteilung.",
+        "refs": [
+          "1Mo 5,32",
+          "1Mo 10,1-32"
+        ],
+        "note": "Ausgewählte unmittelbare Söhne.",
+        "diagram": [
+          "Noah → Sem",
+          "Noah → Ham",
+          "Noah → Japhet"
+        ]
+      },
+      {
+        "id": "tree-3",
+        "group": "Erzväter",
+        "title": "Von Sem zu Abraham",
+        "body": "Genesis 11 führt die genealogische Linie von Sem zu Terach und dessen Söhnen. Die Namen dienen dem Übergang von der Völkergeschichte zur Abrahamserzählung.",
+        "refs": [
+          "1Mo 11,10-32"
+        ],
+        "note": "Textlinie nach Genesis 11; Namensschreibweisen können abweichen.",
+        "diagram": [
+          "Sem → Arpaksad → Schelach → Eber → Peleg",
+          "→ Regu → Serug → Nahor → Terach → Abram"
+        ]
+      },
+      {
+        "id": "tree-4",
+        "group": "Erzväter",
+        "title": "Abrahams Familie",
+        "body": "Abraham hat Ismael mit Hagar und Isaak mit Sara; nach Saras Tod nennt Genesis weitere Söhne von Ketura. Die Verheißungslinie über Isaak hebt Ismaels eigenständigen Segen nicht auf.",
+        "refs": [
+          "1Mo 16,15-16",
+          "1Mo 17,18-21",
+          "1Mo 25,1-6"
+        ],
+        "note": "Auswahl der Familienzweige.",
+        "diagram": [
+          "Abraham + Hagar → Ismael",
+          "Abraham + Sara → Isaak",
+          "Abraham + Ketura → Simran, Jokschan, Medan, Midian, Jischbak, Schuach"
+        ]
+      },
+      {
+        "id": "tree-5",
+        "group": "Erzväter",
+        "title": "Isaak und Rebekka",
+        "body": "Die Zwillinge Esau und Jakob stehen im Mittelpunkt der Erzählung um Erstgeburt, Segen und Versöhnung. Esau ist mit Edom verbunden, Jakob erhält den Namen Israel.",
+        "refs": [
+          "1Mo 25,19-34",
+          "1Mo 32,27-29",
+          "1Mo 33,1-11"
+        ],
+        "note": "Direkte Familienbeziehung.",
+        "diagram": [
+          "Isaak + Rebekka → Esau",
+          "Isaak + Rebekka → Jakob (Israel)"
+        ]
+      },
+      {
+        "id": "tree-6",
+        "group": "Israel",
+        "title": "Jakobs Söhne und ihre Mütter",
+        "body": "Die Söhne Jakobs begründen die Stammesüberlieferung. Dinah wird ebenfalls als Tochter Leas genannt; die Liste der Söhne ist nicht die ganze Familie. Ephraim und Manasse treten später in Stammeslisten an Josefs Stelle.",
+        "refs": [
+          "1Mo 29,31-35",
+          "1Mo 30,1-24",
+          "1Mo 35,16-26",
+          "1Mo 48,5"
+        ],
+        "note": "Mütter und benannte Kinder.",
+        "diagram": [
+          "Lea → Ruben, Simeon, Levi, Juda, Issaschar, Sebulon, Dinah",
+          "Rahel → Josef, Benjamin",
+          "Bilha → Dan, Naphtali",
+          "Silpa → Gad, Asser",
+          "Josef → Manasse, Ephraim"
+        ]
+      },
+      {
+        "id": "tree-7",
+        "group": "Israel",
+        "title": "Levi, Mose und Aaron",
+        "body": "Exodus 6 verfolgt die Linie Levis über Kehat und Amram. Aaron und Mose sind Brüder; Mirjam wird in Numeri ausdrücklich als Schwester genannt. Priesterliche Linien sind von der allgemeinen Stammeszugehörigkeit zu unterscheiden.",
+        "refs": [
+          "2Mo 6,16-23",
+          "4Mo 26,59"
+        ],
+        "note": "Ausgewählte Familienlinie.",
+        "diagram": [
+          "Levi → Kehat → Amram + Jochebed",
+          "Kinder: Aaron, Mose, Mirjam"
+        ]
+      },
+      {
+        "id": "tree-8",
+        "group": "Könige",
+        "title": "Juda bis David",
+        "body": "Ruts Schlussliste verbindet Perez über Boas und Obed mit Isai und David. Die Erzählung zeigt Ruths Platz in Israels Geschichte; Matthäus nennt sie in Jesu Genealogie.",
+        "refs": [
+          "Rut 4,17-22",
+          "Mt 1,3-6"
+        ],
+        "note": "Linie nach Rut 4.",
+        "diagram": [
+          "Perez → Hezron → Ram → Amminadab → Nachschon",
+          "→ Salmon → Boas + Rut → Obed → Isai → David"
+        ]
+      },
+      {
+        "id": "tree-9",
+        "group": "Könige",
+        "title": "Davids Haus und die Reichsteilung",
+        "body": "David hat mehrere Söhne; Salomo folgt als König. Unter Rehabeam zerfällt das Reich. Jerobeam regiert ein anderes Haus im Norden; Königsfolgen sind nicht automatisch Vater-Sohn-Linien.",
+        "refs": [
+          "2Sam 5,13-16",
+          "1Kö 1,28-35",
+          "1Kö 12,16-20"
+        ],
+        "note": "Ausgewählte Nachkommen und politische Abzweigung.",
+        "diagram": [
+          "David → Salomo → Rehabeam (Juda)",
+          "David → Nathan",
+          "Jerobeam I. (Nordreich; eigenes Haus)"
+        ]
+      },
+      {
+        "id": "tree-10",
+        "group": "Könige",
+        "title": "Könige Judas: die davidische Linie",
+        "body": "Die Linie des Südreichs verläuft grundsätzlich über Davids Haus. Athalja herrscht zwischen Ahasja und Joasch; bei der späteren Thronfolge folgen auch Brüder und Onkel. Die Grafik ist eine Regierungsfolge, kein durchgehender biologischer Stammbaum.",
+        "refs": [
+          "1Kö 14,21",
+          "2Kö 11,1-3",
+          "2Kö 23,30-37",
+          "2Kö 24,17"
+        ],
+        "note": "Regierungsfolge (Pfeil bedeutet hier Nachfolge).",
+        "diagram": [
+          "Rehabeam → Abija → Asa → Josaphat → Joram → Ahasja",
+          "→ Athalja → Joasch → Amazja → Asarja → Jotham → Ahas",
+          "→ Hiskia → Manasse → Amon → Josia → Joahas → Jojakim",
+          "→ Jojakin → Zedekia"
+        ]
+      },
+      {
+        "id": "tree-11",
+        "group": "Könige",
+        "title": "Könige Israels: mehrere Dynastien",
+        "body": "Das Nordreich kennt verschiedene Königshäuser und Machtwechsel. Omri gründet die Dynastie Ahabs; Jehu beendet sie. Die Reihenfolge folgt dem politischen Geschehen, nicht einer Familie.",
+        "refs": [
+          "1Kö 12,20",
+          "1Kö 16,16-30",
+          "2Kö 9,1-13",
+          "2Kö 17,1-6"
+        ],
+        "note": "Vereinfachte Regierungsfolge, nicht verwandt in jedem Schritt.",
+        "diagram": [
+          "Jerobeam I. → Nadab → Baesa → Ela → Simri",
+          "→ Omri → Ahab → Ahasja → Joram → Jehu",
+          "→ Joahas → Joas → Jerobeam II. → Sacharja → Schallum",
+          "→ Menahem → Pekachja → Pekach → Hosea"
+        ]
+      },
+      {
+        "id": "tree-12",
+        "group": "Jesus",
+        "title": "Matthäus: Abraham bis Jesus",
+        "body": "Matthäus ordnet Jesu Genealogie in drei Gruppen zu je vierzehn; die Liste lässt einige historisch bekannte Könige aus. Sie betont Abraham, David und Exil. Tamar, Rahab, Rut, die Frau des Uria und Maria werden genannt.",
+        "refs": [
+          "Mt 1,1-17",
+          "1Chr 3,10-16"
+        ],
+        "note": "Textliche Linie, bewusst zusammengestellt; bei Joseph ist Maria die Mutter Jesu.",
+        "diagram": [
+          "Abraham → Isaak → Jakob → Juda → Perez → Hezron → Ram",
+          "→ Amminadab → Nachschon → Salmon → Boas → Obed → Isai → David",
+          "→ Salomo → Rehabeam → Abija → Asa → Josaphat → Joram → Usija",
+          "→ Jotham → Ahas → Hiskia → Manasse → Amon → Josia → Jechonja",
+          "→ Schealtiel → Serubbabel → Abiud → Eljakim → Asor → Zadok",
+          "→ Achim → Eliud → Eleasar → Matthan → Jakob → Joseph (Mann Marias) → Jesus"
+        ]
+      },
+      {
+        "id": "tree-13",
+        "group": "Jesus",
+        "title": "Lukas: Jesus zurück bis Adam",
+        "body": "Lukas führt die Linie rückwärts über Joseph, Heli, Nathan und David, dann über Abraham bis Adam und Gott. Die Unterschiede zu Matthäus sind Gegenstand verschiedener Erklärungsversuche; Lukas bezeichnet die Liste nicht ausdrücklich als Abstammung Marias.",
+        "refs": [
+          "Lk 3,23-38",
+          "Mt 1,16"
+        ],
+        "note": "Ausgewählte Knoten der rückwärts erzählten Linie; vollständige Liste im Bibeltext.",
+        "diagram": [
+          "Jesus → (wie man meinte) Joseph → Heli → … → Nathan → David",
+          "→ … → Abraham → … → Sem → Noah → … → Adam → Gott"
+        ]
+      },
+      {
+        "id": "tree-14",
+        "group": "Jesus",
+        "title": "Zwei Listen, zwei Akzente",
+        "body": "Matthäus folgt nach David der Linie Salomos, Lukas derjenigen Nathans. Beide stellen Jesus in Israels Geschichte, aber mit unterschiedlichen Erzählakzenten. Leviratsehe oder eine mütterliche Linie sind vorgeschlagene, nicht gesicherte Harmonisierungsmöglichkeiten.",
+        "refs": [
+          "Mt 1,6-16",
+          "Lk 3,23-38"
+        ],
+        "note": "Vergleich ausgewählter Linien; keine erzwungene Harmonisierung.",
+        "diagram": [
+          "David → Salomo → … → Joseph (Matthäus)",
+          "David → Nathan → … → Joseph (Lukas)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "symbols",
+    "title": "Biblische Symbolik",
+    "short": "Symbolik",
+    "intro": "Bilder und Gegenstände im biblischen Zusammenhang. Ein Symbol hat nicht immer dieselbe Bedeutung; die jeweilige Erzählung, Gattung und Auslegung sind entscheidend.",
+    "entries": [
+      {
+        "id": "symbol-1",
+        "group": "Elemente",
+        "title": "Feuer",
+        "body": "Feuer kann Gottes Gegenwart, Opfer, Reinigung, Gericht und Pfingstbild bezeichnen. Im brennenden Dornbusch brennt der Busch, ohne verzehrt zu werden; in anderen Texten zerstört Feuer. Ein persönliches Bild mit Feuer lässt sich nicht sicher nach einer einzigen Symbolregel deuten.",
+        "refs": [
+          "2Mo 3,2-6",
+          "Mal 3,2-3",
+          "Apg 2,3",
+          "Offb 20,14"
+        ]
+      },
+      {
+        "id": "symbol-2",
+        "group": "Elemente",
+        "title": "Wasser",
+        "body": "Wasser ist Lebensgrundlage, aber auch Gefahr und Gericht. Der Durchzug durchs Meer, Reinigung, Taufe und lebendiges Wasser sind verwandte, nicht identische Bilder.",
+        "refs": [
+          "1Mo 7,17-24",
+          "2Mo 14,21-22",
+          "Joh 4,10-14",
+          "Röm 6,3-4"
+        ]
+      },
+      {
+        "id": "symbol-3",
+        "group": "Elemente",
+        "title": "Licht und Finsternis",
+        "body": "Licht steht für Schöpfung, Orientierung und Gottes Offenbarung; Finsternis kann Nacht, Unwissenheit oder Not bezeichnen. Johannes verwendet beide als theologische Gegensätze.",
+        "refs": [
+          "1Mo 1,3-5",
+          "Ps 119,105",
+          "Joh 1,4-5"
+        ]
+      },
+      {
+        "id": "symbol-4",
+        "group": "Elemente",
+        "title": "Wind und Atem",
+        "body": "Wind ist unsichtbar und seine Wirkung erfahrbar. Hesekiels Totengebeine verbinden Lebensatem und Wiederherstellung Israels; Johannes nutzt Wind als Bild für Geist.",
+        "refs": [
+          "Hes 37,1-14",
+          "Joh 3,8"
+        ]
+      },
+      {
+        "id": "symbol-5",
+        "group": "Elemente",
+        "title": "Staub und Erde",
+        "body": "Der Mensch ist aus Erde gebildet und kehrt zum Staub zurück. Staub kann Vergänglichkeit, Trauer oder Demut anzeigen; nicht jede Erwähnung bedeutet Sünde.",
+        "refs": [
+          "1Mo 2,7",
+          "1Mo 3,19",
+          "Hi 42,6"
+        ]
+      },
+      {
+        "id": "symbol-6",
+        "group": "Nahrung und Pflanzen",
+        "title": "Brot",
+        "body": "Brot bezeichnet tägliche Versorgung und Gastfreundschaft. Manna, Brot des Lebens und Abendmahl entfalten unterschiedliche Zusammenhänge von Nahrung und Gottes Gabe.",
+        "refs": [
+          "2Mo 16,4",
+          "Mt 6,11",
+          "Joh 6,35",
+          "1Kor 11,23-24"
+        ]
+      },
+      {
+        "id": "symbol-7",
+        "group": "Nahrung und Pflanzen",
+        "title": "Wein und Kelch",
+        "body": "Wein kann Freude und Segen symbolisieren, aber auch Rausch. Der Kelch kann Leiden oder Gericht bezeichnen und im Abendmahl Jesu Hingabe.",
+        "refs": [
+          "Ps 104,15",
+          "Spr 20,1",
+          "Mk 14,36",
+          "Lk 22,20"
+        ]
+      },
+      {
+        "id": "symbol-8",
+        "group": "Nahrung und Pflanzen",
+        "title": "Öl und Salbung",
+        "body": "Öl dient Nahrung, Pflege, Lampen und der Salbung von Königen. Die Salbung kann Beauftragung markieren; im Gleichnis der Jungfrauen ist Öl Teil der erzählten Bereitschaft, nicht ausdrücklich nur der Geist.",
+        "refs": [
+          "1Sam 16,13",
+          "Mt 25,1-13",
+          "Jak 5,14"
+        ]
+      },
+      {
+        "id": "symbol-9",
+        "group": "Nahrung und Pflanzen",
+        "title": "Weinstock und Frucht",
+        "body": "Israel wird als Weinberg beschrieben; Johannes 15 verwendet den Weinstock für Jesu Beziehung zu den Jüngern. Frucht ist Bild für sichtbare Wirkung eines Lebens.",
+        "refs": [
+          "Jes 5,1-7",
+          "Joh 15,1-8",
+          "Gal 5,22-23"
+        ]
+      },
+      {
+        "id": "symbol-10",
+        "group": "Nahrung und Pflanzen",
+        "title": "Samen und Ernte",
+        "body": "Saat und Ernte können Verkündigung, Wachstum, Gericht oder Folgen menschlichen Handelns darstellen. Die Gleichnisse erklären nicht in jeder Verwendung dieselben Bestandteile gleich.",
+        "refs": [
+          "Mk 4,3-20",
+          "Mt 13,36-43",
+          "Gal 6,7-9"
+        ]
+      },
+      {
+        "id": "symbol-11",
+        "group": "Nahrung und Pflanzen",
+        "title": "Baum und Lebensbaum",
+        "body": "Bäume können Beständigkeit und Fruchtbarkeit zeigen. Der Lebensbaum verbindet Eden mit dem neuen Jerusalem; der Baum bei Psalm 1 ist ein Bild des gottgemäßen Lebens.",
+        "refs": [
+          "1Mo 2,9",
+          "Ps 1,3",
+          "Offb 22,2"
+        ]
+      },
+      {
+        "id": "symbol-12",
+        "group": "Nahrung und Pflanzen",
+        "title": "Dorn und Distel",
+        "body": "Dornen stehen in Genesis für erschwerte Arbeit, im Sämann-Gleichnis für erstickende Sorgen. Die Dornenkrone verhöhnt Jesu Königtum; eine direkte Verbindung ist christliche Deutung, keine ausdrückliche Erklärung des Evangeliums.",
+        "refs": [
+          "1Mo 3,18",
+          "Mk 4,18-19",
+          "Joh 19,2-3"
+        ]
+      },
+      {
+        "id": "symbol-13",
+        "group": "Tiere",
+        "title": "Lamm und Schaf",
+        "body": "Schafe sind Herdentiere und Bild für Schutzbedürftige. Das Passalamm, das Gottesknechtbild und das Lamm in Offenbarung haben eigene Kontexte; das NT verbindet Lamm-Sprache mit Jesus.",
+        "refs": [
+          "2Mo 12,3-13",
+          "Jes 53,7",
+          "Joh 1,29",
+          "Offb 5,6"
+        ]
+      },
+      {
+        "id": "symbol-14",
+        "group": "Tiere",
+        "title": "Hirte",
+        "body": "Ein Hirte steht für Fürsorge und Führung, auch für politische Verantwortung. Hesekiel kritisiert schlechte Hirten; in Johannes 10 nennt Jesus sich den guten Hirten.",
+        "refs": [
+          "Ps 23",
+          "Hes 34,1-16",
+          "Joh 10,11-14"
+        ]
+      },
+      {
+        "id": "symbol-15",
+        "group": "Tiere",
+        "title": "Schlange",
+        "body": "Die Schlange in Eden verführt; die kupferne Schlange in Numeri dient in der Erzählung der Heilung. Jesus greift sie auf; er erwähnt auch die Klugheit von Schlangen. Das Bild ist nicht immer böse.",
+        "refs": [
+          "1Mo 3,1-5",
+          "4Mo 21,8-9",
+          "Mt 10,16",
+          "Joh 3,14"
+        ]
+      },
+      {
+        "id": "symbol-16",
+        "group": "Tiere",
+        "title": "Löwe",
+        "body": "Ein Löwe kann Königtum, Kraft oder Bedrohung darstellen. Offenbarung nennt den Löwen Judas, 1. Petrus vergleicht den Widersacher mit einem brüllenden Löwen.",
+        "refs": [
+          "1Mo 49,9",
+          "1Petr 5,8",
+          "Offb 5,5"
+        ]
+      },
+      {
+        "id": "symbol-17",
+        "group": "Tiere",
+        "title": "Taube",
+        "body": "Die Taube erscheint in der Flutgeschichte, in Opfervorschriften und bei Jesu Taufe als Vergleich für das Herabkommen des Geistes. Nicht jede Taube ist ein Symbol des Heiligen Geistes.",
+        "refs": [
+          "1Mo 8,8-12",
+          "3Mo 5,7",
+          "Mt 3,16"
+        ]
+      },
+      {
+        "id": "symbol-18",
+        "group": "Tiere",
+        "title": "Adler",
+        "body": "Adlerbilder stehen für Kraft, Höhe, Schutz und manchmal Gericht. Der Exodus erzählt von Gottes Tragen; Jesaja spricht von neuer Kraft.",
+        "refs": [
+          "2Mo 19,4",
+          "Jes 40,31",
+          "Hab 1,8"
+        ]
+      },
+      {
+        "id": "symbol-19",
+        "group": "Orte und Gegenstände",
+        "title": "Wüste",
+        "body": "Die Wüste ist Ort von Gefahr, Prüfung, Begegnung, Versorgung und neuer Ausrichtung. Israel und Jesus erleben dort unterschiedliche Prüfungen.",
+        "refs": [
+          "2Mo 16,1-5",
+          "Hos 2,14",
+          "Mt 4,1-11"
+        ]
+      },
+      {
+        "id": "symbol-20",
+        "group": "Orte und Gegenstände",
+        "title": "Berg",
+        "body": "Berge sind konkrete Orte und häufig Schauplätze göttlicher Offenbarung. Sinai, Zion und der Berg der Verklärung haben verschiedene Funktionen.",
+        "refs": [
+          "2Mo 19,18-20",
+          "Ps 48,1-3",
+          "Mt 17,1-8"
+        ]
+      },
+      {
+        "id": "symbol-21",
+        "group": "Orte und Gegenstände",
+        "title": "Tempel und Vorhang",
+        "body": "Der Tempel bezeichnet einen Ort von Gottes Gegenwart und verehrendem Dienst. Die Evangelien erzählen das Zerreißen des Vorhangs; der Hebräerbrief nutzt Heiligtumssprache für Zugang zu Gott.",
+        "refs": [
+          "1Kö 8,27-30",
+          "Mk 15,38",
+          "Hebr 10,19-22"
+        ]
+      },
+      {
+        "id": "symbol-22",
+        "group": "Orte und Gegenstände",
+        "title": "Stein und Fels",
+        "body": "Fels kann Schutz und Beständigkeit bedeuten. Steine dienen Erinnerung; der verworfene Stein wird im NT auf Jesus bezogen. Das jeweilige Bild ist zu beachten.",
+        "refs": [
+          "Jos 4,4-7",
+          "Ps 18,2",
+          "Ps 118,22",
+          "1Petr 2,4-8"
+        ]
+      },
+      {
+        "id": "symbol-23",
+        "group": "Orte und Gegenstände",
+        "title": "Kreuz",
+        "body": "Römisches Hinrichtungsinstrument, im NT zugleich Zeichen von Jesu Hingabe und einer umgekehrten Vorstellung von Macht. Nachfolge bedeutet nicht Verherrlichung von Leid.",
+        "refs": [
+          "Mk 15,21-39",
+          "1Kor 1,18",
+          "Gal 6,14"
+        ]
+      },
+      {
+        "id": "symbol-24",
+        "group": "Farben und Zahlen",
+        "title": "Weiß, Purpur, Gold",
+        "body": "Weiß kann Reinheit, Freude oder himmlische Kleidung markieren; Purpur und Gold können Reichtum, Königtum oder Heiligtum anzeigen. Offenbarung verwendet dieselben Farben auch für ambivalente Machtbilder.",
+        "refs": [
+          "2Mo 26,1",
+          "Mk 15,17",
+          "Offb 7,9",
+          "Offb 17,4"
+        ]
+      },
+      {
+        "id": "symbol-25",
+        "group": "Farben und Zahlen",
+        "title": "Drei, sieben, zwölf, vierzig",
+        "body": "Zahlen können Struktur und literarische Bedeutung tragen: sieben Tage, zwölf Stämme und Jünger, vierzig Tage Prüfung. Nicht jede Wiederholung besitzt denselben Sinn. Zahlen erlauben keine zuverlässige private Vorhersage.",
+        "refs": [
+          "1Mo 2,2-3",
+          "4Mo 14,34",
+          "Mt 4,2",
+          "Mt 10,1-4"
+        ]
+      },
+      {
+        "id": "symbol-26",
+        "group": "Farben und Zahlen",
+        "title": "Herz und Hand",
+        "body": "Das Herz ist Ort von Denken und Entscheidung; die Hand kann Macht, Hilfe oder konkrete Tat ausdrücken. Körperbilder beschreiben Funktionen, keine geheime Anatomie des Geistes.",
+        "refs": [
+          "Spr 4,23",
+          "Jes 41,10",
+          "Mk 7,21-23"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "history",
+    "title": "Die Geschichte der Bibel",
+    "short": "Bibelgeschichte",
+    "intro": "Eine Einführung in Entstehung, Sprachen, Handschriften, Kanon, Übersetzungen und Textkritik. Datierungen sind ungefähre historische Einordnungen. Die App enthält eigene Lerntexte, keine kopierten modernen Lexikonartikel.",
+    "entries": [
+      {
+        "id": "hist-1",
+        "group": "Sprachen und Entstehung",
+        "title": "Eine Bibliothek aus vielen Zeiten",
+        "body": "Die Bibel enthält Erzählung, Gesetz, Gebet, Weisheit, Prophetie, Evangelium, Brief und Apokalypse. Bücher entstanden, wurden überliefert und redigiert über lange Zeit; genaue Datierung und Verfasserschaft sind teils umstritten.",
+        "refs": [
+          "Lk 1,1-4",
+          "2Tim 3,16"
+        ],
+        "note": "Die App folgt dem evangelischen Kanon mit 66 Büchern, ohne andere Kanontraditionen abzuwerten."
+      },
+      {
+        "id": "hist-2",
+        "group": "Sprachen und Entstehung",
+        "title": "Hebräisch, Aramäisch und Griechisch",
+        "body": "Das AT ist überwiegend hebräisch, mit aramäischen Abschnitten besonders in Esra und Daniel. Das NT ist in Koine-Griechisch überliefert; einzelne aramäische Ausdrücke bleiben erhalten.",
+        "refs": [
+          "Esr 4,7",
+          "Dan 2,4",
+          "Mk 5,41"
+        ],
+        "note": "Ursprachen sind nicht mit moderner Alltagssprache identisch."
+      },
+      {
+        "id": "hist-3",
+        "group": "Sprachen und Entstehung",
+        "title": "Mündliche und schriftliche Überlieferung",
+        "body": "Viele antike Texte wurden öffentlich gelesen, mündlich vermittelt und abgeschrieben. Die Bibel nennt Schreiber und Vorlesesituationen; daraus folgt nicht, dass jede Entstehungsphase rekonstruiert werden kann.",
+        "refs": [
+          "Jer 36,4-8",
+          "Neh 8,1-8",
+          "Lk 1,1-4"
+        ]
+      },
+      {
+        "id": "hist-4",
+        "group": "Texte der Antike",
+        "title": "Die Septuaginta",
+        "body": "Die griechische Übersetzung jüdischer Schriften begann mit der Tora im 3. Jh. v. Chr. und wurde über längere Zeit erweitert. NT-Zitate folgen oft griechischen Textformen; die Septuaginta war kein einheitliches Buchprojekt mit einer einzigen Textgestalt.",
+        "refs": [
+          "Mt 1,23",
+          "Jes 7,14",
+          "Apg 15,16-17"
+        ],
+        "note": "Vergleiche Zitat und Ausgangstext; Unterschiede nicht vorschnell als Fehler werten."
+      },
+      {
+        "id": "hist-5",
+        "group": "Texte der Antike",
+        "title": "Schriftrollen vom Toten Meer",
+        "body": "Seit 1947 wurden bei Qumran und im Umfeld zahlreiche jüdische Handschriften entdeckt, darunter biblische und außerbiblische Texte. Sie belegen sowohl Kontinuität als auch unterschiedliche antike Textformen.",
+        "refs": [
+          "Jes 40,1-8"
+        ],
+        "note": "1QIsaᵃ ist eine bekannte Jesajarolle; kein neuzeitliches Original des Autors."
+      },
+      {
+        "id": "hist-6",
+        "group": "Texte der Antike",
+        "title": "Masoretische Überlieferung",
+        "body": "Jüdische Schreiber pflegten den hebräischen Text; Masoreten ergänzten Vokalzeichen und Überlieferungsnotizen. Der Codex Leningradensis von 1008/1009 ist eine wichtige vollständige Handschrift der Hebräischen Bibel.",
+        "refs": [
+          "5Mo 6,4-9"
+        ],
+        "note": "Vokalzeichen sind jünger als die Konsonantentradition."
+      },
+      {
+        "id": "hist-7",
+        "group": "Texte der Antike",
+        "title": "Papyri und Pergamentkodizes",
+        "body": "Frühe christliche Texte sind auf Papyri und später in großen Kodizes überliefert. Codex Vaticanus und Sinaiticus stammen aus dem 4. Jh. Sie unterscheiden sich teilweise in Wortlaut und Buchbestand.",
+        "refs": [
+          "Joh 21,24-25"
+        ],
+        "note": "Textkritik vergleicht Handschriften statt ein einzelnes Manuskript zu verabsolutieren."
+      },
+      {
+        "id": "hist-8",
+        "group": "Kanon",
+        "title": "Tanach und jüdische Schrift",
+        "body": "Tora, Neviim und Ketuvim bilden die drei Teile des Tanach. Die 24 Bücher nach jüdischer Zählung entsprechen weitgehend dem Textbestand des evangelischen AT, jedoch in anderer Reihenfolge und Zusammenfassung.",
+        "refs": [
+          "Lk 24,44"
+        ],
+        "note": "Lukas nennt Gesetz, Propheten und Psalmen; das ist nicht automatisch eine vollständige Kanonliste."
+      },
+      {
+        "id": "hist-9",
+        "group": "Kanon",
+        "title": "Der neutestamentliche Kanon",
+        "body": "Evangelien und Briefe zirkulierten in den ersten Gemeinden. Der 39. Festbrief des Athanasius (367) nennt die heute üblichen 27 NT-Bücher; die Anerkennung entwickelte sich regional über Zeit.",
+        "refs": [
+          "Kol 4,16",
+          "2Petr 3,15-16"
+        ],
+        "note": "Kein einzelnes Konzil hat die Bibel aus dem Nichts geschaffen."
+      },
+      {
+        "id": "hist-10",
+        "group": "Kanon",
+        "title": "Warum die Bibeln unterschiedlich viele Bücher haben",
+        "body": "Evangelische Bibeln zählen gewöhnlich 66, katholische 73 Bücher. Orthodoxe Kanonlisten variieren. Unterschiede betreffen vor allem den alttestamentlichen Umfang und die Überlieferung griechischsprachiger Schriften.",
+        "refs": [
+          "Lk 24,44"
+        ],
+        "note": "Apokryphen / deuterokanonische Schriften werden je nach Tradition unterschiedlich eingeordnet."
+      },
+      {
+        "id": "hist-11",
+        "group": "Übersetzungen",
+        "title": "Die lateinische Vulgata",
+        "body": "Hieronymus arbeitete ab dem späten 4. Jh. an lateinischen Revisionen und Übersetzungen, auch aus dem Hebräischen. Die später Vulgata genannte Textsammlung prägte die westliche Kirche über Jahrhunderte.",
+        "refs": [
+          "Joh 1,1"
+        ],
+        "note": "Vulgata ist nicht das lateinische Original des NT."
+      },
+      {
+        "id": "hist-12",
+        "group": "Übersetzungen",
+        "title": "Buchdruck und Gutenberg",
+        "body": "Die Gutenberg-Bibel entstand in Mainz um 1454/1455 als lateinische Bibel. Bewegliche Metalllettern ermöglichten in Europa neue Verbreitungsformen; Handschriften und ältere Drucktechniken gab es bereits.",
+        "refs": [
+          "Neh 8,8"
+        ],
+        "note": "Buchdruck beschleunigt Verbreitung, ist aber nicht Ursprung der Bibel."
+      },
+      {
+        "id": "hist-13",
+        "group": "Übersetzungen",
+        "title": "Reformation und deutsche Bibel",
+        "body": "Luthers Neues Testament erschien 1522, die vollständige Bibel 1534. Vor Luther existierten bereits deutsche Bibeln. Seine Übersetzung prägte Sprache und religiöse Praxis; andere Reformatoren schufen weitere Fassungen.",
+        "refs": [
+          "Röm 1,17"
+        ],
+        "note": "Luther, Zürcher und weitere Bibeln unterscheiden sich in Übersetzungsentscheidungen."
+      },
+      {
+        "id": "hist-14",
+        "group": "Übersetzungen",
+        "title": "Die Elberfelder Bibel",
+        "body": "Die erste Elberfelder NT-Ausgabe erschien 1855, die vollständige Bibel 1871. Sie strebt Nähe zum Ausgangstext an; spätere Revisionen besitzen eigene Editions- und Nutzungsrechte. BIBLIA nutzt nach der bisherigen Angabe die Ausgabe 1905.",
+        "refs": [
+          "Joh 1,1",
+          "Röm 8,1"
+        ],
+        "note": "Gemeinfreiheit einer alten Ausgabe überträgt sich nicht pauschal auf moderne Revisionen."
+      },
+      {
+        "id": "hist-15",
+        "group": "Bibelstudium",
+        "title": "Textvarianten und Fußnoten",
+        "body": "Handschriften unterscheiden sich in einzelnen Wörtern, Reihenfolgen und gelegentlich längeren Abschnitten. Mk 16,9-20 und Joh 7,53-8,11 sind bekannte Fälle. Moderne Ausgaben kennzeichnen solche Befunde unterschiedlich.",
+        "refs": [
+          "Mk 16,9-20",
+          "Joh 7,53",
+          "Joh 8,1-11"
+        ],
+        "note": "Textvarianten sind überprüfbare Überlieferungsfragen, nicht automatisch Betrug."
+      },
+      {
+        "id": "hist-16",
+        "group": "Bibelstudium",
+        "title": "Wörtlich oder verständlich übersetzen",
+        "body": "Übersetzer müssen Grammatik, Bedeutungsbreite, Stil und Verständlichkeit abwägen. Formorientierte und sinnorientierte Ansätze setzen unterschiedliche Prioritäten; keine Übersetzung reproduziert alle Feinheiten gleichzeitig.",
+        "refs": [
+          "Joh 3,3-8",
+          "Röm 12,2"
+        ],
+        "note": "Vergleiche Übersetzungen mit Blick auf Kontext, nicht nur einzelne Wörter."
+      },
+      {
+        "id": "hist-17",
+        "group": "Bibelstudium",
+        "title": "Kapitel, Verse und Leseweise",
+        "body": "Kapitel- und Verszahlen entstanden weit nach den ursprünglichen Texten; sie helfen beim Auffinden und sind kein Bestandteil der ursprünglichen Gliederung. Psalmüberschriften werden je nach Ausgabe anders gezählt.",
+        "refs": [
+          "Ps 22",
+          "Mk 1,1-15"
+        ],
+        "note": "Lies Absätze und ganze Argumente; BIBLIA verwendet die Verszählung der eingebundenen Ausgabe."
+      }
+    ]
+  }
+]

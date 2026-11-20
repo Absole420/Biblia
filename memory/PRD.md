@@ -231,3 +231,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Während Import/Reset/Wiederherstellung Overlay (guardian-busy), Änderungen gesperrt
 - Optionale monatliche Vollsicherungs-Erinnerung (Einstellungen-Schalter, Banner backup-reminder, 7 Tage Schlummern)
 - Testlader tests/ts-loader.mjs (Alias, Endungen, JSON, TS-Transpile) – alle 28 Tests grün: node --import ./tests/ts-loader.mjs --experimental-strip-types --test tests/*.test.mjs
+
+## Update (Iteration 45) – PR #11 Living Scripture & persönliches Bücherregal
+- 7 Bände (223 Einträge, livingScripture.json), /living/[id], vorhandene Illustrationen
+- „Auf den Spuren Jesu“: ein Buch (Band jesus) mit Link zur 15-Stationen-Reise (/intro), Psalmen, Gleichnisse – kein Duplikat
+- Stammbäume (trees) verlinken vorhandene Personenartikel im Lexikon
+- Bücherregal anpassbar (Größe, Fach, Reihenfolge, Farbe, Symbol) für alle Bücher inkl. Hören & Sehen; gespeichert in settings.libraryLayout → JSON-Export, Data Guardian, Vollsicherung

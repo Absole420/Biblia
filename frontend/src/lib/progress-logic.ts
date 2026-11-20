@@ -1,5 +1,6 @@
 // Reine (seiteneffektfreie) Fortschrittslogik – testbar ohne UI.
 import type { Station } from "../data/types";
+import type { LibraryLayout } from "./library-layout";
 import { type Avatar, sanitizeAvatar } from "./avatar";
 import { DEFAULT_STUDY, sanitizeStudy, type StudyState } from "./study";
 
@@ -41,7 +42,7 @@ export type AppState = {
   bookmarks: Bookmark[];
   highlights: Record<string, string>; // verseKey -> categoryId
   categories: Category[];
-  settings: { theme: ThemePref; fontScale: number; translation: "elb1905" | "elb2006" | "neue"; votdCat?: PrayerCat | "all"; mapMotion?: boolean; votdHidden?: boolean };
+  settings: { theme: ThemePref; fontScale: number; translation: "elb1905" | "elb2006" | "neue"; votdCat?: PrayerCat | "all"; mapMotion?: boolean; votdHidden?: boolean; libraryLayout?: LibraryLayout };
   goal: { weeklyStations: number };
   activity: { date: string; stationId: string }[];
   answered: { total: number; correct: number };

@@ -33,11 +33,12 @@ export function Shelf({ children, testID }: { children: React.ReactNode; testID?
   );
 }
 
-type BookProps = { title: string; subtitle?: string; icon: string; theme: BookTheme; size: "large" | "small"; onPress: () => void; testID: string; badge?: number };
+type BookProps = { title: string; subtitle?: string; icon: string; theme: BookTheme; size: "large" | "medium" | "small"; weight?: number; onPress: () => void; testID: string; badge?: number };
 
-export function Book({ title, subtitle, icon, theme, size, onPress, testID, badge }: BookProps) {
+export function Book({ title, subtitle, icon, theme, size, weight, onPress, testID, badge }: BookProps) {
   const styles = useStyles();
   const large = size === "large";
+  const medium = size === "medium";
   const [pull] = useState(() => new Animated.Value(0));
   const busy = useRef(false);
   // Antippen: Buch kippt oben aus dem Regal und hebt sich leicht – danach öffnet es sich.
@@ -59,9 +60,9 @@ export function Book({ title, subtitle, icon, theme, size, onPress, testID, badg
     ],
   };
   return (
-    <Animated.View style={[styles.bookWrap, anim]}>
+    <Animated.View style={[styles.bookWrap, weight!==undefined&&{flex:weight}, anim]}>
     <Pressable testID={testID} onPress={open} accessibilityRole="button" accessibilityLabel={`${title.replace(/-?\n/g, (m) => (m === "\n" ? " " : ""))}${subtitle ? ", " + subtitle : ""}`}
-      style={({ pressed }) => [styles.book, large ? styles.bookLarge : styles.bookSmall, { backgroundColor: theme.cover, transform: [{ translateY: pressed ? -4 : 0 }] }]}>
+      style={({ pressed }) => [styles.book, large ? styles.bookLarge : medium ? styles.bookMedium : styles.bookSmall, { backgroundColor: theme.cover, transform: [{ translateY: pressed ? -4 : 0 }] }]}>
       <View style={[styles.spine, { backgroundColor: theme.spine, width: large ? 16 : 10 }]}>
         <View style={[styles.band, { backgroundColor: theme.trim }]} />
         <View style={[styles.band, { backgroundColor: theme.trim }]} />
@@ -70,7 +71,7 @@ export function Book({ title, subtitle, icon, theme, size, onPress, testID, badg
         <View style={[styles.emblem, { borderColor: theme.trim, width: large ? 56 : 38, height: large ? 56 : 38 }]}>
           <Icon name={icon} size={large ? 26 : 18} color={theme.trim} />
         </View>
-        <Text style={[large ? styles.titleLarge : styles.titleSmall, { color: theme.ink }]} numberOfLines={3} adjustsFontSizeToFit minimumFontScale={0.8}>{title}</Text>
+        <Text style={[large ? styles.titleLarge : medium ? styles.titleMedium : styles.titleSmall, { color: theme.ink }]} numberOfLines={3} adjustsFontSizeToFit minimumFontScale={0.8}>{title}</Text>
         {subtitle ? <Text style={[styles.sub, { color: theme.ink }]} numberOfLines={2}>{subtitle}</Text> : null}
       </View>
       {badge ? <View style={[styles.ribbon, { backgroundColor: theme.trim }]}><Text style={[styles.ribbonText, { color: theme.spine }]}>{badge}</Text></View> : null}
@@ -87,12 +88,14 @@ const useStyles = makeStyles(() => ({
   bookWrap: { flex: 1 },
   book: { flex: 1, flexDirection: "row", borderTopRightRadius: 6, borderBottomRightRadius: 3, borderTopLeftRadius: 2, overflow: "hidden", boxShadow: "2px 2px 6px rgba(0,0,0,0.35)" },
   bookLarge: { minHeight: 210 },
+  bookMedium: { minHeight: 180 },
   bookSmall: { minHeight: 150 },
   spine: { justifyContent: "space-between", paddingVertical: 14, alignItems: "center" },
   band: { width: "100%", height: 3, opacity: 0.85 },
   frame: { flex: 1, margin: 5, borderWidth: 1.5, borderRadius: 3, alignItems: "center", justifyContent: "center", paddingVertical: spacing.sm, paddingHorizontal: 4, gap: 6 },
   emblem: { borderRadius: 999, borderWidth: 1.5, alignItems: "center", justifyContent: "center" },
   titleLarge: { fontFamily: fonts.display, fontSize: 22, fontWeight: "700", textAlign: "center" },
+  titleMedium: { fontFamily: fonts.display, fontSize: 17, fontWeight: "700", textAlign: "center" },
   titleSmall: { fontFamily: fonts.display, fontSize: 13, fontWeight: "700", textAlign: "center", lineHeight: 18 },
   sub: { fontFamily: fonts.text, fontSize: 11.5, fontWeight: "700", textAlign: "center", opacity: 0.85 },
   ribbon: { position: "absolute", top: 0, right: 10, minWidth: 22, paddingHorizontal: 4, height: 26, borderBottomLeftRadius: 4, borderBottomRightRadius: 4, alignItems: "center", justifyContent: "center" },
