@@ -36,6 +36,10 @@ type Ctx = {
   hasBeforeChange: boolean;
   backupNow: () => Promise<void>;
   restoreBackup: (beforeChange?: boolean) => Promise<void>;
+  legacyPending: boolean;
+  acceptLegacy: () => void;
+  dismissRecovery: () => void;
+  busy: boolean;
   setAvatar: (a: Avatar) => void;
   updateStudy: (fn: (s: StudyState) => StudyState) => void;
   toggleFavorite: (kind: "bible" | "lessons", key: string) => void;
@@ -67,6 +71,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [recovered, setRecovered] = useState(false);
   const [lastBackup, setLastBackup] = useState<number | null>(null);
   const [hasBeforeChange, setHasBeforeChange] = useState(false);
+  const [legacyPayload, setLegacyPayload] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
 
   const enqueue = useCallback((fn: () => Promise<void>) => {
     const next = tail.current.then(fn);
@@ -85,6 +91,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       try {
         const result = await guardian.open();
         if (!active) return;
+        if (result.legacyFallback) { setLegacyPayload(result.payload); return; }
         const loaded = result.payload === null ? defaultState() : migrate(JSON.parse(result.payload));
         stateRef.current = loaded;
         setState(loaded);
@@ -137,6 +144,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const replace = useCallback(async (next: () => AppState) => {
     if (blocked.current || changing.current) throw new Error("Vorgang derzeit nicht möglich");
     changing.current = true;
+    setBusy(true);
     try {
       await enqueue(async () => {
         const replacement = next(); // read selected backup BEFORE creating the pre-change copy
@@ -148,7 +156,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         setState(replacement);
         setStorageError(null);
       });
-    } finally { changing.current = false; }
+    } finally { changing.current = false; setBusy(false); }
   }, [enqueue, saveCurrent, guardian, refreshBackup]);
 
   const restoreBackup = useCallback((beforeChange = false) => replace(() => {
@@ -156,6 +164,24 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     if (payload === null) throw new Error("Keine Sicherung vorhanden");
     return migrate(JSON.parse(payload));
   }), [replace, guardian]);
+
+  // Alter Migrationsstand erst nach ausdrücklicher Bestätigung übernehmen
+  const acceptLegacy = useCallback(() => {
+    if (legacyPayload === null) return;
+    guardian.acceptLegacy();
+    const loaded = migrate(JSON.parse(legacyPayload));
+    stateRef.current = loaded;
+    setState(loaded);
+    blocked.current = false;
+    setLegacyPayload(null);
+    setRecovered(false);
+    // Nach dem ersten Speichern alle defekten Kopien reparieren, damit kein weiterer Hinweis erscheint
+    enqueue(() => saveCurrent()).then(() => guardian.repair()).then(refreshBackup).catch(() => {});
+  }, [legacyPayload, guardian, refreshBackup, enqueue, saveCurrent]);
+  const dismissRecovery = useCallback(() => {
+    setRecovered(false);
+    enqueue(() => guardian.repair()).then(refreshBackup).catch(() => {});
+  }, [enqueue, guardian, refreshBackup]);
 
   useEffect(() => {
     setColorScheme(state.settings.theme === "system" ? null : state.settings.theme);
@@ -197,6 +223,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       ready,
       state,
       storageError, storageBlocked, recovered, lastBackup, backupError, hasBeforeChange,
+      legacyPending: legacyPayload !== null, acceptLegacy, dismissRecovery, busy,
       backupNow, restoreBackup,
       completeStation,
       setPhase: (id, phase) => update((s) => (s.phase[id] === phase ? s : { ...s, phase: { ...s.phase, [id]: phase } })),
@@ -287,7 +314,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         }),
       reset: () => replace(defaultState),
     }),
-    [ready, state, completeStation, update, storageError, storageBlocked, recovered, lastBackup, backupError, hasBeforeChange, backupNow, restoreBackup, replace],
+    [ready, state, completeStation, update, storageError, storageBlocked, recovered, lastBackup, backupError, hasBeforeChange, backupNow, restoreBackup, replace, legacyPayload, acceptLegacy, dismissRecovery, busy],
   );
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

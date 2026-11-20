@@ -3,6 +3,7 @@ import { Directory, File, Paths } from "expo-file-system";
 import { Platform } from "react-native";
 
 import { exportTextFile, pickTextFile } from "./backup";
+import { markFullBackupExported } from "./backupReminder";
 import { AppState, buildExport, parseImport } from "./progress-logic";
 import { way, WayData } from "./way";
 
@@ -38,6 +39,7 @@ export async function exportFullBackup(state: AppState): Promise<string> {
   const b: Backup = { app: "BIBLIA", kind: KIND, version: 1, exportedAt: new Date().toISOString(), state: buildExport(state), way: way.get(), keys, photos };
   const n = Object.keys(photos).length;
   await exportTextFile(`biblia-vollsicherung-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(b), "application/json", "BIBLIA vollständig sichern");
+  await markFullBackupExported();
   return `Vollsicherung erstellt (${state.photos.length} Fotos${Platform.OS !== "web" ? `, ${n} Bilddateien eingebettet` : ""}).`;
 }
 

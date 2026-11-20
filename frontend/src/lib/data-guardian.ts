@@ -6,27 +6,31 @@ import { DataGuardian, Slot } from "./data-guardian-core";
 import { isStoredState } from "./progress-logic";
 
 const prefix = "biblia_guardian_";
+const dir = () => new Directory(Paths.document, "biblia-guardian");
 const file = (slot: Slot) => new File(Paths.document, "biblia-guardian", slot + ".json");
+let known: Set<string> | null = null;
 
 export function createGuardian(): DataGuardian {
+  known = null;
   return new DataGuardian({
     read: async slot => {
       if (Platform.OS === "web") return AsyncStorage.getItem(prefix + slot);
+      // Ordner nur einmal auflisten; danach merkt sich known, welche Slot-Dateien existieren.
+      // (File.exists kann nach einem I/O-Fehler false sein – deshalb Auflistung statt exists.)
+      if (!known) {
+        const root = new Directory(Paths.document);
+        known = new Set(root.list().some(x => x.name === "biblia-guardian") ? dir().list().map(x => x.name) : []);
+      }
       const f = file(slot);
-      // File.exists can be false after an I/O error; list the directory to distinguish.
-      const dir = new Directory(Paths.document, "biblia-guardian");
-      const root = new Directory(Paths.document);
-      if (!root.list().some(x => x.name === "biblia-guardian")) return null;
-      if (!dir.list().some(x => x.name === f.name)) return null;
-      return f.text();
+      return known.has(f.name) ? f.text() : null;
     },
     write: async (slot, text) => {
       if (Platform.OS === "web") { await AsyncStorage.setItem(prefix + slot, text); return; }
-      const dir = new Directory(Paths.document, "biblia-guardian");
-      dir.create({ idempotent: true, intermediates: true });
+      dir().create({ idempotent: true, intermediates: true });
       const f = file(slot);
       if (!f.exists) f.create();
       f.write(text);
+      known?.add(f.name);
     },
     readLegacy: async () => {
       const raw = await AsyncStorage.getItem("biblia_state");

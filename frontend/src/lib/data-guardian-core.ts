@@ -19,6 +19,7 @@ export class DataGuardian {
   private records = new Map<Slot, RecordData>();
   private current: RecordData | null = null;
   private opened = false;
+  private broken = new Set<Slot>();
   private readonly io: GuardianIO;
   constructor(io: GuardianIO) { this.io = io; }
 
@@ -53,16 +54,17 @@ export class DataGuardian {
     return record;
   }
 
-  async open(): Promise<{ payload: string | null; recovered: boolean }> {
+  async open(): Promise<{ payload: string | null; recovered: boolean; legacyFallback?: boolean }> {
     this.opened = false;
     this.records.clear();
     this.current = null;
+    this.broken.clear();
     let invalid = false;
     for (const slot of SLOTS) {
       const raw = await this.io.read(slot); // I/O error is NOT a missing key; abort.
       if (raw === null) continue;
       const record = await this.decode(raw);
-      if (record) this.records.set(slot, record); else invalid = true;
+      if (record) this.records.set(slot, record); else { invalid = true; this.broken.add(slot); }
     }
     this.current = this.newest(SLOTS);
     if (this.current) {
@@ -73,8 +75,10 @@ export class DataGuardian {
     const legacy = await this.io.readLegacy();
     if (legacy !== null) {
       if (!this.io.valid(legacy)) throw new Error("Alter Speicherstand beschädigt");
+      // Alle Kopien defekt, nur der alte Migrationsstand ist lesbar: nicht still übernehmen – Nutzer muss bestätigen
+      if (invalid) return { payload: legacy, recovered: true, legacyFallback: true };
       this.opened = true;
-      return { payload: legacy, recovered: invalid };
+      return { payload: legacy, recovered: false };
     }
     if (invalid) throw new Error("Kein gültiger Speicherstand");
     this.opened = true;
@@ -86,6 +90,23 @@ export class DataGuardian {
     if (this.current?.payload === payload && LIVE.some(s => this.records.get(s) === this.current)) return;
     const revision = (this.newest(SLOTS)?.revision ?? 0) + 1;
     this.current = await this.write(this.oldest(LIVE), payload, revision);
+  }
+
+  /** Nach Bestätigung des Nutzers den alten Migrationsstand als Grundlage übernehmen. */
+  acceptLegacy(): void { this.opened = true; }
+
+  /** Defekte/ältere Live-Kopie mit dem aktuellen gültigen Stand überschreiben (Hinweis verschwindet dauerhaft). */
+  async repair(): Promise<void> {
+    if (!this.opened || !this.current) return;
+    const live = this.current;
+    if (!LIVE.some(s => this.records.get(s) === live) || LIVE.some(s => this.broken.has(s))) {
+      const target = LIVE.find(s => this.broken.has(s)) ?? this.oldest(LIVE);
+      this.current = await this.write(target, live.payload, (this.newest(SLOTS)?.revision ?? 0) + 1);
+    }
+    for (const slot of [...this.broken]) {
+      if (!LIVE.includes(slot as never)) await this.write(slot, this.current.payload, this.current.revision);
+      this.broken.delete(slot);
+    }
   }
 
   get lastBackup(): number | null { return this.newest(WEEK, true)?.at ?? null; }

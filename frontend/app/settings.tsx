@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Pressable, Switch, Text, TextInput, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -10,6 +10,7 @@ import { useToast } from "@/src/components/Toast";
 import { Button, Chip, SectionTitle } from "@/src/components/ui";
 import { TRANSLATIONS } from "@/src/data/bible";
 import { exportState, pickImport } from "@/src/lib/backup";
+import { useBackupReminder } from "@/src/lib/backupReminder";
 import { exportFullBackup, pickAndRestoreFullBackup } from "@/src/lib/fullBackup";
 import { CATEGORY_PALETTE, uid } from "@/src/lib/progress-logic";
 import { useProgress } from "@/src/lib/store";
@@ -29,6 +30,7 @@ export default function SettingsScreen() {
   const [pendingImport, setPendingImport] = useState<typeof state | null>(null);
   const [busy, setBusy] = useState(false);
   const [colorFor, setColorFor] = useState<string | null>(null);
+  const reminder = useBackupReminder();
 
   const doExport = async () => {
     try {
@@ -148,6 +150,10 @@ export default function SettingsScreen() {
           <Text style={[styles.small, { marginTop: spacing.md }]}>Vollsicherung: alles in einer Datei – Lernstand, Notizen, Gebetsheft, Tagebuch „Mein geistlicher Weg“ und eigene Fotos. Auf einem anderen Gerät wiederherstellbar. Die Datei ist nicht passwortgeschützt; bewahre sie sicher auf. Eigene MP3/MP4-Dateien sind nicht enthalten.</Text>
           <Button testID="full-backup-button" label="Vollsicherung erstellen" icon="archive" variant="secondary" disabled={busy || p.storageBlocked} onPress={doFull} />
           <Button testID="full-restore-button" label="Vollsicherung wiederherstellen" icon="refresh-cw" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => setConfirmFull(true)} />
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, minHeight: 44 }}>
+            <Text style={[styles.small, { flex: 1 }]}>Monatlich an eine Vollsicherung erinnern{reminder.lastExport ? ` · zuletzt ${new Date(reminder.lastExport).toLocaleDateString("de-DE")}` : ""}</Text>
+            <Switch testID="backup-reminder-switch" value={reminder.enabled} onValueChange={reminder.setEnabled} trackColor={{ true: colors.brandPrimary, false: colors.borderStrong }} />
+          </View>
           <Button disabled={busy || p.storageBlocked} testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
         </View>
 

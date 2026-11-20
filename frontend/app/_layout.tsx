@@ -7,7 +7,9 @@ import { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator, LogBox, Platform, StyleSheet, View, Text, Pressable, Modal } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
-import { SafeAreaProvider, useSafeAreaInsets } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
+import { GuardianBlocked, GuardianNotices } from "@/src/components/GuardianNotices";
 
 import { ErrorBoundary } from "@/src/components/error-boundary";
 import { IntroAnimation } from "@/src/components/IntroAnimation";
@@ -24,8 +26,7 @@ import { fonts, useTheme } from "@/src/theme";
 LogBox.ignoreAllLogs(true);
 
 function AppStack() {
-  const { ready, storageError, storageBlocked, recovered } = useProgress();
-  const insets = useSafeAreaInsets();
+  const { ready, storageBlocked, legacyPending } = useProgress();
   const { colors, scheme } = useTheme();
   if (!ready) {
     return (
@@ -34,15 +35,10 @@ function AppStack() {
       </View>
     );
   }
-  if (storageBlocked) return (
-    <View style={[styles.root, { backgroundColor: colors.surface, justifyContent: "center", padding: 24 }]}>
-      <Text accessibilityRole="alert" style={{ color: colors.onSurface, fontSize: 18 }}>{storageError}</Text>
-      <Text style={{ color: colors.onSurface, marginTop: 12 }}>Keine leeren Daten wurden gespeichert. Falls der Fehler bleibt, die App-Daten nicht löschen.</Text>
-    </View>
-  );
+  if (storageBlocked || legacyPending) return <GuardianBlocked />;
   return (
     <View style={styles.root}>
-      {storageError || recovered ? <Text accessibilityRole="alert" style={{ color: colors.onSurface, backgroundColor: colors.surfaceSecondary, padding: 8, paddingTop: insets.top + 8 }}>{storageError ?? "Ein älterer intakter Speicherstand wurde geladen. Bitte Lernstand prüfen."}</Text> : null}
+      <GuardianNotices part="banner" />
       <StatusBar style={scheme === "dark" ? "light" : "dark"} />
       <InfoProvider>
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.surface } }}>
@@ -57,6 +53,7 @@ function AppStack() {
         <Stack.Screen name="avatar" options={{ gestureEnabled: false }} />
       </Stack>
       </InfoProvider>
+      <GuardianNotices part="overlay" />
     </View>
   );
 }

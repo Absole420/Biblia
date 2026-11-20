@@ -1,5 +1,5 @@
 // Automatisierte Tests der Daten- und Fortschrittsfunktionen.
-// Ausführen: node --test /app/tests/progress.test.mjs
+// Ausführen: node --import ./tests/ts-loader.mjs --experimental-strip-types --test tests/progress.test.mjs
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { defaultState, migrate, parseImport, buildExport, levelInfo, stationStatus, unreachableStations, computeBadges } from "../frontend/src/lib/progress-logic.ts";

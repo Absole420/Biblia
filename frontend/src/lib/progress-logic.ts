@@ -1,7 +1,7 @@
 // Reine (seiteneffektfreie) Fortschrittslogik – testbar ohne UI.
 import type { Station } from "../data/types";
-import { Avatar, sanitizeAvatar } from "./avatar";
-import { DEFAULT_STUDY, sanitizeStudy, StudyState } from "./study";
+import { type Avatar, sanitizeAvatar } from "./avatar";
+import { DEFAULT_STUDY, sanitizeStudy, type StudyState } from "./study";
 
 export const SCHEMA_VERSION = 7;
 

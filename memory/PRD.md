@@ -223,3 +223,11 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Zusammengeführt mit Vollsicherung (Fotos/Tagebuch) – Vollwiederherstellung läuft jetzt über replaceState (mit Vorab-Sicherung); guardian-Schlüssel aus Vollsicherung ausgenommen
 - Anpassungen: Konstruktor ohne Parameter-Property (Node-Test), stateRef per Effekt (Lint)
 - Tests: 21/22 grün; tests/progress.test.mjs war bereits vorher nicht lauffähig (Importauflösung ./avatar)
+
+## Update (Iteration 44) – Data Guardian finalisiert
+- Alter Migrationsstand (biblia_state) nur nach Bestätigung, wenn alle Guardian-Kopien defekt (GuardianBlocked, guardian-accept-legacy)
+- Hinweise schließbar (guardian-notice-dismiss) + repair() überschreibt defekte Slots
+- Native: Dokumentordner nur einmal aufgelistet (known-Set)
+- Während Import/Reset/Wiederherstellung Overlay (guardian-busy), Änderungen gesperrt
+- Optionale monatliche Vollsicherungs-Erinnerung (Einstellungen-Schalter, Banner backup-reminder, 7 Tage Schlummern)
+- Testlader tests/ts-loader.mjs (Alias, Endungen, JSON, TS-Transpile) – alle 28 Tests grün: node --import ./tests/ts-loader.mjs --experimental-strip-types --test tests/*.test.mjs
