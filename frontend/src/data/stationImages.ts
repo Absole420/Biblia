@@ -1,4 +1,6 @@
 import { ImageSourcePropType } from "react-native";
+import { ILLUSTRATIONS } from "./illustrations";
+import { INTRO_SCENES } from "./introScenes";
 
 // KI-generierte Einheitenbilder (OpenAI GPT Image 1, backend/scripts/gen_psalms.py; kp-*/syn-*: Gemini Nano Banana, gen_gemini.py) – künstlerische Darstellung, offline gebündelt.
 export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
@@ -56,3 +58,7 @@ export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
   "way-liebe-partnerschaft": require("../../assets/images/way/liebe-partnerschaft.jpg"),
   "way-frieden-stille": require("../../assets/images/way/frieden-stille.jpg"),
 };
+
+// Academy: vorhandene gebündelte Illustrationen wiederverwenden (keine neuen Bilder)
+for (const [id, image] of Object.entries(ILLUSTRATIONS)) STATION_IMAGES["academy:" + id] = image;
+for (const scene of INTRO_SCENES) STATION_IMAGES["academy:" + scene.id] = scene.image;

@@ -237,3 +237,17 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - „Auf den Spuren Jesu“: ein Buch (Band jesus) mit Link zur 15-Stationen-Reise (/intro), Psalmen, Gleichnisse – kein Duplikat
 - Stammbäume (trees) verlinken vorhandene Personenartikel im Lexikon
 - Bücherregal anpassbar (Größe, Fach, Reihenfolge, Farbe, Symbol) für alle Bücher inkl. Hören & Sehen; gespeichert in settings.libraryLayout → JSON-Export, Data Guardian, Vollsicherung
+
+## Update (Iteration 46) – PR #12 Scripture Academy
+- academy/*.json (160 Einträge), academy-core.ts, academy.ts; applyAcademy in john.ts enrich (nach EXTRA_LESSONS), mapH + shift
+- 104 bestehende Stationen erweitert (IDs, Fragen, XP, requires erhalten), 56 neue ac-* Stationen; ac-hist-deborah/gideon → gb1-8/gb1-9 (kein Duplikat), campaign history → history-1; PR-#7-Kampagnen nicht erneut übernommen
+- Lesegrenzen zentral normalisiert (to:200 etc.), 251 Stationen eindeutig, 0 ungültige Lesungen
+- Begriffskarten verlinken Wortstudien im Band „Ursprachen“ (134 von 323 Originalbegriffen)
+- Bilder: academy:<id> aus vorhandenen Illustrationen/Intro-Szenen
+- Testlader: fileName für TS-Transpile (Generics in .ts); 39/39 Tests grün
+
+## Update (Iteration 47) – Beta 0.9 Vorbereitung
+- PR-Abgleich: #2 gemergt; #4,#6–#12 integriert; #5 durch #6 ersetzt; #1 (Label-Kollision) jetzt übernommen + tests/map-layout.test.mjs; #3 nicht übernommen (Living-Atlas-Redesign ersetzt die betroffenen Kartenkomponenten)
+- Calvin (deutsch) deaktiviert: Rechte unbestätigt → sources status pending, alle Rechte false, 2972 Einträge aus dem App-Paket entfernt (Backend-Datei bleibt unverändert, nicht gebündelt)
+- Hebräische Begriffskarten: RTL nur für Originalschrift, Abstand zum Symbol
+- Tests 42/42 grün, tsc sauber; 14 ESLint-Meldungen der React-Compiler-Regeln in way/entry, way/review, way/topic (vorbestehend, keine Funktionsfehler)

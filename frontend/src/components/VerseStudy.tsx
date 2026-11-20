@@ -47,7 +47,8 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   useEffect(() => { cached<{ entries: Entry[] }>(`/study/commentary/${BOOK_BY_CODE[book].nr}/${ch}`).then((r) => setData({ key: `${book}:${ch}`, entries: r?.entries ?? [] })); }, [book, ch]);
   const entries = data?.key === key ? data.entries : null;
   if (!entries || !sources) return <ActivityIndicator color={colors.brandPrimary} />;
-  const pref = state.study.prefSources;
+  // Gespeicherte Filter auf deaktivierte Quellen (z. B. Calvin) ignorieren, sonst bliebe die Liste leer
+  const pref = state.study.prefSources.filter((id) => permittedOffline(sources.find((x) => x.id === id)));
   // Deutschsprachige Auslegungen zuerst, danach die engere Passage
   const lang = (id: string) => (sources?.find((x) => x.id === id)?.language === "de" ? 0 : 1);
   const hits = entries

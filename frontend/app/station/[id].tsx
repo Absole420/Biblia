@@ -17,6 +17,7 @@ import { TaskView } from "@/src/components/TaskView";
 import { Button, ProgressBar } from "@/src/components/ui";
 import { ReadingVerses } from "@/src/components/ReadingVerses";
 import { displayedTranslation, formatRef } from "@/src/data/bible";
+import { LIVING_BY_ID, normalizeStudySearch } from "@/src/data/livingScripture";
 import { JOHN_HISTORICAL } from "@/src/data/historical";
 import { findStation } from "@/src/data/john";
 import { STATION_META } from "@/src/data/meta";
@@ -27,6 +28,13 @@ import { useProgress } from "@/src/lib/store";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
 const PHASES = ["Entdecken", "Bibelstudium", "Hintergrund", "Verstehen", "Prüfung", "Reflexion", "Abschluss"];
+
+// Begriffskarte → Wortstudie im Band „Ursprachen“ (PR #11): Originalschrift oder Umschrift muss exakt passen
+function wordEntry(term: string) {
+  const orig = normalizeStudySearch(term.split(" (")[0].trim());
+  const tr = normalizeStudySearch(term.match(/\(([^)]+)\)/)?.[1] ?? "");
+  return LIVING_BY_ID.words.entries.find((e) => !!e.original && (normalizeStudySearch(e.original) === orig || (!!tr && normalizeStudySearch(e.translit ?? "") === tr)));
+}
 
 export default function StationScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -193,10 +201,20 @@ export default function StationScreen() {
                   <Animated.View entering={FadeIn}>
                     <Text style={[styles.body, { fontSize: 15 * fontScale }]}>{t.explanation}</Text>
                     {t.ref ? <RefText text={t.ref} style={styles.refSmall} /> : null}
+                    {wordEntry(t.term) ? (
+                      <Pressable testID={`term-living-${i}`} accessibilityRole="link" hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: 8, minHeight: 36 }} onPress={() => router.push({ pathname: "/living/[id]", params: { id: "words", entry: wordEntry(t.term)!.id } })}>
+                        <Icon name="book-open" size={14} color={colors.brandPrimary} />
+                        <Text style={[styles.refSmall, { color: colors.brandPrimary }]}>Wortstudie im Band „Ursprachen“</Text>
+                      </Pressable>
+                    ) : null}
                   </Animated.View>
                 ) : (
                   <View style={styles.termFront}>
-                    <Text style={styles.termTitle}>{t.term}</Text>
+                    {/^[\u0590-\u05FF]/.test(t.term) && t.term.includes(" (") ? (
+                      <Text style={[styles.termTitle, { flexShrink: 1, marginRight: 8, writingDirection: "ltr", textAlign: "left" }]}>
+                        <Text style={{ writingDirection: "rtl" }}>{t.term.split(" (")[0]}</Text>{" (" + t.term.split(" (").slice(1).join(" (")}
+                      </Text>
+                    ) : <Text style={[styles.termTitle, { flexShrink: 1, marginRight: 8 }]}>{t.term}</Text>}
                     <Icon name="rotate-cw" size={16} color={colors.muted} />
                   </View>
                 )}

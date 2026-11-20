@@ -1,0 +1,1698 @@
+[
+  {
+    "id": "tora-1-1",
+    "campaign": "tora-1",
+    "title": "Schöpfung und Sabbat",
+    "refs": [
+      "1Mo 1,1-5",
+      "1Mo 1,26-31",
+      "1Mo 2,1-3"
+    ],
+    "terms": [
+      {
+        "term": "בָּרָא (bara)",
+        "explanation": "erschaffen; im Text handelt Gott"
+      },
+      {
+        "term": "צֶלֶם (tselem)",
+        "explanation": "Bild, Ebenbild"
+      },
+      {
+        "term": "שַׁבָּת (shabbat)",
+        "explanation": "Sabbat, Ruhetag"
+      }
+    ],
+    "body": [
+      "Genesis 1 gliedert die Schöpfung über Gottes Sprechen, das Trennen und Benennen, die wiederholte Bewertung als gut und den Rhythmus der Tage. Licht erscheint vor den Himmelslichtern; die Erzählung interessiert sich für Ordnung und Gottes Zuständigkeit. Der Mensch wird als Mann und Frau zum Ebenbild Gottes geschaffen. Er ist kein Gott, aber mit einer Aufgabe betraut: Herrschaft bedeutet im Zusammenhang der guten Schöpfung Verantwortung. Genesis 2,1–3 bildet den Abschluss, nicht einen bloßen Anhang. Gott segnet und heiligt den siebten Tag.",
+      "Die beiden Schöpfungsdarstellungen in Genesis 1 und 2 haben unterschiedliche Erzählperspektiven. Genesis 1 ordnet die Welt in weiten Bögen; Genesis 2 konzentriert sich auf Mensch, Garten, Arbeit und Beziehung. Im Umfeld des alten Orients gab es verschiedene Schöpfungserzählungen. Die biblische Darstellung betont die Souveränität eines Gottes, ohne einen Kampf zwischen konkurrierenden Gottheiten zu erzählen. Literarische und historische Lesarten der Tage unterscheiden sich unter Gläubigen; der Text sollte nicht vorschnell auf eine moderne naturwissenschaftliche Theorie reduziert werden.",
+      "Das Sabbatgebot in Exodus greift die Schöpfungsruhe auf, Deuteronomium begründet Ruhe auch mit der Befreiung aus Ägypten. Ruhe schützt damit nicht nur den Einzelnen, sondern auch Knechte, Tiere und Fremde. Psalm 8 verbindet menschliche Würde mit Staunen über Gottes Größe. Im NT nimmt Hebräer 4 das Ruhesymbol auf, ohne den ursprünglichen jüdischen Sabbat zu ersetzen. Die Schöpfung ist Gabe; Arbeit und Ruhe gehören beide zur menschlichen Berufung."
+    ],
+    "quiz": [
+      {
+        "q": "Wer trägt in 1Mo 1 Gottes Bild?",
+        "a": "Mann und Frau",
+        "wrong": [
+          "Nur Könige",
+          "Nur Priester"
+        ]
+      },
+      {
+        "q": "Was wird am siebten Tag geheiligt?",
+        "a": "Der Tag der Ruhe",
+        "wrong": [
+          "Ein Berg",
+          "Ein Opfer"
+        ]
+      }
+    ],
+    "reflection": "Wie begründet Schöpfung die Würde eines Menschen, der nichts leisten kann?",
+    "connection": {
+      "from": "1Mo 2,2-3",
+      "to": "2Mo 20,8-11",
+      "kind": "allusion",
+      "note": "Das Sabbatgebot nimmt Gottes Schöpfungsruhe auf."
+    },
+    "image": "adam-eva"
+  },
+  {
+    "id": "tora-1-2",
+    "campaign": "tora-1",
+    "title": "Eden, Menschenwürde und Bruch",
+    "refs": [
+      "1Mo 2,7-17",
+      "1Mo 3,1-24"
+    ],
+    "terms": [
+      {
+        "term": "נֶפֶשׁ (nefesh)",
+        "explanation": "lebendes Wesen, Leben"
+      },
+      {
+        "term": "עֵץ (ets)",
+        "explanation": "Baum, Holz"
+      }
+    ],
+    "body": [
+      "Der Mensch erhält einen Garten zum Bebauen und Bewahren. Freiheit ist nicht grenzenlos: Die Grenze am Baum gehört zur erzählten Beziehung zu Gott. Die Schlange verschiebt Gottes Wort, stellt seine Absicht infrage und verspricht eigene Verfügung über Gut und Böse. Die Folge ist nicht sofortige körperliche Vernichtung, sondern Scham, Verbergen, gegenseitige Schuldzuweisung und Vertreibung.",
+      "Gott fragt nach dem Menschen und spricht mit beiden. Die Texte beschreiben gestörte Beziehungen zu Gott, zwischen Menschen und zur Erde; sie geben keine Erlaubnis zur Unterdrückung von Frauen. Die Kleidung am Ende zeigt Fürsorge auch mitten im Gericht. Der Lebensbaum steht für die Grenze menschlicher Verfügung über das Leben.",
+      "Paulus stellt Adam und Christus gegenüber: Schuld und Tod auf der einen, Gnade und Leben auf der anderen Seite. Verschiedene Traditionen erklären Erbsünde unterschiedlich. Halte zuerst die Erzählung selbst fest, bevor du diese spätere Lehre einordnest. Offenbarung 22 nimmt den Lebensbaum wieder auf."
+    ],
+    "quiz": [
+      {
+        "q": "Was tun Adam und Eva nach dem Essen?",
+        "a": "Sie verbergen sich",
+        "wrong": [
+          "Sie bauen den Tempel",
+          "Sie verlassen freiwillig das Land"
+        ]
+      },
+      {
+        "q": "Was ist die Aufgabe im Garten?",
+        "a": "Bebauen und bewahren",
+        "wrong": [
+          "Alles besitzen",
+          "Den Baum zerstören"
+        ]
+      }
+    ],
+    "reflection": "Wo verwechselst du im Alltag Freiheit mit Grenzenlosigkeit?",
+    "connection": {
+      "from": "1Mo 3,1-24",
+      "to": "Röm 5,12-21",
+      "kind": "theme",
+      "note": "Paulus stellt Adam und Christus als zwei Menschheitslinien gegenüber."
+    },
+    "image": "adam-eva"
+  },
+  {
+    "id": "tora-1-3",
+    "campaign": "tora-1",
+    "title": "Noah und der Bund",
+    "refs": [
+      "1Mo 6,5-22",
+      "1Mo 8,20-22",
+      "1Mo 9,8-17"
+    ],
+    "terms": [
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund, verbindliche Zusage"
+      },
+      {
+        "term": "קֶשֶׁת (qeshet)",
+        "explanation": "Bogen"
+      }
+    ],
+    "body": [
+      "Genesis beschreibt die Gewalttätigkeit der Menschen als Grund des Gerichts. Noah erhält den Auftrag, eine Arche zu bauen, Menschen und Tiere zu bewahren. Die Geschichte enthält Gericht und Rettung, aber auch Gottes Trauer über menschliches Handeln. Nach dem Zurückgehen des Wassers folgt ein Opfer und eine Zusage an die Erde.",
+      "Auch andere altorientalische Texte erzählen von Fluten. Die literarischen Gemeinsamkeiten und Unterschiede werden erforscht; aus der biblischen Erzählung allein folgt keine sichere globale geologische Datierung. Ihr theologischer Schwerpunkt liegt auf Gewalt, Gnade, Bewahrung und Gottes Bund mit allem Lebendigen. Der Regenbogen ist in der Erzählung ein Bundeszeichen.",
+      "1. Petrus 3 nutzt die Rettung durch Wasser als Bild für die Taufe. Diese christliche Auslegung ist von der ursprünglichen Geschichte zu unterscheiden. Gottes Zusage betrifft ausdrücklich die Erde und auch die Tiere; Verantwortung für Leben bleibt wichtiger als das Ausrechnen eines Endzeitplans."
+    ],
+    "quiz": [
+      {
+        "q": "Mit wem schließt Gott den Bund nach der Flut?",
+        "a": "Mit Noah und allem Lebendigen",
+        "wrong": [
+          "Nur mit Königen",
+          "Nur mit Priestern"
+        ]
+      },
+      {
+        "q": "Welches Zeichen nennt die Erzählung?",
+        "a": "Den Bogen in den Wolken",
+        "wrong": [
+          "Die Bundeslade",
+          "Einen Stern"
+        ]
+      }
+    ],
+    "reflection": "Was bedeutet Bewahrung des Lebens heute?",
+    "connection": {
+      "from": "1Mo 9,8-17",
+      "to": "1Petr 3,20-21",
+      "kind": "allusion",
+      "note": "Petrus greift die Flut typologisch im Zusammenhang der Taufe auf."
+    },
+    "image": "noah"
+  },
+  {
+    "id": "tora-1-4",
+    "campaign": "tora-1",
+    "title": "Abraham: Verheißung und Vertrauen",
+    "refs": [
+      "1Mo 12,1-9",
+      "1Mo 15,1-6",
+      "1Mo 17,1-14"
+    ],
+    "terms": [
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund"
+      },
+      {
+        "term": "אֱמוּנָה (emunah)",
+        "explanation": "Treue; verwandtes Wortfeld des Glaubens"
+      }
+    ],
+    "body": [
+      "Abraham wird aus seiner vertrauten Umgebung gerufen. Die Verheißung umfasst Land, Nachkommen und Segen für die Völker. Der Text betont, dass der Segen nicht nur privater Besitz ist. In Genesis 15 äußert Abraham Zweifel an der Erfüllung, vertraut aber der Zusage. Gott rechnet ihm Glauben als Gerechtigkeit an.",
+      "Der Bund wird in Genesis 17 mit der Beschneidung als Zeichen konkretisiert. Ismael erhält ebenfalls eine Segenszusage; der besondere Bund wird über Isaak fortgeführt. Die Erzvätergeschichten lassen sich nicht auf ein gesichertes Geburtsjahr datieren. Nomadische, familiäre und gastfreundschaftliche Motive gehören zur Erzählwelt.",
+      "Paulus zitiert Genesis 15 im Römerbrief und erklärt die Gerechtigkeit aus Glauben. Jakobus setzt den Akzent auf Glauben, der sich im Handeln bewährt. Beide argumentieren gegen unterschiedliche Fehlhaltungen. Abraham erscheint in jüdischer Tradition als Stammvater und Vorbild der Gastfreundschaft."
+    ],
+    "quiz": [
+      {
+        "q": "Welche dritte Zusage steht neben Land und Nachkommen?",
+        "a": "Segen für die Völker",
+        "wrong": [
+          "Ein großes Heer",
+          "Ein Tempelbau"
+        ]
+      },
+      {
+        "q": "Was wird in Genesis 15 angerechnet?",
+        "a": "Glaube als Gerechtigkeit",
+        "wrong": [
+          "Reichtum als Weisheit",
+          "Herkunft als Heil"
+        ]
+      }
+    ],
+    "reflection": "Wie kannst du Vertrauen zeigen, ohne Unsicherheit zu verleugnen?",
+    "connection": {
+      "from": "1Mo 15,6",
+      "to": "Röm 4,3",
+      "kind": "quote",
+      "note": "Paulus zitiert die Aussage über Abrahams Glauben."
+    },
+    "image": "abraham"
+  },
+  {
+    "id": "tora-1-5",
+    "campaign": "tora-1",
+    "title": "Josef: Bewahrung in der Fremde",
+    "refs": [
+      "1Mo 37,18-28",
+      "1Mo 41,37-49",
+      "1Mo 45,1-15",
+      "1Mo 50,15-21"
+    ],
+    "terms": [
+      {
+        "term": "שָׁלוֹם (shalom)",
+        "explanation": "Friede, Wohlergehen"
+      },
+      {
+        "term": "חֶסֶד (chesed)",
+        "explanation": "Güte, solidarische Treue"
+      }
+    ],
+    "body": [
+      "Josefs Brüder verkaufen ihn aus Neid. In Ägypten erlebt er Aufstieg, falsche Beschuldigung, Gefängnis und schließlich Verantwortung während der Hungersnot. Träume spielen in der Erzählung eine wichtige Rolle; Josef schreibt die Deutung Gott zu statt sich selbst. Seine Planung rettet Menschen vor Hunger.",
+      "Die Versöhnung ist kein schneller emotionaler Schluss. Josef prüft, wie die Brüder mit Benjamin umgehen. Juda übernimmt Verantwortung; Josef offenbart sich. In Genesis 50 unterscheidet Josef die böse Absicht der Brüder von Gottes bewahrendem Handeln. Damit wird das Unrecht weder geleugnet noch gerechtfertigt.",
+      "In Apostelgeschichte 7 erinnert Stephanus an Josef als einen von seinen Verwandten verworfenen Menschen, mit dem Gott war. Vergebung schließt Wahrheit und Verantwortung nicht aus. Die Erzählung enthält eine Hoffnung auf Gottes Handeln auch in ungelösten Lebenslagen, jedoch keine Garantie, dass jeder Verlust zeitnah ausgeglichen wird."
+    ],
+    "quiz": [
+      {
+        "q": "Was ist der Grund des Verkaufs?",
+        "a": "Neid der Brüder",
+        "wrong": [
+          "Ein königlicher Erlass",
+          "Eine Hungersnot"
+        ]
+      },
+      {
+        "q": "Wer übernimmt später Verantwortung für Benjamin?",
+        "a": "Juda",
+        "wrong": [
+          "Pharao",
+          "Potiphar"
+        ]
+      }
+    ],
+    "reflection": "Was unterscheidet Vergebung von der Verharmlosung eines Unrechts?",
+    "connection": {
+      "from": "1Mo 37,28",
+      "to": "Apg 7,9-10",
+      "kind": "allusion",
+      "note": "Stephanus erinnert an Verkauf und Bewahrung Josefs."
+    },
+    "image": "josef"
+  },
+  {
+    "id": "tora-2-1",
+    "campaign": "tora-2",
+    "title": "Der Auszug: Gott hört den Schrei",
+    "refs": [
+      "2Mo 2,23-25",
+      "2Mo 3,1-15",
+      "2Mo 5,1-9",
+      "2Mo 6,2-8"
+    ],
+    "terms": [
+      {
+        "term": "יהוה (JHWH)",
+        "explanation": "Gottes Eigenname"
+      },
+      {
+        "term": "גָּאַל (gaal)",
+        "explanation": "lösen, erlösen"
+      }
+    ],
+    "body": [
+      "Exodus beginnt mit einem Machtwechsel und der Versklavung Israels. Der Pharao fürchtet eine wachsende Bevölkerungsgruppe und verschärft die Arbeit. Gottes Hören, Sehen und Erinnern in Exodus 2 bilden den Wendepunkt. Mose begegnet Gott am brennenden Dornbusch; er soll nicht seine eigene Größe beweisen, sondern im Vertrauen auf Gottes Gegenwart handeln.",
+      "Der Name Gottes in Exodus 3 verbindet sich mit der Zusage, dass Gott mit Mose sein wird. Seine genaue sprachliche Deutung ist umstritten; Mose erhält keinen magischen Zugriff auf Gott. Pharao erhöht zunächst die Arbeitslast. Befreiung beginnt daher nicht mit sofortiger Erleichterung, und das Buch kennt die Klage der Menschen in dieser Zwischenzeit.",
+      "Die historische Einordnung des Exodus ist umstritten; das biblische Befreiungsgedächtnis ist für jüdisches Leben zentral. Das Neue Testament greift die Motive von Befreiung, Wüste und Bund mehrfach auf. Lukas 9,31 verwendet für Jesu bevorstehenden Weg in Jerusalem das griechische Wort exodos. Das ist eine christliche Verbindung, keine Verdrängung der Geschichte Israels."
+    ],
+    "quiz": [
+      {
+        "q": "Was nimmt Gott in Exodus 2 wahr?",
+        "a": "Das Schreien der Unterdrückten",
+        "wrong": [
+          "Die Pracht des Pharao",
+          "Den Bau des Tempels"
+        ]
+      },
+      {
+        "q": "Wodurch wird Mose befähigt?",
+        "a": "Gottes Zusage der Gegenwart",
+        "wrong": [
+          "Seine fehlerlose Rede",
+          "Sein Königstitel"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Not anderer wahrnehmen statt sie zu übersehen?",
+    "connection": {
+      "from": "2Mo 3,7-10",
+      "to": "Lk 9,31",
+      "kind": "theme",
+      "note": "Lukas verwendet das Auszugsmotiv für Jesu Weg."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-2-2",
+    "campaign": "tora-2",
+    "title": "Pessach: Erinnerung an Befreiung",
+    "refs": [
+      "2Mo 12,1-14",
+      "2Mo 12,21-28",
+      "5Mo 16,1-8"
+    ],
+    "terms": [
+      {
+        "term": "פֶּסַח (pesach)",
+        "explanation": "Passa, Fest bzw. Opfer"
+      },
+      {
+        "term": "מַצָּה (matzah)",
+        "explanation": "ungesäuertes Brot"
+      }
+    ],
+    "body": [
+      "Das Passa wird in Exodus als Zeichen der Rettung und Erinnerung eingesetzt. Familien sollen ein Lamm bereiten, Blut an die Türpfosten streichen und das Mahl in Bereitschaft zum Aufbruch essen. Das Gericht über Ägyptens Erstgeburt ist ein schwerer Teil der Erzählung, der nicht zur Verachtung anderer Völker berechtigt. Die Befreiung soll in den folgenden Generationen erzählt werden.",
+      "Das Fest wurde in verschiedenen Epochen unterschiedlich begangen. Deuteronomium verbindet es mit dem zentralen Heiligtum. Nach der Tempelzerstörung entwickelt sich die jüdische Sedertradition in ihrer späteren Form. Sie darf nicht einfach in allen Details in das letzte Mahl Jesu zurückprojiziert werden.",
+      "Paulus nennt Christus das Passa der Gemeinde. Die Evangelien stellen Jesu Passion in den Passafest-Kontext; die zeitliche Einordnung in Johannes und den Synoptikern wird diskutiert. Das christliche Abendmahl und das jüdische Pessach bleiben unterscheidbare Traditionen, auch wenn ihre Motive verbunden sind."
+    ],
+    "quiz": [
+      {
+        "q": "Was sollen spätere Generationen erinnern?",
+        "a": "Die Befreiung aus Ägypten",
+        "wrong": [
+          "Die Krönung Salomos",
+          "Die Landteilung"
+        ]
+      },
+      {
+        "q": "Welches NT-Bild greift Paulus auf?",
+        "a": "Christus als Passa",
+        "wrong": [
+          "Christus als Pharao",
+          "Christus als Bundeslade"
+        ]
+      }
+    ],
+    "reflection": "Welche Erfahrungen der Befreiung sollten nicht vergessen werden?",
+    "connection": {
+      "from": "2Mo 12,1-14",
+      "to": "1Kor 5,7-8",
+      "kind": "allusion",
+      "note": "Paulus deutet das Passa auf Christus."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-2-3",
+    "campaign": "tora-2",
+    "title": "Am Schilfmeer: Freiheit und Vertrauen",
+    "refs": [
+      "2Mo 14,10-31",
+      "2Mo 15,1-21"
+    ],
+    "terms": [
+      {
+        "term": "יָם (yam)",
+        "explanation": "Meer"
+      },
+      {
+        "term": "יְשׁוּעָה (yeshuah)",
+        "explanation": "Rettung"
+      }
+    ],
+    "body": [
+      "Israel steht zwischen Pharaos Streitmacht und dem Wasser. Angst und Beschwerden sind Teil der Erzählung; Mose ruft zum Vertrauen auf Gottes Rettung. Die Rettung geschieht nicht durch eine militärische Überlegenheit Israels. Das Lied in Kapitel 15 deutet das Ereignis als Gottes Handeln.",
+      "Die genaue Lage des Schilfmeers und die historische Route sind nicht gesichert. Das Lied besitzt poetische Bilder, die nicht wie eine moderne militärische Chronik gelesen werden müssen. Mirjam führt die Frauen im Gesang an; die Befreiung wird gemeinsam erinnert.",
+      "Paulus beschreibt in 1. Korinther 10 eine Verbindung zu Taufe, Wolke und Meer, warnt aber zugleich vor Selbstsicherheit. Gerettetsein ist kein Freibrief. Die Wüste beginnt gerade nach der Rettung und macht Vertrauen zu einer fortdauernden Aufgabe."
+    ],
+    "quiz": [
+      {
+        "q": "Wie wird das Ereignis in Kapitel 15 verarbeitet?",
+        "a": "Mit einem Lied",
+        "wrong": [
+          "Mit einer Königswahl",
+          "Mit einem Tempelbau"
+        ]
+      },
+      {
+        "q": "Welches Zeichen verbindet Paulus mit dem Meer?",
+        "a": "Taufe",
+        "wrong": [
+          "Beschneidung",
+          "Königskrönung"
+        ]
+      }
+    ],
+    "reflection": "Was hilft dir, nach einer Befreiung nicht in alte Muster zurückzukehren?",
+    "connection": {
+      "from": "2Mo 14,21-31",
+      "to": "1Kor 10,1-5",
+      "kind": "allusion",
+      "note": "Paulus verbindet Meer und Wolke mit der Taufe."
+    },
+    "image": "mirjam"
+  },
+  {
+    "id": "tora-2-4",
+    "campaign": "tora-2",
+    "title": "Bund am Sinai: Erst befreit, dann beauftragt",
+    "refs": [
+      "2Mo 19,1-8",
+      "2Mo 20,1-17",
+      "2Mo 24,3-11"
+    ],
+    "terms": [
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund"
+      },
+      {
+        "term": "קָדוֹשׁ (qadosh)",
+        "explanation": "heilig"
+      }
+    ],
+    "body": [
+      "Am Sinai erinnert Gott zuerst an die Rettung aus Ägypten. Die Einladung zum Bund gründet in dieser Erfahrung. Israel soll ein Königreich von Priestern und ein heiliges Volk sein. Die Worte beschreiben eine gemeinschaftliche Berufung, nicht die Überlegenheit eines einzelnen Menschen. Die Antwort des Volkes und die Bestätigung in Kapitel 24 verdeutlichen die Verbindlichkeit.",
+      "Auch altorientalische Vereinbarungen kennen Zusagen, Verpflichtungen und Zeugen. Der Sinai-Bund lässt sich mit solchen Formen vergleichen, ohne ihn darauf zu reduzieren. Die Tora ordnet Gottesdienst und Gemeinschaft; Heiligkeit zeigt sich zugleich in Beziehungen, Recht und dem Umgang mit Schwachen.",
+      "1. Petrus 2 greift das Bild des königlichen Priestertums für die christliche Gemeinde auf. Der ursprüngliche Adressat bleibt Israel. Jeremia kündigt später einen neuen Bund an; das NT nimmt ihn im Zusammenhang mit Jesus auf. Die Reihenfolge von Rettung und Antwort ist ein hilfreicher Leseschlüssel: Gebote sind kein Preis, den Israel für den Auszug bezahlt."
+    ],
+    "quiz": [
+      {
+        "q": "Was geschieht vor der Gesetzgebung?",
+        "a": "Die Befreiung aus Ägypten",
+        "wrong": [
+          "Der Bau des Tempels",
+          "Das babylonische Exil"
+        ]
+      },
+      {
+        "q": "Wie wird Israels Berufung bezeichnet?",
+        "a": "Königreich von Priestern",
+        "wrong": [
+          "Reich ohne Gebote",
+          "Heer der Engel"
+        ]
+      }
+    ],
+    "reflection": "Wie unterscheidet sich Gehorsam aus Dankbarkeit von Leistung aus Angst?",
+    "connection": {
+      "from": "2Mo 19,6",
+      "to": "1Petr 2,9",
+      "kind": "allusion",
+      "note": "Petrus nimmt die Berufungssprache des Sinai auf."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-2-5",
+    "campaign": "tora-2",
+    "title": "Die Zehn Worte",
+    "refs": [
+      "2Mo 20,1-17",
+      "5Mo 5,6-21",
+      "5Mo 6,4-9"
+    ],
+    "terms": [
+      {
+        "term": "דָּבָר (davar)",
+        "explanation": "Wort, Sache"
+      },
+      {
+        "term": "תּוֹרָה (torah)",
+        "explanation": "Weisung"
+      }
+    ],
+    "body": [
+      "Die Zehn Worte beginnen mit Gottes Selbstvorstellung als Befreier. Die folgenden Gebote ordnen Gottesverehrung, Umgang mit Gottes Namen, Ruhe, Familie und das Zusammenleben. Sie verbieten unter anderem Tötung, Ehebruch, Diebstahl, falsches Zeugnis und Begehrlichkeit. Die Texte erfassen nicht nur sichtbare Handlungen, sondern auch die Haltung des Herzens.",
+      "Exodus und Deuteronomium überliefern den Dekalog mit unterschiedlichen Akzenten, besonders beim Sabbat. Jüdische und christliche Traditionen zählen die zehn Worte nicht überall gleich. Der biblische Inhalt sollte daher nicht mit einer einzigen späteren Nummerierung verwechselt werden. Elterngebot und Ruhegebot stehen in einer antiken Gesellschaft und werden verantwortungsvoll ausgelegt.",
+      "Jesus verbindet die Liebe zu Gott und zum Mitmenschen als Orientierung für Gesetz und Propheten. In Matthäus 5 vertieft er mehrere Weisungen, indem er auch Zorn, Begehren und Wahrhaftigkeit thematisiert. Das bedeutet nicht, dass soziale Gerechtigkeit oder konkrete Regeln unwichtig wären."
+    ],
+    "quiz": [
+      {
+        "q": "Womit beginnen die Zehn Worte?",
+        "a": "Mit Gottes Erinnerung an den Auszug",
+        "wrong": [
+          "Mit dem Bauplan des Tempels",
+          "Mit einer Königsliste"
+        ]
+      },
+      {
+        "q": "Welche Akzente unterscheiden sich in Exodus und Deuteronomium besonders?",
+        "a": "Die Begründung des Sabbats",
+        "wrong": [
+          "Das Verbot des Diebstahls",
+          "Die Namen der Stämme"
+        ]
+      }
+    ],
+    "reflection": "Welches Gebot fordert heute nicht nur mein Handeln, sondern mein Denken heraus?",
+    "connection": {
+      "from": "2Mo 20,1-17",
+      "to": "Mt 5,21-48",
+      "kind": "theme",
+      "note": "Jesus vertieft mehrere Gebote in der Bergpredigt."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-2-6",
+    "campaign": "tora-2",
+    "title": "Die Stiftshütte: Gott in Israels Mitte",
+    "refs": [
+      "2Mo 25,1-22",
+      "2Mo 26,31-35",
+      "2Mo 40,34-38"
+    ],
+    "terms": [
+      {
+        "term": "מִשְׁכָּן (mishkan)",
+        "explanation": "Wohnung, Stiftshütte"
+      },
+      {
+        "term": "כָּבוֹד (kavod)",
+        "explanation": "Ehre, Herrlichkeit"
+      },
+      {
+        "term": "כַּפֹּרֶת (kapporet)",
+        "explanation": "Deckplatte der Lade, Sühnedeckel"
+      }
+    ],
+    "body": [
+      "Exodus widmet dem Heiligtum viele Kapitel. Die freiwilligen Gaben, die Arbeit der Handwerker und die genaue Ordnung zeigen, dass Gottesdienst auch Gemeinschaftsarbeit ist. Der Vorhof beherbergt den Brandopferaltar und das Waschbecken. Im Zelt befinden sich der Leuchter, der Tisch und der Räucheraltar. Der Vorhang trennt den innersten Bereich mit der Bundeslade. Auf der Lade befindet sich die Deckplatte mit Cherubim; hier verortet Exodus 25 Gottes Begegnungszusage. Die Gegenstände sind nicht Gott selbst. Die Wolke der Herrlichkeit erfüllt die Wohnung am Ende von Exodus, sodass sogar Mose zunächst nicht eintreten kann.",
+      "Das Zelt diente nach der biblischen Erzählung als bewegliches Heiligtum. Spätere Tempel greifen seine räumliche Ordnung auf. Ob und wie jeder Gegenstand historisch rekonstruiert werden kann, bleibt begrenzt; die Texte bieten eine kultische Idealbeschreibung und keine modernen archäologischen Bauzeichnungen. Gold, Stoffe und geordnete Bereiche machen die besondere Rolle des Heiligtums sichtbar. Die Frage nach Zugang und Reinheit prägt die folgenden Teile der Tora. Zugleich begrenzt die Bibel das Missverständnis, Gott sei in einem Gebäude eingeschlossen: Salomos Tempelgebet weist ausdrücklich darauf hin, dass selbst die Himmel Gott nicht fassen können.",
+      "Der Hebräerbrief nutzt Stiftshüttensprache, um Jesu Priestertum und Zugang zu Gott auszulegen. Er verbindet diese Bilder mit dem Versöhnungstag, spricht aber nicht jeden Nagel und jede Farbe als geheime Vorhersage an. Johannes 1 verbindet das Wohnen des Wortes unter Menschen mit dem Motiv von Gottes Gegenwart. In Offenbarung 21 wird Gottes Wohnung bei den Menschen zum Zielbild, und ein eigener Tempel wird nicht mehr benötigt. Diese christlichen Lesarten bauen auf Israels Schrift auf; sie sollten den ursprünglichen Kult und jüdische Deutungen nicht unsichtbar machen. Für das eigene Studium lohnt sich, den Raum von außen nach innen nachzuzeichnen und bei jedem Gegenstand zuerst nach seiner im Text genannten Funktion zu fragen."
+    ],
+    "quiz": [
+      {
+        "q": "Was steht hinter dem inneren Vorhang?",
+        "a": "Die Bundeslade",
+        "wrong": [
+          "Der Brandopferaltar",
+          "Das Waschbecken"
+        ]
+      },
+      {
+        "q": "Womit endet Exodus 40?",
+        "a": "Gottes Herrlichkeit erfüllt das Zelt",
+        "wrong": [
+          "Aaron wird König",
+          "Das Volk baut Jerusalem"
+        ]
+      }
+    ],
+    "reflection": "Was bedeutet Gottes Gegenwart, wenn sie nicht auf ein Gebäude begrenzt ist?",
+    "connection": {
+      "from": "2Mo 25,8-9",
+      "to": "Hebr 9,1-12",
+      "kind": "theme",
+      "note": "Der Hebräerbrief entfaltet die Heiligtumsordnung christologisch."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-3-1",
+    "campaign": "tora-3",
+    "title": "Opfer und Annäherung",
+    "refs": [
+      "3Mo 1,1-9",
+      "3Mo 2,1-10",
+      "3Mo 3,1-5",
+      "3Mo 4,27-31"
+    ],
+    "terms": [
+      {
+        "term": "קָרְבָּן (qorban)",
+        "explanation": "Gabe, Opfer"
+      },
+      {
+        "term": "עֹלָה (olah)",
+        "explanation": "Brandopfer"
+      },
+      {
+        "term": "מִנְחָה (minchah)",
+        "explanation": "Gabe, Speisopfer"
+      }
+    ],
+    "body": [
+      "Levitikus unterscheidet verschiedene Opferarten. Das Brandopfer wird weitgehend verbrannt; Speisopfer besteht aus pflanzlichen Gaben; Gemeinschaftsopfer verbindet Gottesdienst mit einem Mahl; Reinigungs- und Schuldopfer betreffen bestimmte Verfehlungen oder Verunreinigungen. Nicht jedes Opfer ist ein Opfer für Sünde. Die Texte zeigen unterschiedliche Weisen, sich Gott zu nähern.",
+      "Der Kult gehört zum antiken Heiligtum und ist in der Tora geordnet. Die Propheten kritisieren Opfer, wenn sie Unrecht verdecken, nicht notwendigerweise jede kultische Handlung. In Hosea 6 wird Güte gegenüber einem bloßen Opfer betont; Amos verlangt Recht und Gerechtigkeit. Gottesdienst und Ethik dürfen nicht getrennt werden.",
+      "Der Hebräerbrief nutzt Opferbilder, um die Hingabe Christi zu erklären. Paulus spricht in Römer 12 vom lebendigen Opfer des eigenen Lebens. Das jüdische Leben hat nach dem Tempel eigene Formen von Gebet, Umkehr und Gottesdienst entwickelt. Die christliche Auslegung sollte Opferarten nicht pauschal gleichsetzen."
+    ],
+    "quiz": [
+      {
+        "q": "Welches Opfer besteht aus pflanzlichen Gaben?",
+        "a": "Speisopfer",
+        "wrong": [
+          "Brandopfer eines Tieres",
+          "Schuldopfer"
+        ]
+      },
+      {
+        "q": "Was kritisieren die Propheten?",
+        "a": "Kult, der Unrecht verdeckt",
+        "wrong": [
+          "Jede Form des Betens",
+          "Die Existenz von Gemeinschaft"
+        ]
+      }
+    ],
+    "reflection": "Wie können Gottesdienst und Gerechtigkeit im Alltag zusammengehören?",
+    "connection": {
+      "from": "3Mo 1,1-9",
+      "to": "Hebr 10,1-14",
+      "kind": "theme",
+      "note": "Der Hebräerbrief arbeitet mit der Opfersprache der Tora."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "tora-3-2",
+    "campaign": "tora-3",
+    "title": "Priesterschaft und Heiligkeit",
+    "refs": [
+      "3Mo 8,1-13",
+      "3Mo 9,22-24",
+      "3Mo 10,1-11"
+    ],
+    "terms": [
+      {
+        "term": "כֹּהֵן (kohen)",
+        "explanation": "Priester"
+      },
+      {
+        "term": "קָדוֹשׁ (qadosh)",
+        "explanation": "heilig"
+      }
+    ],
+    "body": [
+      "Aaron und seine Söhne werden in den priesterlichen Dienst eingesetzt. Kleidung, Salbung und Opfer zeigen, dass Amt nicht einfach persönliche Macht ist. Kapitel 9 enthält den Segen Aarons und die Erscheinung göttlicher Herrlichkeit. Kapitel 10 schildert den Tod Nadabs und Abihus nach einer nicht gebotenen Handlung; die Einzelheiten werden unterschiedlich gedeutet.",
+      "Priester unterscheiden heilig und gewöhnlich sowie rein und unrein und vermitteln Weisung. Der Text bindet ihre Autorität an die Aufgabe, nicht an ein fehlerloses Wesen. Auch der Umgang mit Trauer in Kapitel 10 macht sichtbar, dass kultische Pflichten und menschliche Wirklichkeit aufeinandertreffen.",
+      "Im Hebräerbrief erhält Jesus eine besondere Rolle als Hoherpriester nach der Ordnung Melchisedeks. Das ist nicht gleichbedeutend mit einem levitischen Amt. 1. Petrus beschreibt die Gemeinde als Priestertum; das christliche Verständnis von Amt und allgemeinem Priestertum unterscheidet sich konfessionell."
+    ],
+    "quiz": [
+      {
+        "q": "Wer wird in Levitikus 8 eingesetzt?",
+        "a": "Aaron und seine Söhne",
+        "wrong": [
+          "David und Salomo",
+          "Die zwölf Apostel"
+        ]
+      },
+      {
+        "q": "Was sollen Priester unterscheiden?",
+        "a": "Heilig und gewöhnlich, rein und unrein",
+        "wrong": [
+          "Arm und unwürdig",
+          "Stamm und Nation als Wertordnung"
+        ]
+      }
+    ],
+    "reflection": "Wie sollte geistliche Verantwortung ausgeübt werden?",
+    "connection": {
+      "from": "3Mo 8,1-13",
+      "to": "Hebr 7,11-28",
+      "kind": "theme",
+      "note": "Der Hebräerbrief vergleicht und unterscheidet Priesterordnungen."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "tora-3-3",
+    "campaign": "tora-3",
+    "title": "Reinheit und Unreinheit verstehen",
+    "refs": [
+      "3Mo 11,44-47",
+      "3Mo 12,1-8",
+      "3Mo 15,31-33"
+    ],
+    "terms": [
+      {
+        "term": "טָהוֹר (tahor)",
+        "explanation": "rein"
+      },
+      {
+        "term": "טָמֵא (tame)",
+        "explanation": "unrein"
+      }
+    ],
+    "body": [
+      "Die Reinheitsvorschriften betreffen Speisen, Geburt, körperliche Zustände und die Teilnahme am Heiligtum. Rituelle Unreinheit ist nicht automatisch moralische Schuld. Menschen können durch normale Vorgänge unrein werden; die Tora ordnet Zeiten und Wege der Rückkehr. Das ist keine Grundlage, Menschen wegen Krankheit oder Körperlichkeit als minderwertig zu behandeln.",
+      "Die antiken Kategorien verbinden Alltag und Kult. Einzelne Vorschriften können hygienische Folgen haben, doch die Texte begründen sie vor allem mit Heiligkeit und der Ordnung des Heiligtums. Moderne medizinische Deutungen ersetzen diese Begründung nicht. Jüdische Praxis entwickelt sich historisch weiter und ist vielfältig.",
+      "Markus 7 diskutiert Reinheit und das menschliche Herz. Apostelgeschichte 10 erzählt die Vision des Petrus und deutet sie auf die Aufnahme nichtjüdischer Menschen. Daraus folgt keine Berechtigung, heutiges jüdisches Leben abzuwerten. Jesus und die erste Gemeinde bewegen sich innerhalb eines jüdischen Kontextes, in dem diese Fragen ernsthaft verhandelt werden."
+    ],
+    "quiz": [
+      {
+        "q": "Ist rituelle Unreinheit automatisch Sünde?",
+        "a": "Nein, auch normale Vorgänge können sie auslösen",
+        "wrong": [
+          "Ja, immer",
+          "Nur bei Armen"
+        ]
+      },
+      {
+        "q": "Wie deutet Petrus seine Vision?",
+        "a": "Keinen Menschen unrein nennen",
+        "wrong": [
+          "Keinen Fremden aufnehmen",
+          "Kein Gebet mehr sprechen"
+        ]
+      }
+    ],
+    "reflection": "Wo verwechsle ich äußere Kategorien mit dem Wert eines Menschen?",
+    "connection": {
+      "from": "3Mo 11,44-47",
+      "to": "Apg 10,28",
+      "kind": "theme",
+      "note": "Petrus bezieht seine Vision auf den Umgang mit Menschen."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "tora-3-4",
+    "campaign": "tora-3",
+    "title": "Jom Kippur: Der Versöhnungstag",
+    "refs": [
+      "3Mo 16,6-22",
+      "3Mo 16,29-34",
+      "3Mo 23,26-32"
+    ],
+    "terms": [
+      {
+        "term": "כִּפֻּרִים (kippurim)",
+        "explanation": "Entsühnung"
+      },
+      {
+        "term": "עֲזָאזֵל (azazel)",
+        "explanation": "umstrittene Bezeichnung im Ritus"
+      }
+    ],
+    "body": [
+      "Levitikus 16 beschreibt einen jährlichen Ritus für das Heiligtum, die Priester und das Volk. Aaron bringt zunächst ein Opfer für sich und sein Haus. Zwei Böcke erhalten unterschiedliche Funktionen: Einer wird als Reinigungsopfer dargebracht, der andere trägt die bekannten Verfehlungen in die Wüste. Die Deutung der Bezeichnung Asasel ist umstritten. Der Ritus zeigt Reinigung und Entfernung von Schuld in unterschiedlichen Bildern.",
+      "Blut ist im kultischen Zusammenhang mit Leben und Sühne verbunden. Die Tora erklärt nicht jede Verwendung von Blut gleich. Der Versöhnungstag umfasst auch Arbeitsruhe und Selbsterniedrigung. Im heutigen Judentum ist Jom Kippur ein zentraler Tag des Gebets, Fastens und der Umkehr; ohne Tempel wird der alte Ritus nicht einfach nachgestellt.",
+      "Hebräer 9–10 greift den jährlichen Zugang des Hohenpriesters auf und entfaltet Jesu einmalige Hingabe. Die beiden Böcke werden im NT nicht ausdrücklich jeweils einer getrennten Handlung Jesu zugeordnet. In christlicher Auslegung sind solche Verbindungen möglich, wenn sie als Auslegung gekennzeichnet bleiben."
+    ],
+    "quiz": [
+      {
+        "q": "Wie viele Böcke stehen im zentralen Ritus?",
+        "a": "Zwei",
+        "wrong": [
+          "Sieben",
+          "Zwölf"
+        ]
+      },
+      {
+        "q": "Wofür steht der in die Wüste gesandte Bock?",
+        "a": "Das Wegtragen der Verfehlungen",
+        "wrong": [
+          "Eine Königskrönung",
+          "Die Ernte"
+        ]
+      }
+    ],
+    "reflection": "Wie hängen Bekenntnis und Hoffnung auf Vergebung zusammen?",
+    "connection": {
+      "from": "3Mo 16,29-34",
+      "to": "Hebr 9,7-14",
+      "kind": "allusion",
+      "note": "Hebräer greift den jährlichen Zugang des Hohenpriesters auf."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "tora-4-1",
+    "campaign": "tora-4",
+    "title": "„Du sollst deinen Nächsten lieben“",
+    "refs": [
+      "3Mo 19,9-18",
+      "3Mo 19,33-34",
+      "Mk 12,28-34"
+    ],
+    "terms": [
+      {
+        "term": "אָהַב (ahav)",
+        "explanation": "lieben"
+      },
+      {
+        "term": "גֵּר (ger)",
+        "explanation": "ansässiger Fremder"
+      }
+    ],
+    "body": [
+      "Levitikus 19 verbindet Gottesheiligkeit mit alltäglicher Ethik. Randbereiche eines Feldes bleiben den Armen und Fremden; Lohn soll nicht zurückgehalten werden; vor Gericht darf weder Armut noch Reichtum zu Ungerechtigkeit führen. Die Nächstenliebe steht neben dem Verbot von Hass und Rache. Sie ist nicht nur ein Gefühl.",
+      "Auch der ansässige Fremde soll geliebt werden. Die Erinnerung an Ägypten gibt dafür eine Begründung. Die antike Kategorie ger ist nicht deckungsgleich mit jedem heutigen Aufenthaltsstatus, doch die ethische Richtung des Textes ist klar: eigene Verletzlichkeit soll solidarisches Handeln fördern.",
+      "Jesus verbindet Levitikus 19 mit dem Schma aus Deuteronomium. Der barmherzige Samariter macht das Handeln gegenüber einem Notleidenden zum Thema. Die Nächstenliebe hebt verantwortliche Grenzen nicht auf; sie widerspricht Hass, Ausbeutung und Gleichgültigkeit."
+    ],
+    "quiz": [
+      {
+        "q": "Was bleibt bei der Ernte für Bedürftige?",
+        "a": "Feldränder und Nachlese",
+        "wrong": [
+          "Nur Abfälle",
+          "Nichts"
+        ]
+      },
+      {
+        "q": "Welche Erinnerung begründet Fremdenliebe?",
+        "a": "Israel war fremd in Ägypten",
+        "wrong": [
+          "Israel besaß eine Flotte",
+          "Israel baute den Tempel"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Liebe konkret und gerecht werden?",
+    "connection": {
+      "from": "3Mo 19,18",
+      "to": "Mk 12,31",
+      "kind": "quote",
+      "note": "Jesus zitiert das Liebesgebot der Tora."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-4-2",
+    "campaign": "tora-4",
+    "title": "Wüstenwanderung und Murren",
+    "refs": [
+      "4Mo 11,4-17",
+      "4Mo 13,25-33",
+      "4Mo 14,1-19"
+    ],
+    "terms": [
+      {
+        "term": "מִדְבָּר (midbar)",
+        "explanation": "Wüste, unbewohntes Gebiet"
+      },
+      {
+        "term": "רוּחַ (ruach)",
+        "explanation": "Geist, Wind, Atem"
+      }
+    ],
+    "body": [
+      "Numeri erzählt von einem befreiten Volk, das mit Unsicherheit, Hunger und Konflikten ringt. Die Sehnsucht nach Ägyptens Nahrung zeigt, dass Erinnerung unter Angst selektiv werden kann. Mose trägt die Last nicht allein; Gott lässt siebzig Älteste an der Leitung teilhaben. Das ist ein wichtiges Zeichen geteilter Verantwortung.",
+      "Die Kundschafter berichten vom Land. Ihre Deutungen unterscheiden sich: Einige betonen die Gefahr, Josua und Kaleb vertrauen der göttlichen Zusage. Der Text unterscheidet realistisches Wahrnehmen von einer Verweigerung des Vertrauens. Mose bittet für das Volk, statt sich auf seine eigene Stellung zu berufen.",
+      "Paulus greift die Wüstengeschichte in 1. Korinther 10 als Warnung auf. Hebräer 3–4 verbindet sie mit dem Hören auf Gottes Stimme. Die Geschichte rechtfertigt nicht, Menschen mit ehrlicher Angst zu beschämen: Die Bibel kennt auch Klage als vertrauensvolle Gebetsform."
+    ],
+    "quiz": [
+      {
+        "q": "Wie wird Moses Leitungslast geteilt?",
+        "a": "Mit siebzig Ältesten",
+        "wrong": [
+          "Mit dem Pharao",
+          "Mit Richtern in Rom"
+        ]
+      },
+      {
+        "q": "Wer widerspricht der verzweifelten Deutung der Kundschafter?",
+        "a": "Josua und Kaleb",
+        "wrong": [
+          "Aaron und Saul",
+          "Kain und Abel"
+        ]
+      }
+    ],
+    "reflection": "Wo brauche ich Unterstützung statt alles allein zu tragen?",
+    "connection": {
+      "from": "4Mo 14,1-19",
+      "to": "Hebr 3,7-19",
+      "kind": "allusion",
+      "note": "Hebräer greift den Ungehorsam der Wüstengeneration auf."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-4-3",
+    "campaign": "tora-4",
+    "title": "Bileam: Segen statt Fluch",
+    "refs": [
+      "4Mo 22,21-35",
+      "4Mo 23,7-12",
+      "4Mo 24,15-19"
+    ],
+    "terms": [
+      {
+        "term": "בָּרַךְ (barakh)",
+        "explanation": "segnen"
+      },
+      {
+        "term": "קָלַל (qalal)",
+        "explanation": "fluchen, gering achten"
+      }
+    ],
+    "body": [
+      "Balak fürchtet Israel und will Bileam für einen Fluch gewinnen. Bileam kann nach der Erzählung jedoch nicht nach Belieben über Gottes Wort verfügen. Die Eselin sieht den Engel, den der Seher zunächst nicht wahrnimmt. Die Umkehrung stellt vermeintliche geistliche Kompetenz infrage.",
+      "Bileams Sprüche werden zu Segensworten. Der Stern aus Jakob in Numeri 24 ist ein königliches Hoffnungsbild; spätere jüdische und christliche Deutungen verbinden es mit messianischer Erwartung. Die Deir-Alla-Inschrift erwähnt einen Seher namens Bileam, Sohn Beors; das ist ein traditionsgeschichtlicher Vergleich, kein Beweis für jedes Detail.",
+      "Spätere biblische Texte bieten auch eine kritische Perspektive auf Bileam. 2. Petrus warnt vor Gewinnsucht. Spirituelle Autorität ist nicht mit käuflicher Kontrolle über Gott gleichzusetzen. Lese die unterschiedlichen Bileam-Bilder in ihrem jeweiligen Zusammenhang."
+    ],
+    "quiz": [
+      {
+        "q": "Was will Balak kaufen?",
+        "a": "Einen Fluch gegen Israel",
+        "wrong": [
+          "Eine Bundeslade",
+          "Eine neue Tora"
+        ]
+      },
+      {
+        "q": "Wer sieht den Engel zuerst?",
+        "a": "Die Eselin",
+        "wrong": [
+          "Balak",
+          "Mose"
+        ]
+      }
+    ],
+    "reflection": "Wo kann religiöse Sprache für Eigeninteressen missbraucht werden?",
+    "connection": {
+      "from": "4Mo 22,21-35",
+      "to": "2Petr 2,15-16",
+      "kind": "allusion",
+      "note": "Petrus erinnert an Bileam und die Eselin."
+    },
+    "image": "bileam"
+  },
+  {
+    "id": "tora-5-1",
+    "campaign": "tora-5",
+    "title": "Die bronzene Schlange",
+    "refs": [
+      "4Mo 21,4-9",
+      "2Kö 18,1-4",
+      "Joh 3,14-17"
+    ],
+    "terms": [
+      {
+        "term": "נָחָשׁ (nachash)",
+        "explanation": "Schlange"
+      },
+      {
+        "term": "נְחֹשֶׁת (nechoshet)",
+        "explanation": "Kupfer, Bronze"
+      }
+    ],
+    "body": [
+      "Die Erzählung gehört ursprünglich zu Numeri, auch wenn die Station in der Deuteronomium-Kampagne liegt. Nach einer Beschwerde wird das Volk von Schlangen bedroht. Mose bittet für die Menschen, und Gott weist ihn an, eine Schlange auf einer Stange anzubringen. Wer gebissen ist und hinblickt, bleibt am Leben. Der Text schreibt die Rettung Gottes Anweisung zu, nicht einem Gegenstand mit autonomer Kraft.",
+      "In 2. Könige 18 zerstört Hiskia die Schlange, weil ihr Weihrauch geopfert wird. Ein ursprünglich hilfreiches Zeichen kann zum Gegenstand eines fehlgeleiteten Kultes werden. Gottes Handeln und das Zeichen sind daher zu unterscheiden. Die Bibel bietet hier mehrere Perspektiven auf denselben Gegenstand.",
+      "Jesus greift in Johannes 3 das Erhöhen der Schlange auf und verbindet es mit der Erhöhung des Menschensohnes. Der Vergleich betrifft Rettung und Hinwendung, nicht eine Gleichsetzung Jesu mit jeder symbolischen Schlange. Die Bedeutung entsteht aus dem konkreten Textzusammenhang."
+    ],
+    "quiz": [
+      {
+        "q": "In welchem Buch steht die Schlangenerzählung?",
+        "a": "Numeri",
+        "wrong": [
+          "Deuteronomium",
+          "Römer"
+        ]
+      },
+      {
+        "q": "Warum zerstört Hiskia die Schlange?",
+        "a": "Ihr wurde Weihrauch geopfert",
+        "wrong": [
+          "Sie war zerbrochen",
+          "Sie war aus Holz"
+        ]
+      }
+    ],
+    "reflection": "Wann kann ein religiöses Zeichen wichtiger werden als Gott selbst?",
+    "connection": {
+      "from": "4Mo 21,8-9",
+      "to": "Joh 3,14-15",
+      "kind": "allusion",
+      "note": "Jesus verweist ausdrücklich auf die erhöhte Schlange."
+    },
+    "image": "hiskia"
+  },
+  {
+    "id": "tora-5-2",
+    "campaign": "tora-5",
+    "title": "Das Schma: Gott lieben",
+    "refs": [
+      "5Mo 6,4-9",
+      "5Mo 11,18-21",
+      "Mk 12,28-34"
+    ],
+    "terms": [
+      {
+        "term": "שְׁמַע (shema)",
+        "explanation": "Höre!"
+      },
+      {
+        "term": "לֵבָב (levav)",
+        "explanation": "Herz, Inneres"
+      }
+    ],
+    "body": [
+      "Das Schma beginnt mit dem Hören auf Israels Gott und dem Auftrag, ihn mit Herz, Seele und Kraft zu lieben. Hören umfasst Aufmerksamkeit und verbindliches Handeln. Die Weisung soll den Kindern weitergegeben werden, beim Sitzen, Gehen, Niederlegen und Aufstehen. Der Glaube gehört zum Rhythmus gewöhnlichen Lebens.",
+      "Der hebräische Satz über Gottes Einheit kann grammatisch in verschiedenen Nuancen übersetzt werden. Im jüdischen Gebet ist das Schma ein zentraler Ausdruck der Bindung an den einen Gott. Tefillin und Mesusot sind Formen, diese Weisung körperlich und im Alltag sichtbar zu machen.",
+      "Jesus nennt das Schma in Markus 12 als erstes Gebot und verbindet es mit Levitikus 19,18. Der Schriftgelehrte stimmt ihm zu; die Szene ist ein Gespräch innerhalb jüdischer Weisungstradition. Liebe zu Gott und zum Menschen gehören zusammen, ohne dass Gott auf menschliche Beziehungen reduziert wird."
+    ],
+    "quiz": [
+      {
+        "q": "Was bedeutet das einleitende Schma?",
+        "a": "Höre!",
+        "wrong": [
+          "Laufe!",
+          "Opfere!"
+        ]
+      },
+      {
+        "q": "Was verbindet Jesus mit dem Schma?",
+        "a": "Nächstenliebe",
+        "wrong": [
+          "Ein Verbot der Arbeit",
+          "Eine Königsliste"
+        ]
+      }
+    ],
+    "reflection": "Wie lässt sich Gottes Wort in einen gewöhnlichen Tag einbauen?",
+    "connection": {
+      "from": "5Mo 6,4-5",
+      "to": "Mk 12,29-30",
+      "kind": "quote",
+      "note": "Jesus zitiert das Schma als erstes Gebot."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-5-3",
+    "campaign": "tora-5",
+    "title": "Den Fremden lieben",
+    "refs": [
+      "5Mo 10,17-19",
+      "5Mo 24,17-22",
+      "Lk 10,25-37"
+    ],
+    "terms": [
+      {
+        "term": "גֵּר (ger)",
+        "explanation": "ansässiger Fremder"
+      },
+      {
+        "term": "מִשְׁפָּט (mishpat)",
+        "explanation": "Recht, Urteil"
+      }
+    ],
+    "body": [
+      "Deuteronomium beschreibt Gott als unparteiisch und als Helfer von Waisen, Witwen und Fremden. Israel soll diese Haltung nachahmen, weil es selbst in Ägypten fremd war. Die Erinnerung an Befreiung wird zur Verpflichtung gegenüber Verletzlichen.",
+      "Konkrete Weisungen betreffen gerechte Verfahren, Lohn, Sicherheiten und Nachlese. Das Recht eines Bedürftigen ist nicht von der Laune des Besitzenden abhängig. Diese Vorschriften sind in eine antike Agrargesellschaft eingebettet; moderne Anwendungen benötigen sorgfältige Übertragung, nicht bloß eine direkte Gleichsetzung.",
+      "Jesus stellt im Gleichnis vom Samariter die Frage, wer dem Verletzten zum Nächsten wurde. Die Geschichte handelt nicht von einer abstrakten Definition einer Gruppe, sondern von Barmherzigkeit in Handlung. Hilfe kann Zeit, Ressourcen und Mut kosten; sie bleibt mit Verantwortlichkeit und klugen Grenzen vereinbar."
+    ],
+    "quiz": [
+      {
+        "q": "Warum soll Israel Fremde lieben?",
+        "a": "Weil es selbst fremd war in Ägypten",
+        "wrong": [
+          "Weil es keine Nachbarn hatte",
+          "Weil nur Fremde Priester waren"
+        ]
+      },
+      {
+        "q": "Was bleibt zur Nachlese?",
+        "a": "Vergessene Garben und übrige Ernte",
+        "wrong": [
+          "Nur Steine",
+          "Alle Steuern"
+        ]
+      }
+    ],
+    "reflection": "Welche Person braucht nicht nur mein Mitleid, sondern fairen Umgang?",
+    "connection": {
+      "from": "5Mo 10,17-19",
+      "to": "Lk 10,33-37",
+      "kind": "theme",
+      "note": "Beide Texte betonen konkrete Zuwendung zu Bedürftigen."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-5-4",
+    "campaign": "tora-5",
+    "title": "Segen, Fluch und Entscheidung",
+    "refs": [
+      "5Mo 28,1-14",
+      "5Mo 28,15-25",
+      "5Mo 30,11-20"
+    ],
+    "terms": [
+      {
+        "term": "בְּרָכָה (berakhah)",
+        "explanation": "Segen"
+      },
+      {
+        "term": "חַיִּים (chayyim)",
+        "explanation": "Leben"
+      }
+    ],
+    "body": [
+      "Deuteronomium stellt die Folgen des Bundesgehorsams und der Abkehr in eindringlichen Segens- und Fluchworten dar. Die Texte sprechen das Volk als Gemeinschaft an und zeichnen Folgen für Land, Ernte, Frieden und Sicherheit. Sie ähneln in ihrer Form auch antiken Bundes- und Vertragstexten.",
+      "Kapitel 30 eröffnet nach der Aussicht auf Zerstreuung und Rückkehr erneut Hoffnung. Gottes Weisung ist nicht unerreichbar; Mose ruft zur Entscheidung für das Leben. Das ist kein einfaches System, in dem jeder einzelne Schicksalsschlag eine persönliche Strafe beweist. Hiob und zahlreiche Psalmen widersprechen einer mechanischen Gleichsetzung von Leid und Schuld.",
+      "Paulus greift Deuteronomium 30 in Römer 10 auf, um die Nähe des Glaubenswortes zu entfalten. Er deutet die Schrift christologisch. Die ursprüngliche Rede des Mose richtet sich an Israel; die spätere Auslegung sollte diese Ebene sichtbar lassen."
+    ],
+    "quiz": [
+      {
+        "q": "Wozu ruft Mose in Kapitel 30?",
+        "a": "Das Leben wählen",
+        "wrong": [
+          "Das Land verlassen ohne Grund",
+          "Ein neues Götterbild schaffen"
+        ]
+      },
+      {
+        "q": "Darf jeder persönliche Verlust als Strafe gedeutet werden?",
+        "a": "Nein, die Bibel kennt leidende Gerechte",
+        "wrong": [
+          "Ja, ausnahmslos",
+          "Nur bei anderen"
+        ]
+      }
+    ],
+    "reflection": "Welche Entscheidung stärkt Leben statt Angst?",
+    "connection": {
+      "from": "5Mo 30,11-14",
+      "to": "Röm 10,6-8",
+      "kind": "allusion",
+      "note": "Paulus nimmt die Nähe des Wortes auf."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-5-5",
+    "campaign": "tora-5",
+    "title": "Land, Erinnerung und Verantwortung",
+    "refs": [
+      "5Mo 8,1-18",
+      "5Mo 15,7-11",
+      "5Mo 26,1-11"
+    ],
+    "terms": [
+      {
+        "term": "זָכַר (zakhar)",
+        "explanation": "gedenken"
+      },
+      {
+        "term": "אֶרֶץ (erets)",
+        "explanation": "Land, Erde"
+      }
+    ],
+    "body": [
+      "Mose warnt davor, Wohlstand als reine Eigenleistung zu verstehen. Nach der Wüstenzeit können Häuser, Nahrung und Besitz den Eindruck erzeugen, Gott werde nicht mehr gebraucht. Erinnerung ist hier ein aktiver Schutz gegen Hochmut. Das Land wird als Gabe und Aufgabe beschrieben.",
+      "Die Weisung zum Öffnen der Hand in Kapitel 15 zeigt, dass Wohlstand soziale Pflichten hat. Die Erstlingsgabe in Kapitel 26 verbindet Ernte mit der erzählten Geschichte vom wandernden Vorfahren und der Rettung aus Ägypten. Dankbarkeit wird durch Teilen und öffentliches Erinnern konkret.",
+      "Jesus antwortet in der Versuchung mit Deuteronomium 8,3. Der Mensch lebt nicht allein von Brot; dies ist keine Verachtung körperlicher Bedürfnisse, denn Gott sorgt in der Wüste auch für Nahrung. Die Aussage richtet sich gegen die Reduktion des Lebens auf Verfügung und Konsum."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Gefahr beschreibt Deuteronomium 8?",
+        "a": "Wohlstand kann zur Selbstüberschätzung führen",
+        "wrong": [
+          "Erinnerung macht arm",
+          "Ernte ist immer unrecht"
+        ]
+      },
+      {
+        "q": "Was verbindet die Erstlingsgabe mit dem Alltag?",
+        "a": "Dank und Erinnerung an Befreiung",
+        "wrong": [
+          "Eine Königswahl",
+          "Eine Reise nach Rom"
+        ]
+      }
+    ],
+    "reflection": "Was hilft mich daran zu erinnern, dass Besitz Verantwortung bedeutet?",
+    "connection": {
+      "from": "5Mo 8,3",
+      "to": "Mt 4,4",
+      "kind": "quote",
+      "note": "Jesus zitiert die Wüstenweisung."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "tora-5-6",
+    "campaign": "tora-5",
+    "title": "Die Tora im Herzen: Erneuerter Bund",
+    "refs": [
+      "5Mo 30,1-10",
+      "Jer 31,31-34",
+      "Hes 36,24-28"
+    ],
+    "terms": [
+      {
+        "term": "לֵב (lev)",
+        "explanation": "Herz, Denken, Wollen"
+      },
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund"
+      }
+    ],
+    "body": [
+      "Deuteronomium 30 spricht von Umkehr und einer Veränderung des Herzens. Jeremia kündigt angesichts der Krise einen neuen Bund mit dem Haus Israel und Juda an. Gottes Weisung soll in das Innere geschrieben werden. In Hesekiel erscheint das verwandte Bild vom steinernen und fleischernen Herzen sowie vom neuen Geist.",
+      "Die prophetischen Worte richten sich zuerst an Menschen, deren politische und religiöse Welt erschüttert ist. Sie verheißten nicht lediglich privates Wohlbefinden, sondern Vergebung, Wiederherstellung und gelebte Bundestreue. Die Bilder des Herzens beschreiben Willen und Denken, nicht nur Emotionalität.",
+      "Hebräer 8 zitiert Jeremia ausführlich. Christliche Traditionen verstehen den neuen Bund in Beziehung zu Jesus; jüdische Auslegung liest die Verheißung anders. Die ursprüngliche Zusage an Israel und Juda darf nicht ausgelöscht werden. Innerlich gelebte Weisung wird im Alltag an konkretem Verhalten sichtbar."
+    ],
+    "quiz": [
+      {
+        "q": "An wen richtet sich Jeremia 31 unmittelbar?",
+        "a": "Israel und Juda",
+        "wrong": [
+          "Nur Griechen in Korinth",
+          "Nur römische Kaiser"
+        ]
+      },
+      {
+        "q": "Wohin soll die Weisung geschrieben werden?",
+        "a": "Ins Herz",
+        "wrong": [
+          "An einen Palast",
+          "In den Himmel als Sternbild"
+        ]
+      }
+    ],
+    "reflection": "Was wäre eine von innen kommende Veränderung statt äußerer Anpassung?",
+    "connection": {
+      "from": "Jer 31,31-34",
+      "to": "Hebr 8,8-12",
+      "kind": "quote",
+      "note": "Hebräer zitiert die Verheißung des neuen Bundes."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "tora-5-7",
+    "campaign": "tora-5",
+    "title": "Jesus und die Tora: Erfüllung statt Karikatur",
+    "refs": [
+      "5Mo 6,4-9",
+      "Mt 5,17-20",
+      "Mt 22,34-40"
+    ],
+    "terms": [
+      {
+        "term": "תּוֹרָה (torah)",
+        "explanation": "Weisung"
+      },
+      {
+        "term": "πληρόω (plēroō)",
+        "explanation": "erfüllen, voll machen"
+      }
+    ],
+    "body": [
+      "Jesus lehrt im jüdischen Kontext. In Matthäus 5 grenzt er sein Wirken ausdrücklich von einer Auflösung von Gesetz und Propheten ab. Er diskutiert Weisungen, verschärft an manchen Stellen deren Anspruch und stellt Gottes Gerechtigkeit in den Mittelpunkt. Seine Streitgespräche sind Teil jüdischer Auslegungskultur, nicht einfach ein Gegensatz von schlechtem Judentum und gutem Christentum.",
+      "Auch die apostolische Gemeinde muss klären, wie nichtjüdische Menschen zur Tora stehen. Apostelgeschichte 15 beschreibt eine konkrete Debatte über Beschneidung und Gemeinschaft. Paulus argumentiert je nach Situation unterschiedlich über Gesetz, Glauben und Freiheit. Ein einzelner Vers sollte nicht aus diesem Zusammenhang gelöst werden.",
+      "Christliche Traditionen unterscheiden sich darin, wie alte Bundespraxis und neue christliche Lebensführung zusammenhängen. Gemeinsamer Ausgangspunkt ist, die ausdrücklichen Worte Jesu ernst zu nehmen und den ursprünglichen jüdischen Zusammenhang zu kennen. Liebe zu Gott und Nächsten ist kein Vorwand, Texte selektiv zu ignorieren."
+    ],
+    "quiz": [
+      {
+        "q": "Was verneint Jesus in Matthäus 5?",
+        "a": "Dass er gekommen sei, Gesetz und Propheten aufzulösen",
+        "wrong": [
+          "Dass die Propheten existierten",
+          "Dass Liebe wichtig sei"
+        ]
+      },
+      {
+        "q": "Welche Frage diskutiert Apostelgeschichte 15?",
+        "a": "Die Aufnahme nichtjüdischer Gläubiger",
+        "wrong": [
+          "Die Krönung Davids",
+          "Die Arche Noah"
+        ]
+      }
+    ],
+    "reflection": "Wie vermeide ich ein Zerrbild anderer Glaubenstraditionen?",
+    "connection": {
+      "from": "5Mo 6,4-5",
+      "to": "Mt 22,37",
+      "kind": "quote",
+      "note": "Jesus greift das Liebesgebot aus Deuteronomium auf."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "ac-gen-cain",
+    "campaign": "tora-1",
+    "title": "Kain und Abel: Verantwortung für den Bruder",
+    "refs": [
+      "1Mo 4,1-16",
+      "1Joh 3,11-18"
+    ],
+    "terms": [
+      {
+        "term": "חָטָא (chata)",
+        "explanation": "sündigen, verfehlen"
+      },
+      {
+        "term": "אָח (ach)",
+        "explanation": "Bruder"
+      }
+    ],
+    "body": [
+      "Die Brüder bringen Gaben dar; die Erzählung nennt keinen vollständigen Grund für die unterschiedliche Annahme. Kain wird zornig. Gott spricht ihn an, bevor er Gewalt ausübt, und fordert ihn auf, sich der Gefahr der Sünde zu stellen. Abel wird ermordet; Gott fragt nach ihm. Kains Antwort verweigert Verantwortung.",
+      "Das Blut Abels schreit vom Erdboden. Kain wird mit den Folgen seiner Tat konfrontiert, erhält aber auch ein Zeichen, das ihn vor weiterer Gewalt schützen soll. Gericht und Begrenzung von Rache stehen nebeneinander. Der Text liefert keine Grundlage für rassistische Deutungen des Zeichens.",
+      "1. Johannes greift Kain als Gegenbild zur Liebe auf. Der Brief setzt nicht erst beim Töten an, sondern auch beim Hass und beim Verschließen vor einem bedürftigen Bruder. Die Erzählung fordert, Eifersucht und aufkommende Wut ernst zu nehmen, bevor sie zu Gewalt werden."
+    ],
+    "quiz": [
+      {
+        "q": "Was fragt Gott nach dem Mord?",
+        "a": "Wo ist dein Bruder?",
+        "wrong": [
+          "Wo ist deine Krone?",
+          "Wo ist dein Tempel?"
+        ]
+      },
+      {
+        "q": "Was verhindert das Zeichen?",
+        "a": "Weitere Tötung Kains",
+        "wrong": [
+          "Jede Strafe",
+          "Jegliche Erinnerung an Abel"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich früh Verantwortung übernehmen, wenn Neid entsteht?",
+    "connection": {
+      "from": "1Mo 4,8-9",
+      "to": "1Joh 3,12",
+      "kind": "allusion",
+      "note": "Der Johannesbrief erinnert an Kain als Gegenbild zur Liebe."
+    },
+    "image": "adam-eva"
+  },
+  {
+    "id": "ac-gen-babel",
+    "campaign": "tora-1",
+    "title": "Babel: Name, Macht und Grenzen",
+    "refs": [
+      "1Mo 11,1-9",
+      "1Mo 12,1-3",
+      "Apg 2,5-11"
+    ],
+    "terms": [
+      {
+        "term": "שֵׁם (shem)",
+        "explanation": "Name"
+      },
+      {
+        "term": "בָּבֶל (bavel)",
+        "explanation": "Babel, Babylon"
+      }
+    ],
+    "body": [
+      "Die Turmerzählung beginnt mit gemeinsamer Sprache und einer Stadt. Die Bauenden wollen sich einen Namen machen und Zerstreuung verhindern. Der Text beschreibt damit nicht einfach Technik als böse, sondern eine Form konzentrierter menschlicher Selbstsicherung. Gott steigt in der Erzählung herab; die Sprache wird verwirrt und die Menschen zerstreut.",
+      "Ziegel und monumentale Türme passen zur erzählten Welt Mesopotamiens; der Text identifiziert jedoch keine archäologisch sicher bestimmte Ruine. Das Wortspiel mit Babel und Verwirren gehört zur hebräischen Erzählung, unabhängig von der babylonischen Namensdeutung. Direkt danach wird Abraham gerufen und erhält Gottes Zusage eines großen Namens.",
+      "Pfingsten wird häufig als Gegenbild gelesen: Menschen hören die Botschaft in ihrer jeweiligen Sprache. Apostelgeschichte 2 sagt nicht ausdrücklich, dass Babel rückgängig gemacht wird. Die Verbindung ist eine christliche thematische Auslegung; Vielfalt bleibt in Pfingsten sichtbar."
+    ],
+    "quiz": [
+      {
+        "q": "Was wollen die Bauenden für sich gewinnen?",
+        "a": "Einen Namen",
+        "wrong": [
+          "Ein Gesetz vom Sinai",
+          "Die Bundeslade"
+        ]
+      },
+      {
+        "q": "Was bleibt an Pfingsten sichtbar?",
+        "a": "Die verschiedenen Sprachen",
+        "wrong": [
+          "Nur eine Weltsprache",
+          "Der Turm selbst"
+        ]
+      }
+    ],
+    "reflection": "Wo wird menschliche Einheit zur Kontrolle über andere?",
+    "connection": {
+      "from": "1Mo 11,1-9",
+      "to": "Apg 2,5-11",
+      "kind": "theme",
+      "note": "Eine verbreitete christliche Gegenüberstellung von Babel und Pfingsten."
+    },
+    "image": "abraham"
+  },
+  {
+    "id": "ac-gen-isaac",
+    "campaign": "tora-1",
+    "title": "Isaak, die Bindung und die Verheißung",
+    "refs": [
+      "1Mo 21,1-13",
+      "1Mo 22,1-19",
+      "Hebr 11,17-19"
+    ],
+    "terms": [
+      {
+        "term": "עֲקֵדָה (aqedah)",
+        "explanation": "Bindung, jüdische Bezeichnung der Erzählung"
+      },
+      {
+        "term": "יִצְחָק (yitschaq)",
+        "explanation": "Isaak, Name mit Lachen verbunden"
+      }
+    ],
+    "body": [
+      "Isaaks Geburt steht im Zusammenhang der lange erwarteten Verheißung. Genesis 22 erzählt eine erschütternde Prüfung: Abraham soll seinen Sohn darbringen, doch Gott hält seine Hand auf. Ein Widder tritt an Isaaks Stelle. Die Erzählung endet mit einer Bestätigung der Verheißung, nicht mit der Opferung eines Kindes.",
+      "In jüdischer Tradition heißt die Geschichte Akeda, Bindung Isaaks, und besitzt eine vielfältige Auslegung. Fragen nach Gehorsam, Angst, Gottes Güte und dem Schweigen Isaaks bleiben schmerzhaft. Der Text ist ausdrücklich keine Anweisung, Kinder zu gefährden oder schädliche innere Stimmen zu befolgen.",
+      "Hebräer 11 deutet Abrahams Handeln im Horizont der Auferweckung. Christliche Traditionen ziehen auch typologische Verbindungen zu Jesu Hingabe; Genesis 22 nennt Jesus selbst nicht. Als Leseübung lohnt es sich, die Veränderungen in den Gottesworten und Abrahams Antworten sorgfältig zu verfolgen."
+    ],
+    "quiz": [
+      {
+        "q": "Was wird am Ende dargebracht?",
+        "a": "Ein Widder",
+        "wrong": [
+          "Isaak",
+          "Eine Taube"
+        ]
+      },
+      {
+        "q": "Wie heißt die Erzählung in jüdischer Tradition?",
+        "a": "Akeda",
+        "wrong": [
+          "Schma",
+          "Pessach"
+        ]
+      }
+    ],
+    "reflection": "Wie unterscheide ich religiösen Gehorsam von gefährlichen Forderungen?",
+    "connection": {
+      "from": "1Mo 22,1-19",
+      "to": "Hebr 11,17-19",
+      "kind": "allusion",
+      "note": "Hebräer deutet die Prüfung im Horizont der Auferweckung."
+    },
+    "image": "isaak"
+  },
+  {
+    "id": "ac-ex-plagues",
+    "campaign": "tora-2",
+    "title": "Die zehn Plagen und Pharaos verhärtetes Herz",
+    "refs": [
+      "2Mo 7,14-25",
+      "2Mo 9,13-21",
+      "2Mo 10,1-11",
+      "2Mo 12,29-32"
+    ],
+    "terms": [
+      {
+        "term": "לֵב (lev)",
+        "explanation": "Herz, Entscheidungszentrum"
+      },
+      {
+        "term": "כָּבֵד (kaved)",
+        "explanation": "schwer sein, hier Wortfeld der Verhärtung"
+      }
+    ],
+    "body": [
+      "Die Plagen bilden eine Reihe von Auseinandersetzungen zwischen Gottes Befreiungsforderung und Pharaos Widerstand. Blut, Tiere, Krankheit, Hagel, Finsternis und schließlich der Tod der Erstgeburt treffen die erzählte Ordnung Ägyptens. Die Texte wechseln zwischen Pharaos eigener Verhärtung und Gottes Verhärten. Beide Aussagen müssen gemeinsam wahrgenommen werden.",
+      "Die Erzählung hat literarische Wiederholungen und Steigerungen. Eine einfache Zuordnung jeder Plage zu einer bestimmten ägyptischen Gottheit ist nicht im Text angegeben und oft spekulativ. Die historische Rekonstruktion bleibt unsicher. Ethisch besonders schwer ist das Leiden der Bevölkerung; der Text stellt den Konflikt um versklavte Menschen dar, ohne eine zeitlose Freigabe für Gewalt zu geben.",
+      "Paulus greift Pharao in Römer 9 in einer Argumentation über Gottes Erbarmen und Freiheit auf. Die Frage menschlicher Verantwortung bleibt in Exodus sichtbar. Lass dich beim Lesen nicht nur von spektakulären Ereignissen leiten, sondern beobachte, wann Pharao verspricht, zurücknimmt und sich weigert."
+    ],
+    "quiz": [
+      {
+        "q": "Was fordert Mose wiederholt?",
+        "a": "Das Volk ziehen lassen",
+        "wrong": [
+          "Ein größeres Heer bauen",
+          "Ein neues Götterbild herstellen"
+        ]
+      },
+      {
+        "q": "Wie beschreibt Exodus die Verhärtung?",
+        "a": "Sowohl Pharaos Handeln als auch Gottes Handeln",
+        "wrong": [
+          "Nur Zufall",
+          "Nur Moses Entscheidung"
+        ]
+      }
+    ],
+    "reflection": "Wo kann Machtmissbrauch durch wiederholte Ausreden verfestigt werden?",
+    "connection": {
+      "from": "2Mo 9,16",
+      "to": "Röm 9,17",
+      "kind": "quote",
+      "note": "Paulus zitiert die Aussage über Pharao."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "ac-ex-calf",
+    "campaign": "tora-2",
+    "title": "Das goldene Kalb und Moses Fürbitte",
+    "refs": [
+      "2Mo 32,1-14",
+      "2Mo 32,30-35",
+      "2Mo 34,4-9"
+    ],
+    "terms": [
+      {
+        "term": "עֵגֶל (egel)",
+        "explanation": "Kalb"
+      },
+      {
+        "term": "חֶסֶד (chesed)",
+        "explanation": "Güte, Treue"
+      }
+    ],
+    "body": [
+      "Während Mose auf dem Berg ist, fordert das Volk ein sichtbares Zeichen der Führung. Aaron fertigt ein goldenes Kalb; die Erzählung verbindet es mit der Befreiung aus Ägypten und einem Fest. Das Problem ist nicht Gold als Material, sondern die eigenmächtige Festlegung göttlicher Gegenwart. Mose zerbricht die Tafeln und tritt für das Volk ein.",
+      "Die Geschichte steht neben den Anweisungen für die Stiftshütte: Auch dort werden kostbare Materialien verwendet. Der Unterschied liegt im Auftrag und in der Funktion. In Exodus 34 offenbart Gott seinen Namen und Charakter als barmherzig, gnädig und gerecht. Treue und Verantwortung gehören zusammen; Moses Fürbitte löscht die Ernsthaftigkeit des Bruchs nicht aus.",
+      "Paulus nennt die Kalbgeschichte in 1. Korinther 10 als Warnung. Götzendienst kann dort entstehen, wo eine kontrollierbare Darstellung oder ein eigenes Bedürfnis Gottes Platz einnimmt. Der Text fordert nicht, jegliche religiöse Kunst grundsätzlich als Götzendienst anzusehen."
+    ],
+    "quiz": [
+      {
+        "q": "Was fordert das Volk in Moses Abwesenheit?",
+        "a": "Ein sichtbares Gottesbild",
+        "wrong": [
+          "Einen neuen Sabbat",
+          "Eine weitere Arche"
+        ]
+      },
+      {
+        "q": "Was tut Mose für das Volk?",
+        "a": "Er bittet für es",
+        "wrong": [
+          "Er ernennt sich zum Gott",
+          "Er verlässt es sofort"
+        ]
+      }
+    ],
+    "reflection": "Was kann ich mit Gott verwechseln, weil es mir Sicherheit verspricht?",
+    "connection": {
+      "from": "2Mo 32,6",
+      "to": "1Kor 10,7",
+      "kind": "quote",
+      "note": "Paulus zitiert aus der Kalberzählung."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "ac-lev-feasts",
+    "campaign": "tora-3",
+    "title": "Die Feste Israels: Gottes Zeit im Jahreslauf",
+    "refs": [
+      "3Mo 23,1-22",
+      "3Mo 23,23-44",
+      "5Mo 16,1-17"
+    ],
+    "terms": [
+      {
+        "term": "מוֹעֵד (moed)",
+        "explanation": "festgesetzte Zeit"
+      },
+      {
+        "term": "סֻכָּה (sukkah)",
+        "explanation": "Laubhütte"
+      }
+    ],
+    "body": [
+      "Levitikus 23 ordnet den Sabbat und die jährlichen Festzeiten. Passa und ungesäuertes Brot erinnern an den Auszug; Erstlingsgabe und Wochenfest stehen mit Ernte und Dank in Verbindung. Im siebten Monat folgen Posaunentag, Versöhnungstag und Laubhüttenfest. Die Anordnungen schaffen Zeit für gemeinsame Erinnerung, Ruhe und Gottesdienst.",
+      "Die Feste haben im Judentum eine lange und lebendige Geschichte. Ihre spätere Ausgestaltung ist nicht in allen Einzelheiten identisch mit der antiken Tempelpraxis. Das Laubhüttenfest erinnert an das Wohnen in Hütten und verbindet dies mit Erntefreude. Die Vorschriften zur Nachlese stehen mitten im Festkalender: Feiern soll soziale Verantwortung nicht vergessen.",
+      "Die Evangelien und Apostelgeschichte situieren Ereignisse in jüdischen Festzeiten. Pfingsten steht am Wochenfest; Jesus spricht an einem Laubhüttenfest über lebendiges Wasser. Christliche Festdeutungen gehören zu einem eigenen Auslegungshorizont und ersetzen jüdische Praxis nicht."
+    ],
+    "quiz": [
+      {
+        "q": "Welches Fest erinnert an Hütten?",
+        "a": "Laubhüttenfest",
+        "wrong": [
+          "Purim",
+          "Tempelweihfest"
+        ]
+      },
+      {
+        "q": "Welche soziale Weisung steht im Festkalender?",
+        "a": "Nachlese für Arme und Fremde",
+        "wrong": [
+          "Alle Erträge dem König",
+          "Keine Arbeit für Fremde"
+        ]
+      }
+    ],
+    "reflection": "Welche Erinnerungszeiten helfen meinem Glauben, lebendig zu bleiben?",
+    "connection": {
+      "from": "3Mo 23,15-21",
+      "to": "Apg 2,1-4",
+      "kind": "theme",
+      "note": "Pfingsten fällt auf das jüdische Wochenfest."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "ac-num-korah",
+    "campaign": "tora-4",
+    "title": "Korach und die Frage nach geistlicher Autorität",
+    "refs": [
+      "4Mo 16,1-14",
+      "4Mo 16,23-35",
+      "4Mo 17,1-11"
+    ],
+    "terms": [
+      {
+        "term": "קָהָל (qahal)",
+        "explanation": "Versammlung"
+      },
+      {
+        "term": "קָדוֹשׁ (qadosh)",
+        "explanation": "heilig"
+      }
+    ],
+    "body": [
+      "Korach und andere treten gegen Mose und Aaron auf und berufen sich auf die Heiligkeit der ganzen Gemeinde. Die Erzählung prüft den Anspruch, daraus eine bestimmte priesterliche Autorität abzuleiten. Datan und Abiram bringen zugleich politische Vorwürfe gegen Mose vor. Der Konflikt ist daher nicht eindimensional.",
+      "Die Gerichtsbilder sind ernst und gehören zur antiken Erzählung über die Ordnung des Heiligtums. Sie dürfen nicht als Freibrief für heutige Leiter dienen, jede Kritik als Auflehnung gegen Gott zu verurteilen. Moses und Aarons Rollen bleiben begründet und begrenzt; auch sie sind in anderen Texten Gegenstand göttlicher Kritik.",
+      "Judas 11 erinnert an Korach als warnendes Beispiel. Ein verantwortlicher Transfer unterscheidet Machtstreben, berechtigte Fragen und überprüfbare Verantwortung. Die Gemeinde ist nicht dadurch heilig, dass ihre Leitung unantastbar wird."
+    ],
+    "quiz": [
+      {
+        "q": "Worum streitet Korach unter anderem?",
+        "a": "Priesterliche Autorität",
+        "wrong": [
+          "Die römische Steuer",
+          "Die Zahl der Evangelien"
+        ]
+      },
+      {
+        "q": "Was ist keine zulässige Anwendung?",
+        "a": "Jede Kritik an einem Leiter verbieten",
+        "wrong": [
+          "Eigeninteressen prüfen",
+          "Verantwortung reflektieren"
+        ]
+      }
+    ],
+    "reflection": "Wie können Leitung und Rechenschaft zusammengehören?",
+    "connection": {
+      "from": "4Mo 16,1-35",
+      "to": "Jud 1,11",
+      "kind": "allusion",
+      "note": "Judas nennt Korach als Warnbeispiel."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "ac-deut-release",
+    "campaign": "tora-5",
+    "title": "Erlassjahr, Schulden und offene Hand",
+    "refs": [
+      "5Mo 15,1-18",
+      "3Mo 25,8-17",
+      "Lk 4,16-21"
+    ],
+    "terms": [
+      {
+        "term": "שְׁמִטָּה (shemittah)",
+        "explanation": "Erlass"
+      },
+      {
+        "term": "יוֹבֵל (yovel)",
+        "explanation": "Jubeljahr"
+      }
+    ],
+    "body": [
+      "Deuteronomium 15 ordnet einen periodischen Erlass im Zusammenhang mit Schulden und die Freilassung hebräischer Schuldsklaven. Das Kapitel fordert, die Hand nicht vor einem armen Mitmenschen zu verschließen, auch wenn das Erlassjahr bevorsteht. Die wirtschaftliche Regel wird ausdrücklich mit einer Herzenshaltung verbunden.",
+      "Levitikus 25 beschreibt das Jubeljahr mit Rückkehr zu Familienbesitz und Freilassung. Die konkrete historische Umsetzung ist nicht sicher rekonstruierbar. Diese Regelungen sind Teil einer antiken Land- und Familienordnung; sie entsprechen nicht unmittelbar einem modernen Bank- oder Insolvenzrecht. Dennoch machen sie deutlich, dass Schuld und Besitz nicht jede Lebensperspektive dauerhaft vernichten sollen.",
+      "Jesus liest in Nazareth aus Jesaja 61 und kündigt den Armen gute Botschaft und Gefangenen Freilassung an. Die Erzählung greift die Sprache von Befreiung und Gnadenjahr auf. Christliche Anwendung muss prüfen, wie Barmherzigkeit und verantwortliche Gerechtigkeit in heutigen Strukturen konkret werden."
+    ],
+    "quiz": [
+      {
+        "q": "Was soll trotz nahendem Erlassjahr nicht verschlossen werden?",
+        "a": "Die Hand vor Armen",
+        "wrong": [
+          "Der Tempelvorhang",
+          "Die Stadtmauer"
+        ]
+      },
+      {
+        "q": "Wie heißt das besondere Freilassungsjahr in Levitikus 25?",
+        "a": "Jubeljahr",
+        "wrong": [
+          "Passawoche",
+          "Sabbat der Schöpfung"
+        ]
+      }
+    ],
+    "reflection": "Wie kann wirtschaftliche Verantwortung vor Verzweiflung schützen?",
+    "connection": {
+      "from": "3Mo 25,10",
+      "to": "Lk 4,18-19",
+      "kind": "theme",
+      "note": "Befreiungs- und Gnadenjahrmotive verbinden beide Texte."
+    },
+    "image": "mose"
+  }
+]

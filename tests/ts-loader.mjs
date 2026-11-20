@@ -23,7 +23,7 @@ registerHooks({
     if (url.endsWith(".json")) return { format: "module", source: "export default " + readFileSync(fileURLToPath(url), "utf8"), shortCircuit: true };
     if (/\.(png|jpe?g|webp|mp3|mp4)$/.test(url)) return { format: "module", source: "export default 1", shortCircuit: true };
     if (/\.tsx?$/.test(url) && url.includes("/frontend/")) {
-      const out = ts.transpileModule(readFileSync(fileURLToPath(url), "utf8"), { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX } });
+      const out = ts.transpileModule(readFileSync(fileURLToPath(url), "utf8"), { fileName: fileURLToPath(url), compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX } });
       return { format: "module", source: out.outputText, shortCircuit: true };
     }
     return next(url, ctx);

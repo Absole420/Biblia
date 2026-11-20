@@ -28,11 +28,14 @@ test("all 66 books are bundled and identical to the source data", () => {
 });
 
 test("bundled per-book commentaries equal the source entries", () => {
-  const all = commentaryFiles.flatMap(f => f.entries.map(e => ({ ...e, source: f.source })));
+  // Nur Quellen mit bestätigten Rechten werden mitgeliefert (Calvin deutsch: Rechte unbestätigt, Beta 0.9 deaktiviert)
+  const all = commentaryFiles.filter(f => permittedOffline(sources.find(s => s.id === f.source))).flatMap(f => f.entries.map(e => ({ ...e, source: f.source })));
   const bundled = Array.from({ length: 66 }, (_, i) => i + 1).flatMap(nr => { try { return json(local + "commentary/" + nr + ".json"); } catch { return []; } });
   assert.equal(bundled.length, all.length);
   const index = indexCommentaries(commentaryFiles, sources);
   assert.ok(index.get("43:3").length);
+  assert.ok(!permittedOffline(sources.find(s => s.id === "calvin-de")));
+  assert.ok(!bundled.some(e => e.source === "calvin-de"));
   assert.ok(!permittedOffline(sources.find(s => s.id === "bibelkommentare-de")));
   assert.ok(permittedOffline(sources.find(s => s.id === "openbible-xref")));
 });

@@ -1,5 +1,6 @@
 import type { Campaign, Station } from "./types";
 import { EXTRA_LESSONS } from "./lessonsExtra";
+import { applyAcademy, academyCoverage } from "./academy";
 import { findInfoIds, INFO_BY_ID } from "./lexicon";
 import C_tora_1 from "./campaigns/tora-1.json";
 import C_tora_2 from "./campaigns/tora-2.json";
@@ -410,6 +411,7 @@ const IMPORTED = [C_tora_1, C_tora_2, C_tora_3, C_tora_4, C_tora_5, C_matthew, C
 
 export const CAMPAIGNS: Record<string, Campaign> = enrich({ john: JOHN, ...Object.fromEntries(IMPORTED.map((c) => [c.id, c])), "psalms-1": PSALMS_1, "psalms-2": PSALMS_2, "psalms-3": PSALMS_3, "psalms-4": PSALMS_4, "prophets-2": PROPHETS_2, synoptics: SYNOPTICS, "history-1": HISTORY_1 });
 export const ALL_STATIONS = Object.values(CAMPAIGNS).flatMap((c) => c.stations);
+export const ACADEMY_COVERAGE = academyCoverage(ALL_STATIONS);
 
 /** Anteil abgeschlossener Stationen über alle Kampagnen einer Lernwelt. */
 export function worldProgress(campaignIds: string[] | undefined, done: Record<string, unknown>) {
@@ -441,6 +443,8 @@ function enrich(all: Record<string, Campaign>): Record<string, Campaign> {
       const { campaign: _c, ...rest } = e;
       stations.push({ ...rest, x: 500 + Math.sin((stations.length + i) * 1.15) * 300, y: prev.y - 230, requires: [prev.id], xp: 60 });
     });
+    const academy = applyAcademy(c0, stations);
+    stations = academy.stations;
     stations = stations.map((s) => {
       const text = [s.title, s.discover, ...s.background.map((b) => b.text), ...s.terms.map((t) => t.term)].join(" ");
       const info = Array.from(new Set([...(s.info ?? []), ...findInfoIds(text)])).filter((x) => INFO_BY_ID[x]).slice(0, 8);
@@ -454,7 +458,7 @@ function enrich(all: Record<string, Campaign>): Record<string, Campaign> {
       }
       return { ...s, info, tasks };
     });
-    out[id] = { ...c0, mapH: c0.mapH + shift, stations };
+    out[id] = { ...c0, mapH: c0.mapH + shift + academy.shift, stations };
   }
   return out;
 }

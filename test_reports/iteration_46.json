@@ -1,0 +1,36 @@
+{
+  "summary": "Iteration 46: final frontend regression for BIBLIA 0.9 Beta in the web preview (390x844 and 360x640). Every browser run blocked all /api/** requests and every request not going to the preview host. Node suite: 42/42 pass. tsc --noEmit is clean. No pageerrors and no red screens. The app made 0 blocked or external requests; the only failed request was the cloudflareinsights beacon, which the preview infrastructure injects. PASS: (1) First launch offline with empty localStorage: the intro plays with the daily verse ('Jehova wird für euch streiten…'), then 'Überspringen' shows the welcome screen, then 'Bibel entdecken' opens the home map. (2) Calvin is disabled. On Joh 3,16 the commentary panel shows only the MHCC card (commentary-mhcc-43-3-9) and the only filter chip is source-filter-mhcc. On Röm 8,28 it shows the empty state. Calvin appears only in the list 'Weitere Quellen (nur verlinkt…)', marked 'noch nicht eingebunden'. /study/sources shows Calvin as status pending with every right set to 'nein'. The bundled commentary JSON contains only 3 mhcc entries and no Calvin text. The original data is kept in backend/data/commentaries/calvin_de.json. (3) Core regression: full-text search ('Glaube Hoffnung Liebe' leads to 1. Kor 13,13, and tapping the result opens 1. Korinther 13). The station link 'Im Bibelleser öffnen' opens /bible?b=1Mo&ch=1&v=1. The station's lexicon links open /lexicon/adam-eva. tora-1-1 was played to the end: exam 6/6, +50 EP, profile XP went from 0 to 50 and was still 50 after a reload. The lexicon article (abraham) opens. The timeline shows 138 of 138 entries. A diary check-in was saved and was still there after a reload. Library customization: the lexicon cover was set to #2F6F6A and then #8A2F3C, saved, and still showed after a reload. 'Jetzt sichern' updates guardian-last-backup. 'Vollsicherung erstellen' downloads biblia-vollsicherung-<date>.json, which contains state.settings.libraryLayout (including color '#8A2F3C') and way.entries (the TEST_ check-in). A full restore after localStorage.clear() brings back the custom cover color. The media screen opens. (4) Map labels: the overview map shows 22 place labels. The campaign maps world/tora and world/parables render in Abenteuer mode (9 and 22 station nodes). Historisch mode renders labels (tora 21, parables 5). No errors. FAIL: the Hebrew term card on /station/tora-1-1 shows '(bara) בָּרָא', right-aligned, instead of 'בָּרָא (bara)'. It does not touch the flip icon: the gap is 8px at both 390 and 360. Expo pointer checks: no deprecated packages were found (no expo-av, expo-barcode-scanner or expo-background-fetch), and no SafeAreaView is imported from react-native.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "GET /api/study/commentary/{book}/{chapter}", "issue": "The endpoint still returns Calvin entries. server.py:118-131 loads every file in data/commentaries and does not filter by sources.json status or rights. The offline frontend never calls it, but it does not match the 'Calvin disabled' decision."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Station term card (Hebrew front side)", "issue": "react-native-web renders the outer Text with dir=\"auto\". The line starts with a Hebrew letter, so the browser treats the whole line as RTL (computed direction 'rtl'). The card therefore shows '(bara) בָּרָא' (also '(tselem) צֶלֶם' and '(shabbat) שַׁבָּת'), right-aligned next to the icon, instead of the Hebrew word followed by '(bara)'. Measured at 360px: the Hebrew span sits at x 262–295 and the Latin part to its left (x 204). In the DOM, setting direction:ltr on the outer Text gives the correct 'בָּרָא (bara)', left-aligned, with the icon on the right. Reference: /app/frontend/app/station/[id].tsx:214", "testID": "term-card-0", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "/study/sources", "issues": ["Calvin card status says 'Geprüft – noch nicht eingebunden' (STATUS label for 'pending'), and it still lists coverage '(2.972 Abschnitte)'. The licence text says the rights are not confirmed, so 'Geprüft' reads as contradictory. Consider wording like 'Rechte ungeklärt – deaktiviert'."]},
+      {"screen": "Bible search", "issues": ["'eingeborenen Sohn' returns 4 hits, with 1. Chronik 7,21 (non-adjacent words) first and the phrase match Joh 3,16 lower. Results are in canonical order and phrase matches are not ranked first. Minor."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/tests/academy_runner_snippet.py", "/app/test_reports/iter40_offline_helpers.py", "/app/tests/academy_answers_gen.mjs"],
+  "action_items": [
+    "Fix the Hebrew term card direction in app/station/[id].tsx:214: add writingDirection: 'ltr' (and textAlign: 'left') to the OUTER Text style. Keep writingDirection 'rtl' on the inner Hebrew span. Then check the display reads 'בָּרָא (bara)' at 390 and 360.",
+    "Optional: filter the backend /api/study/commentary (server.py:131) by sources status === 'integrated' and the rights flags, so it matches the frontend permittedOffline().",
+    "Optional: change the wording of the Calvin status label on /study/sources ('Geprüft – noch nicht eingebunden' while the rights are unconfirmed)."
+  ],
+  "critical_code_review_comments": [
+    "VerseStudy.tsx:23 applies permittedOffline() to commentary entries, and the integrated-only filter chips (line 61) exclude pending sources. This is correct, and the Calvin text is no longer in the bundle.",
+    "If a user's stored study.prefSources contains only 'calvin-de' (left over from a previous version), the filter (line 54) hides MHCC as well, and the user sees no chip that could undo it. Consider dropping ids that are not integrated from pref before filtering."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not tested (frontend only)", "frontend": "95% (19/20 checks; Hebrew term order failed)"},
+  "seed_data_creation": "None. A TEST_ diary entry and library layout changes were made only in temporary browser contexts (localStorage), not on the server.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Close the intro with intro-skip-button, then welcome-start (the dismiss(page) helper is in tests/academy_runner_snippet.py, exec it). Verse sheet: click verse-<ch>-<v>, wait about 1.5s for the sheet animation, then click verse-tab-comm. Term cards appear in station phase 2 (one click on station-next-button). Bible references on term cards are Text role=link with no testID. open-reader-<ch>-<from> opens the reader. Campaign maps use map-mode-adventure and map-mode-history. Full backup: data['state'] is a JSON string with nested {app, exportedAt, state:{settings:{libraryLayout}}}. Full restore: click full-restore-button, then restore-confirm-button inside expect_file_chooser. Diary: /way?tab=diary, then diary-new-checkin, entry-mood, entry-save."
+}

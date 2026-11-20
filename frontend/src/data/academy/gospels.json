@@ -1,0 +1,1281 @@
+[
+  {
+    "id": "matthew-1",
+    "campaign": "matthew",
+    "title": "Der verheißene König",
+    "refs": [
+      "Mt 1,1-17",
+      "Mt 2,1-12",
+      "Mt 4,1-11"
+    ],
+    "terms": [
+      {
+        "term": "Χριστός (Christos)",
+        "explanation": "Gesalbter, Messias"
+      },
+      {
+        "term": "βασιλεία (basileia)",
+        "explanation": "Königsherrschaft"
+      }
+    ],
+    "body": [
+      "Matthäus eröffnet mit Abraham und David und ordnet Jesu Herkunft in die Verheißungs- und Exilgeschichte Israels ein. Die Genealogie ist literarisch in drei Gruppen gegliedert und nennt auch Frauen mit überraschenden Lebensgeschichten. Die Weisen aus dem Osten suchen den König, während Herodes seine Macht bedroht sieht. Die beiden Reaktionen führen ein Thema des Evangeliums ein: Gottes Herrschaft stellt menschliche Herrschaftsansprüche infrage.",
+      "Der Evangelist arbeitet mit Schriftzitaten. Hosea 11,1 blickt ursprünglich auf Israels Auszug zurück; Matthäus wendet den Satz auf Jesu Rückkehr aus Ägypten an. Das ist eine typologische Lesart. Die vierzig Tage der Versuchung erinnern an Israels Wüstenzeit, und Jesus antwortet mit Deuteronomium. Er lehnt es ab, seine Sendung durch Macht, spektakuläre Zeichen oder erzwungene Sicherheit zu bestimmen.",
+      "Lies die Kindheitsgeschichte von Lukas zum Vergleich, ohne aus den unterschiedlichen Erzählmotiven eine künstlich lückenlose Chronologie zu machen. Matthäus fragt besonders nach Jesus als Sohn Davids und Erfüllung der Schrift."
+    ],
+    "quiz": [
+      {
+        "q": "Wie reagieren Herodes und die Weisen unterschiedlich?",
+        "a": "Herodes fürchtet um seine Macht, die Weisen suchen Jesus",
+        "wrong": [
+          "Beide ziehen nach Ägypten",
+          "Beide lehnen den König ab"
+        ]
+      },
+      {
+        "q": "Welches Buch zitiert Jesus in der Versuchung?",
+        "a": "Deuteronomium",
+        "wrong": [
+          "Ester",
+          "Offenbarung"
+        ]
+      }
+    ],
+    "reflection": "Wo versuche ich Sicherheit durch Kontrolle statt Vertrauen zu gewinnen?",
+    "connection": {
+      "from": "Hos 11,1",
+      "to": "Mt 2,15",
+      "kind": "quote",
+      "note": "Matthäus deutet Israels Auszug typologisch auf Jesus."
+    },
+    "image": "geburt"
+  },
+  {
+    "id": "matthew-2",
+    "campaign": "matthew",
+    "title": "Das Reich Gottes und die Bergpredigt",
+    "refs": [
+      "Mt 5,1-16",
+      "Mt 5,17-24",
+      "Mt 6,9-18",
+      "Mt 7,21-29"
+    ],
+    "terms": [
+      {
+        "term": "μακάριος (makarios)",
+        "explanation": "selig, glücklich"
+      },
+      {
+        "term": "δικαιοσύνη (dikaiosynē)",
+        "explanation": "Gerechtigkeit"
+      }
+    ],
+    "body": [
+      "Die Bergpredigt beginnt mit Zusagen an Menschen, die nach gängigen Maßstäben nicht als erfolgreich gelten: Trauernde, Arme im Geist und Friedensstifter. Salz und Licht richten den Blick anschließend auf sichtbares Handeln, das dem Vater Ehre gibt. Die Rede stellt Gottes Herrschaft nicht als privates Gefühl dar, sondern als Lebensweise.",
+      "Jesus nimmt Weisungen der Tora auf und fragt auch nach Zorn, Begehren, Wahrhaftigkeit und Feindesliebe. Die schwierigen Worte dürfen nicht als Aufforderung verstanden werden, Missbrauch zu dulden. Geben, Beten und Fasten sollen nicht zum religiösen Schauspiel werden. Das Vaterunser ordnet persönliche Bitten Gottes Namen, Reich und Willen zu.",
+      "Der Schluss mit den beiden Häusern macht Hören und Tun zum Maßstab. Matthäus stellt die Rede als zusammenhängende Jüngerschulung dar. Der Berg erinnert an die Tora; eine ausdrückliche Gleichsetzung Jesu mit Mose findet sich in der Rede nicht. Prüfe beim Lesen, wie Zusage, Anspruch und Gebet zusammenwirken."
+    ],
+    "quiz": [
+      {
+        "q": "Wofür sollen gute Werke sichtbar werden?",
+        "a": "Damit Menschen den Vater ehren",
+        "wrong": [
+          "Damit Jünger berühmt werden",
+          "Damit jedes Leiden endet"
+        ]
+      },
+      {
+        "q": "Was unterscheidet den klugen Hausbauer?",
+        "a": "Er hört und tut Jesu Worte",
+        "wrong": [
+          "Er besitzt mehr Geld",
+          "Er vermeidet Regen"
+        ]
+      }
+    ],
+    "reflection": "Welche Gewohnheit kann ich ändern, ohne sie zur Schau zu stellen?",
+    "connection": {
+      "from": "5Mo 6,4-5",
+      "to": "Mt 5,17-20",
+      "kind": "theme",
+      "note": "Jesu Lehre wird im Horizont der Tora verstanden."
+    },
+    "image": "verkuendigung"
+  },
+  {
+    "id": "matthew-3",
+    "campaign": "matthew",
+    "title": "Gleichnisse und das Himmelreich",
+    "refs": [
+      "Mt 13,1-23",
+      "Mt 13,24-30",
+      "Mt 13,44-50"
+    ],
+    "terms": [
+      {
+        "term": "παραβολή (parabolē)",
+        "explanation": "Gleichnis, Vergleich"
+      },
+      {
+        "term": "βασιλεία (basileia)",
+        "explanation": "Königsherrschaft"
+      }
+    ],
+    "body": [
+      "Matthäus 13 sammelt verschiedene Gleichnisse über Gottes Herrschaft. Im Sämann geht es um die Aufnahme des Wortes, beim Unkraut um das gemeinsame Wachsen bis zur Ernte, bei Schatz und Perle um den überraschenden Wert des Reiches. Man sollte die Bilder nicht zu einem einzigen Geheimcode verbinden: Der Samen hat etwa in den unterschiedlichen Geschichten nicht genau dieselbe Funktion.",
+      "Die Jünger fragen nach dem Sinn der Gleichnisrede. Matthäus verbindet Hören und Sehen mit Jesaja, der von verstocktem Hören spricht. Gleichnisse können erschließen und zugleich Widerstand sichtbar machen. Jesus erklärt manche Geschichten ausdrücklich, andere bleiben offener. Der Kontext ist der sichere Ausgangspunkt für Deutung.",
+      "Die Spannung zwischen kleinem Anfang und künftiger Vollendung zieht sich durch das Kapitel. Gerade weil das Reich nicht in menschlicher Kontrolle aufgeht, verbietet das Gleichnis vom Unkraut überstürztes Ausreißen. Das ist keine Regel, die konkrete Schutzmaßnahmen gegen Unrecht verbietet; es warnt vor eigenmächtigem Endgericht."
+    ],
+    "quiz": [
+      {
+        "q": "Was unterscheidet die Gleichnisse voneinander?",
+        "a": "Sie setzen unterschiedliche Akzente",
+        "wrong": [
+          "Jedes Bild bedeutet immer dasselbe",
+          "Sie handeln nur von Landwirtschaft"
+        ]
+      },
+      {
+        "q": "Wer entscheidet in der Geschichte vom Unkraut über die letzte Trennung?",
+        "a": "Der Herr zur Erntezeit",
+        "wrong": [
+          "Die ungeduldigen Knechte",
+          "Die Käufer der Perle"
+        ]
+      }
+    ],
+    "reflection": "Wo brauche ich Geduld statt vorschneller Urteile?",
+    "connection": {
+      "from": "Jes 6,9-10",
+      "to": "Mt 13,14-15",
+      "kind": "quote",
+      "note": "Matthäus zitiert Jesaja im Zusammenhang der Gleichnisrede."
+    },
+    "image": "verkuendigung"
+  },
+  {
+    "id": "matthew-4",
+    "campaign": "matthew",
+    "title": "Jünger, Kreuz und Nachfolge",
+    "refs": [
+      "Mt 10,1-16",
+      "Mt 16,13-28",
+      "Mt 18,15-22",
+      "Mt 20,20-28"
+    ],
+    "terms": [
+      {
+        "term": "μαθητής (mathētēs)",
+        "explanation": "Jünger, Lernender"
+      },
+      {
+        "term": "διάκονος (diakonos)",
+        "explanation": "Diener"
+      }
+    ],
+    "body": [
+      "Jesus beruft und sendet die Jünger, statt sie bloß mit Wissen zu versorgen. In Matthäus 10 werden sie auf Widerstand vorbereitet. Petrus bekennt Jesus als Messias, widerspricht jedoch der Leidensankündigung. Matthäus stellt damit Bekenntnis und Verständnis auseinander: Ein richtiger Titel garantiert noch keine richtige Vorstellung von Jesu Weg.",
+      "In Kapitel 18 steht die Verantwortung für kleine und verletzliche Menschen im Zentrum. Die Weisung zur Konfliktklärung verbindet Wahrheit, Zeugen und Gemeinschaft. Sie darf nicht benutzt werden, um Betroffene zu gefährlichen privaten Begegnungen mit Tätern zu zwingen. Vergebung bedeutet nicht, Schaden zu verschweigen.",
+      "Als die Jünger um Rang streiten, stellt Jesus Dienst statt Herrschaft in den Mittelpunkt. Die Forderung, das Kreuz aufzunehmen, steht vor dem Hintergrund römischer Hinrichtung und ist keine Aufforderung zu Selbstverletzung. Nachfolge bedeutet, eigene Machtansprüche an Gottes Weg zu prüfen."
+    ],
+    "quiz": [
+      {
+        "q": "Was versteht Petrus zunächst nicht?",
+        "a": "Dass der Messias leiden wird",
+        "wrong": [
+          "Dass Jesus Jünger hat",
+          "Dass er in Galiläa lebt"
+        ]
+      },
+      {
+        "q": "Welchen Maßstab setzt Jesus für Größe?",
+        "a": "Dienst",
+        "wrong": [
+          "Rang und Herrschaft",
+          "Reichtum"
+        ]
+      }
+    ],
+    "reflection": "Wo kann ich dienen, ohne mich selbst zu verlieren?",
+    "connection": {
+      "from": "Jes 53,12",
+      "to": "Mt 20,28",
+      "kind": "theme",
+      "note": "Jesu Hingabe steht in Verbindung mit dem Motiv des leidenden Dieners."
+    },
+    "image": "berufung"
+  },
+  {
+    "id": "matthew-5",
+    "campaign": "matthew",
+    "title": "Passion, Auferstehung und Sendung",
+    "refs": [
+      "Mt 26,36-46",
+      "Mt 27,27-54",
+      "Mt 28,1-20"
+    ],
+    "terms": [
+      {
+        "term": "σταυρός (stauros)",
+        "explanation": "Kreuz"
+      },
+      {
+        "term": "ἀνάστασις (anastasis)",
+        "explanation": "Auferstehung"
+      }
+    ],
+    "body": [
+      "Matthäus erzählt Jesu Passion in mehreren Bewegungen: Gebet, Verhaftung, Prozess, Verspottung, Kreuzigung und Begräbnis. Jesus bringt seine Angst in Gethsemane vor den Vater und bleibt bei seiner Sendung. Das Kreuz war ein römisches Instrument erniedrigender Gewalt. Die Passion sollte nicht zu einer pauschalen Schuldzuweisung an jüdische Menschen führen.",
+      "Der Schrei aus Psalm 22 bringt die Erfahrung der Verlassenheit in die Sprache Israels. Matthäus schildert weitere Zeichen, die seiner Darstellung eigene Akzente geben. Die Frauen am Grab erhalten den Auftrag, die Jünger zu informieren. Das Evangelium endet mit einer Begegnung in Galiläa; Zweifel werden nicht verschwiegen.",
+      "Jesus verbindet seine Vollmacht mit dem Auftrag, Menschen zu Jüngern zu machen, zu taufen und zu lehren. Der Schluss greift das Immanuel-Motiv des Beginns auf: Gottes Gegenwart bleibt mit den Jüngern. Mission bedeutet hier Weitergabe und gelebte Lehre, nicht religiösen Zwang."
+    ],
+    "quiz": [
+      {
+        "q": "Welchen Psalm greift Jesu Schrei auf?",
+        "a": "Psalm 22",
+        "wrong": [
+          "Psalm 150",
+          "Psalm 1"
+        ]
+      },
+      {
+        "q": "Wo findet die abschließende Begegnung statt?",
+        "a": "In Galiläa",
+        "wrong": [
+          "In Babylon",
+          "Am Sinai"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Hoffnung Zweifel ernst nehmen?",
+    "connection": {
+      "from": "Ps 22,1",
+      "to": "Mt 27,46",
+      "kind": "quote",
+      "note": "Jesus betet den Beginn des Klagepsalms."
+    },
+    "image": "kreuz"
+  },
+  {
+    "id": "mark-1",
+    "campaign": "mark",
+    "title": "Der Anfang des Evangeliums",
+    "refs": [
+      "Mk 1,1-20",
+      "Mk 1,21-39",
+      "Mk 2,1-12"
+    ],
+    "terms": [
+      {
+        "term": "εὐαγγέλιον (euangelion)",
+        "explanation": "gute Nachricht"
+      },
+      {
+        "term": "μετάνοια (metanoia)",
+        "explanation": "Umkehr"
+      }
+    ],
+    "body": [
+      "Markus beginnt ohne Kindheitsgeschichte direkt mit Johannes, Taufe, Wüste und Verkündigung. Der Ruf Gottes in der Wüste nimmt prophetische Sprache auf. Nach der Taufe spricht Jesus von Gottes nahegekommener Herrschaft; die Berufung der Fischer verbindet diese Nachricht mit einer konkreten neuen Lebensrichtung.",
+      "Die ersten Heilungen geschehen in Synagoge und Haus. Jesu Vollmacht wird zugleich als Lehre, Befreiung und Heilung erzählt. Er zieht sich zum Gebet zurück, obwohl viele ihn suchen. Die Geschichte des Gelähmten verbindet Heilung und Vergebung und löst einen Streit über Jesu Vollmacht aus. Krankheit darf daraus nicht als Beweis persönlicher Schuld verstanden werden.",
+      "Markus erzählt schnell und konzentriert, doch die Identitätsfrage bleibt offen für die Figuren: Wer ist dieser Jesus? Die Leser wissen durch den Anfang mehr als viele Beteiligte. Das Evangelium führt diese Frage bis zum Kreuz, anstatt sie mit spektakulären Handlungen allein zu beantworten."
+    ],
+    "quiz": [
+      {
+        "q": "Womit beginnt Jesu Verkündigung?",
+        "a": "Gottes Reich ist nahe, kehrt um",
+        "wrong": [
+          "Baut einen Palast",
+          "Verlasst jede Gemeinschaft"
+        ]
+      },
+      {
+        "q": "Was geschieht nach einem frühen Tag voller Heilungen?",
+        "a": "Jesus zieht sich zum Gebet zurück",
+        "wrong": [
+          "Er fordert eine Krone",
+          "Er beendet seine Sendung"
+        ]
+      }
+    ],
+    "reflection": "Wie gehören Tätigkeit und stille Zeit zusammen?",
+    "connection": {
+      "from": "Jes 40,3",
+      "to": "Mk 1,3",
+      "kind": "quote",
+      "note": "Markus nimmt die Stimme in der Wüste auf."
+    },
+    "image": "taufe"
+  },
+  {
+    "id": "mark-2",
+    "campaign": "mark",
+    "title": "Gleichnisse und verborgene Macht",
+    "refs": [
+      "Mk 4,1-20",
+      "Mk 4,26-41",
+      "Mk 5,21-43"
+    ],
+    "terms": [
+      {
+        "term": "σπόρος (sporos)",
+        "explanation": "Saat, Samen; verwandtes Bildwort"
+      },
+      {
+        "term": "πίστις (pistis)",
+        "explanation": "Glaube, Vertrauen"
+      }
+    ],
+    "body": [
+      "Markus 4 verbindet Gleichnisse über Wachstum mit der Sturmstillung. Das Wort wird unterschiedlich aufgenommen; das Reich wächst im Bild des Landwirts auch jenseits seiner Kontrolle. Die kleine Saat widerspricht der Erwartung, Gottes Herrschaft müsse sofort spektakulär sichtbar sein.",
+      "Auf die Rede folgt eine Fahrt über den See. Die Jünger erleben Bedrohung und fragen, ob Jesus sich um sie kümmert. Nach der Stillung des Sturms bleibt die Frage nach seiner Identität bestehen. Kapitel 5 erzählt Begegnungen mit Menschen in großer Not. Die ineinander verschachtelten Geschichten von Jairus und der blutflüssigen Frau machen Geduld, Berührung und Vertrauen sichtbar.",
+      "Diese Erzählungen sind keine Zusage, dass jeder Gläubige sofort vor Gefahr oder Krankheit bewahrt wird. Markus führt Jesu Heilungen mit dem bevorstehenden Leiden zusammen. Der Glaube der Jünger ist ein Lernweg, auf dem Fragen nicht automatisch Versagen bedeuten."
+    ],
+    "quiz": [
+      {
+        "q": "Was zeigt das Gleichnis vom selbst wachsenden Samen?",
+        "a": "Wachstum entzieht sich teilweise menschlicher Kontrolle",
+        "wrong": [
+          "Der Bauer kann alles erzwingen",
+          "Saat wächst nur in Jerusalem"
+        ]
+      },
+      {
+        "q": "Welche Frage stellen die Jünger nach der Sturmstillung?",
+        "a": "Wer ist dieser?",
+        "wrong": [
+          "Wer wird Pharao?",
+          "Wer zählt die Stämme?"
+        ]
+      }
+    ],
+    "reflection": "Wo kann ich Vertrauen üben, ohne alles kontrollieren zu wollen?",
+    "connection": {
+      "from": "Ps 107,28-30",
+      "to": "Mk 4,39-41",
+      "kind": "theme",
+      "note": "Das Meer- und Rettungsmotiv verbindet beide Texte."
+    },
+    "image": "wunder"
+  },
+  {
+    "id": "mark-3",
+    "campaign": "mark",
+    "title": "Wer ist Jesus? Der leidende Messias",
+    "refs": [
+      "Mk 8,22-38",
+      "Mk 9,2-13",
+      "Mk 10,35-45"
+    ],
+    "terms": [
+      {
+        "term": "Χριστός (Christos)",
+        "explanation": "Messias"
+      },
+      {
+        "term": "λύτρον (lytron)",
+        "explanation": "Lösegeld"
+      }
+    ],
+    "body": [
+      "Die zweistufige Heilung des Blinden steht unmittelbar vor dem Bekenntnis des Petrus. Petrus erkennt Jesus als Christus, aber widerspricht dessen Leidensankündigung. Die narrative Anordnung lädt dazu ein, Erkenntnis als schrittweises Sehen zu verstehen. Die Jünger müssen ihre Vorstellungen von Macht und Erfolg korrigieren.",
+      "Bei der Verklärung erscheinen Mose und Elia, und die Stimme fordert zum Hören auf Jesus auf. Doch der Weg führt vom Berg wieder hinab in Konflikt und Leiden. Mehrfach kündigt Jesus seinen Tod an; immer wieder reagieren die Jünger mit Missverständnissen über Größe. Das Markusevangelium verschweigt diese Schwächen nicht.",
+      "In Markus 10 stellt Jesus Dienst und die Hingabe seines Lebens den Herrschaftspraktiken mächtiger Menschen gegenüber. Das Lösegeldbild spricht von Befreiung; der Vers formuliert keine vollständige technische Erklärung aller Aspekte der Erlösung. Der leidende Messias ist nicht das Gegenbild zu Gottes Wirksamkeit, sondern der Weg, auf dem Markus sie erzählt."
+    ],
+    "quiz": [
+      {
+        "q": "Wie reagiert Petrus auf die Leidensankündigung?",
+        "a": "Er widerspricht Jesus",
+        "wrong": [
+          "Er versteht sie vollständig",
+          "Er verlässt Galiläa allein"
+        ]
+      },
+      {
+        "q": "Was setzt Jesus an die Stelle von Machtstreben?",
+        "a": "Dienen",
+        "wrong": [
+          "Sich allen aufzwingen",
+          "Reichtum sammeln"
+        ]
+      }
+    ],
+    "reflection": "Welches Bild von Stärke muss ich überdenken?",
+    "connection": {
+      "from": "Jes 53,10-12",
+      "to": "Mk 10,45",
+      "kind": "theme",
+      "note": "Die Hingabe Jesu lässt sich mit dem Dienermotiv lesen."
+    },
+    "image": "bekenntnis"
+  },
+  {
+    "id": "mark-4",
+    "campaign": "mark",
+    "title": "Jerusalem und die Tempelkonfrontation",
+    "refs": [
+      "Mk 11,1-19",
+      "Mk 12,1-17",
+      "Mk 12,28-34",
+      "Mk 13,1-13"
+    ],
+    "terms": [
+      {
+        "term": "ἱερόν (hieron)",
+        "explanation": "Tempelbezirk"
+      },
+      {
+        "term": "ἀγάπη (agapē)",
+        "explanation": "Liebe; verwandtes Wortfeld von Jesu Liebesgebot"
+      }
+    ],
+    "body": [
+      "Der Einzug in Jerusalem verbindet königliche Hoffnungen mit einem ungewöhnlich demütigen Bild. Jesus handelt im Tempel und zitiert prophetische Sprache über Gebet und Räuberhöhle. Markus stellt den verdorrenden Feigenbaum um die Tempelszene herum, sodass beide Erzählungen sich literarisch beleuchten.",
+      "In den Streitgesprächen geht es um Autorität, Gottes Anspruch und die Verantwortung der Leiter. Das Gleichnis von den Weingärtnern greift Jesaja 5 auf; die Kritik gilt im Erzählzusammenhang bestimmten Verantwortlichen, nicht einem angeblich einheitlich schlechten Volk. Jesus und seine Gesprächspartner gehören zur jüdischen Welt.",
+      "Der Schriftgelehrte, der Jesu Zusammenfassung der Gebote zustimmt, zeigt, dass Diskussion nicht nur Feindschaft bedeutet. Markus 13 verknüpft Tempelzerstörung, Verfolgung und Wachsamkeit. Die Rede fordert Standhaftigkeit, nicht die Berechnung eines sicheren Datums des Endes."
+    ],
+    "quiz": [
+      {
+        "q": "Welche prophetische Aufgabe nennt Jesus für das Gotteshaus?",
+        "a": "Ein Bethaus für alle Völker",
+        "wrong": [
+          "Eine königliche Schatzkammer",
+          "Eine private Festung"
+        ]
+      },
+      {
+        "q": "Worauf einigen sich Jesus und der Schriftgelehrte?",
+        "a": "Liebe zu Gott und zum Nächsten",
+        "wrong": [
+          "Auf den Bau einer Armee",
+          "Auf die Abschaffung der Schrift"
+        ]
+      }
+    ],
+    "reflection": "Welche Art von Frömmigkeit muss sich an ihrem Handeln prüfen lassen?",
+    "connection": {
+      "from": "Jes 56,7",
+      "to": "Mk 11,17",
+      "kind": "quote",
+      "note": "Jesus zitiert das Wort vom Bethaus."
+    },
+    "image": "einzug"
+  },
+  {
+    "id": "mark-5",
+    "campaign": "mark",
+    "title": "Kreuz und leeres Grab",
+    "refs": [
+      "Mk 14,32-42",
+      "Mk 15,21-39",
+      "Mk 16,1-8"
+    ],
+    "terms": [
+      {
+        "term": "σταυρός (stauros)",
+        "explanation": "Kreuz"
+      },
+      {
+        "term": "φόβος (phobos)",
+        "explanation": "Furcht"
+      }
+    ],
+    "body": [
+      "Jesu Gebet in Gethsemane zeigt seine Erschütterung und das Versagen der schlafenden Jünger. Die Passion konzentriert sich auf Erniedrigung, Verlassenheit und Gottesfrage. Der römische Hauptmann bekennt Jesus am Kreuz; diese Szene antwortet auf die Identitätsfrage des gesamten Evangeliums.",
+      "Markus 16,1–8 erzählt, wie Frauen am Grab die Botschaft von der Auferweckung hören und nach Galiläa verwiesen werden. Furcht und Erschrecken markieren den offenen Schluss. Die Verse 9–20 sind in vielen Handschriften vorhanden, fehlen aber in einigen frühen Zeugen; moderne Ausgaben kennzeichnen dies häufig. Das betrifft die Überlieferung des Markusschlusses, nicht die Existenz anderer Auferstehungszeugnisse.",
+      "Die Botschaft fordert Leser zum Vertrauen und Weitergeben heraus. Sie darf nicht über die Trauer der Beteiligten hinweggehen. Vergleiche anschließend Matthäus, Lukas und Johannes, um zu sehen, welche Begegnungen die anderen Evangelisten erzählen."
+    ],
+    "quiz": [
+      {
+        "q": "Wer bekennt Jesus am Kreuz?",
+        "a": "Ein römischer Hauptmann",
+        "wrong": [
+          "Herodes",
+          "Der Pharao"
+        ]
+      },
+      {
+        "q": "Welches Ziel nennt die Botschaft am Grab?",
+        "a": "Galiläa",
+        "wrong": [
+          "Ninive",
+          "Ägypten"
+        ]
+      }
+    ],
+    "reflection": "Wie können Hoffnung und Erschrecken zugleich bestehen?",
+    "connection": {
+      "from": "Ps 22,1",
+      "to": "Mk 15,34",
+      "kind": "quote",
+      "note": "Der Kreuzesschrei nimmt Psalm 22 auf."
+    },
+    "image": "auferstehung"
+  },
+  {
+    "id": "luke-1",
+    "campaign": "luke",
+    "title": "Gute Nachricht für alle",
+    "refs": [
+      "Lk 1,26-55",
+      "Lk 2,1-21",
+      "Lk 4,16-30"
+    ],
+    "terms": [
+      {
+        "term": "εὐαγγελίζω (euangelizō)",
+        "explanation": "gute Nachricht verkünden"
+      },
+      {
+        "term": "ἔλεος (eleos)",
+        "explanation": "Erbarmen"
+      }
+    ],
+    "body": [
+      "Lukas beginnt mit einer Vorrede und erzählt Geburt und Berufung in Israels Hoffnungen. Marias Lobgesang verbindet Gottes Erbarmen mit einer Umkehrung sozialer Rangordnungen. Hirten erhalten die Geburtsbotschaft; die Geschichte stellt religiös und gesellschaftlich Unscheinbare in den Mittelpunkt.",
+      "In Nazareth liest Jesus aus Jesaja und spricht von der Erfüllung des Textes. Arme, Gefangene und Unterdrückte gehören zur Botschaft. Seine Verweise auf Elia und Elisa zeigen Gottes Handeln auch jenseits erwarteter Grenzen. Der zunächst zustimmende Eindruck schlägt in Widerstand um.",
+      "Lukas nennt unterschiedliche historische Herrscher; die Datierung der Volkszählung in Kapitel 2 bleibt historisch umstritten. Die theologische Absicht der Geburtsgeschichte ist deshalb gesondert zu betrachten. Jesu Sendung steht nicht für pauschale Verachtung seiner Herkunft, sondern entfaltet sich aus Israels Schrift."
+    ],
+    "quiz": [
+      {
+        "q": "Was betont Marias Lobgesang?",
+        "a": "Gottes Erbarmen und Umkehrung der Rangordnung",
+        "wrong": [
+          "Die Überlegenheit reicher Personen",
+          "Die Gründung Roms"
+        ]
+      },
+      {
+        "q": "Aus welchem Propheten liest Jesus in Nazareth?",
+        "a": "Jesaja",
+        "wrong": [
+          "Nahum",
+          "Obadja"
+        ]
+      }
+    ],
+    "reflection": "Wer wird in meiner Umgebung leicht übersehen?",
+    "connection": {
+      "from": "Jes 61,1",
+      "to": "Lk 4,18-21",
+      "kind": "quote",
+      "note": "Jesus liest die prophetische Sendungssprache."
+    },
+    "image": "geburt"
+  },
+  {
+    "id": "luke-2",
+    "campaign": "luke",
+    "title": "Umkehr, Gebet und der Geist",
+    "refs": [
+      "Lk 3,7-22",
+      "Lk 5,27-32",
+      "Lk 11,1-13",
+      "Lk 18,1-8"
+    ],
+    "terms": [
+      {
+        "term": "προσευχή (proseuchē)",
+        "explanation": "Gebet"
+      },
+      {
+        "term": "πνεῦμα (pneuma)",
+        "explanation": "Geist, Atem, Wind"
+      }
+    ],
+    "body": [
+      "Johannes der Täufer fordert Früchte der Umkehr und beantwortet Fragen sehr konkret: teilen, nicht erpressen und sich an gerechte Grenzen halten. Lukas verbindet Umkehr mit sozialem Verhalten. Jesus betet nach der Taufe und in wichtigen Momenten seiner Sendung. Gebet ist kein Ersatz für Handeln.",
+      "Die Berufung des Levi und das Mahl mit Zöllnern lösen Kritik aus. Jesus beschreibt seine Sendung mit dem Bild des Arztes. In Lukas 11 lehrt er das Vaterunser und ermutigt zu beharrlichem Bitten; das Ziel ist Vertrauen auf Gottes Güte, nicht eine Technik, die jedes gewünschte Ergebnis garantiert.",
+      "Die beharrliche Witwe in Kapitel 18 verbindet Gebet und Gerechtigkeit. Der ungerechte Richter ist ein Kontrastbild, keine Beschreibung von Gottes Charakter. Lukas betont den Heiligen Geist als Gottes Gabe. Wer lange auf Antwort wartet, soll dadurch nicht als glaubenslos abgewertet werden."
+    ],
+    "quiz": [
+      {
+        "q": "Was fordert Johannes von Menschen mit zwei Kleidern?",
+        "a": "Mit Bedürftigen teilen",
+        "wrong": [
+          "Beide verbrennen",
+          "Ein drittes kaufen"
+        ]
+      },
+      {
+        "q": "Welche Gabe betont Lukas 11 am Ende?",
+        "a": "Den Heiligen Geist",
+        "wrong": [
+          "Eine königliche Krone",
+          "Ein sorgenfreies Leben"
+        ]
+      }
+    ],
+    "reflection": "Wofür brauche ich Beharrlichkeit im Gebet und konkretes Handeln?",
+    "connection": {
+      "from": "Jes 40,3-5",
+      "to": "Lk 3,4-6",
+      "kind": "quote",
+      "note": "Lukas zitiert die prophetische Stimme in der Wüste."
+    },
+    "image": "taufe"
+  },
+  {
+    "id": "luke-3",
+    "campaign": "luke",
+    "title": "Barmherzigkeit und die Verlorenen",
+    "refs": [
+      "Lk 7,36-50",
+      "Lk 10,25-37",
+      "Lk 15,1-32"
+    ],
+    "terms": [
+      {
+        "term": "ἔλεος (eleos)",
+        "explanation": "Barmherzigkeit"
+      },
+      {
+        "term": "χαίρω (chairō)",
+        "explanation": "sich freuen"
+      }
+    ],
+    "body": [
+      "Lukas verbindet Jesu Mahlgemeinschaften mit Geschichten von Vergebung und Suche. In Kapitel 7 stehen die Frau, die Jesu Füße salbt, und der Gastgeber Simon im Kontrast. Jesus erzählt ein kleines Schuldnergleichnis und macht empfangene Vergebung zur Grundlage großer Liebe. Die Frau wird im Text nicht als Maria Magdalena identifiziert.",
+      "In Kapitel 10 verschiebt Jesus die Frage nach dem Nächsten hin zu der Frage, wer dem Verletzten zum Nächsten wurde. Der Samariter handelt trotz religiöser und sozialer Trennlinien. Kapitel 15 antwortet auf Kritik an Jesu Gemeinschaft mit Ausgegrenzten: Schaf, Münze und Söhne zeigen Freude über Wiedergefundenes.",
+      "Der ältere Sohn bleibt am Ende des Gleichnisses vor einer offenen Einladung stehen. Lukas fragt nicht nur, ob Menschen selbst Vergebung wünschen, sondern ob sie Gottes Barmherzigkeit gegenüber anderen mitfreuen können. Dabei bleibt Umkehr mehr als eine oberflächliche Ausrede."
+    ],
+    "quiz": [
+      {
+        "q": "Wem stellt Jesus in Lukas 7 die Frage über die Schuldner?",
+        "a": "Simon dem Gastgeber",
+        "wrong": [
+          "Pilatus",
+          "Herodes"
+        ]
+      },
+      {
+        "q": "Was verbindet die drei Bilder in Lukas 15?",
+        "a": "Freude über Wiedergefundenes",
+        "wrong": [
+          "Zwang zum Reichtum",
+          "Einen Tempelbau"
+        ]
+      }
+    ],
+    "reflection": "Kann ich mich mitfreuen, wenn jemand eine neue Chance erhält?",
+    "connection": {
+      "from": "Hos 6,6",
+      "to": "Lk 10,33-37",
+      "kind": "theme",
+      "note": "Barmherzigkeit ist ein gemeinsames Motiv."
+    },
+    "image": "begegnungen"
+  },
+  {
+    "id": "luke-4",
+    "campaign": "luke",
+    "title": "Reichtum, Gerechtigkeit und Nachfolge",
+    "refs": [
+      "Lk 12,13-34",
+      "Lk 16,19-31",
+      "Lk 19,1-10"
+    ],
+    "terms": [
+      {
+        "term": "πλούσιος (plousios)",
+        "explanation": "reich"
+      },
+      {
+        "term": "δικαιοσύνη (dikaiosynē)",
+        "explanation": "Gerechtigkeit"
+      }
+    ],
+    "body": [
+      "Ein Erbstreit führt zum Gleichnis vom reichen Kornbauern. Der Mann plant nur seinen verfügbaren Besitz und denkt nicht an die Grenzen seines Lebens. Jesus verurteilt nicht jede Lagerhaltung oder Vorsorge, sondern eine Selbstsicherheit, die Leben aus Gütern ableitet. Der folgende Abschnitt verbindet Gottes Fürsorge mit Großzügigkeit.",
+      "Die Geschichte vom reichen Mann und Lazarus stellt die Umkehrung sozialer Verhältnisse nach dem Tod dar. Der reiche Mann hat einen Bedürftigen an seiner Tür übersehen. Abraham verweist auf Mose und die Propheten; spektakuläre Zeichen ersetzen das Hören auf Gottes Weisung nicht.",
+      "Zachäus reagiert auf Jesu Zuwendung mit Teilen und Wiedergutmachung. Das Evangelium zeigt mehrere konkrete Formen des Umgangs mit Besitz. Ethische Anwendung fragt daher nicht nur nach innerer Loslösung, sondern auch nach fairer Behandlung und tatsächlicher Hilfe."
+    ],
+    "quiz": [
+      {
+        "q": "Was fehlt in der Planung des Kornbauern?",
+        "a": "Die Begrenztheit seines Lebens und Beziehung zu Gott",
+        "wrong": [
+          "Eine noch größere Scheune",
+          "Ein detaillierter Erntekalender"
+        ]
+      },
+      {
+        "q": "Wie reagiert Zachäus?",
+        "a": "Mit Teilen und Wiedergutmachung",
+        "wrong": [
+          "Mit erneuter Erpressung",
+          "Mit Flucht vor Jesus"
+        ]
+      }
+    ],
+    "reflection": "Welche finanzielle Entscheidung könnte meinen Nächsten schützen?",
+    "connection": {
+      "from": "5Mo 15,7-11",
+      "to": "Lk 19,8-9",
+      "kind": "theme",
+      "note": "Offene Hand und konkrete Wiedergutmachung gehören zur gerechten Lebensführung."
+    },
+    "image": "begegnungen"
+  },
+  {
+    "id": "luke-5",
+    "campaign": "luke",
+    "title": "Jerusalem, Kreuz und Auferstehung",
+    "refs": [
+      "Lk 22,14-23",
+      "Lk 23,32-49",
+      "Lk 24,13-35",
+      "Lk 24,44-53"
+    ],
+    "terms": [
+      {
+        "term": "διαθήκη (diathēkē)",
+        "explanation": "Bund"
+      },
+      {
+        "term": "μάρτυς (martys)",
+        "explanation": "Zeuge"
+      }
+    ],
+    "body": [
+      "Lukas gestaltet Jesu Weg nach Jerusalem über einen langen Reiseabschnitt. Beim Mahl deutet Jesus seine Hingabe im Zusammenhang des Bundes. In der Passion betont Lukas Jesu Umgang mit Menschen am Rand, darunter den Mitgekreuzigten, dem Hoffnung zugesprochen wird. Die Evangelien überliefern unterschiedliche Kreuzesworte; jedes ist im eigenen Erzählzusammenhang zu lesen.",
+      "Die Emmausgeschichte beginnt mit enttäuschter Hoffnung. Der Auferstandene legt den Jüngern die Schrift aus und wird beim Brotbrechen erkannt. Die Szene verbindet Verstehen, Gemeinschaft und erneutes Zeugnis. Der Text beschreibt keine sofortige Lösung aller Fragen, sondern einen Weg von Trauer zu neuem Verstehen.",
+      "Der Schluss des Evangeliums verweist auf den Auftrag, Umkehr und Vergebung zu verkünden. Die Apostelgeschichte setzt diesen Auftrag erzählerisch fort. Die Orientierung auf Jerusalem und die Zusage des Geistes bilden die Brücke zwischen beiden Büchern."
+    ],
+    "quiz": [
+      {
+        "q": "Wann erkennen die Emmausjünger Jesus?",
+        "a": "Beim Brotbrechen",
+        "wrong": [
+          "Beim Bau des Tempels",
+          "Bei einer Königswahl"
+        ]
+      },
+      {
+        "q": "Was verbindet das Lukasevangelium mit der Apostelgeschichte?",
+        "a": "Zeugnis und die Zusage des Geistes",
+        "wrong": [
+          "Die Geschichte Noahs allein",
+          "Eine zweite Schöpfungsgeschichte"
+        ]
+      }
+    ],
+    "reflection": "Wo hilft mir gemeinsames Lesen, Hoffnung neu zu entdecken?",
+    "connection": {
+      "from": "Jes 53,12",
+      "to": "Lk 22,37",
+      "kind": "quote",
+      "note": "Lukas überliefert Jesu ausdrücklichen Schriftbezug."
+    },
+    "image": "auferstehung"
+  },
+  {
+    "id": "ac-joh-bethesda",
+    "campaign": "john",
+    "title": "Bethesda: Heilung und der Sabbat",
+    "refs": [
+      "Joh 5,1-18",
+      "Joh 5,19-30",
+      "Joh 7,21-24"
+    ],
+    "terms": [
+      {
+        "term": "σάββατον (sabbaton)",
+        "explanation": "Sabbat"
+      },
+      {
+        "term": "ζωή (zōē)",
+        "explanation": "Leben"
+      }
+    ],
+    "body": [
+      "Johannes 5 erzählt von einem Kranken am Teich Bethesda, der lange auf Hilfe wartet. Jesus fragt ihn, ob er gesund werden will, und spricht ihm Heilung zu. Der Mann trägt seine Matte am Sabbat; dadurch entsteht ein Streit, in dem es um Jesu Vollmacht und das Verständnis des Ruhetages geht.",
+      "Die Szene ist mit einem realen Ort in Jerusalem verbunden, dessen archäologische Einordnung diskutiert wird. Die Erzählung stellt Jesu Verhältnis zum Vater in den Mittelpunkt: Der Sohn handelt in Beziehung zum Vater und beschließt nicht lediglich, eine Regel zu brechen. Die Anklage der Gegner gehört zum erzählten Konflikt; sie ist nicht eine Beschreibung aller jüdischen Menschen.",
+      "Johannes 7 nimmt die Heilung erneut auf. Jesus fordert gerechtes statt oberflächliches Urteilen. Der Sabbat bleibt eine Gabe der Tora; die Frage ist, wie Gottes lebensspendendes Wirken und die Weisung zusammenhängen. Krankheit ist nicht automatisch eine persönliche Sünde."
+    ],
+    "quiz": [
+      {
+        "q": "Wodurch entsteht der Streit?",
+        "a": "Der Geheilte trägt am Sabbat seine Matte",
+        "wrong": [
+          "Er trägt eine Krone",
+          "Er reist nach Rom"
+        ]
+      },
+      {
+        "q": "Worauf verweist Jesus für sein Handeln?",
+        "a": "Auf das Wirken des Vaters",
+        "wrong": [
+          "Auf eigenen Reichtum",
+          "Auf ein römisches Gesetz"
+        ]
+      }
+    ],
+    "reflection": "Wann wird eine Regel über den Menschen gestellt, dem sie dienen soll?",
+    "connection": {
+      "from": "2Mo 20,8-11",
+      "to": "Joh 5,16-17",
+      "kind": "theme",
+      "note": "Die Heilung löst eine Debatte über Sabbat und Gottes Wirken aus."
+    },
+    "image": "wunder"
+  },
+  {
+    "id": "ac-joh-water",
+    "campaign": "john",
+    "title": "Laubhüttenfest: Lebendiges Wasser",
+    "refs": [
+      "Joh 7,14-24",
+      "Joh 7,37-52",
+      "Joh 8,12-20"
+    ],
+    "terms": [
+      {
+        "term": "ὕδωρ (hydōr)",
+        "explanation": "Wasser"
+      },
+      {
+        "term": "πνεῦμα (pneuma)",
+        "explanation": "Geist"
+      }
+    ],
+    "body": [
+      "Johannes 7 verortet Jesu Lehre im Laubhüttenfest. Der Evangelist lässt unterschiedliche Gruppen über Herkunft, Schriftkenntnis und Vollmacht streiten. Jesus stellt Gottes Willen und gerechtes Urteilen in den Vordergrund. Am letzten großen Festtag ruft er Durstige zu sich.",
+      "Wasser und Licht sind in der jüdischen Fest- und Tempelwelt wichtige Motive. Die spätere rabbinische Überlieferung kennt festliche Wasserriten; ihre Einzelheiten lassen sich nicht ohne Weiteres auf jede Szene des ersten Jahrhunderts übertragen. Johannes selbst deutet das lebendige Wasser ausdrücklich auf den Geist.",
+      "Das Evangelium zeigt keine einheitliche Ablehnung Jesu. Unter den Hörern entstehen unterschiedliche Meinungen, und Nikodemus fordert ein ordentliches Verfahren. Gerade der Streit lädt dazu ein, nicht Herkunft und Gruppenzugehörigkeit, sondern das konkrete Argument sorgfältig zu prüfen."
+    ],
+    "quiz": [
+      {
+        "q": "Was deutet Johannes mit dem lebendigen Wasser?",
+        "a": "Den Geist",
+        "wrong": [
+          "Eine neue Steuer",
+          "Einen militärischen Sieg"
+        ]
+      },
+      {
+        "q": "Worauf besteht Nikodemus?",
+        "a": "Einen Menschen vor einem Urteil anzuhören",
+        "wrong": [
+          "Auf sofortige Verurteilung",
+          "Auf Schweigen aller Lehrer"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich in einer Gruppe fairer urteilen?",
+    "connection": {
+      "from": "Jes 55,1",
+      "to": "Joh 7,37-39",
+      "kind": "theme",
+      "note": "Das Wasserbild verbindet Gottes Einladung und die Gabe des Geistes."
+    },
+    "image": "nikodemus"
+  },
+  {
+    "id": "ac-joh-shepherd",
+    "campaign": "john",
+    "title": "Der gute Hirte: Stimme und Hingabe",
+    "refs": [
+      "Joh 10,1-21",
+      "Joh 10,22-30",
+      "Hes 34,1-16"
+    ],
+    "terms": [
+      {
+        "term": "ποιμήν (poimēn)",
+        "explanation": "Hirte"
+      },
+      {
+        "term": "θύρα (thyra)",
+        "explanation": "Tür"
+      }
+    ],
+    "body": [
+      "Johannes 10 verwendet mehrere miteinander verbundene Bilder: Schafhof, Tür, Hirte und fremde Stimmen. Jesus beschreibt den guten Hirten als jemanden, der die Schafe kennt und sein Leben für sie einsetzt. Der Mietling flieht, wenn Gefahr entsteht. Der Unterschied liegt nicht nur in der Autorität, sondern in der Beziehung und Bereitschaft zur Verantwortung.",
+      "Hesekiel 34 kritisiert Hirten Israels, die sich selbst statt der Herde versorgen. Gott verspricht, sich der Schafe anzunehmen. Dieses prophetische Umfeld hilft, Jesu Bild als Aussage über Fürsorge und gerechte Leitung zu verstehen. Auch Psalm 23 beschreibt Gott als Hirten.",
+      "Die Frage nach der Einheit von Vater und Sohn in Johannes 10,30 gehört zu einer umfangreichen christologischen Diskussion. Unterschiedliche Traditionen ziehen verschiedene Folgerungen; die Stelle sollte mit Jesu Aussagen über Sendung, Werke und Beziehung gelesen werden. Das Bild vom Hören auf Jesu Stimme rechtfertigt keine unprüfbare menschliche Macht."
+    ],
+    "quiz": [
+      {
+        "q": "Was unterscheidet den guten Hirten vom Mietling?",
+        "a": "Er setzt sein Leben für die Schafe ein",
+        "wrong": [
+          "Er besitzt mehr Münzen",
+          "Er flieht zuerst"
+        ]
+      },
+      {
+        "q": "Welche Prophetenkritik greift das Motiv auf?",
+        "a": "Hirten versorgen sich statt der Herde",
+        "wrong": [
+          "Hirten dürfen nicht beten",
+          "Hirten müssen Könige sein"
+        ]
+      }
+    ],
+    "reflection": "Woran erkenne ich verantwortliche geistliche Führung?",
+    "connection": {
+      "from": "Hes 34,11-16",
+      "to": "Joh 10,11-16",
+      "kind": "theme",
+      "note": "Beide Texte entfalten Gottes Fürsorge im Hirtenbild."
+    },
+    "image": "jesus"
+  },
+  {
+    "id": "ac-joh-vine",
+    "campaign": "john",
+    "title": "Der Weinstock und Jesu Abschiedsgebet",
+    "refs": [
+      "Joh 15,1-17",
+      "Joh 16,20-33",
+      "Joh 17,1-26"
+    ],
+    "terms": [
+      {
+        "term": "ἄμπελος (ampelos)",
+        "explanation": "Weinstock"
+      },
+      {
+        "term": "μένω (menō)",
+        "explanation": "bleiben"
+      }
+    ],
+    "body": [
+      "In den Abschiedsreden bereitet Jesus die Jünger auf seine Abwesenheit vor. Das Bild des Weinstocks beschreibt Abhängigkeit und Frucht: Die Rebe lebt nicht aus sich selbst. Die Frucht wird unmittelbar mit Liebe und dem Halten von Jesu Geboten verbunden. Der Text ist keine Aufforderung zur religiösen Selbstdarstellung.",
+      "Jesus spricht von Trauer, Widerstand und kommender Freude. Das Bild der Geburt in Kapitel 16 beschreibt einen Übergang, nicht die Behauptung, Leid sei an sich gut. Kapitel 17 richtet den Blick auf die Beziehung zum Vater und das Gebet für die Jünger sowie jene, die durch ihr Wort glauben werden.",
+      "Die Einheit der Glaubenden in Jesu Gebet ist nicht uniformes Denken um jeden Preis. Die Beziehung von Vater und Sohn und die Teilhabe der Jünger werden in verschiedenen theologischen Traditionen unterschiedlich gedeutet. Der Text verbindet Einheit mit Wahrheit, Sendung und Liebe. Vergleiche das Weinbergbild Jesajas, ohne die Einzelheiten beider Bilder gleichzusetzen."
+    ],
+    "quiz": [
+      {
+        "q": "Woran bindet Jesus das Fruchtbringen?",
+        "a": "Am Bleiben in ihm",
+        "wrong": [
+          "Am Sammeln von Besitz",
+          "An geografischer Nähe zum Tempel"
+        ]
+      },
+      {
+        "q": "Für wen betet Jesus in Johannes 17 ebenfalls?",
+        "a": "Für Menschen, die durch das Wort der Jünger glauben",
+        "wrong": [
+          "Nur für sich selbst",
+          "Nur für römische Soldaten"
+        ]
+      }
+    ],
+    "reflection": "Wo kann bleibende Liebe wichtiger sein als kurzfristiger Erfolg?",
+    "connection": {
+      "from": "Jes 5,1-7",
+      "to": "Joh 15,1-8",
+      "kind": "theme",
+      "note": "Die Weinbergbilder haben verwandte, aber unterschiedliche Funktionen."
+    },
+    "image": "abendmahl"
+  },
+  {
+    "id": "ac-joh-restoration",
+    "campaign": "john",
+    "title": "Am See: Petrus und der erneuerte Auftrag",
+    "refs": [
+      "Joh 21,1-19",
+      "Joh 21,20-25",
+      "Joh 18,15-27"
+    ],
+    "terms": [
+      {
+        "term": "φιλέω (phileō)",
+        "explanation": "lieben, Zuneigung zeigen"
+      },
+      {
+        "term": "ἀγαπάω (agapaō)",
+        "explanation": "lieben"
+      }
+    ],
+    "body": [
+      "Johannes 21 führt die Jünger nach Galiläa zurück. Der zunächst erfolglose Fischfang, das Mahl am Ufer und die Begegnung mit Jesus verbinden Alltag und Auferstehungshoffnung. Die dreifache Frage an Petrus erinnert erzählerisch an seine dreifache Verleugnung. Jesus macht ihm einen neuen Auftrag zum Hüten der Schafe deutlich.",
+      "Im Griechischen wechseln agapaō und phileō in diesem Gespräch. Beide Wörter überschneiden sich in der Bedeutung. Daraus lässt sich keine sichere stufenweise Rangfolge zweier Liebesarten ableiten. Der entscheidende Erzählverlauf liegt in der wiederholten Frage, der Erneuerung und dem Auftrag.",
+      "Petrus erhält eine Leidensankündigung und fragt nach dem anderen Jünger. Jesus lenkt ihn zurück auf seine eigene Nachfolge. Das Kapitel verbindet Vergebung mit Verantwortung statt mit Konkurrenz. Die Bemerkung am Schluss über viele weitere Taten Jesu erinnert daran, dass Evangelien ausgewählte Zeugnisse sind."
+    ],
+    "quiz": [
+      {
+        "q": "Wie oft fragt Jesus Petrus nach seiner Liebe?",
+        "a": "Dreimal",
+        "wrong": [
+          "Einmal",
+          "Siebenmal"
+        ]
+      },
+      {
+        "q": "Was steht im erneuerten Auftrag?",
+        "a": "Sorge für die Schafe",
+        "wrong": [
+          "Vergleiche dich mit jedem Jünger",
+          "Baue einen Palast"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ein neuer Auftrag helfen, nach Versagen Verantwortung zu übernehmen?",
+    "connection": {
+      "from": "Joh 18,15-27",
+      "to": "Joh 21,15-19",
+      "kind": "theme",
+      "note": "Die dreifache Frage erinnert an die dreifache Verleugnung."
+    },
+    "image": "petrus"
+  },
+  {
+    "id": "ac-mt-commission",
+    "campaign": "matthew",
+    "title": "Die Aussendung und die Kosten der Nachfolge",
+    "refs": [
+      "Mt 9,35-38",
+      "Mt 10,1-23",
+      "Mt 10,26-42"
+    ],
+    "terms": [
+      {
+        "term": "ἀπόστολος (apostolos)",
+        "explanation": "Gesandter"
+      },
+      {
+        "term": "μαθητής (mathētēs)",
+        "explanation": "Lernender, Jünger"
+      }
+    ],
+    "body": [
+      "Die Aussendung beginnt mit Jesu Mitleid angesichts erschöpfter Menschen. Er ruft zum Gebet um Arbeiter auf und sendet die Zwölf. Ihre Vollmacht dient der Heilung und Befreiung; sie sollen nicht aus der Gabe ein Geschäft machen. Die Rede schildert zugleich Abhängigkeit von Gastfreundschaft.",
+      "Der Auftrag richtet sich in dieser Szene ausdrücklich auf Israel. Der Schluss des Matthäusevangeliums erweitert den Horizont auf alle Völker. Beides gehört in seine jeweilige Erzählphase. Die Warnungen vor Verfolgung bilden eine realistische Gegenperspektive zur Erwartung von Erfolg. Jesus nennt Klugheit und Unschuld gemeinsam.",
+      "Die schwierigen Worte über familiären Konflikt beschreiben die Kosten einer Entscheidung, nicht eine Pflicht, absichtlich Beziehungen zu zerstören. Mut und friedfertiges Handeln können nebeneinander stehen. Das Gebot, auf Jesu Weg zu vertrauen, rechtfertigt keinen Druck auf andere Menschen."
+    ],
+    "quiz": [
+      {
+        "q": "Was geht der Aussendung voraus?",
+        "a": "Jesu Mitleid mit erschöpften Menschen",
+        "wrong": [
+          "Eine Krönung der Jünger",
+          "Eine Reise nach Babylon"
+        ]
+      },
+      {
+        "q": "Wovor warnt die Rede?",
+        "a": "Verfolgung und Ablehnung",
+        "wrong": [
+          "Dass alle Menschen sofort zustimmen",
+          "Dass Gebet verboten wird"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich meinen Glauben teilen, ohne andere zu drängen?",
+    "connection": {
+      "from": "Mt 10,5-6",
+      "to": "Mt 28,19-20",
+      "kind": "theme",
+      "note": "Die Sendung erweitert sich im Verlauf des Evangeliums."
+    },
+    "image": "berufung"
+  },
+  {
+    "id": "ac-lk-mary",
+    "campaign": "luke",
+    "title": "Maria und Marta: Hören und Dienen",
+    "refs": [
+      "Lk 10,38-42",
+      "Lk 8,1-3",
+      "Joh 11,17-27"
+    ],
+    "terms": [
+      {
+        "term": "διακονία (diakonia)",
+        "explanation": "Dienst"
+      },
+      {
+        "term": "λόγος (logos)",
+        "explanation": "Wort"
+      }
+    ],
+    "body": [
+      "Marta nimmt Jesus in ihr Haus auf und ist mit dem Dienst beschäftigt. Maria sitzt zu Jesu Füßen und hört. Marta beklagt die ungleiche Arbeit; Jesus antwortet auf ihre Sorge und verteidigt Marias Platz als Hörende. Der Text setzt nicht Frauen gegen Frauen und erklärt Arbeit nicht grundsätzlich zum Problem.",
+      "In der antiken Welt war Lernen in religiösen und philosophischen Kreisen häufig mit sozialen Rollenerwartungen verbunden. Lukas zeigt hier Maria als Hörende einer wichtigen Lehre und zuvor Frauen als Teil der Gemeinschaft um Jesus. Johannes schildert Marta später in einem tiefen Gespräch über Auferstehung.",
+      "Dienen und Hören sind keine unversöhnlichen Alternativen. Das Problem liegt in der zerstreuenden Sorge und darin, anderen ihren Zugang zu Jesus abzusprechen. Eine verantwortliche Anwendung fragt auch nach fairer Verteilung von Arbeit, statt Überforderung mit einem Vers zu beschämen."
+    ],
+    "quiz": [
+      {
+        "q": "Was verteidigt Jesus in der Szene?",
+        "a": "Marias Möglichkeit zuzuhören",
+        "wrong": [
+          "Die Abschaffung jedes Dienstes",
+          "Martas Ausschluss aus dem Haus"
+        ]
+      },
+      {
+        "q": "Welches andere Evangelium schildert Martas Auferstehungsgespräch?",
+        "a": "Johannes",
+        "wrong": [
+          "Markus",
+          "Keines"
+        ]
+      }
+    ],
+    "reflection": "Wann brauche ich selbst Zeit zum Hören und wann Hilfe beim Dienen?",
+    "connection": {
+      "from": "Lk 10,38-42",
+      "to": "Joh 11,21-27",
+      "kind": "theme",
+      "note": "Die beiden Erzählungen zeigen unterschiedliche Aspekte von Marias und Martas Jüngerschaft."
+    },
+    "image": "begegnungen"
+  },
+  {
+    "id": "ac-mk-woman",
+    "campaign": "mark",
+    "title": "Die syrophönizische Frau und die Grenzen",
+    "refs": [
+      "Mk 7,24-37",
+      "Mt 15,21-28"
+    ],
+    "terms": [
+      {
+        "term": "τέκνον (teknon)",
+        "explanation": "Kind"
+      },
+      {
+        "term": "πίστις (pistis)",
+        "explanation": "Glaube; im Matthäus-Parallelbericht"
+      }
+    ],
+    "body": [
+      "Jesus begegnet außerhalb Galiläas einer Frau, die um Hilfe für ihre Tochter bittet. Die Rede vom Brot der Kinder und den Hunden ist für heutige Leser befremdlich. Die Frau antwortet innerhalb des Bildes und verweist darauf, dass auch die Hunde unter dem Tisch von den Brosamen essen. Jesus gewährt ihr die erbetene Hilfe.",
+      "Markus nennt die Frau Griechin und syrophönizischer Herkunft. Matthäus erzählt den Parallelbericht mit anderen Akzenten und bezeichnet sie als kanaanäisch. Die Texte stehen im Horizont der Frage, wie Jesu Sendung zu Israel und die Aufnahme anderer Völker zusammengehören.",
+      "Die Auslegung darüber, ob Jesus eine Prüfung, eine Lehrsituation oder eine tatsächliche Erweiterung der dargestellten Grenzen inszeniert, ist unterschiedlich. Sicher ist die Handlung: Die Frau wird gehört, und ihre Tochter erhält Hilfe. Die Szene sollte nicht verwendet werden, um abwertende Sprache gegenüber anderen Völkern zu rechtfertigen."
+    ],
+    "quiz": [
+      {
+        "q": "Was erbittet die Frau?",
+        "a": "Hilfe für ihre Tochter",
+        "wrong": [
+          "Ein Amt in Rom",
+          "Einen Tempel"
+        ]
+      },
+      {
+        "q": "Wie reagiert sie auf das Brotbild?",
+        "a": "Sie antwortet mit dem Bild der Brosamen",
+        "wrong": [
+          "Sie baut eine Mauer",
+          "Sie verlangt eine Armee"
+        ]
+      }
+    ],
+    "reflection": "Wo muss ich die Stimme eines Menschen hören, der nicht zu meiner Gruppe gehört?",
+    "connection": {
+      "from": "Mt 15,21-28",
+      "to": "Mk 7,24-30",
+      "kind": "parallel",
+      "note": "Beide Evangelien erzählen dieselbe Begegnung mit unterschiedlichen Akzenten."
+    },
+    "image": "begegnungen"
+  },
+  {
+    "id": "ac-mt-transfiguration",
+    "campaign": "matthew",
+    "title": "Die Verklärung: Hören auf dem Berg",
+    "refs": [
+      "Mt 17,1-13",
+      "2Mo 24,12-18",
+      "5Mo 18,15"
+    ],
+    "terms": [
+      {
+        "term": "μεταμορφόω (metamorphoō)",
+        "explanation": "verwandeln"
+      },
+      {
+        "term": "φωνή (phōnē)",
+        "explanation": "Stimme"
+      }
+    ],
+    "body": [
+      "Jesus nimmt Petrus, Jakobus und Johannes auf einen Berg. Sein Aussehen wird verändert, und Mose und Elia erscheinen. Petrus möchte drei Hütten bauen. Die Stimme aus der Wolke bezeichnet Jesus als geliebten Sohn und fordert zum Hören auf ihn. Die Jünger erschrecken; Jesus berührt sie und ermutigt sie.",
+      "Die Berg- und Wolkenmotive erinnern an Sinai. Mose und Elia stehen für wichtige Gestalten der Schrift und prophetischen Überlieferung. Die Evangelien geben nicht an, welcher Berg es historisch war; verschiedene Lokalisierungen sind Traditionen. Auch die Erscheinung ist innerhalb der Erzählung kein Auftrag, beliebige eigene Visionen als sichere Offenbarung zu verstehen.",
+      "Die Szene steht zwischen Leidensankündigungen. Die sichtbare Herrlichkeit ersetzt den Weg des Leidens nicht. Der Auftrag zu hören und die Rückkehr vom Berg verbinden Offenbarung und Alltag. Die Jünger erhalten keine Erlaubnis, den Moment festzuhalten und ihre Verantwortung unten zu vergessen."
+    ],
+    "quiz": [
+      {
+        "q": "Was fordert die Stimme?",
+        "a": "Auf Jesus hören",
+        "wrong": [
+          "Drei Königreiche bauen",
+          "Nie wieder den Berg verlassen"
+        ]
+      },
+      {
+        "q": "Welche beiden Gestalten erscheinen?",
+        "a": "Mose und Elia",
+        "wrong": [
+          "Abraham und Josef",
+          "Saul und David"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich einen geistlichen Höhepunkt in den Alltag mitnehmen?",
+    "connection": {
+      "from": "5Mo 18,15",
+      "to": "Mt 17,5",
+      "kind": "allusion",
+      "note": "Die Aufforderung zu hören erinnert an die prophetische Verheißung."
+    },
+    "image": "bekenntnis"
+  },
+  {
+    "id": "ac-lk-ascension",
+    "campaign": "luke",
+    "title": "Himmelfahrt und wartende Gemeinschaft",
+    "refs": [
+      "Lk 24,44-53",
+      "Apg 1,1-11",
+      "Apg 1,12-14"
+    ],
+    "terms": [
+      {
+        "term": "μάρτυς (martys)",
+        "explanation": "Zeuge"
+      },
+      {
+        "term": "δύναμις (dynamis)",
+        "explanation": "Kraft"
+      }
+    ],
+    "body": [
+      "Lukas schließt sein Evangelium mit Schriftverständnis, Verheißung und Segen. Die Jünger sollen in Jerusalem warten, bis sie Kraft von oben empfangen. Die Apostelgeschichte nimmt die Himmelfahrt erneut auf und entfaltet den Übergang von Jesu irdischem Wirken zum Zeugnis der Gemeinde.",
+      "Die Frage nach der Wiederherstellung Israels beantwortet Jesus nicht mit einem Zeitplan. Er lenkt die Aufmerksamkeit auf die Aufgabe der Jünger: Zeugnis von Jerusalem bis an die Enden der Erde. Die Wolke gehört zur biblischen Bildsprache göttlicher Gegenwart. Sie ist keine naturwissenschaftliche Beschreibung einer Flugbahn.",
+      "Die beiden Männer fragen, warum die Jünger zum Himmel schauen. Danach kehren diese zurück und beten gemeinsam. Die Szene verbindet Hoffnung auf Jesu Wiederkunft mit gegenwärtiger Verantwortung: Warten heißt nicht Untätigkeit, und Sendung heißt nicht eigene Herrschaft."
+    ],
+    "quiz": [
+      {
+        "q": "Was erhalten die Jünger als Aufgabe?",
+        "a": "Zeugnis bis an die Enden der Erde",
+        "wrong": [
+          "Die Berechnung des Enddatums",
+          "Die Errichtung eines Palastes"
+        ]
+      },
+      {
+        "q": "Wie reagieren sie nach der Himmelfahrt?",
+        "a": "Sie kehren zurück und beten gemeinsam",
+        "wrong": [
+          "Sie lösen die Gemeinschaft auf",
+          "Sie gehen nach Ägypten"
+        ]
+      }
+    ],
+    "reflection": "Wie verbinde ich Hoffnung auf Gottes Zukunft mit Verantwortung heute?",
+    "connection": {
+      "from": "Lk 24,49",
+      "to": "Apg 1,8",
+      "kind": "parallel",
+      "note": "Verheißung und Sendung verbinden Lukas und Apostelgeschichte."
+    },
+    "image": "auferstehung"
+  }
+]
