@@ -1,0 +1,39 @@
+{
+  "summary": "Iteration 42: frontend-only test of the Data Guardian Engine (PR #10) on web preview at 390x844. Node suites: data-guardian 7/7 pass; daily-scripture 4/4, library-expansion 3/3, permanent-offline 4/4, study-journey-expansion 3/3 pass. progress.test.mjs fails with ERR_MODULE_NOT_FOUND '/app/frontend/src/lib/avatar'. This is PRE-EXISTING: HEAD's progress-logic.ts already has `import ... from \"./avatar\"` without an extension, and the PR did not touch it. Browser results: everything requested PASSED. (1) MIGRATION: legacy biblia_state (double-JSON, schema 6, xp 120, 1 note, john-1 completed, many fields missing) loads with profile 120 EP, 1 Notiz, 1 Station. The app is not blocked and shows no banner. live-a is written with version/revision/at/payload/hash (payload migrated to schema 7). week-a is created on first save. The legacy key is left untouched. A fresh install creates live-a + week-a. (2) Settings: guardian-last-backup shows a date after first load. guardian-backup shows the toast 'Sicherung erstellt' and updates the date. guardian-restore -> guardian-restore-sheet -> confirm restores the week state (goal 5 -> 3). guardian-undo appears and brings goal 5 back. (3) Reset -> xp 0. guardian-undo brings back xp 120 / goal 5, and this persists after reload. (4) JSON import: the exported file -> import-sheet -> confirm restores it and creates before-change. Invalid JSON, xp as a string, and notes as a string each show an error toast. (5) Full backup: the download works. full-restore -> restore-sheet -> restore-confirm -> file restores the state, and before-change holds the pre-restore state (guarded replace confirmed). (6) Corruption: tampering live-b's payload (hash kept) -> reload loads live-a (older) and shows the banner 'Ein älterer intakter Speicherstand wurde geladen'. Tampering all guardian hashes plus legacy '{broken' -> the blocking screen shows and all keys stay byte-identical, including after navigating to /settings. (7) Weekly retention: 3 manual backups -> only week-a and week-b exist. (8) Regression: a station note plus an answered task persist after reload. No console or page errors in any run.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "Recovery/storage-error banner (_layout.tsx AppStack)", "issue": "The banner Text is rendered above the Stack with only padding 8 and no safe-area top inset. On native iOS/Android it will sit under the status bar/notch. Screen headers already add insets.top, so content gets pushed down twice. The banner also cannot be dismissed. Reference: /app/frontend/app/_layout.tsx:44", "testID": "-", "priority": "MEDIUM"},
+      {"component": "Recovery banner persistence", "issue": "After recovery, if the user changes nothing, save() is a no-op because the payload equals the current LIVE record. The corrupted slot stays, so the banner shows again on every launch until the user edits something. Reproduced: a 2nd reload with no change still shows the banner. Consider rewriting the corrupted live slot (or forcing save) after a recovered open.", "testID": "-", "priority": "LOW"}
+    ],
+    "integration_issues": [
+      {"flow": "JSON import of incomplete file", "issue": "A file {app:'BIBLIA', state:{schemaVersion:7, xp:5}} (every data field missing) is accepted: the import-sheet opens and no error toast appears. Confirming would replace notes/stations etc. with defaults. before-change makes it undoable, but the request said 'incomplete file shows error toast'. This is caused by isStoredState now skipping missing fields (needed for legacy users). Consider a stricter check for imports only, e.g. require stations/notes/settings to be present.", "affected_testIDs": ["import-button", "import-sheet", "import-confirm-button"]},
+      {"flow": "Fallback to stale legacy key", "issue": "If ALL guardian slots are corrupt but the old biblia_state still exists, open() silently loads the legacy snapshot. That snapshot is frozen at migration time and could be months old. Only the generic banner appears, and the next save overwrites a live slot with that old data. Verified: the stored goal 4 was lost and goal 3 from legacy was shown. Consider either blocking in this case or telling the user that a very old state was loaded.", "affected_testIDs": ["profile-xp"]}
+    ],
+    "design_issues": [
+      {"screen": "Blocking storage error screen", "issues": ["It uses the system font (no fonts.text/fonts.display), with no icon and no retry action, so it does not match the app's typography. It is functional and readable."]}
+    ],
+    "react_native_issues": []
+  },
+  "test_report_links": ["/app/tests/data-guardian.test.mjs", "/app/test_reports/iter42_guardian_helpers.py"],
+  "action_items": [
+    "MEDIUM: Add a safe-area top inset to the recovery/storage-error banner in app/_layout.tsx, or render it inside the screens. Consider a dismiss button.",
+    "LOW/MEDIUM: For JSON imports, reject files that lack core fields (stations, notes, settings). Keep the tolerant isStoredState for stored and legacy states.",
+    "LOW: When open() returns recovered=true, rewrite the corrupted live slot (or force one save) so the banner does not repeat on every launch.",
+    "LOW: Decide on the policy for 'all guardian slots corrupt + legacy present'. Today it silently falls back to the frozen legacy snapshot.",
+    "INFO: progress.test.mjs fails because of the pre-existing extensionless './avatar' import in progress-logic.ts (present in HEAD). It is not caused by this PR."
+  ],
+  "critical_code_review_comments": [
+    "data-guardian.ts (native): every read() calls root.list() on Paths.document plus dir.list(), and write() reads back through read(). With many photo files in the document dir this makes every save slower. Consider using a cached Directory.exists or listing only the guardian dir.",
+    "store.update() silently drops user edits while changing.current is true, i.e. during an import/restore/reset. This is acceptable, but nothing tells the user.",
+    "The legacy biblia_state key is never removed or updated after migration. Full backup correctly skips the biblia_guardian_* and biblia_state keys.",
+    "The core logic is sound: hashes cover version/revision/at/payload, the write is read back to verify it, the other live slot is never discarded, and open() throws instead of initializing empty data when every slot is invalid. Weekly retention rotates by 'at'.",
+    "No deprecated Expo packages were found (no expo-av, expo-barcode-scanner or expo-background-fetch). No new dependencies: expo-crypto, expo-file-system and async-storage were already in package.json."
+  ],
+  "updated_files": ["/app/test_reports/iter42_guardian_helpers.py"],
+  "success_rate": {"backend": "N/A (frontend only)", "frontend": "100% of requested flows pass (8/8 scenarios); 2 minor UI and 2 minor integration findings"},
+  "seed_data_creation": "Browser localStorage only (isolated Playwright contexts): a legacy biblia_state with TEST_Legacy Notiz, and a station note 'TEST_Regression Notiz'. No server or user data touched.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Seed legacy with localStorage.setItem('biblia_state', JSON.stringify(JSON.stringify(state))). Read the current state from the live-a/live-b record with the highest revision. The web file pickers work with page.expect_file_chooser (import-button opens the chooser directly; the full restore needs full-restore-button, then restore-confirm-button). Export and full backup are captured with page.expect_download. Toasts disappear after about 2 seconds, so read them within about 1 second. The browser clock showed Nov 2026."
+}

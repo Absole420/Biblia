@@ -1,13 +1,12 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 
 import { setColorScheme } from "@/src/theme";
-import { storage } from "@/src/utils/storage";
+import { AppState as NativeAppState } from "react-native";
+import { createGuardian } from "./data-guardian";
 
 import type { Avatar } from "./avatar";
 import type { StudyState } from "./study";
 import { AppState, Category, defaultState, migrate, Note, Photo, PrayerEntry, StudyUnit, uid } from "./progress-logic";
-
-const KEY = "biblia_state";
 
 type Ctx = {
   ready: boolean;
@@ -28,7 +27,15 @@ type Ctx = {
   deleteLink: (id: string) => void;
   saveUnit: (u: Partial<StudyUnit> & { title: string }) => string;
   deleteUnit: (id: string) => void;
-  replaceState: (s: AppState) => void;
+  replaceState: (s: AppState) => Promise<void>;
+  storageError: string | null;
+  backupError: boolean;
+  storageBlocked: boolean;
+  recovered: boolean;
+  lastBackup: number | null;
+  hasBeforeChange: boolean;
+  backupNow: () => Promise<void>;
+  restoreBackup: (beforeChange?: boolean) => Promise<void>;
   setAvatar: (a: Avatar) => void;
   updateStudy: (fn: (s: StudyState) => StudyState) => void;
   toggleFavorite: (kind: "bible" | "lessons", key: string) => void;
@@ -39,7 +46,7 @@ type Ctx = {
   updatePrayer: (id: string, patch: Partial<Pick<PrayerEntry, "note" | "cat">>) => void;
   deletePrayer: (id: string) => void;
   movePrayer: (id: string, dir: -1 | 1) => void;
-  reset: () => void;
+  reset: () => Promise<void>;
 };
 
 const ProgressContext = createContext<Ctx | null>(null);
@@ -47,37 +54,118 @@ const ProgressContext = createContext<Ctx | null>(null);
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<AppState>(defaultState);
   const [ready, setReady] = useState(false);
-  const loaded = useRef(false);
+  const [guardian] = useState(createGuardian);
+  const stateRef = useRef(state);
+  // Vor dem Speicher-Effekt aktualisieren (Effekte laufen in Reihenfolge)
+  useEffect(() => { stateRef.current = state; }, [state]);
+  const blocked = useRef(true);
+  const changing = useRef(false);
+  const tail = useRef<Promise<void>>(Promise.resolve());
+  const [storageBlocked, setStorageBlocked] = useState(false);
+  const [storageError, setStorageError] = useState<string | null>(null);
+  const [backupError, setBackupError] = useState(false);
+  const [recovered, setRecovered] = useState(false);
+  const [lastBackup, setLastBackup] = useState<number | null>(null);
+  const [hasBeforeChange, setHasBeforeChange] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      const raw = await storage.getItem(KEY, null as string | null);
-      if (typeof raw === "string") {
-        try {
-          setState(migrate(JSON.parse(raw)));
-        } catch {
-          setState(defaultState());
-        }
-      }
-      loaded.current = true;
-      setReady(true);
-    })();
+  const enqueue = useCallback((fn: () => Promise<void>) => {
+    const next = tail.current.then(fn);
+    tail.current = next.catch(() => {});
+    return next;
   }, []);
 
-  // Automatische Speicherung nach jeder Änderung
+  const refreshBackup = useCallback(() => {
+    setLastBackup(guardian.lastBackup);
+    setHasBeforeChange(guardian.beforeChangePayload !== null);
+  }, [guardian]);
+
   useEffect(() => {
-    if (!loaded.current) return;
-    storage.setItem(KEY, JSON.stringify(state));
-  }, [state]);
+    let active = true;
+    enqueue(async () => {
+      try {
+        const result = await guardian.open();
+        if (!active) return;
+        const loaded = result.payload === null ? defaultState() : migrate(JSON.parse(result.payload));
+        stateRef.current = loaded;
+        setState(loaded);
+        blocked.current = false;
+        setRecovered(result.recovered);
+        refreshBackup();
+      } catch {
+        if (!active) return;
+        setStorageBlocked(true);
+        setStorageError("Lernstand nicht lesbar. Unveränderte Dateien bleiben erhalten. Bitte App neu starten.");
+      } finally {
+        if (active) setReady(true);
+      }
+    });
+    return () => { active = false; };
+  }, [guardian, enqueue, refreshBackup]);
+
+  const saveCurrent = useCallback(async (forceBackup = false) => {
+    if (blocked.current) throw new Error("Speichern gesperrt");
+    try {
+      await guardian.save(JSON.stringify(stateRef.current));
+      setStorageError(null);
+    } catch (error) {
+      setStorageError("Änderungen konnten nicht gespeichert werden. Bitte erneut versuchen und App offen lassen.");
+      throw error;
+    }
+    try {
+      await guardian.weekly(forceBackup);
+      setBackupError(false);
+    } catch (error) {
+      setBackupError(true);
+      if (forceBackup) throw error;
+    } finally { refreshBackup(); }
+  }, [guardian, refreshBackup]);
+
+  // Initial hydration, every change, and return to foreground; no background service.
+  useEffect(() => {
+    if (!ready || blocked.current) return;
+    enqueue(() => saveCurrent()).catch(() => {});
+  }, [ready, state, enqueue, saveCurrent]);
+  useEffect(() => {
+    if (!ready) return;
+    const sub = NativeAppState.addEventListener("change", value => {
+      if (value === "active" && !blocked.current) enqueue(() => saveCurrent()).catch(() => {});
+    });
+    return () => sub.remove();
+  }, [ready, enqueue, saveCurrent]);
+
+  const backupNow = useCallback(() => enqueue(() => saveCurrent(true)), [enqueue, saveCurrent]);
+  const replace = useCallback(async (next: () => AppState) => {
+    if (blocked.current || changing.current) throw new Error("Vorgang derzeit nicht möglich");
+    changing.current = true;
+    try {
+      await enqueue(async () => {
+        const replacement = next(); // read selected backup BEFORE creating the pre-change copy
+        await saveCurrent();
+        await guardian.beforeChange();
+        refreshBackup();
+        await guardian.save(JSON.stringify(replacement));
+        stateRef.current = replacement;
+        setState(replacement);
+        setStorageError(null);
+      });
+    } finally { changing.current = false; }
+  }, [enqueue, saveCurrent, guardian, refreshBackup]);
+
+  const restoreBackup = useCallback((beforeChange = false) => replace(() => {
+    const payload = beforeChange ? guardian.beforeChangePayload : guardian.backupPayload;
+    if (payload === null) throw new Error("Keine Sicherung vorhanden");
+    return migrate(JSON.parse(payload));
+  }), [replace, guardian]);
 
   useEffect(() => {
     setColorScheme(state.settings.theme === "system" ? null : state.settings.theme);
   }, [state.settings.theme]);
 
-  const update = useCallback((fn: (s: AppState) => AppState) => setState((s) => fn(s)), []);
+  const update = useCallback((fn: (s: AppState) => AppState) => { if (!blocked.current && !changing.current) setState(fn); }, []);
 
   const completeStation = useCallback(
     (id: string, xp: number, score: number, total: number) => {
+      if (blocked.current || changing.current) return { firstTime: false };
       let firstTime = false;
       setState((s) => {
         const prev = s.stations[id];
@@ -108,6 +196,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     () => ({
       ready,
       state,
+      storageError, storageBlocked, recovered, lastBackup, backupError, hasBeforeChange,
+      backupNow, restoreBackup,
       completeStation,
       setPhase: (id, phase) => update((s) => (s.phase[id] === phase ? s : { ...s, phase: { ...s.phase, [id]: phase } })),
       recordAnswer: (taskId, stationId, correct) =>
@@ -164,7 +254,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         return id;
       },
       deleteUnit: (id) => update((s) => ({ ...s, units: s.units.filter((x) => x.id !== id) })),
-      replaceState: (ns) => setState(ns),
+      replaceState: (ns) => replace(() => ns),
       setAvatar: (avatar) => update((s) => ({ ...s, avatar })),
       updateStudy: (fn) => update((s) => ({ ...s, study: fn(s.study) })),
       toggleFavorite: (kind, key) =>
@@ -195,9 +285,9 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           [list[i], list[j]] = [list[j], list[i]];
           return { ...s, prayers: list };
         }),
-      reset: () => setState(defaultState()),
+      reset: () => replace(defaultState),
     }),
-    [ready, state, completeStation, update],
+    [ready, state, completeStation, update, storageError, storageBlocked, recovered, lastBackup, backupError, hasBeforeChange, backupNow, restoreBackup, replace],
   );
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

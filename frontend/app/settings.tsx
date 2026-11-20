@@ -24,7 +24,10 @@ export default function SettingsScreen() {
   const p = useProgress();
   const { state } = p;
   const [confirmReset, setConfirmReset] = useState(false);
-  const [confirmRestore, setConfirmRestore] = useState(false);
+  const [confirmFull, setConfirmFull] = useState(false);
+  const [confirmRestore, setConfirmRestore] = useState<"weekly" | "before" | null>(null);
+  const [pendingImport, setPendingImport] = useState<typeof state | null>(null);
+  const [busy, setBusy] = useState(false);
   const [colorFor, setColorFor] = useState<string | null>(null);
 
   const doExport = async () => {
@@ -39,8 +42,7 @@ export default function SettingsScreen() {
       const res = await pickImport();
       if (!res) return;
       if (!res.ok) return toast.show(res.error, "error");
-      p.replaceState(res.state);
-      toast.show("Lernstand importiert");
+      setPendingImport(res.state);
     } catch {
       toast.show("Datei konnte nicht gelesen werden", "error");
     }
@@ -58,11 +60,18 @@ export default function SettingsScreen() {
       const r = await pickAndRestoreFullBackup();
       if (!r) return;
       if (!r.ok) return toast.show(r.error, "error");
-      p.replaceState(r.state);
+      await p.replaceState(r.state);
       toast.show(`Wiederhergestellt: Lernstand, ${r.entries} ${r.entries === 1 ? "Tagebucheintrag" : "Tagebucheinträge"}, ${r.photos} ${r.photos === 1 ? "Foto" : "Fotos"}. Bitte App einmal neu starten.`);
     } catch {
       toast.show("Wiederherstellung fehlgeschlagen", "error");
     }
+  };
+  const run = async (action: () => Promise<void>, success: string) => {
+    if (busy) return;
+    setBusy(true);
+    try { await action(); toast.show(success); }
+    catch { toast.show("Vorgang fehlgeschlagen. Bitte Speicher prüfen.", "error"); }
+    finally { setBusy(false); }
   };
 
   return (
@@ -126,14 +135,20 @@ export default function SettingsScreen() {
         ))}
 
         <SectionTitle>Lernstand sichern</SectionTitle>
-        <Text style={styles.small}>Alle Daten bleiben lokal auf deinem Gerät. Keine Registrierung nötig.</Text>
+        <Text style={styles.small}>Alle 7 Tage bei geöffneter App wird automatisch ein lokaler Lernstand gesichert. Die zwei jüngsten Sicherungen bleiben erhalten.</Text>
+        <Text style={styles.small} testID="guardian-last-backup">Letzte Sicherung: {p.lastBackup === null ? "Noch keine" : new Date(p.lastBackup).toLocaleString("de-DE")}</Text>
+        {p.backupError ? <Text style={[styles.small, { color: colors.error }]}>Wochensicherung fehlgeschlagen.</Text> : null}
+        <Text style={styles.small}>Für Gerätewechsel exportiere die JSON-Datei außerhalb der App. Fotos sind nur als Verweise enthalten; Bilddateien werden nicht mitgesichert. Sicherungen sind nicht separat verschlüsselt.</Text>
         <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
-          <Button testID="export-button" label="Als JSON exportieren" icon="upload" variant="secondary" onPress={doExport} />
-          <Button testID="import-button" label="JSON importieren" icon="download" variant="secondary" onPress={doImport} />
+          <Button testID="guardian-backup" label="Jetzt sichern" icon="save" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => run(p.backupNow, "Sicherung erstellt")} />
+          <Button testID="guardian-restore" label="Letzte Wochensicherung wiederherstellen" icon="clock" variant="secondary" disabled={busy || p.storageBlocked || p.lastBackup === null} onPress={() => setConfirmRestore("weekly")} />
+          {p.hasBeforeChange ? <Button testID="guardian-undo" label="Stand vor letzter Wiederherstellung / Import / Reset" icon="clock" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => setConfirmRestore("before")} /> : null}
+          <Button disabled={busy || p.storageBlocked} testID="export-button" label="Als JSON exportieren" icon="upload" variant="secondary" onPress={doExport} />
+          <Button disabled={busy || p.storageBlocked} testID="import-button" label="JSON importieren" icon="download" variant="secondary" onPress={doImport} />
           <Text style={[styles.small, { marginTop: spacing.md }]}>Vollsicherung: alles in einer Datei – Lernstand, Notizen, Gebetsheft, Tagebuch „Mein geistlicher Weg“ und eigene Fotos. Auf einem anderen Gerät wiederherstellbar. Die Datei ist nicht passwortgeschützt; bewahre sie sicher auf. Eigene MP3/MP4-Dateien sind nicht enthalten.</Text>
-          <Button testID="full-backup-button" label="Vollsicherung erstellen" icon="archive" variant="secondary" onPress={doFull} />
-          <Button testID="full-restore-button" label="Vollsicherung wiederherstellen" icon="refresh-cw" variant="secondary" onPress={() => setConfirmRestore(true)} />
-          <Button testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
+          <Button testID="full-backup-button" label="Vollsicherung erstellen" icon="archive" variant="secondary" disabled={busy || p.storageBlocked} onPress={doFull} />
+          <Button testID="full-restore-button" label="Vollsicherung wiederherstellen" icon="refresh-cw" variant="secondary" disabled={busy || p.storageBlocked} onPress={() => setConfirmFull(true)} />
+          <Button disabled={busy || p.storageBlocked} testID="reset-button" label="Lernstand zurücksetzen" icon="trash-2" variant="ghost" onPress={() => setConfirmReset(true)} />
         </View>
 
         <SectionTitle>Hören & Sehen</SectionTitle>
@@ -158,13 +173,21 @@ export default function SettingsScreen() {
           ))}
         </View>
       </Sheet>
-      <Sheet visible={confirmRestore} onClose={() => setConfirmRestore(false)} title="Vollsicherung wiederherstellen?" testID="restore-sheet">
+      <Sheet visible={confirmFull} onClose={() => setConfirmFull(false)} title="Vollsicherung wiederherstellen?" testID="restore-sheet">
         <Text style={styles.small}>Lernstand, Notizen, Gebetsheft und Tagebuch auf diesem Gerät werden durch den Stand der Sicherung ersetzt. Was du seitdem neu angelegt hast, geht verloren. Erstelle vorher eine Vollsicherung, wenn du es behalten möchtest.</Text>
-        <Button testID="restore-confirm-button" label="Sicherungsdatei auswählen" icon="refresh-cw" style={{ marginTop: spacing.xl }} onPress={() => { setConfirmRestore(false); doRestore(); }} />
+        <Button testID="restore-confirm-button" label="Sicherungsdatei auswählen" icon="refresh-cw" style={{ marginTop: spacing.xl }} onPress={() => { setConfirmFull(false); doRestore(); }} />
+      </Sheet>
+      <Sheet visible={!!pendingImport} onClose={() => setPendingImport(null)} title="Lernstand importieren?" testID="import-sheet">
+        <Text style={styles.small}>Der aktuelle Lernstand wird vorher lokal gesichert und anschließend ersetzt.</Text>
+        <Button testID="import-confirm-button" label="Importieren" disabled={busy} onPress={() => { const next = pendingImport; setPendingImport(null); if (next) void run(() => p.replaceState(next), "Lernstand importiert"); }} />
+      </Sheet>
+      <Sheet visible={!!confirmRestore} onClose={() => setConfirmRestore(null)} title="Sicherung wiederherstellen?" testID="guardian-restore-sheet">
+        <Text style={styles.small}>Dein aktueller Lernstand wird vorher gesichert.</Text>
+        <Button testID="guardian-restore-confirm" label="Wiederherstellen" disabled={busy} onPress={() => { const before = confirmRestore === "before"; setConfirmRestore(null); void run(() => p.restoreBackup(before), "Lernstand wiederhergestellt"); }} />
       </Sheet>
       <Sheet visible={confirmReset} onClose={() => setConfirmReset(false)} title="Lernstand zurücksetzen?" testID="reset-sheet">
         <Text style={styles.small}>Alle EP, Stationen, Notizen und Markierungen werden gelöscht. Exportiere vorher deinen Lernstand, wenn du ihn behalten möchtest.</Text>
-        <Button testID="reset-confirm-button" label="Endgültig zurücksetzen" variant="danger" icon="trash-2" style={{ marginTop: spacing.xl }} onPress={() => { p.reset(); setConfirmReset(false); toast.show("Lernstand zurückgesetzt"); }} />
+        <Button testID="reset-confirm-button" label="Endgültig zurücksetzen" variant="danger" icon="trash-2" style={{ marginTop: spacing.xl }} disabled={busy} onPress={() => { setConfirmReset(false); void run(p.reset, "Lernstand zurückgesetzt"); }} />
       </Sheet>
     </View>
   );

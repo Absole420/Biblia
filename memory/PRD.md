@@ -217,3 +217,9 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Übernommen: offlineCore.ts (Rechteprüfung permittedOffline – jetzt in VerseStudy aktiv), eas.json (offline-release, APK), app.json updates.useEmbeddedUpdate=true, Doku
 - PR-Monolith-Datendateien (12 MB) und offlineData.ts nicht übernommen (Duplikat)
 - tests/permanent-offline.test.mjs an Struktur angepasst; 14/14 Tests aller Suites grün
+
+## Update (Iteration 43) – PR #10 Data Guardian
+- Übernommen: data-guardian-core.ts/data-guardian.ts (SHA-256, live-a/b, week-a/b, before-change), store.tsx, isStoredState in progress-logic, Einstellungen (Jetzt sichern, Wochensicherung wiederherstellen, Stand vor Änderung, letzte Sicherung), Sperrbildschirm bei unlesbarem Stand
+- Zusammengeführt mit Vollsicherung (Fotos/Tagebuch) – Vollwiederherstellung läuft jetzt über replaceState (mit Vorab-Sicherung); guardian-Schlüssel aus Vollsicherung ausgenommen
+- Anpassungen: Konstruktor ohne Parameter-Property (Node-Test), stateRef per Effekt (Lint)
+- Tests: 21/22 grün; tests/progress.test.mjs war bereits vorher nicht lauffähig (Importauflösung ./avatar)

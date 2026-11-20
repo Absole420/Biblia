@@ -96,6 +96,26 @@ export function defaultState(): AppState {
 
 const isObj = (v: unknown): v is Record<string, any> => typeof v === "object" && v !== null && !Array.isArray(v);
 
+/** Reject damaged snapshots before the permissive migration can replace data by defaults. */
+export function isStoredState(raw: unknown): boolean {
+  if (!isObj(raw)) return false;
+  const version = raw.schemaVersion ?? (Array.isArray(raw.completed) ? 1 : 0);
+  if (!Number.isInteger(version) || version < 1 || version > SCHEMA_VERSION) return false;
+  if (typeof raw.xp !== "number" || !Number.isFinite(raw.xp) || raw.xp < 0) return false;
+  const base = defaultState();
+  for (const [key, expected] of Object.entries(base)) {
+    if (key === "schemaVersion") continue;
+    const actual = raw[key];
+    // Fehlende Felder ergänzt migrate() mit Standardwerten – auch bei aktueller Version (Felder kamen teils ohne Versionssprung hinzu)
+    if (actual === undefined) continue;
+    if (key === "avatar") { if (actual !== null && !isObj(actual)) return false; }
+    else if (Array.isArray(expected)) { if (!Array.isArray(actual)) return false; }
+    else if (isObj(expected)) { if (!isObj(actual)) return false; }
+    else if (typeof actual !== typeof expected) return false;
+  }
+  return true;
+}
+
 /** Migriert ältere Lernstände verlustfrei auf das aktuelle Schema. */
 export function migrate(raw: unknown): AppState {
   const base = defaultState();
@@ -162,7 +182,9 @@ export function parseImport(text: string): ImportResult {
   if (typeof s.schemaVersion !== "number" || s.schemaVersion > SCHEMA_VERSION) {
     return { ok: false, error: "Unbekannte oder neuere Schemaversion." };
   }
-  if (s.xp !== undefined && typeof s.xp !== "number") return { ok: false, error: "Beschädigte Datei: XP ungültig." };
+  // Import strenger als Laden: Kernfelder müssen vorhanden sein, sonst würde ein fast leerer Stand die Daten ersetzen
+  const core = s.schemaVersion >= 2 ? ["xp", "stations", "notes", "settings"] : ["xp"];
+  if (!isStoredState(s) || core.some((k) => s[k] === undefined)) return { ok: false, error: "Beschädigte oder unvollständige Sicherungsdatei." };
   return { ok: true, state: migrate(s) };
 }
 

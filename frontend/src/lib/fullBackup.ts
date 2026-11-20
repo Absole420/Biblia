@@ -14,7 +14,7 @@ import { way, WayData } from "./way";
  */
 const KIND = "biblia-vollsicherung";
 // Medienliste ausgenommen: die Dateien selbst sind nicht in der Sicherung enthalten
-const SKIP = (k: string) => k === "biblia_state" || k === "biblia_media_v1" || k === "biblia_way_v1" || k.startsWith("study-content:") || k.startsWith("bible_elb_");
+const SKIP = (k: string) => k === "biblia_state" || k === "biblia_media_v1" || k.startsWith("biblia_guardian_") || k === "biblia_way_v1" || k.startsWith("study-content:") || k.startsWith("bible_elb_");
 
 type Backup = { app: "BIBLIA"; kind: typeof KIND; version: 1; exportedAt: string; state: string; way: WayData; keys: Record<string, string>; photos: Record<string, string> };
 
