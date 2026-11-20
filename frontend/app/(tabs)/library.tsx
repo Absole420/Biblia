@@ -146,7 +146,7 @@ export default function LibraryScreen() {
         <ScrollView contentContainerStyle={{ paddingBottom: bottomChrome + spacing.xxxl + 40 }} testID="library-shelf">
           <View>
             <Image source={COVER} style={[styles.cover, { height: 130 + insets.top }]} contentFit="cover" />
-            <LinearGradient colors={["transparent", "rgba(44,40,34,0.2)", "rgba(44,40,34,0.75)"]} style={[styles.coverGrad, { height: 130 + insets.top }]} />
+            <LinearGradient colors={["transparent", "rgba(16,26,28,0.2)", "rgba(16,26,28,0.75)"]} style={[styles.coverGrad, { height: 130 + insets.top }]} />
             <View style={[styles.coverText, { top: insets.top + 48 }]}>
               <Text style={styles.coverTitle}>Studienbibliothek</Text>
               <Text style={styles.coverSub}>{pl(state.notes.length, "Notiz", "Notizen")} · {pl(Object.keys(state.highlights).length, "Markierung", "Markierungen")} · {pl(state.favorites.bible.length + state.favorites.lessons.length, "Favorit", "Favoriten")} · {pl(state.photos.length, "Bild", "Bilder")}</Text>
@@ -514,8 +514,8 @@ const useStyles = makeStyles((c) => ({
   cover: { width: "100%" },
   coverGrad: { position: "absolute", left: 0, right: 0, top: 0 },
   coverText: { position: "absolute", left: spacing.xl, right: spacing.xl },
-  coverTitle: { fontFamily: fonts.display, fontSize: 30, fontWeight: "700", color: "#F9F3E8" },
-  coverSub: { fontFamily: fonts.text, fontSize: 13, fontWeight: "700", color: "#F2E8D5", marginTop: 4 },
+  coverTitle: { fontFamily: fonts.display, fontSize: 30, fontWeight: "700", color: "#F6F1E7" },
+  coverSub: { fontFamily: fonts.text, fontSize: 13, fontWeight: "700", color: "#ECE5D8", marginTop: 4 },
   searchWrap: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginHorizontal: spacing.lg, marginTop: spacing.md, paddingHorizontal: spacing.lg, height: 48, borderRadius: radius.pill, backgroundColor: c.surfaceSecondary, borderWidth: 1, borderColor: c.border },
   search: { flex: 1, fontFamily: fonts.text, fontSize: 16, color: c.onSurface, height: 48 },
   shelfLabel: { fontFamily: fonts.display, fontSize: 19, fontWeight: "700", color: c.onSurface, marginBottom: spacing.sm },

@@ -40,7 +40,7 @@ export default function ProfileScreen() {
       </View>
       <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: bottomChrome + spacing.xxl }}>
         <Animated.View entering={FadeInDown.duration(400)}>
-          <LinearGradient colors={[colors.brandPrimary, colors.stationNarrative]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.levelCard}>
+          <LinearGradient colors={[GOLD, colors.stationNarrative]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.levelCard}>
             <View style={styles.levelRow}>
               <View style={styles.levelBadge}><Text style={styles.levelNum} testID="profile-level">{lvl.level}</Text></View>
               <View style={{ flex: 1 }}>
@@ -141,6 +141,9 @@ export default function ProfileScreen() {
   );
 }
 
+// Ancient Gold als Hintergrund der Stufenkarte – dunkle Tinte bleibt in beiden Modi lesbar
+const GOLD = "#C29A63";
+
 const useStyles = makeStyles((c) => ({
   root: { flex: 1, backgroundColor: c.surface },
   topBar: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: spacing.xl, paddingBottom: spacing.sm, backgroundColor: c.surface },
@@ -151,12 +154,12 @@ const useStyles = makeStyles((c) => ({
   levelCard: { borderRadius: 28, padding: spacing.xl },
   levelRow: { flexDirection: "row", alignItems: "center", gap: spacing.lg },
   levelBadge: { width: 68, height: 68, borderRadius: 34, backgroundColor: "rgba(249,243,232,0.9)", alignItems: "center", justifyContent: "center" },
-  levelNum: { fontFamily: fonts.display, fontSize: 32, fontWeight: "700", color: "#2C2822" },
-  levelName: { fontFamily: fonts.display, fontSize: 24, fontWeight: "700", color: "#2C2822" },
-  levelXp: { fontFamily: fonts.text, fontSize: 14, fontWeight: "800", color: "#2C2822", opacity: 0.8 },
-  xpTrack: { height: 10, borderRadius: 5, backgroundColor: "rgba(44,40,34,0.2)", marginTop: spacing.lg, overflow: "hidden" },
-  xpFill: { height: 10, borderRadius: 5, backgroundColor: "#F9F3E8" },
-  levelHint: { fontFamily: fonts.text, fontSize: 12, fontWeight: "700", color: "#2C2822", marginTop: spacing.sm },
+  levelNum: { fontFamily: fonts.display, fontSize: 32, fontWeight: "700", color: "#101A1C" },
+  levelName: { fontFamily: fonts.display, fontSize: 24, fontWeight: "700", color: "#101A1C" },
+  levelXp: { fontFamily: fonts.text, fontSize: 14, fontWeight: "800", color: "#101A1C", opacity: 0.8 },
+  xpTrack: { height: 10, borderRadius: 5, backgroundColor: "rgba(16,26,28,0.2)", marginTop: spacing.lg, overflow: "hidden" },
+  xpFill: { height: 10, borderRadius: 5, backgroundColor: "#F6F1E7" },
+  levelHint: { fontFamily: fonts.text, fontSize: 12, fontWeight: "700", color: "#101A1C", marginTop: spacing.sm },
   statsRow: { flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg },
   stat: { flex: 1, backgroundColor: c.surfaceSecondary, borderRadius: radius.lg, padding: spacing.md, alignItems: "center", borderWidth: 1, borderColor: c.border },
   statV: { fontFamily: fonts.display, fontSize: 22, fontWeight: "700", color: c.onSurface },
