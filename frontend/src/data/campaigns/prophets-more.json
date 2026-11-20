@@ -1,0 +1,747 @@
+{
+  "id": "prophets-more",
+  "worldId": "prophets",
+  "title": "Klagelieder und die fehlenden kleinen Propheten",
+  "book": "Kla",
+  "intro": "Sechs bisher fehlende Bücher; die bereits vorhandenen Propheten, einschließlich Jona, bleiben unverändert. Gericht, Gerechtigkeit, Umkehr und Hoffnung werden im eigenen Schriftzusammenhang gelesen.",
+  "mapW": 1000,
+  "mapH": 1620,
+  "stations": [
+    {
+      "id": "prophets-more-lamentations",
+      "title": "Klagelieder: Gottes Volk in der Trauer",
+      "subtitle": "Kla 1–5 · Zerstörung und Hoffnung",
+      "type": "study",
+      "icon": "cloud-rain",
+      "x": 320,
+      "y": 1380,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Jerusalem wird als einsame, trauernde Stadt dargestellt. Die Gedichte lassen Hunger, Verlust, Schuld und Verlassenheit zu Wort kommen. Kapitel 3 erinnert mitten in der Klage an Gottes Barmherzigkeit, ohne das Leid zu leugnen. Kapitel 5 endet mit einer Bitte um Wiederherstellung und einer offenen Frage. Klage ist hier nicht das Gegenteil von Glauben, sondern eine Form, sich auch in der Krise an Gott zu wenden.",
+      "readings": [
+        {
+          "book": "Kla",
+          "ch": 1,
+          "from": 1,
+          "to": 12
+        },
+        {
+          "book": "Kla",
+          "ch": 2,
+          "from": 10,
+          "to": 19
+        },
+        {
+          "book": "Kla",
+          "ch": 3,
+          "from": 19,
+          "to": 33
+        },
+        {
+          "book": "Kla",
+          "ch": 5,
+          "from": 15,
+          "to": 22
+        }
+      ],
+      "terms": [
+        {
+          "term": "Zion",
+          "explanation": "Name für Jerusalem und die personifizierte trauernde Stadt."
+        },
+        {
+          "term": "Klage",
+          "explanation": "Gebet, das Schmerz und Fragen vor Gott zur Sprache bringt."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Gedichte stehen im Umfeld der Zerstörung Jerusalems 587/586 v. Chr. Die Zuschreibung an Jeremia ist Tradition; der hebräische Text nennt keinen Verfasser. Mehrere Gedichte nutzen alphabetische Formen."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Worte über kollektive Schuld und Gericht gehören in die Geschichte Judas. Sie dürfen nicht als Erklärung benutzt werden, dass jeder leidende Mensch selbst schuldig sei."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prophets-more-lamentations-t1",
+          "type": "mc",
+          "question": "Was erinnert der Sprecher in Kapitel 3?",
+          "options": [
+            "Seine eigene Unverwundbarkeit",
+            "Gottes Barmherzigkeit und Treue",
+            "Die Macht Babylons als ewige Ordnung"
+          ],
+          "answer": 1,
+          "explain": "Gottes Barmherzigkeit und Treue. Siehe Kla 3,21–24.",
+          "ref": "Kla 3,21–24"
+        },
+        {
+          "id": "prophets-more-lamentations-t2",
+          "type": "tf",
+          "statement": "Klagelieder endet mit einer einfachen, bereits erfüllten Lösung.",
+          "answer": false,
+          "explain": "Die letzten Verse lassen die Bitte und die Spannung offen.",
+          "ref": "Kla 5,21–22"
+        },
+        {
+          "id": "prophets-more-lamentations-t3",
+          "type": "free",
+          "question": "Wie kann ein Gebet Hoffnung und Trauer gleichzeitig ausdrücken?",
+          "model": "Die Klage benennt Verlust, während die Erinnerung an Gottes Barmherzigkeit Raum für Hoffnung schafft.",
+          "ref": "Kla 3,21–24"
+        }
+      ],
+      "exam": [
+        {
+          "id": "prophets-more-lamentations-e1",
+          "type": "mc",
+          "question": "Worum bittet das letzte Gedicht?",
+          "options": [
+            "Um den Aufbau eines fremden Heiligtums",
+            "Um Umkehr und Erneuerung",
+            "Um Vergessen aller Trauer"
+          ],
+          "answer": 1,
+          "explain": "Um Umkehr und Erneuerung. Siehe Kla 5,21.",
+          "ref": "Kla 5,21"
+        },
+        {
+          "id": "prophets-more-lamentations-e2",
+          "type": "tf",
+          "statement": "Die Hoffnung in Kapitel 3 steht neben der Klage.",
+          "answer": true,
+          "explain": "Der Sprecher erinnert sich mitten im Schmerz an Gottes Treue.",
+          "ref": "Kla 3,19–26"
+        }
+      ],
+      "reflection": [
+        "Wie kann ein Gebet Hoffnung und Trauer gleichzeitig ausdrücken?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Die Klage benennt Verlust, während die Erinnerung an Gottes Barmherzigkeit Raum für Hoffnung schafft."
+    },
+    {
+      "id": "prophets-more-amos",
+      "title": "Amos: Gerechtigkeit statt leerer Frömmigkeit",
+      "subtitle": "Am 1–9 · Gottes Recht und Wiederherstellung",
+      "type": "study",
+      "icon": "sliders",
+      "x": 680,
+      "y": 1150,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Amos stammt aus Tekoa und spricht im Nordreich Israel während der Herrschaft Jerobeams II. Die Gerichtsworte über Nachbarvölker führen zur Anklage Israels selbst: Arme werden ausgenutzt, Recht wird gebeugt und religiöser Eifer dient als Deckmantel. Gott fordert, dass Recht und Gerechtigkeit wie Wasser strömen. Der Konflikt mit Amazja in Bethel zeigt, wie gefährlich prophetischer Widerspruch werden kann. Das Buch endet mit der Hoffnung auf die Wiederaufrichtung der Hütte Davids.",
+      "readings": [
+        {
+          "book": "Am",
+          "ch": 1,
+          "from": 1,
+          "to": 2
+        },
+        {
+          "book": "Am",
+          "ch": 2,
+          "from": 6,
+          "to": 8
+        },
+        {
+          "book": "Am",
+          "ch": 5,
+          "from": 10,
+          "to": 24
+        },
+        {
+          "book": "Am",
+          "ch": 7,
+          "from": 10,
+          "to": 17
+        },
+        {
+          "book": "Am",
+          "ch": 9,
+          "from": 11,
+          "to": 15
+        }
+      ],
+      "terms": [
+        {
+          "term": "Recht und Gerechtigkeit",
+          "explanation": "Gottes Maßstab für das Zusammenleben, besonders für den Schutz Schwacher."
+        },
+        {
+          "term": "Hütte Davids",
+          "explanation": "Bild der Wiederherstellung des zerfallenen Davidhauses."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Am 1,1 nennt Usija und Jerobeam als Könige; das weist ins 8. Jh. v. Chr. Der Wohlstand des Nordreichs und die sozialen Gegensätze bilden den Hintergrund."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Am 5,21–24 ist keine generelle Ablehnung von Gottesdienst. Kritisiert wird Kult, der mit Unrecht verbunden ist. Apg 15 greift die Davidverheißung für die Aufnahme der Völker auf."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prophets-more-amos-t1",
+          "type": "mc",
+          "question": "Was fordert Amos statt bloß äußerlicher religiöser Feiern?",
+          "options": [
+            "Mehr Luxus",
+            "Die Verehrung anderer Götter",
+            "Recht und Gerechtigkeit"
+          ],
+          "answer": 2,
+          "explain": "Recht und Gerechtigkeit. Siehe Am 5,21–24.",
+          "ref": "Am 5,21–24"
+        },
+        {
+          "id": "prophets-more-amos-t2",
+          "type": "tf",
+          "statement": "Amos richtet seine Gerichtsworte nur gegen fremde Völker.",
+          "answer": false,
+          "explain": "Auch Juda und besonders Israel werden angeklagt.",
+          "ref": "Am 2,4–8"
+        },
+        {
+          "id": "prophets-more-amos-t3",
+          "type": "free",
+          "question": "Was bedeutet Gerechtigkeit im Alltag jenseits religiöser Worte?",
+          "model": "Amos fordert ein gerechtes Handeln, das die Armen nicht ausnutzt und das Recht nicht beugt.",
+          "ref": "Am 5,21–24"
+        }
+      ],
+      "exam": [
+        {
+          "id": "prophets-more-amos-e1",
+          "type": "mc",
+          "question": "Wer widerspricht Amos in Bethel?",
+          "options": [
+            "Der Prophet Jesaja",
+            "König David",
+            "Der Priester Amazja"
+          ],
+          "answer": 2,
+          "explain": "Der Priester Amazja. Siehe Am 7,10–17.",
+          "ref": "Am 7,10–17"
+        },
+        {
+          "id": "prophets-more-amos-e2",
+          "type": "tf",
+          "statement": "Das Buch enthält am Ende eine Wiederherstellungsverheißung.",
+          "answer": true,
+          "explain": "Am 9,11–15 kündigt Wiederaufbau und Segen an.",
+          "ref": "Am 9,11–15"
+        }
+      ],
+      "reflection": [
+        "Was bedeutet Gerechtigkeit im Alltag jenseits religiöser Worte?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Am 9,11–12",
+          "to": "Apg 15,15–18",
+          "kind": "nt",
+          "note": "Jakobus nimmt die Wiederherstellungsverheißung in der Debatte um die Völker auf; die Textfassung unterscheidet sich."
+        }
+      ],
+      "summary": "Amos fordert ein gerechtes Handeln, das die Armen nicht ausnutzt und das Recht nicht beugt."
+    },
+    {
+      "id": "prophets-more-obadiah",
+      "title": "Obadja: Hochmut und Verantwortung gegenüber dem Bruder",
+      "subtitle": "Obd 1 · Edom und der Tag des HERRN",
+      "type": "study",
+      "icon": "mountain",
+      "x": 320,
+      "y": 920,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Das kürzeste Buch des Alten Testaments richtet sich gegen Edom. Die Felsenfestungen und die vermeintliche Sicherheit Edoms stehen für Hochmut. Die Anklage konzentriert sich auf den Umgang mit dem Bruder Jakob: Edom schaut dem Unglück Jerusalems zu, freut sich darüber und beteiligt sich an der Not. Der Tag des HERRN weitet das Gericht auf die Völker aus. Zion und Gottes Königsherrschaft bilden den Abschluss.",
+      "readings": [
+        {
+          "book": "Obd",
+          "ch": 1,
+          "from": 1,
+          "to": 9
+        },
+        {
+          "book": "Obd",
+          "ch": 1,
+          "from": 10,
+          "to": 15
+        },
+        {
+          "book": "Obd",
+          "ch": 1,
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "terms": [
+        {
+          "term": "Edom",
+          "explanation": "Mit Esau verbundenes Nachbarvolk Israels südöstlich des Toten Meeres."
+        },
+        {
+          "term": "Tag des HERRN",
+          "explanation": "Prophetisches Bild göttlichen Eingreifens und Gerichts."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Der Bezug auf Jerusalems Unglück wird häufig mit der babylonischen Eroberung in Verbindung gebracht; die genaue Datierung des Buches ist diskutiert."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Gerichtssprache gilt einer historischen Feindschaft. Sie darf nicht auf heutige ethnische Gruppen übertragen werden. Die Schrift stellt auch die Zuschauenden und Profiteure von Unrecht zur Verantwortung."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prophets-more-obadiah-t1",
+          "type": "mc",
+          "question": "Was wird Edom besonders vorgeworfen?",
+          "options": [
+            "Gewalt gegen den Bruder Jakob und Schadenfreude",
+            "Der Wiederaufbau Jerusalems",
+            "Die Hilfe für Flüchtlinge"
+          ],
+          "answer": 0,
+          "explain": "Gewalt gegen den Bruder Jakob und Schadenfreude. Siehe Obd 1,10–14.",
+          "ref": "Obd 1,10–14"
+        },
+        {
+          "id": "prophets-more-obadiah-t2",
+          "type": "tf",
+          "statement": "Obadja besitzt nur ein Kapitel.",
+          "answer": true,
+          "explain": "Alle Verse gehören zum einzigen Kapitel.",
+          "ref": "Obd 1,1–21"
+        },
+        {
+          "id": "prophets-more-obadiah-t3",
+          "type": "free",
+          "question": "Warum kann das Zuschauen bei erlebtem Unrecht selbst zur Verantwortung werden?",
+          "model": "Obadja kritisiert nicht nur offene Gewalt, sondern auch Schadenfreude, Ausnutzung und Auslieferung.",
+          "ref": "Obd 1,10–14"
+        }
+      ],
+      "exam": [
+        {
+          "id": "prophets-more-obadiah-e1",
+          "type": "mc",
+          "question": "Welcher Grundsatz steht in Vers 15?",
+          "options": [
+            "Wie du getan hast, wird dir getan werden",
+            "Jeder Wohlstand beweist Gerechtigkeit",
+            "Gott richtet ausschließlich Edom"
+          ],
+          "answer": 0,
+          "explain": "Wie du getan hast, wird dir getan werden. Siehe Obd 1,15.",
+          "ref": "Obd 1,15"
+        },
+        {
+          "id": "prophets-more-obadiah-e2",
+          "type": "tf",
+          "statement": "Die Anklage beschränkt sich auf Edoms geografische Lage.",
+          "answer": false,
+          "explain": "Die Verse benennen Hochmut und konkrete Beteiligung am Unrecht.",
+          "ref": "Obd 1,3–14"
+        }
+      ],
+      "reflection": [
+        "Warum kann das Zuschauen bei erlebtem Unrecht selbst zur Verantwortung werden?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Obadja kritisiert nicht nur offene Gewalt, sondern auch Schadenfreude, Ausnutzung und Auslieferung."
+    },
+    {
+      "id": "prophets-more-nahum",
+      "title": "Nahum: Der Sturz Ninives",
+      "subtitle": "Nah 1–3 · Macht und Gericht",
+      "type": "study",
+      "icon": "shield",
+      "x": 680,
+      "y": 690,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Nahum kündigt den Fall Ninives, der Hauptstadt Assyriens, an. Die einleitende Gottesdarstellung verbindet Geduld, Macht und Schutz für diejenigen, die Zuflucht suchen. Die folgenden poetischen Bilder zeigen den Zusammenbruch einer gewalttätigen Stadt. Ninive wird wegen Blutvergießen, Lüge und Plünderung angeklagt. Zusammen mit Jona entsteht ein spannender Vergleich: Dort wird die Umkehr Ninives erzählt, hier das Gericht über seine Gewalt.",
+      "readings": [
+        {
+          "book": "Nah",
+          "ch": 1,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Nah",
+          "ch": 2,
+          "from": 1,
+          "to": 13
+        },
+        {
+          "book": "Nah",
+          "ch": 3,
+          "from": 1,
+          "to": 7
+        }
+      ],
+      "terms": [
+        {
+          "term": "Ninive",
+          "explanation": "Assyrische Hauptstadt am Tigris."
+        },
+        {
+          "term": "Zuflucht",
+          "explanation": "Gott wird als Schutz in der Not beschrieben."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Ninive fiel 612 v. Chr. Die Niederschlagung der assyrischen Großmacht ist der geschichtliche Bezug; die genaue Entstehungszeit der einzelnen Abschnitte bleibt eine Forschungsfrage."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Das Buch spricht aus der Perspektive Bedrängter gegen imperiale Gewalt. Seine harten Bilder sind kein Auftrag an Leser, sich an Leid zu erfreuen oder Gewalt auszuüben."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prophets-more-nahum-t1",
+          "type": "mc",
+          "question": "Wofür wird Ninive in Kapitel 3 angeklagt?",
+          "options": [
+            "Friedensstiftung",
+            "Blutvergießen, Lüge und Raub",
+            "Gastfreundschaft"
+          ],
+          "answer": 1,
+          "explain": "Blutvergießen, Lüge und Raub. Siehe Nah 3,1.",
+          "ref": "Nah 3,1"
+        },
+        {
+          "id": "prophets-more-nahum-t2",
+          "type": "tf",
+          "statement": "Nahum und Jona behandeln beide Ninive.",
+          "answer": true,
+          "explain": "Sie erzählen beziehungsweise verkünden jedoch in unterschiedlichen Zusammenhängen.",
+          "ref": "Nah 1,1; Jona 3,1–10"
+        },
+        {
+          "id": "prophets-more-nahum-t3",
+          "type": "free",
+          "question": "Wie unterscheiden sich Hoffnung auf Gerechtigkeit und Freude an fremdem Leid?",
+          "model": "Nahum lässt die Bedrängten auf das Ende der Gewalt hoffen; daraus folgt keine Erlaubnis zur eigenen Vergeltung.",
+          "ref": "Nah 3,1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "prophets-more-nahum-e1",
+          "type": "mc",
+          "question": "Wie beschreibt Nah 1,7 Gott?",
+          "options": [
+            "Gleichgültig gegenüber Unterdrückten",
+            "Gut und eine Zuflucht in der Not",
+            "Als irdischen Herrscher Ninives"
+          ],
+          "answer": 1,
+          "explain": "Gut und eine Zuflucht in der Not. Siehe Nah 1,7.",
+          "ref": "Nah 1,7"
+        },
+        {
+          "id": "prophets-more-nahum-e2",
+          "type": "tf",
+          "statement": "Das Gerichtswort ist ein Auftrag zu persönlicher Rache.",
+          "answer": false,
+          "explain": "Nahum spricht von Gottes Gericht über die gewalttätige Macht.",
+          "ref": "Nah 1,2–8"
+        }
+      ],
+      "reflection": [
+        "Wie unterscheiden sich Hoffnung auf Gerechtigkeit und Freude an fremdem Leid?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [
+        "ninive"
+      ],
+      "connections": [],
+      "summary": "Nahum lässt die Bedrängten auf das Ende der Gewalt hoffen; daraus folgt keine Erlaubnis zur eigenen Vergeltung."
+    },
+    {
+      "id": "prophets-more-habakkuk",
+      "title": "Habakuk: Fragen, Warten und Vertrauen",
+      "subtitle": "Hab 1–3 · Gerechtigkeit trotz offener Fragen",
+      "type": "study",
+      "icon": "help-circle",
+      "x": 320,
+      "y": 460,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Habakuk fragt, warum Gewalt und verdrehtes Recht fortbestehen. Gottes Antwort, die Chaldäer heraufzuführen, löst eine neue Frage aus: Wie kann eine noch grausamere Macht zum Gericht dienen? Der Prophet wartet auf Antwort. Kapitel 2 stellt dem Hochmut den Gerechten gegenüber, der durch seine Treue beziehungsweise seinen Glauben lebt. Die Weherufe kritisieren Ausbeutung, Gewalt und Götzendienst. Kapitel 3 endet mit einem Bekenntnis der Freude an Gott, selbst wenn Ernte und Vieh ausbleiben.",
+      "readings": [
+        {
+          "book": "Hab",
+          "ch": 1,
+          "from": 1,
+          "to": 17
+        },
+        {
+          "book": "Hab",
+          "ch": 2,
+          "from": 1,
+          "to": 5
+        },
+        {
+          "book": "Hab",
+          "ch": 2,
+          "from": 6,
+          "to": 20
+        },
+        {
+          "book": "Hab",
+          "ch": 3,
+          "from": 16,
+          "to": 19
+        }
+      ],
+      "terms": [
+        {
+          "term": "Chaldäer",
+          "explanation": "Bezeichnung der in Habakuk angekündigten babylonischen Macht."
+        },
+        {
+          "term": "Warten",
+          "explanation": "Aktives Ausharren auf Gottes Antwort, nicht das Verleugnen von Unrecht."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Chaldäer weisen auf die neubabylonische Macht um das Ende des 7. Jahrhunderts v. Chr. Die genaue Situation und Datierung der prophetischen Worte werden diskutiert."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Röm 1,17; Gal 3,11 und Hebr 10,38 greifen Hab 2,4 in unterschiedlichen Argumentationen auf. Zuerst muss der Vers in Habakuks Frage nach Gericht und geduldigem Vertrauen gelesen werden."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prophets-more-habakkuk-t1",
+          "type": "mc",
+          "question": "Was tut Habakuk zu Beginn von Kapitel 2?",
+          "options": [
+            "Er erklärt alle Fragen für verboten",
+            "Er zieht als König nach Babylon",
+            "Er stellt sich auf seine Warte und wartet auf Antwort"
+          ],
+          "answer": 2,
+          "explain": "Er stellt sich auf seine Warte und wartet auf Antwort. Siehe Hab 2,1.",
+          "ref": "Hab 2,1"
+        },
+        {
+          "id": "prophets-more-habakkuk-t2",
+          "type": "tf",
+          "statement": "Habakuk darf im Text keine kritischen Fragen stellen.",
+          "answer": false,
+          "explain": "Das Buch beginnt gerade mit Fragen über Gewalt und Unrecht.",
+          "ref": "Hab 1,2–4"
+        },
+        {
+          "id": "prophets-more-habakkuk-t3",
+          "type": "free",
+          "question": "Was kann Vertrauen bedeuten, wenn keine sofortige Erklärung kommt?",
+          "model": "Habakuk wartet, klagt und vertraut zugleich; er behauptet nicht, alle Ursachen verstanden zu haben.",
+          "ref": "Hab 2,1"
+        }
+      ],
+      "exam": [
+        {
+          "id": "prophets-more-habakkuk-e1",
+          "type": "mc",
+          "question": "Worüber freut sich Habakuk trotz ausbleibender Ernte?",
+          "options": [
+            "Über materiellen Gewinn",
+            "Über die Gewalt der Chaldäer",
+            "Über Gott, den Gott seines Heils"
+          ],
+          "answer": 2,
+          "explain": "Über Gott, den Gott seines Heils. Siehe Hab 3,17–18.",
+          "ref": "Hab 3,17–18"
+        },
+        {
+          "id": "prophets-more-habakkuk-e2",
+          "type": "tf",
+          "statement": "Hab 2,4 wird im Neuen Testament aufgegriffen.",
+          "answer": true,
+          "explain": "Röm 1,17 und weitere Texte zitieren die Aussage.",
+          "ref": "Hab 2,4; Röm 1,17"
+        }
+      ],
+      "reflection": [
+        "Was kann Vertrauen bedeuten, wenn keine sofortige Erklärung kommt?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Hab 2,4",
+          "to": "Röm 1,17",
+          "kind": "quote",
+          "note": "Paulus nimmt die Aussage über den Gerechten und den Glauben in seiner Evangeliumsargumentation auf."
+        }
+      ],
+      "summary": "Habakuk wartet, klagt und vertraut zugleich; er behauptet nicht, alle Ursachen verstanden zu haben."
+    },
+    {
+      "id": "prophets-more-zephaniah",
+      "title": "Zefanja: Der Tag des HERRN und ein demütiges Volk",
+      "subtitle": "Zef 1–3 · Gericht und Freude",
+      "type": "study",
+      "icon": "sunrise",
+      "x": 680,
+      "y": 230,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Zefanja verkündet Gericht über Juda, Jerusalem und die Völker. Er kritisiert Götzendienst, Selbstsicherheit und religiöse wie politische Korruption. Der Tag des HERRN erschüttert die vermeintliche Sicherheit. Kapitel 2 ruft die Demütigen auf, den HERRN und Gerechtigkeit zu suchen. Kapitel 3 beschreibt ein demütiges Volk, das bei Gott Zuflucht sucht, und endet mit der Freude Gottes über Zion und der Sammlung der Bedrängten.",
+      "readings": [
+        {
+          "book": "Zef",
+          "ch": 1,
+          "from": 1,
+          "to": 18
+        },
+        {
+          "book": "Zef",
+          "ch": 2,
+          "from": 1,
+          "to": 3
+        },
+        {
+          "book": "Zef",
+          "ch": 3,
+          "from": 1,
+          "to": 13
+        },
+        {
+          "book": "Zef",
+          "ch": 3,
+          "from": 14,
+          "to": 20
+        }
+      ],
+      "terms": [
+        {
+          "term": "Tag des HERRN",
+          "explanation": "Prophetische Sprache für Gottes Eingreifen und Gericht."
+        },
+        {
+          "term": "Überrest",
+          "explanation": "Die von Gott bewahrte, demütige Gemeinschaft im Erneuerungsbild."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Zef 1,1 nennt Josia als König von Juda. Das Buch gehört damit in den Horizont der späten Königszeit, auch wenn die Entstehung einzelner Textteile diskutiert wird."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Die Gerichtsbilder sind nicht als Datumsberechnung zu behandeln. Zefanja verbindet Gericht mit Gottes Ziel der Erneuerung und der Hoffnung für die Bedrängten."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "prophets-more-zephaniah-t1",
+          "type": "mc",
+          "question": "Wozu ruft Zef 2,3 auf?",
+          "options": [
+            "Den HERRN, Gerechtigkeit und Demut suchen",
+            "Sich auf Reichtum verlassen",
+            "Die Städte Judas verlassen"
+          ],
+          "answer": 0,
+          "explain": "Den HERRN, Gerechtigkeit und Demut suchen. Siehe Zef 2,3.",
+          "ref": "Zef 2,3"
+        },
+        {
+          "id": "prophets-more-zephaniah-t2",
+          "type": "tf",
+          "statement": "Zefanja kritisiert auch Jerusalem selbst.",
+          "answer": true,
+          "explain": "Kapitel 3 beginnt mit der Anklage der widerspenstigen Stadt.",
+          "ref": "Zef 3,1–4"
+        },
+        {
+          "id": "prophets-more-zephaniah-t3",
+          "type": "free",
+          "question": "Wie lässt sich Demut von Angst vor Strafe unterscheiden?",
+          "model": "Demut sucht Gott und Gerechtigkeit, statt sich auf Macht oder Selbstsicherheit zu verlassen.",
+          "ref": "Zef 2,3"
+        }
+      ],
+      "exam": [
+        {
+          "id": "prophets-more-zephaniah-e1",
+          "type": "mc",
+          "question": "Wie endet Kapitel 3?",
+          "options": [
+            "Mit Gottes Freude und Sammlung der Bedrängten",
+            "Mit der Abschaffung jeder Hoffnung",
+            "Mit dem Bau eines Palastes in Ninive"
+          ],
+          "answer": 0,
+          "explain": "Mit Gottes Freude und Sammlung der Bedrängten. Siehe Zef 3,14–20.",
+          "ref": "Zef 3,14–20"
+        },
+        {
+          "id": "prophets-more-zephaniah-e2",
+          "type": "tf",
+          "statement": "Der Tag des HERRN wird mit einem berechenbaren modernen Datum angegeben.",
+          "answer": false,
+          "explain": "Die prophetischen Bilder enthalten keine solche Datumsangabe.",
+          "ref": "Zef 1,14–18"
+        }
+      ],
+      "reflection": [
+        "Wie lässt sich Demut von Angst vor Strafe unterscheiden?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Demut sucht Gott und Gerechtigkeit, statt sich auf Macht oder Selbstsicherheit zu verlassen."
+    }
+  ]
+}
