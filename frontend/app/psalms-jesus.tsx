@@ -4,6 +4,7 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Icon } from "@/src/components/Icon";
+import { Button } from "@/src/components/ui";
 import { RefText } from "@/src/components/RefText";
 import { CONNECTION_META } from "@/src/components/StationExtras";
 import { ConnectionKind } from "@/src/data/types";
@@ -42,6 +43,7 @@ export default function JesusInPsalms() {
       </View>
       <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xl, gap: spacing.md }}>
         <Text style={styles.intro}>Die Psalmen sind zuerst Gebete Israels. Diese Sammlung zeigt, wie das Neue Testament sie auf Jesus bezieht – ohne ihren ursprünglichen Sinn unsichtbar zu machen. Einträge werden nach Abschluss der jeweiligen Einheit freigeschaltet.</Text>
+        <Button testID="open-jesus-teachings" label="Auf den Spuren Jesu · Lehren und Wunder" icon="book-open" variant="secondary" onPress={()=>router.push({pathname:"/living/[id]",params:{id:"jesus"}})} />
         {ENTRIES.map((e) => {
           const done = !!state.stations[e.unit];
           const m = CONNECTION_META[e.kind];
