@@ -1,4 +1,6 @@
 import { ImageSourcePropType } from "react-native";
+import { ILLUSTRATIONS } from "./illustrations";
+import { INTRO_SCENES } from "./introScenes";
 
 // KI-generierte Einheitenbilder (OpenAI GPT Image 1, backend/scripts/gen_psalms.py) – künstlerische Darstellung, offline gebündelt.
 export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
@@ -43,3 +45,7 @@ export const STATION_IMAGES: Record<string, ImageSourcePropType> = {
   "ps4-9": require("../../assets/images/psalms/ps4-9.jpg"),
   "ps4-10": require("../../assets/images/psalms/ps4-10.jpg"),
 };
+
+// Reuse the existing bundled art. No new image downloads or assets.
+for (const [id, image] of Object.entries(ILLUSTRATIONS)) STATION_IMAGES["academy:" + id] = image;
+for (const scene of INTRO_SCENES) STATION_IMAGES["academy:" + scene.id] = scene.image;

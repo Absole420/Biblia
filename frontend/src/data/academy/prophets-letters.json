@@ -1,0 +1,1257 @@
+[
+  {
+    "id": "prophets-1",
+    "campaign": "prophets",
+    "title": "Jesaja: Gericht, Trost und die Zukunft Zions",
+    "refs": [
+      "Jes 1,10-20",
+      "Jes 2,1-5",
+      "Jes 36,1-10",
+      "Jes 40,1-11",
+      "Jes 55,1-13"
+    ],
+    "terms": [
+      {
+        "term": "צִיּוֹן (tsiyon)",
+        "explanation": "Zion, Jerusalem im poetischen Gebrauch"
+      },
+      {
+        "term": "נָחַם (nacham)",
+        "explanation": "trösten, sich anders besinnen"
+      }
+    ],
+    "body": [
+      "Das Jesajabuch verbindet sehr unterschiedliche Situationen: die Bedrohung Judas durch Assyrien, Kritik an Ungerechtigkeit, Trost angesichts des Exils und Hoffnung auf erneuertes Leben. Der Beginn stellt Opfer und Gebet der tatsächlichen Behandlung von Waisen und Witwen gegenüber. Die Vision von Zion in Kapitel 2 entwirft eine Zukunft, in der Völker Weisung suchen und Waffen zu Werkzeugen des Friedens umgestaltet werden.",
+      "Die Erzählung um Hiskia in Kapitel 36–39 steht im Umfeld assyrischer Machtpolitik. Historische Zeugnisse belegen Sanheribs Feldzug, unterscheiden sich aber in ihrer Perspektive von der biblischen Erzählung. Ab Kapitel 40 verlagert sich die Ansprache auf Trost und Heimkehr; viele Forschende erklären die Buchgestalt durch mehrere Entstehungsphasen. Traditionelle Lesarten setzen andere Akzente. Die literarische Einheit und die historische Entstehung sind unterschiedliche Fragen.",
+      "Der Aufruf an Durstige in Kapitel 55 verbindet Gottes frei gewährte Gabe mit Umkehr und seinem wirksamen Wort. Die Evangelien greifen verschiedene Jesajatexte auf, um Johannes den Täufer und Jesus einzuordnen. Eine christliche Lektüre gewinnt Tiefe, wenn sie die ursprünglichen Hoffnungen Israels nicht überspringt. Jesaja fordert zugleich ein gerechtes Leben und Hoffnung auf Gottes Handeln."
+    ],
+    "quiz": [
+      {
+        "q": "Woran zeigt sich in Jesaja 1 die unzureichende Frömmigkeit?",
+        "a": "An Unrecht trotz religiöser Praxis",
+        "wrong": [
+          "An zu wenigen Sternbildern",
+          "An einer fehlenden Königsliste"
+        ]
+      },
+      {
+        "q": "Welcher neue Akzent beginnt in Kapitel 40?",
+        "a": "Trost und Heimkehr",
+        "wrong": [
+          "Der Exodus beginnt neu als Chronik",
+          "Eine Sammlung Paulusbriefe"
+        ]
+      }
+    ],
+    "reflection": "Wie können Gottesdienst und Sorge um Gerechtigkeit zusammengehören?",
+    "connection": {
+      "from": "Jes 40,3",
+      "to": "Mk 1,3",
+      "kind": "quote",
+      "note": "Markus verwendet den Ruf zur Wegbereitung."
+    },
+    "image": "jesaja"
+  },
+  {
+    "id": "prophets-2",
+    "campaign": "prophets",
+    "title": "Jeremia: Wahrheit in einer bedrohten Gesellschaft",
+    "refs": [
+      "Jer 7,1-15",
+      "Jer 26,1-16",
+      "Jer 36,1-26",
+      "Jer 39,1-10"
+    ],
+    "terms": [
+      {
+        "term": "נָבִיא (navi)",
+        "explanation": "Prophet"
+      },
+      {
+        "term": "שֶׁקֶר (sheqer)",
+        "explanation": "Lüge, Trug"
+      }
+    ],
+    "body": [
+      "Jeremia wirkt in einer krisenhaften Phase der Geschichte Judas. Seine Tempelrede wendet sich gegen die Vorstellung, das Heiligtum garantiere Schutz unabhängig von Gewalt und Ungerechtigkeit. Der Prophet nennt Schilo als Gegenbeispiel. Die heilige Stätte ist kein Gegenstand, mit dem Gottes Schutz erzwungen werden kann.",
+      "Kapitel 26 erzählt, dass Jeremia nach einer solchen Rede in Lebensgefahr gerät. Verschiedene Beteiligte beurteilen sein Wort unterschiedlich. An anderer Stelle diktiert Jeremia seine Botschaft dem Schreiber Baruch; König Jojakim verbrennt die Rolle Stück für Stück. Die Szene zeigt die Rolle schriftlicher Überlieferung und den Versuch politischer Macht, Kritik zum Schweigen zu bringen.",
+      "Der Fall Jerusalems in Kapitel 39 stellt den geschichtlichen Horizont ins Zentrum. Jeremias Botschaft ist deshalb nicht bloß eine Sammlung allgemeiner Lebensratschläge. Die Hoffnung späterer Kapitel steht neben der Realität der Katastrophe. Jesus verwendet die Sprache der Räuberhöhle bei seinem Handeln im Tempel; die Verbindung betrifft falsche Sicherheit und verantwortlichen Gottesdienst."
+    ],
+    "quiz": [
+      {
+        "q": "Wovor warnt die Tempelrede?",
+        "a": "Vor Vertrauen in ein Heiligtum trotz Unrecht",
+        "wrong": [
+          "Vor jedem gemeinsamen Gebet",
+          "Vor der Pflege des Heiligtums"
+        ]
+      },
+      {
+        "q": "Wie reagiert Jojakim auf die Rolle?",
+        "a": "Er verbrennt sie",
+        "wrong": [
+          "Er liest sie freiwillig allen vor",
+          "Er sendet sie nach Rom"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Kritik ernst nehmen, wenn sie meine Sicherheit infrage stellt?",
+    "connection": {
+      "from": "Jer 7,11",
+      "to": "Mk 11,17",
+      "kind": "quote",
+      "note": "Jesus greift Jeremias Räuberhöhlenwort auf."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "prophets-3",
+    "campaign": "prophets",
+    "title": "Hesekiel: Gottes Herrlichkeit im Exil",
+    "refs": [
+      "Hes 1,1-28",
+      "Hes 2,1-10",
+      "Hes 10,18-22",
+      "Hes 43,1-7"
+    ],
+    "terms": [
+      {
+        "term": "כָּבוֹד (kavod)",
+        "explanation": "Herrlichkeit, Ehre"
+      },
+      {
+        "term": "מַרְאָה (marah)",
+        "explanation": "Erscheinung, Vision"
+      }
+    ],
+    "body": [
+      "Hesekiel wird als Priester unter den Verbannten am Fluss Kebar vorgestellt. Seine erste Vision verbindet lebendige Wesen, Räder, Feuer und einen Thron. Der Prophet verwendet wiederholt Vergleiche, um das Gesehene anzunähern. Die Bilder sind nicht als technische Zeichnung himmlischer Fahrzeuge zu lesen.",
+      "Der Auftrag umfasst das Hören und Weitergeben einer schwierigen Botschaft. Die Schriftrolle wird im Bild gegessen. Gottes Wort soll nicht lediglich ein äußerlich weitergereichtes Dokument bleiben. In Kapitel 10 verlässt die Herrlichkeit den Tempel; später beschreibt Kapitel 43 ihre Rückkehr. Die Bewegungen verbinden Gottes Gegenwart mit Israels Zerbruch und Hoffnung.",
+      "Die Offenbarung des Johannes nimmt Thron-, Wesen- und Schriftrollenbilder auf. Das bedeutet nicht, dass alle Visionen dieselbe Szene mit exakt denselben Einzelheiten wiedergeben. Hesekiels prophetische Sprache eröffnet gerade im Exil die Hoffnung, dass Gottes Gegenwart nicht auf ein Gebäude begrenzt ist."
+    ],
+    "quiz": [
+      {
+        "q": "Wo empfängt Hesekiel die erste Vision?",
+        "a": "Bei den Verbannten am Kebar",
+        "wrong": [
+          "Auf einem Schiff nach Rom",
+          "Im Garten Eden"
+        ]
+      },
+      {
+        "q": "Was geschieht mit der Herrlichkeit in Kapitel 43?",
+        "a": "Sie kehrt zum Heiligtum zurück",
+        "wrong": [
+          "Sie wird mit Gold verkauft",
+          "Sie erscheint nur als menschliche Krone"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Vertrauen auf Gottes Gegenwart in einer fremden Umgebung aussehen?",
+    "connection": {
+      "from": "Hes 2,8-10",
+      "to": "Offb 10,8-10",
+      "kind": "allusion",
+      "note": "Beide Visionen verwenden das Bild einer gegessenen Schriftrolle."
+    },
+    "image": "ezechiel"
+  },
+  {
+    "id": "prophets-4",
+    "campaign": "prophets",
+    "title": "Daniel: Treue unter fremder Herrschaft",
+    "refs": [
+      "Dan 1,8-21",
+      "Dan 3,13-30",
+      "Dan 6,10-23",
+      "Dan 9,3-19"
+    ],
+    "terms": [
+      {
+        "term": "אֱלָהּ (elah)",
+        "explanation": "Gott, aramäisch"
+      },
+      {
+        "term": "מַלְכוּ (malku)",
+        "explanation": "Herrschaft, Reich, aramäisch"
+      }
+    ],
+    "body": [
+      "Die Erzählungen Daniels spielen an fremden Königshöfen. Daniel und seine Freunde erhalten neue Namen und Ausbildung. Sie suchen Möglichkeiten, ihrer Überzeugung treu zu bleiben, ohne jede Teilnahme am öffentlichen Leben abzulehnen. Kapitel 1 erzählt eine begrenzte, verhandelte Entscheidung über Nahrung; Kapitel 3 eine Grenze gegenüber erzwungener Verehrung.",
+      "Im Feuerofen erklären die drei Freunde, dass Gott retten kann, verpflichten ihr Bekenntnis aber nicht auf eine garantierte Rettung. Daniel 6 schildert einen Konflikt um Gebet und politische Intrige. Die Geschichten eignen sich nicht dazu, riskante Prüfungen der eigenen Frömmigkeit absichtlich zu provozieren. Sie erzählen Treue in aufgezwungener Bedrängnis.",
+      "Daniels Gebet in Kapitel 9 enthält Bekenntnis und Fürbitte für die Gemeinschaft. Datierung und Entstehungsgeschichte der erzählerischen und visionären Teile sind umstritten; ein häufiges Forschungsmodell verbindet die Endgestalt mit der Krise des zweiten Jahrhunderts v. Chr. Unabhängig von dieser Frage führt das Buch vor Augen, dass menschliche Königreiche begrenzt sind."
+    ],
+    "quiz": [
+      {
+        "q": "Was verweigern Daniels Freunde in Kapitel 3?",
+        "a": "Erzwungene Verehrung des Bildes",
+        "wrong": [
+          "Jede gewöhnliche Arbeit",
+          "Jede Hilfe für andere"
+        ]
+      },
+      {
+        "q": "Was enthält Daniels Gebet in Kapitel 9?",
+        "a": "Bekenntnis und Fürbitte",
+        "wrong": [
+          "Eine Selbstkrönung",
+          "Ein Erntegesetz"
+        ]
+      }
+    ],
+    "reflection": "Wo kann ich treu bleiben, ohne unnötige Konflikte zu suchen?",
+    "connection": {
+      "from": "Dan 6,10-23",
+      "to": "Apg 5,29",
+      "kind": "theme",
+      "note": "Beide Texte behandeln Grenzen menschlicher Herrschaft über Gottesverehrung."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "prophets-5",
+    "campaign": "prophets",
+    "title": "Micha: Gerechtigkeit und Hoffnung aus Bethlehem",
+    "refs": [
+      "Mi 2,1-5",
+      "Mi 3,9-12",
+      "Mi 4,1-5",
+      "Mi 5,1-4",
+      "Mi 6,6-8"
+    ],
+    "terms": [
+      {
+        "term": "מִשְׁפָּט (mishpat)",
+        "explanation": "Recht, Urteil"
+      },
+      {
+        "term": "חֶסֶד (chesed)",
+        "explanation": "Güte, Treue"
+      }
+    ],
+    "body": [
+      "Micha kritisiert den Missbrauch von Besitz und politischer Macht. Menschen planen den Zugriff auf Felder und Häuser anderer; Verantwortliche bauen Zion mit Unrecht auf. Der Prophet stellt religiöse Rhetorik infrage, wenn sie die Ausbeutung der Bevölkerung verdeckt. Er verbindet diese Kritik mit der Erwartung von Gottes Gericht.",
+      "Kapitel 4 enthält die Vision einer friedlichen Zukunft, die auch in Jesaja vorkommt. Kapitel 5 richtet den Blick auf einen Herrscher aus Bethlehem. Der kleine Herkunftsort steht in Beziehung zur davidischen Hoffnung. Jüdische messianische Lesarten sind vielfältig; Matthäus verwendet die Stelle in seiner Kindheitsgeschichte.",
+      "Micha 6 beantwortet die Frage nach immer größeren Opfergaben mit Recht, Güte und demütigem Gehen mit Gott. Es geht nicht um eine neue Checkliste zur Selbstrechtfertigung, sondern um den Zusammenhang zwischen Gottesverehrung und Lebensführung. Die drei Begriffe müssen konkret werden: Schutz vor Ausbeutung, verlässliche Zuwendung und die Begrenzung eigener Macht."
+    ],
+    "quiz": [
+      {
+        "q": "Was kritisiert Micha 2?",
+        "a": "Den Zugriff auf Felder und Häuser anderer",
+        "wrong": [
+          "Das Lesen der Tora",
+          "Das Ernten eigener Früchte"
+        ]
+      },
+      {
+        "q": "Welche drei Anliegen nennt Micha 6?",
+        "a": "Recht, Güte und demütiges Gehen mit Gott",
+        "wrong": [
+          "Macht, Besitz und Rang",
+          "Fasten, Schweigen und Krieg"
+        ]
+      }
+    ],
+    "reflection": "Welche Entscheidung könnte Recht und Güte gleichzeitig berücksichtigen?",
+    "connection": {
+      "from": "Mi 5,1-4",
+      "to": "Mt 2,5-6",
+      "kind": "quote",
+      "note": "Matthäus bezieht die Bethlehem-Verheißung auf Jesu Geburt."
+    },
+    "image": "jesaja"
+  },
+  {
+    "id": "prophets-6",
+    "campaign": "prophets",
+    "title": "Sacharja: Wiederaufbau, Visionen und Hoffnung",
+    "refs": [
+      "Sach 1,1-6",
+      "Sach 3,1-10",
+      "Sach 4,1-14",
+      "Sach 9,9-10",
+      "Sach 12,10"
+    ],
+    "terms": [
+      {
+        "term": "שׁוּב (shuv)",
+        "explanation": "umkehren, zurückkehren"
+      },
+      {
+        "term": "רוּחַ (ruach)",
+        "explanation": "Geist, Atem, Wind"
+      }
+    ],
+    "body": [
+      "Sacharjas frühe Visionen stehen im Umfeld des Wiederaufbaus nach dem Exil. Die Menschen sollen sich Gott zuwenden. In Kapitel 3 wird Josua, der Hohepriester, in einer Gerichtsszene von seiner Schuld befreit und neu beauftragt. Die Bilder von Kleidung und Reinigung betreffen eine konkrete Person und ihre priesterliche Aufgabe.",
+      "Kapitel 4 verbindet Leuchter, Ölbäume und Gottes Geist mit der Arbeit Serubbabels am Heiligtum. Die Zusage, dass der Aufbau nicht durch Macht und Kraft allein geschieht, hebt praktische Arbeit nicht auf. Die späteren Kapitel verwenden weitere prophetische Hoffnungs- und Konfliktbilder; ihre Entstehung und genaue Zuordnung werden diskutiert.",
+      "Der König in Sacharja 9 kommt demütig auf einem Esel. Matthäus und Johannes greifen das Motiv beim Einzug Jesu auf. Die Friedensperspektive von Sacharja reicht weiter als die äußere Ähnlichkeit eines Reittiers. Christliche Deutung sollte darauf achten, welche prophetische Bildsprache ein Evangelist übernimmt und welche Aspekte er im eigenen Zusammenhang entfaltet."
+    ],
+    "quiz": [
+      {
+        "q": "Wer wird in Kapitel 3 mit neuen Kleidern versehen?",
+        "a": "Der Hohepriester Josua",
+        "wrong": [
+          "Der König Saul",
+          "Der Apostel Paulus"
+        ]
+      },
+      {
+        "q": "Welche Aussage steht in Kapitel 4 im Zentrum des Aufbaus?",
+        "a": "Nicht allein durch menschliche Macht, sondern Gottes Geist",
+        "wrong": [
+          "Nur durch Gold",
+          "Nur durch ein Heer"
+        ]
+      }
+    ],
+    "reflection": "Wo muss verantwortliches Handeln von Vertrauen statt Machtstreben geprägt sein?",
+    "connection": {
+      "from": "Sach 9,9",
+      "to": "Mt 21,4-5",
+      "kind": "quote",
+      "note": "Matthäus verwendet das Bild des demütigen Königs."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "prophets-7",
+    "campaign": "prophets",
+    "title": "Hosea: Das Nordreich und die verletzte Beziehung",
+    "refs": [
+      "Hos 1,1-11",
+      "Hos 4,1-10",
+      "Hos 8,1-10",
+      "Hos 10,12-13"
+    ],
+    "terms": [
+      {
+        "term": "יָדַע (yada)",
+        "explanation": "kennen, erkennen"
+      },
+      {
+        "term": "חֶסֶד (chesed)",
+        "explanation": "Treue, Güte"
+      }
+    ],
+    "body": [
+      "Hosea spricht in die politischen Krisen des Nordreichs Israel. Die Namen seiner Kinder werden zu prophetischen Zeichen für Gericht und Beziehung. Diese schwierige Bildsprache darf nicht gegen Kinder oder Partner angewandt werden. Sie stellt den Bundesbruch in Israel dramatisch dar.",
+      "Kapitel 4 beschreibt fehlende Gotteserkenntnis nicht als Mangel bloßer Information. Lüge, Gewalt, Diebstahl und Treuebruch gehören zur Diagnose. Priester und politische Verantwortliche tragen besondere Verantwortung. Die prophetischen Texte kritisieren eine Religion, die Gottes Namen verwendet, ohne Gottes Weisung in der Lebensführung ernst zu nehmen.",
+      "Das Saatbild in Kapitel 10 verbindet Handeln und dessen Folgen. Israel soll Gerechtigkeit säen und Gottes Güte erwarten. Die Geschichte des Nordreichs endet politisch mit der assyrischen Eroberung; der prophetische Ruf geht dennoch über das Gericht hinaus. Paulus greift Hoseas Wiederannahme-Worte in seiner Argumentation über Gottes Erbarmen auf."
+    ],
+    "quiz": [
+      {
+        "q": "Was fehlt in Kapitel 4 neben Treue und Güte?",
+        "a": "Gotteserkenntnis",
+        "wrong": [
+          "Ein römischer Tempel",
+          "Ein weiterer Königstitel"
+        ]
+      },
+      {
+        "q": "Was soll Israel in 10,12 säen?",
+        "a": "Gerechtigkeit",
+        "wrong": [
+          "Rache",
+          "Gold"
+        ]
+      }
+    ],
+    "reflection": "Wo zeigt sich tatsächliche Gotteserkenntnis in meinem Handeln?",
+    "connection": {
+      "from": "Hos 2,23",
+      "to": "Röm 9,25-26",
+      "kind": "quote",
+      "note": "Paulus greift Hoseas Sprache der Wiederannahme auf."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "prophets-8",
+    "campaign": "prophets",
+    "title": "Maleachi: Gottesdienst und verantwortliche Treue",
+    "refs": [
+      "Mal 1,6-14",
+      "Mal 2,1-10",
+      "Mal 3,1-12",
+      "Mal 3,16-18"
+    ],
+    "terms": [
+      {
+        "term": "מַלְאָךְ (malakh)",
+        "explanation": "Bote"
+      },
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund"
+      }
+    ],
+    "body": [
+      "Maleachi spricht in einer Zeit, in der der Tempeldienst wieder besteht, aber Enttäuschung und Nachlässigkeit sichtbar werden. Das Buch arbeitet mit dialogischen Fragen: Gottes Aussagen werden durch Einwände der Angesprochenen herausgefordert. Minderwertige Opfer stehen im Zusammenhang einer Kritik an fehlender Ehrerbietung.",
+      "Auch die Priester werden für ihre Weisung und ihr Verhalten verantwortlich gemacht. Das Buch behandelt Treue, Ungerechtigkeit und die Frage, ob Gottes Gericht auf sich warten lässt. Der angekündigte Bote und die Bilder der Reinigung betonen Gottes Anspruch auf die Gemeinschaft. Das Bild des Zehnten darf nicht als Garantie persönlicher finanzieller Gewinne gelesen werden.",
+      "Die Evangelien greifen Maleachis Botenwort für Johannes den Täufer auf. Der Schluss des Buches verbindet prophetische Hoffnung mit der Erinnerung an Mose und Elia. Damit führt er in einen Horizont erneuter Vorbereitung, ohne dass jüdische und christliche Lesarten in allen Einzelheiten identisch sind."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Gruppe trägt besondere Verantwortung für Weisung?",
+        "a": "Die Priester",
+        "wrong": [
+          "Die römischen Soldaten",
+          "Die vier Evangelisten"
+        ]
+      },
+      {
+        "q": "Worauf weist das Bild des Läuterungsfeuers?",
+        "a": "Reinigung und Gottes Anspruch",
+        "wrong": [
+          "Eine Investitionsgarantie",
+          "Eine neue astronomische Theorie"
+        ]
+      }
+    ],
+    "reflection": "Welche Form religiöser Gewohnheit ist bei mir äußerlich geworden?",
+    "connection": {
+      "from": "Mal 3,1",
+      "to": "Mk 1,2",
+      "kind": "allusion",
+      "note": "Markus greift das Motiv des vorausgesandten Boten auf."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "prophets-9",
+    "campaign": "prophets",
+    "title": "Haggai: Prioritäten und der Wiederaufbau",
+    "refs": [
+      "Hag 1,1-15",
+      "Hag 2,1-9",
+      "Hag 2,20-23",
+      "Esr 5,1-5"
+    ],
+    "terms": [
+      {
+        "term": "כָּבוֹד (kavod)",
+        "explanation": "Herrlichkeit"
+      },
+      {
+        "term": "רוּחַ (ruach)",
+        "explanation": "Geist"
+      }
+    ],
+    "body": [
+      "Haggais Botschaften sind in die frühe Perserzeit datiert. Die Rückgekehrten stehen vor wirtschaftlichen Schwierigkeiten und dem Wiederaufbau des Heiligtums. Der Prophet fordert dazu auf, die eigenen Wege zu bedenken. Das Bild der vertäfelten Häuser stellt private Prioritäten der vernachlässigten gemeinsamen Aufgabe gegenüber.",
+      "Die Rede führt nicht lediglich zu Schuldgefühlen, sondern zu organisiertem Handeln unter Serubbabel und Josua. Haggai 2 ermutigt Menschen, die den neuen Tempel mit der Erinnerung an seine frühere Pracht vergleichen. Gottes Gegenwart wird nicht auf sichtbaren Reichtum reduziert. Der Wiederaufbau umfasst praktische Arbeit und gemeinsame Verantwortung.",
+      "Esra berichtet ebenfalls von Haggais und Sacharjas Wirken. Die historische Verbindung hilft, prophetische Worte als Begleitung eines konkreten Projekts zu verstehen. Der Schluss mit dem Siegelring für Serubbabel knüpft an davidische Hoffnung an. Er sollte nicht als automatisch erfüllte private Vorhersage für heutige Herrscher gelesen werden."
+    ],
+    "quiz": [
+      {
+        "q": "Welche gemeinsame Aufgabe wird vernachlässigt?",
+        "a": "Der Wiederaufbau des Heiligtums",
+        "wrong": [
+          "Der Bau einer Flotte",
+          "Die Krönung des Pharao"
+        ]
+      },
+      {
+        "q": "Welche Gestalten führen die Arbeit mit an?",
+        "a": "Serubbabel und Josua",
+        "wrong": [
+          "David und Goliat",
+          "Petrus und Judas"
+        ]
+      }
+    ],
+    "reflection": "Welche wichtige Aufgabe verdränge ich durch bequemere Prioritäten?",
+    "connection": {
+      "from": "Hag 1,12-15",
+      "to": "Esr 5,1-2",
+      "kind": "parallel",
+      "note": "Esra bestätigt den erzählten Zusammenhang der prophetischen Ermutigung zum Wiederaufbau."
+    },
+    "image": "esra"
+  },
+  {
+    "id": "prophets-10",
+    "campaign": "prophets",
+    "title": "Joel: Katastrophe, Umkehr und die Gabe des Geistes",
+    "refs": [
+      "Joel 1,2-20",
+      "Joel 2,12-17",
+      "Joel 2,21-27",
+      "Joel 3,1-5"
+    ],
+    "terms": [
+      {
+        "term": "רוּחַ (ruach)",
+        "explanation": "Geist, Wind, Atem"
+      },
+      {
+        "term": "שׁוּב (shuv)",
+        "explanation": "umkehren"
+      }
+    ],
+    "body": [
+      "Joel beschreibt eine schwere Heuschreckenkatastrophe und verbindet sie mit der Sprache des Tages Gottes. Landwirtschaft, Nahrung und Gottesdienst sind durch die Krise betroffen. Die Datierung des Buches ist unsicher; die Erzählwelt bleibt auf die Gemeinschaft in Juda und Jerusalem ausgerichtet.",
+      "Der Aufruf zur Umkehr fordert das Zerreißen des Herzens statt nur der Kleider. Das bedeutet keine Verachtung sichtbarer Trauerriten, sondern die Warnung vor einem bloßen äußeren Zeichen. Die Hoffnung richtet sich auf Gottes Erbarmen und die Wiederherstellung dessen, was verloren ging. Menschen in Not werden nicht dadurch automatisch persönlich schuldig.",
+      "Die Geistverheißung bezieht Söhne, Töchter, Alte, Junge und Menschen in dienenden Positionen ein. Petrus greift sie bei Pfingsten auf. Die unterschiedlichen Kapitelzählungen mancher Bibelausgaben sind zu beachten. Die Verbindung macht eine wichtige Perspektive deutlich: Gottes Geist und prophetisches Zeugnis sind nicht das Vorrecht einer kleinen gesellschaftlichen Elite."
+    ],
+    "quiz": [
+      {
+        "q": "Was soll statt nur der Kleider zerrissen werden?",
+        "a": "Das Herz",
+        "wrong": [
+          "Die Tempelmauer",
+          "Die Schriftrolle"
+        ]
+      },
+      {
+        "q": "Wer wird in der Geistverheißung berücksichtigt?",
+        "a": "Menschen verschiedener Alters- und Sozialgruppen",
+        "wrong": [
+          "Nur Könige",
+          "Nur reiche Priester"
+        ]
+      }
+    ],
+    "reflection": "Wie unterscheiden sich ehrliche Umkehr und bloße Darstellung nach außen?",
+    "connection": {
+      "from": "Joel 3,1-5",
+      "to": "Apg 2,16-21",
+      "kind": "quote",
+      "note": "Petrus verwendet Joels Geistverheißung."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "letters-2",
+    "campaign": "letters",
+    "title": "1. Korinther: Eine Gemeinde mit vielen Spannungen",
+    "refs": [
+      "1Kor 1,10-31",
+      "1Kor 6,12-20",
+      "1Kor 8,1-13",
+      "1Kor 11,17-34",
+      "1Kor 15,12-28"
+    ],
+    "terms": [
+      {
+        "term": "σταυρός (stauros)",
+        "explanation": "Kreuz"
+      },
+      {
+        "term": "ἐκκλησία (ekklēsia)",
+        "explanation": "Gemeinde, Versammlung"
+      }
+    ],
+    "body": [
+      "Korinth war eine römisch geprägte Stadt mit unterschiedlichen sozialen und religiösen Milieus. Paulus antwortet auf Konflikte, Fragen und Berichte über die Gemeinde. Parteibildung um verschiedene Lehrer wird durch die Botschaft vom Kreuz infrage gestellt. Christliche Weisheit darf nicht mit Prestige verwechselt werden.",
+      "Der Brief behandelt Leiblichkeit, Sexualethik, Götzenopferfleisch und das Verhältnis von Freiheit und Rücksicht. In Kapitel 8 begrenzt Liebe den Gebrauch des eigenen Wissens, wenn andere dadurch Schaden nehmen. Beim gemeinsamen Mahl kritisiert Paulus soziale Spaltungen, durch die manche hungern und andere im Überfluss essen. Geistliche Praxis und soziale Verantwortung gehören zusammen.",
+      "In Kapitel 15 argumentiert er ausführlich für die Auferstehung. Die Hoffnung betrifft nicht bloß das Weiterleben einer religiösen Idee; Paulus verbindet die Auferstehung Jesu mit der künftigen Auferstehung der Toten. Die vielen Themen des Briefs erhalten dadurch eine gemeinsame Richtung: Das Evangelium verändert die Art, wie die Gemeinde denkt, feiert und miteinander lebt."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Fehlentwicklung kritisiert Paulus am Anfang?",
+        "a": "Parteibildung um Lehrer",
+        "wrong": [
+          "Gemeinsames Lernen",
+          "Die Existenz verschiedener Gaben"
+        ]
+      },
+      {
+        "q": "Welche Grenze setzt Kapitel 8 der eigenen Freiheit?",
+        "a": "Liebe und Rücksicht auf andere",
+        "wrong": [
+          "Das Ansehen bei Reichen",
+          "Eine römische Zollregel"
+        ]
+      }
+    ],
+    "reflection": "Wo brauche ich Rücksicht statt bloßer Berufung auf mein Recht?",
+    "connection": {
+      "from": "1Kor 1,18",
+      "to": "1Kor 15,12-22",
+      "kind": "theme",
+      "note": "Kreuz und Auferstehung bilden zentrale Bezugsachsen des Briefes."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-3",
+    "campaign": "letters",
+    "title": "2. Korinther: Schwachheit und Versöhnung",
+    "refs": [
+      "2Kor 1,3-11",
+      "2Kor 4,7-18",
+      "2Kor 5,14-21",
+      "2Kor 8,1-15",
+      "2Kor 12,7-10"
+    ],
+    "terms": [
+      {
+        "term": "παράκλησις (paraklēsis)",
+        "explanation": "Trost, Zuspruch"
+      },
+      {
+        "term": "καταλλαγή (katallagē)",
+        "explanation": "Versöhnung"
+      }
+    ],
+    "body": [
+      "Der zweite Korintherbrief lässt eine belastete Beziehung zwischen Paulus und der Gemeinde erkennen. Erfahrungen von Trost, Missverständnissen, Kritik und erneuter Annäherung stehen nebeneinander. Die Bilder von einem Schatz in irdenen Gefäßen und von Bedrängnis zeigen, dass der Bote nicht mit der Kraft der Botschaft gleichgesetzt werden darf.",
+      "In Kapitel 5 verbindet Paulus Christi Hingabe mit Versöhnung und dem Auftrag, andere zur Versöhnung mit Gott einzuladen. Die Kollekte für Bedürftige in Jerusalem wird später zum praktischen Ausdruck gemeindlicher Verbundenheit. Paulus argumentiert für Freiwilligkeit, konkrete Möglichkeiten und einen gerechten Ausgleich, nicht für eine Manipulation durch Schuldgefühle.",
+      "In Kapitel 12 bleibt eine belastende Erfahrung bestehen, obwohl Paulus um ihre Entfernung bittet. Die Zusage göttlicher Gnade wertet seine Schwachheit nicht als mangelnden Glauben. Der genaue Dorn ist unbekannt; Spekulationen darüber sollten als solche kenntlich bleiben. Der Brief widerspricht einer religiösen Kultur, die Erfolg und Unverwundbarkeit zum Maßstab apostolischer Glaubwürdigkeit macht."
+    ],
+    "quiz": [
+      {
+        "q": "Was bezeichnet das Bild der irdenen Gefäße?",
+        "a": "Die Begrenztheit menschlicher Träger der Botschaft",
+        "wrong": [
+          "Die Unfehlbarkeit jedes Leiters",
+          "Ein Baugesetz für den Tempel"
+        ]
+      },
+      {
+        "q": "Wie ist die Kollekte angelegt?",
+        "a": "Freiwillig und entsprechend den Möglichkeiten",
+        "wrong": [
+          "Als Zwang zur Verschuldung",
+          "Nur als Mittel persönlichen Ruhms"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Schwäche zeigen, ohne Verantwortung abzugeben?",
+    "connection": {
+      "from": "2Kor 4,7-12",
+      "to": "2Kor 12,9-10",
+      "kind": "theme",
+      "note": "Beide Abschnitte verbinden menschliche Schwachheit mit Gottes Kraft."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-4",
+    "campaign": "letters",
+    "title": "Galater: Freiheit, Glaube und die Frucht des Geistes",
+    "refs": [
+      "Gal 2,11-21",
+      "Gal 3,6-29",
+      "Gal 5,1-26",
+      "Gal 6,1-10"
+    ],
+    "terms": [
+      {
+        "term": "ἐλευθερία (eleutheria)",
+        "explanation": "Freiheit"
+      },
+      {
+        "term": "πίστις (pistis)",
+        "explanation": "Glaube, Treue"
+      }
+    ],
+    "body": [
+      "Der Galaterbrief reagiert auf einen Konflikt über die Aufnahme nichtjüdischer Glaubender und die Beschneidung. Paulus verteidigt die Grundlage ihrer Zugehörigkeit in Christus. Die Auseinandersetzung mit Petrus in Antiochia zeigt, dass die Frage nicht nur eine theoretische Lehre, sondern auch die gemeinsame Tischgemeinschaft betrifft.",
+      "Paulus argumentiert mit Abraham, Verheißung und Gesetz. Seine Aussagen sind in dieser Debatte zu lesen; sie sind keine pauschale Verachtung jüdischer Praxis. Die Identität der Adressaten und die genaue zeitliche Einordnung des Briefes werden diskutiert. Wichtig bleibt seine Gegenüberstellung von erzwungener Zugehörigkeitsbedingung und empfangener Freiheit.",
+      "Kapitel 5 grenzt Freiheit von Willkür ab. Der Geist bringt Frucht in Liebe, Freude, Frieden und weiteren Haltungen. Kapitel 6 verbindet gegenseitiges Tragen von Lasten mit persönlicher Verantwortlichkeit. Freiheit ist für Paulus damit nicht bloße Unabhängigkeit, sondern die Fähigkeit, anderen in Liebe zu dienen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche praktische Frage prägt den Streit in Antiochia?",
+        "a": "Gemeinsame Tischgemeinschaft",
+        "wrong": [
+          "Den Bau einer Königsburg",
+          "Die Zahl der Psalmen"
+        ]
+      },
+      {
+        "q": "Wozu soll Freiheit nach Galater 5 dienen?",
+        "a": "Einander in Liebe dienen",
+        "wrong": [
+          "Jede Verantwortung abweisen",
+          "Andere beherrschen"
+        ]
+      }
+    ],
+    "reflection": "Welche Freiheit könnte mich zu mehr Verantwortung statt weniger führen?",
+    "connection": {
+      "from": "1Mo 15,6",
+      "to": "Gal 3,6",
+      "kind": "quote",
+      "note": "Paulus verwendet Abraham als Schriftbeispiel für Glauben."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-5",
+    "campaign": "letters",
+    "title": "Epheser: Ein Leib, neues Leben und geistliche Stärke",
+    "refs": [
+      "Eph 1,3-14",
+      "Eph 2,11-22",
+      "Eph 4,1-16",
+      "Eph 6,10-20"
+    ],
+    "terms": [
+      {
+        "term": "εἰρήνη (eirēnē)",
+        "explanation": "Friede"
+      },
+      {
+        "term": "οἰκοδομή (oikodomē)",
+        "explanation": "Aufbau"
+      }
+    ],
+    "body": [
+      "Epheser beginnt mit einem ausgedehnten Lobpreis Gottes und entfaltet Identität, Gnade und Hoffnung in Christus. Die zentrale Versöhnungssprache in Kapitel 2 verbindet den Zugang zu Gott mit der Beziehung zwischen Juden und Menschen aus den Völkern. Das Bild eines Hauses oder Tempels betont gemeinsames Wohnen statt religiöser Rangordnung.",
+      "Der Brief wird traditionell Paulus zugeschrieben; seine genaue Verfasserschaft gehört zu den diskutierten Fragen der Forschung. Kapitel 4 verbindet Einheit mit unterschiedlichen Gaben. Diese Vielfalt soll dem Aufbau aller dienen und zu reifer, wahrhaftiger Liebe führen. Die Benennung verschiedener Dienste ist deshalb kein Freibrief für unkontrollierte Macht.",
+      "Die Waffenrüstung in Kapitel 6 nutzt vertraute militärische Bilder, macht jedoch Wahrheit, Gerechtigkeit, Frieden, Glauben, Heil, Gottes Wort und Gebet zum Inhalt. Menschen werden ausdrücklich nicht als der eigentliche Feind bestimmt. Der Text fordert Standhaftigkeit und nicht Gewalt gegen Menschen mit anderen Überzeugungen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Beziehung behandelt Kapitel 2 ausdrücklich?",
+        "a": "Die Versöhnung von Juden und Menschen aus den Völkern in Christus",
+        "wrong": [
+          "Die Eroberung Ägyptens",
+          "Die Wahl eines römischen Kaisers"
+        ]
+      },
+      {
+        "q": "Welches ist kein Bestandteil der geistlichen Waffenrüstung?",
+        "a": "Gewalt gegen Mitmenschen",
+        "wrong": [
+          "Wahrheit",
+          "Glaube"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich geistliche Standhaftigkeit friedlich leben?",
+    "connection": {
+      "from": "Jes 59,17",
+      "to": "Eph 6,14-17",
+      "kind": "allusion",
+      "note": "Die Waffenrüstung greift prophetische Bilder der Gerechtigkeit und des Heils auf."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-6",
+    "campaign": "letters",
+    "title": "Philipper: Freude, Demut und eine neue Wertordnung",
+    "refs": [
+      "Phil 1,12-26",
+      "Phil 2,1-11",
+      "Phil 3,4-14",
+      "Phil 4,4-13"
+    ],
+    "terms": [
+      {
+        "term": "χαρά (chara)",
+        "explanation": "Freude"
+      },
+      {
+        "term": "ταπεινοφροσύνη (tapeinophrosynē)",
+        "explanation": "Demut"
+      }
+    ],
+    "body": [
+      "Paulus schreibt aus einer Gefangenschaft an eine Gemeinde, die ihn unterstützt hat. Der genaue Haftort wird diskutiert. Die wiederkehrende Freude entsteht nicht aus bequemen Umständen, sondern aus der Bedeutung des Evangeliums und der Verbundenheit mit anderen. Paulus benennt auch die Möglichkeit des Todes.",
+      "Kapitel 2 fordert eine gemeinschaftliche Haltung, die nicht nur den eigenen Vorteil sucht. Der bekannte Christusabschnitt entfaltet Erniedrigung, Gehorsam bis zum Tod und Erhöhung. Christliche Traditionen beurteilen einzelne sprachliche Details unterschiedlich; im Brief dient das Motiv auch als Orientierung gegen Rivalität und Selbstüberhöhung.",
+      "Kapitel 3 ordnet frühere Statusmerkmale im Licht der Beziehung zu Christus neu. Kapitel 4 verbindet Gebet, Frieden und die erlernte Fähigkeit, sowohl Mangel als auch Überfluss zu tragen. Die Aussage über Stärke in Christus ist keine grenzenlose Erfolgsformel. Sie erhält ihren Sinn im Kontext sehr unterschiedlicher Lebensbedingungen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Umstände leugnet Paulus nicht?",
+        "a": "Gefangenschaft und die Möglichkeit des Todes",
+        "wrong": [
+          "Dass die Gemeinde existiert",
+          "Dass Menschen ihn unterstützen"
+        ]
+      },
+      {
+        "q": "In welchem Kontext spricht er von Stärke in Christus?",
+        "a": "Erlernter Umgang mit Mangel und Überfluss",
+        "wrong": [
+          "Garantierter Reichtum",
+          "Militärische Eroberung"
+        ]
+      }
+    ],
+    "reflection": "Welches Statusmerkmal bestimmt mein Selbstbild stärker, als es sollte?",
+    "connection": {
+      "from": "Jes 45,23",
+      "to": "Phil 2,10-11",
+      "kind": "allusion",
+      "note": "Die Sprache von Beugung und Bekenntnis erinnert an Jesajas Gotteswort."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-7",
+    "campaign": "letters",
+    "title": "Kolosser: Christus, Schöpfung und erneuerte Beziehungen",
+    "refs": [
+      "Kol 1,15-23",
+      "Kol 2,6-23",
+      "Kol 3,1-17"
+    ],
+    "terms": [
+      {
+        "term": "εἰκών (eikōn)",
+        "explanation": "Bild, Ebenbild"
+      },
+      {
+        "term": "πρωτότοκος (prōtotokos)",
+        "explanation": "Erstgeborener"
+      }
+    ],
+    "body": [
+      "Der Christusabschnitt in Kolosser 1 verbindet Christus mit Schöpfung, Gemeinde und Versöhnung. Die Bezeichnung Erstgeborener bezieht sich auf Rang und Beziehung zur Schöpfung; ihre genaue christologische Bedeutung ist zwischen Traditionen umstritten. Sie darf nicht isoliert von den folgenden Aussagen über das Schaffen durch Christus und seine Vorrangstellung definiert werden.",
+      "Der Brief warnt vor Lehren und Praktiken, die den Zugang zu Gott von zusätzlichen Ansprüchen abhängig machen. Welche konkrete Strömung in Kolossä gemeint ist, bleibt unsicher. Der Autor kritisiert falsche Demut und selbstauferlegte Regeln, nicht jede Disziplin oder jede jüdische religiöse Praxis unabhängig vom Kontext.",
+      "Kapitel 3 setzt die neue Zugehörigkeit mit konkreten Haltungen in Beziehung: Wahrhaftigkeit, Erbarmen, Demut und Vergebung. Die Briefliteratur enthält auch antike Haustafeln; diese benötigen eine verantwortliche historische und ethische Einordnung. Der Blick auf Christus soll nicht zu spiritueller Überlegenheit führen, sondern zu verändertem Umgang mit Menschen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Themen verbindet Kolosser 1?",
+        "a": "Christus, Schöpfung, Gemeinde und Versöhnung",
+        "wrong": [
+          "Nur römische Politik",
+          "Nur die Tempelmaße"
+        ]
+      },
+      {
+        "q": "Welche Haltung nennt Kapitel 3?",
+        "a": "Erbarmen und Vergebung",
+        "wrong": [
+          "Verachtung anderer",
+          "Erzwungene Unterordnung unter jeden Lehrer"
+        ]
+      }
+    ],
+    "reflection": "Wie kann eine erneuerte Identität konkret in meinem Umgang mit anderen sichtbar werden?",
+    "connection": {
+      "from": "1Mo 1,26-27",
+      "to": "Kol 1,15",
+      "kind": "theme",
+      "note": "Beide Texte verwenden Bildsprache; ihre Aussagen sind nicht gleichzusetzen."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-8",
+    "campaign": "letters",
+    "title": "Thessalonicher: Hoffnung und verantwortliches Warten",
+    "refs": [
+      "1Thess 1,2-10",
+      "1Thess 4,13-18",
+      "1Thess 5,1-11",
+      "2Thess 3,6-15"
+    ],
+    "terms": [
+      {
+        "term": "παρουσία (parousia)",
+        "explanation": "Ankunft, Gegenwart"
+      },
+      {
+        "term": "ἐλπίς (elpis)",
+        "explanation": "Hoffnung"
+      }
+    ],
+    "body": [
+      "Die Thessalonicherbriefe wenden sich an eine junge Gemeinde, die unter Druck und in Erwartung der Wiederkunft Jesu lebt. Der erste Brief verbindet Dankbarkeit mit Ermutigung zur Lebensführung. Kapitel 4 spricht Menschen an, die wegen verstorbener Glaubender betrübt sind. Paulus begründet Trost in Gottes Handeln an Jesus und an den Toten.",
+      "Kapitel 5 verwendet das Bild vom Tag des Herrn als unerwarteter Ankunft. Es fordert Wachsamkeit, Nüchternheit und gegenseitige Ermutigung, statt einen berechenbaren Termin zu liefern. Der zweite Brief nimmt in anderer Weise Unsicherheit über den Tag des Herrn auf; seine Verfasserschaft ist in der Forschung umstritten.",
+      "Die Aufforderung zur Arbeit in 2. Thessalonicher 3 betrifft die Weigerung, Verantwortung in der Gemeinschaft zu übernehmen. Sie darf nicht als Ablehnung von Kranken, Erwerbslosen oder anderen Hilfsbedürftigen missbraucht werden. Der Text verbindet Erwartung von Gottes Zukunft mit einem ruhigen und verantwortungsvollen Alltag."
+    ],
+    "quiz": [
+      {
+        "q": "Wen tröstet 1. Thessalonicher 4 besonders?",
+        "a": "Menschen, die um Verstorbene trauern",
+        "wrong": [
+          "Menschen, die einen Tempel planen",
+          "Militärische Sieger"
+        ]
+      },
+      {
+        "q": "Was verbindet Kapitel 5 mit der Endzeithoffnung?",
+        "a": "Wachsamkeit und gegenseitige Ermutigung",
+        "wrong": [
+          "Ein sicher berechenbares Datum",
+          "Aufgabe jeder Arbeit"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Hoffnung mir helfen, meine heutigen Aufgaben wahrzunehmen?",
+    "connection": {
+      "from": "1Thess 5,2",
+      "to": "Mt 24,43-44",
+      "kind": "theme",
+      "note": "Beide Texte sprechen von einer unerwarteten Ankunft."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-9",
+    "campaign": "letters",
+    "title": "Pastoralbriefe: Lehre, Leitung und gelebte Glaubwürdigkeit",
+    "refs": [
+      "1Tim 3,1-13",
+      "1Tim 4,12-16",
+      "2Tim 3,10-17",
+      "Tit 2,1-14"
+    ],
+    "terms": [
+      {
+        "term": "ἐπίσκοπος (episkopos)",
+        "explanation": "Aufseher"
+      },
+      {
+        "term": "διδασκαλία (didaskalia)",
+        "explanation": "Lehre"
+      }
+    ],
+    "body": [
+      "Die Briefe an Timotheus und Titus behandeln Lehre, Gemeindeleitung, Weitergabe des Glaubens und gelebte Glaubwürdigkeit. Sie werden traditionell Paulus zugeschrieben; viele Forschende diskutieren ihre Entstehung im Umfeld der paulinischen Tradition. Jede Einleitung sollte diese Frage offen und nicht als unumstrittene historische Gewissheit behandeln.",
+      "1. Timotheus nennt Kriterien für Leitungsverantwortung, die stark auf Charakter, Selbstbeherrschung und glaubwürdigen Umgang mit anderen zielen. Die genaue Umsetzung dieser Ämtertexte und geschlechterbezogener Weisungen unterscheidet sich konfessionell. Sie darf nicht verwendet werden, um Machtmissbrauch zu schützen oder Fragen zu verbieten.",
+      "2. Timotheus verbindet die Schrift mit Lehre und Befähigung zu guten Werken. Titus entfaltet Gnade als Kraft zu verantwortlichem Leben. Die pastoralen Texte stellen so nicht nur Institutionen, sondern das persönliche Vorbild in den Mittelpunkt. Lehre und Verhalten müssen sich gegenseitig prüfen lassen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Kriterien werden für Leitung betont?",
+        "a": "Charakter und glaubwürdige Lebensführung",
+        "wrong": [
+          "Reichtum und Unfehlbarkeit",
+          "Königliche Herkunft"
+        ]
+      },
+      {
+        "q": "Wozu dient die Schrift nach 2. Timotheus 3?",
+        "a": "Lehre und Befähigung zu guten Werken",
+        "wrong": [
+          "Private Macht über andere",
+          "Berechnung des Enddatums"
+        ]
+      }
+    ],
+    "reflection": "Woran erkenne ich verantwortliche Lehre und Leitung?",
+    "connection": {
+      "from": "2Tim 3,16-17",
+      "to": "Tit 2,11-14",
+      "kind": "theme",
+      "note": "Lehre und Gnade sollen zu einem verantwortlichen Leben befähigen."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-10",
+    "campaign": "letters",
+    "title": "Hebräer: Gottes Reden und ausdauerndes Vertrauen",
+    "refs": [
+      "Hebr 1,1-14",
+      "Hebr 2,14-18",
+      "Hebr 4,12-16",
+      "Hebr 11,1-16",
+      "Hebr 12,1-3"
+    ],
+    "terms": [
+      {
+        "term": "πίστις (pistis)",
+        "explanation": "Glaube, Vertrauen"
+      },
+      {
+        "term": "ὑπομονή (hypomonē)",
+        "explanation": "Ausdauer"
+      }
+    ],
+    "body": [
+      "Der Hebräerbrief stellt Gottes Reden in früheren Zeiten und im Sohn in Beziehung. Seine Verfasserschaft und genaue Adressatengruppe sind unbekannt. Lange Schriftzitate und sorgfältig aufgebaute Argumente zeigen einen tief in Israels Schriften verwurzelten Text. Jesus wird mit Engeln, Mose und priesterlichen Bildern verglichen, wobei der Brief verschiedene Rollen unterscheidet.",
+      "Die Menschlichkeit Jesu erhält besondere Bedeutung: Er kennt Leid und Versuchung und kann Schwachen beistehen. Die Aufforderung zum Vertrauen gründet in dieser Erwartung von Barmherzigkeit. Die Warnungen vor Abkehr sind ernst, werden in unterschiedlichen Traditionen aber verschieden auf die Frage endgültiger Rettung bezogen.",
+      "Kapitel 11 erinnert an Menschen, die Gottes Zusagen vertrauten, ohne alle Erfüllungen selbst zu erleben. Kapitel 12 verwendet das Bild eines Laufes. Der Glaube wird nicht als fehlerloses Wissen oder als Garantie sichtbaren Erfolgs dargestellt. Ausdauer wächst auch durch Erinnerung, Gemeinschaft und die Orientierung an Jesus."
+    ],
+    "quiz": [
+      {
+        "q": "Warum ist Jesu Menschlichkeit in Hebräer 2 wichtig?",
+        "a": "Er kann Leidenden und Versuchten beistehen",
+        "wrong": [
+          "Sie beseitigt jede Frage",
+          "Sie macht Gebet unnötig"
+        ]
+      },
+      {
+        "q": "Was erleben manche Glaubenszeugen in Kapitel 11 nicht?",
+        "a": "Die vollständige Erfüllung der Verheißung zu Lebzeiten",
+        "wrong": [
+          "Jede Form von Hoffnung",
+          "Jede Form von Verantwortung"
+        ]
+      }
+    ],
+    "reflection": "Welche Erinnerung hilft mir, in einer langen Lern- oder Wartezeit durchzuhalten?",
+    "connection": {
+      "from": "Hab 2,4",
+      "to": "Hebr 10,38",
+      "kind": "quote",
+      "note": "Hebräer greift die Schrift über Glauben und Ausdauer auf."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-11",
+    "campaign": "letters",
+    "title": "Jakobus: Weisheit, Prüfung und das Hören auf Gottes Wort",
+    "refs": [
+      "Jak 1,1-18",
+      "Jak 1,19-27",
+      "Jak 3,13-18",
+      "Jak 4,13-17"
+    ],
+    "terms": [
+      {
+        "term": "σοφία (sophia)",
+        "explanation": "Weisheit"
+      },
+      {
+        "term": "πειρασμός (peirasmos)",
+        "explanation": "Prüfung, Versuchung"
+      }
+    ],
+    "body": [
+      "Der Jakobusbrief eröffnet mit der Erfahrung verschiedener Prüfungen und dem Wunsch nach Weisheit. Der Text unterscheidet die Möglichkeit der Bewährung vom Anreiz zum Bösen. Gott wird ausdrücklich nicht als Verführer zur Sünde dargestellt. Prüfungen sind deshalb kein Grund, Leidenden Schuld einzureden oder gefährliche Situationen absichtlich zu suchen.",
+      "Die Weisungen über Hören, Reden und Zorn zeigen, dass Glauben auch Selbstbeherrschung in konkreten Beziehungen umfasst. Das Bild des Spiegels kritisiert ein Hören ohne Handlung. In Kapitel 3 wird Weisheit anhand von Frieden, Sanftmut und guten Früchten geprüft, nicht an beeindruckender Sprache allein.",
+      "Kapitel 4 stellt menschliche Geschäfts- und Zukunftspläne in den Horizont ihrer Begrenztheit. Der Brief verbietet nicht jede Planung, sondern die selbstsichere Annahme, über die eigene Lebenszeit zu verfügen. Biblische Weisheit vereint kluge Planung, Demut und die Bereitschaft, Verantwortung für das heute mögliche Gute zu übernehmen."
+    ],
+    "quiz": [
+      {
+        "q": "Wer wird nach Jakobus 1 nicht als Verführer zum Bösen dargestellt?",
+        "a": "Gott",
+        "wrong": [
+          "Der eigene Begierde folgende Mensch",
+          "Der Mensch, der sich täuschen lässt"
+        ]
+      },
+      {
+        "q": "Was zeichnet die Weisheit von oben aus?",
+        "a": "Frieden und gute Früchte",
+        "wrong": [
+          "Neid und Rivalität",
+          "Möglichst laute Rede"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich auf eine schwierige Situation mit Geduld und Weisheit antworten?",
+    "connection": {
+      "from": "Spr 3,5-7",
+      "to": "Jak 3,13-18",
+      "kind": "theme",
+      "note": "Beide Texte verbinden Weisheit mit einer demütigen Lebenshaltung."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-12",
+    "campaign": "letters",
+    "title": "Petrusbriefe: Hoffnung, Leid und Unterscheidung",
+    "refs": [
+      "1Petr 1,3-21",
+      "1Petr 2,9-17",
+      "1Petr 3,13-17",
+      "2Petr 1,3-11",
+      "2Petr 3,8-13"
+    ],
+    "terms": [
+      {
+        "term": "ἐλπίς (elpis)",
+        "explanation": "Hoffnung"
+      },
+      {
+        "term": "ἅγιος (hagios)",
+        "explanation": "heilig"
+      }
+    ],
+    "body": [
+      "1. Petrus spricht christliche Gemeinschaften in Kleinasien als Menschen mit einer lebendigen Hoffnung an. Die Adressaten erfahren unterschiedliche Formen von Ablehnung und sozialem Druck. Die Hoffnung wird mit Jesu Auferstehung verbunden; Heiligkeit prägt nicht nur Kult, sondern Verhalten und den Umgang mit anderen.",
+      "Der Brief fordert dazu auf, Gründe der Hoffnung mit Sanftmut und Respekt zu erklären. Schwierige Weisungen über antike Abhängigkeitsverhältnisse müssen im historischen Kontext gelesen werden. Sie rechtfertigen nicht, Menschen heute zum Dulden von Missbrauch zu zwingen. Verantwortliche Auslegung unterscheidet historische Lebensbedingungen von bleibenden ethischen Anliegen.",
+      "2. Petrus betont geistliches Wachstum und warnt vor irreführender Lehre. Die genaue Verfasserschaft wird besonders bei diesem Brief diskutiert. Seine Rede über Gottes Geduld beantwortet Zweifel an der Erwartung der Zukunft. Die Hoffnung auf neue Himmel und neue Erde steht neben der Aufforderung zu einem verantwortungsvollen Leben."
+    ],
+    "quiz": [
+      {
+        "q": "Wie soll die Hoffnung begründet werden?",
+        "a": "Mit Sanftmut und Respekt",
+        "wrong": [
+          "Mit Drohungen",
+          "Nur durch Schweigen"
+        ]
+      },
+      {
+        "q": "Wie erklärt 2. Petrus Gottes vermeintliches Zögern?",
+        "a": "Als Geduld",
+        "wrong": [
+          "Als Machtverlust",
+          "Als Zufall"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich in einem Glaubensgespräch Wahrheit und Respekt verbinden?",
+    "connection": {
+      "from": "2Mo 19,6",
+      "to": "1Petr 2,9",
+      "kind": "allusion",
+      "note": "Petrus verwendet Sprache der Berufung Israels für die Gemeinde."
+    },
+    "image": "petrus"
+  },
+  {
+    "id": "letters-13",
+    "campaign": "letters",
+    "title": "Johannesbriefe: Wahrheit, Liebe und das Prüfen",
+    "refs": [
+      "1Joh 1,5-10",
+      "1Joh 2,3-11",
+      "1Joh 4,1-21",
+      "2Joh 1,4-6",
+      "3Joh 1,5-12"
+    ],
+    "terms": [
+      {
+        "term": "ἀλήθεια (alētheia)",
+        "explanation": "Wahrheit"
+      },
+      {
+        "term": "ἀγάπη (agapē)",
+        "explanation": "Liebe"
+      }
+    ],
+    "body": [
+      "Die Johannesbriefe spiegeln Konflikte über das Bekenntnis zu Jesus, gelebte Gemeinschaft und den Anspruch geistlicher Erkenntnis. 1. Johannes verbindet Licht mit Wahrhaftigkeit und dem Eingeständnis eigener Sünde. Der Anspruch, keine Sünde zu haben, wird zurückgewiesen. Gottes Vergebung soll Menschen zu ehrlichem Leben ermutigen.",
+      "Kapitel 4 fordert zum Prüfen der Geister anhand des Bekenntnisses zu Jesus Christus auf und verbindet die Gotteserkenntnis mit Liebe. Der Text gibt keine Methode, zufällige Gedanken oder psychische Erfahrungen als sichere Botschaften geistlicher Wesen zu identifizieren. Bekenntnis, Lebensführung und der konkrete Konfliktzusammenhang sind wichtig.",
+      "Die kurzen zweiten und dritten Briefe behandeln Wahrheit, Gastfreundschaft und den Umgang mit irreführender Lehre beziehungsweise machtorientiertem Verhalten. Besonders Diotrephes wird für seinen Anspruch auf Vorrang kritisiert. Gastfreundschaft und gesunde Grenzen stehen in unterschiedlichen Situationen nebeneinander. Die Briefe setzen nicht jede theologische Meinungsverschiedenheit mit persönlicher Feindschaft gleich."
+    ],
+    "quiz": [
+      {
+        "q": "Was weist 1. Johannes 1 zurück?",
+        "a": "Den Anspruch, keine Sünde zu haben",
+        "wrong": [
+          "Wahrhaftigkeit",
+          "Die Möglichkeit der Vergebung"
+        ]
+      },
+      {
+        "q": "Welche Haltung wird bei Diotrephes kritisiert?",
+        "a": "Streben nach Vorrang und Ausschluss anderer",
+        "wrong": [
+          "Gastfreundschaft",
+          "Demütiges Lernen"
+        ]
+      }
+    ],
+    "reflection": "Wie können Wahrheit und Liebe in meiner Sprache gemeinsam sichtbar werden?",
+    "connection": {
+      "from": "1Joh 4,20-21",
+      "to": "Joh 13,34-35",
+      "kind": "theme",
+      "note": "Beide Texte betrachten gegenseitige Liebe als Zeichen der Zugehörigkeit zu Jesus."
+    },
+    "image": "jesus"
+  },
+  {
+    "id": "letters-14",
+    "campaign": "letters",
+    "title": "Judas: Bewahrung des Glaubens und Erbarmen",
+    "refs": [
+      "Jud 1,3-13",
+      "Jud 1,14-25",
+      "4Mo 16,1-11"
+    ],
+    "terms": [
+      {
+        "term": "πίστις (pistis)",
+        "explanation": "Glaube, hier auch Glaubensgut"
+      },
+      {
+        "term": "ἔλεος (eleos)",
+        "explanation": "Erbarmen"
+      }
+    ],
+    "body": [
+      "Der kurze Judasbrief warnt vor Menschen, deren Verhalten nach Darstellung des Autors Gottes Gnade verdreht. Der Ruf, für den überlieferten Glauben einzutreten, steht im Zusammenhang konkreter Probleme von Eigeninteresse und Missbrauch. Die drastischen Beispiele aus älteren Überlieferungen verdeutlichen die Ernsthaftigkeit der Warnung.",
+      "Der Brief greift Kain, Bileam und Korach auf und verwendet auch jüdische Traditionen, etwa ein Henochwort. Die Aufnahme einer solchen Überlieferung bedeutet nicht automatisch, dass alle zugehörigen Schriften denselben Kanonstatus besitzen. Auch die genaue Identität des Verfassers gehört zu den historischen Fragen.",
+      "Der Schluss verbindet Bewahrung im Glauben mit Gebet, Erbarmen und Lobpreis. Verschiedene Handschriften bieten bei einzelnen Formulierungen Unterschiede. Der Brief darf nicht als Vorwand dienen, andere Menschen wegen jeder abweichenden Ansicht auszugrenzen. Sein eigener Zusammenhang verbindet Unterscheidung und Barmherzigkeit."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Gefahr nennt Judas?",
+        "a": "Missbrauch der Gnade für unverantwortliches Leben",
+        "wrong": [
+          "Die Existenz verschiedener Sprachen",
+          "Die Pflege des Gedächtnisses"
+        ]
+      },
+      {
+        "q": "Welche Haltung fordert der Schluss neben Wachsamkeit?",
+        "a": "Erbarmen",
+        "wrong": [
+          "Selbstüberhöhung",
+          "Rache"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich problematisches Verhalten klar benennen, ohne Barmherzigkeit aufzugeben?",
+    "connection": {
+      "from": "4Mo 16,1-11",
+      "to": "Jud 1,11",
+      "kind": "allusion",
+      "note": "Judas greift Korach als warnendes Beispiel auf."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "letters-1",
+    "campaign": "letters",
+    "title": "Römer: Das Evangelium für eine vielfältige Gemeinde",
+    "refs": [
+      "Röm 1,8-17",
+      "Röm 3,21-31",
+      "Röm 8,1-17",
+      "Röm 11,17-24",
+      "Röm 15,7-13"
+    ],
+    "terms": [
+      {
+        "term": "εὐαγγέλιον (euangelion)",
+        "explanation": "Evangelium, gute Botschaft"
+      },
+      {
+        "term": "χάρις (charis)",
+        "explanation": "Gnade"
+      }
+    ],
+    "body": [
+      "Der Römerbrief ist ein zusammenhängendes theologisches Argument an eine Gemeinde, die Paulus noch nicht selbst besucht hatte. Der Einstieg nennt sein Anliegen, das Evangelium auch in Rom zu verkünden und gegenseitige Ermutigung zu erfahren. Die Gemeinde wird aus Menschen verschiedener Herkunft bestehen; diese Vielfalt ist wichtig für das Verständnis der folgenden Argumentation.",
+      "Die Kapitel 1–4 beschreiben menschliche Schuld und Gottes Rechtfertigung. Die Kapitel 5–8 entfalten Frieden, neues Leben, Taufe, den Kampf mit der Sünde und die Gabe des Geistes. Kapitel 9–11 ringen mit Israels Stellung und Gottes Treue; das Ölbaumbild warnt ausdrücklich vor Überheblichkeit. Einzelne Lehren sollten daher nicht aus dem Gesamtargument isoliert werden.",
+      "Kapitel 12–15 wenden die theologische Botschaft auf Gemeinschaft, gewaltlosen Umgang mit Feinden und gegenseitige Annahme an. Paulus verbindet die Hoffnung der Völker mit der Schrift Israels. Das praktische Ziel ist nicht religiöse Konkurrenz, sondern ein gemeinsames Leben, in dem Gottes Erbarmen konkret sichtbar wird."
+    ],
+    "quiz": [
+      {
+        "q": "Welches Thema verbindet Kapitel 9–11?",
+        "a": "Israels Rolle und Gottes Treue",
+        "wrong": [
+          "Die Maße der Arche",
+          "Die Reisen des Mose"
+        ]
+      },
+      {
+        "q": "Wozu führt Gottes Erbarmen im praktischen Teil?",
+        "a": "Zu erneuertem gemeinschaftlichem Handeln",
+        "wrong": [
+          "Zu Stolz über andere",
+          "Zu einer Pflicht, keine Fragen mehr zu stellen"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich einen ganzen Brief lesen, statt einzelne Lieblingsverse herauszulösen?",
+    "connection": {
+      "from": "Hab 2,4",
+      "to": "Röm 1,17",
+      "kind": "quote",
+      "note": "Paulus greift Habakuks Aussage über Gerechtigkeit und Glauben auf."
+    },
+    "image": "paulus"
+  }
+]

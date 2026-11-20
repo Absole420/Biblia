@@ -1,0 +1,254 @@
+{
+  "id": "psalms-6",
+  "worldId": "psalms",
+  "title": "Hoheslied: Liebe, Sehnsucht und Treue",
+  "book": "Hld",
+  "intro": "Zwei Lerneinheiten zur poetischen Sprache des Hohenlieds und seiner Rezeptionsgeschichte.",
+  "mapW": 1000,
+  "mapH": 700,
+  "stations": [
+    {
+      "id": "psalms-6-poetry",
+      "title": "Die Schönheit menschlicher Liebe",
+      "subtitle": "Hld 1–4 · Sehnsucht und gegenseitige Wertschätzung",
+      "type": "study",
+      "icon": "heart",
+      "x": 320,
+      "y": 460,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Das Hohelied besteht aus Liebesdichtung, in der verschiedene Stimmen Sehnsucht, Bewunderung und Freude ausdrücken. Garten, Duft, Frühling, Tiere und Früchte machen Nähe in poetischen Bildern erfahrbar. Die Frau spricht selbst und sucht den Geliebten. Wiederholt erscheint die Mahnung, die Liebe nicht zu wecken, bis es ihr gefällt. Der Text würdigt menschliche Zuneigung und ihre eigene Zeit, ohne ein vollständiges Beziehungshandbuch zu sein.",
+      "readings": [
+        {
+          "book": "Hld",
+          "ch": 1,
+          "from": 1,
+          "to": 8
+        },
+        {
+          "book": "Hld",
+          "ch": 2,
+          "from": 8,
+          "to": 17
+        },
+        {
+          "book": "Hld",
+          "ch": 3,
+          "from": 1,
+          "to": 5
+        },
+        {
+          "book": "Hld",
+          "ch": 4,
+          "from": 1,
+          "to": 16
+        }
+      ],
+      "terms": [
+        {
+          "term": "Liebesdichtung",
+          "explanation": "Poetische Texte, die Nähe und Sehnsucht in Bildern ausdrücken."
+        },
+        {
+          "term": "Allegorie",
+          "explanation": "Eine Lesart, die den Bildern eine weitere geistliche Bedeutung zuordnet."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Die Überschrift verbindet das Lied mit Salomo; die genaue Autorschaft, Entstehungszeit und Anordnung der Stimmen sind umstritten."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Jüdische und christliche Traditionen lesen das Lied teilweise allegorisch als Gottes Liebe zu Israel beziehungsweise Christus und seiner Gemeinde. Seine poetische Ebene menschlicher Liebe bleibt dabei ernst zu nehmen."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "psalms-6-poetry-t1",
+          "type": "mc",
+          "question": "Welche Bilder nutzt das Lied häufig?",
+          "options": [
+            "Gärten, Düfte, Tiere und Frühling",
+            "Nur militärische Belagerungen",
+            "Nur Gesetzeslisten"
+          ],
+          "answer": 0,
+          "explain": "Gärten, Düfte, Tiere und Frühling. Siehe Hld 2,8–17.",
+          "ref": "Hld 2,8–17"
+        },
+        {
+          "id": "psalms-6-poetry-t2",
+          "type": "tf",
+          "statement": "Die Frau besitzt im Lied eine eigene Stimme.",
+          "answer": true,
+          "explain": "Sie spricht und sucht den Geliebten.",
+          "ref": "Hld 3,1–4"
+        },
+        {
+          "id": "psalms-6-poetry-t3",
+          "type": "free",
+          "question": "Wie kann Zuneigung hörbar werden, ohne den anderen unter Druck zu setzen?",
+          "model": "Die Gedichte würdigen Sehnsucht und Nähe; die wiederholte Mahnung erinnert daran, Liebe nicht zu erzwingen.",
+          "ref": "Hld 2,8–17"
+        }
+      ],
+      "exam": [
+        {
+          "id": "psalms-6-poetry-e1",
+          "type": "mc",
+          "question": "Welche Mahnung wiederholt sich in Hld 2,7 und 3,5?",
+          "options": [
+            "Die Liebe nicht vor ihrer Zeit wecken",
+            "Liebe durch Zwang erzwingen",
+            "Jede Zuneigung vermeiden"
+          ],
+          "answer": 0,
+          "explain": "Die Liebe nicht vor ihrer Zeit wecken. Siehe Hld 2,7; 3,5.",
+          "ref": "Hld 2,7; 3,5"
+        },
+        {
+          "id": "psalms-6-poetry-e2",
+          "type": "tf",
+          "statement": "Das Lied muss ausschließlich als Allegorie gelesen werden.",
+          "answer": false,
+          "explain": "Die menschliche Liebesdichtung und ihre spätere geistliche Rezeption sind zu unterscheiden.",
+          "ref": "Hld 1–4"
+        }
+      ],
+      "reflection": [
+        "Wie kann Zuneigung hörbar werden, ohne den anderen unter Druck zu setzen?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [],
+      "summary": "Die Gedichte würdigen Sehnsucht und Nähe; die wiederholte Mahnung erinnert daran, Liebe nicht zu erzwingen."
+    },
+    {
+      "id": "psalms-6-love",
+      "title": "Stark wie der Tod ist die Liebe",
+      "subtitle": "Hld 5–8 · Sehnsucht, Grenzen und Hingabe",
+      "type": "study",
+      "icon": "heart",
+      "x": 680,
+      "y": 230,
+      "requires": [],
+      "xp": 60,
+      "goal": "Du kannst das Thema im Schriftzusammenhang erklären und Textaussagen von Auslegungen unterscheiden.",
+      "discover": "Die zweite Hälfte des Hohenlieds enthält Szenen von Suche, Trennung und Wiederannäherung. Die Liebenden gehören einander zu, doch Nähe wird nicht als jederzeit erzwingbarer Besitz dargestellt. In Kapitel 8 bittet die Frau um einen Platz wie ein Siegel auf Herz und Arm. Liebe wird als stark wie der Tod und durch große Wasser nicht auslöschbar beschrieben. Reichtum kann sie nicht kaufen. Das Lied besingt die Kraft echter Zuneigung, ohne einen Menschen zum Festhalten an einer schädlichen Beziehung zu verpflichten.",
+      "readings": [
+        {
+          "book": "Hld",
+          "ch": 5,
+          "from": 2,
+          "to": 8
+        },
+        {
+          "book": "Hld",
+          "ch": 6,
+          "from": 1,
+          "to": 3
+        },
+        {
+          "book": "Hld",
+          "ch": 8,
+          "from": 4,
+          "to": 7
+        }
+      ],
+      "terms": [
+        {
+          "term": "Siegel",
+          "explanation": "Bild einer tiefen bleibenden Verbindung in Hld 8,6."
+        },
+        {
+          "term": "Unkäuflichkeit",
+          "explanation": "Hld 8,7 stellt Liebe außerhalb materieller Verfügbarkeit."
+        }
+      ],
+      "background": [
+        {
+          "kind": "history",
+          "title": "Historischer und literarischer Rahmen",
+          "text": "Siegel dienten in der antiken Welt als Zeichen von Zugehörigkeit, Identität und Autorität; das Lied verwendet das Bild poetisch."
+        },
+        {
+          "kind": "text",
+          "title": "Schrift und Auslegung",
+          "text": "Eph 5,25 und Offb 19,7 verwenden eigene Brautbilder. Ein thematischer Vergleich ist möglich, aber das Hohelied ist keine direkte neutestamentliche Vorhersage."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "psalms-6-love-t1",
+          "type": "mc",
+          "question": "Womit wird die Stärke der Liebe verglichen?",
+          "options": [
+            "Mit einer Handelsflotte",
+            "Mit dem Tod",
+            "Mit einer Festungsmauer"
+          ],
+          "answer": 1,
+          "explain": "Mit dem Tod. Siehe Hld 8,6.",
+          "ref": "Hld 8,6"
+        },
+        {
+          "id": "psalms-6-love-t2",
+          "type": "tf",
+          "statement": "Liebe kann im Lied mit dem gesamten Vermögen gekauft werden.",
+          "answer": false,
+          "explain": "Der Text setzt diesem Versuch Verachtung entgegen.",
+          "ref": "Hld 8,7"
+        },
+        {
+          "id": "psalms-6-love-t3",
+          "type": "free",
+          "question": "Warum ist freiwillige Liebe etwas anderes als Besitz?",
+          "model": "Hld 8,6–7 beschreibt Verbundenheit als kostbar und unkäuflich; Liebe ist nicht durch Macht herstellbar.",
+          "ref": "Hld 8,6"
+        }
+      ],
+      "exam": [
+        {
+          "id": "psalms-6-love-e1",
+          "type": "mc",
+          "question": "Was können große Wasser nicht tun?",
+          "options": [
+            "Jede Trennung verhindern",
+            "Die Liebe auslöschen",
+            "Alle Gefühle erzwungen ändern"
+          ],
+          "answer": 1,
+          "explain": "Die Liebe auslöschen. Siehe Hld 8,7.",
+          "ref": "Hld 8,7"
+        },
+        {
+          "id": "psalms-6-love-e2",
+          "type": "tf",
+          "statement": "Die Gedichte enthalten auch Erfahrungen des Suchens und der Trennung.",
+          "answer": true,
+          "explain": "Hld 5,2–8 schildert die Suche nach dem Geliebten.",
+          "ref": "Hld 5,2–8"
+        }
+      ],
+      "reflection": [
+        "Warum ist freiwillige Liebe etwas anderes als Besitz?",
+        "Welche Schriftstelle möchtest du im Zusammenhang vertiefen?"
+      ],
+      "placeIds": [],
+      "connections": [
+        {
+          "from": "Hld 8,6–7",
+          "to": "Eph 5,25",
+          "kind": "theme",
+          "note": "Beide Texte sprechen von Liebe; der Epheserbrief verwendet einen anderen, christologischen Zusammenhang."
+        }
+      ],
+      "summary": "Hld 8,6–7 beschreibt Verbundenheit als kostbar und unkäuflich; Liebe ist nicht durch Macht herstellbar."
+    }
+  ]
+}

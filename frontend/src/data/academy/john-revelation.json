@@ -1,0 +1,1173 @@
+[
+  {
+    "id": "john-1",
+    "campaign": "john",
+    "title": "Der Prolog: Wort, Leben und Licht",
+    "refs": [
+      "Joh 1,1-18",
+      "1Mo 1,1-5",
+      "2Mo 33,18-23"
+    ],
+    "terms": [
+      {
+        "term": "λόγος (logos)",
+        "explanation": "Wort, Rede, Aussage"
+      },
+      {
+        "term": "μονογενής (monogenēs)",
+        "explanation": "einzig, einzigartig"
+      }
+    ],
+    "body": [
+      "Der Prolog eröffnet das Evangelium mit dem Anfang und erinnert dadurch an Genesis. Logos kann im Griechischen Wort, Rede oder Botschaft heißen; seine Bedeutung in Johannes entsteht aus dem ganzen Prolog, der das Wort in Beziehung zu Gott, Schöpfung, Leben, Licht und Menschwerdung setzt. Die Formulierungen von Johannes 1,1 sind zentral für christologische Debatten. Der Artikelgebrauch und ein einzelnes Wörterbuch können diese nicht abschließend entscheiden.",
+      "Der Text bewegt sich von der umfassenden Schöpfungsperspektive zum Zeugnis des Täufers und zur Aufnahme beziehungsweise Ablehnung des Lichtes. In Vers 14 steht das Fleischwerden des Wortes im Zentrum. Das Bild des Wohnens unter Menschen und der Herrlichkeit erinnert an Gottes Gegenwart in der Tora. Monogenēs bezeichnet Einzigartigkeit; die unterschiedlichen Textvarianten und Übersetzungen in Vers 18 sind für das Verständnis ebenfalls wichtig.",
+      "Johannes stellt Gnade und Wahrheit im Verhältnis zu Mose und Jesus dar. Das heißt nicht, die Tora sei ohne Gnade gewesen: Exodus 34 verbindet Gottes Selbstbeschreibung bereits mit Güte und Treue. Eine sorgfältige christliche Auslegung fragt, wie der Evangelist die überlieferte Gottesoffenbarung und die besondere Rolle Jesu miteinander verbindet."
+    ],
+    "quiz": [
+      {
+        "q": "An welches Buch erinnert der Anfang des Prologs?",
+        "a": "Genesis",
+        "wrong": [
+          "Ester",
+          "Römer"
+        ]
+      },
+      {
+        "q": "Was geschieht mit dem Wort in Vers 14?",
+        "a": "Es wird Fleisch und wohnt unter Menschen",
+        "wrong": [
+          "Es wird ein Königspalast",
+          "Es wird nur ein abstraktes Gesetz"
+        ]
+      }
+    ],
+    "reflection": "Wie verändert die Aussage über Gottes Licht mein Verständnis von Menschlichkeit?",
+    "connection": {
+      "from": "1Mo 1,1-5",
+      "to": "Joh 1,1-5",
+      "kind": "allusion",
+      "note": "Johannes verwendet Schöpfungssprache und den Anfang als Bezugsrahmen."
+    },
+    "image": "jesus"
+  },
+  {
+    "id": "john-2",
+    "campaign": "john",
+    "title": "Der Täufer und die ersten Jünger",
+    "refs": [
+      "Joh 1,19-34",
+      "Joh 1,35-51",
+      "Jes 40,1-5"
+    ],
+    "terms": [
+      {
+        "term": "μαρτυρία (martyria)",
+        "explanation": "Zeugnis"
+      },
+      {
+        "term": "ἀμνός (amnos)",
+        "explanation": "Lamm"
+      }
+    ],
+    "body": [
+      "Johannes der Täufer weist die Aufmerksamkeit von sich selbst weg. Auf Fragen nach seiner Identität antwortet er mit der Stimme in der Wüste. Als er Jesus sieht, verwendet er das Bild vom Lamm Gottes. Dieses Bild kann mehrere Schriftzusammenhänge anklingen lassen, darunter Opfer, Passa und den leidenden Knecht. Der Text erklärt jedoch nicht eindeutig eine einzige Herkunft des Titels.",
+      "Die ersten Jünger folgen Jesus aufgrund eines Zeugnisses und erhalten die Einladung zu sehen, wo er bleibt. Andreas spricht mit Simon, Philippus mit Nathanael. Die Berufungsszenen verbinden persönliche Begegnung, Zweifel und Weitergabe. Nathanaels Frage nach Nazareth macht deutlich, dass Zugehörigkeit nicht mit vorgefertigter Begeisterung beginnen muss.",
+      "Der Schluss greift das Bild der auf- und niedersteigenden Engel aus Jakobs Traum auf, nun in Beziehung zum Menschensohn. Johannes erzählt damit Jesu Rolle als Ort göttlicher Begegnung in einer Sprache, die Israels Schrift voraussetzt. Die verschiedenen Titel in diesem Kapitel sind Ausgangspunkte einer Geschichte, deren Verständnis im weiteren Evangelium wachsen soll."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Aufgabe beansprucht der Täufer?",
+        "a": "Zeugnis geben und auf Jesus hinweisen",
+        "wrong": [
+          "Sich selbst zum Messias erklären",
+          "Einen Palast errichten"
+        ]
+      },
+      {
+        "q": "Welches ältere Bild klingt am Schluss an?",
+        "a": "Jakobs Traum von der Himmelsleiter",
+        "wrong": [
+          "Noahs Regenbogen allein",
+          "Die römische Kaiserkrone"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich von meinem Glauben erzählen, ohne mich selbst ins Zentrum zu stellen?",
+    "connection": {
+      "from": "1Mo 28,12",
+      "to": "Joh 1,51",
+      "kind": "allusion",
+      "note": "Die Engelbewegung erinnert an Jakobs Traum."
+    },
+    "image": "johannes-taeufer"
+  },
+  {
+    "id": "john-3",
+    "campaign": "john",
+    "title": "Kana: Das erste Zeichen und die kommende Stunde",
+    "refs": [
+      "Joh 2,1-12",
+      "Joh 2,13-22",
+      "Am 9,13-15"
+    ],
+    "terms": [
+      {
+        "term": "σημεῖον (sēmeion)",
+        "explanation": "Zeichen"
+      },
+      {
+        "term": "ὥρα (hōra)",
+        "explanation": "Stunde, Zeitpunkt"
+      }
+    ],
+    "body": [
+      "Bei einer Hochzeit in Kana geht der Wein aus. Maria weist Jesus darauf hin und fordert die Diener anschließend auf, seine Worte zu befolgen. Die Wassergefäße werden im Evangelium mit jüdischer Reinigungspraxis verbunden. Jesus lässt sie füllen, und der Speisemeister nimmt die außergewöhnliche Qualität des Weines wahr. Johannes nennt dies das erste Zeichen und verbindet es mit Jesu Herrlichkeit und dem Glauben der Jünger.",
+      "Die Geschichte spielt in einem sozialen Zusammenhang, in dem Gastfreundschaft und eine gelungene Feier Bedeutung besitzen. Sie ist weder eine Garantie wundersamer materieller Versorgung noch ein Aufruf zu übermäßigem Alkoholkonsum. Das Weinmotiv kann an prophetische Fülle und Freude erinnern; der Evangelist macht aber nicht jede Einzelheit zu einer ausdrücklich erklärten Allegorie.",
+      "Jesu Antwort über seine Stunde verweist auf einen wichtigen Erzählbogen des Johannesevangeliums. Später wird Jesu Stunde mit seinem Tod und seiner Verherrlichung verbunden. Unmittelbar nach Kana erzählt Johannes vom Tempel und einem weiteren Zeichenwort, das er auf Jesu Leib und Auferstehung deutet. Beide Szenen zeigen, dass Zeichen nicht Selbstzweck sind."
+    ],
+    "quiz": [
+      {
+        "q": "Wie nennt Johannes das Geschehen in Kana?",
+        "a": "Das erste Zeichen",
+        "wrong": [
+          "Die letzte Missionsreise",
+          "Eine Königswahl"
+        ]
+      },
+      {
+        "q": "Wohin verweist das Motiv von Jesu Stunde?",
+        "a": "Auf den weiteren Weg bis zu Tod und Verherrlichung",
+        "wrong": [
+          "Auf eine genau berechenbare Uhrzeit der Wiederkunft",
+          "Nur auf das Ende der Hochzeit"
+        ]
+      }
+    ],
+    "reflection": "Was bedeutet es, nicht beim Wunder stehenzubleiben, sondern nach seiner Aussage zu fragen?",
+    "connection": {
+      "from": "Am 9,13-15",
+      "to": "Joh 2,1-11",
+      "kind": "theme",
+      "note": "Wein und Fülle sind verwandte Hoffnungsbilder, kein ausdrückliches Zitat."
+    },
+    "image": "wunder"
+  },
+  {
+    "id": "john-4",
+    "campaign": "john",
+    "title": "Nikodemus: Geburt von oben und Gottes Liebe",
+    "refs": [
+      "Joh 3,1-21",
+      "Joh 7,45-52",
+      "Joh 19,38-42"
+    ],
+    "terms": [
+      {
+        "term": "ἄνωθεν (anōthen)",
+        "explanation": "von oben, von neuem"
+      },
+      {
+        "term": "πνεῦμα (pneuma)",
+        "explanation": "Geist, Wind, Atem"
+      }
+    ],
+    "body": [
+      "Nikodemus kommt in der Nacht zu Jesus. Er ist Pharisäer und gehört zur jüdischen Führung; der Dialog zeigt dennoch ein ernsthaftes Interesse an Jesu Zeichen. Jesus spricht von einer Geburt anōthen. Das griechische Wort kann von oben und von neuem bedeuten. Nikodemus reagiert zunächst auf die leibliche Vorstellung eines zweiten Geborenwerdens. Jesus lenkt das Gespräch auf Wasser und Geist.",
+      "Die Mehrdeutigkeit von pneuma prägt das Bild vom Wind. Hesekiels Zusage von Reinigung, neuem Herzen und Geist bildet einen wichtigen möglichen Schriftzusammenhang. Der Bezug von Wasser und Geist auf Taufe oder andere Aspekte göttlicher Erneuerung wird christlich unterschiedlich gedeutet. Der Text beschreibt einen Ursprung des neuen Lebens in Gottes Handeln, nicht eine kontrollierbare Technik für ein bestimmtes Gefühl.",
+      "Nikodemus erscheint später erneut: Er fordert, einen Menschen vor einem Urteil anzuhören, und beteiligt sich schließlich an Jesu Begräbnis. Johannes erzählt keinen ausdrücklichen Bericht seiner inneren Bekehrung, aber die Entwicklung seiner Handlungen lässt einen Lernweg erkennen. Die zentrale Aussage von Gottes Liebe zur Welt verbindet Glauben, Rettung und das Kommen zum Licht."
+    ],
+    "quiz": [
+      {
+        "q": "Welche beiden Nuancen kann anōthen haben?",
+        "a": "Von oben und von neuem",
+        "wrong": [
+          "Von unten und gestern",
+          "Nur körperlich und politisch"
+        ]
+      },
+      {
+        "q": "Was tut Nikodemus später in Kapitel 7?",
+        "a": "Er fordert ein ordentliches Anhören vor dem Urteil",
+        "wrong": [
+          "Er verlangt sofortige Verurteilung",
+          "Er führt eine römische Armee"
+        ]
+      }
+    ],
+    "reflection": "Wo kann ich offen fragen, bevor ich über andere urteile?",
+    "connection": {
+      "from": "Hes 36,25-27",
+      "to": "Joh 3,5-8",
+      "kind": "theme",
+      "note": "Reinigung und Geist bilden einen wichtigen Schriftzusammenhang."
+    },
+    "image": "nikodemus"
+  },
+  {
+    "id": "john-5",
+    "campaign": "john",
+    "title": "Am Jakobsbrunnen: Durst, Wahrheit und Begegnung",
+    "refs": [
+      "Joh 4,1-30",
+      "Joh 4,31-42",
+      "1Mo 33,18-20"
+    ],
+    "terms": [
+      {
+        "term": "ὕδωρ (hydōr)",
+        "explanation": "Wasser"
+      },
+      {
+        "term": "προσκυνέω (proskyneō)",
+        "explanation": "anbeten, sich niederwerfen"
+      }
+    ],
+    "body": [
+      "Jesus begegnet am Brunnen einer Samaritanerin und bittet sie um Wasser. Das Gespräch geht von alltäglichem Durst zu lebendigem Wasser über. Die Frau stellt Fragen zur Beziehung zwischen Juden und Samaritanern, zur Herkunft Jesu und zur rechten Anbetung. Die Erzählung stellt sie als Gesprächspartnerin dar, nicht bloß als Beispiel für ein moralisches Defizit. Der Text erklärt ihre frühere Beziehungsgeschichte nicht vollständig und gibt keinen sicheren Grund, sie pauschal zu beschämen.",
+      "Der Streit über den Anbetungsort wurzelt in einer langen Geschichte unterschiedlicher Gemeinschaften und Heiligtümer. Jesus antwortet mit der kommenden Anbetung in Geist und Wahrheit, hält aber zugleich die Bedeutung der jüdischen Heilsgeschichte fest. Beide Aussagen gehören zusammen. Der Evangelist stellt Gottes Gegenwart nicht als exklusiven Besitz einer geografischen Stätte dar.",
+      "Die Frau lässt ihren Krug zurück und berichtet den Menschen in ihrer Stadt von der Begegnung. Viele kommen zu Jesus und hören selbst. Die Geschichte verbindet Zeugnis mit eigener Prüfung und lädt dazu ein, religiöse Grenzen respektvoll zu überschreiten, ohne die Unterschiede zu verleugnen."
+    ],
+    "quiz": [
+      {
+        "q": "Was fragt die Frau über Anbetung?",
+        "a": "Nach dem rechten Ort der Anbetung",
+        "wrong": [
+          "Nach dem Datum des Passafestes",
+          "Nach dem römischen Zoll"
+        ]
+      },
+      {
+        "q": "Was tun viele Bewohner der Stadt?",
+        "a": "Sie hören Jesus selbst",
+        "wrong": [
+          "Sie verbieten das Gespräch",
+          "Sie reisen sofort nach Rom"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich anderen von einer Begegnung erzählen und ihnen Raum zur eigenen Prüfung lassen?",
+    "connection": {
+      "from": "1Mo 33,18-20",
+      "to": "Joh 4,5-6",
+      "kind": "theme",
+      "note": "Der Jakobbezug verortet die Begegnung in Israels Familiengeschichte."
+    },
+    "image": "begegnungen"
+  },
+  {
+    "id": "john-6",
+    "campaign": "john",
+    "title": "Brot des Lebens: Zeichen, Glaube und Hingabe",
+    "refs": [
+      "Joh 6,1-15",
+      "Joh 6,22-40",
+      "Joh 6,48-69",
+      "2Mo 16,4-15"
+    ],
+    "terms": [
+      {
+        "term": "ἄρτος (artos)",
+        "explanation": "Brot"
+      },
+      {
+        "term": "ζωή (zōē)",
+        "explanation": "Leben"
+      }
+    ],
+    "body": [
+      "Johannes erzählt die Speisung im Umfeld des Passafestes. Ein Junge besitzt wenige Brote und Fische, die Menge wird satt. Jesus entzieht sich der Absicht, ihn zum König zu machen. Die Reaktion zeigt die mögliche Spannung zwischen empfangener Hilfe und dem Wunsch, Jesu Sendung nach eigenen Erwartungen zu bestimmen.",
+      "Die anschließende Rede erinnert an das Manna in der Wüste. Jesus unterscheidet vergängliche Nahrung und das Leben, das Gott schenkt. Er bezeichnet sich selbst als Brot des Lebens. Die Worte über Essen seines Fleisches und Trinken seines Blutes werden in verschiedenen christlichen Traditionen sakramental, auf Glauben und Teilhabe an Christus oder in einer Verbindung dieser Perspektiven verstanden. Die Rede sollte nicht aus ihrem langen Zusammenhang heraus auf eine einzige isolierte Formulierung verkürzt werden.",
+      "Viele Jünger werden an der Rede irre und gehen fort. Petrus antwortet auf Jesu Frage mit dem Vertrauen auf seine Worte des ewigen Lebens. Johannes verschweigt die Schwierigkeit der Lehre nicht. Wer die Geschichte liest, kann zwischen dem unmittelbaren Zeichen, der Erklärung und den unterschiedlichen Reaktionen unterscheiden."
+    ],
+    "quiz": [
+      {
+        "q": "Welche ältere Geschichte wird in der Brotrede aufgenommen?",
+        "a": "Das Manna in der Wüste",
+        "wrong": [
+          "Die Krönung Sauls",
+          "Die Reise nach Malta"
+        ]
+      },
+      {
+        "q": "Wie reagiert ein Teil der Jünger auf die Rede?",
+        "a": "Sie wenden sich ab",
+        "wrong": [
+          "Alle verstehen sofort jeden Satz",
+          "Sie krönen Jesus in Rom"
+        ]
+      }
+    ],
+    "reflection": "Was unterscheidet Vertrauen von dem Wunsch, Gottes Handeln zu kontrollieren?",
+    "connection": {
+      "from": "2Mo 16,4-15",
+      "to": "Joh 6,31-35",
+      "kind": "allusion",
+      "note": "Johannes entfaltet das Mannamotiv im Licht Jesu."
+    },
+    "image": "wunder"
+  },
+  {
+    "id": "john-7",
+    "campaign": "john",
+    "title": "Das Licht für den Blinden: Sehen und Urteil",
+    "refs": [
+      "Joh 9,1-41",
+      "Joh 8,12"
+    ],
+    "terms": [
+      {
+        "term": "φῶς (phōs)",
+        "explanation": "Licht"
+      },
+      {
+        "term": "βλέπω (blepō)",
+        "explanation": "sehen"
+      }
+    ],
+    "body": [
+      "Die Jünger fragen zu Beginn nach der Schuld für die Blindheit eines Menschen. Jesus weist die zugespitzte Alternative zurück, der Mann oder seine Eltern müssten durch eine konkrete Sünde die Ursache gesetzt haben. Die Heilung führt zu einer langen Reihe von Befragungen. Der Geheilte berichtet zunächst schlicht, was ihm geschehen ist, und antwortet zunehmend selbstbewusster.",
+      "Der Konflikt betrifft auch den Sabbat und unterschiedliche Deutungen von Jesu Autorität. Die Eltern fürchten die Folgen einer Aussage. Innerhalb des Evangeliums gehört diese Szene zu einer Reihe von Konflikten um Zugehörigkeit und Bekenntnis. Historische Modelle zur Entstehung dieser Konflikte sind umstritten; sie berechtigen nicht, alle jüdischen Menschen als blind oder feindlich darzustellen.",
+      "Am Ende verknüpft Jesus körperliches Sehen mit dem Bild geistlicher Wahrnehmung. Diejenigen, die sich ihres Sehens sicher sind, müssen sich prüfen lassen. Das Gleichnisartige des Schlusses darf nicht dazu führen, Menschen mit Sehbehinderungen als geistlich mangelhaft anzusehen. Die Erzählung fragt nach der Bereitschaft, ein offenes Zeugnis wahrzunehmen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Schuldzuweisung weist Jesus zurück?",
+        "a": "Die einfache Zuordnung der Blindheit zu einer konkreten Sünde von Mann oder Eltern",
+        "wrong": [
+          "Die Existenz jedes Leides",
+          "Jede menschliche Verantwortung"
+        ]
+      },
+      {
+        "q": "Was kennzeichnet das Zeugnis des Geheilten?",
+        "a": "Er berichtet, was ihm geschehen ist",
+        "wrong": [
+          "Er nennt sich selbst Gott",
+          "Er erklärt die gesamte Medizin für unnötig"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich mein eigenes Urteil prüfen, statt andere vorschnell schuldig zu sprechen?",
+    "connection": {
+      "from": "Jes 42,6-7",
+      "to": "Joh 9,1-7",
+      "kind": "theme",
+      "note": "Licht und Öffnung der Augen bilden ein gemeinsames prophetisches Motiv."
+    },
+    "image": "wunder"
+  },
+  {
+    "id": "john-8",
+    "campaign": "john",
+    "title": "Lazarus: Trauer und Auferstehungshoffnung",
+    "refs": [
+      "Joh 11,1-44",
+      "Joh 11,45-53"
+    ],
+    "terms": [
+      {
+        "term": "ἀνάστασις (anastasis)",
+        "explanation": "Auferstehung"
+      },
+      {
+        "term": "ζωή (zōē)",
+        "explanation": "Leben"
+      }
+    ],
+    "body": [
+      "Johannes schildert Krankheit, verzögerte Ankunft, Tod und Trauer. Marta begegnet Jesus mit dem Satz, dass ihr Bruder nicht gestorben wäre, wenn Jesus dort gewesen wäre. Ihre Hoffnung auf eine Auferstehung am letzten Tag wird zum Ausgangspunkt von Jesu Selbstoffenbarung. Jesus spricht von sich als Auferstehung und Leben, ohne die Wirklichkeit von Tod und Trauer zu leugnen.",
+      "Maria kommt ebenfalls zu Jesus; die Erzählung berichtet seine Erschütterung und Tränen. Das ist wichtig für eine verantwortliche Auslegung: Glaube verbietet Trauer nicht. Lazarus wird aus dem Grab gerufen. Dieses besondere Zeichen ist im Evangelium keine Garantie, dass jede verstorbene Person im gegenwärtigen Leben wieder auferweckt wird.",
+      "Die Reaktionen führen nicht nur zu Glauben, sondern auch zu der Entscheidung, Jesus zu töten. Der Evangelist verbindet dadurch das geschenkte Leben mit Jesu eigenem bevorstehenden Tod. Die Auferstehungshoffnung des NT geht über die Rückkehr in das bisherige sterbliche Leben hinaus. Johannes lädt dazu ein, Leid, Jesu Gegenwart und Gottes Zukunft gemeinsam wahrzunehmen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Hoffnung äußert Marta bereits vor der Zeichenhandlung?",
+        "a": "Auferstehung am letzten Tag",
+        "wrong": [
+          "Die sofortige Abschaffung aller Gräber",
+          "Eine Königskrönung des Lazarus"
+        ]
+      },
+      {
+        "q": "Was verschweigt Johannes über Jesus nicht?",
+        "a": "Seine Tränen",
+        "wrong": [
+          "Dass er nie Menschen begegnet",
+          "Dass er das Grab nicht sieht"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Hoffnung Trauer begleiten, ohne sie zu verdrängen?",
+    "connection": {
+      "from": "Dan 12,2",
+      "to": "Joh 11,24-26",
+      "kind": "theme",
+      "note": "Die Auferstehungshoffnung steht in Verbindung mit Jesu Selbstoffenbarung."
+    },
+    "image": "lazarus"
+  },
+  {
+    "id": "john-9",
+    "campaign": "john",
+    "title": "Das Obergemach: Dienst, Liebe und der Beistand",
+    "refs": [
+      "Joh 13,1-17",
+      "Joh 13,31-38",
+      "Joh 14,1-27"
+    ],
+    "terms": [
+      {
+        "term": "παράκλητος (paraklētos)",
+        "explanation": "Beistand, Anwalt, Helfer"
+      },
+      {
+        "term": "ἀγάπη (agapē)",
+        "explanation": "Liebe"
+      }
+    ],
+    "body": [
+      "Johannes 13 eröffnet die Abschiedszeit mit der Fußwaschung. Jesus übernimmt eine Tätigkeit niedrigen sozialen Ranges. Petrus reagiert zunächst mit Widerstand; die Szene verbindet empfangenen Dienst und die Verpflichtung, anderen zu dienen. Jesus behält seine Rolle als Lehrer und Herr, gerade indem er nicht an Status festhält.",
+      "Das neue Gebot der gegenseitigen Liebe steht im Zusammenhang von Jesu eigener Hingabe. Es bedeutet nicht, die ältere Tora habe Liebe nicht gekannt. Die Neuheit in Johannes liegt in der Orientierung an Jesu Liebe und der konkreten Jüngergemeinschaft. Die Abschiedsrede nimmt die Angst der Jünger vor Trennung ernst und spricht vom Weg zum Vater.",
+      "Der verheißene Paraklet wird als Beistand beschrieben, der lehrt, erinnert und Zeugnis gibt. Christliche Traditionen unterscheiden sich in der theologischen Beschreibung seines Verhältnisses zu Vater und Sohn. Der Text selbst verbindet seine Aufgabe mit Jesu Abwesenheit und dem Fortbestehen der Jüngergemeinschaft. Die Zusage von Frieden ist kein Versprechen, niemals mehr bedrängt zu werden."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Tätigkeit übernimmt Jesus in Kapitel 13?",
+        "a": "Die Fußwaschung",
+        "wrong": [
+          "Die Königskrönung des Petrus",
+          "Die Eintreibung römischer Steuern"
+        ]
+      },
+      {
+        "q": "Welche Aufgabe nennt die Rede für den Beistand?",
+        "a": "Lehren und erinnern",
+        "wrong": [
+          "Jeden Menschen zum König machen",
+          "Die Schrift überflüssig machen"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich anderen dienen, ohne Dienst als Mittel der Überlegenheit zu gebrauchen?",
+    "connection": {
+      "from": "3Mo 19,18",
+      "to": "Joh 13,34-35",
+      "kind": "theme",
+      "note": "Das Liebesgebot erhält im Licht von Jesu Hingabe seinen besonderen Akzent."
+    },
+    "image": "abendmahl"
+  },
+  {
+    "id": "john-10",
+    "campaign": "john",
+    "title": "Vollbracht und auferstanden: Zeugnis und Bekenntnis",
+    "refs": [
+      "Joh 18,28-40",
+      "Joh 19,16-37",
+      "Joh 20,1-31"
+    ],
+    "terms": [
+      {
+        "term": "τετέλεσται (tetelestai)",
+        "explanation": "es ist vollbracht, vollendet"
+      },
+      {
+        "term": "μάρτυς (martys)",
+        "explanation": "Zeuge; Wortfeld des Zeugnisses"
+      }
+    ],
+    "body": [
+      "Johannes stellt Jesu Gespräch mit Pilatus in den Horizont von Königtum und Wahrheit. Die Macht des römischen Amtsträgers steht neben Jesu Aussage, dass sein Königtum nicht aus dieser Welt stammt. Die Kreuzigung bleibt eine konkrete römische Gewalthandlung; die Erzählung darf nicht in kollektive Schuldzuweisungen an jüdische Menschen umgedeutet werden.",
+      "Der Ruf der Vollendung am Kreuz steht in Johannes neben Schriftbezügen und dem Zeugnis über Jesu Tod. Die Rolle des geliebten Jüngers, der Frauen und der an der Bestattung beteiligten Personen macht konkrete Beziehungen sichtbar. Die Passion ist nicht bloß ein theologisches Symbol, sondern gehört zum zentralen erzählten Geschehen.",
+      "Kapitel 20 beginnt mit Maria Magdalena am Grab. Später begegnet Jesus den Jüngern und Thomas. Thomas bekennt Jesus in einer Formulierung, die einen christologischen Höhepunkt des Buches bildet. Der Evangelist nennt anschließend den Zweck der ausgewählten Zeichen: Glauben und Leben. Fragen, Zeugnisse und Bekenntnis gehören in dieser Schlussbewegung zusammen. Kapitel 21 ergänzt den Weg der Jünger nach Galiläa."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Fragen bestimmt das Gespräch mit Pilatus?",
+        "a": "Königtum und Wahrheit",
+        "wrong": [
+          "Den Bau der Stiftshütte",
+          "Die Zahl der Richter"
+        ]
+      },
+      {
+        "q": "Welchen Zweck nennt Johannes 20,31?",
+        "a": "Glauben und Leben in Jesu Namen",
+        "wrong": [
+          "Die Erhebung von Steuern",
+          "Die vollständige Biografie aller Jünger"
+        ]
+      }
+    ],
+    "reflection": "Was bedeutet es für mich, dass Fragen und Bekenntnis in derselben Geschichte vorkommen?",
+    "connection": {
+      "from": "Ps 22,18",
+      "to": "Joh 19,23-24",
+      "kind": "quote",
+      "note": "Johannes erklärt die Verteilung der Kleider mit dem Psalmwort."
+    },
+    "image": "auferstehung"
+  },
+  {
+    "id": "rev-intro",
+    "campaign": "revelation",
+    "title": "Offenbarung: Jesus Christus und die Hoffnung",
+    "refs": [
+      "Offb 1,1-20",
+      "Offb 22,6-21",
+      "Dan 7,13-14"
+    ],
+    "terms": [
+      {
+        "term": "ἀποκάλυψις (apokalypsis)",
+        "explanation": "Enthüllung, Offenbarung"
+      },
+      {
+        "term": "μακάριος (makarios)",
+        "explanation": "selig"
+      }
+    ],
+    "body": [
+      "Johannes schreibt an sieben Gemeinden in der römischen Provinz Asia. Die Eingangsworte verbinden das Schreiben mit Offenbarung, prophetischem Zeugnis und Segen für das Lesen und Bewahren. Jesus wird mit Titeln beschrieben, die Zeugnis, Auferstehung und Herrschaft verbinden. Johannes nennt Patmos als Ort seines Aufenthalts. Der Verfasser ist nicht zweifelsfrei mit dem Zebedaiden zu identifizieren.",
+      "Die erste Vision zeigt eine Gestalt wie einen Menschensohn inmitten goldener Leuchter. Der Text deutet die Leuchter selbst auf die sieben Gemeinden. Solche eingebauten Erklärungen sind besonders wichtig, bevor Ausleger weitere Einzelheiten zuordnen. Die Vision verwendet Bilder aus Daniel und anderen Schriften Israels.",
+      "Das Buch fordert nicht nur das Erkennen von Zukunftsszenarien, sondern Hören, Bewahren und Treue. Die verschiedenen theologischen Auslegungsmodelle der Offenbarung sollten den unmittelbaren Adressatenkreis nicht übergehen. Die abschließenden Segensworte erinnern daran, dass Hoffnung und verantwortliche Lebensführung zusammengehören."
+    ],
+    "quiz": [
+      {
+        "q": "Was bedeuten die Leuchter in der Erklärung?",
+        "a": "Die sieben Gemeinden",
+        "wrong": [
+          "Sieben moderne Staaten",
+          "Sieben unbenannte Planeten"
+        ]
+      },
+      {
+        "q": "Welche Reaktion nennt die Seligpreisung am Anfang?",
+        "a": "Lesen, hören und bewahren",
+        "wrong": [
+          "Ein genaues Datum berechnen",
+          "Die gesamte übrige Bibel vergessen"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich prophetische Texte als Aufruf zur verantwortlichen Treue lesen?",
+    "connection": {
+      "from": "Dan 7,13-14",
+      "to": "Offb 1,13",
+      "kind": "allusion",
+      "note": "Das Menschensohnmotiv verbindet die Visionen."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "rev-churches-west",
+    "campaign": "revelation",
+    "title": "Ephesus, Smyrna und Pergamon",
+    "refs": [
+      "Offb 2,1-17",
+      "Apg 19,23-41"
+    ],
+    "terms": [
+      {
+        "term": "ὑπομονή (hypomonē)",
+        "explanation": "Ausdauer"
+      },
+      {
+        "term": "νικάω (nikaō)",
+        "explanation": "überwinden, siegen"
+      }
+    ],
+    "body": [
+      "Die ersten drei Sendschreiben sprechen jeweils eine konkrete Gemeinde an. Ephesus wird für Ausdauer und Unterscheidung gelobt, zugleich aber wegen des Verlusts der ersten Liebe ermahnt. Smyrna erhält Trost angesichts von Armut und Bedrängnis. Pergamon wird für das Festhalten am Namen Jesu gewürdigt und zugleich mit Problemen innerhalb der Gemeinschaft konfrontiert.",
+      "Die Städte besaßen unterschiedliche religiöse, wirtschaftliche und politische Umfelder. Die Bedeutung einzelner Symbole, etwa des Thrones Satans in Pergamon, wird verschieden erklärt. Eine sichere Identifikation mit einem einzelnen archäologischen Bauwerk ist nicht möglich. Begriffe der damaligen Konflikte dürfen nicht in pauschale Feindbilder gegen Juden oder andere Religionen übertragen werden.",
+      "Die wiederkehrende Aufforderung zum Hören lädt jede Gemeinde ein, ihre Situation zu prüfen. Treue, Unterscheidung und Liebe sollten zusammengehören: Ephesus zeigt, dass richtige Abgrenzung allein nicht genügt, während Smyrna daran erinnert, dass äußere Armut kein Beweis geistlichen Versagens ist."
+    ],
+    "quiz": [
+      {
+        "q": "Was fehlt Ephesus nach dem Sendschreiben?",
+        "a": "Die erste Liebe",
+        "wrong": [
+          "Ein neuer Königstitel",
+          "Ein Tempel in Babylon"
+        ]
+      },
+      {
+        "q": "Welche Gemeinde erhält besonderen Trost in Armut und Bedrängnis?",
+        "a": "Smyrna",
+        "wrong": [
+          "Laodizea",
+          "Ninive"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Überzeugung mit Liebe verbinden, statt das eine gegen das andere auszuspielen?",
+    "connection": {
+      "from": "Offb 2,2-5",
+      "to": "Offb 2,8-11",
+      "kind": "theme",
+      "note": "Zwei unterschiedliche Gemeindesituationen zeigen verschiedene Herausforderungen der Treue."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "rev-churches-central",
+    "campaign": "revelation",
+    "title": "Thyatira und Sardes",
+    "refs": [
+      "Offb 2,18-29",
+      "Offb 3,1-6"
+    ],
+    "terms": [
+      {
+        "term": "ἔργον (ergon)",
+        "explanation": "Werk, Tat"
+      },
+      {
+        "term": "γρηγορέω (grēgoreō)",
+        "explanation": "wachsam sein"
+      }
+    ],
+    "body": [
+      "In Thyatira nennt das Sendschreiben Liebe, Glauben, Dienst und Ausdauer als Stärken. Gleichzeitig kritisiert es eine als Isebel bezeichnete Person und die mit ihr verbundene Lehre. Der Name greift die Königsüberlieferung auf; ob es sich um einen realen Namen oder eine polemische Bezeichnung handelt, ist nicht sicher. Der Text warnt vor konkretem Fehlverhalten, nicht vor Frauen als Gruppe.",
+      "Sardes besitzt den Ruf, lebendig zu sein, wird aber als tot angesprochen. Die Aufforderung zur Wachsamkeit gilt einer Diskrepanz zwischen äußerem Ansehen und tatsächlichem Zustand. Der historische Hintergrund der Stadt kann die Wirkung des Bildes beleuchten, ohne jede Einzelheit der Ermahnung dadurch zu erklären.",
+      "Beide Schreiben verbinden Anerkennung oder Ruf mit notwendiger Prüfung. Geistliche Glaubwürdigkeit hängt nicht nur von einer glänzenden Außendarstellung ab. Die Zusagen an Treue werden im Horizont göttlichen Urteils formuliert und dürfen nicht als Freibrief für destruktive private Sanktionen gelesen werden."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Stärken werden Thyatira zugeschrieben?",
+        "a": "Liebe, Glaube, Dienst und Ausdauer",
+        "wrong": [
+          "Militärische Überlegenheit",
+          "Ein vollständiges Ende aller Konflikte"
+        ]
+      },
+      {
+        "q": "Was kritisiert die Botschaft an Sardes?",
+        "a": "Den Widerspruch zwischen Ruf und tatsächlichem Zustand",
+        "wrong": [
+          "Die Existenz einer Stadtmauer",
+          "Jede Form gemeinsamen Lernens"
+        ]
+      }
+    ],
+    "reflection": "Wo sollte mein tatsächliches Handeln mit meinem Ruf übereinstimmen?",
+    "connection": {
+      "from": "1Kö 21,1-16",
+      "to": "Offb 2,20",
+      "kind": "allusion",
+      "note": "Der Name Isebel greift die ältere Königsüberlieferung auf."
+    },
+    "image": "jesaja"
+  },
+  {
+    "id": "rev-churches-east",
+    "campaign": "revelation",
+    "title": "Philadelphia und Laodizea",
+    "refs": [
+      "Offb 3,7-22",
+      "Jes 22,20-22"
+    ],
+    "terms": [
+      {
+        "term": "κλείς (kleis)",
+        "explanation": "Schlüssel"
+      },
+      {
+        "term": "ζῆλος (zēlos)",
+        "explanation": "Eifer"
+      }
+    ],
+    "body": [
+      "Philadelphia wird mit einer offenen Tür und geringer Kraft beschrieben. Die Verheißung stärkt eine Gemeinschaft, die trotz begrenzter Möglichkeiten am Wort festgehalten hat. Die Schlüsselmetapher greift Jesajas Sprache von der Verantwortung über das Haus Davids auf. Die konfliktreichen Bezeichnungen anderer Gruppen stehen in einer antiken Auseinandersetzung und dürfen nicht gegen heutige jüdische Menschen eingesetzt werden.",
+      "Laodizea wird wegen ihrer Selbstzufriedenheit kritisiert. Die Bilder von lauwarmem Wasser, Reichtum, Kleidung und Augensalbe passen in eine Stadtwelt, deren genauere historische Bezüge unterschiedlich diskutiert werden. Die Pointe ist nicht die Verurteilung jeder wirtschaftlichen Sicherheit, sondern die Blindheit für den eigenen Zustand.",
+      "Die Aufforderung zur Umkehr steht neben der Zusage von Jesu Nähe. Das Bild von der Tür, an der Jesus anklopft, richtet sich unmittelbar an eine Gemeinde. Es wird auch persönlich angewandt, doch der gemeinschaftliche Kontext sollte mitgelesen werden. Die beiden Städte zeigen, dass geringe äußere Kraft und großer äußerer Besitz nicht automatisch den geistlichen Zustand offenbaren."
+    ],
+    "quiz": [
+      {
+        "q": "Womit wird Philadelphia ermutigt?",
+        "a": "Mit einer offenen Tür trotz geringer Kraft",
+        "wrong": [
+          "Mit einem neuen Heer",
+          "Mit einer Garantie vom Reichtum"
+        ]
+      },
+      {
+        "q": "Welches Problem hat Laodizea?",
+        "a": "Selbstzufriedenheit und geistliche Blindheit",
+        "wrong": [
+          "Zu geringe Selbstdarstellung",
+          "Zu viele Fragen an den Text"
+        ]
+      }
+    ],
+    "reflection": "Welche Form von äußerer Sicherheit kann mich blind für notwendige Veränderung machen?",
+    "connection": {
+      "from": "Jes 22,22",
+      "to": "Offb 3,7",
+      "kind": "allusion",
+      "note": "Die Schlüsselmetapher wird christologisch aufgenommen."
+    },
+    "image": "jesus"
+  },
+  {
+    "id": "rev-throne",
+    "campaign": "revelation",
+    "title": "Der Thronsaal und die versiegelte Buchrolle",
+    "refs": [
+      "Offb 4,1-11",
+      "Offb 5,1-14",
+      "Hes 1,4-14"
+    ],
+    "terms": [
+      {
+        "term": "θρόνος (thronos)",
+        "explanation": "Thron"
+      },
+      {
+        "term": "ἀρνίον (arnion)",
+        "explanation": "Lamm"
+      }
+    ],
+    "body": [
+      "Der Thronsaal in Offenbarung 4 führt in eine Vision der Anbetung Gottes als Schöpfer. Die lebendigen Wesen und Ältesten umgeben den Thron. Mehrere Bilder erinnern an Hesekiel und Jesaja, doch die Gestalten sind nicht in allen Einzelheiten gleich beschrieben. Die vielen Augen und sechs Flügel stehen im Text von Offenbarung 4; Jesaja 6 nennt die sechs Flügel seiner Seraphim, beschreibt sie aber nicht mit Augen.",
+      "Kapitel 5 lenkt den Blick auf die versiegelte Buchrolle. Der zunächst nicht gefundene würdige Öffner und die Tränen des Johannes bilden eine Spannung, die mit dem geschlachteten Lamm gelöst wird. Löwen- und Lammbild stehen bewusst zusammen. Das Lamm ist würdig, weil seine Hingabe Menschen für Gott erworben hat.",
+      "Der Gesang umfasst die Schöpfung und verbindet Gottes Herrlichkeit mit der Hingabe des Lammes. Christliche Traditionen ziehen daraus unterschiedliche christologische Folgerungen; wichtig sind die konkreten Rollen und die Anbetungssprache des Textes. Eine sorgfältige Lektüre lässt die Vision zuerst als Bild göttlicher Herrschaft wirken."
+    ],
+    "quiz": [
+      {
+        "q": "Was deutet der Gesang in Kapitel 4 besonders an?",
+        "a": "Gott ist als Schöpfer würdig",
+        "wrong": [
+          "Die Ältesten erschaffen die Welt",
+          "Der Thron gehört einem römischen Kaiser"
+        ]
+      },
+      {
+        "q": "Was sieht Johannes in Kapitel 5?",
+        "a": "Das Lamm wie geschlachtet",
+        "wrong": [
+          "Einen unverwundbaren Soldaten",
+          "Die Bundeslade im Meer"
+        ]
+      }
+    ],
+    "reflection": "Wie verändert das Bild des Lammes mein Verständnis von Sieg?",
+    "connection": {
+      "from": "Hes 1,4-14",
+      "to": "Offb 4,6-8",
+      "kind": "allusion",
+      "note": "Johannes greift ältere Thronsaalbilder auf und gestaltet sie neu."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "rev-seals",
+    "campaign": "revelation",
+    "title": "Die sieben Siegel: Leid, Klage und Bewahrung",
+    "refs": [
+      "Offb 6,1-17",
+      "Offb 7,1-17",
+      "Offb 8,1"
+    ],
+    "terms": [
+      {
+        "term": "σφραγίς (sphragis)",
+        "explanation": "Siegel"
+      },
+      {
+        "term": "λευκός (leukos)",
+        "explanation": "weiß"
+      }
+    ],
+    "body": [
+      "Die ersten vier Siegel zeigen Reiter und Bilder von Eroberung, Krieg, Mangel und Tod. Ihre Deutung, besonders die des ersten Reiters, ist nicht in allen Traditionen gleich. Die Vision darf nicht als sicherer Schlüssel für die Identifikation aktueller Einzelpersonen oder Ereignisse missverstanden werden. Mit dem fünften Siegel tritt die Klage der Getöteten in den Vordergrund.",
+      "Die Frage nach dem Wie lange wird nicht verschwiegen. Das sechste Siegel verwendet kosmische Erschütterungsbilder. Kapitel 7 unterbricht den Ablauf mit den Versiegelten und einer großen Menge aus vielen Völkern. Ob die beiden Darstellungen dieselbe Gemeinschaft aus unterschiedlichen Blickwinkeln oder verschiedene Gruppen schildern, ist eine bekannte Auslegungsfrage.",
+      "Die Zusage von Gottes Fürsorge in Kapitel 7 hebt das bereits beschriebene Leiden nicht auf. Das weiße Gewand und die Waschung im Blut des Lammes sind symbolische Rettungsbilder. Die Stille bei Öffnung des siebten Siegels leitet einen neuen Abschnitt ein. Der Text verbindet Gericht, Klage, Bewahrung und Hoffnung."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Frage stellen die Getöteten beim fünften Siegel?",
+        "a": "Wie lange bis zur Gerechtigkeit?",
+        "wrong": [
+          "Wer baut den Tempel?",
+          "Wo wird der Kaiser gekrönt?"
+        ]
+      },
+      {
+        "q": "Wie wird die große Menge beschrieben?",
+        "a": "Aus vielen Völkern und Sprachen",
+        "wrong": [
+          "Aus einer einzigen Familie",
+          "Ausschließlich aus Rom"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich angesichts von Unrecht klagen und Hoffnung festhalten?",
+    "connection": {
+      "from": "Sach 6,1-8",
+      "to": "Offb 6,1-8",
+      "kind": "allusion",
+      "note": "Die Visionen nutzen verwandte Pferde- und Herrschaftsbilder."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "rev-trumpets",
+    "campaign": "revelation",
+    "title": "Posaunen, Schriftrolle und die zwei Zeugen",
+    "refs": [
+      "Offb 8,6-13",
+      "Offb 9,13-21",
+      "Offb 10,1-11",
+      "Offb 11,1-13"
+    ],
+    "terms": [
+      {
+        "term": "σάλπιγξ (salpinx)",
+        "explanation": "Posaune"
+      },
+      {
+        "term": "μάρτυς (martys)",
+        "explanation": "Zeuge"
+      }
+    ],
+    "body": [
+      "Die Posaunen leiten eine Serie von Gerichtsbildern ein. Einige erinnern an die Plagen des Exodus; die begrenzten Anteile in den Visionen machen deutlich, dass die Bilder nicht einfach mit den späteren sieben Schalen identisch sind. Das Kapitel über die Heimsuchungen betont auch, dass Menschen nicht umkehren.",
+      "Johannes erhält in Kapitel 10 eine kleine Schriftrolle, die er essen soll. Süße und Bitterkeit gehören zur Erfahrung prophetischen Zeugnisses. Das Bild greift Hesekiels Berufung auf. In Kapitel 11 treten zwei Zeugen auf, deren Darstellung Merkmale prophetischer Gestalten verbindet. Die Frage nach ihrer genauen Identität wird unterschiedlich beantwortet.",
+      "Die Vision schildert Widerstand gegen Zeugnis, seinen scheinbaren Untergang und Gottes Wiederherstellung. Sie gibt keine Anleitung, gegen andere Menschen Gericht auszuüben. Das prophetische Bild fordert vielmehr zur Auseinandersetzung mit der Botschaft, zur Umkehr und zur Hoffnung angesichts unterdrückter Zeugnisse auf."
+    ],
+    "quiz": [
+      {
+        "q": "Was soll Johannes mit der kleinen Rolle tun?",
+        "a": "Sie essen",
+        "wrong": [
+          "Sie verkaufen",
+          "Sie im Meer versenken"
+        ]
+      },
+      {
+        "q": "Welche prophetische Berufung klingt an?",
+        "a": "Hesekiels Essen der Schriftrolle",
+        "wrong": [
+          "Salomos Tempelbau",
+          "Noahs Arche"
+        ]
+      }
+    ],
+    "reflection": "Wo kann die Weitergabe von Wahrheit zugleich Freude und Schwierigkeit bedeuten?",
+    "connection": {
+      "from": "Hes 3,1-3",
+      "to": "Offb 10,8-11",
+      "kind": "allusion",
+      "note": "Das Essen der Rolle ist ein bewusst aufgegriffenes Prophetenbild."
+    },
+    "image": "ezechiel"
+  },
+  {
+    "id": "rev-dragon",
+    "campaign": "revelation",
+    "title": "Die Frau, das Kind und der Drache",
+    "refs": [
+      "Offb 12,1-17",
+      "1Mo 37,9-11",
+      "Ps 2,7-9"
+    ],
+    "terms": [
+      {
+        "term": "δράκων (drakōn)",
+        "explanation": "Drache"
+      },
+      {
+        "term": "διάβολος (diabolos)",
+        "explanation": "Verleumder, Teufel"
+      }
+    ],
+    "body": [
+      "Die Szene in Offenbarung 12 zeigt eine Frau, ein gefährdetes Kind und einen Drachen. Sonne, Mond und Sterne erinnern an Josefs Traum; das Herrschaftsmotiv des Kindes nimmt königliche Psalmensprache auf. Die genaue Deutung der Frau unterscheidet sich: Israel, das Gottesvolk, Maria oder miteinander verbundene Perspektiven werden diskutiert. Der Text darf nicht auf eine einzelne spätere Darstellung reduziert werden.",
+      "Der Drache wird im Text selbst als alte Schlange, Teufel und Satan bezeichnet. Die Vision verbindet himmlischen Konflikt mit der Bedrängnis derjenigen, die an Gottes Geboten und Jesu Zeugnis festhalten. Das Bild der Wüste erinnert an Schutz und Bewahrung, ohne jede Episode des Exodus nachzustellen.",
+      "Die konkrete Zuordnung der Zeitangaben ist zwischen den Auslegungsschulen umstritten. Der entscheidende Schwerpunkt liegt auf Gottes begrenzender Macht gegenüber dem Bösen und der Treue der Zeugen. Die Vision ist kein Auftrag, persönliche Gegner als dämonische Wesen zu identifizieren oder private Zufälle auf sichere geistliche Botschaften zurückzuführen."
+    ],
+    "quiz": [
+      {
+        "q": "Wie identifiziert der Text den Drachen?",
+        "a": "Als alte Schlange, Teufel und Satan",
+        "wrong": [
+          "Als den Propheten Jesaja",
+          "Als die Bundeslade"
+        ]
+      },
+      {
+        "q": "Welche ältere königliche Sprache greift das Kindmotiv auf?",
+        "a": "Psalm 2",
+        "wrong": [
+          "Das Buch Ester allein",
+          "Die Maße der Arche"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich geistliche Hoffnung von der Verurteilung konkreter Mitmenschen unterscheiden?",
+    "connection": {
+      "from": "Ps 2,9",
+      "to": "Offb 12,5",
+      "kind": "allusion",
+      "note": "Das Herrschaftsmotiv des Kindes greift den Königspsalm auf."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "rev-beasts",
+    "campaign": "revelation",
+    "title": "Die Tiere, das Malzeichen und das Lamm",
+    "refs": [
+      "Offb 13,1-18",
+      "Offb 14,1-13",
+      "Dan 7,1-8"
+    ],
+    "terms": [
+      {
+        "term": "θηρίον (thērion)",
+        "explanation": "Tier"
+      },
+      {
+        "term": "χάραγμα (charagma)",
+        "explanation": "Zeichen, Prägung"
+      }
+    ],
+    "body": [
+      "Die Tiere in Offenbarung 13 werden mit Autorität, Gewalt, Verehrung und Zwang verbunden. Ihre Bildsprache führt die Tiergestalten aus Daniel weiter. Das zweite Tier lenkt Verehrung zum ersten; das Malzeichen steht in der erzählten Welt mit wirtschaftlicher Teilhabe und Loyalität in Verbindung. Der Text fordert Weisheit, nicht beliebige Spekulation.",
+      "Eine historische Auslegung sieht Bezüge zur römischen Macht und zum Kaiserkult. Die genaue Erfahrung der einzelnen Gemeinden ist historisch nicht vollständig rekonstruierbar. Die Zahl 666 erlaubt verschiedene antike Buchstabenrechnungen und Deutungen; einige Handschriften überliefern 616. Eine einzelne moderne Person oder Technik kann daraus nicht zuverlässig identifiziert werden.",
+      "Das folgende Kapitel stellt den Namen des Lammes und des Vaters dem Zwangszeichen gegenüber. Die Vision verbindet Anbetung mit gelebter Zugehörigkeit. Christliche Auslegung kann fragen, wie Macht Menschen zur Verabsolutierung irdischer Autorität verleitet, ohne jede staatliche Anordnung oder Wirtschaftsform pauschal als dämonisch zu deuten."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Verbindung betont die Erzählung beim Zeichen?",
+        "a": "Anbetung, Loyalität und wirtschaftlichen Zwang",
+        "wrong": [
+          "Ein zufälliges medizinisches Detail",
+          "Nur die Tageszeit"
+        ]
+      },
+      {
+        "q": "Welches Gegenbild erscheint in Kapitel 14?",
+        "a": "Die Zugehörigkeit zum Lamm",
+        "wrong": [
+          "Ein zweiter Pharao",
+          "Ein größerer Tempel"
+        ]
+      }
+    ],
+    "reflection": "Wo könnte ich eigene Vorteile auf Kosten meines Gewissens suchen?",
+    "connection": {
+      "from": "Dan 7,1-8",
+      "to": "Offb 13,1-2",
+      "kind": "allusion",
+      "note": "Die Tiere greifen Daniels Bildsprache weiter auf."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "rev-bowls",
+    "campaign": "revelation",
+    "title": "Sieben Schalen: Gerichtssprache und das Lied des Mose",
+    "refs": [
+      "Offb 15,1-8",
+      "Offb 16,1-21",
+      "2Mo 15,1-21"
+    ],
+    "terms": [
+      {
+        "term": "φιάλη (phialē)",
+        "explanation": "Schale"
+      },
+      {
+        "term": "κρίσις (krisis)",
+        "explanation": "Gericht, Urteil"
+      }
+    ],
+    "body": [
+      "Offenbarung 15 zeigt die Überwinder am gläsernen Meer und verbindet ihr Lied ausdrücklich mit Mose und dem Lamm. Der folgende Abschnitt beschreibt sieben Schalen mit Gerichtsbildern, die an Exodus erinnern: Wunden, Blut, Finsternis und weitere Heimsuchungen. Der literarische Bezug macht Gottes Gericht und Befreiung zu wichtigen Verständnishorizonten.",
+      "Die Bilder unterscheiden sich in ihrer Zuspitzung von den vorherigen Posaunen. Ausleger verstehen die Abschnitte als zeitliche Abfolge oder teilweise wiederkehrende Perspektiven derselben großen Konflikte. Der Text selbst sagt nicht, dass jede Schale einem sicher identifizierbaren modernen Ereignis entspricht. Armageddon ist ein symbolisch aufgeladener Ortsname; seine genaue Deutung ist umstritten.",
+      "Das Lied betont Gottes Gerechtigkeit. Die Gerichtssprache darf nicht zum Vorwand werden, menschliche Gewalt für heilig zu erklären. Gerade die Unterscheidung zwischen Gottes Urteil und privater Vergeltung ist wichtig. Der Text ruft zur Umkehr und zur Treue auf, statt zur Nachahmung der zerstörerischen Bilder."
+    ],
+    "quiz": [
+      {
+        "q": "Welche beiden Bezüge nennt das Lied?",
+        "a": "Mose und das Lamm",
+        "wrong": [
+          "Saul und Pilatus",
+          "Kain und der Pharao"
+        ]
+      },
+      {
+        "q": "Was liefert der Text nicht sicher?",
+        "a": "Eine Zuordnung jeder Schale zu einem heutigen Ereignis",
+        "wrong": [
+          "Sieben Schalenbilder",
+          "Gerichtssprache"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Gottes Gerechtigkeit suchen, ohne selbst Vergeltung zu beanspruchen?",
+    "connection": {
+      "from": "2Mo 15,1-21",
+      "to": "Offb 15,3-4",
+      "kind": "allusion",
+      "note": "Das Lied des Mose wird in der Vision ausdrücklich genannt."
+    },
+    "image": "mose"
+  },
+  {
+    "id": "rev-babylon",
+    "campaign": "revelation",
+    "title": "Der Fall Babylons: Macht, Handel und Gewalt",
+    "refs": [
+      "Offb 17,1-18",
+      "Offb 18,1-24",
+      "Jer 51,6-10"
+    ],
+    "terms": [
+      {
+        "term": "Βαβυλών (Babylōn)",
+        "explanation": "Babylon"
+      },
+      {
+        "term": "ἔμπορος (emporos)",
+        "explanation": "Kaufmann"
+      }
+    ],
+    "body": [
+      "Babylon erscheint als symbolische Gestalt einer reichen, mächtigen und gewalttätigen Stadt. Der Text verbindet ihren Einfluss mit politischen Herrschern und später mit wirtschaftlichen Netzwerken. Angesichts der ursprünglichen Adressaten und der Hinweise auf sieben Berge liegt ein Bezug zu Rom nahe, doch das Symbol kann in theologischer Auslegung auch über diese historische Situation hinausweisen.",
+      "Die Klage in Kapitel 18 zählt Luxusgüter und Menschenleben unter den Handelswaren auf. Der wirtschaftliche Erfolg der Stadt steht im Kontrast zu Ausbeutung und Gewalt. Die prophetische Tradition über den Fall des historischen Babylon liefert wichtige Sprachbilder. Die Stadtmetapher darf nicht für pauschale Schuldzuweisungen an eine heutige Bevölkerungsgruppe umgedeutet werden.",
+      "Der Aufruf, aus Babylon hinauszugehen, fragt nach Beteiligung und Loyalität. Christliche Traditionen wenden diese Sprache auf unterschiedliche politische oder religiöse Systeme an; eine einzelne gegenwärtige Zuordnung sollte nicht als zweifelsfrei biblisch behauptet werden. Praktisch lässt sich fragen, ob der eigene Wohlstand mit dem Schaden anderer verbunden ist."
+    ],
+    "quiz": [
+      {
+        "q": "Was beklagen die Kaufleute im Text?",
+        "a": "Den Verlust ihres Handels mit Babylon",
+        "wrong": [
+          "Die Rückkehr der Stämme",
+          "Das Ende aller Landwirtschaft"
+        ]
+      },
+      {
+        "q": "Welche ältere prophetische Stadttradition klingt an?",
+        "a": "Babylon in Jeremia",
+        "wrong": [
+          "Bethlehem in Rut allein",
+          "Nazareth in Lukas"
+        ]
+      }
+    ],
+    "reflection": "Welche Form von Wohlstand könnte auf Kosten anderer entstehen?",
+    "connection": {
+      "from": "Jer 51,6-10",
+      "to": "Offb 18,4-8",
+      "kind": "allusion",
+      "note": "Die Aufforderung zum Auszug nutzt ältere Gerichtssprache über Babylon."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "rev-victory",
+    "campaign": "revelation",
+    "title": "König, tausend Jahre und das letzte Gericht",
+    "refs": [
+      "Offb 19,11-21",
+      "Offb 20,1-15",
+      "Dan 7,9-10"
+    ],
+    "terms": [
+      {
+        "term": "ἔτη (etē)",
+        "explanation": "Jahre"
+      },
+      {
+        "term": "ἀνάστασις (anastasis)",
+        "explanation": "Auferstehung"
+      }
+    ],
+    "body": [
+      "Offenbarung 19 verwendet ein königliches Reiterbild, um den Sieg des Wortes Gottes darzustellen. Die gewaltvollen Visionen gehören zur apokalyptischen Gerichtssprache; sie ermächtigen keine christliche Gruppe zu eigener religiöser Gewalt. Im nächsten Kapitel wird Satan gebunden, eine tausendjährige Herrschaft beschrieben und anschließend eine letzte Konfrontation erzählt.",
+      "Die zeitliche und symbolische Zuordnung des tausendjährigen Reiches wird in der Kirchengeschichte unterschiedlich verstanden. Prämillennialistische, amillennialistische und postmillennialistische Modelle setzen verschiedene Akzente. Sie unterscheiden sich unter anderem in der Beziehung von Jesu Wiederkunft, Reich und endgültigem Gericht. Der Text sollte nicht durch die unkritische Übernahme einer einzigen Zeittafel ersetzt werden.",
+      "Das Gericht vor dem großen weißen Thron erinnert an Daniels Gerichtsbilder. Bücher und das Buch des Lebens verbinden Gottes Urteil mit menschlicher Verantwortlichkeit. Der Tod und das Totenreich werden am Ende selbst dem Feuersee übergeben. Die folgende Vision neuer Schöpfung gibt diesem Gericht eine Hoffnungsperspektive: Nicht Gewalt, sondern Gottes erneuertes Leben steht am Ziel."
+    ],
+    "quiz": [
+      {
+        "q": "Worüber unterscheiden sich die Auslegungsmodelle besonders?",
+        "a": "Über zeitliche und symbolische Einordnung des Reiches",
+        "wrong": [
+          "Über die Zahl der Mosebücher",
+          "Über die Existenz der Gemeinde Ephesus"
+        ]
+      },
+      {
+        "q": "Welches ältere Gerichtsmotiv wird aufgegriffen?",
+        "a": "Bücher und göttlicher Thron bei Daniel",
+        "wrong": [
+          "Die Hochzeit zu Kana",
+          "Die Nachlese in Rut"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich über Endzeitmodelle sprechen, ohne andere Menschen wegen unsicherer Details zu verurteilen?",
+    "connection": {
+      "from": "Dan 7,9-10",
+      "to": "Offb 20,11-15",
+      "kind": "allusion",
+      "note": "Das Gericht am Thron mit Büchern greift Daniel auf."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "rev-creation",
+    "campaign": "revelation",
+    "title": "Das neue Jerusalem und der Strom des Lebens",
+    "refs": [
+      "Offb 21,1-27",
+      "Offb 22,1-5",
+      "Hes 47,1-12",
+      "1Mo 2,8-10"
+    ],
+    "terms": [
+      {
+        "term": "καινός (kainos)",
+        "explanation": "neu"
+      },
+      {
+        "term": "ζωή (zōē)",
+        "explanation": "Leben"
+      }
+    ],
+    "body": [
+      "Die Schlussvision spricht von einem neuen Himmel und einer neuen Erde. Das neue Jerusalem kommt von Gott herab und wird in Brautsprache beschrieben. Gottes Wohnung bei den Menschen und das Ende von Tod, Trauer und Schmerz stehen im Mittelpunkt. Das Bild ist keine bloße Flucht aus der geschaffenen Welt, sondern eine Hoffnung auf Gottes erneuerte Wirklichkeit.",
+      "Die Stadtbeschreibung verwendet kostbare Materialien, Maße und die Namen der Stämme sowie der Apostel. Sie verbindet verschiedene Teile der biblischen Geschichte. Anders als frühere Heiligtumsbilder besitzt die Stadt keinen eigenen Tempel, weil Gott und das Lamm ihre Gegenwart bestimmen. Die Maße besitzen symbolische und literarische Funktionen; sie sind kein moderner Stadtbauplan.",
+      "Der Strom des Lebens und der Baum des Lebens erinnern an Eden und Hesekiels Tempelfluss. Die Blätter dienen der Heilung der Völker. Der Anfang der Bibel und die Schlussvision treten in eine starke bildliche Beziehung. Diese Hoffnung sollte nicht dazu führen, heutiges Leid zu verdrängen oder die gegenwärtige Schöpfung zu verachten. Sie lädt vielmehr zu Treue, Trost und verantwortlichem Handeln ein."
+    ],
+    "quiz": [
+      {
+        "q": "Warum besitzt die Stadt keinen eigenen Tempel?",
+        "a": "Gott und das Lamm sind ihre Gegenwart",
+        "wrong": [
+          "Die Menschen dürfen nicht anbeten",
+          "Ein römischer Erlass verbietet ihn"
+        ]
+      },
+      {
+        "q": "Woran erinnern Strom und Lebensbaum?",
+        "a": "Eden und Hesekiels Wasserbild",
+        "wrong": [
+          "Nur an einen römischen Hafen",
+          "Ausschließlich an die Plagen Ägyptens"
+        ]
+      }
+    ],
+    "reflection": "Welche Hoffnung kann mein heutiges Handeln gegenüber leidenden Menschen stärken?",
+    "connection": {
+      "from": "1Mo 2,8-10",
+      "to": "Offb 22,1-5",
+      "kind": "allusion",
+      "note": "Der Lebensbaum verbindet die Schlussvision mit dem Gartenmotiv der Genesis."
+    },
+    "image": "auferstehung"
+  }
+]
