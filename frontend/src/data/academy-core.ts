@@ -100,3 +100,20 @@ export function coverage(books:{code:string;chapters:number}[],stations:Station[
     return {book:b.code,stations:count,coveredChapters:[...chapters].sort((a,b)=>a-b),totalChapters:b.chapters};
   });
 }
+
+/** Keep all station/question IDs. A previously finished exam remains finished.
+ * If additions follow a terminal exam, move them ahead of it without a dependency cycle.
+ * Imported campaigns currently have at most one explicit final exam.
+ */
+export function orderFinalExams(stations:Station[]):Station[] {
+  const at=stations.findIndex(s=>s.type==="exam");
+  if(at<0||at===stations.length-1||stations.slice(at+1).some(s=>s.type==="exam")) return stations;
+  const final=stations[at], tail=stations.slice(at+1);
+  const prefix=stations.slice(0,at);
+  const ys=stations.map(s=>s.y).sort((a,b)=>b-a);
+  const replacePrereq=(s:Station):Station=>({...s,requires:[...new Set(s.requires.flatMap(id=>id===final.id?final.requires:[id]))]});
+  const lessons=tail.map(replacePrereq);
+  const additional=lessons.flatMap(s=>s.exam.slice(0,1).map(t=>({...t,id:final.id+"-review-"+t.id})));
+  const exam={...final,requires:[...new Set([...final.requires,...lessons.map(s=>s.id)])],exam:addMissingTasks(final.exam,additional)};
+  return [...prefix,...lessons,exam].map((s,i)=>({...s,y:ys[i]}));
+}
