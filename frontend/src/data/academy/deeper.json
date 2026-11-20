@@ -1,0 +1,1340 @@
+[
+  {
+    "id": "ac-hist-deborah",
+    "campaign": "history",
+    "title": "Debora und Barak: Mut und Verantwortung",
+    "refs": [
+      "Ri 4,1-24",
+      "Ri 5,1-18",
+      "Ri 5,24-31"
+    ],
+    "terms": [
+      {
+        "term": "שֹׁפֵט (shofet)",
+        "explanation": "Richter, leitende Person"
+      },
+      {
+        "term": "נְבִיאָה (neviah)",
+        "explanation": "Prophetin"
+      }
+    ],
+    "body": [
+      "Debora wird als Prophetin und Richterin vorgestellt. Israel leidet unter der Macht Jabins und seines Heerführers Sisera. Debora ruft Barak zur Verantwortung und begleitet ihn. Die Geschichte nennt auch Jael, deren gewaltsame Handlung Teil der antiken Kriegserzählung ist. Sie sollte nicht zur privaten Rechtfertigung religiöser Gewalt gemacht werden.",
+      "Kapitel 5 verarbeitet das Geschehen in einem poetischen Siegeslied. Prosa und Poesie setzen unterschiedliche Akzente, gerade bei den Beteiligten und dem Kampf. Die Texte zeigen keine dauerhaft zentralisierte Staatsordnung; Stämme handeln unterschiedlich und werden im Lied auch kritisiert.",
+      "Deboras Rolle widerspricht einer simplen Annahme, Gott berufe in der Bibel ausschließlich Männer in verantwortliche Aufgaben. Zugleich ist der Text kein vollständiger Entwurf moderner Ämterordnungen. Leser können zwischen Gottes Befreiung, menschlicher Verantwortung und schwerer Gewalt unterscheiden."
+    ],
+    "quiz": [
+      {
+        "q": "Welche beiden Aufgaben nennt Richter 4 für Debora?",
+        "a": "Prophetin und Richterin",
+        "wrong": [
+          "Königin und Priesterin",
+          "Hirtin und Händlerin"
+        ]
+      },
+      {
+        "q": "Welche Textform hat Richter 5?",
+        "a": "Ein Siegeslied",
+        "wrong": [
+          "Ein Gesetzeskatalog",
+          "Ein Brief des Paulus"
+        ]
+      }
+    ],
+    "reflection": "Wann kann ich andere ermutigen, Verantwortung zu übernehmen?",
+    "connection": {
+      "from": "Ri 4,4-9",
+      "to": "Ri 5,7-9",
+      "kind": "theme",
+      "note": "Das Lied antwortet auf die Geschichte der Befreiung."
+    },
+    "image": "debora"
+  },
+  {
+    "id": "ac-hist-gideon",
+    "campaign": "history",
+    "title": "Gideon: Berufung, Sieg und die Gefahr der Macht",
+    "refs": [
+      "Ri 6,11-24",
+      "Ri 7,2-22",
+      "Ri 8,22-27"
+    ],
+    "terms": [
+      {
+        "term": "גִּבּוֹר (gibbor)",
+        "explanation": "Held, Starker"
+      },
+      {
+        "term": "מִשְׁפָּט (mishpat)",
+        "explanation": "Recht, Urteil"
+      }
+    ],
+    "body": [
+      "Gideon wird in einer Lage von Angst und Bedrückung berufen. Er fragt nach Gottes Gegenwart und fühlt sich seiner Aufgabe nicht gewachsen. Die Geschichte des Vlieses gehört zu seiner persönlichen Unsicherheit innerhalb der Erzählung; sie gibt keine allgemeine Methode zur sicheren Deutung von Zufällen vor.",
+      "Das Heer wird verkleinert, damit Israel den Sieg nicht allein eigener Stärke zuschreibt. Der Erfolg führt jedoch nicht geradlinig zu einer friedlichen Herrschaft. Gideon lehnt formal die Königswürde ab, lässt aber ein Ephod herstellen, das zum religiösen Fallstrick wird. Seine Geschichte endet ambivalent.",
+      "Das Richterbuch zeigt wiederholt Befreiung und anschließende neue Probleme. Gottes Berufung bedeutet nicht, dass jede spätere Entscheidung der berufenen Person gut ist. Geistliche und politische Macht brauchen auch nach einem Erfolg Prüfung, Begrenzung und Rechenschaft."
+    ],
+    "quiz": [
+      {
+        "q": "Warum wird Gideons Heer verkleinert?",
+        "a": "Damit Israel den Sieg nicht sich selbst zuschreibt",
+        "wrong": [
+          "Weil es keine Waffen gibt",
+          "Weil alle Soldaten Könige werden"
+        ]
+      },
+      {
+        "q": "Was wird später zum Fallstrick?",
+        "a": "Das Ephod",
+        "wrong": [
+          "Die Arche Noahs",
+          "Der Tempel Salomos"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ein guter Anfang durch Macht und Erfolg gefährdet werden?",
+    "connection": {
+      "from": "Ri 6,11-24",
+      "to": "Ri 8,22-27",
+      "kind": "theme",
+      "note": "Berufung und spätere Versuchung gehören zur selben ambivalenten Geschichte."
+    },
+    "image": "gideon"
+  },
+  {
+    "id": "ac-hist-saul",
+    "campaign": "history",
+    "title": "Saul: Angst, Gehorsam und der Umgang mit Macht",
+    "refs": [
+      "1Sam 9,15-21",
+      "1Sam 13,8-14",
+      "1Sam 15,13-23",
+      "1Sam 18,6-16"
+    ],
+    "terms": [
+      {
+        "term": "מֶלֶךְ (melekh)",
+        "explanation": "König"
+      },
+      {
+        "term": "שָׁמַע (shama)",
+        "explanation": "hören, gehorchen"
+      }
+    ],
+    "body": [
+      "Saul erscheint zunächst als unerwarteter König, der sich selbst gering einschätzt. Die Königserzählung zeigt später Situationen, in denen er militärische Bedrohung, Anerkennung und Gottes Auftrag gegeneinander abwägt. In 1. Samuel 15 kritisiert Samuel eine Form von Frömmigkeit, die Gehorsam durch Opfer ersetzen will.",
+      "Die schwierige Kriegserzählung in diesem Kapitel darf nicht als zeitlose Anweisung zur Vernichtung von Bevölkerungsgruppen gelesen werden. Innerhalb der Erzählung geht es um den Konflikt zwischen königlichem Eigenwillen und prophetischer Autorität. Saul sucht schließlich besonders die Anerkennung der Ältesten.",
+      "Davids Erfolge verschärfen Sauls Neid und Angst vor Verlust der Stellung. Das Buch zeigt, wie ein Amt das eigene Selbstbild beherrschen kann. Die Erzählung ist mehr als ein Vergleich guter und schlechter Könige: Auch David wird später schwer schuldig und muss sich prophetischer Kritik stellen."
+    ],
+    "quiz": [
+      {
+        "q": "Was stellt Samuel über Opfer?",
+        "a": "Gehorsames Hören",
+        "wrong": [
+          "Königlichen Reichtum",
+          "Militärischen Rang"
+        ]
+      },
+      {
+        "q": "Was löst Davids Erfolg bei Saul aus?",
+        "a": "Neid und Furcht",
+        "wrong": [
+          "Sofortige Abdankung",
+          "Eine Reise nach Babylon"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Kritik an meinem Handeln annehmen, ohne sie als Angriff auf meinen Wert zu erleben?",
+    "connection": {
+      "from": "1Sam 15,22",
+      "to": "Hos 6,6",
+      "kind": "theme",
+      "note": "Beide Texte stellen gelebte Treue über bloße kultische Leistung."
+    },
+    "image": "saul"
+  },
+  {
+    "id": "ac-hist-athan",
+    "campaign": "history",
+    "title": "Athalja, Joasch und die Erneuerung des Bundes",
+    "refs": [
+      "2Kö 11,1-21",
+      "2Kö 12,1-16",
+      "2Chr 24,17-24"
+    ],
+    "terms": [
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund"
+      },
+      {
+        "term": "בַּיִת (bayit)",
+        "explanation": "Haus, auch Tempel oder Dynastie"
+      }
+    ],
+    "body": [
+      "Nach Ahasjas Tod übernimmt Athalja die Herrschaft in Juda. Joasch entgeht nach der Erzählung der Tötung und wird verborgen. Der Priester Jojada organisiert seine Einsetzung und einen Bund zwischen Gott, König und Volk. Die gewaltsame Entmachtung Athaljas gehört zur antiken politischen Erzählung.",
+      "In 2. Könige 12 wird die Instandsetzung des Tempels zum Thema. Die zunächst unzureichende Verwaltung der Mittel führt zu einer neuen Regelung. Die Episode zeigt neben dem religiösen Anliegen praktische Verantwortung für anvertraute Gelder. Eigentum und Kult brauchen nachvollziehbare Verwaltung.",
+      "Chronik erzählt später von Joaschs Abkehr nach Jojadas Tod. Die beiden Bücher setzen damit unterschiedliche Akzente. Ein König kann eine gute Reform beginnen und sie später verlassen. Der Vergleich hilft, Geschichte nicht auf einen einzigen moralischen Augenblick zu reduzieren."
+    ],
+    "quiz": [
+      {
+        "q": "Wo wird Joasch verborgen?",
+        "a": "Im Bereich des Gotteshauses",
+        "wrong": [
+          "In Ägypten bei Pharao",
+          "In einer römischen Festung"
+        ]
+      },
+      {
+        "q": "Welches praktische Problem behandelt 2. Könige 12?",
+        "a": "Die Finanzierung der Tempelreparatur",
+        "wrong": [
+          "Den Bau der Arche",
+          "Die Landteilung Josuas"
+        ]
+      }
+    ],
+    "reflection": "Was schützt eine gute Reform vor Abhängigkeit von einer einzigen Person?",
+    "connection": {
+      "from": "2Kö 12,4-16",
+      "to": "2Chr 24,17-24",
+      "kind": "theme",
+      "note": "Könige und Chronik beleuchten unterschiedliche Phasen derselben Herrschaft."
+    },
+    "image": "salomo"
+  },
+  {
+    "id": "ac-hist-manasse",
+    "campaign": "history",
+    "title": "Manasse und Josia: Schuld, Umkehr und Reform",
+    "refs": [
+      "2Kö 21,1-18",
+      "2Chr 33,10-17",
+      "2Kö 22,8-20",
+      "2Kö 23,1-7"
+    ],
+    "terms": [
+      {
+        "term": "שׁוּב (shuv)",
+        "explanation": "umkehren, zurückkehren"
+      },
+      {
+        "term": "סֵפֶר (sefer)",
+        "explanation": "Schrift, Buch"
+      }
+    ],
+    "body": [
+      "Das Königebuch zeichnet Manasse als Herrscher, dessen Götzendienst und Gewalt Juda tief belasten. Chronik bietet einen zusätzlichen Bericht über Gefangenschaft, Gebet und Umkehr. Diese zusätzliche Perspektive zeigt, dass die Bücher dieselbe Zeit mit unterschiedlichem theologischen Interesse darstellen.",
+      "Unter Josia wird ein Gesetzbuch im Tempel gefunden. Der König reagiert mit Erschütterung und lässt die Prophetin Hulda befragen. Die Reform betrifft nicht nur persönliche Frömmigkeit, sondern die öffentliche Ordnung des Kultes. Welche literarische Gestalt das gefundene Buch hatte, wird historisch diskutiert.",
+      "Die Erzählungen verbinden individuelle Umkehr und langfristige Folgen gesellschaftlichen Unrechts. Persönliche Reue löscht nicht automatisch alle Schäden früherer Entscheidungen. Der Vergleich zwischen Könige und Chronik hilft, Vergebung, Wiedergutmachung und historische Konsequenzen getrennt wahrzunehmen."
+    ],
+    "quiz": [
+      {
+        "q": "Welches Buch erzählt ausdrücklich von Manasses Umkehr?",
+        "a": "Chronik",
+        "wrong": [
+          "Rut",
+          "Markus"
+        ]
+      },
+      {
+        "q": "Wen lässt Josia wegen des Buches befragen?",
+        "a": "Die Prophetin Hulda",
+        "wrong": [
+          "Die Königin von Saba",
+          "Maria Magdalena"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Umkehr zu tatsächlicher Veränderung führen?",
+    "connection": {
+      "from": "2Kö 21,1-18",
+      "to": "2Chr 33,10-17",
+      "kind": "parallel",
+      "note": "Chronik erweitert die Darstellung Manasses um Gefangenschaft und Umkehr."
+    },
+    "image": "josia"
+  },
+  {
+    "id": "ac-ps34",
+    "campaign": "psalms-1",
+    "title": "Psalm 34: Gottes Güte und menschliche Not",
+    "refs": [
+      "Ps 34",
+      "1Sam 21,10-15",
+      "1Petr 3,10-12"
+    ],
+    "terms": [
+      {
+        "term": "טוֹב (tov)",
+        "explanation": "gut"
+      },
+      {
+        "term": "עָנִי (ani)",
+        "explanation": "arm, bedrängt"
+      }
+    ],
+    "body": [
+      "Psalm 34 verbindet persönliches Dankgebet mit offenen Einladungen an andere. Der Beter erzählt, dass er Gott suchte und Hilfe erfuhr. Anschließend ruft er zum Schmecken, Sehen und Lernen auf. Der Psalm ist alphabetisch gestaltet, was an seine Funktion als Lehrgedicht erinnert.",
+      "Die Überschrift verbindet das Lied mit Davids Fluchtgeschichte, wobei Samuel den König Achisch nennt und die Psalmüberschrift Abimelech. Das Verhältnis beider Namen ist nicht sicher geklärt. Der Psalm selbst verbindet Gottes Güte mit ehrfürchtigem Leben, wahrhaftiger Sprache, Friedenssuche und Hilfe für Zerbrochene.",
+      "Der Text verspricht kein Leben ohne Leiden. Er spricht ausdrücklich von vielen Bedrängnissen des Gerechten. 1. Petrus greift die Weisungen über Zunge, Böses und Frieden auf. So gehört das Gebet nicht nur zum inneren Trost, sondern auch zur Art, wie Menschen miteinander umgehen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Haltung empfiehlt der Psalm gegenüber dem Frieden?",
+        "a": "Ihn suchen und ihm nachjagen",
+        "wrong": [
+          "Ihn anderen aufzwingen",
+          "Ihn ignorieren"
+        ]
+      },
+      {
+        "q": "Was verschweigt der Psalm nicht?",
+        "a": "Bedrängnisse der Gerechten",
+        "wrong": [
+          "Dass Gott gut ist",
+          "Dass Menschen beten"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich Gottes Güte erinnern, ohne mein Leid kleinzureden?",
+    "connection": {
+      "from": "Ps 34,12-16",
+      "to": "1Petr 3,10-12",
+      "kind": "quote",
+      "note": "Petrus nimmt die Weisung des Psalms über Sprache und Frieden auf."
+    },
+    "image": "david"
+  },
+  {
+    "id": "ac-ps37",
+    "campaign": "psalms-2",
+    "title": "Psalm 37: Wenn Ungerechte erfolgreich sind",
+    "refs": [
+      "Ps 37",
+      "Ps 73,1-17",
+      "Mt 5,5"
+    ],
+    "terms": [
+      {
+        "term": "בָּטַח (batach)",
+        "explanation": "vertrauen"
+      },
+      {
+        "term": "עָנָו (anav)",
+        "explanation": "demütig, sanftmütig"
+      }
+    ],
+    "body": [
+      "Psalm 37 ist ein Weisheitspsalm über den Anstoß am Erfolg von Menschen, die Unrecht tun. Er warnt vor neidischer Aufregung und ruft zu Vertrauen, gutem Handeln und Geduld auf. Die Rede vom Erben des Landes gehört zu Israels Hoffnung auf gerechtes Leben unter Gottes Herrschaft.",
+      "Das Gedicht spricht in zugespitzter Weisheitssprache. Es will Orientierung geben, aber nicht jede individuelle Lebensgeschichte mathematisch erklären. Psalm 73 stellt dieselbe Frage in einer persönlichen Krise. Die Bibel kennt leidende Gerechte, und Hiob widerspricht mechanischen Schuldzuweisungen.",
+      "Matthäus 5 greift die Zusage an die Sanftmütigen auf. Sanftmut bedeutet nicht, Ungerechtigkeit schweigend hinzunehmen. Gerade Vertrauen kann es ermöglichen, auf Rache zu verzichten und dennoch gerechte Wege zu suchen. Die Gegenwart von Unrecht bleibt ernst, auch wenn der Psalm Gottes Zukunft betont."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Gefahr nennt der Psalm beim Blick auf Ungerechte?",
+        "a": "Neid und zerstörerische Aufregung",
+        "wrong": [
+          "Zu viel Nachlese",
+          "Zu langes Schlafen"
+        ]
+      },
+      {
+        "q": "Welche Zusage greift Jesus in Matthäus 5 auf?",
+        "a": "Die Sanftmütigen werden das Land erben",
+        "wrong": [
+          "Alle werden Könige",
+          "Niemand muss handeln"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich für Gerechtigkeit eintreten, ohne von Neid beherrscht zu werden?",
+    "connection": {
+      "from": "Ps 37,11",
+      "to": "Mt 5,5",
+      "kind": "quote",
+      "note": "Die Seligpreisung nimmt die Zusage des Psalms auf."
+    },
+    "image": "david"
+  },
+  {
+    "id": "ac-ps137",
+    "campaign": "psalms-2",
+    "title": "Psalm 137: Exil, Erinnerung und schwierige Gebete",
+    "refs": [
+      "Ps 137",
+      "2Kö 25,8-12",
+      "Jer 29,4-7"
+    ],
+    "terms": [
+      {
+        "term": "בָּבֶל (bavel)",
+        "explanation": "Babylon"
+      },
+      {
+        "term": "זָכַר (zakhar)",
+        "explanation": "gedenken"
+      }
+    ],
+    "body": [
+      "Psalm 137 erinnert an Gefangenschaft, Erniedrigung und Sehnsucht nach Jerusalem. Die Aufforderung der Unterdrücker, ein Zionslied zu singen, macht Erinnerung zur schmerzhaften Prüfung. Der Beter weigert sich, seine Herkunft als Unterhaltung für die Sieger verfügbar zu machen.",
+      "Die letzten Verse enthalten drastische Rachewünsche, einschließlich Gewalt gegen Kinder. Sie geben die erschütterte Stimme des Gedichts wieder, nicht eine allgemeine Anweisung Gottes. Das Exil war eine Erfahrung von Verlust, Gewalt und Entwurzelung. Die Bibel bewahrt solche menschlichen Klagen, ohne dass jeder geäußerte Wunsch moralisch vorbildlich sein muss.",
+      "Jeremia 29 fordert die Verbannten zugleich auf, das Wohl ihrer neuen Stadt zu suchen. Beide Texte können gemeinsam gelesen werden: Erinnerung und Klage müssen nicht verleugnet werden, Verantwortlichkeit gegenüber anderen bleibt bestehen. Christliche Leser können die Rachewünsche mit Jesu Feindesliebe ins Gespräch bringen, ohne die Verletzung der Opfer kleinzureden."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Erfahrung prägt den Psalm?",
+        "a": "Exil und Erniedrigung",
+        "wrong": [
+          "Eine ungestörte Ernte",
+          "Eine Königswahl in Galiläa"
+        ]
+      },
+      {
+        "q": "Sind die Rachewünsche eine allgemeine Anweisung Gottes?",
+        "a": "Nein, sie sind Teil der erschütterten Klage",
+        "wrong": [
+          "Ja, für jeden Konflikt",
+          "Nur für Kinder"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Klage ehrlich sein, ohne in Gewalt überzugehen?",
+    "connection": {
+      "from": "Ps 137,8-9",
+      "to": "Mt 5,43-48",
+      "kind": "theme",
+      "note": "Die schwierige Klage und Jesu Feindesliebe verlangen sorgfältige Unterscheidung."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "ac-pred-joy",
+    "campaign": "psalms-5",
+    "title": "Prediger: Freude als Gabe trotz Vergänglichkeit",
+    "refs": [
+      "Pred 2,18-26",
+      "Pred 3,9-15",
+      "Pred 9,7-10"
+    ],
+    "terms": [
+      {
+        "term": "הֶבֶל (hevel)",
+        "explanation": "Hauch, Dunst, Vergänglichkeit"
+      },
+      {
+        "term": "שִׂמְחָה (simchah)",
+        "explanation": "Freude"
+      }
+    ],
+    "body": [
+      "Prediger untersucht die Begrenztheit von Arbeit, Wissen, Besitz und menschlicher Kontrolle. Das Wort hevel bezeichnet wörtlich Hauch oder Dunst und trägt je nach Kontext verschiedene Nuancen, etwa Vergänglichkeit oder Absurdität. Die Beobachtungen sind häufig spannungsvoll und nicht als ein einziger pessimistischer Lehrsatz zu lesen.",
+      "Mitten in diesen Fragen empfiehlt das Buch wiederholt Essen, Trinken, Arbeit und gemeinsame Freude als Gaben. Der Mensch kann das Ganze von Gottes Wirken nicht vollständig überblicken. Freude ist deshalb nicht die Belohnung für perfekte Kontrolle, sondern kann im begrenzten Alltag empfangen werden.",
+      "Die literarische Sprecherfigur knüpft an königliche Weisheit an; die historische Verfasserschaft Salomos ist umstritten. Der Text lädt dazu ein, Arbeit und ihre Früchte zu genießen, ohne aus Besitz die Garantie eines bleibenden Namens abzuleiten. Dankbarkeit und offene Fragen schließen einander nicht aus."
+    ],
+    "quiz": [
+      {
+        "q": "Was bedeutet hevel wörtlich?",
+        "a": "Hauch oder Dunst",
+        "wrong": [
+          "Königlicher Tempel",
+          "Ewiger Besitz"
+        ]
+      },
+      {
+        "q": "Was empfiehlt Prediger trotz seiner Fragen?",
+        "a": "Freude an einfachen Gaben",
+        "wrong": [
+          "Alle Arbeit verachten",
+          "Nie mit anderen essen"
+        ]
+      }
+    ],
+    "reflection": "Welche gewöhnliche Gabe kann ich heute bewusst genießen?",
+    "connection": {
+      "from": "Pred 3,12-13",
+      "to": "1Tim 6,17",
+      "kind": "theme",
+      "note": "Beide Texte sprechen von Gottes Gaben und menschlichem Genuss ohne Selbstsicherheit."
+    },
+    "image": "salomo"
+  },
+  {
+    "id": "ac-song-mutual",
+    "campaign": "psalms-6",
+    "title": "Hoheslied: Gegenseitigkeit, Sehnsucht und Grenzen",
+    "refs": [
+      "Hld 2,7-17",
+      "Hld 4,9-16",
+      "Hld 8,6-7"
+    ],
+    "terms": [
+      {
+        "term": "אַהֲבָה (ahavah)",
+        "explanation": "Liebe"
+      },
+      {
+        "term": "דּוֹד (dod)",
+        "explanation": "Geliebter; kontextabhängig"
+      }
+    ],
+    "body": [
+      "Das Hoheslied gestaltet Liebe mit Stimmen, Bildern und wechselnden Szenen. Menschliche Zuneigung, körperliche Schönheit und Sehnsucht werden nicht grundsätzlich abgewertet. Die wiederkehrende Bitte, Liebe nicht vor ihrer Zeit zu wecken, setzt einen Kontrapunkt zu erzwungener Verfügbarkeit.",
+      "Eine durchgehend rekonstruierbare Handlung und die ursprüngliche Verfasserschaft sind umstritten. Die Gedichte verwenden Garten, Duft, Tiere und Jahreszeiten als poetische Sprache. Nicht jede Metapher muss in eine geistliche Einzelbedeutung übersetzt werden. Gegenseitige Zuwendung ist im Text sichtbar, auch wenn die antike Welt andere soziale Rahmenbedingungen kannte.",
+      "Jüdische und christliche Auslegung haben das Buch oft als Bild von Gottes Liebe zu Israel beziehungsweise Christus und Gemeinde gelesen. Das ist eine bedeutende Rezeptionsgeschichte, nicht die einzige mögliche literarische Ebene. Verantwortliches Lesen achtet sowohl menschliche Liebe als auch religiöse Deutung und respektiert persönliche Grenzen."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Textgattung prägt das Buch?",
+        "a": "Liebespoesie",
+        "wrong": [
+          "Königliche Verwaltungslisten",
+          "Reiseberichte des Paulus"
+        ]
+      },
+      {
+        "q": "Wie soll Liebe nach dem wiederkehrenden Ruf behandelt werden?",
+        "a": "Nicht vor ihrer Zeit geweckt werden",
+        "wrong": [
+          "Durch Druck erzwungen werden",
+          "Nur durch Geld erworben werden"
+        ]
+      }
+    ],
+    "reflection": "Was unterscheidet gegenseitige Zuwendung von Besitzansprüchen?",
+    "connection": {
+      "from": "Hld 8,6-7",
+      "to": "Eph 5,25",
+      "kind": "theme",
+      "note": "Beide sprechen über Liebe, aber mit unterschiedlichen Gattungen und Zielsetzungen."
+    },
+    "image": "salomo"
+  },
+  {
+    "id": "ac-isa-holy",
+    "campaign": "prophets",
+    "title": "Jesajas Berufung und die Heiligkeit Gottes",
+    "refs": [
+      "Jes 6,1-13",
+      "Jes 1,10-17",
+      "Jes 40,1-8"
+    ],
+    "terms": [
+      {
+        "term": "קָדוֹשׁ (qadosh)",
+        "explanation": "heilig"
+      },
+      {
+        "term": "שָׂרָף (saraf)",
+        "explanation": "Seraf, brennende Gestalt"
+      }
+    ],
+    "body": [
+      "Jesaja 6 schildert eine Thronvision im Todesjahr König Usijas. Die Seraphim rufen Gottes Heiligkeit aus. Der Prophet erkennt seine unzulängliche Sprache und empfängt durch das Bild der glühenden Kohle Reinigung. Erst danach antwortet er auf die Frage nach einem Gesandten.",
+      "Der Auftrag ist schwierig: Hören und Sehen werden in der Rede mit Verstockung verbunden. Der Text kennt die Spannung zwischen prophetischer Verkündigung und ausbleibender Veränderung. Jesaja 1 macht zugleich deutlich, dass Gottesheiligkeit nicht bloß kultische Pracht bedeutet, sondern Recht für Bedrängte fordert.",
+      "Die Evangelien greifen Jesaja 6 im Zusammenhang von Gleichnissen und ungläubigem Hören auf. Diese Verwendung ist nicht mit der ursprünglichen historischen Situation identisch. Der Trost in späteren Jesajatexten eröffnet einen weiteren Horizont von Hoffnung. Die wissenschaftliche Gliederung und Entstehungsgeschichte des Buches sind Gegenstand verschiedener Modelle."
+    ],
+    "quiz": [
+      {
+        "q": "Was geschieht vor Jesajas Sendung?",
+        "a": "Er erkennt seine Unzulänglichkeit und empfängt Reinigung",
+        "wrong": [
+          "Er wird König",
+          "Er baut die Arche"
+        ]
+      },
+      {
+        "q": "Was fordert Jesaja 1 neben Gottesdienst?",
+        "a": "Gerechtigkeit für Bedrängte",
+        "wrong": [
+          "Mehr Selbstlob",
+          "Mehr Krieg"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Ehrfurcht vor Gott meine Sprache verändern?",
+    "connection": {
+      "from": "Jes 6,9-10",
+      "to": "Mt 13,14-15",
+      "kind": "quote",
+      "note": "Jesus bezieht sich in der Gleichnisrede auf Jesaja."
+    },
+    "image": "jesaja"
+  },
+  {
+    "id": "ac-isa-servant",
+    "campaign": "prophets",
+    "title": "Der Gottesknecht: Leiden und Hoffnung",
+    "refs": [
+      "Jes 42,1-9",
+      "Jes 49,1-6",
+      "Jes 52,13-15",
+      "Jes 53,1-12"
+    ],
+    "terms": [
+      {
+        "term": "עֶבֶד (eved)",
+        "explanation": "Knecht, Diener"
+      },
+      {
+        "term": "שָׁלוֹם (shalom)",
+        "explanation": "Frieden, Wohlergehen"
+      }
+    ],
+    "body": [
+      "Die sogenannten Gottesknechtlieder zeichnen unterschiedliche Bilder von Gottes Beauftragtem. In Jesaja 49 wird Israel als Knecht genannt, zugleich erhält der Knecht einen Auftrag an Israel. Die Identität des Knechts wird in jüdischer und wissenschaftlicher Auslegung verschieden verstanden, etwa kollektiv oder als besondere Gestalt.",
+      "Jesaja 52–53 beschreibt Erniedrigung, Leiden und eine überraschende Erhöhung. Der Text stellt die Deutung des Leidens durch Beobachter infrage. Er sollte nicht verwendet werden, um Leidenden pauschal einen göttlichen Zweck zuzuschreiben oder sie zum Dulden von Gewalt zu zwingen.",
+      "Das NT greift die Knechtsworte mehrfach auf. Apostelgeschichte 8 schildert die christologische Erklärung durch Philippus; 1. Petrus verwendet die Sprache des leidenden Gerechten. Christliche Lesarten sehen hier eine Verbindung zu Jesu Hingabe, während jüdische Deutungen ihren eigenen Kontext behalten. Vergleiche beide Ebenen bewusst."
+    ],
+    "quiz": [
+      {
+        "q": "Ist der Knecht in Jesaja überall eindeutig dieselbe benannte Person?",
+        "a": "Nein, die Identität wird unterschiedlich verstanden",
+        "wrong": [
+          "Ja, ausschließlich ein römischer Kaiser",
+          "Ja, der Pharao"
+        ]
+      },
+      {
+        "q": "Wer erklärt dem Hofbeamten Jesaja?",
+        "a": "Philippus",
+        "wrong": [
+          "Samuel",
+          "Salomo"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich über Leid sprechen, ohne ihm vorschnell einen Sinn aufzuzwingen?",
+    "connection": {
+      "from": "Jes 53,7-8",
+      "to": "Apg 8,32-35",
+      "kind": "quote",
+      "note": "Der Hofbeamte liest die Stelle, die Philippus auf Jesus bezieht."
+    },
+    "image": "jesaja"
+  },
+  {
+    "id": "ac-jer-new",
+    "campaign": "prophets",
+    "title": "Jeremia: Klage, Exil und der neue Bund",
+    "refs": [
+      "Jer 1,4-19",
+      "Jer 20,7-13",
+      "Jer 29,4-14",
+      "Jer 31,31-34"
+    ],
+    "terms": [
+      {
+        "term": "בְּרִית (berit)",
+        "explanation": "Bund"
+      },
+      {
+        "term": "לֵב (lev)",
+        "explanation": "Herz"
+      }
+    ],
+    "body": [
+      "Jeremias Berufung verbindet den Auftrag zum Ausreißen und Niederreißen mit Bauen und Pflanzen. Seine Rede richtet sich an Juda in einer Phase politischer Bedrohung durch Babylon. Der Prophet erlebt Widerstand und klagt selbst über seine schwierige Berufung. Die Bibel verschweigt diese innere Auseinandersetzung nicht.",
+      "Der Brief an die Verbannten widerspricht der Erwartung sofortiger Rückkehr. Sie sollen Häuser bauen, Familien und das Wohl der Stadt im Blick behalten. Die Hoffnung ist in diesem Zusammenhang eine langfristige Zusage an eine Gemeinschaft, keine Garantie, dass jeder persönliche Wunsch unmittelbar erfüllt wird.",
+      "Der neue Bund mit Israel und Juda beschreibt Vergebung und Gottes Weisung im Herzen. Hebräer greift diese Verheißung im Zusammenhang mit Jesus auf. Die ursprüngliche Hoffnung auf Israels Wiederherstellung und die christliche Auslegung müssen unterschieden und gemeinsam sorgfältig gelesen werden."
+    ],
+    "quiz": [
+      {
+        "q": "Was sollen die Verbannten in Babylon tun?",
+        "a": "Das Wohl der Stadt suchen",
+        "wrong": [
+          "Die Stadt sofort zerstören",
+          "Jegliche Arbeit einstellen"
+        ]
+      },
+      {
+        "q": "Wohin wird Gottes Weisung geschrieben?",
+        "a": "Ins Herz",
+        "wrong": [
+          "Auf das Gold des Tempels",
+          "An römische Tore"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich in einer langen Wartezeit verantwortlich leben?",
+    "connection": {
+      "from": "Jer 31,31-34",
+      "to": "Hebr 8,8-12",
+      "kind": "quote",
+      "note": "Hebräer zitiert die Verheißung des neuen Bundes."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "ac-ezek-dry",
+    "campaign": "prophets",
+    "title": "Hesekiels Totengebeine und neues Herz",
+    "refs": [
+      "Hes 36,22-28",
+      "Hes 37,1-14",
+      "Hes 37,15-28"
+    ],
+    "terms": [
+      {
+        "term": "רוּחַ (ruach)",
+        "explanation": "Wind, Atem, Geist"
+      },
+      {
+        "term": "לֵב (lev)",
+        "explanation": "Herz"
+      }
+    ],
+    "body": [
+      "Hesekiel sieht ein Tal voller verdorrter Gebeine. Auf Gottes Wort hin verbinden sich die Knochen; Atem kommt in die Körper. Der Text deutet das Bild selbst auf das ganze Haus Israel, das seine Hoffnung verloren sieht. Gottes Geist und Wiederherstellung beantworten die Erfahrung des Exils.",
+      "Die Mehrdeutigkeit von ruach trägt zur Wirkung der Vision bei: Wind, Atem und Geist kommen in der Darstellung zusammen. Das anschließende Zeichen zweier Hölzer spricht von der Vereinigung der getrennten Gemeinschaft. Die Vision ist deshalb zuerst eine Aussage über Israels Hoffnung, obwohl spätere Leser sie auch auf Auferstehung beziehen.",
+      "Kapitel 36 verbindet neues Herz und Geist mit erneuerter Lebensführung. Christliche Traditionen greifen diese Bilder in der Lehre von geistlichem Leben auf. Jede Übertragung sollte die ursprüngliche nationale und gemeinschaftliche Dimension sichtbar lassen. Hoffnung bezeichnet mehr als ein vorübergehendes Gefühl."
+    ],
+    "quiz": [
+      {
+        "q": "Wie deutet Hesekiel die Gebeine selbst?",
+        "a": "Als das hoffnungslose Haus Israel",
+        "wrong": [
+          "Als eine römische Armee",
+          "Als private Engelwesen"
+        ]
+      },
+      {
+        "q": "Was verbindet Kapitel 36 mit dem neuen Geist?",
+        "a": "Ein neues Herz",
+        "wrong": [
+          "Eine neue Geldordnung",
+          "Den Bau einer Flotte"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Hoffnung auch eine Gemeinschaft erneuern?",
+    "connection": {
+      "from": "Hes 37,1-14",
+      "to": "Joh 3,5-8",
+      "kind": "theme",
+      "note": "Geist und neues Leben verbinden beide Texte, ohne dieselbe Aussage zu sein."
+    },
+    "image": "ezechiel"
+  },
+  {
+    "id": "ac-dan-empires",
+    "campaign": "prophets",
+    "title": "Daniel 7: Tiere, Weltreiche und Menschensohn",
+    "refs": [
+      "Dan 7,1-18",
+      "Dan 7,19-28",
+      "Mk 14,61-62"
+    ],
+    "terms": [
+      {
+        "term": "בַּר אֱנָשׁ (bar enash)",
+        "explanation": "Menschenkind, aramäisch"
+      },
+      {
+        "term": "מַלְכוּ (malku)",
+        "explanation": "Herrschaft, Reich"
+      }
+    ],
+    "body": [
+      "Daniel 7 unterscheidet vier Tiere, die aus dem Meer aufsteigen, und eine menschenähnliche Gestalt, die zum Alten an Tagen kommt. Das Gericht begrenzt die Herrschaft der Tiere. Die Vision deutet die Tiere als Könige beziehungsweise Reiche; den Heiligen des Höchsten wird die Herrschaft zugesprochen.",
+      "Die aramäische Vision verwendet apokalyptische Symbolsprache. Welche konkreten historischen Reiche gemeint sind und wie die menschenähnliche Gestalt zur Gemeinschaft der Heiligen steht, wird unterschiedlich ausgelegt. Viele historisch-kritische Lesarten verbinden die Endphase mit der Verfolgung unter Antiochos IV.; andere Modelle ordnen die Reichsfolge anders ein.",
+      "Jesusworte in den Evangelien greifen die Menschensohn- und Wolkenmotive auf. Offenbarung verwendet Tier- und Herrschaftsbilder erneut. Solche Bezüge sind nachvollziehbar, ohne heutige Personen oder Staaten mit Sicherheit als bestimmte Tiere identifizieren zu können. Die Vision fragt nach der Grenze gewaltsamer Macht und nach Gottes bleibendem Gericht."
+    ],
+    "quiz": [
+      {
+        "q": "Was deutet Daniel selbst als Könige bzw. Reiche?",
+        "a": "Die Tiere",
+        "wrong": [
+          "Die Gebeine",
+          "Die sieben Leuchter"
+        ]
+      },
+      {
+        "q": "Wer erhält im Text Herrschaft?",
+        "a": "Die Heiligen des Höchsten",
+        "wrong": [
+          "Die Tiere ohne Ende",
+          "Der Pharao"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Gottes Herrschaft Hoffnung geben, ohne spekulative Zeitpläne zu entwerfen?",
+    "connection": {
+      "from": "Dan 7,13-14",
+      "to": "Mk 14,62",
+      "kind": "allusion",
+      "note": "Jesus greift das Menschensohnmotiv auf."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "ac-hos-love",
+    "campaign": "prophets",
+    "title": "Hosea: Treue, Gericht und Gottes Erbarmen",
+    "refs": [
+      "Hos 2,14-23",
+      "Hos 6,1-6",
+      "Hos 11,1-9",
+      "Hos 14,1-9"
+    ],
+    "terms": [
+      {
+        "term": "חֶסֶד (chesed)",
+        "explanation": "Treue, Güte"
+      },
+      {
+        "term": "שׁוּב (shuv)",
+        "explanation": "umkehren"
+      }
+    ],
+    "body": [
+      "Hosea spricht im Umfeld des gefährdeten Nordreichs Israel. Die Ehe- und Familienbilder stellen die verletzte Bundesbeziehung dramatisch dar. Die Texte gehören zu einer antiken prophetischen Rhetorik und enthalten schwierige Darstellungen von Strafe und Geschlechterrollen. Sie sind keine Anweisung, einem untreuen oder gewalttätigen Partner gefährlich ausgeliefert zu bleiben.",
+      "In Kapitel 6 stellt Gott Güte und Gotteserkenntnis über einen bloßen Kult. Kapitel 11 erinnert an Israel als geliebtes Kind, das Gottes Fürsorge dennoch zurückweist. Gottes Erbarmen steht in Spannung zum angekündigten Gericht. Die Schlussworte rufen zur Umkehr.",
+      "Matthäus greift Hosea 6 und 11 in verschiedenen Zusammenhängen auf. Hosea 11,1 handelt ursprünglich vom Auszug Israels; die Anwendung auf Jesus in Matthäus 2 ist eine typologische Lesart. Die ursprüngliche Botschaft über Gottes Beziehung zu Israel bleibt zentral."
+    ],
+    "quiz": [
+      {
+        "q": "Welche Haltung stellt Hosea 6 dem bloßen Opfer gegenüber?",
+        "a": "Güte und Gotteserkenntnis",
+        "wrong": [
+          "Militärische Macht",
+          "Mehr Reichtum"
+        ]
+      },
+      {
+        "q": "Welches Bild prägt Hosea 11?",
+        "a": "Ein geliebtes Kind",
+        "wrong": [
+          "Ein römischer Richter",
+          "Ein Fischernetz"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Treue mit verantwortlichen Grenzen zusammengehen?",
+    "connection": {
+      "from": "Hos 6,6",
+      "to": "Mt 9,13",
+      "kind": "quote",
+      "note": "Jesus greift Hoseas Wort über Barmherzigkeit auf."
+    },
+    "image": "jeremia"
+  },
+  {
+    "id": "ac-letters-rom3",
+    "campaign": "letters",
+    "title": "Römer 1–4: Gerechtigkeit und Glauben",
+    "refs": [
+      "Röm 1,16-17",
+      "Röm 3,9-31",
+      "Röm 4,1-25"
+    ],
+    "terms": [
+      {
+        "term": "δικαιοσύνη (dikaiosynē)",
+        "explanation": "Gerechtigkeit"
+      },
+      {
+        "term": "πίστις (pistis)",
+        "explanation": "Glaube, Vertrauen, Treue"
+      }
+    ],
+    "body": [
+      "Paulus beginnt mit dem Evangelium als Gottes Kraft zur Rettung. Seine Argumentation in Römer 1–3 beschreibt verschiedene Formen menschlichen Versagens und führt dazu, dass niemand sich durch die Beurteilung anderer selbst rechtfertigen kann. Auch Kenntnis der Tora bildet keinen Anlass zum Hochmut.",
+      "In Römer 3 entfaltet Paulus Gottes Gerechtigkeit und das Geschenk der Rechtfertigung. Der Ausdruck pistis Christou in 3,22 wird als Glaube an Christus oder Treue Christi diskutiert. Beide Deutungen betonen unterschiedliche Aspekte von Gottes Heilshandeln und menschlicher Antwort. Ein einzelnes deutsches Wort löst diese Debatte nicht abschließend.",
+      "Abraham dient in Römer 4 als Schriftbeispiel: Sein Glaube wird ihm zur Gerechtigkeit gerechnet. Die Beschneidung wird in der Argumentation als späteres Zeichen eingeordnet. Paulus arbeitet hier an gemeinsamer Zugehörigkeit von Juden und Menschen aus den Völkern, nicht an einer Abwertung Israels."
+    ],
+    "quiz": [
+      {
+        "q": "Wer dient Paulus in Römer 4 als Beispiel?",
+        "a": "Abraham",
+        "wrong": [
+          "Pilatus",
+          "Herodes"
+        ]
+      },
+      {
+        "q": "Was wird durch die Argumentation ausgeschlossen?",
+        "a": "Selbstüberhöhung durch eigenen Verdienst",
+        "wrong": [
+          "Jede gute Handlung",
+          "Das Lesen der Tora"
+        ]
+      }
+    ],
+    "reflection": "Wo versuche ich, meinen Wert vor Gott durch Leistung zu beweisen?",
+    "connection": {
+      "from": "1Mo 15,6",
+      "to": "Röm 4,3",
+      "kind": "quote",
+      "note": "Paulus zitiert die Anrechnung des Glaubens."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "ac-letters-rom8",
+    "campaign": "letters",
+    "title": "Römer 5–8: Gnade, Kampf und Leben im Geist",
+    "refs": [
+      "Röm 5,1-11",
+      "Röm 6,1-14",
+      "Röm 7,14-25",
+      "Röm 8,1-17",
+      "Röm 8,31-39"
+    ],
+    "terms": [
+      {
+        "term": "χάρις (charis)",
+        "explanation": "Gnade"
+      },
+      {
+        "term": "πνεῦμα (pneuma)",
+        "explanation": "Geist"
+      }
+    ],
+    "body": [
+      "Paulus verbindet Rechtfertigung mit Frieden und Hoffnung. In Römer 5 wird Gottes Liebe gerade daran sichtbar, dass Christus für Menschen stirbt, als sie noch Sünder sind. Kapitel 6 erklärt Taufe als Teilhabe an Tod und Auferstehung Jesu. Gnade ist daher kein Vorwand für die Fortsetzung zerstörerischer Gewohnheiten.",
+      "Römer 7 beschreibt den Konflikt zwischen dem erkannten Guten und der tatsächlichen Handlungsfähigkeit. Wer genau mit dem Ich gemeint ist, wird in der Auslegung unterschiedlich verstanden. Der Abschnitt sollte nicht als Aufforderung zu Selbsthass gelesen werden. Römer 8 richtet den Blick auf Gottes Geist und ein Leben in neuer Zugehörigkeit.",
+      "Die letzte Passage nennt Bedrängnis, Gefahr und Tod, ohne sie zu leugnen. Die Zuversicht gründet nicht in Unverwundbarkeit, sondern in Gottes Liebe. Diese Hoffnung kann Menschen im Kampf begleiten, ohne sinnvolle Unterstützung, Therapie oder praktische Schritte gegen schädliche Muster zu ersetzen."
+    ],
+    "quiz": [
+      {
+        "q": "Welches Missverständnis beantwortet Römer 6?",
+        "a": "Gnade mache Sünde belanglos",
+        "wrong": [
+          "Nur Könige dürften glauben",
+          "Gebet sei verboten"
+        ]
+      },
+      {
+        "q": "Wovon können Bedrängnisse nach Römer 8 nicht trennen?",
+        "a": "Von Gottes Liebe in Christus",
+        "wrong": [
+          "Von jedem Mitmenschen",
+          "Von finanziellen Risiken"
+        ]
+      }
+    ],
+    "reflection": "Welche konkrete Gewohnheit könnte ein neues Leben sichtbar machen?",
+    "connection": {
+      "from": "Röm 6,3-4",
+      "to": "Kol 2,12",
+      "kind": "theme",
+      "note": "Beide Briefe verbinden Taufe mit Tod und Auferstehung Christi."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "ac-letters-rom12",
+    "campaign": "letters",
+    "title": "Römer 9–16: Israel, Gemeinschaft und Alltag",
+    "refs": [
+      "Röm 9,1-5",
+      "Röm 11,17-32",
+      "Röm 12,1-21",
+      "Röm 14,1-13",
+      "Röm 16,1-7"
+    ],
+    "terms": [
+      {
+        "term": "ἔλεος (eleos)",
+        "explanation": "Barmherzigkeit"
+      },
+      {
+        "term": "ἀγάπη (agapē)",
+        "explanation": "Liebe"
+      }
+    ],
+    "body": [
+      "Römer 9–11 ringt mit Israels Rolle und Gottes Treue. Paulus beginnt nicht mit Verachtung, sondern mit tiefer Verbundenheit. Das Ölbaumbild warnt nichtjüdische Glaubende vor Hochmut. Die Frage nach ganz Israel in 11,26 hat in der Auslegung verschiedene Antworten gefunden.",
+      "Kapitel 12 zieht praktische Folgerungen aus Gottes Erbarmen. Erneuerung des Denkens, unterschiedliche Gaben, Feindesliebe und die Überwindung des Bösen durch Gutes gehören zusammen. Kapitel 14 behandelt Konflikte um Speisen und Tage. Paulus fordert gegenseitige Achtung, ohne jede mögliche moralische Frage zur bloßen Gewissenssache zu erklären.",
+      "Die Grußliste in Kapitel 16 macht konkrete Mitarbeitende sichtbar, darunter Phöbe und Priszilla. Der Brief endet nicht in rein abstrakter Theologie, sondern in Beziehungen. Die Gemeinde ist der Ort, an dem sich empfangene Gnade durch tatsächliche Verantwortung bewähren soll."
+    ],
+    "quiz": [
+      {
+        "q": "Wovor warnt das Ölbaumbild?",
+        "a": "Hochmut gegenüber Israel",
+        "wrong": [
+          "Vor jeder Ernte",
+          "Vor Gebet"
+        ]
+      },
+      {
+        "q": "Was behandelt Römer 14?",
+        "a": "Unterschiedliche Gewissen bei Speisen und Tagen",
+        "wrong": [
+          "Die Bauordnung des Tempels",
+          "Den Schiffbruch des Paulus"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich mit jemandem umgehen, dessen Gewissen in einer Nebenfrage anders ist?",
+    "connection": {
+      "from": "5Mo 32,35",
+      "to": "Röm 12,19",
+      "kind": "quote",
+      "note": "Paulus greift Gottes Zuständigkeit für Vergeltung auf."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "ac-letters-cor13",
+    "campaign": "letters",
+    "title": "1. Korinther 12–14: Gaben, Liebe und Ordnung",
+    "refs": [
+      "1Kor 12,4-27",
+      "1Kor 13,1-13",
+      "1Kor 14,1-19",
+      "1Kor 14,26-33"
+    ],
+    "terms": [
+      {
+        "term": "χάρισμα (charisma)",
+        "explanation": "Gnadengabe"
+      },
+      {
+        "term": "ἀγάπη (agapē)",
+        "explanation": "Liebe"
+      }
+    ],
+    "body": [
+      "Paulus beschreibt unterschiedliche Gaben innerhalb einer Gemeinschaft. Das Leibbild widerspricht der Vorstellung, jeder müsse dieselbe Funktion besitzen. Gerade scheinbar schwächere Glieder werden als notwendig bezeichnet. Die Gnadengaben dienen dem gemeinsamen Nutzen, nicht dem Aufbau religiöser Ranglisten.",
+      "Kapitel 13 steht mitten in dieser Diskussion. Liebe wird nicht nur als Gefühl, sondern als geduldige und verantwortliche Haltung beschrieben. Selbst außergewöhnliche Rede und Erkenntnis verlieren ohne Liebe ihren Wert. Paulus verbindet die bleibende Hoffnung und Liebe mit der Begrenztheit gegenwärtigen Wissens.",
+      "Kapitel 14 fragt, ob Beiträge in der Versammlung verständlich sind und andere aufbauen. Christliche Traditionen deuten einzelne Gaben und ihre heutige Rolle unterschiedlich. Der Text gibt jedoch klare Kriterien für Umgang und Ordnung: Verständlichkeit, Aufbau und Rücksicht. Kein persönlicher Anspruch auf geistliche Autorität steht über diesen Anliegen."
+    ],
+    "quiz": [
+      {
+        "q": "Wozu sollen die Gaben dienen?",
+        "a": "Dem gemeinsamen Nutzen",
+        "wrong": [
+          "Dem eigenen Rang",
+          "Der Abschaffung aller Unterschiede"
+        ]
+      },
+      {
+        "q": "Was fehlt außergewöhnlicher Erkenntnis ohne Liebe?",
+        "a": "Der entscheidende Wert",
+        "wrong": [
+          "Jede sprachliche Form",
+          "Jede historische Existenz"
+        ]
+      }
+    ],
+    "reflection": "Welche Gabe kann ich nutzen, damit andere gestärkt werden?",
+    "connection": {
+      "from": "1Kor 12,12-27",
+      "to": "Röm 12,4-8",
+      "kind": "theme",
+      "note": "Beide Briefe beschreiben unterschiedliche Gaben in einem Leib."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "ac-letters-heb-priest",
+    "campaign": "letters",
+    "title": "Hebräer: Priester, Bund und Zugang zu Gott",
+    "refs": [
+      "Hebr 4,14-16",
+      "Hebr 7,11-28",
+      "Hebr 9,1-14",
+      "Hebr 10,19-25"
+    ],
+    "terms": [
+      {
+        "term": "ἀρχιερεύς (archiereus)",
+        "explanation": "Hoherpriester"
+      },
+      {
+        "term": "διαθήκη (diathēkē)",
+        "explanation": "Bund, Verfügung"
+      }
+    ],
+    "body": [
+      "Der Hebräerbrief beschreibt Jesus als Hohenpriester, der menschliche Schwäche kennt. Das Motiv des Mitgefühls steht neben der Aufforderung, sich vertrauensvoll Gottes Gnade zu nähern. Der Autor greift dabei die Bildsprache des israelitischen Heiligtums auf.",
+      "In Kapitel 7 verbindet er Psalm 110 mit Melchisedek und unterscheidet Jesu Priestertum von der levitischen Ordnung. Kapitel 9 nimmt räumliche Struktur und jährlichen Zugang zum Heiligtum auf. Die Rede von einmaliger Hingabe wird im Zusammenhang dieses Vergleichs entfaltet, nicht als Behauptung, jüdischer Gottesdienst sei immer wertlos gewesen.",
+      "Kapitel 10 zieht eine praktische Folgerung: Zuversicht, Festhalten an der Hoffnung und gegenseitige Ermutigung. Der Brief verbindet tiefgründige Deutung mit Gemeinschaft. Seine genaue Verfasserschaft ist nicht bekannt; verschiedene frühe Zuschreibungen sind keine sichere Identifikation."
+    ],
+    "quiz": [
+      {
+        "q": "Aus welchem Psalm entwickelt der Brief die Melchisedek-Verbindung?",
+        "a": "Psalm 110",
+        "wrong": [
+          "Psalm 150",
+          "Psalm 1"
+        ]
+      },
+      {
+        "q": "Welche gemeinschaftliche Folge nennt Hebräer 10?",
+        "a": "Einander zu Liebe und guten Werken ermutigen",
+        "wrong": [
+          "Jeden Kontakt vermeiden",
+          "Einen neuen Tempel bauen"
+        ]
+      }
+    ],
+    "reflection": "Wie kann Vertrauen auf Gottes Gnade gegenseitige Unterstützung fördern?",
+    "connection": {
+      "from": "Ps 110,4",
+      "to": "Hebr 7,17",
+      "kind": "quote",
+      "note": "Der Brief zitiert die Aussage zur Priesterordnung Melchisedeks."
+    },
+    "image": "aaron"
+  },
+  {
+    "id": "ac-letters-james",
+    "campaign": "letters",
+    "title": "Jakobus: Worte, Werke und gerechte Gemeinschaft",
+    "refs": [
+      "Jak 1,19-27",
+      "Jak 2,1-26",
+      "Jak 3,1-18",
+      "Jak 5,1-11"
+    ],
+    "terms": [
+      {
+        "term": "ἔργον (ergon)",
+        "explanation": "Werk, Tat"
+      },
+      {
+        "term": "σοφία (sophia)",
+        "explanation": "Weisheit"
+      }
+    ],
+    "body": [
+      "Jakobus richtet den Blick auf gelebtes Hören. Wer die Weisung hört und nicht handelt, wird mit einem Menschen verglichen, der sich im Spiegel sieht und das Gesehene vergisst. Religion zeigt sich auch in der Sorge für verletzliche Menschen und in wahrhaftiger Sprache.",
+      "Kapitel 2 kritisiert die Bevorzugung Wohlhabender. Der Autor beschreibt Glauben ohne Werke als tot. Abraham und Rahab werden als Beispiele für gelebte Antwort genannt. Paulus und Jakobus argumentieren in unterschiedlichen Situationen: gegen Selbstrechtfertigung beziehungsweise gegen eine folgenlose Behauptung von Glauben.",
+      "Kapitel 3 spricht über die zerstörerische Wirkung der Zunge und unterscheidet Weisheit von Neid und Streit. Kapitel 5 mahnt Reiche, die Lohn vorenthalten. Der Brief ist eine konkrete Anleitung zu verantwortlichen Beziehungen, nicht bloß eine Sammlung religiöser Eigenschaften. Ehrliche Selbstprüfung darf mit empfangener Gnade verbunden bleiben."
+    ],
+    "quiz": [
+      {
+        "q": "Was kritisiert Jakobus bei der Versammlung?",
+        "a": "Bevorzugung reicher Menschen",
+        "wrong": [
+          "Gemeinsames Gebet",
+          "Jede Form von Lernen"
+        ]
+      },
+      {
+        "q": "Woran wird nach Jakobus lebendiger Glaube sichtbar?",
+        "a": "An entsprechendem Handeln",
+        "wrong": [
+          "Nur am Titel eines Amtes",
+          "Nur an Geldbesitz"
+        ]
+      }
+    ],
+    "reflection": "Welche meiner Worte oder Gewohnheiten widersprechen meinem Bekenntnis?",
+    "connection": {
+      "from": "1Mo 15,6",
+      "to": "Jak 2,23",
+      "kind": "quote",
+      "note": "Jakobus greift Abrahams Glauben im Zusammenhang gelebter Taten auf."
+    },
+    "image": "paulus"
+  },
+  {
+    "id": "ac-rev-reading",
+    "campaign": "revelation",
+    "title": "Offenbarung lesen: Vision, Brief und Prophetie",
+    "refs": [
+      "Offb 1,1-20",
+      "Offb 22,6-21",
+      "Dan 7,9-14"
+    ],
+    "terms": [
+      {
+        "term": "ἀποκάλυψις (apokalypsis)",
+        "explanation": "Enthüllung, Offenbarung"
+      },
+      {
+        "term": "προφητεία (prophēteia)",
+        "explanation": "Prophetie"
+      }
+    ],
+    "body": [
+      "Die Offenbarung beginnt als visionäre Mitteilung, prophetisches Wort und Brief an reale Gemeinden in Kleinasien. Der Verfasser nennt sich Johannes; seine genaue Identifikation mit anderen neutestamentlichen Personen ist umstritten. Die Bilder greifen umfangreich auf Israels Schriften zurück, besonders Daniel, Hesekiel, Jesaja und Exodus.",
+      "Apokalyptische Sprache gestaltet Erfahrungen von Bedrängnis, Hoffnung, Herrschaft und Gericht durch Visionen. Sie muss nicht in jedem Detail wie eine fotografische Schilderung gelesen werden. Historische, präteristische, futuristische und idealistische Lesarten betonen unterschiedliche Zusammenhänge und können sich teilweise überschneiden.",
+      "Der Text stellt die Treue zum Lamm vor Neugier auf einen Kalender. Die sieben Gemeinden erhalten konkrete Ermutigung und Kritik. Wer Bilder deutet, sollte daher zuerst den literarischen Zusammenhang, die Anspielungen und die ursprünglichen Adressaten prüfen und Unsicherheit offen benennen."
+    ],
+    "quiz": [
+      {
+        "q": "An wen richtet sich das Buch ausdrücklich?",
+        "a": "An sieben Gemeinden in Kleinasien",
+        "wrong": [
+          "An den Pharao",
+          "An die Richter zur Zeit Deboras"
+        ]
+      },
+      {
+        "q": "Was ist kein sicherer Zweck der Visionen?",
+        "a": "Ein exaktes heutiges Enddatum berechnen",
+        "wrong": [
+          "Gemeinden zur Treue ermutigen",
+          "Gottes Herrschaft bezeugen"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich prophetische Hoffnung lesen, ohne jedes aktuelle Ereignis in einen Zeitplan umzuwandeln?",
+    "connection": {
+      "from": "Dan 7,13",
+      "to": "Offb 1,13",
+      "kind": "allusion",
+      "note": "Die Menschensohnsprache verbindet die Visionen."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "ac-rev-lamb",
+    "campaign": "revelation",
+    "title": "Das geschlachtete Lamm und die Macht Gottes",
+    "refs": [
+      "Offb 4,1-11",
+      "Offb 5,1-14",
+      "Offb 7,9-17"
+    ],
+    "terms": [
+      {
+        "term": "ἀρνίον (arnion)",
+        "explanation": "Lamm"
+      },
+      {
+        "term": "δόξα (doxa)",
+        "explanation": "Herrlichkeit, Ehre"
+      }
+    ],
+    "body": [
+      "Die Thronsaalvision in Offenbarung 4 richtet Anbetung auf Gott als Schöpfer. Im folgenden Kapitel kann zunächst niemand die versiegelte Buchrolle öffnen. Johannes hört vom Löwen Judas, sieht jedoch ein Lamm wie geschlachtet. Diese überraschende Verbindung gestaltet Macht und Sieg anders als ein bloßes Bild militärischer Stärke.",
+      "Das Lamm empfängt Ehre wegen seiner Hingabe und hat Menschen aus vielen Völkern für Gott erworben. Die Bilder erlauben unterschiedliche theologische Erklärungen, aber der erzählerische Kontrast von Löwe und Lamm bleibt entscheidend. Die Gemeinschaft vor dem Thron in Kapitel 7 besitzt vielfältige Herkunft; die Vision löscht diese Vielfalt nicht.",
+      "Die weißen Gewänder und das Waschen im Blut des Lammes sind paradoxe Kult- und Rettungsbilder. Sie dürfen nicht als physikalische Beschreibung verstanden werden. Das Motiv der göttlichen Fürsorge endet mit dem Bild, dass Gott Tränen abwischt. So verbindet die Offenbarung kosmische Anbetung und persönliche Hoffnung."
+    ],
+    "quiz": [
+      {
+        "q": "Was sieht Johannes, nachdem er vom Löwen hört?",
+        "a": "Ein Lamm wie geschlachtet",
+        "wrong": [
+          "Ein goldenes Kalb",
+          "Einen römischen Kaiser"
+        ]
+      },
+      {
+        "q": "Woher kommt die große Menge in Kapitel 7?",
+        "a": "Aus vielen Völkern und Sprachen",
+        "wrong": [
+          "Nur aus einer einzigen Stadt",
+          "Nur aus dem Königshaus"
+        ]
+      }
+    ],
+    "reflection": "Welche Vorstellung von Macht muss das Bild des Lammes korrigieren?",
+    "connection": {
+      "from": "Jes 53,7",
+      "to": "Offb 5,6",
+      "kind": "theme",
+      "note": "Das Leidensbild des Lammes verbindet Jesaja und Offenbarung."
+    },
+    "image": "kreuz"
+  },
+  {
+    "id": "ac-rev-beast",
+    "campaign": "revelation",
+    "title": "Tier, Malzeichen und Widerstand gegen Götzendienst",
+    "refs": [
+      "Offb 13,1-18",
+      "Offb 14,1-12",
+      "Dan 7,1-8"
+    ],
+    "terms": [
+      {
+        "term": "θηρίον (thērion)",
+        "explanation": "Tier, wildes Tier"
+      },
+      {
+        "term": "χάραγμα (charagma)",
+        "explanation": "Zeichen, Prägung"
+      }
+    ],
+    "body": [
+      "Offenbarung 13 beschreibt zwei Tiere, deren Macht, Verehrung und Zwang den Anspruch Gottes nachahmen. Das erste Tier greift Bildsprache aus Daniel 7 auf. Das zweite fördert die Verehrung des ersten. Das Malzeichen steht in der Erzählung im Zusammenhang von Zugehörigkeit, wirtschaftlichem Druck und Anbetung.",
+      "Die Zahl 666 hat verschiedene Deutungen erfahren; eine verbreitete historische Erklärung verbindet sie mit dem Namen Nero in einer bestimmten hebräischen Buchstabenrechnung. Es gibt auch eine alte Textvariante 616. Diese Befunde sind Hinweise auf antike Deutungshorizonte, kein mathematischer Beweis für jede Auslegung.",
+      "Das Gegenbild in Offenbarung 14 trägt den Namen des Lammes und des Vaters. Der Text fragt nach Loyalität unter Druck. Eine bestimmte moderne Technik, Impfung, Karte oder Person kann anhand des Textes nicht sicher als Malzeichen identifiziert werden. Die ethische Herausforderung betrifft die Bereitschaft, Gott über erzwungene Verehrung und Vorteil zu stellen."
+    ],
+    "quiz": [
+      {
+        "q": "Womit verbindet der Text das Malzeichen?",
+        "a": "Zugehörigkeit, Anbetung und wirtschaftlichen Druck",
+        "wrong": [
+          "Jede beliebige Zahl",
+          "Jeden medizinischen Eingriff"
+        ]
+      },
+      {
+        "q": "Welche ältere Vision wird bildlich aufgegriffen?",
+        "a": "Daniel 7",
+        "wrong": [
+          "Die Geburt Isaaks",
+          "Die Geschichte Rut"
+        ]
+      }
+    ],
+    "reflection": "Wo können wirtschaftliche Vorteile mit meinem Gewissen in Konflikt geraten?",
+    "connection": {
+      "from": "Dan 7,1-8",
+      "to": "Offb 13,1-2",
+      "kind": "allusion",
+      "note": "Die Tiermotive greifen ältere apokalyptische Bildsprache auf."
+    },
+    "image": "daniel"
+  },
+  {
+    "id": "ac-rev-millennium",
+    "campaign": "revelation",
+    "title": "Das tausendjährige Reich: Deutungen unterscheiden",
+    "refs": [
+      "Offb 19,11-21",
+      "Offb 20,1-15",
+      "Offb 21,1-5"
+    ],
+    "terms": [
+      {
+        "term": "χίλια ἔτη (chilia etē)",
+        "explanation": "tausend Jahre"
+      },
+      {
+        "term": "ἀνάστασις (anastasis)",
+        "explanation": "Auferstehung"
+      }
+    ],
+    "body": [
+      "Offenbarung 20 schildert die Bindung Satans, eine tausendjährige Herrschaft, eine erneute Konfrontation und das Gericht. Die Abfolge steht zwischen dem Sieg in Kapitel 19 und neuer Schöpfung in Kapitel 21. Die Bilder von Büchern und Gericht unterstreichen Verantwortung und Gottes endgültiges Urteil.",
+      "Christliche Traditionen unterscheiden sich in der zeitlichen Einordnung. Prämillennialistische Lesarten erwarten eine künftige Herrschaft Christi vor dem letzten Gericht. Amillennialistische Lesarten verstehen die tausend Jahre häufig symbolisch im Horizont der gegenwärtigen Herrschaft Christi. Postmillennialistische Modelle verbinden sie mit einer längeren Phase der Ausbreitung des Evangeliums. Varianten innerhalb jeder Position sind möglich.",
+      "Die Auslegung hängt auch davon ab, ob Visionen als chronologische Folge oder wiederholte Perspektiven verstanden werden. Keine der Positionen rechtfertigt die Berechnung eines sicheren Datums oder gewaltsame Durchsetzung religiöser Herrschaft. Gemeinsam wichtig bleiben Gottes Gerechtigkeit, die Hoffnung auf Auferstehung und das Ende des Todes."
+    ],
+    "quiz": [
+      {
+        "q": "Was wird in Kapitel 20 ausdrücklich genannt?",
+        "a": "Eine tausendjährige Herrschaft und Gericht",
+        "wrong": [
+          "Das genaue heutige Kalenderdatum",
+          "Ein moderner Staat mit Namen"
+        ]
+      },
+      {
+        "q": "Was unterscheidet die christlichen Lesarten?",
+        "a": "Die zeitliche und symbolische Einordnung",
+        "wrong": [
+          "Die Zahl der Evangelisten",
+          "Die Existenz des Exodus"
+        ]
+      }
+    ],
+    "reflection": "Wie kann ich mit Menschen über Endzeitfragen sprechen, ohne Unsicherheit zu verbergen?",
+    "connection": {
+      "from": "Offb 20,11-15",
+      "to": "Dan 7,9-10",
+      "kind": "allusion",
+      "note": "Beide Visionen verwenden das Bild eines göttlichen Gerichts mit Büchern."
+    },
+    "image": "daniel"
+  }
+]
