@@ -291,9 +291,9 @@ export default function BibleScreen() {
           <View>
             <Text style={styles.sheetVerse}>{verses[sel - 1]}</Text>
             <View style={styles.tabRow} accessibilityRole="tablist">
-              {([["me", "Persönlich"], ["comm", "Studienkommentare"], ["xref", "Querverweise"]] as const).map(([id, l]) => (
+              {([["me", "Persönlich"], ["comm", "Kommentare"], ["xref", "Querverweise"]] as const).map(([id, l]) => (
                 <Pressable key={id} testID={`verse-tab-${id}`} accessibilityRole="tab" accessibilityState={{ selected: vtab === id }} onPress={() => setVtab(id)} style={[styles.tabBtn, vtab === id && { borderBottomColor: colors.brandPrimary }]}>
-                  <Text style={[styles.tabText, vtab === id && { color: colors.brandPrimary }]}>{l}</Text>
+                  <Text style={[styles.tabText, vtab === id && { color: colors.brandPrimary }]} numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8}>{l}</Text>
                 </Pressable>
               ))}
             </View>
@@ -506,7 +506,7 @@ const useStyles = makeStyles((c) => ({
   footerNav: { flexDirection: "row", justifyContent: "space-between", marginTop: spacing.xl, gap: spacing.sm },
   sheetVerse: { fontFamily: fonts.display, fontSize: 18, lineHeight: 28, color: c.onSurface, marginBottom: spacing.lg },
   tabRow: { flexDirection: "row", borderBottomWidth: 1, borderBottomColor: c.divider, marginTop: spacing.md, marginBottom: spacing.sm },
-  tabBtn: { flex: 1, minHeight: 44, alignItems: "center", justifyContent: "center", borderBottomWidth: 3, borderBottomColor: "transparent" },
+  tabBtn: { flex: 1, minHeight: 44, paddingHorizontal: 4, alignItems: "center", justifyContent: "center", borderBottomWidth: 3, borderBottomColor: "transparent" },
   tabText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800", color: c.muted },
   rangeText: { fontFamily: fonts.text, fontSize: 15, fontWeight: "700", color: c.onSurface },
   label: { fontFamily: fonts.text, fontSize: 12, fontWeight: "800", letterSpacing: 1, textTransform: "uppercase", color: c.brandPrimary, marginTop: spacing.xl, marginBottom: spacing.sm },

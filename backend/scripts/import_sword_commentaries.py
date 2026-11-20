@@ -16,7 +16,12 @@ VCOUNT = {b["nr"]: [len(c) for c in b["chapters"]] for b in ELB["books"]}
 
 
 def clean(raw: bytes) -> str:
-    t = raw.decode("utf-8", "replace") if raw else ""
+    if not raw:
+        return ""
+    try:
+        t = raw.decode("utf-8")
+    except UnicodeDecodeError:  # ältere CrossWire-Module (z. B. Rieger) sind Latin-1/CP1252
+        t = raw.decode("cp1252", "replace")
     t = re.sub(r"(?is)<(note|rdg|scripRef)[^>]*>.*?</\1>", lambda m: "" if m.group(1).lower() == "note" else re.sub(r"<[^>]+>", "", m.group(0)), t)
     t = re.sub(r"(?i)<(br|lb|p|div|l)\b[^>]*/?>|</(p|div|l)>", "\n", t)
     t = re.sub(r"<[^>]+>", "", t)

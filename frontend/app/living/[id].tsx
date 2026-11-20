@@ -11,12 +11,12 @@ import { INTRO_SCENES } from "@/src/data/introScenes";
 import { ILLUSTRATIONS, ILLUSTRATION_LABEL } from "@/src/data/illustrations";
 import { ARTICLES } from "@/src/data/articles";
 import { LexiconLinks } from "@/src/components/StationExtras";
+import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 // Stammbäume mit den vorhandenen Personenartikeln im Lexikon verbinden (keine doppelten Stammbäume)
 const PERSON_ARTICLES=ARTICLES.filter(a=>a.kind==="person");
 // Könige Hosea/Sacharja sind nicht die gleichnamigen Propheten
 const SAME_NAME_PROPHETS=new Set(["hosea","sacharja"]);
 const lexiconFor=(e:LivingEntry)=>{const text=[e.title,e.body,...(e.diagram??[])].join(" ");return PERSON_ARTICLES.filter(a=>!(e.group==="Könige"&&SAME_NAME_PROPHETS.has(a.id))&&new RegExp("\\b"+a.title.split(/[ (]/)[0]+"\\b").test(text)).slice(0,8).map(a=>a.id);};
-import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 const scene=(id:string)=>INTRO_SCENES.find(s=>s.id===id)?.image;
 const covers={words:ILLUSTRATIONS.mose,thread:scene("auferstehung"),unseen:ILLUSTRATIONS.ezechiel,jesus:scene("verkuendigung"),trees:ILLUSTRATIONS.abraham,symbols:scene("abendmahl"),history:ILLUSTRATIONS.esra};
 const groupImages:Record<string,any>={"jesus:Verkündigung":scene("verkuendigung"),"jesus:Gebet und Nachfolge":scene("gethsemane"),"jesus:Ich-bin-Worte":scene("begegnungen"),"jesus:Wunder und Begegnungen":scene("wunder"),"jesus:Passion und Sendung":scene("kreuz"),"thread:Ursprung":ILLUSTRATIONS["adam-eva"],"thread:Verheißung und Bund":ILLUSTRATIONS.mose,"thread:Könige und Propheten":ILLUSTRATIONS.david,"thread:Jesus Christus":scene("auferstehung"),"thread:Gemeinde und Vollendung":ILLUSTRATIONS.paulus,"trees:Urgeschichte":ILLUSTRATIONS.noah,"trees:Erzväter":ILLUSTRATIONS.abraham,"trees:Israel":ILLUSTRATIONS.jakob,"trees:Könige":ILLUSTRATIONS.david,"trees:Jesus":scene("geburt")};

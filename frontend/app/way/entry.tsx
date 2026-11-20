@@ -63,6 +63,7 @@ export default function EntryScreen() {
   const [safety, setSafety] = useState<{ danger: boolean; abuse: boolean } | null>(null);
   // Falls das Tagebuch erst nach dem Öffnen geladen wurde: Eintrag übernehmen
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- einmalige Übernahme nach spätem Laden
     if (existing && !d.id) { setD({ ...existing }); setDateText(fmtDate(existing.date)); setMore(true); }
   }, [existing, d.id]);
   const accent = diaryColor(colors);

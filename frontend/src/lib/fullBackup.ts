@@ -66,22 +66,26 @@ export async function pickAndRestoreFullBackup(): Promise<RestoreResult | null> 
   const parsed = parseImport(b.state);
   if (!parsed.ok) return parsed;
   let state = parsed.state;
+  let restoredPhotos = Platform.OS === "web" ? state.photos.length : 0;
   // Fotos in den App-Speicher dieses Geräts schreiben und Pfade anpassen
   if (Platform.OS !== "web" && b.photos) {
     const dir = new Directory(Paths.document, "photos");
     if (!dir.exists) dir.create({ idempotent: true, intermediates: true });
     const moved: Record<string, string> = {};
     for (const [name, data] of Object.entries(b.photos)) {
+      // Nur einfache Dateinamen zulassen (Schutz vor Pfadangaben in manipulierten Sicherungen)
+      if (!/^[A-Za-z0-9._-]+$/.test(name) || name.startsWith(".")) continue;
       const f = new File(dir, name);
       if (f.exists) f.delete();
       f.create();
       f.write(b64ToBytes(data));
       moved[name] = f.uri;
+      restoredPhotos++;
     }
     state = { ...state, photos: state.photos.map((p) => (moved[fileName(p.uri)] ? { ...p, uri: moved[fileName(p.uri)] } : p)) };
   }
   const pairs = Object.entries(b.keys ?? {}).filter(([k]) => !SKIP(k));
   if (pairs.length) await AsyncStorage.multiSet(pairs);
   if (b.way) way.restore(b.way, "replace");
-  return { ok: true, state, photos: Object.keys(b.photos ?? {}).length, entries: b.way?.entries?.length ?? 0 };
+  return { ok: true, state, photos: restoredPhotos, entries: b.way?.entries?.length ?? 0 };
 }

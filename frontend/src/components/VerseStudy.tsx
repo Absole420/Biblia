@@ -1,6 +1,6 @@
 import * as Linking from "expo-linking";
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Pressable, Text, View } from "react-native";
+import { ActivityIndicator, Pressable, Text, useWindowDimensions, View } from "react-native";
 
 import { getChapterSync, loadChapter } from "@/src/data/bible";
 import { BIBLE_BOOKS, BOOK_BY_CODE } from "@/src/data/books";
@@ -15,12 +15,25 @@ import { Icon } from "./Icon";
 
 const byNr = (nr: number) => BIBLE_BOOKS.find((b) => b.nr === nr)!;
 
+// Kommentare: pro Buch einmal nach Kapitel indexieren (nur freigegebene Quellen), danach O(1)-Zugriff
+const PERMITTED = new Set((SOURCES as Source[]).filter((x) => permittedOffline(x)).map((x) => x.id));
+const byBook = new Map<number, Map<number, Entry[]>>();
+function chapterIndex(nr: number) {
+  let m = byBook.get(nr);
+  if (!m) {
+    m = new Map();
+    for (const e of (COMMENTARY[nr]?.() ?? []) as Entry[]) if (PERMITTED.has(e.source)) m.set(e.chapter, [...(m.get(e.chapter) ?? []), e]);
+    byBook.set(nr, m);
+  }
+  return m;
+}
+
 /** Studieninhalte liegen lokal im App-Paket (Permanent Offline Edition) – getrennt von persönlichen Daten. */
 async function cached<T>(path: string): Promise<T | null> {
   const [, , kind, nr, ch] = path.split("/");
   if (path === "/study/sources") return { sources: SOURCES } as T;
   // Nur Kommentare mit lokal freigegebenen Rechten (Volltext, offline, Weitergabe) – PR #9 permittedOffline
-  if (kind === "commentary") return { entries: (COMMENTARY[Number(nr)]?.() ?? []).filter((e: Entry) => e.chapter === Number(ch) && permittedOffline((SOURCES as Source[]).find((x) => x.id === e.source))) } as T;
+  if (kind === "commentary") return { entries: chapterIndex(Number(nr)).get(Number(ch)) ?? [] } as T;
   if (kind === "xref") return { refs: XREF[Number(nr)]?.()[ch] ?? [] } as T;
   return null;
 }
@@ -44,6 +57,9 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   const key = `${book}:${ch}`;
   const [data, setData] = useState<{ key: string; entries: Entry[] } | null>(null);
   const [compare, setCompare] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  // Vergleich nebeneinander nur auf breiten Bildschirmen, sonst gestapelte Karten
+  const wide = useWindowDimensions().width >= 600;
   useEffect(() => { cached<{ entries: Entry[] }>(`/study/commentary/${BOOK_BY_CODE[book].nr}/${ch}`).then((r) => setData({ key: `${book}:${ch}`, entries: r?.entries ?? [] })); }, [book, ch]);
   const entries = data?.key === key ? data.entries : null;
   if (!entries || !sources) return <ActivityIndicator color={colors.brandPrimary} />;
@@ -58,12 +74,19 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
   return (
     <View testID="commentary-panel">
       <Text style={styles.hint}>Veröffentlichte Auslegungen anderer Autoren – nicht deine eigenen Notizen.</Text>
+      <View style={styles.row}>
+        <Pressable testID="commentary-filters-toggle" style={[styles.chip, filtersOpen && styles.chipOn]} onPress={() => setFiltersOpen((o) => !o)} accessibilityRole="button" accessibilityState={{ expanded: filtersOpen }}>
+          <Text style={[styles.chipText, filtersOpen && { color: colors.onBrandPrimary }]}>{`Filter · ${pref.includes("none") ? 0 : pref.length || commSources.filter((x) => x.status === "integrated").length} von ${commSources.filter((x) => x.status === "integrated").length} Autoren ${filtersOpen ? "▴" : "▾"}`}</Text>
+        </Pressable>
+        {hits.length > 1 ? <Pressable testID="commentary-compare" style={styles.chip} onPress={() => setCompare((c) => !c)}><Text style={styles.chipText}>{compare ? "Liste" : "Vergleichen"}</Text></Pressable> : null}
+      </View>
       {/* Ganze Traditionen ein-/ausblenden (setzt die gemerkten Quellen-Filter) */}
+      {filtersOpen ? <>
       <View style={styles.row}>
         {[...new Set(commSources.filter((s) => s.status === "integrated").map((s) => s.tradition ?? "Sonstige"))].map((tr) => {
           const all = commSources.filter((x) => x.status === "integrated");
           const ids = all.filter((x) => (x.tradition ?? "Sonstige") === tr).map((x) => x.id);
-          const active = pref.length ? pref : all.map((x) => x.id);
+          const active = (pref.length ? pref : all.map((x) => x.id)).filter((id) => id !== "none");
           const on = ids.every((id) => active.includes(id));
           const next = on ? active.filter((id) => !ids.includes(id)) : [...new Set([...active, ...ids])];
           return (
@@ -82,20 +105,20 @@ export function CommentaryPanel({ book, ch, v }: { book: string; ch: number; v: 
             </Pressable>
           );
         })}
-        {hits.length > 1 ? <Pressable testID="commentary-compare" style={styles.chip} onPress={() => setCompare((c) => !c)}><Text style={styles.chipText}>{compare ? "Liste" : "Vergleichen"}</Text></Pressable> : null}
       </View>
+      </> : null}
       {hits.length === 0 ? (
         <View style={styles.empty} testID="commentary-empty">
           <Icon name="book" size={20} color={colors.muted} />
-          <Text style={styles.body}>Für diesen Vers ist noch kein zulässig eingebundener Studienkommentar vorhanden. Wir zeigen bewusst keine erfundenen oder ungeprüften Texte.</Text>
+          <Text style={styles.body}>{pref.includes("none") ? "Alle Autoren sind im Filter ausgeblendet. Öffne „Filter“, um Kommentare wieder anzuzeigen." : "Für diesen Vers ist noch kein zulässig eingebundener Studienkommentar vorhanden. Wir zeigen bewusst keine erfundenen oder ungeprüften Texte."}</Text>
         </View>
       ) : (
-        <View style={compare ? { flexDirection: "row", gap: spacing.sm } : undefined}>
+        <View style={compare && wide ? { flexDirection: "row", gap: spacing.sm } : undefined}>
           {hits.map((e) => {
             const s = sources.find((x) => x.id === e.source);
             const range = `${BOOK_BY_CODE[book].name} ${e.chapter},${e.from}${e.to !== e.from ? "–" + e.to : ""}`;
             return (
-              <View key={e.id} style={[styles.card, compare && { flex: 1 }]} testID={`commentary-${e.id}`}>
+              <View key={e.id} style={[styles.card, compare && wide && { flex: 1 }]} testID={`commentary-${e.id}`}>
                 <View style={styles.badge}><Icon name="book-open" size={12} color={colors.info} /><Text style={styles.badgeText}>Studienkommentar · {s?.historical ? "historische Auslegung" : "Auslegung"}</Text></View>
                 <Text style={styles.title}>{s?.author} – {s?.title}</Text>
                 <Text style={styles.meta} testID={`commentary-scope-${e.id}`}>Behandelt: {range} ({SCOPE[e.scope]}){e.scope !== "verse" ? " – keine Einzelerklärung zu V. " + v : ""}</Text>
@@ -173,7 +196,7 @@ export function XrefPanel({ book, ch, v, onJump }: { book: string; ch: number; v
 const useStyles = makeStyles((c) => ({
   hint: { fontFamily: fonts.text, fontSize: 13, color: c.muted, marginBottom: spacing.sm },
   row: { flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, marginBottom: spacing.sm },
-  chip: { minHeight: 36, paddingHorizontal: 12, borderRadius: radius.pill, borderWidth: 1, borderColor: c.border, justifyContent: "center", backgroundColor: c.surfaceSecondary },
+  chip: { minHeight: 44, paddingHorizontal: 12, borderRadius: radius.pill, borderWidth: 1, borderColor: c.border, justifyContent: "center", backgroundColor: c.surfaceSecondary },
   chipOn: { backgroundColor: c.info, borderColor: c.info },
   chipText: { fontFamily: fonts.text, fontSize: 13, fontWeight: "800", color: c.onSurface },
   empty: { flexDirection: "row", gap: spacing.sm, padding: spacing.md, borderRadius: radius.lg, backgroundColor: c.surfaceSecondary },

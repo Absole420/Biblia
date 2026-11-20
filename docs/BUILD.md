@@ -41,7 +41,11 @@ cd frontend && npx tsc --noEmit -p .
 ```
 
 ## Kommentare neu importieren (nur Bauzeit)
-`backend/scripts/import_sword_commentaries.py` liest SWORD-RawCom-Module (CrossWire / GermanSwordModules) und schreibt `backend/data/commentaries/*.json`. Danach Bündelung nach `frontend/src/data/offline/commentary/` (nur Quellen mit `status=integrated` und allen Rechten in `sources.json`). Benötigt `pysword` nur zur Bauzeit.
+`backend/scripts/import_sword_commentaries.py` liest SWORD-RawCom-Module (CrossWire / GermanSwordModules) und schreibt `backend/data/commentaries/*.json`. Danach `backend/scripts/clean_commentaries.py` (OCR-Bereinigung Kroeker, Ansorg-Kapitelzuordnung – nur einmal ausführen) und Bündelung nach `frontend/src/data/offline/commentary/` (nur Quellen mit `status=integrated` und allen Rechten in `sources.json`). Benötigt `pysword` nur zur Bauzeit.
 
 ## Backend (optional)
 `backend/server.py` (FastAPI) ist ein Altbestand aus der Entwicklung und wird von der App nicht mehr aufgerufen.
+
+## Prüfstand v0.9.0-beta
+- 42/42 Node-Tests, `tsc --noEmit` fehlerfrei, `npx eslint app src` ohne Fehler und Warnungen (Final Cleanup).
+- Kommentardaten: `python3 tests/kroeker_ocr_scan.py` und `python3 tests/commentary_data_check.py` (12.089 Abschnitte, keine doppelten IDs, keine ungültigen Verszuordnungen, Rieger ohne defekte Umlaute).

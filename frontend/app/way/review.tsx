@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -18,6 +18,15 @@ const parseDE = (s: string) => { const m = s.trim().match(/^(\d{1,2})\.(\d{1,2})
 
 type Range = "week" | "month" | "custom";
 
+function Block({ title, icon, children, testID, w, accent }: { title: string; icon: string; children: React.ReactNode; testID: string; w: ReturnType<typeof useWayStyles>; accent: string }) {
+  return (
+    <View style={w.card} testID={testID}>
+      <View style={w.row}><Icon name={icon} size={16} color={accent} /><Text style={w.cardTitle}>{title}</Text></View>
+      {children}
+    </View>
+  );
+}
+
 export default function ReviewScreen() {
   const w = useWayStyles();
   const styles = useStyles();
@@ -33,14 +42,8 @@ export default function ReviewScreen() {
 
   const [from, to] = range === "week" ? [addDays(today, -6), today] : range === "month" ? [addDays(today, -29), today] : [parseDE(fromT) ?? addDays(today, -89), parseDE(toT) ?? today];
   const len = dayDiff(from, to) + 1;
-  const r = useMemo(() => buildReview(data.entries, from, to, addDays(from, -len), addDays(from, -1)), [data.entries, from, to, len]);
-
-  const Block = ({ title, icon, children, testID }: { title: string; icon: string; children: React.ReactNode; testID: string }) => (
-    <View style={w.card} testID={testID}>
-      <View style={w.row}><Icon name={icon} size={16} color={accent} /><Text style={w.cardTitle}>{title}</Text></View>
-      {children}
-    </View>
-  );
+  const r = buildReview(data.entries, from, to, addDays(from, -len), addDays(from, -1));
+  const block = { w, accent };
   const none = <Text style={w.muted}>Nichts gespeichert.</Text>;
 
   return (
@@ -64,10 +67,10 @@ export default function ReviewScreen() {
         ) : null}
         <Text style={[styles.range, { marginTop: spacing.md }]} testID="review-range">{fmtDate(from)} – {fmtDate(to)}</Text>
 
-        <Block title="Zusammenfassung" icon="file-text" testID="review-summary">
+        <Block {...block} title="Zusammenfassung" icon="file-text" testID="review-summary">
           {r.sentences.map((s, i) => <Text key={i} style={w.body}>{s}</Text>)}
         </Block>
-        <Block title="Welche Gefühle kamen vor?" icon="heart" testID="review-feelings">
+        <Block {...block} title="Welche Gefühle kamen vor?" icon="heart" testID="review-feelings">
           {r.feelings.length ? r.feelings.map(([f, n]) => (
             <View key={f} style={styles.barRow}>
               <Text style={[w.body, { width: 130 }]} numberOfLines={1}>{f}</Text>
@@ -77,21 +80,21 @@ export default function ReviewScreen() {
             </View>
           )) : none}
         </Block>
-        <Block title="Bibelstellen, die dir wichtig waren" icon="book-open" testID="review-refs">
+        <Block {...block} title="Bibelstellen, die dir wichtig waren" icon="book-open" testID="review-refs">
           {r.refs.length ? r.refs.map(([ref, n]) => <Text key={ref} style={w.body}>{refLabelW(ref)} · {n}×</Text>) : none}
           {r.topics.length ? <Text style={w.muted}>Themen: {r.topics.map(([t, n]) => `${TOPIC_BY_ID[t]?.title ?? t} (${n}×)`).join(", ")}</Text> : null}
         </Block>
-        <Block title="Gebete" icon="feather" testID="review-prayers">
+        <Block {...block} title="Gebete" icon="feather" testID="review-prayers">
           {r.prayers.length ? r.prayers.slice(0, 8).map((e) => <Text key={e.id} style={w.body} numberOfLines={2}><Text style={w.bold}>{fmtDay(e.date)}: </Text>{e.toGod || e.mood}</Text>) : none}
         </Block>
-        <Block title="Offene Fragen" icon="help-circle" testID="review-questions">
+        <Block {...block} title="Offene Fragen" icon="help-circle" testID="review-questions">
           {r.questions.length ? r.questions.map((e) => (
             <Pressable key={e.id} onPress={() => router.push({ pathname: "/way/entry", params: { id: e.id } })} style={{ minHeight: 44, justifyContent: "center" }} accessibilityRole="button">
               <Text style={w.body} numberOfLines={2}>{e.resolved ? "✓ " : "• "}{e.mood || e.concern || "(ohne Text)"}</Text>
             </Pressable>
           )) : none}
         </Block>
-        <Block title="Selbst gewählte Schritte und Unterstützung" icon="navigation" testID="review-steps">
+        <Block {...block} title="Selbst gewählte Schritte und Unterstützung" icon="navigation" testID="review-steps">
           {r.steps.length ? r.steps.map((s, i) => <Text key={i} style={w.body}><Text style={w.bold}>{fmtDate(s.date)}: </Text>{s.text}</Text>) : none}
           {r.talk ? <Text style={w.muted}>Bei {r.talk} {r.talk === 1 ? "Eintrag" : "Einträgen"} wolltest du mit jemandem sprechen.</Text> : null}
         </Block>

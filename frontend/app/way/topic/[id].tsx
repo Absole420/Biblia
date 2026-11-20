@@ -12,6 +12,16 @@ import { WAY_IMAGES } from "@/src/data/way/images";
 import { STATION_INFO } from "@/src/lib/libraryIndex";
 import { fonts, makeStyles, radius, spacing, useTheme } from "@/src/theme";
 
+function List({ items, icon, li, w, accent }: { items: string[]; icon: string; li: object; w: ReturnType<typeof useWayStyles>; accent: string }) {
+  return (
+    <View style={{ gap: spacing.sm }}>
+      {items.map((x, i) => (
+        <View key={i} style={li}><Icon name={icon} size={14} color={accent} /><Text style={[w.body, { flex: 1 }]}>{x}</Text></View>
+      ))}
+    </View>
+  );
+}
+
 export default function TopicScreen() {
   const w = useWayStyles();
   const styles = useStyles();
@@ -30,14 +40,6 @@ export default function TopicScreen() {
       </View>
     );
   }
-  const List = ({ items, icon }: { items: string[]; icon: string }) => (
-    <View style={{ gap: spacing.sm }}>
-      {items.map((x, i) => (
-        <View key={i} style={styles.li}><Icon name={icon} size={14} color={accent} /><Text style={[w.body, { flex: 1 }]}>{x}</Text></View>
-      ))}
-    </View>
-  );
-
   return (
     <View style={styles.root} testID={`topic-screen-${t.id}`}>
       <View style={[w.head, { paddingTop: insets.top + spacing.sm, backgroundColor: accent }]}>
@@ -60,7 +62,7 @@ export default function TopicScreen() {
         <SectionHead icon="info" title="Kurz erklärt" color={accent} />
         {t.explained.map((p, i) => <Text key={i} style={[w.body, { marginBottom: spacing.sm }]}>{p}</Text>)}
         <Text style={w.label}>Mögliche Ursachen – keine davon muss auf dich zutreffen</Text>
-        <List items={t.causes} icon="circle" />
+        <List li={styles.li} w={w} accent={accent} items={t.causes} icon="circle" />
 
         <SectionHead icon="book-open" title="Biblische Stellen" color={accent} />
         <Text style={[w.muted, { marginBottom: spacing.sm }]}>Keine einzelne Stelle ist eine pauschale Antwort. Lies sie im Zusammenhang; die Kennzeichnung zeigt die Art der Verbindung.</Text>
@@ -76,19 +78,19 @@ export default function TopicScreen() {
         ))}
 
         <SectionHead icon="compass" title="Biblische Orientierung" color={accent} />
-        <List items={t.orientation} icon="arrow-right" />
+        <List li={styles.li} w={w} accent={accent} items={t.orientation} icon="arrow-right" />
         <Text style={w.label}>Spannungen, Grenzen und offene Fragen</Text>
-        <List items={t.tensions} icon="alert-circle" />
+        <List li={styles.li} w={w} accent={accent} items={t.tensions} icon="alert-circle" />
 
         <SectionHead icon="help-circle" title="Reflexionsfragen" color={accent} />
-        <List items={t.questions} icon="help-circle" />
+        <List li={styles.li} w={w} accent={accent} items={t.questions} icon="help-circle" />
 
         <SectionHead icon="feather" title="Gebetsimpuls" color={accent} />
         <View style={w.card}><Text style={[w.body, { fontStyle: "italic" }]} testID="topic-prayer">{t.prayer}</Text><Text style={w.muted}>Ein Vorschlag – du kannst ganz eigene Worte finden.</Text></View>
 
         <SectionHead icon="navigation" title="Mögliche nächste Schritte" color={accent} />
         <Text style={[w.muted, { marginBottom: spacing.sm }]}>Frei wählbar, klein und ohne Pflicht.</Text>
-        <List items={t.steps} icon="check-square" />
+        <List li={styles.li} w={w} accent={accent} items={t.steps} icon="check-square" />
         <View style={[w.card, { marginTop: spacing.md, borderLeftWidth: 4, borderLeftColor: colors.warning }]} testID="topic-care">
           <Text style={w.bold}>Wann weitere Hilfe sinnvoll sein kann</Text>
           <Text style={w.body}>{t.care}</Text>

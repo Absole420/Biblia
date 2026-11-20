@@ -263,3 +263,13 @@ Master-Prompt: interaktive Android-Bibelstudiums-App mit zoombarer Abenteuer-Wel
 - Entfernt: date-fns, dayjs, expo-blur, expo-haptics, expo-symbols, react-native-dotenv, react-native-webview
 - Doku: docs/BUILD.md, docs/LICENSES.md, docs/CONSOLIDATION.md; Backup-Bundle /app/backup-pre-consolidation-20261120.bundle (gitignored)
 - GitHub: keine Schreibrechte – Push/Tag/PR-Schließen/Branch-Cleanup manuell (siehe CONSOLIDATION.md)
+
+## Update (Iteration 50) – Final Cleanup, Entwicklungsstopp
+- clean_commentaries.py: Kroeker-OCR typografisch, Ansorg 9 kapitelübergreifende Predigten verteilt (724); 12.089 Abschnitte validiert
+- VerseStudy: Filter einklappbar (commentary-filters-toggle), Vergleich gestapelt < 600 px, Kapitelindex je Buch
+- fullBackup: Fotonamen-Allowlist (SEC-002)
+- Docs aktualisiert; 42/42 Tests, tsc ok, ESLint 14 Compiler-Hinweise (way/*) bewusst offen
+- Nachtrag: Rieger neu importiert (CP1252 statt UTF-8, 0 Ersatzzeichen); Kroeker-OCR erweitert (£ 81→24, $ 6→4, ", if." 82→0, " j " 58→2); clean_commentaries.py wiederholbar; Wiederherstellungs-Meldung zählt nur tatsächlich wiederhergestellte Fotos
+- Iteration 50 (Retest bestanden): Kroeker eindeutige Reste korrigiert, unsichere Stellen unverändert in CONSOLIDATION.md gelistet; Ansorg 0 Abweichungen; ESLint 0 / tsc 0 (way/* und living ohne Verhaltensänderung); Filter-Chips 44 px, Hinweis „Alle Autoren ausgeblendet“; Traditions-Filter-Fehler („none“) behoben; Reiter heißt „Kommentare“; Backend: /api/status entfernt, CORS ohne Credentials, Suche begrenzt
+- Offen: 3 veraltete Backend-Tests (test_study_api erwartet 7 Quellen/kein Kommentar zu 1Mo 1; test_health über öffentliche URL)
+
